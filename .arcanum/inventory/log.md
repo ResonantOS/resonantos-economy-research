@@ -385,3 +385,23 @@ Owner: ResonantOS economy research owner
   validation-READY, not validated. The downstream fixtures phase
   (research-evidence-harness) and the authority/constitution lane now have a
   ranked, owner-named backlog to act on.
+
+## 2026-06-27 inventory-first onboarding + program start-path entry
+
+- Mode: inventory-orientation (inline; not a dispatch — focused entry-point
+  authoring, no fan-out)
+- Entries created: 1 (`entries/economy-resilience-program.md` — towers +
+  synthesis + the ranked start path / fixture & constitution backlog, Tracks A/B/C)
+- Entries updated: 0
+- Index updated: yes (new "Start Here (read in this order)" canonical orientation
+  + the new entry row)
+- Log updated: yes
+- Contradictions flagged: 0
+- Notes: Made the repo usable from zero. Added one canonical ordered orientation
+  ("Start Here") to `.arcanum/inventory/index.md` and an **inventory-first** rule
+  to `AGENTS.md` (Mandatory First Step), `GUIDE.md` (How To Start Work), and
+  `CONTRIBUTING.md` (Start Here) — all three now point back to the index Start
+  Here rather than duplicating it (single source of truth, no drift). The new
+  inventory entry makes the program-synthesis start-path query discoverable. No
+  policy, token, bounty, governance, validation, or authority claim promoted;
+  inventory entries remain non-authority read models.

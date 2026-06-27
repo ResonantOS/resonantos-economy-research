@@ -44,10 +44,13 @@ Work from five habits:
 
 For any non-trivial change:
 
-1. Read [AGENTS.md](AGENTS.md) and run its four checks out loud.
-2. Read the relevant source spine in [authority/source-spine.md](authority/source-spine.md).
-3. Check [.arcanum/inventory/index.md](.arcanum/inventory/index.md) for existing
-   reusable entries.
+1. **Orient via the inventory first.** Read the
+   [.arcanum/inventory/index.md](.arcanum/inventory/index.md) **Start Here** ordered
+   path — why the repo works the way it does, the current start path (the program
+   fixture & constitution backlog), and how to move. It is the canonical entry point.
+2. Read [AGENTS.md](AGENTS.md) and run its four checks out loud.
+3. Read the relevant source spine in [authority/source-spine.md](authority/source-spine.md),
+   and check the inventory for an existing reusable entry before adding a duplicate.
 4. Choose the narrowest route:
    - source reading;
    - claim ledger update;

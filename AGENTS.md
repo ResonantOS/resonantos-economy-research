@@ -22,6 +22,13 @@ or authority-by-score.
 
 ## Mandatory First Step Before Writes
 
+**Orient first — inventory-first.** If you are starting from zero, or unsure where
+the work stands, read the [`.arcanum/inventory/index.md`](.arcanum/inventory/index.md)
+**Start Here** ordered path before routing. It is the canonical entry point: why the
+repository exists and how it works, what to do next (the program fixture &
+constitution backlog), and how to move safely. Do not navigate the file tree blind —
+the repo is powerful but its boundaries are easy to breach without this orientation.
+
 Before any write, edit, dispatch registration, or commit, state the route and
 run these checks out loud:
 

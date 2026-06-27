@@ -3,6 +3,37 @@
 Status: active
 Owner: ResonantOS economy research owner
 
+## Start Here (read in this order)
+
+New to this repository? It is a governed research tower — a powerful tool, but
+only if you understand **why** and **how** it works before you write. Orient
+through this inventory **first**, in this order. This is the canonical entry path;
+`AGENTS.md`, `GUIDE.md`, and `CONTRIBUTING.md` all point back here.
+
+1. **Why & posture** — [README.md](../../README.md) "What This Repository Is". The
+   tower exists to make reward-mechanism failures visible *before* they become
+   operational. Hold its three rules everywhere: `claim ≤ proof`,
+   `research ≠ policy`, `score ≠ authority`.
+2. **Agent rules (non-negotiable)** — [AGENTS.md](../../AGENTS.md): run its four
+   checks out loud before ANY write, edit, dispatch, or commit.
+3. **What to do next (the single most useful read)** — the cross-corpus program
+   synthesis and its ranked **fixture & constitution backlog**:
+   [economy-resilience-program](entries/economy-resilience-program.md) →
+   [dispatch/economy-synthesis/findings.md](../../dispatch/economy-synthesis/findings.md).
+   It names the concrete start path (Tracks A/B/C, cheapest-unblocker first).
+4. **How to move** — [GUIDE.md](../../GUIDE.md): pick the narrowest route.
+5. **Before relying on any claim** —
+   [claims/SOURCE-CLAIM-LEDGER.md](../../claims/SOURCE-CLAIM-LEDGER.md) and
+   [sources/source-records.md](../../sources/source-records.md); keep claim ≤ evidence.
+6. **For subagent research** — the dispatch route + human confirm gate:
+   [subagents-dispatch-strategy](entries/subagents-dispatch-strategy.md).
+7. **To contribute & continue** — [CONTRIBUTING.md](../../CONTRIBUTING.md); update
+   this inventory when your result becomes reusable for the next agent.
+
+Rule of thumb: **steps 1–3 tell you _why_ and _what_; steps 4–7 tell you _how_,
+safely.** Do not skip 1–3 — the repo's power is wasted, and its boundaries are
+easy to breach, without them.
+
 ## Entries
 
 | Entry | Type | Tags | Role |
@@ -23,6 +54,7 @@ Owner: ResonantOS economy research owner
 | [contribution-edge-fixture-full-refine-plan](entries/contribution-edge-fixture-full-refine-plan.md) | development-handoff | `refine`, `dispatch-spec`, `implementation-boundary`, `validation-scaffold`, `fixture-scaffold`, `task-session`, `resonantos-economy` | Full dispatch-spec validated Refine packet and task-session-ready plan for contribution-edge validation fixtures only. |
 | [contribution-edge-fixtures](entries/contribution-edge-fixtures.md) | validation-scaffold | `validation-scaffold`, `fixture-scaffold`, `implementation-boundary`, `resonantos-economy` | Materialized contribution-edge fixture package with schema, matrix, typed negatives, checklist, and six fixture files. |
 | [domainspec-subagents-reflection-loop](entries/domainspec-subagents-reflection-loop.md) | telemetry | `reflection`, `observability`, `sigil-development`, `workflow-reflect`, `subagents` | Local reflection loop for subagent strategy output drift, inventory-result checks, and lifecycle maintenance. |
+| [economy-resilience-program](entries/economy-resilience-program.md) | synthesis | `strategy-result`, `dispatch`, `subagents`, `synthesis`, `attack-lane`, `fixture-backlog`, `resonantos-economy` | Four isolated towers + cross-corpus synthesis (closed `resolved`); the ranked fixture & constitution backlog and the concrete start path (Tracks A/B/C). |
 
 ## Open Gaps
 

@@ -12,11 +12,15 @@ proximity.
 
 ## Start Here
 
-1. Read [AGENTS.md](AGENTS.md) and run its four checks before any write.
-2. Read [README.md](README.md), [GUIDE.md](GUIDE.md), and
-   [authority/source-spine.md](authority/source-spine.md).
-3. Check [.arcanum/inventory/index.md](.arcanum/inventory/index.md) before
-   adding a duplicate finding.
+1. **Start in the inventory.** Read the
+   [.arcanum/inventory/index.md](.arcanum/inventory/index.md) **Start Here** ordered
+   path. It is the canonical entry point: why the repo works the way it does, what
+   to do next (the program fixture & constitution backlog), and how to move without
+   breaching the boundaries.
+2. Read [AGENTS.md](AGENTS.md) and run its four checks before any write.
+3. Read [README.md](README.md), [GUIDE.md](GUIDE.md), and
+   [authority/source-spine.md](authority/source-spine.md); check the inventory
+   before adding a duplicate finding.
 4. Pick the narrowest route: source reading, claim update, subtower harvest,
    fixture expansion, dispatch, or authority promotion request.
 
