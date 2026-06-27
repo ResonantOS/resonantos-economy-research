@@ -5,7 +5,7 @@ Dispatch type: research
 meta: false
 parent_dispatch_id: 2026-06-27-resonantos-economy-program
 Tension gate: pass (2026-06-27 — checker PASS, reviewer PASS)
-Ledger status: not-registered
+Ledger status: registered-and-closed (resolved, 2026-06-27; auditor ACCEPT) — deliverable at economy-synthesis/findings.md, source SYN-ECON-PROGRAM-FINDINGS
 Promotion scope: local-research-only
 
 ## Role in the program

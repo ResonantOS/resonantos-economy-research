@@ -35,19 +35,32 @@ continued research, not implementation or policy adoption.
 - The CAv2/Lean and CAv2 authority/lifecycle harvests are recorded as local
   research findings in [harvest/cav2-lean/](harvest/cav2-lean/README.md) and
   [harvest/cav2-authority-lifecycle/findings.md](harvest/cav2-authority-lifecycle/findings.md).
-- The four external evidence subtowers have first-pass returns and skeptic
-  notes under `subtowers/*/returns/`.
+- The four external evidence subtowers ran as isolated, human-confirmed tower
+  dispatches (closed `resolved`, 2026-06-27). Each has verbatim explorer
+  returns, an in-corpus skeptic pass, and reconciled findings under
+  `subtowers/*/returns/`, registered as `SYN-ECON-TOWER-*`. Every explorer ran
+  whitepaper-only and bounded (depth-1, ≤6 sources/lane) so the research never
+  tripped into recursive paper-chasing.
 - The first validation scaffold, contribution-edge fixtures, exists at
   [validation/contribution-edge-fixtures/](validation/contribution-edge-fixtures/README.md).
-- Program synthesis and future fan-out remain governed dispatch surfaces. Their
-  outputs cannot promote token, bounty, governance, payout, launch, authority,
-  or implementation readiness without the authority route.
+- The cross-corpus program synthesis has run (closed `resolved`, auditor
+  ACCEPT): [dispatch/economy-synthesis/findings.md](dispatch/economy-synthesis/findings.md)
+  (`SYN-ECON-PROGRAM-FINDINGS`) reconciles the four towers by attack-lane,
+  survived a Popper/Quine/Meadows robot-talks round, and hands off a ranked
+  **fixture & constitution backlog** — four decidable-now fixtures plus an
+  upstream costly-identity (Douceur) gate. Nothing in it promotes token, bounty,
+  governance, payout, launch, authority, or implementation readiness; the four
+  fixtures are validation-ready, not validated, and still require the authority
+  route to advance.
 
 ## Continue Research From Here
 
 1. Start with [GUIDE.md](GUIDE.md), [AGENTS.md](AGENTS.md), and
    [.arcanum/inventory/index.md](.arcanum/inventory/index.md).
-2. For mechanism work, begin with the contribution-edge fixture package and the
+2. For mechanism work, begin with the program synthesis
+   [findings.md](dispatch/economy-synthesis/findings.md) fixture & constitution
+   backlog (it ranks what to build and names each result's owner), then the
+   contribution-edge fixture package and the
    [implementation boundary plan](development/implementation-boundary-plan.md).
 3. For external evidence, work inside the relevant subtower and update
    [sources/source-records.md](sources/source-records.md) plus

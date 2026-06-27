@@ -349,3 +349,39 @@ Owner: ResonantOS economy research owner
   preserve provenance and operator context. No policy, implementation,
   validation, launch, payout, token, bounty, governance, or authority claim was
   promoted.
+
+## 2026-06-27 economy-resilience program synthesis (Phase 2) closeout
+
+- Mode: dispatch-close (terminal synthesis of the meta multi-tower program)
+- Dispatch closed: `2026-06-27-econ-program-synthesis`, `exit_reason=resolved`,
+  auditor verdict ACCEPT (no revision).
+- Agents spawned: 6 total — 1 synthesizer (Simon), 3 robot-talks reviewers
+  (Popper/Quine/Meadows), 1 writer (Senge), 1 auditor (Brandenburg);
+  loops_used=1 (synthesizer⇄reviewers zig-zag ran once; auditor accepted on the
+  first writer pass, so the auditor→writer feedback edge was not used).
+- Parent: meta program `2026-06-27-resonantos-economy-program`.
+- Durable outputs: `dispatch/economy-synthesis/findings.md` (program
+  deliverable), `synthesis-draft.md`, and the six reviewer position files
+  (`reviewer-{popper,quine,meadows}-{initial,final}.md`).
+- Source registered: SYN-ECON-PROGRAM-FINDINGS in `sources/source-records.md`.
+- Index updated: pending entry under `.arcanum/inventory/entries/`
+- Log updated: yes
+- Contradictions flagged: 0
+- Notes: Consumed the four frozen SYN-ECON-TOWER-* tower findings as local
+  sources and reconciled them BY attack-lane (lane × tower matrix). The
+  robot-talks round did NOT collapse to one voice — collapse-detection records
+  per-reviewer initial→final shifts plus three preserved residual dissents. Key
+  adjudications: the §0.3 "measurement must not act as authority" spine survives
+  only as a PROHIBITION (affirmative "the credit graph IS the strengthening
+  mechanism" killed); the fixture backlog was rebuilt on three orthogonal axes
+  (object+owner / testability / confidence-as-annotation) using an
+  owner-identity merge/split rule, yielding exactly FOUR decidable-NOW fixtures
+  (measurement≠authority TF-11, flow-conservation, runway-inequality, audit-
+  randomization three-arm) with the Douceur costly-identity primitive reclassed
+  as an upstream GATE, not a queue item; salience was deleted from the build
+  ranking (it was leaking into authority over the queue). Local-research-only:
+  nothing promoted into definitions, token policy, governance weights, anti-
+  gaming proof, launch, or implementation; the four NOW fixtures are
+  validation-READY, not validated. The downstream fixtures phase
+  (research-evidence-harness) and the authority/constitution lane now have a
+  ranked, owner-named backlog to act on.

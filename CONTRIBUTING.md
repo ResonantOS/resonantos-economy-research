@@ -64,3 +64,13 @@ readiness, or authority transfer.
 
 Fixture work may produce `research-pass`, `research-flag`, or `research-block`
 for a local scaffold. It does not validate the economy.
+
+The cross-corpus program synthesis
+([dispatch/economy-synthesis/findings.md](dispatch/economy-synthesis/findings.md))
+now supplies a ranked **fixture & constitution backlog**: four decidable-now
+fixtures (measurement-is-not-authority, flow-conservation, treasury runway,
+audit-randomization), an upstream costly-identity (Douceur) gate, and routings
+to the authority/constitution lane. Take the next fixture from that backlog, not
+from intuition — and keep its decidable pass/fail condition. A candidate
+invariant that only "owes a fixture" is not validated; do not let a backlog item
+read as a result until its fixture has actually been run.
