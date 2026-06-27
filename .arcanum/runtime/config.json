@@ -1,0 +1,39 @@
+{
+  "schema_version": "arcanum.runtime.config.v1",
+  "command_surface": "repo-local,repo-codex",
+  "default_adapter": "native-skill",
+  "adapters": {
+    "native-skill": {
+      "enabled": true,
+      "profile_path": ".arcanum/runtime/adapters/native-skill.json"
+    },
+    "codex-skill": {
+      "enabled": true,
+      "profile_path": ".arcanum/runtime/adapters/codex-skill.json"
+    },
+    "claude-skill": {
+      "enabled": true,
+      "profile_path": ".arcanum/runtime/adapters/claude-skill.json"
+    },
+    "copilot-instructions": {
+      "enabled": true,
+      "profile_path": ".arcanum/runtime/adapters/copilot-instructions.json"
+    },
+    "local-skill": {
+      "enabled": true,
+      "profile_path": ".arcanum/runtime/adapters/local-skill.json"
+    },
+    "codex-exec": {
+      "enabled": true,
+      "profile_path": ".arcanum/runtime/adapters/codex-exec.json"
+    },
+    "codex-bypass": {
+      "enabled": true,
+      "profile_path": ".arcanum/runtime/adapters/codex-bypass.json"
+    },
+    "dry-run": {
+      "enabled": true,
+      "profile_path": ".arcanum/runtime/adapters/dry-run.json"
+    }
+  }
+}

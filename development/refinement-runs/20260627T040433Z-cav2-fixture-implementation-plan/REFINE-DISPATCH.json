@@ -1,0 +1,108 @@
+{
+  "dispatch_id": "refine-20260627T040433Z-cav2-fixture-implementation-plan",
+  "runtime": "codex",
+  "target": "CAv2 authority/lifecycle output and implementation-boundary plan",
+  "desired_outcome": "implementation-ready plan for fixture-scaffold materialization only",
+  "preset": "compact",
+  "research_mode": "no-research",
+  "dispatch_spec_validation": {
+    "status": "flag",
+    "reason": "This standalone repository does not contain a dispatch-spec schema or validator surface; route shape is recorded against the refine skill contract only."
+  },
+  "selected_overlays": [
+    {
+      "id": "baseline_sequence",
+      "why": "The target is a bounded planning refinement with explicit evidence and owner-boundary checks."
+    },
+    {
+      "id": "toy_game_for_low_cost_falsification",
+      "why": "The next implementable surface is a fixture package that tests failure cases before mechanism work."
+    },
+    {
+      "id": "memory_residue_for_context_recovery",
+      "why": "The plan depends on prior harvest residue, rejected moves, and non-collapse decisions."
+    }
+  ],
+  "subagent_strategy": {
+    "status": "none",
+    "reason": "The prior harvest already used subagents and produced accepted FIX findings; this refinement only composes the implementation-ready fixture plan."
+  },
+  "steps": [
+    {
+      "stage": "context-builder evidence baseline",
+      "owner": "parent/refine",
+      "status": "pass",
+      "receipt": "REFINE-SEED-PROPOSAL.md"
+    },
+    {
+      "stage": "invoke define",
+      "owner": "parent/refine",
+      "status": "pass",
+      "receipt": "stages/compact-stage-receipts.md#define"
+    },
+    {
+      "stage": "interrogation refine-review",
+      "owner": "parent/refine",
+      "status": "pass",
+      "receipt": "stages/compact-stage-receipts.md#review-1"
+    },
+    {
+      "stage": "research decision",
+      "owner": "parent/refine",
+      "status": "pass",
+      "receipt": "stages/compact-stage-receipts.md#research-decision"
+    },
+    {
+      "stage": "distill",
+      "owner": "parent/refine",
+      "status": "pass",
+      "receipt": "stages/compact-stage-receipts.md#distill"
+    },
+    {
+      "stage": "invoke redefine/design",
+      "owner": "parent/refine",
+      "status": "pass",
+      "receipt": "stages/compact-stage-receipts.md#design"
+    },
+    {
+      "stage": "interrogation refine-design-review",
+      "owner": "parent/refine",
+      "status": "pass",
+      "receipt": "stages/compact-stage-receipts.md#review-2"
+    },
+    {
+      "stage": "distill repair",
+      "owner": "parent/refine",
+      "status": "pass",
+      "receipt": "stages/compact-stage-receipts.md#repair"
+    },
+    {
+      "stage": "invoke plan",
+      "owner": "parent/refine",
+      "status": "pass",
+      "receipt": "../../contribution-edge-fixture-implementation-plan.md"
+    },
+    {
+      "stage": "final interrogation and synthesis",
+      "owner": "parent/refine",
+      "status": "flag",
+      "receipt": "RESULT.md",
+      "flag": "Full dispatch-spec schema validation was unavailable in this repo."
+    }
+  ],
+  "gates": [
+    "claim <= evidence",
+    "research != policy",
+    "score != authority",
+    "public/private clean",
+    "fixture package only",
+    "no economy validation claim",
+    "no token, bounty, governance, payout, launch, or authority effect"
+  ],
+  "outputs": [
+    "../../contribution-edge-fixture-implementation-plan.md",
+    "RESULT.md",
+    "RUN-MANIFEST.md",
+    "evidence-index.json"
+  ]
+}

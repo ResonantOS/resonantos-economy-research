@@ -1,0 +1,17 @@
+{
+  "schema_version": "arcanum.reflection-state.v0.1",
+  "updated": "2026-06-27T02:22:14Z",
+  "sigils": {
+    "domainspec-subagents-strategy": {
+      "last_reflection": "2026-06-27T02:22:14Z",
+      "last_report": ".arcanum/observability/reflections/2026-06-27-domainspec-subagents-strategy-inventory-hook.md",
+      "meaningful_executions_since_reflection": 0,
+      "generated_outputs_since_reflection": 0,
+      "related_workflow_gaps_since_reflection": 0,
+      "severe_workflow_gaps_since_reflection": 0,
+      "quality_bar_failures_since_reflection": 0,
+      "output_contract_drift_since_reflection": 0,
+      "next_trigger": "manual request, 5 meaningful executions, 10 generated outputs, 3 related workflow gaps, or 1 severe gap"
+    }
+  }
+}

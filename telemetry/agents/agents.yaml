@@ -1,0 +1,65 @@
+# agents.yaml — local agent-name pool for governed research dispatch.
+profile: resonantos-economy-research-agents
+schema_version: "0.1.0"
+status: active
+source_boundary:
+  official_resonantdao_source: "https://resonantdao.com/whitepaper/"
+  local_policy: "AGENTS.md"
+  dispatch_strategy: "ops/subagents-strategy/"
+selection_rules:
+  - "Choose names for role fit and source-corpus fit."
+  - "Do not reuse an agent_name within one dispatch."
+  - "A working-group member cannot be the final approver for its own work."
+  - "Agent names are cognitive lenses, not authority."
+allowed_agents:
+  - agent_name: "Taleb, Nassim Nicholas"
+    role_fit: ["explorer", "skeptic"]
+    lane_fit: ["failed-dao-crypto", "tail-risk", "exploit-precedent"]
+  - agent_name: "Kuhn, Thomas"
+    role_fit: ["explorer", "synthesizer"]
+    lane_fit: ["science-of-science", "institutional-credit", "paradigm-dynamics"]
+  - agent_name: "Fritz, Tobias"
+    role_fit: ["explorer", "skeptic"]
+    lane_fit: ["formal-mechanisms", "stochastic-processes", "categorical-probability"]
+  - agent_name: "Kahneman, Daniel"
+    role_fit: ["explorer", "skeptic"]
+    lane_fit: ["behavioral-economics", "motivation", "bias"]
+  - agent_name: "Simon, Herbert"
+    role_fit: ["synthesizer", "explorer"]
+    lane_fit: ["bounded-rationality", "organization", "synthesis"]
+  - agent_name: "Popper, Karl"
+    role_fit: ["skeptic", "auditor"]
+    lane_fit: ["falsifiability", "non-vacuity", "collapse-test"]
+  - agent_name: "Quine, Willard Van Orman"
+    role_fit: ["skeptic"]
+    lane_fit: ["definitional-soundness", "semantic-collapse"]
+  - agent_name: "Meadows, Donella H."
+    role_fit: ["skeptic", "synthesizer"]
+    lane_fit: ["systems", "leverage-points", "feedback-loops"]
+  - agent_name: "Senge, Peter"
+    role_fit: ["writer", "synthesizer"]
+    lane_fit: ["learning-organization", "community-capacity"]
+  - agent_name: "Brandenburg, Martin"
+    role_fit: ["auditor"]
+    lane_fit: ["formal-audit", "schema-conformance", "final-approval"]
+  - agent_name: "Ostrom, Elinor"
+    role_fit: ["explorer", "skeptic"]
+    lane_fit: ["commons-governance", "institutional-design", "collective-action"]
+  - agent_name: "Benkler, Yochai"
+    role_fit: ["explorer"]
+    lane_fit: ["peer-production", "commons", "networked-cooperation"]
+  - agent_name: "Bowles, Samuel"
+    role_fit: ["explorer", "skeptic"]
+    lane_fit: ["incentives", "motivation-crowding", "cooperation"]
+  - agent_name: "Myerson, Roger"
+    role_fit: ["explorer", "skeptic"]
+    lane_fit: ["mechanism-design", "incentive-compatibility", "game-theory"]
+  - agent_name: "Beer, Stafford"
+    role_fit: ["skeptic", "synthesizer"]
+    lane_fit: ["cybernetics", "control-loops", "governance-feedback"]
+  - agent_name: "Hirschman, Albert O."
+    role_fit: ["explorer", "skeptic"]
+    lane_fit: ["exit-voice-loyalty", "institutional-response", "community-dynamics"]
+  - agent_name: "Argyris, Chris"
+    role_fit: ["observer", "reflector", "skeptic"]
+    lane_fit: ["workflow-reflect", "double-loop-learning", "organizational-learning"]

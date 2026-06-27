@@ -1,0 +1,27 @@
+{
+  "adapter_id": "claude-skill",
+  "runtime_kind": "native-agent-skill-surface",
+  "execution_mode": "parent-orchestrated-handoff",
+  "state_model": "current-session-and-native-runtime",
+  "isolation_model": "no-nested-model-cli",
+  "input_shape": "command-prompt-plus-dispatch-step",
+  "output_shape": "artifact-plus-stage-receipt",
+  "failure_model": "passed|flagged|blocked|interrupted|timeout",
+  "package_shape": ".claude/skills/<name>/SKILL.md plus optional .claude/agents/<name>.md",
+  "alias_note": null,
+  "capabilities": [
+    "represent native runtime execution without spawning nested model CLI",
+    "return handoff and receipt requirements for parent orchestration",
+    "record canonical source and alias provenance for generated native packages"
+  ],
+  "limitations": [
+    "not callable as an autonomous shell-only model runtime",
+    "requires the parent runtime to own skill or agent execution and join"
+  ],
+  "validation_surface": [
+    "adapter profile evidence",
+    "dispatch-spec validation",
+    "stage receipt validation",
+    "observer or fallback telemetry receipt"
+  ]
+}

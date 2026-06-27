@@ -1,0 +1,49 @@
+{
+  "run_id": "20260627T040433Z-cav2-fixture-implementation-plan",
+  "status": "flag",
+  "status_reason": "Plan completed; formal dispatch-spec schema validation unavailable in this standalone repository.",
+  "research_mode": "no-research",
+  "artifacts": [
+    {
+      "path": "development/contribution-edge-fixture-implementation-plan.md",
+      "kind": "implementation_plan",
+      "status": "pass"
+    },
+    {
+      "path": "development/refinement-runs/20260627T040433Z-cav2-fixture-implementation-plan/REFINE-SEED-PROPOSAL.md",
+      "kind": "seed",
+      "status": "pass"
+    },
+    {
+      "path": "development/refinement-runs/20260627T040433Z-cav2-fixture-implementation-plan/REFINE-DISPATCH.json",
+      "kind": "dispatch_route",
+      "status": "flag"
+    },
+    {
+      "path": "development/refinement-runs/20260627T040433Z-cav2-fixture-implementation-plan/RUNTIME-HANDOFF.md",
+      "kind": "runtime_handoff",
+      "status": "pass"
+    },
+    {
+      "path": "development/refinement-runs/20260627T040433Z-cav2-fixture-implementation-plan/stages/compact-stage-receipts.md",
+      "kind": "stage_receipts",
+      "status": "flag"
+    },
+    {
+      "path": "development/refinement-runs/20260627T040433Z-cav2-fixture-implementation-plan/RESULT.md",
+      "kind": "result",
+      "status": "flag"
+    }
+  ],
+  "blocked_claims": [
+    "economy validation",
+    "token policy",
+    "bounty policy",
+    "governance rule",
+    "payout rule",
+    "launch readiness",
+    "authority promotion",
+    "anti-gaming proof"
+  ],
+  "next_route": "task-session for validation/contribution-edge-fixtures/ only"
+}

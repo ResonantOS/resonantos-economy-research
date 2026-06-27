@@ -1,0 +1,60 @@
+{
+  "run_id": "20260627T041500Z-cav2-fixture-full-refine",
+  "dispatch_id": "refine-20260627T041500Z-cav2-fixture-full-refine",
+  "status": "pass",
+  "preset": "full",
+  "research_mode": "no-research",
+  "subagent_strategy": "none",
+  "validator": "formulae/dispatch-spec/scripts/validate-dispatch.py",
+  "artifacts": [
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/REFINE-SEED-PROPOSAL.md",
+      "kind": "seed",
+      "status": "pass"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/REFINE-DISPATCH.json",
+      "kind": "dispatch_route",
+      "status": "pass"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/RUNTIME-HANDOFF.md",
+      "kind": "runtime_handoff",
+      "status": "pass"
+    },
+    {
+      "path": "development/contribution-edge-fixture-implementation-plan.md",
+      "kind": "implementation_plan",
+      "status": "pass"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/RESULT.md",
+      "kind": "result",
+      "status": "pass"
+    }
+  ],
+  "stage_receipts": [
+    "rf01-context-builder",
+    "rf02-invoke-define",
+    "rf03-interrogation-review",
+    "rf04-research-decision",
+    "rf05-distill",
+    "rf06-invoke-design",
+    "rf07-interrogation-design-review",
+    "rf08-distill-repair",
+    "rf09-invoke-plan",
+    "rf10-final-synthesis"
+  ],
+  "blocked_claims": [
+    "economy validation",
+    "token policy",
+    "bounty policy",
+    "governance rule",
+    "payout rule",
+    "launch readiness",
+    "authority promotion",
+    "anti-gaming proof",
+    "reciprocal CAv2 promotion"
+  ],
+  "next_route": "task-session for validation/contribution-edge-fixtures/ only"
+}

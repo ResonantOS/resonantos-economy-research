@@ -1,0 +1,692 @@
+{
+  "dispatch_id": "refine-20260627T041500Z-cav2-fixture-full-refine",
+  "parent_dispatch_id": null,
+  "intent": {
+    "raw": "/refine now the output so we have a implementation ready plan; copy first from ../domainspec-core/arcanum the dispatch we should run full",
+    "objective": "Run the full canonical Refine loop over the CAv2 authority/lifecycle output and produce a task-session-ready fixture-scaffold implementation plan.",
+    "target_artifact": "development/contribution-edge-fixture-implementation-plan.md",
+    "arcanum_vocabulary": [
+      "refine",
+      "dispatch-spec",
+      "context-builder",
+      "invoke",
+      "interrogation",
+      "distill",
+      "task-session"
+    ],
+    "operator_sentence": "Refine the output into an implementation-ready plan for the next safe fixture-scaffold implementation step."
+  },
+  "mode": "sequence",
+  "techniques": [
+    "sequence",
+    "frame_handoff",
+    "handle_handoff",
+    "validation_loop",
+    "toy_game",
+    "memory_loop",
+    "residue_ledger",
+    "owner_boundary_check",
+    "observability_grouping",
+    "execution_receipt_handoff",
+    "evidence_receipt_link",
+    "state_namespace_boundary",
+    "memory_promotion_split"
+  ],
+  "technique_overlays": [
+    {
+      "overlay_id": "baseline_sequence",
+      "trigger": "Full Refine packet requires ordered stage handoffs and native receipts.",
+      "techniques": [
+        "sequence",
+        "frame_handoff",
+        "handle_handoff",
+        "validation_loop",
+        "owner_boundary_check",
+        "observability_grouping"
+      ],
+      "applies_to_steps": [
+        "rf01-context-builder",
+        "rf02-invoke-define",
+        "rf03-interrogation-review",
+        "rf04-research-decision",
+        "rf05-distill",
+        "rf06-invoke-design",
+        "rf07-interrogation-design-review",
+        "rf08-distill-repair",
+        "rf09-invoke-plan",
+        "rf10-final-synthesis"
+      ],
+      "validation_expectation": "Every stage records an artifact and native receipt."
+    },
+    {
+      "overlay_id": "toy_game_for_low_cost_falsification",
+      "trigger": "The implementable unit is a fixture package that tests controlled negative cases before mechanism work.",
+      "techniques": [
+        "toy_game",
+        "validation_loop",
+        "assessment_failure_reference"
+      ],
+      "applies_to_steps": [
+        "rf05-distill",
+        "rf08-distill-repair",
+        "rf09-invoke-plan"
+      ],
+      "validation_expectation": "The selected plan names fixtures, typed negatives, and failure interpretation before implementation."
+    },
+    {
+      "overlay_id": "memory_residue_for_context_recovery",
+      "trigger": "The target depends on accepted harvest findings, rejected moves, and unresolved residue.",
+      "techniques": [
+        "memory_loop",
+        "residue_ledger",
+        "data_quality_deduplication"
+      ],
+      "applies_to_steps": [
+        "rf01-context-builder",
+        "rf05-distill",
+        "rf10-final-synthesis"
+      ],
+      "validation_expectation": "Prior findings and rejected alternatives are preserved without silent promotion."
+    }
+  ],
+  "subagent_strategy": {
+    "status": "none",
+    "trigger": "No new sibling-agent uncertainty remains after the accepted authority/lifecycle harvest.",
+    "explanation": "The prior harvest already used subagents and reached accepted FIX findings. This full refine run validates and materializes the stage packet for the implementation plan.",
+    "context": [
+      "Accepted CAv2 authority/lifecycle findings exist.",
+      "The next safe implementation surface is a fixture package, not mechanism code."
+    ],
+    "roles": [],
+    "parallelism": "none",
+    "join_policy": "none",
+    "authorization": "not_needed",
+    "receipt_requirements": []
+  },
+  "subagent_lifecycle": {
+    "status": "none",
+    "agents": []
+  },
+  "boundary_evidence": {
+    "boundaries": [
+      {
+        "boundary_id": "b-fixture-only",
+        "kind": "state_write",
+        "from_owner": "refine",
+        "to_owner": "task-session",
+        "applies_to_steps": [
+          "rf09-invoke-plan",
+          "rf10-final-synthesis"
+        ],
+        "contract": "The next task-session may write only validation/contribution-edge-fixtures/ and local links named by the plan.",
+        "on_violation": "block"
+      },
+      {
+        "boundary_id": "b-authority-separation",
+        "kind": "capability_handoff",
+        "from_owner": "refine",
+        "to_owner": "task-session",
+        "applies_to_steps": [
+          "rf03-interrogation-review",
+          "rf07-interrogation-design-review",
+          "rf09-invoke-plan",
+          "rf10-final-synthesis"
+        ],
+        "contract": "Fixture outputs cannot mutate reward, authority, policy, governance, payout, launch, or economy-validation state.",
+        "on_violation": "block"
+      }
+    ],
+    "authority": {
+      "lifecycle": "refine",
+      "execution": "task-session for fixture materialization only",
+      "validation": "dispatch-spec and later research-evidence-harness",
+      "evidence": "local repository artifacts",
+      "memory": "inventory only after owner review",
+      "promotion": "owning authority route; never fixture pass alone"
+    },
+    "receipts": [
+      {
+        "receipt_id": "r-full-refine",
+        "producer": "refine",
+        "required_fields": [
+          "dispatch_id",
+          "step_id",
+          "capability_ref",
+          "status",
+          "artifacts",
+          "validation",
+          "observer_status",
+          "blockers",
+          "residue",
+          "handoff_note"
+        ],
+        "stores": [
+          "RUN-MANIFEST.md",
+          "evidence-index.json",
+          "RESULT.md"
+        ],
+        "on_missing": "block"
+      }
+    ],
+    "state_namespaces": [
+      {
+        "namespace": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine",
+        "owner": "refine",
+        "write_policy": "Full Refine packet artifacts only."
+      },
+      {
+        "namespace": "validation/contribution-edge-fixtures",
+        "owner": "future task-session",
+        "write_policy": "Fixture package files only after this plan is accepted."
+      }
+    ],
+    "promotion_splits": [
+      {
+        "source": "execution evidence",
+        "target": "inventory knowledge",
+        "rule": "requires owner review before canonical promotion",
+        "on_violation": "block"
+      },
+      {
+        "source": "fixture pass",
+        "target": "economy validation",
+        "rule": "not allowed; fixture evidence can only route to later evidence-harness review",
+        "on_violation": "block"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "step_id": "rf01-context-builder",
+      "name": "Context Builder evidence baseline",
+      "capability_ref": "context-builder",
+      "mode": "standard",
+      "pattern": "sequential",
+      "techniques": [
+        "frame_handoff",
+        "memory_loop"
+      ],
+      "inputs": [
+        {
+          "kind": "intent",
+          "ref": "intent.raw"
+        }
+      ],
+      "outputs": [
+        {
+          "kind": "frame",
+          "ref": "stages/01-context-builder/RESULT.md"
+        }
+      ],
+      "stop_conditions": [
+        "block if accepted findings or boundary plan are missing"
+      ]
+    },
+    {
+      "step_id": "rf02-invoke-define",
+      "name": "Invoke Define",
+      "capability_ref": "invoke",
+      "mode": "define",
+      "pattern": "sequential",
+      "techniques": [
+        "frame_handoff"
+      ],
+      "inputs": [
+        {
+          "kind": "frame",
+          "ref": "stages/01-context-builder/RESULT.md"
+        }
+      ],
+      "outputs": [
+        {
+          "kind": "artifact",
+          "ref": "stages/02-invoke-define/RESULT.md"
+        }
+      ],
+      "stop_conditions": [
+        "block if the implementable unit is not fixture-scaffold materialization"
+      ]
+    },
+    {
+      "step_id": "rf03-interrogation-review",
+      "name": "Interrogation refine-review",
+      "capability_ref": "interrogation",
+      "mode": "refine-review",
+      "pattern": "validation",
+      "techniques": [
+        "validation_loop",
+        "owner_boundary_check"
+      ],
+      "inputs": [
+        {
+          "kind": "artifact",
+          "ref": "stages/02-invoke-define/RESULT.md"
+        }
+      ],
+      "outputs": [
+        {
+          "kind": "ledger",
+          "ref": "stages/03-interrogation-review/RESULT.md"
+        }
+      ],
+      "evidence_artifact": "stages/03-interrogation-review/RESULT.md",
+      "stop_conditions": [
+        "block if fixture readiness is confused with economy implementation readiness"
+      ]
+    },
+    {
+      "step_id": "rf04-research-decision",
+      "name": "Research decision",
+      "capability_ref": "refine",
+      "mode": "no-research",
+      "pattern": "decision",
+      "techniques": [
+        "protected_context_flag"
+      ],
+      "inputs": [
+        {
+          "kind": "ledger",
+          "ref": "stages/03-interrogation-review/RESULT.md"
+        }
+      ],
+      "outputs": [
+        {
+          "kind": "decision",
+          "ref": "stages/04-research-decision/RESULT.md"
+        }
+      ],
+      "stop_conditions": [
+        "block if external research is needed but not approved"
+      ]
+    },
+    {
+      "step_id": "rf05-distill",
+      "name": "Distill coherent unit",
+      "capability_ref": "distill",
+      "mode": "standard",
+      "pattern": "distill",
+      "techniques": [
+        "scu_swu_reduction",
+        "toy_game",
+        "residue_ledger"
+      ],
+      "inputs": [
+        {
+          "kind": "decision",
+          "ref": "stages/04-research-decision/RESULT.md"
+        }
+      ],
+      "outputs": [
+        {
+          "kind": "artifact",
+          "ref": "stages/05-distill/RESULT.md"
+        }
+      ],
+      "evidence_artifact": "stages/05-distill/RESULT.md",
+      "stop_conditions": [
+        "block if the selected unit includes scoring, reward, token, bounty, governance, payout, or launch work"
+      ]
+    },
+    {
+      "step_id": "rf06-invoke-design",
+      "name": "Invoke Redefine / Design",
+      "capability_ref": "invoke",
+      "mode": "design",
+      "pattern": "sequential",
+      "techniques": [
+        "handle_handoff",
+        "concrete_path_evidence"
+      ],
+      "inputs": [
+        {
+          "kind": "artifact",
+          "ref": "stages/05-distill/RESULT.md"
+        }
+      ],
+      "outputs": [
+        {
+          "kind": "artifact",
+          "ref": "stages/06-invoke-design/RESULT.md"
+        }
+      ],
+      "stop_conditions": [
+        "block if target file list or fixture contract is incomplete"
+      ]
+    },
+    {
+      "step_id": "rf07-interrogation-design-review",
+      "name": "Interrogation refine-design-review",
+      "capability_ref": "interrogation",
+      "mode": "refine-design-review",
+      "pattern": "validation",
+      "techniques": [
+        "validation_loop",
+        "owner_boundary_check"
+      ],
+      "inputs": [
+        {
+          "kind": "artifact",
+          "ref": "stages/06-invoke-design/RESULT.md"
+        }
+      ],
+      "outputs": [
+        {
+          "kind": "ledger",
+          "ref": "stages/07-interrogation-design-review/RESULT.md"
+        }
+      ],
+      "evidence_artifact": "stages/07-interrogation-design-review/RESULT.md",
+      "stop_conditions": [
+        "block if a fixture pass can be read as proof of economy validity"
+      ]
+    },
+    {
+      "step_id": "rf08-distill-repair",
+      "name": "Distill Repair",
+      "capability_ref": "distill",
+      "mode": "validate",
+      "pattern": "distill",
+      "techniques": [
+        "validation_loop",
+        "assessment_failure_reference",
+        "residue_ledger"
+      ],
+      "inputs": [
+        {
+          "kind": "ledger",
+          "ref": "stages/07-interrogation-design-review/RESULT.md"
+        }
+      ],
+      "outputs": [
+        {
+          "kind": "artifact",
+          "ref": "stages/08-distill-repair/RESULT.md"
+        }
+      ],
+      "evidence_artifact": "stages/08-distill-repair/RESULT.md",
+      "stop_conditions": [
+        "block if typed negatives or stop conditions are missing"
+      ]
+    },
+    {
+      "step_id": "rf09-invoke-plan",
+      "name": "Invoke Plan",
+      "capability_ref": "invoke",
+      "mode": "plan",
+      "pattern": "handoff",
+      "techniques": [
+        "validation_loop",
+        "execution_receipt_handoff",
+        "evidence_receipt_link"
+      ],
+      "inputs": [
+        {
+          "kind": "artifact",
+          "ref": "stages/08-distill-repair/RESULT.md"
+        }
+      ],
+      "outputs": [
+        {
+          "kind": "artifact",
+          "ref": "development/contribution-edge-fixture-implementation-plan.md"
+        }
+      ],
+      "evidence_artifact": "development/contribution-edge-fixture-implementation-plan.md",
+      "stop_conditions": [
+        "block if the plan authorizes mechanism code instead of fixture files"
+      ]
+    },
+    {
+      "step_id": "rf10-final-synthesis",
+      "name": "Final Interrogation and Refine synthesis",
+      "capability_ref": "refine",
+      "mode": "refine-final",
+      "pattern": "synthesis",
+      "techniques": [
+        "residue_ledger",
+        "state_namespace_boundary",
+        "memory_promotion_split"
+      ],
+      "inputs": [
+        {
+          "kind": "artifact",
+          "ref": "development/contribution-edge-fixture-implementation-plan.md"
+        }
+      ],
+      "outputs": [
+        {
+          "kind": "artifact",
+          "ref": "RESULT.md"
+        }
+      ],
+      "stop_conditions": [
+        "block if final synthesis claims token, bounty, governance, payout, launch, policy, authority, anti-gaming proof, or economy validation"
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "gate_id": "g01-claim-evidence",
+      "kind": "quality",
+      "owner": "refine",
+      "condition": "Every implementation-ready claim is limited to fixture-scaffold materialization and cites local source evidence.",
+      "on_fail": "block"
+    },
+    {
+      "gate_id": "g02-research-not-policy",
+      "kind": "promotion_guardrail",
+      "owner": "refine",
+      "condition": "The route must not create token policy, bounty policy, governance rule, payout rule, launch readiness, product implementation, or authority promotion.",
+      "on_fail": "block"
+    },
+    {
+      "gate_id": "g03-native-capability-receipts",
+      "kind": "validation",
+      "owner": "dispatch-spec",
+      "condition": "Each native runtime-backed stage records a native stage receipt before pass is claimed.",
+      "on_fail": "block"
+    },
+    {
+      "gate_id": "g04-score-not-authority",
+      "kind": "promotion_guardrail",
+      "owner": "refine",
+      "condition": "Research status, fixture pass, score, citation, inventory entry, or reviewer status must not become authority.",
+      "on_fail": "block"
+    },
+    {
+      "gate_id": "g05-fixture-only-handoff",
+      "kind": "validation",
+      "owner": "refine",
+      "condition": "The next task-session may materialize validation fixture files only.",
+      "on_fail": "block"
+    }
+  ],
+  "native_stage_receipts": [
+    {
+      "dispatch_id": "refine-20260627T041500Z-cav2-fixture-full-refine",
+      "step_id": "rf01-context-builder",
+      "capability_ref": "context-builder",
+      "receipt_kind": "native-stage",
+      "status": "pass",
+      "artifacts": [
+        "stages/01-context-builder/RESULT.md"
+      ],
+      "validation": [
+        "local evidence baseline exists"
+      ],
+      "observer_status": "not_run",
+      "blockers": [],
+      "residue": "",
+      "handoff_note": "Parent-owned stage artifact."
+    },
+    {
+      "dispatch_id": "refine-20260627T041500Z-cav2-fixture-full-refine",
+      "step_id": "rf02-invoke-define",
+      "capability_ref": "invoke",
+      "receipt_kind": "native-stage",
+      "status": "pass",
+      "artifacts": [
+        "stages/02-invoke-define/RESULT.md"
+      ],
+      "validation": [
+        "implementable unit defined as fixture package only"
+      ],
+      "observer_status": "not_run",
+      "blockers": [],
+      "residue": "",
+      "handoff_note": "Parent-owned stage artifact."
+    },
+    {
+      "dispatch_id": "refine-20260627T041500Z-cav2-fixture-full-refine",
+      "step_id": "rf03-interrogation-review",
+      "capability_ref": "interrogation",
+      "receipt_kind": "native-stage",
+      "status": "pass",
+      "artifacts": [
+        "stages/03-interrogation-review/RESULT.md"
+      ],
+      "validation": [
+        "claim/evidence and policy-boundary checks pass"
+      ],
+      "observer_status": "not_run",
+      "blockers": [],
+      "residue": "",
+      "handoff_note": "Parent-owned stage artifact."
+    },
+    {
+      "dispatch_id": "refine-20260627T041500Z-cav2-fixture-full-refine",
+      "step_id": "rf04-research-decision",
+      "capability_ref": "refine",
+      "receipt_kind": "native-stage",
+      "status": "pass",
+      "artifacts": [
+        "stages/04-research-decision/RESULT.md"
+      ],
+      "validation": [
+        "no-research decision recorded"
+      ],
+      "observer_status": "not_run",
+      "blockers": [],
+      "residue": "",
+      "handoff_note": "Parent-owned stage artifact."
+    },
+    {
+      "dispatch_id": "refine-20260627T041500Z-cav2-fixture-full-refine",
+      "step_id": "rf05-distill",
+      "capability_ref": "distill",
+      "receipt_kind": "native-stage",
+      "status": "pass",
+      "artifacts": [
+        "stages/05-distill/RESULT.md"
+      ],
+      "validation": [
+        "smallest workable unit selected"
+      ],
+      "observer_status": "not_run",
+      "blockers": [],
+      "residue": "Mechanism work remains blocked.",
+      "handoff_note": "Parent-owned stage artifact."
+    },
+    {
+      "dispatch_id": "refine-20260627T041500Z-cav2-fixture-full-refine",
+      "step_id": "rf06-invoke-design",
+      "capability_ref": "invoke",
+      "receipt_kind": "native-stage",
+      "status": "pass",
+      "artifacts": [
+        "stages/06-invoke-design/RESULT.md"
+      ],
+      "validation": [
+        "fixture design file list and contract complete"
+      ],
+      "observer_status": "not_run",
+      "blockers": [],
+      "residue": "",
+      "handoff_note": "Parent-owned stage artifact."
+    },
+    {
+      "dispatch_id": "refine-20260627T041500Z-cav2-fixture-full-refine",
+      "step_id": "rf07-interrogation-design-review",
+      "capability_ref": "interrogation",
+      "receipt_kind": "native-stage",
+      "status": "pass",
+      "artifacts": [
+        "stages/07-interrogation-design-review/RESULT.md"
+      ],
+      "validation": [
+        "non-collapse and stop-condition checks pass"
+      ],
+      "observer_status": "not_run",
+      "blockers": [],
+      "residue": "",
+      "handoff_note": "Parent-owned stage artifact."
+    },
+    {
+      "dispatch_id": "refine-20260627T041500Z-cav2-fixture-full-refine",
+      "step_id": "rf08-distill-repair",
+      "capability_ref": "distill",
+      "receipt_kind": "native-stage",
+      "status": "pass",
+      "artifacts": [
+        "stages/08-distill-repair/RESULT.md"
+      ],
+      "validation": [
+        "typed negatives and verification commands retained"
+      ],
+      "observer_status": "not_run",
+      "blockers": [],
+      "residue": "",
+      "handoff_note": "Parent-owned stage artifact."
+    },
+    {
+      "dispatch_id": "refine-20260627T041500Z-cav2-fixture-full-refine",
+      "step_id": "rf09-invoke-plan",
+      "capability_ref": "invoke",
+      "receipt_kind": "native-stage",
+      "status": "pass",
+      "artifacts": [
+        "../../contribution-edge-fixture-implementation-plan.md"
+      ],
+      "validation": [
+        "plan is task-session-ready for fixture files only"
+      ],
+      "observer_status": "not_run",
+      "blockers": [],
+      "residue": "",
+      "handoff_note": "Plan artifact is outside the run folder by design."
+    },
+    {
+      "dispatch_id": "refine-20260627T041500Z-cav2-fixture-full-refine",
+      "step_id": "rf10-final-synthesis",
+      "capability_ref": "refine",
+      "receipt_kind": "native-stage",
+      "status": "pass",
+      "artifacts": [
+        "RESULT.md"
+      ],
+      "validation": [
+        "final synthesis preserves fixture-only handoff"
+      ],
+      "observer_status": "not_run",
+      "blockers": [],
+      "residue": "Future task-session must not implement economy mechanics.",
+      "handoff_note": "Parent-owned final synthesis."
+    }
+  ],
+  "observability": {
+    "dispatch_id_required": true,
+    "parent_dispatch_id": null,
+    "trace_events": [
+      "dispatch_validated",
+      "stage_receipts_recorded",
+      "refine_result_completed"
+    ],
+    "signal_grouping": "dispatch_id"
+  },
+  "promotion_guardrails": [
+    "Execution evidence is not canonical promotion.",
+    "Fixture pass is not economy validation.",
+    "Research status is not implementation readiness.",
+    "Reviewed credit is not reward, authority, policy, governance, payout, or launch effect."
+  ]
+}

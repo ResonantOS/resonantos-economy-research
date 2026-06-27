@@ -1,0 +1,25 @@
+{
+  "adapter_id": "codex-bypass",
+  "runtime_kind": "model-backed-cli",
+  "execution_mode": "synchronous-process",
+  "state_model": "normal-codex-cli-state",
+  "isolation_model": "codex-cli-danger-full-access",
+  "input_shape": "command-prompt",
+  "output_shape": "requested-output",
+  "failure_model": "passed|flagged|blocked|failed",
+  "capabilities": [
+    "execute Codex CLI with an Arcanum command prompt when explicitly requested",
+    "capture final output in the requested output path"
+  ],
+  "limitations": [
+    "bypasses Codex CLI sandbox and approval prompts",
+    "intended only for externally trusted automation environments"
+  ],
+  "validation_surface": [
+    "adapter profile evidence",
+    "Codex CLI exit classification",
+    "timeout classification",
+    "STATUS.json validation_grade",
+    "events.jsonl closeout"
+  ]
+}

@@ -1,0 +1,16 @@
+# Formal Mechanisms Subtower
+
+Status: scaffolded
+Promotion scope: local-research-only
+
+## Boundary
+
+This subtower studies mechanism design, scoring rules, randomized audits, collusion resistance, conserved credit budgets, Markov/process models, treasury stress tests, and incentive compatibility.
+
+It should produce candidate invariants and fixture ideas, not production token rules.
+
+## Research Questions
+
+- Which mechanisms reduce gaming without making the system illegible?
+- Where should bounded randomness enter: audit selection, review assignment, challenge sampling, or reward allocation?
+- What invariants should be measured before any reward or governance signal hardens?
