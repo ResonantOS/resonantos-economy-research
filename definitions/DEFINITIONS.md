@@ -315,8 +315,10 @@ Plain-language voice: before trusting credit, build examples where credit should
 fail or be resisted.
 
 Domain-context voice: this is the bridge from harvested controls into
-research-evidence-harness work for duplicate paths, collusion, reciprocal
-review, spam, and review capture.
+research-evidence-harness work for duplicate paths, collusion, self-report,
+reciprocal review, spam, and review capture. Self-report independence (an actor
+cannot be the sole witness for their own credit) and reviewer-reviewed
+independence are fixture cases here, not separate definitions.
 
 Use carefully: start with negative fixtures before positive scoring claims.
 
@@ -659,3 +661,340 @@ Misuse warning: do not promote a claim in either repository using a reciprocal
 citation chain alone.
 
 Promotion boundary: deferred CAv2 return candidate
+
+## ER-D21. Signal-to-Authority Cascade Collapse
+
+Candidate control: `cascade-collapse-must-be-gated`
+
+Source kind: operator-reading; local-inference
+
+Evidence: [dispatch/economy-synthesis/findings.md](../dispatch/economy-synthesis/findings.md) §0.3,
+[NOTATION.md](../NOTATION.md) (reading warning),
+[distills/DISTILLED-KNOWLEDGE.md](../distills/DISTILLED-KNOWLEDGE.md)
+
+Formal voice:
+
+```text
+cascade_collapse =
+  activity_metric -> reward -> status -> governance_influence -> authority
+
+economy_resilience requires each_arrow gated_or_broken_until_evidence
+```
+
+Plain-language voice: the core failure is letting one gameable scoreboard flow
+from "what happened" all the way to "who has power."
+
+Domain-context voice: this names the central risk the tower exists to prevent.
+ER-D1 resilience rides on breaking or gating each arrow of the cascade; the
+notation reading-warning and the one-sentence distill are informal pointers to
+this canonical lens.
+
+Use carefully: each arrow is a separate gate; do not assume breaking one arrow
+breaks the rest.
+
+Misuse warning: naming the cascade is not preventing it. Do not treat a single
+gate, or the existence of this definition, as proof of resilience.
+
+Promotion boundary: promotion-candidate
+
+## ER-D22. Costly-Identity Prerequisite
+
+Candidate control: `costly-identity-prerequisite-not-solved`
+
+Source kind: supporting (Douceur 2002, Sybil attack); local-inference; open-residue
+
+Evidence: [dispatch/economy-synthesis/findings.md](../dispatch/economy-synthesis/findings.md) L2-OBLIGATION-A,
+Douceur 2002 (The Sybil Attack)
+
+Formal voice:
+
+```text
+per_identity_reward requires costly_or_reviewed_identity
+costly_identity_prerequisite gates reward_surfaces_upstream
+sybil_resistance != solved_by_naming
+```
+
+Plain-language voice: if making new identities is cheap, any per-person reward
+can be farmed by one actor wearing many masks; a cost or review on identity must
+sit upstream of reward.
+
+Domain-context voice: this is a precondition (a gate) upstream of every
+per-identity reward, contribution-count, or member-level surface. It is not a
+fixture and not a mechanism. Build-from-owned: the Sybil problem is owned by the
+distributed-systems literature (Douceur 2002) — cite it, do not re-derive it.
+
+Use carefully: pair the prerequisite with the specific reward surface it gates,
+and with the failure-corpus and behavioral checks for that surface.
+
+Misuse warning: naming the prerequisite is not a Sybil-resistance proof. Do not
+treat any identity-cost design as solved without a failure-corpus and behavioral
+pass.
+
+Promotion boundary: blocked until an identity-cost model and fixture exist
+
+## ER-D23. Load-Bearing Term Lifecycle
+
+Candidate control: `load-bearing-term-must-track-to-authority`
+
+Source kind: method-authority; synthesis
+
+Evidence: [authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md](../authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md) REC-C14,
+[authority/AUTHORITY-MODEL.md](../authority/AUTHORITY-MODEL.md),
+[research/four-surface-reconciliation/findings.md](../research/four-surface-reconciliation/findings.md)
+
+Formal voice:
+
+```text
+load_bearing_term =
+  symbol_or_named_quantity
+  in {formal_expression, fixture_fail_region, candidate_invariant,
+      decidable_rule, normative_claim_content}
+
+load_bearing_term requires tracked_definition_id
+new_load_bearing_term enters lifecycle_status = candidate
+
+lifecycle_status in {candidate, grounded, promoted, residue, retired}
+candidate -> grounded   (source_kind + workflow_witness_or_typed_negative attached)
+grounded  -> promoted    (owner gate per promotion-policy)
+candidate -> residue     (no source can be found)
+any       -> retired     (term no longer cited by any load-bearing surface)
+
+candidate != validated
+candidate != grounded
+```
+
+Plain-language voice: if a term carries weight in a rule or claim, it must have a
+tracked entry; a brand-new such term starts as a "candidate" placeholder that
+says what is known and what is still missing, and it moves up only as evidence
+arrives.
+
+Domain-context voice: this is the repo-wide anti-drift rule. It closes the gap
+that let `treasury`, `epoch`, and `emission` be cited in a decidable
+flow-conservation FAIL-region with no tracked entry. It adds a `Lifecycle status:`
+field to every new definition card; ER-D1 through ER-D22 are read as `grounded`
+(at their stated promotion boundary) until individually revised. It plugs into
+the AUTHORITY-MODEL source-movement pipeline and `pass/flag/block/defer` gate
+vocabulary rather than replacing them.
+
+Use carefully: pair every `candidate` term with an `Open / to-ground:` field
+naming exactly what must arrive to reach `grounded`. The trigger scope is
+formal-and-claims: symbols in formal expressions, fixture FAIL-regions, candidate
+invariants, decidable rules, or the normative content of a claim-ledger entry.
+
+Misuse warning: `candidate` status is not a license to treat the term as
+defined; a rule containing a `candidate` term is not "fully specified," and a
+candidate term must not be cited as if validated.
+
+Lifecycle status: grounded
+
+Promotion boundary: active local discipline
+
+## ER-D24. Treasury (candidate)
+
+Candidate control: `treasury-reserve-not-sized`
+
+Source kind: primary-source (role); open-residue (value)
+
+Evidence: [claims/SOURCE-CLAIM-LEDGER.md](../claims/SOURCE-CLAIM-LEDGER.md) C5,
+[dispatch/economy-synthesis/findings.md](../dispatch/economy-synthesis/findings.md) L3-INV-A
+
+Formal voice:
+
+```text
+treasury = launch_time_reserve owning $RES_supply
+emission draws_from treasury
+treasury_value = un_snapshotted_whitepaper_claim   # NOT locally verified
+```
+
+Plain-language voice: the reserve that holds the `$RES` supply at launch and that
+emissions are paid out of. We know its role; we do not have a locally verified
+size.
+
+Domain-context voice: appears as the right-hand side of the flow-conservation
+fixture FAIL-region (`Σ(emitted) > treasury`). Its role is anchored by claim C5
+(`$RES` is "treasury-owned at launch"); its size (the 1B / `10⁹` `$RES` figure)
+is a gated, un-snapshotted whitepaper claim and must not be asserted as fact.
+
+Use carefully: cite the role from C5; treat any numeric size as analogy/gated.
+
+Misuse warning: do not assert the treasury size locally; do not treat the
+treasury as a Phase-2 financial mechanism (that is ER-D12, blocked).
+
+Open / to-ground: a ledgered, source-backed treasury size (currently gated
+behind the un-snapshotted whitepaper supply claim).
+
+Lifecycle status: candidate
+
+Promotion boundary: local-research-only
+
+## ER-D25. Epoch (candidate)
+
+Candidate control: `epoch-accounting-period-parameter`
+
+Source kind: local-inference
+
+Evidence: [dispatch/economy-synthesis/findings.md](../dispatch/economy-synthesis/findings.md) §3.2 (flow-conservation fixture)
+
+Formal voice:
+
+```text
+epoch = accounting_period over_which emission is summed
+flow_conservation_check evaluated per epoch
+epoch_basis = fixture_declared_parameter   # block | round | day | ...
+```
+
+Plain-language voice: the time window the flow-conservation check sums emissions
+over before comparing to the treasury. It is a knob the fixture must set, not a
+fact from the source.
+
+Domain-context voice: the quantifier in the flow-conservation FAIL-region
+(`any epoch Σ(emitted) > treasury`). It has no source; the fixture that builds
+formal-TF-1 must declare its basis (per block, per distribution round, per day),
+and that choice is part of the fixture contract.
+
+Use carefully: declare the epoch basis explicitly in the fixture; a different
+basis can change the verdict.
+
+Misuse warning: do not treat the epoch basis as source-given or as a single
+canonical period; it is a parameter.
+
+Open / to-ground: the declared epoch basis in the flow-conservation fixture
+contract.
+
+Lifecycle status: candidate
+
+Promotion boundary: local-research-only
+
+## ER-D26. Emission (candidate)
+
+Candidate control: `emission-flow-input-pending`
+
+Source kind: primary-source (surface); open-residue (schedule)
+
+Evidence: [claims/SOURCE-CLAIM-LEDGER.md](../claims/SOURCE-CLAIM-LEDGER.md) C5,
+[dispatch/economy-synthesis/findings.md](../dispatch/economy-synthesis/findings.md) Lane 3 (L3-INV-A/B/C)
+
+Formal voice:
+
+```text
+emission = per_epoch outflow of $RES from treasury
+Σ(emitted) per epoch  <=  treasury    # the flow-conservation rule
+emission_schedule = pending_input     # not locally specified
+emission != $RCT                      # $RCT never summed into $RES
+```
+
+Plain-language voice: the `$RES` paid out per period. The conservation rule
+bounds the running total of emissions by the treasury; the actual payout
+schedule is the missing input.
+
+Domain-context voice: the left-hand side of the flow-conservation FAIL-region and
+the named Lane-3 risk surface ("the stock is conserved but the flow has no
+certificate"). The emission *schedule* is the "emission input pending" that keeps
+fixture #2 (formal-TF-1) from running today.
+
+Use carefully: emission is a flow, not the `$RES` stock; the risk is in the flow
+dynamics (formal-TF-1 / TF-12 / TF-14), not the supply size.
+
+Misuse warning: do not conflate emission flow with the conserved `$RES` stock,
+and never sum `$RCT` into `$RES`.
+
+Open / to-ground: a source-backed or fixture-declared emission schedule.
+
+Lifecycle status: candidate
+
+Promotion boundary: local-research-only
+
+## ER-D27. Runway Inequality (candidate)
+
+Candidate control: `runway-inequality-zero-buffer-not-thresholds`
+
+Source kind: related-source (Beer F5, solvency/reserve-adequacy); local-inference; open-residue (calibration)
+
+Evidence: [dispatch/economy-synthesis/findings.md](../dispatch/economy-synthesis/findings.md) L5-LAUNCH-BLOCKER / formal-TF-13,
+[subtowers/formal-mechanisms/returns/tower-findings.md](../subtowers/formal-mechanisms/returns/tower-findings.md) TF-13
+
+Formal voice:
+
+```text
+runway = (stables + liquidable*(1 - haircut) - obligations) / burn
+
+# decidable zero-buffer fixture (formal-TF-13):
+FAIL iff (stables + liquidable*(1 - haircut)) = 0 while burn > 0   # runway undefined / <= 0
+PASS iff non-native reserves make the numerator > 0 for a stated burn
+
+stables     = non-native liquid reserves (e.g. stablecoins)
+liquidable  = assets convertible to cash
+haircut     = fractional discount taken when liquidating (0..1)
+obligations = liabilities due in the period
+burn        = outflow rate per period
+named_thresholds = search-only / analogy   # NOT invariants this repo asserts
+```
+
+Plain-language voice: how long the treasury can pay its bills. At 100% native
+`$RES` with no outside reserves the runway is structurally undefined; you need
+non-native reserves to make the numerator positive.
+
+Domain-context voice: the decidable part of the runway-inequality fixture
+(NOW-fixture #3). The *inequality* is borrowed (Beer F5); the named numeric
+thresholds (drawdown 50/80, depeg 0.97–0.99, time-to-cash 1h/24h/7d) are
+search-only analogy from one non-peer source — inputs to calibrate, not
+invariants asserted.
+
+Use carefully: assert only the zero-buffer inequality; treat every numeric
+threshold as a parameter to calibrate, source-kind analogy.
+
+Misuse warning: do not present the named thresholds as validated invariants, and
+do not read a positive runway as Phase-2 financial readiness (ER-D12 stays
+blocked).
+
+Open / to-ground: a source-backed non-native reserve position, a calibrated
+burn, and the provenance of the threshold values.
+
+Lifecycle status: candidate
+
+Promotion boundary: local-research-only
+
+## ER-D28. Measurement-Not-Authority (Stratified Estimate) (candidate)
+
+Candidate control: `stratified-estimate-unbiased-under-steering`
+
+Source kind: related-source (Beer F2 stratified estimate; Fritz F2 order-morphism independence); local-inference; open-residue (adversary class)
+
+Evidence: [dispatch/economy-synthesis/findings.md](../dispatch/economy-synthesis/findings.md) formal-TF-11,
+[subtowers/formal-mechanisms/returns/tower-findings.md](../subtowers/formal-mechanisms/returns/tower-findings.md) C1 / TF-11
+
+Formal voice:
+
+```text
+# keep a stratified-random arm separate from the risk-selected (optimized) arm
+stratified_estimate = health estimate from the stratified-random arm
+true_rate            = ground-truth rate being estimated
+CI                   = stated confidence interval
+
+# decidable fixture (formal-TF-11), under a DECLARED adversarial steering class:
+FAIL iff |E[stratified_estimate] - true_rate| > CI    # estimate biased by steering
+PASS iff |E[stratified_estimate] - true_rate| <= CI   # unbiased regardless of steering
+
+measurement_loop != authority
+```
+
+Plain-language voice: measure system health with a random sample kept separate
+from the optimized/rewarded path, so gaming the rewarded path cannot bias the
+measurement. Seeing the number is not the same as it being right — and it is not
+authority.
+
+Domain-context voice: the decidable part of the Measurement≠Authority fixture
+(NOW-fixture #1, promotion-candidate). It instantiates the observed-signal /
+attention-vs-authority non-collapse (ER-D6 / ER-D8) on the measurement loop.
+
+Use carefully: the PASS is only meaningful once the adversarial steering class is
+PUBLISHED; an unstated adversary makes PASS cheap.
+
+Misuse warning: do not treat an unbiased estimate as authority, as solved
+anti-gaming, or as validated without the declared steering class and CI.
+
+Open / to-ground: the declared adversarial-steering class and the CI bound.
+
+Lifecycle status: candidate
+
+Promotion boundary: local-research-only

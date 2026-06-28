@@ -1,0 +1,316 @@
+ledger_id: craft.resonantos_economy_research
+schema_ref: "/home/vrondelli/projects/domainspec-core/arcanum/arcana/craft/templates/ledger.schema.yml"
+schema_version: 0.3.0
+status: candidate-local
+source_of_truth: .craft/ledger.yml
+human_view: CRAFT.md
+notes:
+  - Craft ledger for the standalone ResonantOS economy resilience research repository.
+  - This ledger tracks research work; it does not promote definitions, constitutions, mechanisms, token/bounty/governance policy, or launch readiness by itself.
+  - Paths are relative to the repository root unless absolute. CAV2 paths are external (a separate repo).
+  - Detailed per-pass narration lives in .arcanum/inventory/log.md; this ledger is the structured context/gate/blocker/decision view over it.
+
+contexts:
+  - context_id: CTX-ECON-ROOT
+    parent_id: root
+    title: ResonantOS economy resilience research
+    purpose: Research a resilient ResonantOS/ResonantDAO economy, source-first, local-research-only, without promoting mechanisms or policy.
+    stage: execute
+    gate: flag
+    next_move: Build NOW-fixture #2 (flow-conservation, formal-TF-1) via the evidence harness; grounding ER-D24/25/26 is its first task.
+    owned_artifacts:
+      - ART-ECON-LEDGER
+      - ART-ECON-VIEW
+      - ART-ECON-README
+      - ART-ECON-PROGRAM-FINDINGS
+    links:
+      - label: Definitions and load-bearing-term tracking
+        target: CTX-ECON-DEFINITIONS
+        kind: row-id
+      - label: Track A fixture backlog
+        target: CTX-ECON-FIXTURES
+        kind: row-id
+      - label: CAV2 reciprocal return
+        target: CTX-ECON-CAV2-RETURN
+        kind: row-id
+  - context_id: CTX-ECON-DEFINITIONS
+    parent_id: CTX-ECON-ROOT
+    title: Definitions spine and load-bearing-term tracking
+    purpose: Keep ER-D1..D28 authoritative and keep every load-bearing term tracked under REC-C14 / ER-D23.
+    stage: execute
+    gate: pass
+    next_move: Ground the candidate terms (ER-D24..D28) as fixtures are built; lazy-migrate Lifecycle status onto ER-D1..D22 when each is next touched.
+    owned_artifacts:
+      - ART-ECON-DEFINITIONS
+      - ART-ECON-DEF-INDEX
+      - ART-ECON-DRIFT-AUDIT
+      - ART-ECON-CONSTITUTION
+      - ART-ECON-LBT-ADAPTER
+      - ART-ECON-FOUR-SURFACE
+    links:
+      - label: Load-bearing-term scope decision
+        target: DEC-ECON-LBT-SCOPE-001
+        kind: row-id
+      - label: Candidate grounding blocker
+        target: BLK-ECON-CANDIDATE-GROUNDING-001
+        kind: row-id
+  - context_id: CTX-ECON-FIXTURES
+    parent_id: CTX-ECON-ROOT
+    title: Track A NOW-fixture backlog
+    purpose: Build the four RULE-DECIDABLE-NOW fixtures (flow-conservation, runway-inequality, TF-11, TF-3) as decidable evidence.
+    stage: plan
+    gate: flag
+    next_move: Build flow-conservation (#2) first; runway-inequality (#3) is near-free after; TF-11 (#1) awaits a published adversary class; TF-3 (#4) is the heavy survey.
+    owned_artifacts:
+      - ART-ECON-PROGRAM-FINDINGS
+    links:
+      - label: Costly-identity gate blocks per-identity fixtures
+        target: BLK-ECON-COSTLY-IDENTITY-001
+        kind: row-id
+  - context_id: CTX-ECON-CAV2-RETURN
+    parent_id: CTX-ECON-ROOT
+    title: Reciprocal return to CyberAlchemy v2
+    purpose: Offer reusable method/discipline back to CAV2 as candidate evidence (ER-D20 / REC-C13), transferring no authority.
+    stage: review-audit
+    gate: flag
+    next_move: Await CAV2 owner review of the load-bearing-term-tracking handoff; do not promote via cyclic citation.
+    owned_artifacts:
+      - ART-ECON-CAV2-HANDOFF
+    links:
+      - label: Standalone-repo decision (CAV2-owned)
+        target: DEC-ECON-STANDALONE-001
+        kind: row-id
+
+artifacts:
+  - artifact_id: ART-ECON-LEDGER
+    title: Craft ledger (source of truth)
+    path: .craft/ledger.yml
+    status: active
+    owner_context: CTX-ECON-ROOT
+  - artifact_id: ART-ECON-VIEW
+    title: Craft human view
+    path: CRAFT.md
+    status: active
+    owner_context: CTX-ECON-ROOT
+  - artifact_id: ART-ECON-README
+    title: Repository README
+    path: README.md
+    status: flag
+    owner_context: CTX-ECON-ROOT
+  - artifact_id: ART-ECON-DEFINITIONS
+    title: Canonical definitions (ER-D1..D28)
+    path: definitions/DEFINITIONS.md
+    status: active
+    owner_context: CTX-ECON-DEFINITIONS
+  - artifact_id: ART-ECON-DEF-INDEX
+    title: Definitions index
+    path: definitions/DEFINITIONS-INDEX.md
+    status: active
+    owner_context: CTX-ECON-DEFINITIONS
+  - artifact_id: ART-ECON-DRIFT-AUDIT
+    title: Definition drift audit
+    path: definitions/DEFINITION-DRIFT-AUDIT.md
+    status: active
+    owner_context: CTX-ECON-DEFINITIONS
+  - artifact_id: ART-ECON-CONSTITUTION
+    title: Research credibility constitution (REC-C1..C14)
+    path: authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md
+    status: active
+    owner_context: CTX-ECON-DEFINITIONS
+  - artifact_id: ART-ECON-LBT-ADAPTER
+    title: REC-C14 load-bearing-term adapter
+    path: tools/check_load_bearing_terms.py
+    status: active
+    owner_context: CTX-ECON-DEFINITIONS
+  - artifact_id: ART-ECON-PROGRAM-FINDINGS
+    title: Economy program synthesis findings (fixture backlog)
+    path: dispatch/economy-synthesis/findings.md
+    status: pass
+    owner_context: CTX-ECON-FIXTURES
+  - artifact_id: ART-ECON-FOUR-SURFACE
+    title: Four-surface reconciliation findings
+    path: research/four-surface-reconciliation/findings.md
+    status: resolved
+    owner_context: CTX-ECON-DEFINITIONS
+  - artifact_id: ART-ECON-CAV2-HANDOFF
+    title: Load-bearing-term tracking handoff to CAV2 (external)
+    path: /home/vrondelli/projects/domainspec-core/cyberAlchemy-v2/authority/imports/resonantos-economy-research/2026-06-28-load-bearing-term-tracking-handoff.md
+    status: flag
+    owner_context: CTX-ECON-CAV2-RETURN
+
+decisions:
+  - decision_id: DEC-ECON-STANDALONE-001
+    scope_id: CTX-ECON-ROOT
+    decision_type: selection
+    question: Should the economy resilience research live in a standalone repository with CAV2 as method authority only?
+    selected: standalone-repository
+    rationale: Prevents CAV2 product authority from being confused with ResonantDAO economy policy. Owned by the CAV2 decision 2026-06-26.
+    status: active
+    blocking: false
+    impact: CAV2 grants only method authority; no token/bounty/governance/payout/launch authority.
+  - decision_id: DEC-ECON-LBT-SCOPE-001
+    scope_id: CTX-ECON-DEFINITIONS
+    decision_type: selection
+    question: What triggers REC-C14 mandatory load-bearing-term tracking?
+    options:
+      - formal-and-claims
+      - formal-only
+      - every-cited-noun
+    default_option: formal-and-claims
+    selected: formal-and-claims
+    rationale: Catches the treasury/epoch drift class, excludes ordinary prose, stays grep-enforceable.
+    status: active
+    blocking: false
+    impact: Defines the scope the adapter and drift audit enforce.
+  - decision_id: DEC-ECON-LEDGER-LOCATION-001
+    scope_id: CTX-ECON-ROOT
+    decision_type: selection
+    question: Where should the work-tracking ledger live?
+    options:
+      - in-repo-craft
+      - extend-arcanum-inventory
+      - domainspec-core-arcanum-craft
+    default_option: in-repo-craft
+    selected: in-repo-craft
+    rationale: Keeps the standalone boundary clean; arcanum craft tracks arcanum work, not economy research.
+    status: active
+    blocking: false
+    impact: This ledger.
+  - decision_id: DEC-ECON-SWEEP-INLINE-001
+    scope_id: CTX-ECON-DEFINITIONS
+    decision_type: selection
+    question: Handle the load-bearing-term sweep via dispatch or inline?
+    options:
+      - inline-candidate-defs
+      - full-dispatch
+      - log-only
+    default_option: inline-candidate-defs
+    selected: inline-candidate-defs
+    rationale: The deterministic adapter collapsed the task to ~12 terms / ~2 candidate defs; a 7-agent dispatch was overkill.
+    status: active
+    blocking: false
+    impact: ER-D27/D28 created inline; no dispatch registered.
+
+typed_items:
+  - item_id: BLK-ECON-COSTLY-IDENTITY-001
+    kind: blocker
+    base_type: prerequisite_blocker
+    primary_lane: research
+    source_id: CTX-ECON-DEFINITIONS
+    target_id: CTX-ECON-FIXTURES
+    status: active
+    delegation_route: research-evidence-harness
+    requires_human: true
+    role_notes: Per-identity reward surfaces are undefined until a costly-identity primitive lands (ER-D22 / Douceur 2002). Upstream of any per-identity fixture.
+  - item_id: BLK-ECON-PHASE2-001
+    kind: blocker
+    base_type: scope_blocker
+    primary_lane: authority
+    source_id: CTX-ECON-ROOT
+    target_id: CTX-ECON-FIXTURES
+    status: active
+    delegation_route: decision-gate
+    requires_human: true
+    role_notes: Phase 2 financial mechanisms blocked (ER-D12) until external readiness gates pass.
+  - item_id: BLK-ECON-CANDIDATE-GROUNDING-001
+    kind: blocker
+    base_type: evidence_blocker
+    primary_lane: research
+    source_id: CTX-ECON-DEFINITIONS
+    target_id: CTX-ECON-FIXTURES
+    status: active
+    delegation_route: research-evidence-harness
+    requires_human: false
+    role_notes: Candidate terms await grounding — treasury size (ER-D24), epoch basis (ER-D25), emission schedule (ER-D26), runway calibration (ER-D27), TF-11 adversary class + CI (ER-D28).
+  - item_id: BLK-ECON-WHITEPAPER-SNAPSHOT-001
+    kind: blocker
+    base_type: source_blocker
+    primary_lane: research
+    source_id: CTX-ECON-ROOT
+    target_id: CTX-ECON-ROOT
+    status: active
+    delegation_route: research-route
+    requires_human: true
+    role_notes: The ResonantDAO whitepaper is un-snapshotted; gated mappings (1B supply, buyback-burn, $R10/$R12/$R15, etc.) stay analogy until ledgered.
+  - item_id: ENA-ECON-LBT-ADAPTER-001
+    kind: enabler
+    base_type: tooling_enabler
+    primary_lane: governance
+    source_id: CTX-ECON-DEFINITIONS
+    target_id: CTX-ECON-DEFINITIONS
+    status: active
+    delegation_route: definitions-governance
+    requires_human: false
+    role_notes: tools/check_load_bearing_terms.py enables deterministic REC-C14 enforcement (first-pass extractor; --strict for CI).
+
+gaps:
+  - gap_id: GAP-ECON-ADAPTER-COMPOUND-001
+    context_id: CTX-ECON-DEFINITIONS
+    summary: The REC-C14 adapter misses compound identifiers (e.g. self_report normalized against a multi-word tracked term); matching could be refined.
+    severity: flag
+    treatment: plan
+    owner_route: definitions-governance
+    status: active
+    evidence: ART-ECON-LBT-ADAPTER
+  - gap_id: GAP-ECON-REX-ARTIFACT-001
+    context_id: CTX-ECON-FIXTURES
+    summary: $REX / $REX-COM is an un-sourced token symbol in subtowers/socioeconomic-behavior/returns/; likely a subagent artifact, routed to the tower owner to correct.
+    severity: flag
+    treatment: review-audit
+    owner_route: research-route
+    status: active
+    evidence: ART-ECON-PROGRAM-FINDINGS
+  - gap_id: GAP-ECON-README-GUIDE-001
+    context_id: CTX-ECON-ROOT
+    summary: README.md and GUIDE.md do not yet document the load-bearing-term tracking discipline (REC-C14 / ER-D23 / candidate lifecycle).
+    severity: flag
+    treatment: plan
+    owner_route: definitions-governance
+    status: active
+    evidence: ART-ECON-README
+
+indexes:
+  by_id:
+    CTX-ECON-ROOT: contexts[0]
+    CTX-ECON-DEFINITIONS: contexts[1]
+    CTX-ECON-FIXTURES: contexts[2]
+    CTX-ECON-CAV2-RETURN: contexts[3]
+    DEC-ECON-STANDALONE-001: decisions[0]
+    DEC-ECON-LBT-SCOPE-001: decisions[1]
+    DEC-ECON-LEDGER-LOCATION-001: decisions[2]
+    DEC-ECON-SWEEP-INLINE-001: decisions[3]
+    BLK-ECON-COSTLY-IDENTITY-001: typed_items[0]
+    BLK-ECON-PHASE2-001: typed_items[1]
+    BLK-ECON-CANDIDATE-GROUNDING-001: typed_items[2]
+    BLK-ECON-WHITEPAPER-SNAPSHOT-001: typed_items[3]
+    ENA-ECON-LBT-ADAPTER-001: typed_items[4]
+    GAP-ECON-ADAPTER-COMPOUND-001: gaps[0]
+    GAP-ECON-REX-ARTIFACT-001: gaps[1]
+    GAP-ECON-README-GUIDE-001: gaps[2]
+  open_decisions: []
+  blocking_decisions: []
+  active_blockers:
+    - BLK-ECON-COSTLY-IDENTITY-001
+    - BLK-ECON-PHASE2-001
+    - BLK-ECON-CANDIDATE-GROUNDING-001
+    - BLK-ECON-WHITEPAPER-SNAPSHOT-001
+  active_gaps:
+    - GAP-ECON-ADAPTER-COMPOUND-001
+    - GAP-ECON-REX-ARTIFACT-001
+    - GAP-ECON-README-GUIDE-001
+  next_moves:
+    CTX-ECON-ROOT: Build NOW-fixture #2 (flow-conservation) via the evidence harness.
+    CTX-ECON-DEFINITIONS: Ground candidate terms ER-D24..D28; lazy-migrate Lifecycle status onto ER-D1..D22.
+    CTX-ECON-FIXTURES: Build flow-conservation first, then runway-inequality, TF-11, TF-3.
+    CTX-ECON-CAV2-RETURN: Await CAV2 owner review of the load-bearing-term handoff.
+  artifacts_by_path:
+    .craft/ledger.yml: ART-ECON-LEDGER
+    CRAFT.md: ART-ECON-VIEW
+    README.md: ART-ECON-README
+    definitions/DEFINITIONS.md: ART-ECON-DEFINITIONS
+    definitions/DEFINITIONS-INDEX.md: ART-ECON-DEF-INDEX
+    definitions/DEFINITION-DRIFT-AUDIT.md: ART-ECON-DRIFT-AUDIT
+    authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md: ART-ECON-CONSTITUTION
+    tools/check_load_bearing_terms.py: ART-ECON-LBT-ADAPTER
+    dispatch/economy-synthesis/findings.md: ART-ECON-PROGRAM-FINDINGS
+    research/four-surface-reconciliation/findings.md: ART-ECON-FOUR-SURFACE

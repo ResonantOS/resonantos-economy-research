@@ -55,6 +55,7 @@ easy to breach, without them.
 | [contribution-edge-fixtures](entries/contribution-edge-fixtures.md) | validation-scaffold | `validation-scaffold`, `fixture-scaffold`, `implementation-boundary`, `resonantos-economy` | Materialized contribution-edge fixture package with schema, matrix, typed negatives, checklist, and six fixture files. |
 | [domainspec-subagents-reflection-loop](entries/domainspec-subagents-reflection-loop.md) | telemetry | `reflection`, `observability`, `sigil-development`, `workflow-reflect`, `subagents` | Local reflection loop for subagent strategy output drift, inventory-result checks, and lifecycle maintenance. |
 | [economy-resilience-program](entries/economy-resilience-program.md) | synthesis | `strategy-result`, `dispatch`, `subagents`, `synthesis`, `attack-lane`, `fixture-backlog`, `resonantos-economy` | Four isolated towers + cross-corpus synthesis (closed `resolved`); the ranked fixture & constitution backlog and the concrete start path (Tracks A/B/C). |
+| [strategy-result-four-surface-reconciliation](entries/strategy-result-four-surface-reconciliation.md) | dispatch | `strategy-result`, `dispatch`, `subagents`, `definitions`, `glossary` | Audit reconciling glossary/notation/distills vs ER-D1–D20 (closed `resolved`); 10 actionable surface edits, 1 KILL, 9 owner-gated disputes; propose-only. |
 
 ## Open Gaps
 

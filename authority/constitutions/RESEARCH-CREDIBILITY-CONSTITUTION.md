@@ -141,6 +141,33 @@ The package must state that it transfers no CAv2 authority, proves no
 ResonantOS economy mechanism, contains no validation report unless one exists,
 and implements no behavior unless a separate task route did so.
 
+### REC-C14. Load-Bearing Term Tracking
+
+Validation mode: hybrid
+
+Every **load-bearing term** must resolve to a tracked authority entry (a
+canonical definition ID, per [ER-D23](../../definitions/DEFINITIONS.md#er-d23-load-bearing-term-lifecycle)).
+A term is load-bearing when it is a symbol or named quantity appearing in a
+formal expression, a fixture FAIL-region, a candidate invariant, a decidable
+rule, or the normative content of a `claims/SOURCE-CLAIM-LEDGER.md` entry.
+
+A load-bearing term first cited without a tracked entry must be created as a
+`candidate` definition (`Lifecycle status: candidate`) carrying an
+`Open / to-ground:` field, and then moved through the ER-D23 lifecycle. Citing a
+load-bearing term with no tracked entry is a drift defect that
+`definitions/DEFINITION-DRIFT-AUDIT.md` must flag.
+
+Candidate status is not validation: a candidate term may be cited with its
+`Open / to-ground:` field visible, but a decidable rule must not be called
+"fully specified" while any of its terms is still `candidate`.
+
+Deterministic adapter (built): `tools/check_load_bearing_terms.py` scans
+formal-voice blocks, fixture FAIL-regions, and claim-ledger code spans for
+identifiers absent from `definitions/DEFINITIONS-INDEX.md`. It is a first-pass
+extractor (the judgment of which untracked identifiers are genuinely
+load-bearing stays with definitions-governance); run with `--strict` for a CI
+non-zero exit.
+
 ## Open Questions
 
 ### OQ-1. Which validation harness should become first?

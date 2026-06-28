@@ -108,8 +108,17 @@ The economy should be attacked as a coupled system:
   make fairness arbitrary.
 - Keep unresolved questions visible as residue instead of smoothing them into
   confident prose.
+- Track every load-bearing term: any symbol or named quantity you cite in a
+  formal expression, fixture FAIL-region, invariant, decidable rule, or claim
+  must resolve to a tracked definition (REC-C14 / ER-D23). New ones enter as a
+  `candidate` definition with an `Open / to-ground:` note; run
+  `tools/check_load_bearing_terms.py` to check.
 
 ## Reading Order
+
+Structured work state (contexts, blockers, decisions, gaps) lives in
+[CRAFT.md](CRAFT.md) (the craft ledger); per-pass narration lives in
+[.arcanum/inventory/](.arcanum/inventory/index.md).
 
 1. [GUIDE.md](GUIDE.md)
 2. [AGENTS.md](AGENTS.md)

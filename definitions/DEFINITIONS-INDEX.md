@@ -29,6 +29,14 @@ This index is a lookup aid. Normative local semantics live in
 | ER-D18 | [Local Research Status Vocabulary](DEFINITIONS.md#er-d18-local-research-status-vocabulary) | `closed-local-research-status` | synthesis; review-findings; method-authority | active local discipline |
 | ER-D19 | [Implementation Boundary Plan](DEFINITIONS.md#er-d19-implementation-boundary-plan) | `implementation-boundary-not-readiness` | synthesis; review-findings; method-authority | local-research-only |
 | ER-D20 | [Reciprocal Return Candidate](DEFINITIONS.md#er-d20-reciprocal-return-candidate) | `reciprocal-owned-build-return` | synthesis; review-findings; local-inference | deferred CAv2 return candidate |
+| ER-D21 | [Signal-to-Authority Cascade Collapse](DEFINITIONS.md#er-d21-signal-to-authority-cascade-collapse) | `cascade-collapse-must-be-gated` | operator-reading; local-inference | promotion-candidate |
+| ER-D22 | [Costly-Identity Prerequisite](DEFINITIONS.md#er-d22-costly-identity-prerequisite) | `costly-identity-prerequisite-not-solved` | supporting (Douceur 2002); local-inference; open-residue | blocked until identity-cost model and fixture exist |
+| ER-D23 | [Load-Bearing Term Lifecycle](DEFINITIONS.md#er-d23-load-bearing-term-lifecycle) | `load-bearing-term-must-track-to-authority` | method-authority; synthesis | active local discipline (lifecycle: grounded) |
+| ER-D24 | [Treasury (candidate)](DEFINITIONS.md#er-d24-treasury-candidate) | `treasury-reserve-not-sized` | primary-source (role); open-residue (value) | local-research-only (lifecycle: candidate) |
+| ER-D25 | [Epoch (candidate)](DEFINITIONS.md#er-d25-epoch-candidate) | `epoch-accounting-period-parameter` | local-inference | local-research-only (lifecycle: candidate) |
+| ER-D26 | [Emission (candidate)](DEFINITIONS.md#er-d26-emission-candidate) | `emission-flow-input-pending` | primary-source (surface); open-residue (schedule) | local-research-only (lifecycle: candidate) |
+| ER-D27 | [Runway Inequality (candidate)](DEFINITIONS.md#er-d27-runway-inequality-candidate) | `runway-inequality-zero-buffer-not-thresholds` | related-source (Beer F5); local-inference; open-residue | local-research-only (lifecycle: candidate) |
+| ER-D28 | [Measurement-Not-Authority (Stratified Estimate) (candidate)](DEFINITIONS.md#er-d28-measurement-not-authority-stratified-estimate-candidate) | `stratified-estimate-unbiased-under-steering` | related-source (Beer F2, Fritz F2); local-inference; open-residue | local-research-only (lifecycle: candidate) |
 
 ## Consumer Surfaces
 

@@ -25,7 +25,7 @@ material.
 
 ## Posture
 
-Work from five habits:
+Work from six habits:
 
 1. **Source before mechanism.** Start by naming source kind: primary source,
    method authority, formalization precedent, related evidence, analogy, local
@@ -39,6 +39,11 @@ Work from five habits:
    polished but unwitnessed theory.
 5. **Residue stays visible.** If a claim is not closed, keep it as residue with
    a next check instead of smoothing it into a confident paragraph.
+6. **Load-bearing terms are tracked.** Any symbol or named quantity you cite in a
+   formal expression, fixture FAIL-region, invariant, decidable rule, or claim
+   must resolve to a tracked definition (REC-C14 / ER-D23). A new one enters as a
+   `candidate` definition with an `Open / to-ground:` field. Run
+   `tools/check_load_bearing_terms.py` to catch untracked terms.
 
 ## How To Start Work
 
@@ -62,7 +67,11 @@ For any non-trivial change:
 5. If the work is meant for other researchers, update
    [CONTRIBUTING.md](CONTRIBUTING.md), this guide, or the relevant README only
    when the route actually changes.
-6. Update inventory when the result becomes reusable for future agents.
+6. Update inventory when the result becomes reusable for future agents, and
+   update [CRAFT.md](CRAFT.md) / [.craft/ledger.yml](.craft/ledger.yml) when a
+   context's stage, gate, next move, blocker, decision, or gap changes — the
+   craft ledger is the structured work-tracking surface; the inventory log is the
+   per-pass narration.
 
 ## Current Continuation Surface
 

@@ -7,6 +7,8 @@ Promotion scope: local-research-only
 
 The first economy problem is not how to pay contributors; it is how to keep contribution, reputation, governance, and authority from collapsing into one gameable scoreboard.
 
+Anchors: [definitions/DEFINITIONS.md](../definitions/DEFINITIONS.md) ER-D1 (Economy Resilience), ER-D2 (Authority-Separated Credit). Source kind: operator-reading.
+
 ## Compositional Spine
 
 ```text
@@ -25,6 +27,7 @@ official whitepaper claims
 - Non-transferable contribution reputation from the whitepaper.
 - Three independent audit axes from DomainSpec formalization: mechanism/schema, temporal accumulation, and self-description/governance.
 - Science-of-science as a warning system for long-horizon credit allocation.
+- Attention routing (ER-D8): signals may prioritize what reviewers or maintainers look at next, but must not change governance authority and must include a capture check.
 
 ## What To Keep Analogy-Only
 
@@ -36,6 +39,6 @@ official whitepaper claims
 ## What To Block
 
 - Authority by score, popularity, token holdings, volume, or reuse frequency.
-- Phase 2 financial tokens before failure-precedent and stress-threshold synthesis.
+- Phase 2 financial tokens before failure-precedent and stress-threshold synthesis — these sit in the ER-D12 Phase 2 Financial Blocker Register (a list of what remains unsafe, not an unlock checklist).
 - Reward mechanisms that do not include anti-gaming and motivation-crowding analysis.
 - AI-agent economic participation that can touch human-only governance power.

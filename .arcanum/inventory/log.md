@@ -3,6 +3,110 @@
 Status: active
 Owner: ResonantOS economy research owner
 
+## 2026-06-28 load-bearing term sweep (adapter built + 2 candidate defs)
+
+- Mode: definitions-governance (adapter-driven sweep)
+- Tool added: `tools/check_load_bearing_terms.py` — the REC-C14 deterministic
+  adapter (first-pass extractor; `--strict` for CI). Flips REC-C14's
+  deterministic half from `none-yet` to built.
+- Definitions added: ER-D27 Runway Inequality (candidate), ER-D28
+  Measurement-Not-Authority / Stratified Estimate (candidate) — each groups its
+  fixture's primitives, each with an Open/to-ground field.
+- Notation: runway primitives + runway and TF-11 FAIL-regions added.
+- Residue/flags recorded in DEFINITION-DRIFT-AUDIT: `cartel` (deferred to
+  MERGE-3), `$REX/$REX-COM` (un-sourced subagent artifact -> tower owner),
+  `submonoid`/`absorbing` (analogy-only), `emission_rate` (subsumed), `self_report`
+  (already tracked).
+- Index synced: yes. Drift audit updated: yes.
+- Contradictions flagged: 0
+- Notes: Adapter confirmed the drift is systematic — every NOW-fixture's formula
+  primitives were untracked. treasury/epoch/emission (flow-conservation) fixed in
+  the prior pass; runway-inequality and TF-11 fixed here. Claim ≤ proof: both new
+  defs are candidate, thresholds/PASS un-asserted. P1 note: the adapter collapsed
+  the sweep enough that no dispatch was needed.
+
+## 2026-06-28 outbound return candidate -> CyberAlchemy v2 (ER-D20)
+
+- Mode: reciprocal return candidate (ER-D20 / REC-C13)
+- Direction: resonantos-economy-research -> CyberAlchemy v2
+- Artifact (in CAV2, outside this repo's authority):
+  `../domainspec-core/cyberAlchemy-v2/authority/imports/resonantos-economy-research/2026-06-28-load-bearing-term-tracking-handoff.md`
+- Payload: the Load-Bearing Term Tracking discipline (REC-C14 + ER-D23 lifecycle +
+  candidate-term pattern), referenced by source path, not copied.
+- Boundary: candidate evidence only; transfers no CAV2 authority; CAV2 owner
+  route (definitions-/constitution-/discipline-governance) decides any reuse.
+  Economy-specific terms (ER-D24/25/26) explicitly blocked from CAV2 import.
+- Scrub: no private material; paths only.
+- Contradictions flagged: 0
+- Notes: First outbound handoff to CAV2 from this standalone repo. Logged here as
+  the resonantos-side ER-D20 record; the CAV2-side intake README now lists it
+  under Received Candidate Handoffs. Not committed in either repo.
+
+## 2026-06-28 load-bearing-term tracking rule (constitution + lifecycle)
+
+- Mode: definitions-governance + constitution-governance (add-rule)
+- Canonical source: `definitions/DEFINITIONS.md`; constitution:
+  `authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md`.
+- Rule added: REC-C14 Load-Bearing Term Tracking (validation mode hybrid;
+  deterministic adapter `none-yet`). Scope = formal-and-claims.
+- Definitions added: ER-D23 (Load-Bearing Term Lifecycle, grounded, active local
+  discipline); ER-D24 Treasury, ER-D25 Epoch, ER-D26 Emission (all `candidate`,
+  each with an Open/to-ground field).
+- New definition-card field: `Lifecycle status:` (candidate|grounded|promoted|
+  residue|retired); ER-D1–D22 read as grounded until revised.
+- Notation: added treasury, epoch, Σ(emitted), and the `Σ(emitted) ≤ treasury`
+  FAIL-region; glossary Flow-Budget draft now carries the concrete witness.
+- Index synced: yes. Drift audit updated: yes.
+- Contradictions flagged: 0
+- Notes: Closes the load-bearing-symbol drift that let treasury/epoch/emission be
+  cited in a decidable rule untracked. Claim ≤ proof preserved: the three terms
+  are candidate, the treasury size stays a gated whitepaper claim, and the
+  flow-conservation rule is explicitly not "fully specified" yet. Follow-up:
+  build the REC-C14 deterministic adapter; ground the 3 candidates as the first
+  task of fixture #2.
+
+## 2026-06-28 definitions-governance pass (the 9 disputes)
+
+- Mode: definitions-governance (promotion triage)
+- Canonical source: `definitions/DEFINITIONS.md`
+- Definitions added: ER-D21 (Signal-to-Authority Cascade Collapse,
+  promotion-candidate), ER-D22 (Costly-Identity Prerequisite, blocked).
+- Definitions enriched: ER-D10 (added `self_report` adversarial pattern;
+  absorbs Self-Report Independence + Reviewer⊥Reviewed as fixture cases).
+- Index synced: yes (`DEFINITIONS-INDEX.md`).
+- Held below the definition line: Flow-Budget (ER-D14 draft); 5 residue /
+  authority-lane disputes (Randomized Reward Or Audit, Random-Audit Split,
+  Maintenance First-Class, Decay/Withholding/Blind-Reviewer cluster).
+- Drift audit updated: yes (2026-06-28 governance pass section).
+- Contradictions flagged: 0
+- Notes: Owner-gated promotion of 2 named-concept definitions from the
+  four-surface-reconciliation residue. Claim ≤ proof preserved; no validated
+  mechanism, token, bounty, governance, or launch claim promoted. Mechanism-
+  adjacent candidate invariants held below the definition line per the
+  promotion ladder.
+
+## 2026-06-28 four-surface-reconciliation dispatch
+
+- Mode: dispatch (research)
+- dispatch_id: `2026-06-28-four-surface-reconciliation`
+- Row kind: dispatch + close (both appended, append-only)
+- Working folder: `research/four-surface-reconciliation/`
+- Source-kind boundary: local-research-only; propose-only; canonical
+  `DEFINITIONS.md` not mutated; no token/bounty/governance/mechanism promotion.
+- exit_reason: resolved; 7 dispatch agents (2 explorer, 1 synthesizer,
+  2 skeptic, 1 writer, 1 auditor), 1 zig-zag loop; 2 check-tension gate agents
+  (gate infra, not in tree).
+- Entries created: [strategy-result-four-surface-reconciliation](entries/strategy-result-four-surface-reconciliation.md);
+  durable findings/research at `research/four-surface-reconciliation/`.
+- Index updated: yes (new entry row)
+- Log updated: yes
+- Contradictions flagged: 0
+- Notes: Audit reconciling glossary/notation/distills vs ER-D1–D20. Result:
+  10 actionable surface edits (3 sync-fix, 4 coverage-add, 3 structure-fix),
+  1 KILL (Reviewer⊥Reviewed Credit → collapses into ER-D2∧ER-D10), 9 owner-gated
+  disputes. Highest-confidence move: `Credit Seed → Reviewed Credit Record`
+  (ER-D7). Applying edits is a separate governed write awaiting user decision.
+
 ## 2026-06-26 install
 
 - Mode: install
