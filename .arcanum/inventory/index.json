@@ -1,7 +1,7 @@
 {
   "schema_version": "inventory.index.v0.1",
   "inventory_root": ".arcanum/inventory",
-  "generated_at": "2026-06-27T04:31:22Z",
+  "generated_at": "2026-06-28T00:00:00Z",
   "human_index": "index.md",
   "entries": [
     {
@@ -585,6 +585,104 @@
       "residue": [
         "Fixture package existence is not a validation harness report or economy validation."
       ]
+    },
+    {
+      "id": "load-bearing-term-tracking-discipline",
+      "path": "entries/load-bearing-term-tracking-discipline.md",
+      "kind": "entry",
+      "type": "synthesis",
+      "title": "Load-Bearing Term Tracking Discipline (session synthesis)",
+      "summary": "Session headline outcome — every load-bearing term must resolve to a tracked definition (REC-C14 + ER-D23 lifecycle + deterministic adapter); ER-D21–D28 added; systematic fixture-primitive drift closed; handed to CAv2 as candidate evidence.",
+      "tags": [
+        "synthesis",
+        "definitions",
+        "constitution",
+        "load-bearing",
+        "craft",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md",
+        "definitions/DEFINITIONS.md",
+        "tools/check_load_bearing_terms.py",
+        "research/four-surface-reconciliation/findings.md",
+        "CRAFT.md"
+      ],
+      "updated": "2026-06-28",
+      "status": "active",
+      "confidence": "high",
+      "selectors": [
+        "load-bearing-term-tracking",
+        "candidate-definition-lifecycle",
+        "rec-c14-adapter",
+        "fixture-primitive-drift"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "$REX/cartel/submonoid/absorbing/emission_rate are non-definitions; ER-D24–D28 await grounding; adapter has a compound-matching gap."
+      ]
+    },
+    {
+      "id": "strategy-result-four-surface-reconciliation",
+      "path": "entries/strategy-result-four-surface-reconciliation.md",
+      "kind": "entry",
+      "type": "dispatch",
+      "title": "Strategy Result — Four-Surface Reconciliation",
+      "summary": "Audit reconciling glossary/notation/distills vs ER-D1–D20 (closed resolved); 10 actionable surface edits, 1 KILL, 9 owner-gated disputes; propose-only.",
+      "tags": [
+        "strategy-result",
+        "dispatch",
+        "subagents",
+        "definitions",
+        "glossary",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "research/four-surface-reconciliation/findings.md",
+        "research/four-surface-reconciliation/research.md",
+        "definitions/DEFINITION-DRIFT-AUDIT.md"
+      ],
+      "updated": "2026-06-28",
+      "status": "active",
+      "confidence": "high",
+      "selectors": [
+        "four-surface-reconciliation-change-set",
+        "credit-seed-to-reviewed-credit-record",
+        "surface-vs-er-d-drift-audit"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "9 owner-gated disputes route to the authority/promotion lane, not the surfaces."
+      ]
+    },
+    {
+      "id": "economy-resilience-program",
+      "path": "entries/economy-resilience-program.md",
+      "kind": "entry",
+      "type": "synthesis",
+      "title": "Economy Resilience Program",
+      "summary": "Four isolated towers + cross-corpus synthesis (closed resolved); the ranked fixture & constitution backlog and the concrete start path (Tracks A/B/C).",
+      "tags": [
+        "strategy-result",
+        "dispatch",
+        "subagents",
+        "synthesis",
+        "attack-lane",
+        "fixture-backlog",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "dispatch/economy-synthesis/findings.md"
+      ],
+      "updated": "2026-06-27",
+      "status": "active",
+      "confidence": "high",
+      "selectors": [],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": []
     }
   ],
   "indexes": {
@@ -604,7 +702,10 @@
       "domainspec-subagents-reflection-loop": "entries/domainspec-subagents-reflection-loop.md",
       "cav2-authority-lifecycle-owned-build-harvest": "entries/cav2-authority-lifecycle-owned-build-harvest.md",
       "contribution-edge-fixture-full-refine-plan": "entries/contribution-edge-fixture-full-refine-plan.md",
-      "contribution-edge-fixtures": "entries/contribution-edge-fixtures.md"
+      "contribution-edge-fixtures": "entries/contribution-edge-fixtures.md",
+      "load-bearing-term-tracking-discipline": "entries/load-bearing-term-tracking-discipline.md",
+      "strategy-result-four-surface-reconciliation": "entries/strategy-result-four-surface-reconciliation.md",
+      "economy-resilience-program": "entries/economy-resilience-program.md"
     },
     "by_type": {
       "source": [
@@ -624,12 +725,15 @@
         "domainspec-subagents-reflection-loop"
       ],
       "dispatch": [
-        "strategy-result-cav2-lean-harvest"
+        "strategy-result-cav2-lean-harvest",
+        "strategy-result-four-surface-reconciliation"
       ],
       "synthesis": [
         "cav2-lean-selector-map",
         "cav2-lean-findings",
-        "cav2-authority-lifecycle-owned-build-harvest"
+        "cav2-authority-lifecycle-owned-build-harvest",
+        "load-bearing-term-tracking-discipline",
+        "economy-resilience-program"
       ],
       "development-handoff": [
         "cav2-lean-findings-development-pack",
@@ -657,7 +761,10 @@
         "cav2-lean-development-pack-review",
         "cav2-authority-lifecycle-owned-build-harvest",
         "contribution-edge-fixture-full-refine-plan",
-        "contribution-edge-fixtures"
+        "contribution-edge-fixtures",
+        "load-bearing-term-tracking-discipline",
+        "strategy-result-four-surface-reconciliation",
+        "economy-resilience-program"
       ],
       "dispatch": [
         "subagents-dispatch-strategy",
@@ -666,14 +773,18 @@
         "cav2-lean-selector-map",
         "cav2-lean-findings",
         "cav2-lean-development-pack-review",
-        "cav2-authority-lifecycle-owned-build-harvest"
+        "cav2-authority-lifecycle-owned-build-harvest",
+        "strategy-result-four-surface-reconciliation",
+        "economy-resilience-program"
       ],
       "subagents": [
         "subagents-dispatch-strategy",
         "telemetry-agent-pool",
         "strategy-result-cav2-lean-harvest",
         "cav2-lean-development-pack-review",
-        "domainspec-subagents-reflection-loop"
+        "domainspec-subagents-reflection-loop",
+        "strategy-result-four-surface-reconciliation",
+        "economy-resilience-program"
       ],
       "telemetry": [
         "subagents-dispatch-strategy",
@@ -738,17 +849,22 @@
         "local-source-snapshots"
       ],
       "strategy-result": [
-        "strategy-result-cav2-lean-harvest"
+        "strategy-result-cav2-lean-harvest",
+        "strategy-result-four-surface-reconciliation",
+        "economy-resilience-program"
       ],
       "development": [
         "cav2-lean-findings-development-pack",
         "cav2-lean-development-pack-review"
       ],
       "definitions": [
-        "cav2-lean-findings-development-pack"
+        "cav2-lean-findings-development-pack",
+        "load-bearing-term-tracking-discipline",
+        "strategy-result-four-surface-reconciliation"
       ],
       "constitution": [
-        "cav2-lean-findings-development-pack"
+        "cav2-lean-findings-development-pack",
+        "load-bearing-term-tracking-discipline"
       ],
       "review": [
         "cav2-lean-development-pack-review"
@@ -785,6 +901,25 @@
       ],
       "task-session": [
         "contribution-edge-fixture-full-refine-plan"
+      ],
+      "synthesis": [
+        "load-bearing-term-tracking-discipline",
+        "economy-resilience-program"
+      ],
+      "load-bearing": [
+        "load-bearing-term-tracking-discipline"
+      ],
+      "craft": [
+        "load-bearing-term-tracking-discipline"
+      ],
+      "glossary": [
+        "strategy-result-four-surface-reconciliation"
+      ],
+      "attack-lane": [
+        "economy-resilience-program"
+      ],
+      "fixture-backlog": [
+        "economy-resilience-program"
       ]
     },
     "by_source": {
@@ -882,13 +1017,15 @@
         "cav2-lean-development-pack-review"
       ],
       "definitions/DEFINITIONS.md": [
-        "cav2-lean-findings-development-pack"
+        "cav2-lean-findings-development-pack",
+        "load-bearing-term-tracking-discipline"
       ],
       "definitions/DEFINITIONS-INDEX.md": [
         "cav2-lean-findings-development-pack"
       ],
       "definitions/DEFINITION-DRIFT-AUDIT.md": [
-        "cav2-lean-findings-development-pack"
+        "cav2-lean-findings-development-pack",
+        "strategy-result-four-surface-reconciliation"
       ],
       "development/constitution-pack.md": [
         "cav2-lean-findings-development-pack",
@@ -896,7 +1033,8 @@
       ],
       "authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md": [
         "cav2-lean-findings-development-pack",
-        "cav2-lean-development-pack-review"
+        "cav2-lean-development-pack-review",
+        "load-bearing-term-tracking-discipline"
       ],
       "reviews/cav2-lean-development-pack-review/findings.md": [
         "cav2-lean-development-pack-review"
@@ -960,6 +1098,22 @@
       ],
       "validation/contribution-edge-fixtures/TYPED-NEGATIVES.md": [
         "contribution-edge-fixtures"
+      ],
+      "tools/check_load_bearing_terms.py": [
+        "load-bearing-term-tracking-discipline"
+      ],
+      "research/four-surface-reconciliation/findings.md": [
+        "load-bearing-term-tracking-discipline",
+        "strategy-result-four-surface-reconciliation"
+      ],
+      "CRAFT.md": [
+        "load-bearing-term-tracking-discipline"
+      ],
+      "research/four-surface-reconciliation/research.md": [
+        "strategy-result-four-surface-reconciliation"
+      ],
+      "dispatch/economy-synthesis/findings.md": [
+        "economy-resilience-program"
       ]
     },
     "by_status": {
@@ -977,7 +1131,10 @@
         "domainspec-subagents-reflection-loop",
         "cav2-authority-lifecycle-owned-build-harvest",
         "contribution-edge-fixture-full-refine-plan",
-        "contribution-edge-fixtures"
+        "contribution-edge-fixtures",
+        "load-bearing-term-tracking-discipline",
+        "strategy-result-four-surface-reconciliation",
+        "economy-resilience-program"
       ],
       "closed-first-harvest": [
         "harvest-strategy"

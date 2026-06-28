@@ -12,8 +12,10 @@ through this inventory **first**, in this order. This is the canonical entry pat
 
 1. **Why & posture** — [README.md](../../README.md) "What This Repository Is". The
    tower exists to make reward-mechanism failures visible *before* they become
-   operational. Hold its three rules everywhere: `claim ≤ proof`,
-   `research ≠ policy`, `score ≠ authority`.
+   operational. Hold its standing rules everywhere: `claim ≤ proof`,
+   `research ≠ policy`, `score ≠ authority`, and `cite a load-bearing term →
+   track it` (REC-C14 / ER-D23 — see
+   [load-bearing-term-tracking-discipline](entries/load-bearing-term-tracking-discipline.md)).
 2. **Agent rules (non-negotiable)** — [AGENTS.md](../../AGENTS.md): run its four
    checks out loud before ANY write, edit, dispatch, or commit.
 3. **What to do next (the single most useful read)** — the cross-corpus program
@@ -56,6 +58,7 @@ easy to breach, without them.
 | [domainspec-subagents-reflection-loop](entries/domainspec-subagents-reflection-loop.md) | telemetry | `reflection`, `observability`, `sigil-development`, `workflow-reflect`, `subagents` | Local reflection loop for subagent strategy output drift, inventory-result checks, and lifecycle maintenance. |
 | [economy-resilience-program](entries/economy-resilience-program.md) | synthesis | `strategy-result`, `dispatch`, `subagents`, `synthesis`, `attack-lane`, `fixture-backlog`, `resonantos-economy` | Four isolated towers + cross-corpus synthesis (closed `resolved`); the ranked fixture & constitution backlog and the concrete start path (Tracks A/B/C). |
 | [strategy-result-four-surface-reconciliation](entries/strategy-result-four-surface-reconciliation.md) | dispatch | `strategy-result`, `dispatch`, `subagents`, `definitions`, `glossary` | Audit reconciling glossary/notation/distills vs ER-D1–D20 (closed `resolved`); 10 actionable surface edits, 1 KILL, 9 owner-gated disputes; propose-only. |
+| [load-bearing-term-tracking-discipline](entries/load-bearing-term-tracking-discipline.md) | synthesis | `synthesis`, `definitions`, `constitution`, `load-bearing`, `craft` | **Session headline synthesis.** Every load-bearing term must resolve to a tracked definition (REC-C14 + ER-D23 + adapter); ER-D21–D28 added; systematic fixture-primitive drift closed; handed to CAv2. |
 
 ## Open Gaps
 

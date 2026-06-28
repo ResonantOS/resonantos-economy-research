@@ -3,6 +3,26 @@
 Status: active
 Owner: ResonantOS economy research owner
 
+## 2026-06-28 inventory synthesis (session headline)
+
+- Mode: query -> synthesis
+- Entry created: [load-bearing-term-tracking-discipline](entries/load-bearing-term-tracking-discipline.md)
+  (type `synthesis`) — the session's single most important durable outcome:
+  every load-bearing term must resolve to a tracked definition (REC-C14 + ER-D23
+  + adapter); ER-D21–D28 added; systematic fixture-primitive drift closed; CAv2
+  reciprocal-return handoff. Linked from Start Here step 1 (standing rules).
+- Machine index: fixed a prior sync gap — added the synthesis entry AND the two
+  unsynced entries (strategy-result-four-surface-reconciliation,
+  economy-resilience-program) to index.json; rebuilt all indexes (19 entries,
+  jq-parseable).
+- Tags registered (were used but unregistered): `constitution`, `craft`,
+  `definitions`, `glossary`, `load-bearing`, `synthesis`.
+- Index updated: yes. Machine index updated: yes. Log updated: yes.
+- Contradictions flagged: 0
+- Validation: index.json parseable; all entry tags now resolve in tags.md.
+- Notes: Non-authority read model. Points to the canonical artifacts (constitution
+  REC-C14, ER-D23, the adapter); promotes nothing.
+
 ## 2026-06-28 load-bearing term sweep (adapter built + 2 candidate defs)
 
 - Mode: definitions-governance (adapter-driven sweep)
