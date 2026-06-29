@@ -90,9 +90,8 @@ This is the "new way of working with the repo": you converse with a harness buil
 to demote attractive-but-unproven claims and to show where the evidence actually
 stands, instead of trusting a paragraph because it sounds finished.
 
-For concrete, repeatable query patterns — an "anatomy of a good query," a
-loose-vs-sharp contrast table, and six worked walkthroughs grounded in real repo
-artifacts — see **[QUERYING.md](QUERYING.md)**.
+For plain-language guidance on asking well — a loose-vs-sharp contrast and six
+worked examples grounded in the actual record — see **[QUERYING.md](QUERYING.md)**.
 
 ## Consultation Boundary
 

@@ -1,136 +1,121 @@
-# Querying The Tower — Worked Examples
+# Querying The Tower — How To Ask
 
 Status: active how-to
 Promotion scope: local-research-only
 
-The repository is meant to be *interrogated by conversation*, not read
-front-to-back. This page shows what a **good** query looks like, contrasts it with
-a loose one, and walks through real examples grounded in actual repo artifacts.
-For the underlying method see the confirm/deny loop in [GUIDE.md](GUIDE.md).
+You don't really *read* this repository — you *interrogate* it. You ask an agent a
+question; it answers from what's actually on record, and — this is the whole point —
+it tells you **how solid that answer is** instead of just sounding confident. This
+page shows how to ask well, with real examples. The method behind it lives in
+[GUIDE.md](GUIDE.md).
 
-## Anatomy Of A Good Query
+## What a good question looks like
 
-A good query has three parts. A loose query is missing one or more.
+Three things make a question easy to answer well:
 
-1. **Name the target precisely** — a specific claim, mechanism, term, or decision,
-   not a topic. ("Is credit-before-money safe as a *first* move?" — not "tell me
-   about rewards.")
-2. **Say which move you want** — one of:
-   - **confirm** — find the supporting evidence and how strongly it holds;
-   - **deny / falsify** — attack it, find its collapse-test;
-   - **find-owner** — who (prior art) already owns this idea?
-   - **stake a bet / open a prize** — turn a candidate into a falsifiable contract;
-   - **define** — what does this term mean here, and is it tracked?
-   - **route** — what should I do next / where does this go?
-3. **Expect a grounded answer**, not applause. Every answer should carry a
-   **source kind** (`primary-source`, `supporting-source`, `related-source`,
-   `analogy`, `local-inference`, `operator-reading`, `open-residue`), a **witness
-   status**, and an honest **confidence** — or a **typed negative**, or visible
-   **residue**.
+1. **Be specific about *what*.** Ask about one claim, idea, or decision — not a
+   whole topic. "Is paying people per finished task a good idea here?" beats "tell
+   me about rewards."
+2. **Say what you want done with it.** Usually one of: *check it* (is this backed by
+   anything?), *try to break it* (what would prove it wrong?), *who did it first?*
+   (has someone already solved this?), *pin down a word* (what does this term
+   actually mean here?), or *where do I start?*
+3. **Expect an honest answer, not a yes.** A good answer says where the idea comes
+   from, how strong the evidence is, and what's still missing — or admits the
+   question is still open.
 
-## Loose vs Sharp
+## Loose vs sharp
 
-| Loose (avoid) | Sharp (do this) | Why |
-| --- | --- | --- |
-| "Is the economy good?" | "Confirm: does any recorded source support *credit-before-money* as the Phase-1 sequencing? Name source kind and witness." | Names a claim + a move + the expected answer shape. |
-| "Are bounties bad?" | "Deny: attack a completion-paid bounty as the contribution reward. What's its collapse-test?" | Asks for the attack and the kill condition, not an opinion. |
-| "Tell me about randomness." | "Confirm/deny `PRZ-03`: can bounded randomness raise gaming cost without becoming payout logic?" | Targets a specific prize with its award condition. |
-| "Summarize the repo." | "Route: I have 30 minutes — what's the single highest-leverage next move?" | Asks the inventory for the ranked start path. |
+| Loose (avoid) | Sharp (do this) |
+| --- | --- |
+| "Is the economy good?" | "Is starting with reviewed credit, before any money, actually backed by anything we've recorded?" |
+| "Are bounties bad?" | "Try to break the idea of paying a bounty for finished work — where's the catch?" |
+| "Tell me about randomness." | "Can randomness make cheating expensive without making rewards feel unfair?" |
+| "Summarize the repo." | "I've got 30 minutes — what's the single most useful thing to do next?" |
 
-## Worked Examples
+## Examples
 
-### 1. Confirm a claim — "Is credit-before-money safe as a first move?"
+Each shows the question, what the agent does, and the kind of answer you get back.
 
-**You ask:** *"Confirm: is sequencing the economy around reviewed credit before any money a safe first move?"*
+### 1. Check a claim — "Is starting with credit, not money, a safe first move?"
 
-**What the harness does:** finds the supporting record, names its kind, checks for a witness, and refuses to over-state.
+**You ask:** *"Is it safe to build the economy around reviewed credit before introducing any money?"*
 
-**What you get back:**
-> Supported as a *research posture*, not as a proven design. The closest evidence
-> is claim **C7** ([SOURCE-CLAIM-LEDGER.md](claims/SOURCE-CLAIM-LEDGER.md)) — the
-> Evidence Exchange separates observed reuse, reviewed credit, and owner-routed
-> authority — source kind **method-authority / local-inference** (harvested,
-> supporting source). **Witness status: none yet** — the authority-handoff fixture
-> that would show high credit changing *no* authority state is not built. So:
-> safe enough to *build from*, not validated. It's a **candidate**, gated by
-> [promotion-policy](authority/promotion-policy.md). (Open: `OQ-1`, `OQ-2`.)
+**What happens:** it finds what's on record, says where it comes from, and refuses to oversell it.
 
-### 2. Deny / falsify — "Break a bounty-paid contribution reward"
+> It's a sensible starting posture — but it hasn't been proven here. The strongest
+> thing on record is that a related project kept three things firmly apart: what
+> people are *seen* doing, the *credit* they earn for reviewed work, and any real
+> *authority*. That's borrowed reasoning, not something the official whitepaper
+> says, and **nobody has actually built or tested it yet**. So: a good idea to build
+> *from*, not a settled rule. (On record as claim **C7** in the
+> [claim ledger](claims/SOURCE-CLAIM-LEDGER.md).)
 
-**You ask:** *"Deny: attack paying a bounty on completed contributions. What's the collapse-test?"*
+### 2. Try to break it — "Pay a bounty for finished work"
 
-**What the harness does:** routes to the recorded decision and the attack lane, runs the skeptic, and banks a typed negative.
+**You ask:** *"Attack the idea of paying a bounty whenever someone finishes a contribution. Where does it fall apart?"*
 
-**What you get back:**
-> Killed by design. The repo's standing decision is **bounty = block-as-default**
-> ([TOWER.md](TOWER.md) borrow/block), and no bounty is accepted without a
-> bounty-optimization failure analysis ([AGENTS.md](AGENTS.md) non-negotiables).
-> **Collapse-test:** a rational actor optimizes for *bounty retrieval* — completing
-> the cheapest qualifying unit, not sustained maintenance — so completion-pay
-> trains extraction. **Typed negative banked:** "completion-paid bounty as the
-> contribution reward" → what it would have contributed (fast contributor
-> throughput) / the fact that zeroed it (it rewards retrieval, not durable value).
-> Re-open only via `PRZ-02` with a farming-resistant eligibility witness.
+**What happens:** it attacks the idea the way the repo is built to — by asking how a clever person would game it.
 
-### 3. Find-owner (precedent) — "Does anyone already own 'delayed reward eligibility'?"
+> Fast, and the repo already blocks it by default. If you pay for *finishing
+> things*, people optimize for finishing the cheapest things that qualify — not the
+> work that actually matters, and not the quiet maintenance nobody sees. So a bounty
+> trains "grab the bounty," not "help the community." It isn't banned forever, but
+> it can't come back without a real answer to that gaming problem — which is exactly
+> the open challenge being tracked as prize `PRZ-02`.
 
-**You ask:** *"Find-owner: who owns delayed reward eligibility — is it novel here?"*
+### 3. Who did it first? — "delayed rewards"
 
-**What the harness does:** runs the precedent gate (a found owner is a *result*, not a kill).
+**You ask:** *"Has anyone already worked out making rewards kick in only after a delay?"*
 
-**What you get back:**
-> Owned. The Evidence Exchange credit-before-money posture (claim **C7**,
-> harvest selector `credit-before-money-sequencing-hypothesis`) already carries
-> delayed eligibility. Label: **`build-from-owned`** — cite it and build, don't
-> re-derive. It is **not** deployed or witnessed here, so it stays a candidate.
+**What happens:** it checks for prior work — and finding some is a *win*, not a dead end.
 
-### 4. Stake a bet / open a prize — "Reviewed-credit-as-attention-router solves PRZ-01"
+> Yes — that same related project already builds in delayed eligibility, so you
+> don't have to reinvent it. The move is to *use and adapt* it, not start from
+> scratch. It still hasn't been tried inside this repo, so treat it as a strong lead,
+> not a finished mechanism.
 
-**You ask:** *"Stake a bet on `PRZ-01`: credit accrues only from reviewed work and only routes review attention; an authority-handoff fixture proves credit changes no authority state."*
+### 4. Propose a fix — "credit that only steers attention"
 
-**What the harness does:** turns the idea into a falsifiable bet — names the collapse-test and the lane it must survive — and checks the award rule.
+**You ask:** *"I think this fixes the credit-without-power problem: credit only ever moves people's attention — what gets looked at first — and we show separately that no amount of credit changes who gets to decide anything. Does that hold up?"*
 
-**What you get back:**
-> Registered as **`BET-PRZ-01-a`** ([BET-REGISTER.md](prizes/BET-REGISTER.md)),
-> resolution **open**. **Predicted falsifier:** an attention-capture path where
-> repeated visibility becomes de-facto authority (incumbency / reviewer
-> bottleneck). **Attack lane:** reputation-capture
-> ([ATTACK-LANES.md](lanes/ATTACK-LANES.md)). It **cannot reach `survived`** until
-> its required witness — the authority-handoff fixture — exists, because the prize
-> closes only on *survives-attack + witness*, never on novelty.
+**What happens:** it turns your idea into a concrete proposal — naming exactly what would prove it wrong, and what you'd have to show to call it solved.
 
-### 5. Define — "What is a 'load-bearing term' here?"
+> Logged as a candidate against the open challenge `PRZ-01`. The thing that would
+> sink it: if being seen a lot quietly *becomes* power — the people always at the top
+> of the review queue end up calling the shots in practice. To actually win this,
+> you'd need a real case where someone with a mountain of credit still can't change a
+> single decision. Until that case exists, it stays a proposal, not a fix.
 
-**You ask:** *"Define: load-bearing term — and is `runway` tracked?"*
+### 5. Pin down a word — "what counts as a tracked term?"
 
-**What the harness does:** grounds the term in the constitution + definition, and points to the checker.
+**You ask:** *"Why does the repo insist some terms be 'tracked', and is 'runway' one of them?"*
 
-**What you get back:**
-> A **load-bearing term** is any symbol/named quantity in a formal expression,
-> fixture FAIL-region, candidate invariant, decidable rule, or claim-ledger
-> normative content (**REC-C14** / **ER-D23**). It must resolve to a tracked
-> definition or enter as a `candidate` with an `Open / to-ground:` field. To check
-> `runway`, run `tools/check_load_bearing_terms.py`; if it's untracked, that's a
-> drift defect for [DEFINITION-DRIFT-AUDIT.md](definitions/DEFINITION-DRIFT-AUDIT.md).
+**What happens:** it explains the rule in plain terms and points you to the check.
 
-### 6. Route — "Where should I start?"
+> Any word that carries real weight in a rule, a formula, or a pass/fail test needs
+> one agreed definition on file — otherwise people quietly mean different things by
+> it and the rules drift. For "runway", run `tools/check_load_bearing_terms.py`; if
+> it isn't on file, that's a gap to close before you lean on it.
 
-**You ask:** *"Route: I have limited time — what's the highest-leverage next move?"*
+### 6. Where do I start? — "I have limited time"
 
-**What the harness does:** sends you to the inventory Start Here and the ranked backlog instead of guessing.
+**You ask:** *"I've got an hour — what's the highest-leverage thing to do?"*
 
-**What you get back:**
-> Start at the [inventory **Start Here** path](.arcanum/inventory/index.md), then
-> the [economy-resilience-program](.arcanum/inventory/entries/economy-resilience-program.md)
-> backlog: **Track B** (snapshot the whitepaper, land six un-ledgered facts) is the
-> highest-leverage unblocker; then **Track A** fixtures (flow-conservation first).
-> Take the next item from the backlog, not from intuition.
+**What happens:** it sends you to the ranked plan instead of guessing.
 
-## What Makes A Query Good (checklist)
+> Start with the [inventory's Start Here](.arcanum/inventory/index.md), then the
+> ranked to-do list in the
+> [program entry](.arcanum/inventory/entries/economy-resilience-program.md). Right
+> now the highest-leverage move is the whitepaper-snapshot work; after that, the
+> first fixture (flow-conservation). Take the next item off that list rather than
+> going by gut.
 
-- It names a **specific** claim, term, mechanism, prize, or decision.
-- It states the **move** (confirm / deny / find-owner / bet / define / route).
-- It expects a **source kind + witness status + honest confidence**, a **typed
-  negative**, or **residue** — never bare reassurance.
-- It accepts "**candidate**, not validated" and "**owned**, build from it" as
-  *good* answers, not failures.
+## When the answer is "we don't know yet"
+
+That's a real, useful answer — not a failure. If an idea can't be backed up *and*
+can't be cleanly knocked down, the honest result is to leave it open with a note on
+what would settle it. Two answers that sound disappointing but are actually good:
+
+- **"It's a lead, not proven."** Worth building from — just don't treat it as decided.
+- **"Someone already did this."** Cite them and adapt — you just saved yourself the work.

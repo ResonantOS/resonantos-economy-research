@@ -160,10 +160,10 @@ demote attractive-but-unproven claims, refuse to let a score become authority,
 and show exactly where the evidence actually stands. Start a query from the
 [inventory **Start Here** path](.arcanum/inventory/index.md), then ask.
 
-See **[QUERYING.md](QUERYING.md)** for worked examples — an "anatomy of a good
-query," a loose-vs-sharp contrast, and six real query walkthroughs (confirm a
-claim, falsify a bounty, find an owner, stake a bet, define a term, route to the
-next move).
+See **[QUERYING.md](QUERYING.md)** for how to ask well, in plain language — what a
+good question looks like, a loose-vs-sharp contrast, and six worked examples (check
+a claim, break a bounty, find prior work, propose a fix, pin down a term, find
+where to start).
 
 ## Framing
 
