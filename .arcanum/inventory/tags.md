@@ -10,6 +10,7 @@ Owner: ResonantOS economy research owner
 | `agents` | Named agent pool or agent-facing runtime surface. |
 | `arcanum` | Arcanum-generated skill, runtime, or inventory surface. |
 | `authority` | Authority model, promotion policy, constitution, or decision evidence. |
+| `bets` | Falsifiable candidate-mechanism conjecture staked against a prize; never an economic stake. |
 | `cav2` | CyberAlchemy v2 local source lineage or copied snapshot. |
 | `constitution` | Constitution rule, axiom, or structural research-credibility rule. |
 | `craft` | Craft work-tracking ledger surface (contexts, gates, blockers, decisions, gaps). |
@@ -24,9 +25,11 @@ Owner: ResonantOS economy research owner
 | `implementation-boundary` | Pre-readiness planning surface that blocks implementation until gates, fixtures, and owner routes pass. |
 | `inventory` | Repo-local inventory package, schema, index, or entry. |
 | `load-bearing` | Load-bearing-term tracking discipline (REC-C14 / ER-D23) and its candidate lifecycle. |
+| `mechanism-generator` | Bets & prizes device that produces candidate economic mechanisms that have survived attack. |
 | `observability` | Local usage signals, reflection state, or observer outputs. |
 | `owned-build` | Candidate build-from-owned or reciprocal-return evidence; never authority by itself. |
 | `pool` | Agent-name pool or role-fit list. |
+| `prizes` | Open research-contract for an economic-mechanism target; closes only on a survived bet with a witness. |
 | `reflection` | Workflow-reflect report, reflection trigger, or iteration recommendation. |
 | `resonantos-economy` | ResonantOS / ResonantDAO economy research scope. |
 | `sigil-development` | Sigil lifecycle maintenance, observer synthesis, or behavior update. |

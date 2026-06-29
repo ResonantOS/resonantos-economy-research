@@ -34,6 +34,7 @@ This decision authorizes:
 - the copied tower as initial scaffold;
 - the local authority files as research-process authority;
 - CAV2 as external method authority for source posture and promotion discipline.
+  **(Superseded 2026-06-29 by [localize method authority](2026-06-29-method-authority-localized.md): method authority is now owned by the local constitution; CAV2 is harvested precedent.)**
 
 This decision does not authorize:
 

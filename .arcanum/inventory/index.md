@@ -10,7 +10,7 @@ only if you understand **why** and **how** it works before you write. Orient
 through this inventory **first**, in this order. This is the canonical entry path;
 `AGENTS.md`, `GUIDE.md`, and `CONTRIBUTING.md` all point back here.
 
-1. **Why & posture** — [README.md](../../README.md) "What This Repository Is". The
+1. **Why & posture** — [README.md](../../README.md) "What This Is, In Plain Language". The
    tower exists to make reward-mechanism failures visible *before* they become
    operational. Hold its standing rules everywhere: `claim ≤ proof`,
    `research ≠ policy`, `score ≠ authority`, and `cite a load-bearing term →
@@ -18,11 +18,11 @@ through this inventory **first**, in this order. This is the canonical entry pat
    [load-bearing-term-tracking-discipline](entries/load-bearing-term-tracking-discipline.md)).
 2. **Agent rules (non-negotiable)** — [AGENTS.md](../../AGENTS.md): run its four
    checks out loud before ANY write, edit, dispatch, or commit.
-3. **What to do next (the single most useful read)** — the cross-corpus program
-   synthesis and its ranked **fixture & constitution backlog**:
-   [economy-resilience-program](entries/economy-resilience-program.md) →
+3. **What to do next (the single most useful read)** — the
+   [economy-resilience-program](entries/economy-resilience-program.md) entry: it
+   names the concrete start path (Tracks A/B/C, cheapest-unblocker first) and the
+   ranked **fixture & constitution backlog**, backed by the full synthesis
    [dispatch/economy-synthesis/findings.md](../../dispatch/economy-synthesis/findings.md).
-   It names the concrete start path (Tracks A/B/C, cheapest-unblocker first).
 4. **How to move** — [GUIDE.md](../../GUIDE.md): pick the narrowest route.
 5. **Before relying on any claim** —
    [claims/SOURCE-CLAIM-LEDGER.md](../../claims/SOURCE-CLAIM-LEDGER.md) and
@@ -59,6 +59,8 @@ easy to breach, without them.
 | [economy-resilience-program](entries/economy-resilience-program.md) | synthesis | `strategy-result`, `dispatch`, `subagents`, `synthesis`, `attack-lane`, `fixture-backlog`, `resonantos-economy` | Four isolated towers + cross-corpus synthesis (closed `resolved`); the ranked fixture & constitution backlog and the concrete start path (Tracks A/B/C). |
 | [strategy-result-four-surface-reconciliation](entries/strategy-result-four-surface-reconciliation.md) | dispatch | `strategy-result`, `dispatch`, `subagents`, `definitions`, `glossary` | Audit reconciling glossary/notation/distills vs ER-D1–D20 (closed `resolved`); 10 actionable surface edits, 1 KILL, 9 owner-gated disputes; propose-only. |
 | [load-bearing-term-tracking-discipline](entries/load-bearing-term-tracking-discipline.md) | synthesis | `synthesis`, `definitions`, `constitution`, `load-bearing`, `craft` | **Session headline synthesis.** Every load-bearing term must resolve to a tracked definition (REC-C14 + ER-D23 + adapter); ER-D21–D28 added; systematic fixture-primitive drift closed; handed to CAv2. |
+| [bets-and-prizes-device](entries/bets-and-prizes-device.md) | workflow | `prizes`, `bets`, `mechanism-generator`, `workflow`, `resonantos-economy` | Falsification-first mechanism generator: a prize closes only when a bet survives its attack + authority-collapse check with a witness (never novelty). Standalone, portable; imports form only. |
+| [onboarding-docs-review](entries/onboarding-docs-review.md) | review-findings | `review`, `strategy-result`, `dispatch`, `subagents`, `resonantos-economy` | Red-team of README/GUIDE/CONTRIBUTING (closed `resolved`): 16 verified findings (2 CRITICAL, 8 MAJOR, 6 MINOR), all three FIX; verifier confirmed 13/13 factual, 0 dropped. Change requests not yet applied. |
 
 ## Open Gaps
 

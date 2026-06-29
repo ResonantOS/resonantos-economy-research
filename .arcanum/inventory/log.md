@@ -529,3 +529,127 @@ Owner: ResonantOS economy research owner
   inventory entry makes the program-synthesis start-path query discoverable. No
   policy, token, bounty, governance, validation, or authority claim promoted;
   inventory entries remain non-authority read models.
+
+## 2026-06-28 reframe to self-standing research harness
+
+- Mode: documentation-reframe (inline; not a dispatch — no fan-out, no ledger row)
+- Entries created: 0
+- Entries updated: 0
+- Index updated: no
+- Log updated: yes
+- Contradictions flagged: 0
+- Notes: Reframed the framing docs so CyberAlchemy v2 and DomainSpec Lean are no
+  longer presented as the repository's METHOD/FORMALIZATION AUTHORITY; method
+  authority is re-attributed to the repo's own RESEARCH-CREDIBILITY-CONSTITUTION
+  + AUTHORITY-MODEL. CAV2/DomainSpec are kept as harvested supporting-source
+  precedent — no harvest folder, source record, claim, or inventory entry was
+  deleted ("keep record"). Edited: README.md (rewritten — added plain-language
+  harness / towers / components / how-research-is-done / confirm-deny query loop /
+  framing sections), GUIDE.md (rewritten — framing + confirm/deny loop, harvest
+  subsections demoted from authority to kept-record), AGENTS.md, TOWER.md,
+  authority/AUTHORITY-MODEL.md, authority/source-spine.md, FINAL-LEARNING-PACK.md,
+  CONTRIBUTING.md, CRAFT.md. Also de-leaked private absolute paths
+  (/home/vrondelli/projects/domainspec-core/...) from FINAL-LEARNING-PACK.md and
+  CRAFT.md. RELATED-FRAMEWORK-CROSSWALK.md left as-is (already related-framework /
+  borrow-carefully record, no authority claim). NOT touched — surfaced for owner
+  decision: constitution rules REC-C10 and REC-C13 (CAV2 source-posture +
+  reciprocal return-package reciprocity), the CTX-ECON-CAV2-RETURN work item and
+  DEC-ECON-STANDALONE-001 decision row in CRAFT.md, and CLAUDE.md Route 3's
+  "CyberAlchemy v2 can authorize method and promotion posture". No policy, token,
+  bounty, governance, validation, or authority claim promoted; framing change only.
+
+## 2026-06-28 bets & prizes mechanism generator (Stage 1)
+
+- Mode: feature-build (inline; not a dispatch — standalone surface authoring, no fan-out)
+- Entries created: 1 (`entries/bets-and-prizes-device.md`)
+- Entries updated: 0
+- Index updated: yes (new entry row)
+- Tags added: `bets`, `prizes`, `mechanism-generator`
+- Log updated: yes
+- Contradictions flagged: 0
+- Notes: Stood up a standalone `prizes/` surface (`README.md`, `PRIZE-REGISTER.md`,
+  `BET-REGISTER.md`, `SEED.md`) — a falsification-first device that generates
+  candidate economy mechanisms. Crux (owner decision): a prize closes
+  `awarded-candidate` ONLY when a bet survives its attack lane + the
+  authority-collapse check WITH a concrete witness; novelty never closes a prize
+  (avoids the Goodhart/prize-farming trap). Owner decision: built STANDALONE — the
+  upstream `invoke` runtime is NOT imported (it composes ~10 Arcanum sigils and
+  would reverse `DEC-ECON-STANDALONE-001`); the device reuses the confirm/deny
+  loop + skeptic gates + attack lanes + authority gate, so it is portable to any
+  harness. Imported the FORM only from `SRC-DST-PRIZES` (PRIZES.md) + harvest
+  selectors `dlean-prize-not-achievement` / `dlean-bet-register-boundary`, with
+  source posture preserved and no private snapshot text copied (REC-C10 + AGENTS
+  check #4 intact). Seeded `PRZ-01` (credit-routes-attention-not-authority),
+  `PRZ-02` (anti-bounty-farming eligibility), `PRZ-03` (bounded randomness), and
+  `BET-PRZ-01-a` (open). Nothing awarded; the device is method infrastructure, not
+  a result — it promotes nothing into definitions, token/bounty/governance policy,
+  anti-gaming proof, payout, launch, or implementation. A future handoff to
+  domainspec is a `REC-C13` deferred candidate evidence package
+  (`CTX-ECON-CAV2-RETURN`), authored via upstream `invoke handoff`, only after a
+  prize closes.
+
+## 2026-06-28 querying cookbook
+
+- Mode: doc-build (inline; not a dispatch)
+- Entries created: 0
+- Index updated: no
+- Log updated: yes
+- Contradictions flagged: 0
+- Notes: Added [QUERYING.md](../../QUERYING.md) to make the confirm/deny query
+  method concrete instead of abstract — an "anatomy of a good query," a
+  loose-vs-sharp contrast table, six worked walkthroughs grounded in real
+  artifacts (claim C7, the bounty block, `PRZ-01`/`BET-PRZ-01-a`, REC-C14, the
+  program backlog), and a query checklist. Linked from the README "Querying The
+  Tower By Conversation" section and the GUIDE confirm/deny section. No claim
+  promoted; the examples model honest answer shapes (source kind + witness +
+  confidence / typed negative / residue), not results.
+
+## 2026-06-28 onboarding-docs review dispatch (registered + closed)
+
+- Mode: dispatch (review) — registered + run + closed `resolved`
+- Dispatch: `2026-06-28-onboarding-docs-review` (dispatch + close rows in `telemetry/agents/subagents-dispatch.yaml`)
+- Entries created: 1 (`entries/onboarding-docs-review.md`)
+- Index updated: yes (new entry row)
+- Log updated: yes
+- Contradictions flagged: 0
+- Notes: Red-team of README.md / GUIDE.md / CONTRIBUTING.md for blind spots, run
+  BECAUSE these docs were authored this session (author-bias isolation). Check-tension
+  gate: both PASS. Attackers `robot_talks` (Ostrom operability · Taleb
+  fidelity/governance · Fritz reference-integrity) → strategist-authored synthesis →
+  verifier Quine (confirmed 13/13 factual findings, 0 dropped) → coverage auditor
+  Brandenburg ACCEPT. agents_spawned total 5, loops_used 1. Result: 16 verified
+  findings (2 CRITICAL, 8 MAJOR, 6 MINOR), all three docs FIX. Headline: a 3-pointer
+  drift cluster in README's "Current State" block (invented "auditor ACCEPT",
+  gitignored-snapshots link, phantom "Tracks A/B/C") + no single authoritative
+  onboarding order + double-owned "Framing". The de-CAV2 method-authority decision
+  debt (MI4) was independently re-found by the red-team. Change requests NOT applied
+  — applying them is a separate governed act; non-authority read-model, nothing promoted.
+
+## 2026-06-29 onboarding-docs review — change requests applied
+
+- Mode: apply (downstream of the closed review dispatch; plan-approved)
+- Entries created: 1 (`authority/decisions/2026-06-29-method-authority-localized.md`, status `proposed`)
+- Entries updated: `entries/onboarding-docs-review.md` (status → applied)
+- Index updated: yes (Start Here step 1 heading quote + step 3 start-path pointer)
+- Log updated: yes
+- Contradictions flagged: 0
+- Notes: Applied all 16 verified findings (2 CRITICAL, 8 MAJOR, 6 MINOR) plus the
+  consistency spillovers found on apply (the "safe validation" leak also in
+  GUIDE/CONTRIBUTING). Touched README.md, GUIDE.md, CONTRIBUTING.md, AGENTS.md,
+  `.arcanum/inventory/index.md`, and the four external subtower headers
+  (`scaffolded` → `first-pass returns present`; official-whitepaper stays
+  `scaffolded`). Headline fixes: removed the invented "auditor ACCEPT"; de-linked
+  the gitignored `sources/local-snapshots` path; repointed the start-path to the
+  `economy-resilience-program` entry (which actually holds Tracks A/B/C); GUIDE now
+  single-owns the (now seven) framing habits, README/AGENTS reference it; one
+  authoritative onboarding order (inventory Start Here; README "Reading Order"
+  relabelled a deep-dive corpus order); added a "First Fixture, End To End" worked
+  walkthrough. MI4 handled as an OWNER GATE: drafted a *proposed* superseding
+  decision (method authority → local constitution) — NOT enacted; pending owner
+  approval; the 2026-06-26 decision was left untouched. Verification: all local
+  links resolve, fixed-claim greps clean, `tools/check_load_bearing_terms.py`
+  exit 0. No token/bounty/governance/mechanism/validation promotion.
+- Follow-up (same day): owner approved MI4 — the `2026-06-29-method-authority-localized`
+  decision flipped `proposed` → `pass`; the 2026-06-26 method-authority clause
+  superseded in place; decisions index updated. All 16 review findings now closed.
+  Scope is method authority only; no economy/token/governance authority changed.

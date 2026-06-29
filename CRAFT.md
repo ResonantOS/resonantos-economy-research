@@ -42,7 +42,14 @@ itself.
 
 - Stage: `review-audit` · Gate: `flag`
 - Purpose: offer reusable method/discipline back to CAV2 as candidate evidence (ER-D20 / REC-C13), transferring no authority.
-- Next move: await CAV2 owner review of the [load-bearing-term-tracking handoff](/home/vrondelli/projects/domainspec-core/cyberAlchemy-v2/authority/imports/resonantos-economy-research/2026-06-28-load-bearing-term-tracking-handoff.md).
+- Next move: await CAV2 owner review of the load-bearing-term-tracking handoff (delivered to the external owner checkout; absolute path not tracked in this repo).
+
+### <a id="context-ctx-econ-bets-prizes"></a>CTX-ECON-BETS-PRIZES — Bets & prizes mechanism generator
+
+- Stage: `execute` · Gate: `flag`
+- Purpose: a standalone falsification-first device that generates candidate economy mechanisms — a prize closes only on a survived bet (attack lane + authority-collapse check) with a witness, never on novelty; portable to any harness, imports the form only (no upstream `invoke` runtime; `DEC-ECON-STANDALONE-001` preserved).
+- Next move: build the `PRZ-01` authority-handoff witness fixture so `BET-PRZ-01-a` can resolve; stake bets on `PRZ-02` / `PRZ-03`. Handoff to domainspec is `REC-C13` / `CTX-ECON-CAV2-RETURN`, after a prize closes.
+- Artifacts: [prizes/README.md](prizes/README.md), [prizes/PRIZE-REGISTER.md](prizes/PRIZE-REGISTER.md), [prizes/BET-REGISTER.md](prizes/BET-REGISTER.md), [prizes/SEED.md](prizes/SEED.md), [bets-and-prizes-device entry](.arcanum/inventory/entries/bets-and-prizes-device.md).
 
 ## Decisions
 

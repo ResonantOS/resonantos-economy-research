@@ -11,8 +11,8 @@ researches a resilient ResonantOS / ResonantDAO economy.
 The model deliberately separates:
 
 - official ResonantDAO source claims;
-- CyberAlchemy v2 method authority;
-- DomainSpec formalization discipline;
+- repository-local method authority (its research-credibility constitution);
+- formalization discipline (invariant-writing precedent, kept as supporting source);
 - external research evidence;
 - local synthesis;
 - policy or implementation authority, which this repo does not own.
@@ -28,8 +28,8 @@ rules, or implementation without an external owner decision.
 | Kind | Counts as | Owner route | Blocked use |
 | --- | --- | --- | --- |
 | Primary source | What ResonantDAO says about itself. | Official-source reading route. | Treating local synthesis as official position. |
-| Method authority | Research process, source posture, promotion discipline, and non-collapse rules. | Local authority plus CyberAlchemy v2 decision. | Treating method authority as mechanism validation. |
-| Formalization discipline | Invariant-writing and proof-honesty posture. | DomainSpec formalization precedent. | Claiming Lean proof of economics without a Lean artifact. |
+| Method authority | Research process, source posture, promotion discipline, and non-collapse rules. | Repository-local research-credibility constitution. | Treating method authority as mechanism validation. |
+| Formalization discipline | Invariant-writing and proof-honesty posture. | Repository-local formalization precedent (harvested, kept as supporting source). | Claiming Lean proof of economics without a Lean artifact. |
 | Related evidence | DAO, crypto, science-of-science, mechanism-design, and behavioral sources. | Relevant subtower. | Treating analogy as proof. |
 | Local synthesis | A repo-authored reading or hypothesis. | Tower or lane owner review. | Becoming policy by proximity. |
 | Candidate invariant | A proposed condition that should remain true. | Closure plan plus validation route. | Becoming a rule before witness and gate. |
@@ -62,8 +62,8 @@ to corpus work.
 6. A mechanism that is incentive-compatible in a model is not socially safe
    until behavioral residue is named.
 7. A source from failed DAO history is warning evidence, not destiny.
-8. CyberAlchemy v2 authority supports research credibility, not final economy
-   correctness.
+8. Harvested external method precedent supports research credibility, not final
+   economy correctness.
 
 ## Gate Vocabulary
 

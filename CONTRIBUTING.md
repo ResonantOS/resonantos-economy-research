@@ -42,7 +42,7 @@ proximity.
 - No score, reputation mark, audit hit, citation count, or token treated as
   governance authority.
 - No public export of local snapshots, telemetry, private provenance, or
-  CyberAlchemy/DomainSpec implementation material without a dedicated scrub.
+  imported private source material without a dedicated scrub.
 - No mechanism proposal without a bounty-optimization or capture/farming failure
   analysis.
 
@@ -60,7 +60,7 @@ Every durable contribution should name:
 
 ## Validation Work
 
-The current safe validation surface is
+The current validation surface (review-only) is
 [validation/contribution-edge-fixtures/](validation/contribution-edge-fixtures/README.md).
 Use it to test whether observed contribution signals can move to reviewed
 credit without creating reward entitlement, payout, governance power, launch
@@ -69,12 +69,14 @@ readiness, or authority transfer.
 Fixture work may produce `research-pass`, `research-flag`, or `research-block`
 for a local scaffold. It does not validate the economy.
 
-The cross-corpus program synthesis
-([dispatch/economy-synthesis/findings.md](dispatch/economy-synthesis/findings.md))
-now supplies a ranked **fixture & constitution backlog**: four decidable-now
-fixtures (measurement-is-not-authority, flow-conservation, treasury runway,
-audit-randomization), an upstream costly-identity (Douceur) gate, and routings
-to the authority/constitution lane. Take the next fixture from that backlog, not
-from intuition — and keep its decidable pass/fail condition. A candidate
-invariant that only "owes a fixture" is not validated; do not let a backlog item
-read as a result until its fixture has actually been run.
+The ranked **fixture & constitution backlog** lives in the
+[economy-resilience-program](.arcanum/inventory/entries/economy-resilience-program.md)
+entry (Tracks A/B/C, cheapest-unblocker first), backed by the full synthesis
+[dispatch/economy-synthesis/findings.md](dispatch/economy-synthesis/findings.md):
+four decidable-now fixtures (measurement-is-not-authority, flow-conservation,
+treasury runway, audit-randomization), an upstream costly-identity (Douceur) gate,
+and routings to the authority/constitution lane. Take the next fixture from that
+backlog, not from intuition, and keep its decidable pass/fail condition — see
+GUIDE's [*First Fixture, End To End*](GUIDE.md#first-fixture-end-to-end) for the
+worked steps. A candidate invariant that only "owes a fixture" is not validated;
+do not let a backlog item read as a result until its fixture has actually been run.

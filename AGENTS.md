@@ -34,16 +34,20 @@ run these checks out loud:
 
 1. **Claim <= evidence?** If the text implies a solved economy, a validated
    reward mechanism, or a proven invariant without source evidence and a
-   witness, stop and demote the claim.
+   witness, stop and demote the claim (standard: REC-C2 in
+   [authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md](authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md)).
 2. **Research != policy?** If an artifact would become token policy,
    governance weight, bounty policy, financial-launch readiness, or product
-   implementation by proximity, stop and route it to an authority gate.
+   implementation by proximity, stop and route it to the authority gate
+   ([authority/promotion-policy.md](authority/promotion-policy.md)).
 3. **Score != authority?** If a metric, token, reputation score, citation count,
    audit hit, or bounty result is being treated as governance authority, stop
-   and separate signal, credit, and authority.
-4. **Public/private clean?** If the work copies private CyberAlchemy,
-   DomainSpec, or implementation material into a public-facing artifact, stop
-   and scrub or cite by source posture.
+   and separate signal, credit, and authority (the non-collapse rules in
+   [authority/AUTHORITY-MODEL.md](authority/AUTHORITY-MODEL.md)).
+4. **Public/private clean?** If the work copies private imported source
+   material, local snapshots, or implementation detail into a public-facing
+   artifact, stop and scrub or cite by source posture (the source-kind labels in
+   [authority/source-spine.md](authority/source-spine.md)).
 
 If all checks pass, say so briefly and proceed.
 
@@ -51,11 +55,15 @@ If all checks pass, say so briefly and proceed.
 
 - The official ResonantDAO primary source for this repo is currently only
   `https://resonantdao.com/whitepaper/`.
-- CyberAlchemy v2 supplies method authority for source posture, promotion gates,
-  non-collapse rules, and authority separation. It does not prove an economy
+- Method authority — source posture, promotion gates, non-collapse rules, and
+  authority separation — is owned locally by this repository's
+  [research-credibility constitution](authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md)
+  and [authority model](authority/AUTHORITY-MODEL.md), not by any external
+  framework.
+- Harvested external precedent (method/source-posture and formalization
+  discipline) is kept as supporting-source record. It informs research
+  credibility and invariant-writing style; it does not prove a ResonantOS economy
   mechanism is safe.
-- `domainspec-lean-formalization` supplies formalization discipline and
-  invariant-writing precedent. It does not prove ResonantDAO economics.
 - External DAO, crypto, scientometrics, mechanism-design, and behavioral sources
   are related evidence only until this repo records source kind, bridge decision,
   and local relevance.

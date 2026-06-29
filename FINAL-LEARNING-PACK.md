@@ -54,7 +54,7 @@ This tower is not closed for mechanism recommendations yet. It is closed only fo
 ## Sources
 
 - `https://resonantdao.com/whitepaper/`
-- [proposal-blueprint.md](/home/vrondelli/projects/domainspec-core/cyberAlchemy-v2/development/research/2026-06-24-knowledge-market-product-idea/proposal-blueprint.md)
-- [findings.md](/home/vrondelli/projects/domainspec-core/cyberAlchemy-v2/development/research/2026-06-24-knowledge-market-product-idea/findings.md)
-- [FRAMEWORK-IMPLICATIONS.md](/home/vrondelli/projects/domainspec-core/domainspec-lean-formalization/FRAMEWORK-IMPLICATIONS.md)
-- [research-social-dynamic README](/home/vrondelli/projects/domainspec-core/domainspec-lean-formalization/research-social-dynamic/README.md)
+- Evidence Exchange proposal blueprint — local snapshot [sources/local-snapshots/cav2/evidence-exchange/proposal-blueprint.md](sources/local-snapshots/cav2/evidence-exchange/proposal-blueprint.md)
+- Evidence Exchange findings — local snapshot [sources/local-snapshots/cav2/evidence-exchange/findings.md](sources/local-snapshots/cav2/evidence-exchange/findings.md)
+- Formalization framework implications — local snapshot [sources/local-snapshots/domainspec-lean/FRAMEWORK-IMPLICATIONS.md](sources/local-snapshots/domainspec-lean/FRAMEWORK-IMPLICATIONS.md) (`SRC-DST-FRAMEWORK`)
+- Formalization research social-dynamic map — local snapshot [sources/local-snapshots/domainspec-lean/research-social-dynamic/README.md](sources/local-snapshots/domainspec-lean/research-social-dynamic/README.md) (`SRC-DST-SOCIAL`)

@@ -11,7 +11,7 @@ Create a governed research tower for the ResonantOS economy problem: contributio
 
 | Layer | Source basis | Research role |
 | --- | --- | --- |
-| L0 corpus | Official whitepaper plus CyberAlchemy v2 method evidence and DomainSpec formalization discipline. | Define what is actually being researched. |
+| L0 corpus | Official whitepaper plus harvested external method/formalization precedent, kept as supporting-source record. | Define what is actually being researched. |
 | L1 residue map | Failure modes, incentive traps, authority risks, and missing witnesses. | Keep uncertainty visible. |
 | L2 closure plan | Subtowers, dispatch proposal, gates, and next route. | Decide how to attack without over-promoting. |
 
@@ -31,7 +31,7 @@ It may not:
 - decide governance weights;
 - create authority kinds;
 - move claims into specs or implementation.
-- turn CyberAlchemy v2 method authority into economy proof.
+- turn harvested external method precedent into economy proof.
 
 ## Borrow / Block Posture
 
