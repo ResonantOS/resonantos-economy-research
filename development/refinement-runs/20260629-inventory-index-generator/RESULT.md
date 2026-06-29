@@ -39,6 +39,11 @@ generate-not-hand-edit, in-repo-only deps (`DEC-ECON-STANDALONE-001`),
 report-never-auto-create (no definition/entry inflation), and inventory-stays-a-
 non-authority-read-model.
 
+## Status (refreshed 2026-06-29)
+
+- **WP1 built + validated** — `tools/build_inventory_index.py`; D3 resolved **Option B** (pure regenerate; `confidence` dropped, `updated` from git); toy-game passed; existing validator still passes; `index.json` regenerated (22 entries).
+- Decisions resolved (decision-gate): **D-5** → a *new* `validate-inventory-truth.sh`; **D-19** → `authority_posture` mirror only (WP1 already conforms); see [authority/decisions/2026-06-29-ergonomics-open-decisions.md](../../../authority/decisions/2026-06-29-ergonomics-open-decisions.md).
+
 ## Recommended next route
 
-`task-session` — execute WP1 → WP2 → WP3 as bounded work-packs. (Resolve D1/D2 at or before WP2.)
+`task-session` — **WP2** (`validate-inventory-truth.sh`, new separate script per D-5) → **WP3** (gate wiring). WP1 done.

@@ -107,6 +107,8 @@ loses faith in the whole apparatus).
 
 ## The decisions for the team (the only 5 that aren't obvious)
 
+> **Refresh annotation (2026-06-29):** resolved via decision-gate — see [authority/decisions/2026-06-29-ergonomics-open-decisions.md](../../authority/decisions/2026-06-29-ergonomics-open-decisions.md). **#18** tier (green-path, compress-never-drop) · **#19** `authority_posture` mirror only · **#17** build a structure-only stub · **#5** a new separate truth-validator · **#4** generator WP1 **built**. The original framing below is preserved.
+
 1. **#18 — Tier the safety gate?** Yes if the green-path boundary is crisp and still *names* all four checks with auto-escalation; otherwise keep it flat. *This is the one with teeth.*
 2. **#19 — Let the machine index carry a promotion-boundary field?** Reconcile the two schemas (safe regardless); add the machine field **only** as a validated mirror that describes, never grants.
 3. **#17 — Ship a fixture skeleton?** Yes, as an empty research-blocked structure that asserts no invariant.

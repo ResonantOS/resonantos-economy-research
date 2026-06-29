@@ -105,7 +105,7 @@ contexts:
     purpose: Adopt the ranked ergonomics improvements — generate derived projections (inventory index, CRAFT view, tag register) from their source of truth and truth-check them; the trust fixes; one front door — without eroding the guardrails.
     stage: plan
     gate: flag
-    next_move: Apply Theme-1 trust fixes (propagate the "auditor ACCEPT" removal to the inventory entry + source-records; de-noise the term checker); then build the inventory index generator (#4). Owner-gated items #17/#18/#19 await a decision.
+    next_move: Inventory index generator (#4) built (WP1; D3=B; index.json now generated from entries). Decisions resolved via decision-gate (#18 tier-gate, #5 new validator, #19 posture-mirror-only, #17 build stub). Remaining: enact WP2 (validate-inventory-truth.sh), the #17 fixture stub, the #18 AGENTS gate-tier edit (constitution-governance), plus the Theme-1 trust fixes.
     owned_artifacts:
       - ART-ECON-ERGONOMICS-STRATEGY
       - ART-ECON-ONBOARDING-REVIEW
@@ -369,7 +369,7 @@ indexes:
     CTX-ECON-FIXTURES: Build flow-conservation first, then runway-inequality, TF-11, TF-3.
     CTX-ECON-CAV2-RETURN: Await CAV2 owner review of the load-bearing-term handoff.
     CTX-ECON-BETS-PRIZES: Build the PRZ-01 witness fixture; stake bets on PRZ-02/PRZ-03.
-    CTX-ECON-ERGONOMICS: Apply Theme-1 trust fixes; build the inventory index generator (#4); #17/#18/#19 await an owner decision.
+    CTX-ECON-ERGONOMICS: #4 generator built (WP1); decisions resolved; enact WP2 + #17 stub + #18 gate-edit + Theme-1 trust fixes.
   artifacts_by_path:
     .craft/ledger.yml: ART-ECON-LEDGER
     CRAFT.md: ART-ECON-VIEW

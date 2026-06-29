@@ -29,12 +29,12 @@ Read source-of-truth + projections + validator: `.arcanum/inventory/entries/*.md
 
 no-research — fully specified by in-repo files; preserves `DEC-ECON-STANDALONE-001`.
 
-## Residue
+## Residue (refreshed 2026-06-29)
 
-Two owner decisions, flagged, non-blocking for Work-pack 1: D1 validator route
-(#5 — new script vs extend+relabel); D2 authority field (#19 — posture mirror yes,
-gate-readable promotion field deferred).
+All decisions resolved. **WP1 built** (D3 = B). **D-5** → a new separate
+`validate-inventory-truth.sh` (WP2); **D-19** → `authority_posture` mirror only
+(WP1 conforms). See `authority/decisions/2026-06-29-ergonomics-open-decisions.md`.
 
 ## Next move
 
-`task-session`: build WP1 (`build_inventory_index.py`) → WP2 (truth validator) → WP3 (gate wiring).
+`task-session`: **WP2** (`validate-inventory-truth.sh`) → WP3 (gate wiring). WP1 done.

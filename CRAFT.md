@@ -57,7 +57,7 @@ itself.
 
 - Stage: `plan` · Gate: `flag`
 - Purpose: adopt the ranked ergonomics improvements — generate derived projections (inventory index, this CRAFT view, the tag register) from their source of truth and truth-check them; the trust fixes; one front door — without eroding the guardrails.
-- Next move: apply Theme-1 trust fixes (propagate the "auditor ACCEPT" removal to the inventory entry + source-records; de-noise the term checker); then build the inventory index generator (#4). Owner-gated items #17/#18/#19 await a decision.
+- Next move: inventory index generator (#4) **built** (WP1; D3=B; `index.json` now generated from the entries). Decisions resolved (decision-gate: #18 tier-gate · #5 new validator · #19 posture-mirror-only · #17 build stub). Remaining: enact WP2 (`validate-inventory-truth.sh`), the #17 stub, the #18 AGENTS gate-tier edit, plus the Theme-1 trust fixes.
 - Artifacts: [ergonomics strategy](dispatch/ergonomics-strategy/findings.md), [onboarding-docs review](reviews/onboarding-docs-review/findings.md).
 
 ## Decisions

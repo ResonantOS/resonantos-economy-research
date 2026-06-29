@@ -51,6 +51,28 @@ run these checks out loud:
 
 If all checks pass, say so briefly and proceed.
 
+## Gate Tiers (decision D-18, 2026-06-29)
+
+The four checks above are the **full gate**. To keep the toll proportional:
+
+- **Green-path** — for provably-trivial writes ONLY (an inventory log/entry, a
+  residue note, a craft-ledger status line, a fixture-scaffold TODO): state one line
+  instead of spelling out four — *"research-only, in-route, claim ≤ evidence (no
+  solved/validated/closed state asserted), no policy/score/authority claim, no
+  private/imported leak."* It is a **compressed assertion of the same four checks —
+  it never drops one.**
+- **Full gate** — spell out all four for anything touching `authority/`,
+  `definitions/`, `claims/`, constitutions, dispatch sheets/ledger, the inventory
+  schema, source posture, or **any commit**.
+
+**Auto-escalate to the full gate** the instant a write involves any of: a source-kind
+label; an authority / promotion / governance / launch / token / bounty / payout /
+implementation word; a metric / score / credit / reputation treated as authority; any
+claim of a solved / validated / proven / closed / resolved state, or a "first /
+keystone / the-one X" claim; or private / imported source material (incl. a CAV2 /
+return-package reference). When in doubt, run the full gate. The green-path is a
+convenience for the obvious cases, never a way around a check.
+
 ## Authority Boundaries
 
 - The official ResonantDAO primary source for this repo is currently only

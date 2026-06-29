@@ -40,11 +40,14 @@ tightened, 5 owner-gated); 3 do-now trust fixes.
 
 ## Residue / Next Act
 
-The change set is **not applied** — applying is a separate act outside the dispatch.
-Safe Theme-1/2/3 items can proceed; **#17 / #18 / #19** (+ the #5/#7 flags) need an
-owner decision. Note: this closeout deliberately did not hand-patch `index.json`
-(now stale by one more entry) — left for the proposed generator (finding #4), as a
-live demonstration of the drift the strategy targets.
+**Decisions resolved 2026-06-29** (decision-gate: #18 tier-gate · #5 new validator ·
+#19 posture-mirror-only · #17 build stub; see
+[authority/decisions/2026-06-29-ergonomics-open-decisions.md](../../../authority/decisions/2026-06-29-ergonomics-open-decisions.md)).
+The inventory index generator (**#4**) WP1 is **built**
+(`tools/build_inventory_index.py`; D3=B), and `index.json` is now generated from the
+entry files (the drift this dispatch documented is closed). Remaining: enact WP2
+(`validate-inventory-truth.sh`), the #17 fixture stub, the #18 AGENTS gate-tier edit,
+plus the Theme-1 trust fixes.
 
 ## Promotion Boundary
 

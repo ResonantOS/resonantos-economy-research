@@ -1,265 +1,219 @@
 {
   "schema_version": "inventory.index.v0.1",
   "inventory_root": ".arcanum/inventory",
-  "generated_at": "2026-06-28T00:00:00Z",
+  "generated_at": "2026-06-29T16:09:27Z",
   "human_index": "index.md",
   "entries": [
     {
-      "id": "research-tower-root",
-      "path": "entries/research-tower-root.md",
-      "kind": "entry",
-      "type": "source",
-      "title": "Research Tower Root",
-      "summary": "Root research tower and reading order.",
-      "tags": [
-        "tower",
-        "resonantos-economy"
-      ],
-      "sources": [
-        "TOWER.md",
-        "README.md",
-        "CONTRIBUTING.md"
-      ],
-      "updated": "2026-06-26",
-      "status": "active",
-      "confidence": "medium",
-      "selectors": [
-        "research-tower-root"
-      ],
-      "evidence_card_ids": [],
-      "evidence_set_ids": [],
-      "residue": []
-    },
-    {
-      "id": "subagents-dispatch-strategy",
-      "path": "entries/subagents-dispatch-strategy.md",
+      "id": "bets-and-prizes-device",
+      "path": "entries/bets-and-prizes-device.md",
       "kind": "entry",
       "type": "workflow",
-      "title": "Subagents Dispatch Strategy",
-      "summary": "DomainSpec dispatch stack, ledger, and inventory hook.",
+      "title": "Bets & Prizes — a falsification-first mechanism generator",
+      "summary": "A standalone research device that turns the tower from a precedent cataloguer into a generator of **candidate economic mechanisms that have survived attack**.",
       "tags": [
-        "dispatch",
-        "subagents",
-        "telemetry",
-        "domainspec"
-      ],
-      "sources": [
-        "ops/subagents-strategy/README.md",
-        ".agents/skills/domainspec-subagents-strategy/SKILL.md",
-        "telemetry/agents/subagents-dispatch.yaml"
-      ],
-      "updated": "2026-06-27",
-      "status": "active",
-      "confidence": "high",
-      "selectors": [
-        "domainspec-subagents-strategy",
-        "strategy-result-inventory-hook"
-      ],
-      "evidence_card_ids": [],
-      "evidence_set_ids": [],
-      "residue": [
-        "The CAv2/Lean harvest dispatch is closed with accepted local findings; future dispatches still need two-append ledger discipline and inventory closeout."
-      ]
-    },
-    {
-      "id": "repo-skill-surface",
-      "path": "entries/repo-skill-surface.md",
-      "kind": "entry",
-      "type": "skill-surface",
-      "title": "Repo Skill Surface",
-      "summary": "Installed Arcanum, sigil lifecycle, workflow reflection, and DomainSpec dispatch skills.",
-      "tags": [
-        "skills",
-        "arcanum",
-        "domainspec",
-        "sigil-development",
-        "workflow-reflect"
-      ],
-      "sources": [
-        ".agents/skills/README.md",
-        ".agents/skills/inventory/SKILL.md",
-        ".agents/skills/domainspec-subagents-strategy/SKILL.md",
-        ".agents/skills/sigil-development/SKILL.md",
-        ".agents/skills/workflow-reflect/SKILL.md"
-      ],
-      "updated": "2026-06-27",
-      "status": "active",
-      "confidence": "high",
-      "selectors": [
-        "inventory",
-        "research-tower",
-        "domainspec-subagents-strategy",
-        "sigil-development",
-        "workflow-reflect"
-      ],
-      "evidence_card_ids": [],
-      "evidence_set_ids": [],
-      "residue": []
-    },
-    {
-      "id": "telemetry-agent-pool",
-      "path": "entries/telemetry-agent-pool.md",
-      "kind": "entry",
-      "type": "telemetry",
-      "title": "Telemetry Agent Pool",
-      "summary": "Local agent-name pool for governed dispatches and workflow reflection.",
-      "tags": [
-        "agents",
-        "subagents",
-        "pool",
-        "telemetry",
-        "workflow-reflect"
-      ],
-      "sources": [
-        "telemetry/agents/agents.yaml",
-        "telemetry/agents/README.md"
-      ],
-      "updated": "2026-06-27",
-      "status": "active",
-      "confidence": "high",
-      "selectors": [
-        "allowed_agents",
-        "role_fit",
-        "lane_fit",
-        "workflow-reflect"
-      ],
-      "evidence_card_ids": [],
-      "evidence_set_ids": [],
-      "residue": []
-    },
-    {
-      "id": "repository-working-guide",
-      "path": "entries/repository-working-guide.md",
-      "kind": "entry",
-      "type": "workflow",
-      "title": "Repository Working Guide",
-      "summary": "Posture and continuation guide after first harvests and fixture scaffold.",
-      "tags": [
-        "guide",
+        "prizes",
+        "bets",
+        "mechanism-generator",
         "workflow",
-        "authority",
         "resonantos-economy"
       ],
       "sources": [
-        "GUIDE.md",
-        "README.md",
-        "CONTRIBUTING.md",
-        "AGENTS.md"
+        "../../../prizes/README.md",
+        "../../../prizes/PRIZE-REGISTER.md",
+        "../../../prizes/BET-REGISTER.md",
+        "../../../prizes/SEED.md",
+        "../../../sources/local-snapshots/domainspec-lean/PRIZES.md",
+        "../../../harvest/cav2-lean/findings.md",
+        "PRZ-01..03",
+        "BET-PRZ-01-a",
+        "SRC-DST-PRIZES",
+        "dlean-prize-not-achievement",
+        "dlean-bet-register-boundary"
       ],
-      "updated": "2026-06-27",
+      "updated": "2026-06-29",
       "status": "active",
-      "confidence": "medium",
+      "authority_posture": "non-authority-read-model",
       "selectors": [
-        "repository-posture",
-        "continuation-surface",
-        "dispatch-readiness",
-        "private-internal-public-export-gate"
+        "bets-and-prizes-device",
+        "award-equals-survives-attack",
+        "prize-as-open-contract",
+        "bet-as-labeled-conjecture",
+        "rec-c13-candidate-handoff",
+        "invoke handoff"
       ],
       "evidence_card_ids": [],
       "evidence_set_ids": [],
       "residue": [
-        "Public release still requires a dedicated scrub and derivative package."
+        "Nothing is awarded — `PRZ-01..03` are open; `BET-PRZ-01-a` cannot reach `survived` until its authority-handoff witness fixture is built."
       ]
     },
     {
-      "id": "harvest-strategy",
-      "path": "entries/harvest-strategy.md",
+      "id": "cav2-authority-lifecycle-owned-build-harvest",
+      "path": "entries/cav2-authority-lifecycle-owned-build-harvest.md",
       "kind": "entry",
-      "type": "workflow",
-      "title": "Harvest Strategy",
-      "summary": "Narrow CAv2 and Lean harvest strategy before broad fan-out; first harvest is closed.",
+      "type": "synthesis",
+      "title": "CAv2 Authority/Lifecycle Owned-Build Harvest",
+      "summary": "The authority/lifecycle harvest closed with a FIX verdict and no CRITICAL findings.",
       "tags": [
         "harvest",
-        "workflow",
         "dispatch",
-        "authority",
-        "resonantos-economy"
-      ],
-      "sources": [
-        "harvest/README.md",
-        "harvest/cav2-lean/README.md",
-        "dispatch/PROPOSED-HARVEST-DISPATCH.md",
-        "telemetry/agents/subagents-dispatch.yaml"
-      ],
-      "updated": "2026-06-27",
-      "status": "closed-first-harvest",
-      "confidence": "high",
-      "selectors": [
-        "cav2-lean-harvest",
-        "snapshot-only-harvest",
-        "harvest-findings-cav2-lean"
-      ],
-      "evidence_card_ids": [],
-      "evidence_set_ids": [],
-      "residue": [
-        "First harvest produced research controls only; external evidence, behavior, legal, privacy, anti-gaming, and workflow-witness gaps remain open."
-      ]
-    },
-    {
-      "id": "local-source-snapshots",
-      "path": "entries/local-source-snapshots.md",
-      "kind": "entry",
-      "type": "source",
-      "title": "Local Source Snapshots",
-      "summary": "Copied CAv2 and DomainSpec Lean source snapshots plus closure strategy for local harvest citation.",
-      "tags": [
-        "source-snapshot",
-        "harvest",
         "cav2",
-        "domainspec",
-        "snapshot-closure"
+        "authority",
+        "validation-scaffold",
+        "implementation-boundary",
+        "owned-build",
+        "resonantos-economy"
       ],
       "sources": [
-        "sources/local-snapshots/README.md",
-        "sources/local-snapshots/CLOSURE-STRATEGY.md"
+        "../../../harvest/cav2-authority-lifecycle/findings.md",
+        "../../../harvest/cav2-authority-lifecycle/research.md",
+        "../../../harvest/cav2-authority-lifecycle/selector-map.md",
+        "../../../harvest/cav2-authority-lifecycle/reviewer-positions.md",
+        "../../../harvest/cav2-authority-lifecycle/cav2-return-package.md",
+        "../../../development/implementation-boundary-plan.md",
+        "../../../telemetry/agents/subagents-dispatch.yaml"
       ],
       "updated": "2026-06-27",
       "status": "active",
-      "confidence": "high",
+      "authority_posture": "non-authority-read-model",
       "selectors": [
-        "local-source-snapshots",
-        "snapshot-closure"
+        "cav2-authority-lifecycle-owned-build-harvest",
+        "add-boundary-cav2-method-authority-only",
+        "closed-local-research-status",
+        "implementation-boundary-not-readiness",
+        "validation-scaffold-not-proof",
+        "no-reciprocal-authority-laundering",
+        "defer-cav2-return-candidate",
+        "source-expansion-closed-for-cav2-lifecycle"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "Fixture contracts remain open for contribution-edge, reviewer bottleneck, attention-credit feedback, appeal/recusal, and authority-handoff no-effect scenarios."
+      ]
+    },
+    {
+      "id": "cav2-lean-development-pack-review",
+      "path": "entries/cav2-lean-development-pack-review.md",
+      "kind": "entry",
+      "type": "review-findings",
+      "title": "CAv2/Lean Development Pack Review",
+      "summary": "The review dispatch accepted a FIX verdict for the CAv2/Lean findings development pack.",
+      "tags": [
+        "review",
+        "dispatch",
+        "subagents",
+        "development",
+        "validation-scaffold",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../reviews/cav2-lean-development-pack-review/findings.md",
+        "../../../reviews/cav2-lean-development-pack-review/attacks.md",
+        "../../../development/cav2-lean-findings-development-pack.md",
+        "../../../development/constitution-pack.md",
+        "../../../authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md",
+        "../../../telemetry/agents/subagents-dispatch.yaml"
+      ],
+      "updated": "2026-06-27",
+      "status": "active",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "cav2-lean-development-pack-review",
+        "validation-scaffold-fix-verdict",
+        "rec-c11-field-gap",
+        "closed-status-vocabulary",
+        "typed-negative-fixture-contract",
+        "review-governance-fixture",
+        "owner-route-table",
+        "attention-proxy-authority-loop"
       ],
       "evidence_card_ids": [],
       "evidence_set_ids": [],
       "residue": []
     },
     {
-      "id": "strategy-result-cav2-lean-harvest",
-      "path": "entries/strategy-result-cav2-lean-harvest.md",
+      "id": "cav2-lean-findings",
+      "path": "entries/cav2-lean-findings.md",
       "kind": "entry",
-      "type": "dispatch",
-      "title": "Strategy Result - CAv2 And Lean Harvest",
-      "summary": "Lanes, subagents, flow, gate state, ledger state, and closeout for the closed CAv2 and Lean harvest.",
+      "type": "synthesis",
+      "title": "CAv2 And Lean Findings",
+      "summary": "The accepted harvest findings resolve the CAv2/Lean harvest dispatch as local research controls.",
       "tags": [
-        "strategy-result",
         "harvest",
         "dispatch",
-        "subagents",
         "resonantos-economy"
       ],
       "sources": [
-        "dispatch/PROPOSED-HARVEST-DISPATCH.md",
-        "dispatch/CHECK-TENSION-HARVEST-GATE.md",
-        "sources/local-snapshots/CLOSURE-STRATEGY.md",
-        "telemetry/agents/subagents-dispatch.yaml"
+        "../../../harvest/cav2-lean/findings.md",
+        "../../../harvest/cav2-lean/selector-map.md",
+        "../../../harvest/cav2-lean/research.md",
+        "../../../telemetry/agents/subagents-dispatch.yaml"
       ],
       "updated": "2026-06-27",
-      "status": "closed",
-      "confidence": "high",
+      "status": "active",
+      "authority_posture": "non-authority-read-model",
       "selectors": [
-        "strategy-result-cav2-lean-harvest",
-        "harvest-dispatch-confirmation-state",
-        "snapshot-gap-review-requirement",
-        "credit-before-money-sequencing-hypothesis",
+        "harvest-findings-cav2-lean",
         "signal-credit-reward-authority-separation",
         "phase2-financial-blocker-register",
-        "credit-gaming-failure-fixtures"
+        "credit-gaming-failure-fixtures",
+        "snapshot-gap-review",
+        "blocked-claims-list"
       ],
       "evidence_card_ids": [],
       "evidence_set_ids": [],
       "residue": [
-        "Closed with local findings; external DAO, behavioral, mechanism-design, legal/tax, wallet/security, privacy, governance, science-credit, and workflow-witness evidence remains open."
+        "External DAO, behavioral, mechanism-design, legal/tax, wallet/security, privacy, and science-credit evidence remains open bridge work."
+      ]
+    },
+    {
+      "id": "cav2-lean-findings-development-pack",
+      "path": "entries/cav2-lean-findings-development-pack.md",
+      "kind": "entry",
+      "type": "development-handoff",
+      "title": "CAv2/Lean Findings Development Pack",
+      "summary": "This entry points to the refinement handoff that converts the 14 accepted CAv2/Lean harvest controls into canonical local definitions, design shapes, non-executed plan threads, and blocked escalations.",
+      "tags": [
+        "harvest",
+        "development",
+        "definitions",
+        "constitution",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../development/cav2-lean-findings-development-pack.md",
+        "../../../definitions/DEFINITIONS.md",
+        "../../../definitions/DEFINITIONS-INDEX.md",
+        "../../../definitions/DEFINITION-DRIFT-AUDIT.md",
+        "../../../development/constitution-pack.md",
+        "../../../authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md",
+        "../../../harvest/cav2-lean/findings.md",
+        "../../../harvest/cav2-authority-lifecycle/findings.md",
+        "../../../development/implementation-boundary-plan.md"
+      ],
+      "updated": "2026-06-27",
+      "status": "active",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "cav2-lean-findings-development-pack",
+        "definition-design-plan-refinement",
+        "contribution-edge-witness",
+        "authority-separated-credit-development-lane",
+        "finding-to-development-contract",
+        "credit-gaming-failure-fixture-backlog",
+        "phase2-financial-blocker-register",
+        "privacy-redaction-policy-prerequisite",
+        "source-bridge-demotion-intake-rule",
+        "closed-local-research-status",
+        "implementation-boundary-not-readiness",
+        "reciprocal-return-candidate"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "External DAO, behavioral, mechanism-design, legal/tax, wallet/security, privacy, governance, and science-credit evidence remains open bridge work."
       ]
     },
     {
@@ -268,7 +222,7 @@
       "kind": "entry",
       "type": "synthesis",
       "title": "CAv2 And Lean Selector Map",
-      "summary": "Reviewer-revised candidate controls from CAv2 and Lean harvest.",
+      "summary": "The selector map is the reviewer-revised synthesis from the CAv2 and DomainSpec Lean harvest.",
       "tags": [
         "harvest",
         "dispatch",
@@ -276,14 +230,14 @@
         "resonantos-economy"
       ],
       "sources": [
-        "harvest/cav2-lean/selector-map.md",
-        "harvest/cav2-lean/research.md",
-        "harvest/cav2-lean/reviewer-positions.md",
-        "sources/local-snapshots/README.md"
+        "../../../harvest/cav2-lean/selector-map.md",
+        "../../../harvest/cav2-lean/research.md",
+        "../../../harvest/cav2-lean/reviewer-positions.md",
+        "../../../sources/local-snapshots/README.md"
       ],
       "updated": "2026-06-27",
       "status": "active",
-      "confidence": "medium",
+      "authority_posture": "non-authority-read-model",
       "selectors": [
         "credit-before-money-sequencing-hypothesis",
         "one-observed-surface-receipt-candidate",
@@ -303,207 +257,7 @@
       "evidence_card_ids": [],
       "evidence_set_ids": [],
       "residue": [
-        "Candidate controls only; behavioral evidence, attention-capture witnesses, invisible-work boundaries, privacy/redaction policy, credit-gaming fixtures, external bridge evidence, and Phase 2 financial blockers remain open."
-      ]
-    },
-    {
-      "id": "cav2-lean-findings",
-      "path": "entries/cav2-lean-findings.md",
-      "kind": "entry",
-      "type": "synthesis",
-      "title": "CAv2 And Lean Findings",
-      "summary": "Accepted local research findings and blocked-claim summary from the CAv2 and Lean harvest.",
-      "tags": [
-        "harvest",
-        "dispatch",
-        "resonantos-economy"
-      ],
-      "sources": [
-        "harvest/cav2-lean/findings.md",
-        "harvest/cav2-lean/selector-map.md",
-        "harvest/cav2-lean/research.md",
-        "telemetry/agents/subagents-dispatch.yaml"
-      ],
-      "updated": "2026-06-27",
-      "status": "active",
-      "confidence": "medium",
-      "selectors": [
-        "harvest-findings-cav2-lean",
-        "signal-credit-reward-authority-separation",
-        "phase2-financial-blocker-register",
-        "credit-gaming-failure-fixtures",
-        "snapshot-gap-review",
-        "blocked-claims-list"
-      ],
-      "evidence_card_ids": [],
-      "evidence_set_ids": [],
-      "residue": [
-        "External DAO, behavioral, mechanism-design, legal/tax, wallet/security, privacy, and science-credit evidence remains open bridge work. No anti-gaming, token, bounty, governance, launch, or implementation claim is validated."
-      ]
-    },
-    {
-      "id": "cav2-lean-findings-development-pack",
-      "path": "entries/cav2-lean-findings-development-pack.md",
-      "kind": "entry",
-      "type": "development-handoff",
-      "title": "CAv2 Lean Findings Development Pack",
-      "summary": "Refined definition/design/plan handoff for the CAv2/Lean harvest findings.",
-      "tags": [
-        "harvest",
-        "development",
-        "definitions",
-        "constitution",
-        "resonantos-economy"
-      ],
-      "sources": [
-        "development/cav2-lean-findings-development-pack.md",
-        "definitions/DEFINITIONS.md",
-        "definitions/DEFINITIONS-INDEX.md",
-        "definitions/DEFINITION-DRIFT-AUDIT.md",
-        "development/constitution-pack.md",
-        "authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md",
-        "harvest/cav2-lean/findings.md"
-      ],
-      "updated": "2026-06-27",
-      "status": "active",
-      "confidence": "medium",
-      "selectors": [
-        "cav2-lean-findings-development-pack",
-        "definition-design-plan-refinement",
-        "contribution-edge-witness",
-        "authority-separated-credit-development-lane",
-        "finding-to-development-contract",
-        "credit-gaming-failure-fixture-backlog",
-        "phase2-financial-blocker-register",
-        "privacy-redaction-policy-prerequisite",
-        "source-bridge-demotion-intake-rule"
-      ],
-      "evidence_card_ids": [],
-      "evidence_set_ids": [],
-      "residue": [
-        "Fixture packages have not been run; no anti-gaming, token, bounty, governance, launch, public-lineage, or implementation claim is validated."
-      ]
-    },
-    {
-      "id": "cav2-lean-development-pack-review",
-      "path": "entries/cav2-lean-development-pack-review.md",
-      "kind": "entry",
-      "type": "review-findings",
-      "title": "CAv2 Lean Development Pack Review",
-      "summary": "FIX verdict review of the CAv2/Lean development pack as validation scaffold candidate.",
-      "tags": [
-        "review",
-        "dispatch",
-        "subagents",
-        "development",
-        "validation-scaffold",
-        "resonantos-economy"
-      ],
-      "sources": [
-        "reviews/cav2-lean-development-pack-review/findings.md",
-        "reviews/cav2-lean-development-pack-review/attacks.md",
-        "development/cav2-lean-findings-development-pack.md",
-        "development/constitution-pack.md",
-        "authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md",
-        "telemetry/agents/subagents-dispatch.yaml"
-      ],
-      "updated": "2026-06-27",
-      "status": "active",
-      "confidence": "high",
-      "selectors": [
-        "cav2-lean-development-pack-review",
-        "validation-scaffold-fix-verdict",
-        "rec-c11-field-gap",
-        "closed-status-vocabulary",
-        "typed-negative-fixture-contract",
-        "review-governance-fixture",
-        "owner-route-table",
-        "attention-proxy-authority-loop"
-      ],
-      "evidence_card_ids": [],
-      "evidence_set_ids": [],
-      "residue": [
-        "The development pack is not yet an executable validation scaffold or prerequisite for research validity; fixes are required before operational reliance."
-      ]
-    },
-    {
-      "id": "domainspec-subagents-reflection-loop",
-      "path": "entries/domainspec-subagents-reflection-loop.md",
-      "kind": "entry",
-      "type": "telemetry",
-      "title": "DomainSpec Subagents Reflection Loop",
-      "summary": "Local reflection loop for subagent strategy output drift, inventory-result checks, and lifecycle maintenance.",
-      "tags": [
-        "reflection",
-        "observability",
-        "sigil-development",
-        "workflow-reflect",
-        "subagents"
-      ],
-      "sources": [
-        ".arcanum/observability/README.md",
-        ".arcanum/observability/signals/sigil-invocations.jsonl",
-        ".arcanum/observability/reflections/2026-06-27-domainspec-subagents-strategy-inventory-hook.md",
-        ".agents/skills/domainspec-subagents-strategy/SKILL.md",
-        ".agents/skills/sigil-development/SKILL.md",
-        ".agents/skills/workflow-reflect/SKILL.md"
-      ],
-      "updated": "2026-06-27",
-      "status": "active",
-      "confidence": "medium",
-      "selectors": [
-        "domainspec-subagents-strategy-reflection-hook",
-        "strategy-result-inventory-checklist",
-        "workflow-reflect-before-contract-mutation",
-        "observer-reflector-role-fit"
-      ],
-      "evidence_card_ids": [],
-      "evidence_set_ids": [],
-      "residue": [
-        "Manual reflection over a small signal set; supports targeted hardening, not broad trend claims."
-      ]
-    },
-    {
-      "id": "cav2-authority-lifecycle-owned-build-harvest",
-      "path": "entries/cav2-authority-lifecycle-owned-build-harvest.md",
-      "kind": "entry",
-      "type": "synthesis",
-      "title": "CAv2 Authority/Lifecycle Owned-Build Harvest",
-      "summary": "FIX verdict authority/lifecycle harvest, local status discipline, implementation-boundary plan, and deferred CAv2 return candidate.",
-      "tags": [
-        "harvest",
-        "dispatch",
-        "cav2",
-        "authority",
-        "validation-scaffold",
-        "implementation-boundary",
-        "owned-build",
-        "resonantos-economy"
-      ],
-      "sources": [
-        "harvest/cav2-authority-lifecycle/findings.md",
-        "harvest/cav2-authority-lifecycle/research.md",
-        "harvest/cav2-authority-lifecycle/selector-map.md",
-        "harvest/cav2-authority-lifecycle/reviewer-positions.md",
-        "harvest/cav2-authority-lifecycle/cav2-return-package.md",
-        "development/implementation-boundary-plan.md",
-        "telemetry/agents/subagents-dispatch.yaml"
-      ],
-      "updated": "2026-06-27",
-      "status": "active",
-      "confidence": "high",
-      "selectors": [
-        "cav2-authority-lifecycle-owned-build-harvest",
-        "closed-local-research-status",
-        "implementation-boundary-not-readiness",
-        "validation-scaffold-not-proof",
-        "defer-cav2-return-candidate"
-      ],
-      "evidence_card_ids": [],
-      "evidence_set_ids": [],
-      "residue": [
-        "Fixture contracts remain open for contribution-edge, reviewer bottleneck, attention-credit feedback, appeal/recusal, and authority-handoff no-effect scenarios.",
-        "Deferred CAv2 return package requires independent CAv2 owner review before external reuse."
+        "The map does not validate a mechanism."
       ]
     },
     {
@@ -512,7 +266,7 @@
       "kind": "entry",
       "type": "development-handoff",
       "title": "Contribution-Edge Fixture Full Refine Plan",
-      "summary": "Full dispatch-spec validated Refine packet and task-session plan that led to the contribution-edge validation fixture package.",
+      "summary": "The CAv2 authority/lifecycle output has a full dispatch-spec validated Refine packet for the next safe implementation surface: `validation/contribution-edge-fixtures/`.",
       "tags": [
         "refine",
         "dispatch-spec",
@@ -523,16 +277,15 @@
         "resonantos-economy"
       ],
       "sources": [
-        "development/contribution-edge-fixture-implementation-plan.md",
-        "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/RESULT.md",
-        "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/REFINE-DISPATCH.json",
-        "formulae/dispatch-spec/scripts/validate-dispatch.py",
-        "formulae/dispatch-spec/development/run-validation-fixtures.sh",
-        "validation/contribution-edge-fixtures/README.md"
+        "../../../development/contribution-edge-fixture-implementation-plan.md",
+        "../../../development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/RESULT.md",
+        "../../../development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/REFINE-DISPATCH.json",
+        "../../../formulae/dispatch-spec/scripts/validate-dispatch.py",
+        "../../../formulae/dispatch-spec/development/run-validation-fixtures.sh"
       ],
       "updated": "2026-06-27",
       "status": "active",
-      "confidence": "high",
+      "authority_posture": "non-authority-read-model",
       "selectors": [
         "contribution-edge-fixture-full-refine-plan",
         "fixture-scaffold-task-session-ready",
@@ -543,9 +296,7 @@
       ],
       "evidence_card_ids": [],
       "evidence_set_ids": [],
-      "residue": [
-        "The fixture package is materialized, but no validation harness report exists."
-      ]
+      "residue": []
     },
     {
       "id": "contribution-edge-fixtures",
@@ -553,7 +304,7 @@
       "kind": "entry",
       "type": "validation-scaffold",
       "title": "Contribution-Edge Fixtures",
-      "summary": "Materialized contribution-edge fixture package with schema, matrix, typed negatives, checklist, and six fixture files.",
+      "summary": "The contribution-edge fixture package has been materialized under `validation/contribution-edge-fixtures/`.",
       "tags": [
         "validation-scaffold",
         "fixture-scaffold",
@@ -561,16 +312,16 @@
         "resonantos-economy"
       ],
       "sources": [
-        "validation/contribution-edge-fixtures/README.md",
-        "validation/contribution-edge-fixtures/SCHEMA.md",
-        "validation/contribution-edge-fixtures/MATRIX.md",
-        "validation/contribution-edge-fixtures/TYPED-NEGATIVES.md",
-        "development/contribution-edge-fixture-implementation-plan.md",
-        "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/RESULT.md"
+        "../../../validation/contribution-edge-fixtures/README.md",
+        "../../../validation/contribution-edge-fixtures/SCHEMA.md",
+        "../../../validation/contribution-edge-fixtures/MATRIX.md",
+        "../../../validation/contribution-edge-fixtures/TYPED-NEGATIVES.md",
+        "../../../development/contribution-edge-fixture-implementation-plan.md",
+        "../../../development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/RESULT.md"
       ],
       "updated": "2026-06-27",
       "status": "active",
-      "confidence": "high",
+      "authority_posture": "non-authority-read-model",
       "selectors": [
         "contribution-edge-fixtures",
         "observed-signal-not-automatic-credit",
@@ -582,79 +333,43 @@
       ],
       "evidence_card_ids": [],
       "evidence_set_ids": [],
-      "residue": [
-        "Fixture package existence is not a validation harness report or economy validation."
-      ]
+      "residue": []
     },
     {
-      "id": "load-bearing-term-tracking-discipline",
-      "path": "entries/load-bearing-term-tracking-discipline.md",
+      "id": "domainspec-subagents-reflection-loop",
+      "path": "entries/domainspec-subagents-reflection-loop.md",
       "kind": "entry",
-      "type": "synthesis",
-      "title": "Load-Bearing Term Tracking Discipline (session synthesis)",
-      "summary": "Session headline outcome — every load-bearing term must resolve to a tracked definition (REC-C14 + ER-D23 lifecycle + deterministic adapter); ER-D21–D28 added; systematic fixture-primitive drift closed; handed to CAv2 as candidate evidence.",
+      "type": "telemetry",
+      "title": "DomainSpec Subagents Reflection Loop",
+      "summary": "The DomainSpec subagents strategy now has a local reflection loop.",
       "tags": [
-        "synthesis",
-        "definitions",
-        "constitution",
-        "load-bearing",
-        "craft",
-        "resonantos-economy"
+        "reflection",
+        "observability",
+        "sigil-development",
+        "workflow-reflect",
+        "subagents"
       ],
       "sources": [
-        "authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md",
-        "definitions/DEFINITIONS.md",
-        "tools/check_load_bearing_terms.py",
-        "research/four-surface-reconciliation/findings.md",
-        "CRAFT.md"
+        "../../observability/README.md",
+        "../../observability/signals/sigil-invocations.jsonl",
+        "../../observability/reflections/2026-06-27-domainspec-subagents-strategy-inventory-hook.md",
+        "../../../.agents/skills/domainspec-subagents-strategy/SKILL.md",
+        "../../../.agents/skills/sigil-development/SKILL.md",
+        "../../../.agents/skills/workflow-reflect/SKILL.md"
       ],
-      "updated": "2026-06-28",
+      "updated": "2026-06-27",
       "status": "active",
-      "confidence": "high",
+      "authority_posture": "non-authority-read-model",
       "selectors": [
-        "load-bearing-term-tracking",
-        "candidate-definition-lifecycle",
-        "rec-c14-adapter",
-        "fixture-primitive-drift"
+        "domainspec-subagents-strategy-reflection-hook",
+        "strategy-result-inventory-checklist",
+        "workflow-reflect-before-contract-mutation",
+        "observer-reflector-role-fit"
       ],
       "evidence_card_ids": [],
       "evidence_set_ids": [],
       "residue": [
-        "$REX/cartel/submonoid/absorbing/emission_rate are non-definitions; ER-D24–D28 await grounding; adapter has a compound-matching gap."
-      ]
-    },
-    {
-      "id": "strategy-result-four-surface-reconciliation",
-      "path": "entries/strategy-result-four-surface-reconciliation.md",
-      "kind": "entry",
-      "type": "dispatch",
-      "title": "Strategy Result — Four-Surface Reconciliation",
-      "summary": "Audit reconciling glossary/notation/distills vs ER-D1–D20 (closed resolved); 10 actionable surface edits, 1 KILL, 9 owner-gated disputes; propose-only.",
-      "tags": [
-        "strategy-result",
-        "dispatch",
-        "subagents",
-        "definitions",
-        "glossary",
-        "resonantos-economy"
-      ],
-      "sources": [
-        "research/four-surface-reconciliation/findings.md",
-        "research/four-surface-reconciliation/research.md",
-        "definitions/DEFINITION-DRIFT-AUDIT.md"
-      ],
-      "updated": "2026-06-28",
-      "status": "active",
-      "confidence": "high",
-      "selectors": [
-        "four-surface-reconciliation-change-set",
-        "credit-seed-to-reviewed-credit-record",
-        "surface-vs-er-d-drift-audit"
-      ],
-      "evidence_card_ids": [],
-      "evidence_set_ids": [],
-      "residue": [
-        "9 owner-gated disputes route to the authority/promotion lane, not the surfaces."
+        "The current report is a manual reflection over a small signal set."
       ]
     },
     {
@@ -662,8 +377,8 @@
       "path": "entries/economy-resilience-program.md",
       "kind": "entry",
       "type": "synthesis",
-      "title": "Economy Resilience Program",
-      "summary": "Four isolated towers + cross-corpus synthesis (closed resolved); the ranked fixture & constitution backlog and the concrete start path (Tracks A/B/C).",
+      "title": "Economy-Resilience Program — Towers + Synthesis + Start Path",
+      "summary": "A meta multi-tower research program for the ResonantOS / ResonantDAO economy.",
       "tags": [
         "strategy-result",
         "dispatch",
@@ -674,473 +389,1027 @@
         "resonantos-economy"
       ],
       "sources": [
-        "dispatch/economy-synthesis/findings.md"
+        "../../../dispatch/PROPOSED-META-PROGRAM.md",
+        "../../../dispatch/economy-synthesis/findings.md",
+        "../../../subtowers/failed-dao-crypto/returns/tower-findings.md",
+        "../../../subtowers/formal-mechanisms/returns/tower-findings.md",
+        "../../../subtowers/science-of-science/returns/tower-findings.md",
+        "../../../subtowers/socioeconomic-behavior/returns/tower-findings.md",
+        "../../../sources/source-records.md",
+        "SYN-ECON-PROGRAM-FINDINGS",
+        "SYN-ECON-TOWER-*"
+      ],
+      "updated": "2026-06-27",
+      "status": "closed",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "economy-resilience-program",
+        "economy-fixture-constitution-backlog",
+        "four-decidable-now-fixtures",
+        "douceur-identity-cost-gate",
+        "tower-research-program-pattern",
+        "two-axis-tension"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "Nothing is validated — the four fixtures are validation-*ready*, not validated."
+      ]
+    },
+    {
+      "id": "ergonomics-strategy",
+      "path": "entries/ergonomics-strategy.md",
+      "kind": "entry",
+      "type": "strategy-result",
+      "title": "Repository-Ergonomics Strategy — towers + synthesis",
+      "summary": "Diagnosis (all three personas converged): the repo has one strong automation (the dispatch appender) and **hand-maintains every other projection** (inventory index, tag register, CRAFT status, term scan), so they **drift invisibly** — `index.json` is stale right now (19 of 21 entries, `by_tag` empty",
+      "tags": [
+        "strategy-result",
+        "dispatch",
+        "subagents",
+        "synthesis",
+        "ergonomics",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../dispatch/ergonomics-strategy/findings.md",
+        "../../../dispatch/ergonomics-strategy/research.md",
+        "../../../telemetry/agents/subagents-dispatch.yaml",
+        "2026-06-29-ergonomics-strategy"
+      ],
+      "updated": "2026-06-29",
+      "status": "closed",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "ergonomics-strategy",
+        "generate-projections-truth-check",
+        "inventory-index-drift",
+        "index.json",
+        "by_tag",
+        "auditor-accept-not-propagated",
+        "tier-the-four-check-gate",
+        "machine-posture-describe-not-grant",
+        "fixture-stub-structure-only"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "**Decisions resolved 2026-06-29** (decision-gate: #18 tier-gate · #5 new validator · #19 posture-mirror-only · #17 build stub; see [authority/decisions/2026-06-29-ergonomics-open-decisions.md](../../../authority/decisions/2026-06-29-ergonomics-open-decisions.md))."
+      ]
+    },
+    {
+      "id": "harvest-strategy",
+      "path": "entries/harvest-strategy.md",
+      "kind": "entry",
+      "type": "workflow",
+      "title": "Harvest Strategy",
+      "summary": "The harvest strategy defined a narrow first research dispatch for extracting CyberAlchemy v2 method authority and DomainSpec Lean formalization discipline into local ResonantOS economy selectors before the broad economy fan-out runs.",
+      "tags": [
+        "harvest",
+        "workflow",
+        "dispatch",
+        "authority",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../harvest/README.md",
+        "../../../dispatch/PROPOSED-HARVEST-DISPATCH.md",
+        "../../../GUIDE.md"
+      ],
+      "updated": "2026-06-27",
+      "status": "closed-first-harvest",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "cav2-lean-harvest",
+        "selector-shape",
+        "harvest-before-broad-fanout",
+        "harvest-findings-cav2-lean"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "The first harvest did not close external evidence, behavior, legal, privacy, anti-gaming, or workflow-witness gaps."
+      ]
+    },
+    {
+      "id": "load-bearing-term-tracking-discipline",
+      "path": "entries/load-bearing-term-tracking-discipline.md",
+      "kind": "entry",
+      "type": "synthesis",
+      "title": "Load-Bearing Term Tracking Discipline (session synthesis)",
+      "summary": "Load-Bearing Term Tracking Discipline (session synthesis)",
+      "tags": [
+        "synthesis",
+        "definitions",
+        "constitution",
+        "load-bearing",
+        "craft",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md",
+        "../../../definitions/DEFINITIONS.md",
+        "../../../tools/check_load_bearing_terms.py",
+        "../../../definitions/DEFINITION-DRIFT-AUDIT.md",
+        "../../../research/four-surface-reconciliation/findings.md",
+        "../../../CRAFT.md",
+        "../../../.craft/ledger.yml"
+      ],
+      "updated": "2026-06-28",
+      "status": "active",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "load-bearing-term-tracking",
+        "candidate-definition-lifecycle",
+        "candidate → grounded → promoted/residue",
+        "rec-c14-adapter",
+        "fixture-primitive-drift"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "Five flagged items remain non-definitions: `$REX/$REX-COM` (un-sourced subagent artifact → tower owner), `cartel` (deferred to MERGE-3), `submonoid`/`absorbing` (analogy-only), `emission_rate` (subsumed)."
+      ]
+    },
+    {
+      "id": "local-source-snapshots",
+      "path": "entries/local-source-snapshots.md",
+      "kind": "entry",
+      "type": "source",
+      "title": "Local Source Snapshots",
+      "summary": "The repository now contains local snapshots of the CAv2 Evidence Exchange, CAv2 authority/promotion sources, and selected DomainSpec Lean formalization sources required for the first harvest.",
+      "tags": [
+        "source-snapshot",
+        "harvest",
+        "cav2",
+        "domainspec",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../sources/local-snapshots/README.md",
+        "../../../sources/local-snapshots/CLOSURE-STRATEGY.md",
+        "../../../sources/local-snapshots/cav2/",
+        "../../../sources/local-snapshots/domainspec-lean/"
       ],
       "updated": "2026-06-27",
       "status": "active",
-      "confidence": "high",
+      "authority_posture": "supporting-source",
+      "selectors": [
+        "local-source-snapshots",
+        "snapshot-closure-strategy",
+        "cav2-snapshot",
+        "lean-snapshot"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "The first harvest distilled these snapshots into `harvest/cav2-lean/selector-map.md` and `harvest/cav2-lean/findings.md`."
+      ]
+    },
+    {
+      "id": "onboarding-docs-review",
+      "path": "entries/onboarding-docs-review.md",
+      "kind": "entry",
+      "type": "review-findings",
+      "title": "Onboarding-Docs Review — README/GUIDE/CONTRIBUTING red-team",
+      "summary": "Three docs are posture-faithful but the edit session left **16 verified findings**: **2 CRITICAL** (README \"auditor ACCEPT\" invented vs ledger; README links + leans on gitignored/purged `sources/local-snapshots/`), **8 MAJOR** (start-path pointer targets the wrong file; no single authoritative onboa",
+      "tags": [
+        "review",
+        "strategy-result",
+        "dispatch",
+        "subagents",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../reviews/onboarding-docs-review/findings.md",
+        "../../../reviews/onboarding-docs-review/attacks.md",
+        "../../../telemetry/agents/subagents-dispatch.yaml",
+        "2026-06-28-onboarding-docs-review"
+      ],
+      "updated": "2026-06-29",
+      "status": "closed",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "onboarding-docs-review",
+        "current-state-drift-cluster",
+        "no-canonical-onboarding-order",
+        "de-cav2-method-authority-decision-debt"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "**Change requests applied 2026-06-29** (all 16 + the consistency spillovers found on apply): edits to `README.md`, `GUIDE.md`, `CONTRIBUTING.md`, `AGENTS.md`, the inventory index, and the four external subtower headers (`scaffolded` → `first-pass returns present`)."
+      ]
+    },
+    {
+      "id": "repo-skill-surface",
+      "path": "entries/repo-skill-surface.md",
+      "kind": "entry",
+      "type": "skill-surface",
+      "title": "Repo Skill Surface",
+      "summary": "The repository exposes selected Arcanum skills for inventory, context building, research towers, evidence harnessing, authority routing, and publication research, sigil lifecycle maintenance, workflow reflection, plus prefixed DomainSpec dispatch skills.",
+      "tags": [
+        "skills",
+        "arcanum",
+        "domainspec"
+      ],
+      "sources": [
+        "../../../.agents/skills/README.md",
+        "../../../.agents/skills/inventory/SKILL.md",
+        "../../../.agents/skills/domainspec-subagents-strategy/SKILL.md",
+        "../../../.agents/skills/sigil-development/SKILL.md",
+        "../../../.agents/skills/workflow-reflect/SKILL.md"
+      ],
+      "updated": "2026-06-27",
+      "status": "active",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "inventory",
+        ".arcanum/inventory/",
+        "research-tower",
+        "domainspec-subagents-strategy",
+        "domainspec-register-dispatch",
+        "sigil-development",
+        "workflow-reflect"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "No personal/global skill installation was changed; this is a repo-local skill surface."
+      ]
+    },
+    {
+      "id": "repository-working-guide",
+      "path": "entries/repository-working-guide.md",
+      "kind": "entry",
+      "type": "workflow",
+      "title": "Repository Working Guide",
+      "summary": "The repository working guide defines the local posture for work in this tower: source-kind separation, signal-credit-authority separation, witness-first mechanism evaluation, visible residue, private/internal consultation posture, and the continuation route after the first harvests and fixture scaff",
+      "tags": [
+        "guide",
+        "workflow",
+        "authority",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../GUIDE.md",
+        "../../../README.md",
+        "../../../CONTRIBUTING.md",
+        "../../../AGENTS.md"
+      ],
+      "updated": "2026-06-27",
+      "status": "active",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "repository-posture",
+        "continuation-surface",
+        "dispatch-readiness",
+        "private-internal-public-export-gate"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "The guide is current for internal continuation, but public release still requires a dedicated scrub and derivative package."
+      ]
+    },
+    {
+      "id": "research-tower-root",
+      "path": "entries/research-tower-root.md",
+      "kind": "entry",
+      "type": "source",
+      "title": "Research Tower Root",
+      "summary": "Root tower for researching a resilient ResonantOS / ResonantDAO contribution economy.",
+      "tags": [
+        "tower",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../README.md",
+        "../../../TOWER.md",
+        "../../../sources/source-records.md"
+      ],
+      "updated": "2026-06-27",
+      "status": "active",
+      "authority_posture": "non-authority-read-model",
       "selectors": [],
       "evidence_card_ids": [],
       "evidence_set_ids": [],
-      "residue": []
+      "residue": [
+        "The first economy invariant, first workflow witness, and first validation harness are still open."
+      ]
+    },
+    {
+      "id": "strategy-result-cav2-lean-harvest",
+      "path": "entries/strategy-result-cav2-lean-harvest.md",
+      "kind": "entry",
+      "type": "dispatch",
+      "title": "Strategy Result - CAv2 And Lean Harvest",
+      "summary": "The CAv2 and DomainSpec Lean harvest strategy was a gated research dispatch.",
+      "tags": [
+        "strategy-result",
+        "harvest",
+        "dispatch",
+        "subagents",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../dispatch/PROPOSED-HARVEST-DISPATCH.md",
+        "../../../dispatch/CHECK-TENSION-HARVEST-GATE.md",
+        "../../../sources/local-snapshots/CLOSURE-STRATEGY.md"
+      ],
+      "updated": "2026-06-27",
+      "status": "closed",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "strategy-result-cav2-lean-harvest",
+        "harvest-dispatch-confirmation-state",
+        "snapshot-gap-review-requirement",
+        "credit-before-money-sequencing-hypothesis",
+        "signal-credit-reward-authority-separation",
+        "phase2-financial-blocker-register",
+        "credit-gaming-failure-fixtures"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "The findings leave open external DAO, behavioral, mechanism-design, legal/tax, wallet/security, privacy, governance, science-credit, and concrete workflow witness evidence."
+      ]
+    },
+    {
+      "id": "strategy-result-four-surface-reconciliation",
+      "path": "entries/strategy-result-four-surface-reconciliation.md",
+      "kind": "entry",
+      "type": "dispatch",
+      "title": "Strategy Result - Four-Surface Reconciliation",
+      "summary": "A research dispatch triggered by the user's suspicion that the reader-facing vocabulary surfaces — `glossary/GLOSSARY.md`, `NOTATION.md`, `distills/DISTILLED-KNOWLEDGE.md` — \"were not done correctly.\" Scoped to two defect classes the user confirmed: **out-of-sync surfaces** and **coverage gaps** aga",
+      "tags": [
+        "strategy-result",
+        "dispatch",
+        "subagents",
+        "definitions",
+        "glossary",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../research/four-surface-reconciliation/findings.md",
+        "../../../research/four-surface-reconciliation/research.md",
+        "../../../definitions/DEFINITION-DRIFT-AUDIT.md",
+        "../../../telemetry/agents/subagents-dispatch.yaml",
+        "2026-06-28-four-surface-reconciliation"
+      ],
+      "updated": "2026-06-28",
+      "status": "closed",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "four-surface-reconciliation-change-set",
+        "credit-seed-to-reviewed-credit-record",
+        "surface-vs-er-d-drift-audit"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "The 9 owner-gated disputes (candidate invariants awaiting fixtures/values, orphaned entries, mis-typed gate-vs-fixture items) remain open and route to the authority/promotion lane, not the surface pass."
+      ]
+    },
+    {
+      "id": "subagents-dispatch-strategy",
+      "path": "entries/subagents-dispatch-strategy.md",
+      "kind": "entry",
+      "type": "workflow",
+      "title": "Subagents Dispatch Strategy",
+      "summary": "The repository has a local DomainSpec subagent dispatch stack.",
+      "tags": [
+        "dispatch",
+        "subagents",
+        "telemetry",
+        "domainspec"
+      ],
+      "sources": [
+        "../../../ops/subagents-strategy/README.md",
+        "../../../.agents/skills/domainspec-subagents-strategy/SKILL.md",
+        "../../../telemetry/agents/subagents-dispatch.yaml"
+      ],
+      "updated": "2026-06-27",
+      "status": "active",
+      "authority_posture": "method-authority",
+      "selectors": [
+        ".agents/skills/domainspec-subagents-strategy/SKILL.md",
+        ".agents/skills/domainspec-register-dispatch/append-dispatch.cjs",
+        "telemetry/agents/agents.yaml",
+        ".arcanum/inventory/entries/strategy-result-*.md"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "The CAv2/Lean harvest dispatch is closed with accepted local findings."
+      ]
+    },
+    {
+      "id": "telemetry-agent-pool",
+      "path": "entries/telemetry-agent-pool.md",
+      "kind": "entry",
+      "type": "telemetry",
+      "title": "Telemetry Agent Pool",
+      "summary": "The repository has a local agent-name pool for future governed dispatches.",
+      "tags": [
+        "agents",
+        "pool",
+        "subagents",
+        "telemetry"
+      ],
+      "sources": [
+        "../../../telemetry/agents/agents.yaml",
+        "../../../telemetry/agents/README.md"
+      ],
+      "updated": "2026-06-27",
+      "status": "active",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "allowed_agents",
+        "role_fit",
+        "lane_fit",
+        "source_boundary",
+        "workflow-reflect"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "The pool is small and should be expanded only when a dispatch or reflection loop needs a new role fit."
+      ]
     }
   ],
   "indexes": {
     "by_id": {
-      "research-tower-root": "entries/research-tower-root.md",
-      "subagents-dispatch-strategy": "entries/subagents-dispatch-strategy.md",
-      "repo-skill-surface": "entries/repo-skill-surface.md",
-      "telemetry-agent-pool": "entries/telemetry-agent-pool.md",
-      "repository-working-guide": "entries/repository-working-guide.md",
-      "harvest-strategy": "entries/harvest-strategy.md",
-      "local-source-snapshots": "entries/local-source-snapshots.md",
-      "strategy-result-cav2-lean-harvest": "entries/strategy-result-cav2-lean-harvest.md",
-      "cav2-lean-selector-map": "entries/cav2-lean-selector-map.md",
+      "bets-and-prizes-device": "entries/bets-and-prizes-device.md",
+      "cav2-authority-lifecycle-owned-build-harvest": "entries/cav2-authority-lifecycle-owned-build-harvest.md",
+      "cav2-lean-development-pack-review": "entries/cav2-lean-development-pack-review.md",
       "cav2-lean-findings": "entries/cav2-lean-findings.md",
       "cav2-lean-findings-development-pack": "entries/cav2-lean-findings-development-pack.md",
-      "cav2-lean-development-pack-review": "entries/cav2-lean-development-pack-review.md",
-      "domainspec-subagents-reflection-loop": "entries/domainspec-subagents-reflection-loop.md",
-      "cav2-authority-lifecycle-owned-build-harvest": "entries/cav2-authority-lifecycle-owned-build-harvest.md",
+      "cav2-lean-selector-map": "entries/cav2-lean-selector-map.md",
       "contribution-edge-fixture-full-refine-plan": "entries/contribution-edge-fixture-full-refine-plan.md",
       "contribution-edge-fixtures": "entries/contribution-edge-fixtures.md",
+      "domainspec-subagents-reflection-loop": "entries/domainspec-subagents-reflection-loop.md",
+      "economy-resilience-program": "entries/economy-resilience-program.md",
+      "ergonomics-strategy": "entries/ergonomics-strategy.md",
+      "harvest-strategy": "entries/harvest-strategy.md",
       "load-bearing-term-tracking-discipline": "entries/load-bearing-term-tracking-discipline.md",
+      "local-source-snapshots": "entries/local-source-snapshots.md",
+      "onboarding-docs-review": "entries/onboarding-docs-review.md",
+      "repo-skill-surface": "entries/repo-skill-surface.md",
+      "repository-working-guide": "entries/repository-working-guide.md",
+      "research-tower-root": "entries/research-tower-root.md",
+      "strategy-result-cav2-lean-harvest": "entries/strategy-result-cav2-lean-harvest.md",
       "strategy-result-four-surface-reconciliation": "entries/strategy-result-four-surface-reconciliation.md",
-      "economy-resilience-program": "entries/economy-resilience-program.md"
+      "subagents-dispatch-strategy": "entries/subagents-dispatch-strategy.md",
+      "telemetry-agent-pool": "entries/telemetry-agent-pool.md"
     },
     "by_type": {
-      "source": [
-        "research-tower-root",
-        "local-source-snapshots"
-      ],
-      "workflow": [
-        "subagents-dispatch-strategy",
-        "repository-working-guide",
-        "harvest-strategy"
-      ],
-      "skill-surface": [
-        "repo-skill-surface"
-      ],
-      "telemetry": [
-        "telemetry-agent-pool",
-        "domainspec-subagents-reflection-loop"
+      "development-handoff": [
+        "cav2-lean-findings-development-pack",
+        "contribution-edge-fixture-full-refine-plan"
       ],
       "dispatch": [
         "strategy-result-cav2-lean-harvest",
         "strategy-result-four-surface-reconciliation"
       ],
-      "synthesis": [
-        "cav2-lean-selector-map",
-        "cav2-lean-findings",
-        "cav2-authority-lifecycle-owned-build-harvest",
-        "load-bearing-term-tracking-discipline",
-        "economy-resilience-program"
-      ],
-      "development-handoff": [
-        "cav2-lean-findings-development-pack",
-        "contribution-edge-fixture-full-refine-plan"
-      ],
       "review-findings": [
-        "cav2-lean-development-pack-review"
+        "cav2-lean-development-pack-review",
+        "onboarding-docs-review"
+      ],
+      "skill-surface": [
+        "repo-skill-surface"
+      ],
+      "source": [
+        "local-source-snapshots",
+        "research-tower-root"
+      ],
+      "strategy-result": [
+        "ergonomics-strategy"
+      ],
+      "synthesis": [
+        "cav2-authority-lifecycle-owned-build-harvest",
+        "cav2-lean-findings",
+        "cav2-lean-selector-map",
+        "economy-resilience-program",
+        "load-bearing-term-tracking-discipline"
+      ],
+      "telemetry": [
+        "domainspec-subagents-reflection-loop",
+        "telemetry-agent-pool"
       ],
       "validation-scaffold": [
         "contribution-edge-fixtures"
+      ],
+      "workflow": [
+        "bets-and-prizes-device",
+        "harvest-strategy",
+        "repository-working-guide",
+        "subagents-dispatch-strategy"
       ]
     },
     "by_tag": {
-      "tower": [
-        "research-tower-root"
-      ],
-      "resonantos-economy": [
-        "research-tower-root",
-        "repository-working-guide",
-        "harvest-strategy",
-        "strategy-result-cav2-lean-harvest",
-        "cav2-lean-selector-map",
-        "cav2-lean-findings",
-        "cav2-lean-findings-development-pack",
-        "cav2-lean-development-pack-review",
-        "cav2-authority-lifecycle-owned-build-harvest",
-        "contribution-edge-fixture-full-refine-plan",
-        "contribution-edge-fixtures",
-        "load-bearing-term-tracking-discipline",
-        "strategy-result-four-surface-reconciliation",
-        "economy-resilience-program"
-      ],
-      "dispatch": [
-        "subagents-dispatch-strategy",
-        "harvest-strategy",
-        "strategy-result-cav2-lean-harvest",
-        "cav2-lean-selector-map",
-        "cav2-lean-findings",
-        "cav2-lean-development-pack-review",
-        "cav2-authority-lifecycle-owned-build-harvest",
-        "strategy-result-four-surface-reconciliation",
-        "economy-resilience-program"
-      ],
-      "subagents": [
-        "subagents-dispatch-strategy",
-        "telemetry-agent-pool",
-        "strategy-result-cav2-lean-harvest",
-        "cav2-lean-development-pack-review",
-        "domainspec-subagents-reflection-loop",
-        "strategy-result-four-surface-reconciliation",
-        "economy-resilience-program"
-      ],
-      "telemetry": [
-        "subagents-dispatch-strategy",
+      "agents": [
         "telemetry-agent-pool"
-      ],
-      "domainspec": [
-        "subagents-dispatch-strategy",
-        "repo-skill-surface",
-        "local-source-snapshots"
-      ],
-      "skills": [
-        "repo-skill-surface"
       ],
       "arcanum": [
         "repo-skill-surface"
       ],
-      "sigil-development": [
-        "repo-skill-surface",
-        "domainspec-subagents-reflection-loop"
-      ],
-      "workflow-reflect": [
-        "repo-skill-surface",
-        "telemetry-agent-pool",
-        "domainspec-subagents-reflection-loop"
-      ],
-      "agents": [
-        "telemetry-agent-pool"
-      ],
-      "pool": [
-        "telemetry-agent-pool"
-      ],
-      "guide": [
-        "repository-working-guide"
-      ],
-      "workflow": [
-        "repository-working-guide",
-        "harvest-strategy"
-      ],
-      "authority": [
-        "repository-working-guide",
-        "harvest-strategy",
-        "cav2-authority-lifecycle-owned-build-harvest"
-      ],
-      "harvest": [
-        "harvest-strategy",
-        "local-source-snapshots",
-        "strategy-result-cav2-lean-harvest",
-        "cav2-lean-selector-map",
-        "cav2-lean-findings",
-        "cav2-lean-findings-development-pack",
-        "cav2-authority-lifecycle-owned-build-harvest"
-      ],
-      "source-snapshot": [
-        "local-source-snapshots",
-        "cav2-lean-selector-map"
-      ],
-      "cav2": [
-        "local-source-snapshots",
-        "cav2-authority-lifecycle-owned-build-harvest"
-      ],
-      "snapshot-closure": [
-        "local-source-snapshots"
-      ],
-      "strategy-result": [
-        "strategy-result-cav2-lean-harvest",
-        "strategy-result-four-surface-reconciliation",
+      "attack-lane": [
         "economy-resilience-program"
       ],
-      "development": [
+      "authority": [
+        "cav2-authority-lifecycle-owned-build-harvest",
+        "harvest-strategy",
+        "repository-working-guide"
+      ],
+      "bets": [
+        "bets-and-prizes-device"
+      ],
+      "cav2": [
+        "cav2-authority-lifecycle-owned-build-harvest",
+        "local-source-snapshots"
+      ],
+      "constitution": [
         "cav2-lean-findings-development-pack",
-        "cav2-lean-development-pack-review"
+        "load-bearing-term-tracking-discipline"
+      ],
+      "craft": [
+        "load-bearing-term-tracking-discipline"
       ],
       "definitions": [
         "cav2-lean-findings-development-pack",
         "load-bearing-term-tracking-discipline",
         "strategy-result-four-surface-reconciliation"
       ],
-      "constitution": [
-        "cav2-lean-findings-development-pack",
-        "load-bearing-term-tracking-discipline"
-      ],
-      "review": [
-        "cav2-lean-development-pack-review"
-      ],
-      "validation-scaffold": [
+      "development": [
         "cav2-lean-development-pack-review",
+        "cav2-lean-findings-development-pack"
+      ],
+      "dispatch": [
         "cav2-authority-lifecycle-owned-build-harvest",
+        "cav2-lean-development-pack-review",
+        "cav2-lean-findings",
+        "cav2-lean-selector-map",
+        "economy-resilience-program",
+        "ergonomics-strategy",
+        "harvest-strategy",
+        "onboarding-docs-review",
+        "strategy-result-cav2-lean-harvest",
+        "strategy-result-four-surface-reconciliation",
+        "subagents-dispatch-strategy"
+      ],
+      "dispatch-spec": [
+        "contribution-edge-fixture-full-refine-plan"
+      ],
+      "domainspec": [
+        "local-source-snapshots",
+        "repo-skill-surface",
+        "subagents-dispatch-strategy"
+      ],
+      "ergonomics": [
+        "ergonomics-strategy"
+      ],
+      "fixture-backlog": [
+        "economy-resilience-program"
+      ],
+      "fixture-scaffold": [
         "contribution-edge-fixture-full-refine-plan",
         "contribution-edge-fixtures"
       ],
-      "reflection": [
-        "domainspec-subagents-reflection-loop"
+      "glossary": [
+        "strategy-result-four-surface-reconciliation"
       ],
-      "observability": [
-        "domainspec-subagents-reflection-loop"
+      "guide": [
+        "repository-working-guide"
+      ],
+      "harvest": [
+        "cav2-authority-lifecycle-owned-build-harvest",
+        "cav2-lean-findings",
+        "cav2-lean-findings-development-pack",
+        "cav2-lean-selector-map",
+        "harvest-strategy",
+        "local-source-snapshots",
+        "strategy-result-cav2-lean-harvest"
       ],
       "implementation-boundary": [
         "cav2-authority-lifecycle-owned-build-harvest",
         "contribution-edge-fixture-full-refine-plan",
         "contribution-edge-fixtures"
       ],
+      "load-bearing": [
+        "load-bearing-term-tracking-discipline"
+      ],
+      "mechanism-generator": [
+        "bets-and-prizes-device"
+      ],
+      "observability": [
+        "domainspec-subagents-reflection-loop"
+      ],
       "owned-build": [
         "cav2-authority-lifecycle-owned-build-harvest"
+      ],
+      "pool": [
+        "telemetry-agent-pool"
+      ],
+      "prizes": [
+        "bets-and-prizes-device"
       ],
       "refine": [
         "contribution-edge-fixture-full-refine-plan"
       ],
-      "dispatch-spec": [
-        "contribution-edge-fixture-full-refine-plan"
+      "reflection": [
+        "domainspec-subagents-reflection-loop"
       ],
-      "fixture-scaffold": [
+      "resonantos-economy": [
+        "bets-and-prizes-device",
+        "cav2-authority-lifecycle-owned-build-harvest",
+        "cav2-lean-development-pack-review",
+        "cav2-lean-findings",
+        "cav2-lean-findings-development-pack",
+        "cav2-lean-selector-map",
         "contribution-edge-fixture-full-refine-plan",
-        "contribution-edge-fixtures"
+        "contribution-edge-fixtures",
+        "economy-resilience-program",
+        "ergonomics-strategy",
+        "harvest-strategy",
+        "load-bearing-term-tracking-discipline",
+        "local-source-snapshots",
+        "onboarding-docs-review",
+        "repository-working-guide",
+        "research-tower-root",
+        "strategy-result-cav2-lean-harvest",
+        "strategy-result-four-surface-reconciliation"
+      ],
+      "review": [
+        "cav2-lean-development-pack-review",
+        "onboarding-docs-review"
+      ],
+      "sigil-development": [
+        "domainspec-subagents-reflection-loop"
+      ],
+      "skills": [
+        "repo-skill-surface"
+      ],
+      "source-snapshot": [
+        "cav2-lean-selector-map",
+        "local-source-snapshots"
+      ],
+      "strategy-result": [
+        "economy-resilience-program",
+        "ergonomics-strategy",
+        "onboarding-docs-review",
+        "strategy-result-cav2-lean-harvest",
+        "strategy-result-four-surface-reconciliation"
+      ],
+      "subagents": [
+        "cav2-lean-development-pack-review",
+        "domainspec-subagents-reflection-loop",
+        "economy-resilience-program",
+        "ergonomics-strategy",
+        "onboarding-docs-review",
+        "strategy-result-cav2-lean-harvest",
+        "strategy-result-four-surface-reconciliation",
+        "subagents-dispatch-strategy",
+        "telemetry-agent-pool"
+      ],
+      "synthesis": [
+        "economy-resilience-program",
+        "ergonomics-strategy",
+        "load-bearing-term-tracking-discipline"
       ],
       "task-session": [
         "contribution-edge-fixture-full-refine-plan"
       ],
-      "synthesis": [
-        "load-bearing-term-tracking-discipline",
-        "economy-resilience-program"
+      "telemetry": [
+        "subagents-dispatch-strategy",
+        "telemetry-agent-pool"
       ],
-      "load-bearing": [
-        "load-bearing-term-tracking-discipline"
+      "tower": [
+        "research-tower-root"
       ],
-      "craft": [
-        "load-bearing-term-tracking-discipline"
+      "validation-scaffold": [
+        "cav2-authority-lifecycle-owned-build-harvest",
+        "cav2-lean-development-pack-review",
+        "contribution-edge-fixture-full-refine-plan",
+        "contribution-edge-fixtures"
       ],
-      "glossary": [
-        "strategy-result-four-surface-reconciliation"
+      "workflow": [
+        "bets-and-prizes-device",
+        "harvest-strategy",
+        "repository-working-guide"
       ],
-      "attack-lane": [
-        "economy-resilience-program"
-      ],
-      "fixture-backlog": [
-        "economy-resilience-program"
+      "workflow-reflect": [
+        "domainspec-subagents-reflection-loop"
       ]
     },
     "by_source": {
-      "TOWER.md": [
-        "research-tower-root"
+      "../../../.agents/skills/README.md": [
+        "repo-skill-surface"
       ],
-      "README.md": [
-        "research-tower-root",
-        "repository-working-guide"
-      ],
-      "CONTRIBUTING.md": [
-        "research-tower-root",
-        "repository-working-guide"
-      ],
-      "ops/subagents-strategy/README.md": [
+      "../../../.agents/skills/domainspec-subagents-strategy/SKILL.md": [
+        "domainspec-subagents-reflection-loop",
+        "repo-skill-surface",
         "subagents-dispatch-strategy"
       ],
-      ".agents/skills/domainspec-subagents-strategy/SKILL.md": [
-        "subagents-dispatch-strategy",
-        "repo-skill-surface",
-        "domainspec-subagents-reflection-loop"
-      ],
-      "telemetry/agents/subagents-dispatch.yaml": [
-        "subagents-dispatch-strategy",
-        "harvest-strategy",
-        "strategy-result-cav2-lean-harvest",
-        "cav2-lean-findings",
-        "cav2-lean-development-pack-review",
-        "cav2-authority-lifecycle-owned-build-harvest"
-      ],
-      ".agents/skills/README.md": [
+      "../../../.agents/skills/inventory/SKILL.md": [
         "repo-skill-surface"
       ],
-      ".agents/skills/inventory/SKILL.md": [
+      "../../../.agents/skills/sigil-development/SKILL.md": [
+        "domainspec-subagents-reflection-loop",
         "repo-skill-surface"
       ],
-      ".agents/skills/sigil-development/SKILL.md": [
-        "repo-skill-surface",
-        "domainspec-subagents-reflection-loop"
+      "../../../.agents/skills/workflow-reflect/SKILL.md": [
+        "domainspec-subagents-reflection-loop",
+        "repo-skill-surface"
       ],
-      ".agents/skills/workflow-reflect/SKILL.md": [
-        "repo-skill-surface",
-        "domainspec-subagents-reflection-loop"
+      "../../../.craft/ledger.yml": [
+        "load-bearing-term-tracking-discipline"
       ],
-      "telemetry/agents/agents.yaml": [
-        "telemetry-agent-pool"
-      ],
-      "telemetry/agents/README.md": [
-        "telemetry-agent-pool"
-      ],
-      "GUIDE.md": [
+      "../../../AGENTS.md": [
         "repository-working-guide"
       ],
-      "AGENTS.md": [
+      "../../../CONTRIBUTING.md": [
         "repository-working-guide"
       ],
-      "harvest/README.md": [
-        "harvest-strategy"
+      "../../../CRAFT.md": [
+        "load-bearing-term-tracking-discipline"
       ],
-      "harvest/cav2-lean/README.md": [
-        "harvest-strategy"
-      ],
-      "dispatch/PROPOSED-HARVEST-DISPATCH.md": [
+      "../../../GUIDE.md": [
         "harvest-strategy",
-        "strategy-result-cav2-lean-harvest"
+        "repository-working-guide"
       ],
-      "sources/local-snapshots/README.md": [
-        "local-source-snapshots",
-        "cav2-lean-selector-map"
+      "../../../README.md": [
+        "repository-working-guide",
+        "research-tower-root"
       ],
-      "sources/local-snapshots/CLOSURE-STRATEGY.md": [
-        "local-source-snapshots",
-        "strategy-result-cav2-lean-harvest"
+      "../../../TOWER.md": [
+        "research-tower-root"
       ],
-      "dispatch/CHECK-TENSION-HARVEST-GATE.md": [
-        "strategy-result-cav2-lean-harvest"
-      ],
-      "harvest/cav2-lean/selector-map.md": [
-        "cav2-lean-selector-map",
-        "cav2-lean-findings"
-      ],
-      "harvest/cav2-lean/research.md": [
-        "cav2-lean-selector-map",
-        "cav2-lean-findings"
-      ],
-      "harvest/cav2-lean/reviewer-positions.md": [
-        "cav2-lean-selector-map"
-      ],
-      "harvest/cav2-lean/findings.md": [
-        "cav2-lean-findings",
-        "cav2-lean-findings-development-pack"
-      ],
-      "development/cav2-lean-findings-development-pack.md": [
-        "cav2-lean-findings-development-pack",
-        "cav2-lean-development-pack-review"
-      ],
-      "definitions/DEFINITIONS.md": [
-        "cav2-lean-findings-development-pack",
-        "load-bearing-term-tracking-discipline"
-      ],
-      "definitions/DEFINITIONS-INDEX.md": [
-        "cav2-lean-findings-development-pack"
-      ],
-      "definitions/DEFINITION-DRIFT-AUDIT.md": [
-        "cav2-lean-findings-development-pack",
-        "strategy-result-four-surface-reconciliation"
-      ],
-      "development/constitution-pack.md": [
-        "cav2-lean-findings-development-pack",
-        "cav2-lean-development-pack-review"
-      ],
-      "authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md": [
-        "cav2-lean-findings-development-pack",
+      "../../../authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md": [
         "cav2-lean-development-pack-review",
+        "cav2-lean-findings-development-pack",
         "load-bearing-term-tracking-discipline"
       ],
-      "reviews/cav2-lean-development-pack-review/findings.md": [
-        "cav2-lean-development-pack-review"
-      ],
-      "reviews/cav2-lean-development-pack-review/attacks.md": [
-        "cav2-lean-development-pack-review"
-      ],
-      ".arcanum/observability/README.md": [
-        "domainspec-subagents-reflection-loop"
-      ],
-      ".arcanum/observability/signals/sigil-invocations.jsonl": [
-        "domainspec-subagents-reflection-loop"
-      ],
-      ".arcanum/observability/reflections/2026-06-27-domainspec-subagents-strategy-inventory-hook.md": [
-        "domainspec-subagents-reflection-loop"
-      ],
-      "harvest/cav2-authority-lifecycle/findings.md": [
-        "cav2-authority-lifecycle-owned-build-harvest"
-      ],
-      "harvest/cav2-authority-lifecycle/research.md": [
-        "cav2-authority-lifecycle-owned-build-harvest"
-      ],
-      "harvest/cav2-authority-lifecycle/selector-map.md": [
-        "cav2-authority-lifecycle-owned-build-harvest"
-      ],
-      "harvest/cav2-authority-lifecycle/reviewer-positions.md": [
-        "cav2-authority-lifecycle-owned-build-harvest"
-      ],
-      "harvest/cav2-authority-lifecycle/cav2-return-package.md": [
-        "cav2-authority-lifecycle-owned-build-harvest"
-      ],
-      "development/implementation-boundary-plan.md": [
-        "cav2-authority-lifecycle-owned-build-harvest"
-      ],
-      "development/contribution-edge-fixture-implementation-plan.md": [
-        "contribution-edge-fixture-full-refine-plan",
-        "contribution-edge-fixtures"
-      ],
-      "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/RESULT.md": [
-        "contribution-edge-fixture-full-refine-plan",
-        "contribution-edge-fixtures"
-      ],
-      "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/REFINE-DISPATCH.json": [
-        "contribution-edge-fixture-full-refine-plan"
-      ],
-      "formulae/dispatch-spec/scripts/validate-dispatch.py": [
-        "contribution-edge-fixture-full-refine-plan"
-      ],
-      "formulae/dispatch-spec/development/run-validation-fixtures.sh": [
-        "contribution-edge-fixture-full-refine-plan"
-      ],
-      "validation/contribution-edge-fixtures/README.md": [
-        "contribution-edge-fixture-full-refine-plan",
-        "contribution-edge-fixtures"
-      ],
-      "validation/contribution-edge-fixtures/SCHEMA.md": [
-        "contribution-edge-fixtures"
-      ],
-      "validation/contribution-edge-fixtures/MATRIX.md": [
-        "contribution-edge-fixtures"
-      ],
-      "validation/contribution-edge-fixtures/TYPED-NEGATIVES.md": [
-        "contribution-edge-fixtures"
-      ],
-      "tools/check_load_bearing_terms.py": [
-        "load-bearing-term-tracking-discipline"
-      ],
-      "research/four-surface-reconciliation/findings.md": [
+      "../../../definitions/DEFINITION-DRIFT-AUDIT.md": [
+        "cav2-lean-findings-development-pack",
         "load-bearing-term-tracking-discipline",
         "strategy-result-four-surface-reconciliation"
       ],
-      "CRAFT.md": [
+      "../../../definitions/DEFINITIONS-INDEX.md": [
+        "cav2-lean-findings-development-pack"
+      ],
+      "../../../definitions/DEFINITIONS.md": [
+        "cav2-lean-findings-development-pack",
         "load-bearing-term-tracking-discipline"
       ],
-      "research/four-surface-reconciliation/research.md": [
+      "../../../development/cav2-lean-findings-development-pack.md": [
+        "cav2-lean-development-pack-review",
+        "cav2-lean-findings-development-pack"
+      ],
+      "../../../development/constitution-pack.md": [
+        "cav2-lean-development-pack-review",
+        "cav2-lean-findings-development-pack"
+      ],
+      "../../../development/contribution-edge-fixture-implementation-plan.md": [
+        "contribution-edge-fixture-full-refine-plan",
+        "contribution-edge-fixtures"
+      ],
+      "../../../development/implementation-boundary-plan.md": [
+        "cav2-authority-lifecycle-owned-build-harvest",
+        "cav2-lean-findings-development-pack"
+      ],
+      "../../../development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/REFINE-DISPATCH.json": [
+        "contribution-edge-fixture-full-refine-plan"
+      ],
+      "../../../development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/RESULT.md": [
+        "contribution-edge-fixture-full-refine-plan",
+        "contribution-edge-fixtures"
+      ],
+      "../../../dispatch/CHECK-TENSION-HARVEST-GATE.md": [
+        "strategy-result-cav2-lean-harvest"
+      ],
+      "../../../dispatch/PROPOSED-HARVEST-DISPATCH.md": [
+        "harvest-strategy",
+        "strategy-result-cav2-lean-harvest"
+      ],
+      "../../../dispatch/PROPOSED-META-PROGRAM.md": [
+        "economy-resilience-program"
+      ],
+      "../../../dispatch/economy-synthesis/findings.md": [
+        "economy-resilience-program"
+      ],
+      "../../../dispatch/ergonomics-strategy/findings.md": [
+        "ergonomics-strategy"
+      ],
+      "../../../dispatch/ergonomics-strategy/research.md": [
+        "ergonomics-strategy"
+      ],
+      "../../../formulae/dispatch-spec/development/run-validation-fixtures.sh": [
+        "contribution-edge-fixture-full-refine-plan"
+      ],
+      "../../../formulae/dispatch-spec/scripts/validate-dispatch.py": [
+        "contribution-edge-fixture-full-refine-plan"
+      ],
+      "../../../harvest/README.md": [
+        "harvest-strategy"
+      ],
+      "../../../harvest/cav2-authority-lifecycle/cav2-return-package.md": [
+        "cav2-authority-lifecycle-owned-build-harvest"
+      ],
+      "../../../harvest/cav2-authority-lifecycle/findings.md": [
+        "cav2-authority-lifecycle-owned-build-harvest",
+        "cav2-lean-findings-development-pack"
+      ],
+      "../../../harvest/cav2-authority-lifecycle/research.md": [
+        "cav2-authority-lifecycle-owned-build-harvest"
+      ],
+      "../../../harvest/cav2-authority-lifecycle/reviewer-positions.md": [
+        "cav2-authority-lifecycle-owned-build-harvest"
+      ],
+      "../../../harvest/cav2-authority-lifecycle/selector-map.md": [
+        "cav2-authority-lifecycle-owned-build-harvest"
+      ],
+      "../../../harvest/cav2-lean/findings.md": [
+        "bets-and-prizes-device",
+        "cav2-lean-findings",
+        "cav2-lean-findings-development-pack"
+      ],
+      "../../../harvest/cav2-lean/research.md": [
+        "cav2-lean-findings",
+        "cav2-lean-selector-map"
+      ],
+      "../../../harvest/cav2-lean/reviewer-positions.md": [
+        "cav2-lean-selector-map"
+      ],
+      "../../../harvest/cav2-lean/selector-map.md": [
+        "cav2-lean-findings",
+        "cav2-lean-selector-map"
+      ],
+      "../../../ops/subagents-strategy/README.md": [
+        "subagents-dispatch-strategy"
+      ],
+      "../../../prizes/BET-REGISTER.md": [
+        "bets-and-prizes-device"
+      ],
+      "../../../prizes/PRIZE-REGISTER.md": [
+        "bets-and-prizes-device"
+      ],
+      "../../../prizes/README.md": [
+        "bets-and-prizes-device"
+      ],
+      "../../../prizes/SEED.md": [
+        "bets-and-prizes-device"
+      ],
+      "../../../research/four-surface-reconciliation/findings.md": [
+        "load-bearing-term-tracking-discipline",
         "strategy-result-four-surface-reconciliation"
       ],
-      "dispatch/economy-synthesis/findings.md": [
+      "../../../research/four-surface-reconciliation/research.md": [
+        "strategy-result-four-surface-reconciliation"
+      ],
+      "../../../reviews/cav2-lean-development-pack-review/attacks.md": [
+        "cav2-lean-development-pack-review"
+      ],
+      "../../../reviews/cav2-lean-development-pack-review/findings.md": [
+        "cav2-lean-development-pack-review"
+      ],
+      "../../../reviews/onboarding-docs-review/attacks.md": [
+        "onboarding-docs-review"
+      ],
+      "../../../reviews/onboarding-docs-review/findings.md": [
+        "onboarding-docs-review"
+      ],
+      "../../../sources/local-snapshots/CLOSURE-STRATEGY.md": [
+        "local-source-snapshots",
+        "strategy-result-cav2-lean-harvest"
+      ],
+      "../../../sources/local-snapshots/README.md": [
+        "cav2-lean-selector-map",
+        "local-source-snapshots"
+      ],
+      "../../../sources/local-snapshots/cav2/": [
+        "local-source-snapshots"
+      ],
+      "../../../sources/local-snapshots/domainspec-lean/": [
+        "local-source-snapshots"
+      ],
+      "../../../sources/local-snapshots/domainspec-lean/PRIZES.md": [
+        "bets-and-prizes-device"
+      ],
+      "../../../sources/source-records.md": [
+        "economy-resilience-program",
+        "research-tower-root"
+      ],
+      "../../../subtowers/failed-dao-crypto/returns/tower-findings.md": [
         "economy-resilience-program"
+      ],
+      "../../../subtowers/formal-mechanisms/returns/tower-findings.md": [
+        "economy-resilience-program"
+      ],
+      "../../../subtowers/science-of-science/returns/tower-findings.md": [
+        "economy-resilience-program"
+      ],
+      "../../../subtowers/socioeconomic-behavior/returns/tower-findings.md": [
+        "economy-resilience-program"
+      ],
+      "../../../telemetry/agents/README.md": [
+        "telemetry-agent-pool"
+      ],
+      "../../../telemetry/agents/agents.yaml": [
+        "telemetry-agent-pool"
+      ],
+      "../../../telemetry/agents/subagents-dispatch.yaml": [
+        "cav2-authority-lifecycle-owned-build-harvest",
+        "cav2-lean-development-pack-review",
+        "cav2-lean-findings",
+        "ergonomics-strategy",
+        "onboarding-docs-review",
+        "strategy-result-four-surface-reconciliation",
+        "subagents-dispatch-strategy"
+      ],
+      "../../../tools/check_load_bearing_terms.py": [
+        "load-bearing-term-tracking-discipline"
+      ],
+      "../../../validation/contribution-edge-fixtures/MATRIX.md": [
+        "contribution-edge-fixtures"
+      ],
+      "../../../validation/contribution-edge-fixtures/README.md": [
+        "contribution-edge-fixtures"
+      ],
+      "../../../validation/contribution-edge-fixtures/SCHEMA.md": [
+        "contribution-edge-fixtures"
+      ],
+      "../../../validation/contribution-edge-fixtures/TYPED-NEGATIVES.md": [
+        "contribution-edge-fixtures"
+      ],
+      "../../observability/README.md": [
+        "domainspec-subagents-reflection-loop"
+      ],
+      "../../observability/reflections/2026-06-27-domainspec-subagents-strategy-inventory-hook.md": [
+        "domainspec-subagents-reflection-loop"
+      ],
+      "../../observability/signals/sigil-invocations.jsonl": [
+        "domainspec-subagents-reflection-loop"
+      ],
+      "2026-06-28-four-surface-reconciliation": [
+        "strategy-result-four-surface-reconciliation"
+      ],
+      "2026-06-28-onboarding-docs-review": [
+        "onboarding-docs-review"
+      ],
+      "2026-06-29-ergonomics-strategy": [
+        "ergonomics-strategy"
+      ],
+      "BET-PRZ-01-a": [
+        "bets-and-prizes-device"
+      ],
+      "PRZ-01..03": [
+        "bets-and-prizes-device"
+      ],
+      "SRC-DST-PRIZES": [
+        "bets-and-prizes-device"
+      ],
+      "SYN-ECON-PROGRAM-FINDINGS": [
+        "economy-resilience-program"
+      ],
+      "SYN-ECON-TOWER-*": [
+        "economy-resilience-program"
+      ],
+      "dlean-bet-register-boundary": [
+        "bets-and-prizes-device"
+      ],
+      "dlean-prize-not-achievement": [
+        "bets-and-prizes-device"
       ]
     },
     "by_status": {
       "active": [
-        "research-tower-root",
-        "subagents-dispatch-strategy",
-        "repo-skill-surface",
-        "telemetry-agent-pool",
-        "repository-working-guide",
-        "local-source-snapshots",
-        "cav2-lean-selector-map",
+        "bets-and-prizes-device",
+        "cav2-authority-lifecycle-owned-build-harvest",
+        "cav2-lean-development-pack-review",
         "cav2-lean-findings",
         "cav2-lean-findings-development-pack",
-        "cav2-lean-development-pack-review",
-        "domainspec-subagents-reflection-loop",
-        "cav2-authority-lifecycle-owned-build-harvest",
+        "cav2-lean-selector-map",
         "contribution-edge-fixture-full-refine-plan",
         "contribution-edge-fixtures",
+        "domainspec-subagents-reflection-loop",
         "load-bearing-term-tracking-discipline",
-        "strategy-result-four-surface-reconciliation",
-        "economy-resilience-program"
+        "local-source-snapshots",
+        "repo-skill-surface",
+        "repository-working-guide",
+        "research-tower-root",
+        "subagents-dispatch-strategy",
+        "telemetry-agent-pool"
+      ],
+      "closed": [
+        "economy-resilience-program",
+        "ergonomics-strategy",
+        "onboarding-docs-review",
+        "strategy-result-cav2-lean-harvest",
+        "strategy-result-four-surface-reconciliation"
       ],
       "closed-first-harvest": [
         "harvest-strategy"
-      ],
-      "closed": [
-        "strategy-result-cav2-lean-harvest"
       ]
     },
     "by_evidence_card": {},
