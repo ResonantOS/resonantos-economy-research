@@ -14,8 +14,10 @@ itself.
 - Definitions + load-bearing-term tracking: [CTX-ECON-DEFINITIONS](#context-ctx-econ-definitions)
 - Track A fixture backlog: [CTX-ECON-FIXTURES](#context-ctx-econ-fixtures)
 - CAV2 reciprocal return: [CTX-ECON-CAV2-RETURN](#context-ctx-econ-cav2-return)
+- Bets & prizes generator: [CTX-ECON-BETS-PRIZES](#context-ctx-econ-bets-prizes)
+- Ergonomics adoption: [CTX-ECON-ERGONOMICS](#context-ctx-econ-ergonomics)
 - Active blockers: [costly-identity](#blocker-blk-econ-costly-identity-001), [phase-2](#blocker-blk-econ-phase2-001), [candidate-grounding](#blocker-blk-econ-candidate-grounding-001), [whitepaper-snapshot](#blocker-blk-econ-whitepaper-snapshot-001)
-- Active gaps: [adapter-compound](#gap-gap-econ-adapter-compound-001), [REX-artifact](#gap-gap-econ-rex-artifact-001), [README/GUIDE](#gap-gap-econ-readme-guide-001)
+- Active gaps: [adapter-compound](#gap-gap-econ-adapter-compound-001), [REX-artifact](#gap-gap-econ-rex-artifact-001)
 
 ## Contexts
 
@@ -51,6 +53,13 @@ itself.
 - Next move: build the `PRZ-01` authority-handoff witness fixture so `BET-PRZ-01-a` can resolve; stake bets on `PRZ-02` / `PRZ-03`. Handoff to domainspec is `REC-C13` / `CTX-ECON-CAV2-RETURN`, after a prize closes.
 - Artifacts: [prizes/README.md](prizes/README.md), [prizes/PRIZE-REGISTER.md](prizes/PRIZE-REGISTER.md), [prizes/BET-REGISTER.md](prizes/BET-REGISTER.md), [prizes/SEED.md](prizes/SEED.md), [bets-and-prizes-device entry](.arcanum/inventory/entries/bets-and-prizes-device.md).
 
+### <a id="context-ctx-econ-ergonomics"></a>CTX-ECON-ERGONOMICS — Repository ergonomics adoption
+
+- Stage: `plan` · Gate: `flag`
+- Purpose: adopt the ranked ergonomics improvements — generate derived projections (inventory index, this CRAFT view, the tag register) from their source of truth and truth-check them; the trust fixes; one front door — without eroding the guardrails.
+- Next move: apply Theme-1 trust fixes (propagate the "auditor ACCEPT" removal to the inventory entry + source-records; de-noise the term checker); then build the inventory index generator (#4). Owner-gated items #17/#18/#19 await a decision.
+- Artifacts: [ergonomics strategy](dispatch/ergonomics-strategy/findings.md), [onboarding-docs review](reviews/onboarding-docs-review/findings.md).
+
 ## Decisions
 
 | ID | Question | Selected | Status |
@@ -67,9 +76,10 @@ itself.
 - <a id="blocker-blk-econ-candidate-grounding-001"></a>**BLK-ECON-CANDIDATE-GROUNDING-001** (active) — candidate terms await grounding: treasury size (D24), epoch basis (D25), emission schedule (D26), runway calibration (D27), TF-11 adversary class + CI (D28).
 - <a id="blocker-blk-econ-whitepaper-snapshot-001"></a>**BLK-ECON-WHITEPAPER-SNAPSHOT-001** (active) — whitepaper un-snapshotted; gated mappings stay analogy until ledgered.
 - **ENA-ECON-LBT-ADAPTER-001** (active) — the REC-C14 adapter enables deterministic load-bearing enforcement.
+- **ENA-ECON-ARCANUM-SKILLS-001** (active) — installed Arcanum skills (invoke, task-session, refine, dispatch-spec, distill, craft, spellcraft, structured-interview-kits) enable intent→artifact authoring, refinement, execution, and generated ledger views. Tooling/method only; transfers no authority (method authority stays local per the 2026-06-29 decision).
 
 ## Gaps
 
 - <a id="gap-gap-econ-adapter-compound-001"></a>**GAP-ECON-ADAPTER-COMPOUND-001** (flag) — adapter misses compound identifiers (self_report near-miss); refine matching.
 - <a id="gap-gap-econ-rex-artifact-001"></a>**GAP-ECON-REX-ARTIFACT-001** (flag) — `$REX`/`$REX-COM` un-sourced symbol in the socio tower; route to the tower owner.
-- <a id="gap-gap-econ-readme-guide-001"></a>**GAP-ECON-README-GUIDE-001** (flag) — README/GUIDE not yet updated with the load-bearing-term discipline.
+- <a id="gap-gap-econ-readme-guide-001"></a>**GAP-ECON-README-GUIDE-001** (✅ resolved 2026-06-29) — README Working Posture + GUIDE Framing habit 6 now carry the load-bearing-term discipline; confirmed by the onboarding-docs review.

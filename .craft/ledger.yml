@@ -33,6 +33,12 @@ contexts:
       - label: CAV2 reciprocal return
         target: CTX-ECON-CAV2-RETURN
         kind: row-id
+      - label: Bets & prizes mechanism generator
+        target: CTX-ECON-BETS-PRIZES
+        kind: row-id
+      - label: Repository ergonomics adoption
+        target: CTX-ECON-ERGONOMICS
+        kind: row-id
   - context_id: CTX-ECON-DEFINITIONS
     parent_id: CTX-ECON-ROOT
     title: Definitions spine and load-bearing-term tracking
@@ -79,6 +85,36 @@ contexts:
     links:
       - label: Standalone-repo decision (CAV2-owned)
         target: DEC-ECON-STANDALONE-001
+        kind: row-id
+  - context_id: CTX-ECON-BETS-PRIZES
+    parent_id: CTX-ECON-ROOT
+    title: Bets & prizes mechanism generator
+    purpose: A standalone falsification-first device that generates candidate economy mechanisms — a prize closes only on a survived bet (attack lane + authority-collapse check) with a witness, never on novelty; imports the form only, promotes nothing.
+    stage: execute
+    gate: flag
+    next_move: Build the PRZ-01 authority-handoff witness fixture so BET-PRZ-01-a can resolve; stake bets on PRZ-02/PRZ-03. A domainspec handoff is REC-C13 (via CTX-ECON-CAV2-RETURN), only after a prize closes.
+    owned_artifacts:
+      - ART-ECON-PRIZES
+    links:
+      - label: REC-C13 reciprocal return path
+        target: CTX-ECON-CAV2-RETURN
+        kind: row-id
+  - context_id: CTX-ECON-ERGONOMICS
+    parent_id: CTX-ECON-ROOT
+    title: Repository ergonomics adoption
+    purpose: Adopt the ranked ergonomics improvements — generate derived projections (inventory index, CRAFT view, tag register) from their source of truth and truth-check them; the trust fixes; one front door — without eroding the guardrails.
+    stage: plan
+    gate: flag
+    next_move: Apply Theme-1 trust fixes (propagate the "auditor ACCEPT" removal to the inventory entry + source-records; de-noise the term checker); then build the inventory index generator (#4). Owner-gated items #17/#18/#19 await a decision.
+    owned_artifacts:
+      - ART-ECON-ERGONOMICS-STRATEGY
+      - ART-ECON-ONBOARDING-REVIEW
+    links:
+      - label: Stale gap this work closed
+        target: GAP-ECON-README-GUIDE-001
+        kind: row-id
+      - label: Arcanum tooling enabler
+        target: ENA-ECON-ARCANUM-SKILLS-001
         kind: row-id
 
 artifacts:
@@ -137,6 +173,21 @@ artifacts:
     path: /home/vrondelli/projects/domainspec-core/cyberAlchemy-v2/authority/imports/resonantos-economy-research/2026-06-28-load-bearing-term-tracking-handoff.md
     status: flag
     owner_context: CTX-ECON-CAV2-RETURN
+  - artifact_id: ART-ECON-ONBOARDING-REVIEW
+    title: Onboarding-docs review findings (applied 2026-06-29)
+    path: reviews/onboarding-docs-review/findings.md
+    status: resolved
+    owner_context: CTX-ECON-ERGONOMICS
+  - artifact_id: ART-ECON-ERGONOMICS-STRATEGY
+    title: Repository-ergonomics strategy (18 ranked improvements)
+    path: dispatch/ergonomics-strategy/findings.md
+    status: pass
+    owner_context: CTX-ECON-ERGONOMICS
+  - artifact_id: ART-ECON-PRIZES
+    title: Bets & prizes mechanism generator
+    path: prizes/README.md
+    status: active
+    owner_context: CTX-ECON-BETS-PRIZES
 
 decisions:
   - decision_id: DEC-ECON-STANDALONE-001
@@ -242,6 +293,16 @@ typed_items:
     delegation_route: definitions-governance
     requires_human: false
     role_notes: tools/check_load_bearing_terms.py enables deterministic REC-C14 enforcement (first-pass extractor; --strict for CI).
+  - item_id: ENA-ECON-ARCANUM-SKILLS-001
+    kind: enabler
+    base_type: tooling_enabler
+    primary_lane: governance
+    source_id: CTX-ECON-ERGONOMICS
+    target_id: CTX-ECON-ERGONOMICS
+    status: active
+    delegation_route: sigil-development
+    requires_human: false
+    role_notes: Installed Arcanum skills (invoke, task-session, refine, dispatch-spec, distill, craft, spellcraft, structured-interview-kits) enable intent->artifact authoring, refinement, execution, and generated ledger views — directly serving the ergonomics generators. Tooling/method only; carries an upstream regenerate-from-canonical dependency, transfers no authority (method authority stays local per the 2026-06-29 decision).
 
 gaps:
   - gap_id: GAP-ECON-ADAPTER-COMPOUND-001
@@ -262,12 +323,12 @@ gaps:
     evidence: ART-ECON-PROGRAM-FINDINGS
   - gap_id: GAP-ECON-README-GUIDE-001
     context_id: CTX-ECON-ROOT
-    summary: README.md and GUIDE.md do not yet document the load-bearing-term tracking discipline (REC-C14 / ER-D23 / candidate lifecycle).
+    summary: RESOLVED (2026-06-29) — README Working Posture and GUIDE Framing habit 6 now document the load-bearing-term tracking discipline (REC-C14 / ER-D23 / candidate lifecycle). The onboarding-docs review (2026-06-28) independently confirmed the discipline is present in both docs.
     severity: flag
     treatment: plan
     owner_route: definitions-governance
-    status: active
-    evidence: ART-ECON-README
+    status: resolved
+    evidence: ART-ECON-README; GUIDE.md Framing habit 6; reviews/onboarding-docs-review/findings.md
 
 indexes:
   by_id:
@@ -275,6 +336,8 @@ indexes:
     CTX-ECON-DEFINITIONS: contexts[1]
     CTX-ECON-FIXTURES: contexts[2]
     CTX-ECON-CAV2-RETURN: contexts[3]
+    CTX-ECON-BETS-PRIZES: contexts[4]
+    CTX-ECON-ERGONOMICS: contexts[5]
     DEC-ECON-STANDALONE-001: decisions[0]
     DEC-ECON-LBT-SCOPE-001: decisions[1]
     DEC-ECON-LEDGER-LOCATION-001: decisions[2]
@@ -284,6 +347,7 @@ indexes:
     BLK-ECON-CANDIDATE-GROUNDING-001: typed_items[2]
     BLK-ECON-WHITEPAPER-SNAPSHOT-001: typed_items[3]
     ENA-ECON-LBT-ADAPTER-001: typed_items[4]
+    ENA-ECON-ARCANUM-SKILLS-001: typed_items[5]
     GAP-ECON-ADAPTER-COMPOUND-001: gaps[0]
     GAP-ECON-REX-ARTIFACT-001: gaps[1]
     GAP-ECON-README-GUIDE-001: gaps[2]
@@ -297,12 +361,15 @@ indexes:
   active_gaps:
     - GAP-ECON-ADAPTER-COMPOUND-001
     - GAP-ECON-REX-ARTIFACT-001
+  resolved_gaps:
     - GAP-ECON-README-GUIDE-001
   next_moves:
     CTX-ECON-ROOT: Build NOW-fixture #2 (flow-conservation) via the evidence harness.
     CTX-ECON-DEFINITIONS: Ground candidate terms ER-D24..D28; lazy-migrate Lifecycle status onto ER-D1..D22.
     CTX-ECON-FIXTURES: Build flow-conservation first, then runway-inequality, TF-11, TF-3.
     CTX-ECON-CAV2-RETURN: Await CAV2 owner review of the load-bearing-term handoff.
+    CTX-ECON-BETS-PRIZES: Build the PRZ-01 witness fixture; stake bets on PRZ-02/PRZ-03.
+    CTX-ECON-ERGONOMICS: Apply Theme-1 trust fixes; build the inventory index generator (#4); #17/#18/#19 await an owner decision.
   artifacts_by_path:
     .craft/ledger.yml: ART-ECON-LEDGER
     CRAFT.md: ART-ECON-VIEW
@@ -314,3 +381,6 @@ indexes:
     tools/check_load_bearing_terms.py: ART-ECON-LBT-ADAPTER
     dispatch/economy-synthesis/findings.md: ART-ECON-PROGRAM-FINDINGS
     research/four-surface-reconciliation/findings.md: ART-ECON-FOUR-SURFACE
+    reviews/onboarding-docs-review/findings.md: ART-ECON-ONBOARDING-REVIEW
+    dispatch/ergonomics-strategy/findings.md: ART-ECON-ERGONOMICS-STRATEGY
+    prizes/README.md: ART-ECON-PRIZES

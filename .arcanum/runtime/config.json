@@ -1,6 +1,6 @@
 {
   "schema_version": "arcanum.runtime.config.v1",
-  "command_surface": "repo-local,repo-codex",
+  "command_surface": "claude,repo-local",
   "default_adapter": "native-skill",
   "adapters": {
     "native-skill": {

@@ -1,0 +1,30 @@
+{
+  "dispatch_id": "20260629-inventory-index-generator",
+  "operator_intent": "Refine the inventory index generator (#4) + filesystem-truth validator (#5) into a non-executed plan.",
+  "refinement_objective": "A decidable build plan for tools/build_inventory_index.py + a truth-checking validator, honoring generate-not-hand-edit, in-repo-only, report-not-create, non-authority.",
+  "preset": "standard",
+  "research_mode": "no-research",
+  "subagent_strategy": { "status": "none", "rationale": "Small well-scoped tooling design; canonical loop runs through parent capabilities, no sibling fan-out." },
+  "selected_overlays": [
+    { "id": "baseline_sequence", "why": "ordinary refinement default" },
+    { "id": "route_menu_for_ambiguity", "why": "real fork: extend validate-index-json.sh (contract change, #5) vs a new validate-inventory-truth.sh" },
+    { "id": "toy_game_for_low_cost_falsification", "why": "controlled test: generator must reproduce 22 entries AND the validator must fail on the current drifted index before passing on the regenerated one" }
+  ],
+  "baseline_techniques": ["sequence", "frame_handoff", "validation_loop", "owner_boundary_check", "observability_grouping", "minimum_component_catalog", "data_quality_completeness"],
+  "stages": [
+    { "n": 1, "name": "context-builder-baseline", "owner": "context-builder", "mode": "standard", "runtime": "parent-coordinator", "status": "pass", "output": "RUN-MANIFEST.md (evidence baseline section)" },
+    { "n": 2, "name": "invoke-define", "owner": "invoke", "mode": "define", "runtime": "parent-coordinator", "status": "pass", "output": "stages/02-define.md" },
+    { "n": 3, "name": "interrogation-refine-review", "owner": "interrogation", "mode": "refine-review", "runtime": "parent-coordinator", "status": "flag", "output": "stages/02-define.md (verdict)" },
+    { "n": 4, "name": "research-decision", "owner": "refine", "mode": "no-research", "runtime": "parent-coordinator", "status": "pass", "output": "no-research (local-only; DEC-ECON-STANDALONE-001)" },
+    { "n": 5, "name": "distill", "owner": "distill", "mode": "standard", "runtime": "parent-coordinator", "status": "pass", "output": "stages/06-design.md (SCU section)" },
+    { "n": 6, "name": "invoke-design", "owner": "invoke", "mode": "design", "runtime": "parent-coordinator", "status": "pass", "output": "stages/06-design.md" },
+    { "n": 7, "name": "interrogation-refine-design-review", "owner": "interrogation", "mode": "refine-design-review", "runtime": "parent-coordinator", "status": "flag", "output": "stages/06-design.md (2 owner decisions)" },
+    { "n": 8, "name": "distill-repair", "owner": "distill", "mode": "validate", "runtime": "parent-coordinator", "status": "pass", "output": "stages/06-design.md (repair verdict)" },
+    { "n": 9, "name": "invoke-plan", "owner": "invoke", "mode": "plan", "runtime": "parent-coordinator", "status": "pass", "output": "stages/09-plan.md" },
+    { "n": 10, "name": "final-interrogation-synthesis", "owner": "interrogation+refine", "mode": "refine-final", "runtime": "parent-coordinator", "status": "pass", "output": "RESULT.md" }
+  ],
+  "gates": ["native-capability-handles", "stage-receipts-or-blocked-reason", "research-confirmation", "required-artifact-existence", "owner-boundary-preservation", "final-synthesis-readiness"],
+  "owner_boundary_check": "Plan promotes nothing; honors generate-not-hand-edit, in-repo-only deps, report-not-create, inventory-non-authority. 2 owner decisions (D1 validator route, D2 authority field) flagged, non-blocking.",
+  "observability_grouping": "20260629-inventory-index-generator",
+  "validation_status": "route-shape valid (10 canonical stages present, overlays expressed in stages/gates, subagent_strategy=none, owner-boundary gate present)"
+}

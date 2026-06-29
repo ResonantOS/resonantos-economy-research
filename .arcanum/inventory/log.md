@@ -653,3 +653,30 @@ Owner: ResonantOS economy research owner
   decision flipped `proposed` → `pass`; the 2026-06-26 method-authority clause
   superseded in place; decisions index updated. All 16 review findings now closed.
   Scope is method authority only; no economy/token/governance authority changed.
+
+## 2026-06-29 repository-ergonomics strategy dispatch (registered + closed)
+
+- Mode: dispatch (research) — registered + run + closed `resolved`
+- Dispatch: `2026-06-29-ergonomics-strategy` (dispatch + close rows in `telemetry/agents/subagents-dispatch.yaml`)
+- Entries created: 1 (`entries/ergonomics-strategy.md`)
+- Tags added: `ergonomics`
+- Index updated: yes (index.md — see note on index.json below)
+- Log updated: yes
+- Contradictions flagged: 0
+- Notes: Team-presentable strategy for improving repo ergonomics. Check-tension gate
+  both PASS. Three persona explorers (Hirschman newcomer · Simon power-user · Fritz
+  agent) → Meadows leverage-ranked synthesis → Popper (non-vacuity) + Quine
+  (boundary-collapse) zig-zag → strategist-authored writeup → Brandenburg ACCEPT.
+  agents_spawned 7, loops_used 1. All three personas CONVERGED on one root: the repo
+  hand-maintains derived projections (inventory index, tag register, CRAFT status,
+  term scan) that drift invisibly; master move = generate each from its source of
+  truth + truth-check. 18 ranked improvements (1 killed for vacuity, 4 tightened,
+  5 owner-gated: gate-tiering, machine posture fields, fixture stub, + 2 flags).
+  Live evidence found and re-verified by 3 independent agents: `index.json` stale
+  (19 of 21 entries; `by_tag` empty; timestamp lies; validator passes anyway), the
+  killed "auditor ACCEPT" still live on `economy-resilience-program.md:24,60` +
+  `source-records.md:63`, stale `GAP-ECON-README-GUIDE-001`. Change set NOT applied
+  (separate act). **index.json deliberately NOT hand-patched this closeout** (now
+  stale by one more entry) — left for the proposed generator (finding #4) rather than
+  perpetuating the hand-sync the strategy identifies as the drift root. Non-authority
+  read model; nothing promotes economy/token/governance/mechanism/validation.

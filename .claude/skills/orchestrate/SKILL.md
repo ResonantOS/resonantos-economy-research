@@ -17,20 +17,14 @@ Route repository work through installed Arcanum sigils and spells while preservi
 
 <installed-capabilities>
 - `arcanum-orchestrate`: route requests through installed Arcanum capabilities.
-- `inventory` sigil (`arcana` tier)
-- `context-builder` sigil (`transmutations` tier)
-- `research-tower` sigil (`arcana` tier)
-- `research-evidence-harness` sigil (`arcana` tier)
-- `decision-gate` sigil (`arcana` tier)
-- `constitution-governance` sigil (`arcana` tier)
-- `definitions-governance` sigil (`arcana` tier)
-- `ontology-vault` sigil (`arcana` tier)
-- `observability-setup` sigil (`formulae` tier)
-- `signal-observer` sigil (`arcana` tier)
-- `robot-talks` sigil (`arcana` tier)
-- `discovery-to-inventory` spell
-- `ontology-harness` spell
-- `publication-research-pipeline` spell
+- `task-session` sigil (`arcana` tier)
+- `refine` sigil (`arcana` tier)
+- `structured-interview-kits` sigil (`arcana` tier)
+- `distill` sigil (`arcana` tier)
+- `craft` sigil (`arcana` tier)
+- `spellcraft` sigil (`arcana` tier)
+- `dispatch-spec` sigil (`formulae` tier)
+- `invoke` spell
 </installed-capabilities>
 
 <process>

@@ -18,6 +18,7 @@ Owner: ResonantOS economy research owner
 | `dispatch` | Subagent dispatch planning, registration, ledger, or closeout. |
 | `dispatch-spec` | Arcanum dispatch-spec schema, validator, route, or validation fixture surface. |
 | `domainspec` | DomainSpec strategy, formalization discipline, or subagent governance source. |
+| `ergonomics` | Repository ergonomics: onboarding, navigation, routine overhead, and machine-followability of the working surfaces. |
 | `fixture-scaffold` | Validation fixture package design or materialization plan; not mechanism implementation. |
 | `glossary` | Reader-facing local glossary surface; non-canonical, mirrors the definitions. |
 | `guide` | Repository orientation, posture, or work-order guide. |
