@@ -1,7 +1,7 @@
 {
   "schema_version": "inventory.index.v0.1",
   "inventory_root": ".arcanum/inventory",
-  "generated_at": "2026-07-13T03:40:44Z",
+  "generated_at": "2026-07-13T04:36:33Z",
   "human_index": "index.md",
   "entries": [
     {
@@ -377,6 +377,43 @@
       "evidence_card_ids": [],
       "evidence_set_ids": [],
       "residue": []
+    },
+    {
+      "id": "deferred-contribution-basis",
+      "path": "entries/deferred-contribution-basis.md",
+      "kind": "entry",
+      "type": "strategy-result",
+      "title": "Deferred Contribution Basis Research",
+      "summary": "Deferred Contribution Basis Research",
+      "tags": [
+        "strategy-result",
+        "dispatch",
+        "subagents",
+        "synthesis",
+        "tower",
+        "validation-scaffold",
+        "definitions",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../dispatch/deferred-contribution-basis/findings.md",
+        "../../../dispatch/deferred-contribution-basis/research.md",
+        "../../../telemetry/agents/subagents-dispatch.yaml",
+        "../../../subtowers/official-whitepaper/returns/deferred-contribution-basis-prior-art.md",
+        "../../../subtowers/failed-dao-crypto/returns/deferred-contribution-basis-prior-art.md",
+        "../../../subtowers/science-of-science/returns/deferred-contribution-basis-prior-art.md",
+        "../../../subtowers/formal-mechanisms/returns/deferred-contribution-basis-prior-art.md",
+        "../../../subtowers/socioeconomic-behavior/returns/deferred-contribution-basis-prior-art.md"
+      ],
+      "updated": "2026-07-13",
+      "status": "dispatch",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "- Definition/non-drift is blocked before fixture use: the relevance claim, review disposition, and result-link evidence class are unregistered."
+      ]
     },
     {
       "id": "domainspec-subagents-reflection-loop",
@@ -926,6 +963,7 @@
       "cav2-lean-selector-map": "entries/cav2-lean-selector-map.md",
       "contribution-edge-fixture-full-refine-plan": "entries/contribution-edge-fixture-full-refine-plan.md",
       "contribution-edge-fixtures": "entries/contribution-edge-fixtures.md",
+      "deferred-contribution-basis": "entries/deferred-contribution-basis.md",
       "domainspec-subagents-reflection-loop": "entries/domainspec-subagents-reflection-loop.md",
       "economy-resilience-program": "entries/economy-resilience-program.md",
       "ergonomics-strategy": "entries/ergonomics-strategy.md",
@@ -964,6 +1002,7 @@
       ],
       "strategy-result": [
         "authority-definition-lifecycle-clarity",
+        "deferred-contribution-basis",
         "ergonomics-strategy",
         "number-lottery-refinement"
       ],
@@ -1024,6 +1063,7 @@
       "definitions": [
         "authority-definition-lifecycle-clarity",
         "cav2-lean-findings-development-pack",
+        "deferred-contribution-basis",
         "load-bearing-term-tracking-discipline",
         "strategy-result-four-surface-reconciliation"
       ],
@@ -1037,6 +1077,7 @@
         "cav2-lean-development-pack-review",
         "cav2-lean-findings",
         "cav2-lean-selector-map",
+        "deferred-contribution-basis",
         "economy-resilience-program",
         "ergonomics-strategy",
         "harvest-strategy",
@@ -1119,6 +1160,7 @@
         "cav2-lean-selector-map",
         "contribution-edge-fixture-full-refine-plan",
         "contribution-edge-fixtures",
+        "deferred-contribution-basis",
         "economy-resilience-program",
         "ergonomics-strategy",
         "harvest-strategy",
@@ -1146,6 +1188,7 @@
       ],
       "strategy-result": [
         "authority-definition-lifecycle-clarity",
+        "deferred-contribution-basis",
         "economy-resilience-program",
         "ergonomics-strategy",
         "number-lottery-refinement",
@@ -1156,6 +1199,7 @@
       "subagents": [
         "authority-definition-lifecycle-clarity",
         "cav2-lean-development-pack-review",
+        "deferred-contribution-basis",
         "domainspec-subagents-reflection-loop",
         "economy-resilience-program",
         "ergonomics-strategy",
@@ -1167,6 +1211,7 @@
         "telemetry-agent-pool"
       ],
       "synthesis": [
+        "deferred-contribution-basis",
         "economy-resilience-program",
         "ergonomics-strategy",
         "load-bearing-term-tracking-discipline"
@@ -1185,13 +1230,15 @@
         "number-lottery-refinement"
       ],
       "tower": [
+        "deferred-contribution-basis",
         "research-tower-root"
       ],
       "validation-scaffold": [
         "cav2-authority-lifecycle-owned-build-harvest",
         "cav2-lean-development-pack-review",
         "contribution-edge-fixture-full-refine-plan",
-        "contribution-edge-fixtures"
+        "contribution-edge-fixtures",
+        "deferred-contribution-basis"
       ],
       "workflow": [
         "bets-and-prizes-device",
@@ -1326,6 +1373,12 @@
       "../../../dispatch/authority-definition-lifecycle-clarity/research.md": [
         "authority-definition-lifecycle-clarity"
       ],
+      "../../../dispatch/deferred-contribution-basis/findings.md": [
+        "deferred-contribution-basis"
+      ],
+      "../../../dispatch/deferred-contribution-basis/research.md": [
+        "deferred-contribution-basis"
+      ],
       "../../../dispatch/economy-synthesis/findings.md": [
         "economy-resilience-program"
       ],
@@ -1431,14 +1484,29 @@
         "economy-resilience-program",
         "research-tower-root"
       ],
+      "../../../subtowers/failed-dao-crypto/returns/deferred-contribution-basis-prior-art.md": [
+        "deferred-contribution-basis"
+      ],
       "../../../subtowers/failed-dao-crypto/returns/tower-findings.md": [
         "economy-resilience-program"
+      ],
+      "../../../subtowers/formal-mechanisms/returns/deferred-contribution-basis-prior-art.md": [
+        "deferred-contribution-basis"
       ],
       "../../../subtowers/formal-mechanisms/returns/tower-findings.md": [
         "economy-resilience-program"
       ],
+      "../../../subtowers/official-whitepaper/returns/deferred-contribution-basis-prior-art.md": [
+        "deferred-contribution-basis"
+      ],
+      "../../../subtowers/science-of-science/returns/deferred-contribution-basis-prior-art.md": [
+        "deferred-contribution-basis"
+      ],
       "../../../subtowers/science-of-science/returns/tower-findings.md": [
         "economy-resilience-program"
+      ],
+      "../../../subtowers/socioeconomic-behavior/returns/deferred-contribution-basis-prior-art.md": [
+        "deferred-contribution-basis"
       ],
       "../../../subtowers/socioeconomic-behavior/returns/tower-findings.md": [
         "economy-resilience-program"
@@ -1454,6 +1522,7 @@
         "cav2-authority-lifecycle-owned-build-harvest",
         "cav2-lean-development-pack-review",
         "cav2-lean-findings",
+        "deferred-contribution-basis",
         "ergonomics-strategy",
         "onboarding-docs-review",
         "strategy-result-four-surface-reconciliation",
@@ -1546,6 +1615,9 @@
       ],
       "closed-first-harvest": [
         "harvest-strategy"
+      ],
+      "dispatch": [
+        "deferred-contribution-basis"
       ],
       "research": [
         "number-lottery-refinement"

@@ -787,3 +787,22 @@ Owner: ResonantOS economy research owner
   and amended `RESULT.md`
 - Next route: corrected selector Design/Plan and ten-fixture evidence package;
   no real cohort, final number, mint, or launch authorized
+
+## 2026-07-13 Deferred Contribution Basis research dispatch
+
+- Mode: dispatch (research) — auditor ACCEPT after one exact writer repair
+- Dispatch: `2026-07-13-deferred-contribution-basis`
+- Entry created: `entries/deferred-contribution-basis.md`
+- Durable outputs: `dispatch/deferred-contribution-basis/{research,findings}.md`
+- Prior art routed: official-whitepaper, failed-DAO/crypto, science-of-science,
+  formal-mechanisms, and socioeconomic-behavior subtower returns
+- Source/claim surfaces: five bounded source cohorts plus C11–C15 and R10
+- Result: reject investment/cashing as mechanism aliases; retain only an
+  undeployed, unvalidated prior-activity-to-result claim-review candidate that
+  terminates at one result-scoped ER-D7 record with all effects `none`
+- Gate state: precedent FLAG; definitions BLOCK before fixture use;
+  non-vacuity FLAG; research-only authority boundary PASS
+- Next route: register three ER-D23 candidates, then separately instantiate
+  E1–E4; E5 requires its own prior-art sweep
+- Promotion posture: no reward, payout, reputation, token, policy, governance,
+  implementation, economy-validation, or authority claim

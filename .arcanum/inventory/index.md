@@ -58,6 +58,7 @@ easy to breach, without them.
 | [domainspec-subagents-reflection-loop](entries/domainspec-subagents-reflection-loop.md) | telemetry | `reflection`, `observability`, `sigil-development`, `workflow-reflect`, `subagents` | Local reflection loop for subagent strategy output drift, inventory-result checks, and lifecycle maintenance. |
 | [economy-resilience-program](entries/economy-resilience-program.md) | synthesis | `strategy-result`, `dispatch`, `subagents`, `synthesis`, `attack-lane`, `fixture-backlog`, `resonantos-economy` | Four isolated towers + cross-corpus synthesis (closed `resolved`); the ranked fixture & constitution backlog and the concrete start path (Tracks A/B/C). |
 | [number-lottery-refinement](entries/number-lottery-refinement.md) | strategy-result | `strategy-result`, `dispatch`, `subagents`, `token-boundary`, `time-capsule`, `community-ritual`, `refine` | Operator-amended result: supply selection is in scope; cohort-root plus post-close beacon is the leading unvalidated selector behind a redesigned fixture boundary. |
+| [deferred-contribution-basis](entries/deferred-contribution-basis.md) | strategy-result | `strategy-result`, `dispatch`, `subagents`, `synthesis`, `tower`, `validation-scaffold`, `definitions`, `resonantos-economy` | Five-lane prior-art and fixture-handoff result: investment/cashing aliases killed; no-effect prior-activity-to-result review candidate retained but blocked before fixture use on three unregistered terms. |
 | [strategy-result-four-surface-reconciliation](entries/strategy-result-four-surface-reconciliation.md) | dispatch | `strategy-result`, `dispatch`, `subagents`, `definitions`, `glossary` | Audit reconciling glossary/notation/distills vs ER-D1–D20 (closed `resolved`); 10 actionable surface edits, 1 KILL, 9 owner-gated disputes; propose-only. |
 | [load-bearing-term-tracking-discipline](entries/load-bearing-term-tracking-discipline.md) | synthesis | `synthesis`, `definitions`, `constitution`, `load-bearing`, `craft` | **Session headline synthesis.** Every load-bearing term must resolve to a tracked definition (REC-C14 + ER-D23 + adapter); ER-D21–D28 added; systematic fixture-primitive drift closed; handed to CAv2. |
 | [authority-definition-lifecycle-clarity](entries/authority-definition-lifecycle-clarity.md) | strategy-result | `strategy-result`, `dispatch`, `subagents`, `definitions`, `authority`, `resonantos-economy` | Closed dispatch clarifying ER-D1 as definition-lifecycle `grounded` but economy-condition `candidate`; crosswalk + witness/challenge matrix scaffold applied, not validation. |
@@ -67,10 +68,13 @@ easy to breach, without them.
 
 ## Open Gaps
 
-- No external DAO or science-of-science source has been ingested yet.
+- A bounded deferred-contribution dispatch has ingested related DAO/crypto,
+  science-of-science, formal-attribution, and behavioral source cards into all
+  five relevant subtowers. These sources remain related evidence only.
 - The CAv2/Lean harvest dispatch is closed with accepted local findings.
-- External DAO, behavioral, mechanism-design, legal/tax, wallet/security,
-  privacy, governance, and science-credit bridge evidence remains unharvested.
+- Broader legal/tax, wallet/security, privacy, governance, and preventive-work
+  evidence remains unharvested; the bounded deferred-contribution cohorts do
+  not close those domains or validate transfer to ResonantOS.
 - No validation harness has emitted evidence yet.
 - The CAv2/Lean harvest findings now have a development handoff with
   canonical definitions, design threads, and non-executed next work units.
