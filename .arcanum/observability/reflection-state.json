@@ -1,6 +1,6 @@
 {
   "schema_version": "arcanum.reflection-state.v0.1",
-  "updated": "2026-06-27T02:22:14Z",
+  "updated": "2026-07-12T16:59:04Z",
   "sigils": {
     "domainspec-subagents-strategy": {
       "last_reflection": "2026-06-27T02:22:14Z",
@@ -12,6 +12,28 @@
       "quality_bar_failures_since_reflection": 0,
       "output_contract_drift_since_reflection": 0,
       "next_trigger": "manual request, 5 meaningful executions, 10 generated outputs, 3 related workflow gaps, or 1 severe gap"
+    },
+    "refine": {
+      "last_reflection": null,
+      "last_report": null,
+      "meaningful_executions_since_reflection": 2,
+      "generated_outputs_since_reflection": 62,
+      "related_workflow_gaps_since_reflection": 0,
+      "severe_workflow_gaps_since_reflection": 0,
+      "quality_bar_failures_since_reflection": 0,
+      "output_contract_drift_since_reflection": 0,
+      "next_trigger": "output threshold reached; run workflow-reflect when maintenance is authorized"
+    },
+    "whisper": {
+      "last_reflection": null,
+      "last_report": null,
+      "meaningful_executions_since_reflection": 5,
+      "generated_outputs_since_reflection": 14,
+      "related_workflow_gaps_since_reflection": 0,
+      "severe_workflow_gaps_since_reflection": 0,
+      "quality_bar_failures_since_reflection": 0,
+      "output_contract_drift_since_reflection": 0,
+      "next_trigger": "usage threshold reached; run workflow-reflect when maintenance is authorized"
     }
   }
 }

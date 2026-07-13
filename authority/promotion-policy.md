@@ -17,6 +17,25 @@ Research promotes by evidence and owner route, not by elegance.
 | Workflow witness | A concrete scenario for testing mechanism behavior. | Evidence harness or external review. |
 | Research recommendation | A source-backed proposal with risks and gates. | External owner decision. |
 
+## Definition Lifecycle Crosswalk
+
+Definition lifecycle and promotion boundary are separate axes.
+[ER-D23](../definitions/DEFINITIONS.md#er-d23-load-bearing-term-lifecycle)
+governs definition-card lifecycle: `candidate`, `grounded`, `promoted`,
+`residue`, and `retired`. This policy governs owner-routed movement of research
+artifacts, validation requests, and recommendations.
+
+A `grounded` definition may still describe a `candidate` economy condition. For
+example, [ER-D1 Economy Resilience](../definitions/DEFINITIONS.md#er-d1-economy-resilience)
+is grounded enough for local research use, while the economy condition itself
+remains a candidate target with open witness and collapse-test work.
+
+`Grounded` does not mean validated, official, proven, correct, promoted,
+policy-ready, fixture-passed, or implementation-ready. `Grounded -> promoted`
+requires the relevant owner gate and does not promote any mechanism, token,
+governance weight, payout rule, bounty policy, launch claim, or implementation
+contract by itself.
+
 ## Required Gates
 
 | Gate | Required when | Standard |

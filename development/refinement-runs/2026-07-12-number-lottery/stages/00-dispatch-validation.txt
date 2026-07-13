@@ -1,0 +1,19 @@
+Number Lottery Refine dispatch validation
+Date: 2026-07-12
+Validator: formulae/dispatch-spec/scripts/validate-dispatch.py
+
+Attempt 1: BLOCK
+- steps/2/inputs/1/kind used route_menu, which is not a valid input kind.
+- subagent_strategy.receipt_requirements omitted native receipt fields:
+  capability_ref, dispatch_id, handoff_note, observer_status, status, step_id.
+
+Repair:
+- represented the route-menu output as an artifact input.
+- added all required native receipt fields.
+
+Attempt 2: PASS
+VALIDATION=pass
+DISPATCH=development/refinement-runs/2026-07-12-number-lottery/REFINE-DISPATCH.json
+
+Post-gate freeze validation: PASS
+Frozen SHA-256: de5c0a561c97b09f51a2338c01ecc88cbf64d6da4b97bf0ed65fef5d573443c1

@@ -1,0 +1,63 @@
+{
+  "identity": {
+    "task_id": "2026-07-12-number-lottery",
+    "dispatch_id": "refine-2026-07-12-number-lottery",
+    "mode": "standard",
+    "strict": true,
+    "handoff": "runtime",
+    "source_git_sha": "06ef8c2234dbd9069add509b9cf9a01e7fc8e2a4",
+    "frozen_dispatch_sha256": "de5c0a561c97b09f51a2338c01ecc88cbf64d6da4b97bf0ed65fef5d573443c1"
+  },
+  "obligations": [
+    {"id": "O1", "status": "covered", "summary": "separate symbolism from economics"},
+    {"id": "O2", "status": "covered", "summary": "compare derivation candidates"},
+    {"id": "O3", "status": "covered", "summary": "distinguish cryptographic primitives; evidence scheduled"},
+    {"id": "O4", "status": "covered", "summary": "public and privacy-preserving modes without live data"},
+    {"id": "O5", "status": "covered", "summary": "2/5/10-year and recurring engagement events"},
+    {"id": "O6", "status": "covered", "summary": "attack manipulation and social risks"},
+    {"id": "O7", "status": "covered", "summary": "toy witnesses and typed negatives"},
+    {"id": "O8", "status": "covered", "summary": "research-policy and score-authority boundaries"},
+    {"id": "O9", "status": "covered", "summary": "bounded public research with source posture"},
+    {"id": "O10", "status": "covered", "summary": "non-executed plan with native receipts"}
+  ],
+  "selected_sources": [
+    {"path": "development/refinement-runs/2026-07-12-number-lottery/REFINE-SEED-PROPOSAL.md", "selectors": ["Target", "Refinement Objective", "Core Boundary", "Done Criteria"], "obligations": ["O1", "O2", "O3", "O4", "O5", "O10"]},
+    {"path": "development/refinement-runs/2026-07-12-number-lottery/REFINE-DISPATCH.json", "selectors": ["route_menu", "technique_overlays", "steps", "gates", "promotion_guardrails"], "obligations": ["O1", "O2", "O3", "O4", "O5", "O6", "O7", "O8", "O9", "O10"]},
+    {"path": "AGENTS.md", "selectors": ["Mandatory First Step Before Writes", "Authority Boundaries", "Non-Negotiables"], "obligations": ["O6", "O8", "O9"]},
+    {"path": "authority/AUTHORITY-MODEL.md", "selectors": ["Core Rule", "Authority Kinds", "Non-Collapse Rules"], "obligations": ["O1", "O8"]},
+    {"path": "authority/promotion-policy.md", "selectors": ["Required Gates", "Promotion Blocks"], "obligations": ["O1", "O6", "O7", "O8", "O9", "O10"]},
+    {"path": "authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md", "selectors": ["claim <= proof", "research != policy", "typed negatives"], "obligations": ["O7", "O8", "O9", "O10"]},
+    {"path": "authority/source-spine.md", "selectors": ["Source Families", "Source-Kind Labels"], "obligations": ["O8", "O9"]},
+    {"path": "claims/SOURCE-CLAIM-LEDGER.md", "selectors": ["C1-C6", "R4-R6"], "obligations": ["O1", "O4", "O8", "O9"]},
+    {"path": "sources/source-records.md", "selectors": ["SRC-RDAO-WP", "SYN-ECON-TOWER-FAILED-DAO", "SYN-ECON-TOWER-SOCIO", "SYN-ECON-PROGRAM-FINDINGS"], "obligations": ["O6", "O8", "O9"]},
+    {"path": ".arcanum/inventory/entries/economy-resilience-program.md", "selectors": ["Tracks B/C", "anti-Sybil gate", "external-validity warning"], "obligations": ["O6", "O7", "O8"]},
+    {"path": "levels/L1-residue-map.md", "selectors": ["ER-R2", "ER-R4", "ER-R5", "ER-R9", "ER-R11"], "obligations": ["O4", "O5", "O6", "O7", "O8"]},
+    {"path": "levels/L2-closure-plan.md", "selectors": ["failure sweep", "behavioral sweep", "randomness requirements"], "obligations": ["O6", "O7", "O8", "O9", "O10"]},
+    {"path": "dispatch/economy-synthesis/findings.md", "selectors": ["Lane 1", "Lane 2", "Lane 3", "Lane 4", "closeout guardrails"], "obligations": ["O1", "O6", "O7", "O8", "O9", "O10"]},
+    {"path": "definitions/DEFINITIONS.md", "selectors": ["ER-D1", "ER-D2", "attention-route-not-authority", "owner-route-authority-only"], "obligations": ["O1", "O8"]}
+  ],
+  "constraints": [
+    "no token-supply selection or economic-safety claim",
+    "no cryptographic-security claim without construction threat model and primary source",
+    "no live private content collection",
+    "no participation or score to authority mapping",
+    "one bounded external comparison pass",
+    "preserve unrelated dirty worktree changes"
+  ],
+  "write_scope": [
+    "development/refinement-runs/2026-07-12-number-lottery/",
+    "owner-hook ledger close row",
+    "owner-hook non-authority inventory closeout"
+  ],
+  "strict_coverage": "pass",
+  "blockers": [],
+  "unresolved_non_blockers": [
+    "cryptographic construction evidence awaits bounded research",
+    "economic supply calibration intentionally external-owner-deferred",
+    "jurisdiction-specific legal and privacy compliance deferred"
+  ],
+  "output_paths": {
+    "markdown": "development/refinement-runs/2026-07-12-number-lottery/context-builder/context-pack.md",
+    "json": "development/refinement-runs/2026-07-12-number-lottery/context-builder/context-pack.json"
+  }
+}

@@ -3,6 +3,13 @@
 Status: active
 Promotion scope: local-research-only
 
+This glossary is a reader-facing lookup layer, not the definition lifecycle
+authority. Normative local semantics live in
+[definitions/DEFINITIONS.md](../definitions/DEFINITIONS.md), and lifecycle state
+lives under [ER-D23](../definitions/DEFINITIONS.md#er-d23-load-bearing-term-lifecycle).
+`Promotion status` below is a reader hint; it is not proof, validation, policy,
+or implementation readiness.
+
 ## Contribution Economy
 
 - Source kind: primary-source
@@ -37,7 +44,7 @@ Promotion scope: local-research-only
 - Arcanum reading: candidate bridge from research to future constitution or validation work.
 - Promotion status: promotion-candidate
 - Misuse warning: research can propose invariants; authority must decide before they constrain work.
-- Evidence: [AUTHORITY-MODEL.md](/home/vrondelli/projects/domainspec-core/cyberAlchemy-v2/authority/AUTHORITY-MODEL.md), [promotion-policy.md](/home/vrondelli/projects/domainspec-core/cyberAlchemy-v2/authority/promotion-policy.md).
+- Evidence: [authority/AUTHORITY-MODEL.md](../authority/AUTHORITY-MODEL.md), [authority/promotion-policy.md](../authority/promotion-policy.md).
 
 ## Randomized Reward Or Audit
 

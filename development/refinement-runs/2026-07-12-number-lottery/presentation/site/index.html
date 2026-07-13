@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Resonant Time Capsule: one word from each of us becomes one founding number and a memory the community returns to in 2, 5, and 10 years.">
+  <meta name="theme-color" content="#070811">
+  <meta property="og:title" content="Resonant Time Capsule">
+  <meta property="og:description" content="One word from each of us becomes one founding number—and a memory the community returns to in 2, 5, and 10 years.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='24' fill='none' stroke='%23c47d2c' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="preload" as="image" href="assets/resonant-time-capsule-poster.png" fetchpriority="high">
+  <title>Resonant Time Capsule</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #070811;
+      --ink-soft: #0b0d18;
+      --paper: #fff1dc;
+      --paper-soft: #ded2bf;
+      --amber: #c47d2c;
+      --amber-bright: #e5a84f;
+      --violet: #6c55cf;
+      --cyan: #74d7df;
+      --line: rgba(196, 125, 44, 0.42);
+      --panel: rgba(10, 12, 24, 0.86);
+      --radius: 26px;
+      --shadow: 0 28px 90px rgba(0, 0, 0, 0.48);
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--paper);
+      background:
+        radial-gradient(circle at 50% -10%, rgba(108, 85, 207, 0.30), transparent 34rem),
+        radial-gradient(circle at 84% 30%, rgba(116, 215, 223, 0.08), transparent 30rem),
+        radial-gradient(circle at 12% 70%, rgba(126, 69, 20, 0.18), transparent 34rem),
+        var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.28;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: radial-gradient(circle at center, black, transparent 90%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--cyan);
+      outline-offset: 5px;
+      border-radius: 8px;
+    }
+
+    .shell {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-block: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--paper);
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      width: 26px;
+      aspect-ratio: 1;
+      border: 1px solid var(--amber);
+      border-radius: 50%;
+      box-shadow: inset 0 0 16px rgba(196, 125, 44, 0.46), 0 0 20px rgba(196, 125, 44, 0.22);
+    }
+
+    .status {
+      margin: 0;
+      color: var(--paper-soft);
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      padding: clamp(52px, 8vw, 112px) 0 28px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 24px;
+      color: var(--amber-bright);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--amber);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0 auto;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.4rem, 9vw, 7.8rem);
+      font-weight: 500;
+      letter-spacing: -0.065em;
+      line-height: 0.88;
+    }
+
+    .hero-lead {
+      max-width: 790px;
+      margin: 34px auto 0;
+      color: var(--paper-soft);
+      font-size: clamp(1.1rem, 2.3vw, 1.55rem);
+      line-height: 1.5;
+    }
+
+    .hero-lead strong {
+      color: var(--paper);
+      font-weight: 650;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 22px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--paper);
+      background: rgba(255, 255, 255, 0.03);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .button.primary {
+      border-color: var(--amber);
+      color: #17100a;
+      background: linear-gradient(135deg, var(--amber-bright), var(--amber));
+      box-shadow: 0 12px 34px rgba(196, 125, 44, 0.28);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(229, 168, 79, 0.84);
+      background-color: rgba(255, 255, 255, 0.07);
+    }
+
+    .poster-wrap {
+      position: relative;
+      margin-top: clamp(52px, 8vw, 92px);
+      margin-inline: 0;
+      isolation: isolate;
+    }
+
+    .poster-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 14% 10% -5%;
+      z-index: -1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(151, 87, 26, 0.28), rgba(108, 85, 207, 0.13) 38%, transparent 70%);
+      filter: blur(48px);
+    }
+
+    .poster {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(196, 125, 44, 0.58);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    figcaption {
+      max-width: 760px;
+      margin: 22px auto 0;
+      color: var(--paper-soft);
+      font-size: 0.93rem;
+    }
+
+    figcaption strong {
+      color: var(--amber-bright);
+    }
+
+    .declaration {
+      padding: clamp(44px, 5vw, 72px) 0;
+      text-align: center;
+    }
+
+    .declaration p {
+      max-width: 970px;
+      margin: 0 auto;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.3rem, 6vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .declaration em {
+      color: var(--amber-bright);
+      font-style: normal;
+    }
+
+    .section {
+      padding: 72px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+      gap: 50px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.2rem, 5vw, 4.5rem);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 1;
+    }
+
+    .section-heading p {
+      max-width: 640px;
+      margin: 0;
+      color: var(--paper-soft);
+      font-size: 1.04rem;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: step;
+    }
+
+    .step,
+    .mode,
+    .time-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 240px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(0, 0, 0, 0.14)),
+        var(--panel);
+    }
+
+    .step {
+      counter-increment: step;
+    }
+
+    .step::before {
+      content: "0" counter(step);
+      display: block;
+      margin-bottom: 52px;
+      color: var(--amber);
+      font-size: 0.76rem;
+      font-weight: 850;
+      letter-spacing: 0.16em;
+    }
+
+    .step h3,
+    .mode h3,
+    .time-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .step p,
+    .mode p,
+    .time-card p {
+      margin: 0;
+      color: var(--paper-soft);
+      font-size: 0.94rem;
+    }
+
+    .number-bridge {
+      margin-top: 28px;
+      padding: clamp(26px, 4vw, 44px);
+      border: 1px solid rgba(196, 125, 44, 0.52);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 52% 0%, rgba(118, 96, 221, 0.16), transparent 48%),
+        rgba(9, 11, 21, 0.72);
+    }
+
+    .number-bridge-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+      gap: 32px;
+      align-items: start;
+    }
+
+    .number-bridge h3 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1.02;
+    }
+
+    .number-bridge-heading p {
+      max-width: 630px;
+      margin: 0;
+      color: var(--paper-soft);
+    }
+
+    .number-bridge-heading strong,
+    .number-proof strong {
+      color: var(--paper);
+    }
+
+    .number-chain {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 28px;
+      margin-top: 34px;
+    }
+
+    .number-node {
+      position: relative;
+      min-height: 178px;
+      padding: 22px;
+      border: 1px solid rgba(229, 168, 79, 0.18);
+      border-radius: 16px;
+      background: rgba(6, 7, 15, 0.76);
+    }
+
+    .number-node:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -23px;
+      z-index: 2;
+      width: 18px;
+      color: var(--amber);
+      font-size: 1.25rem;
+      line-height: 1;
+      transform: translateY(-50%);
+    }
+
+    .number-node span {
+      display: block;
+      margin-bottom: 24px;
+      color: var(--amber);
+      font-size: 0.68rem;
+      font-weight: 850;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .number-node strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.02rem;
+    }
+
+    .number-node p {
+      margin: 0;
+      color: var(--paper-soft);
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+
+    .number-proof {
+      margin: 28px 0 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--paper-soft);
+      text-align: center;
+    }
+
+    .number-boundary {
+      max-width: 720px;
+      margin: 12px auto 0;
+      color: #a9a193;
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    .modes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .mode {
+      min-height: 210px;
+    }
+
+    .mode-symbol {
+      display: grid;
+      width: 44px;
+      aspect-ratio: 1;
+      place-items: center;
+      margin-bottom: 38px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--amber-bright);
+      font-size: 1.1rem;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .time-card {
+      min-height: 260px;
+    }
+
+    .year {
+      display: block;
+      margin-bottom: 46px;
+      color: var(--amber-bright);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 4.8rem;
+      line-height: 0.85;
+      letter-spacing: -0.055em;
+    }
+
+    .time-card:nth-child(2) {
+      border-color: rgba(108, 85, 207, 0.52);
+    }
+
+    .time-card:nth-child(3) {
+      border-color: rgba(116, 215, 223, 0.36);
+    }
+
+    .ethical-floor {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      padding: 26px 0 0;
+    }
+
+    .ethical-floor p {
+      margin: 0;
+      padding: 26px 30px;
+      border: 1px solid rgba(196, 125, 44, 0.62);
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(151, 87, 26, 0.40), transparent 76%),
+        linear-gradient(135deg, rgba(87, 50, 21, 0.34), rgba(18, 18, 30, 0.82));
+      box-shadow:
+        inset 0 1px 0 rgba(229, 168, 79, 0.10),
+        0 14px 34px rgba(0, 0, 0, 0.16);
+      color: var(--paper);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.35rem, 2.4vw, 2rem);
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .closing {
+      padding: clamp(90px, 14vw, 180px) 0 100px;
+      text-align: center;
+    }
+
+    .closing h2 {
+      max-width: 900px;
+      margin: 0 auto;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 500;
+      letter-spacing: -0.06em;
+      line-height: 0.92;
+    }
+
+    .closing p {
+      max-width: 700px;
+      margin: 28px auto 34px;
+      color: var(--paper-soft);
+      font-size: 1.08rem;
+    }
+
+    .notice {
+      max-width: 780px;
+      margin: 54px auto 0;
+      padding: 18px 22px;
+      border: 1px solid rgba(116, 215, 223, 0.2);
+      border-radius: 16px;
+      color: var(--paper-soft);
+      background: rgba(116, 215, 223, 0.04);
+      font-size: 0.84rem;
+    }
+
+    footer {
+      padding: 30px 0 42px;
+      border-top: 1px solid var(--line);
+      color: var(--paper-soft);
+      font-size: 0.8rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    @media (min-width: 901px) {
+      #ritual {
+        padding-block: 40px;
+      }
+
+      #ritual .section-heading {
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      #ritual .section-heading h2 {
+        font-size: clamp(2.4rem, 4vw, 3.7rem);
+      }
+
+      #ritual .section-heading p {
+        font-size: 0.96rem;
+        line-height: 1.55;
+      }
+
+      #ritual .step {
+        min-height: 0;
+        padding: 20px 22px;
+      }
+
+      #ritual .step::before {
+        margin-bottom: 24px;
+        font-size: 0.68rem;
+      }
+
+      #ritual .step h3 {
+        margin-bottom: 8px;
+        font-size: 1.05rem;
+      }
+
+      #ritual .step p {
+        font-size: 0.86rem;
+        line-height: 1.5;
+      }
+
+      #ritual .number-bridge {
+        margin-top: 20px;
+        padding: 24px 28px;
+      }
+
+      #ritual .number-bridge-heading {
+        gap: 24px;
+        align-items: center;
+      }
+
+      #ritual .number-bridge h3 {
+        font-size: clamp(1.65rem, 2.4vw, 2.25rem);
+      }
+
+      #ritual .number-bridge-heading p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      #ritual .number-chain {
+        gap: 22px;
+        margin-top: 20px;
+      }
+
+      #ritual .number-node {
+        min-height: 0;
+        padding: 16px 18px;
+      }
+
+      #ritual .number-node:not(:last-child)::after {
+        right: -19px;
+      }
+
+      #ritual .number-node span {
+        margin-bottom: 12px;
+        font-size: 0.62rem;
+      }
+
+      #ritual .number-node strong {
+        margin-bottom: 6px;
+        font-size: 0.94rem;
+      }
+
+      #ritual .number-node p {
+        font-size: 0.78rem;
+        line-height: 1.45;
+      }
+
+      #ritual .number-proof {
+        margin-top: 16px;
+        padding-top: 14px;
+        font-size: 0.9rem;
+      }
+
+      #ritual .number-boundary {
+        margin-top: 8px;
+        font-size: 0.75rem;
+        line-height: 1.45;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .number-bridge-heading {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .number-chain {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .number-node:nth-child(2)::after {
+        content: none;
+      }
+
+      .modes,
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .mode,
+      .time-card {
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .shell {
+        width: min(calc(100% - 26px), var(--max));
+      }
+
+      .site-header {
+        align-items: flex-start;
+        padding-block: 20px;
+      }
+
+      .status {
+        max-width: 130px;
+        text-align: right;
+      }
+
+      .hero {
+        padding-top: 46px;
+      }
+
+      h1 {
+        font-size: clamp(3.2rem, 17vw, 5rem);
+      }
+
+      .poster {
+        border-radius: 14px;
+      }
+
+      .steps,
+      .number-chain,
+      .ethical-floor {
+        grid-template-columns: 1fr;
+      }
+
+      .step {
+        min-height: 210px;
+      }
+
+      .number-node {
+        min-height: 0;
+      }
+
+      .number-node:not(:last-child)::after,
+      .number-node:nth-child(2)::after {
+        content: "↓";
+        top: auto;
+        right: 50%;
+        bottom: -23px;
+        width: auto;
+        transform: translateX(50%);
+      }
+
+      .footer-row {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header shell">
+    <a class="brand" href="#top" aria-label="Resonant Time Capsule home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>ResonantDAO</span>
+    </a>
+    <p class="status">Early idea — not live yet</p>
+  </header>
+
+  <main id="top">
+    <section class="hero shell" aria-labelledby="page-title">
+      <p class="eyebrow">A time capsule for ResonantDAO</p>
+      <h1 id="page-title">Resonant<br>Time Capsule</h1>
+      <p class="hero-lead">
+        <strong>One word from each of us becomes one founding number</strong>—and
+        a memory the community returns to in 2, 5, and 10 years.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#ritual">See how it works</a>
+        <a class="button" href="idea/">Read the full idea</a>
+      </div>
+
+      <figure class="poster-wrap">
+        <img
+          class="poster"
+          src="assets/resonant-time-capsule-poster.png"
+          width="1672"
+          height="941"
+          decoding="async"
+          fetchpriority="high"
+          alt="Many luminous contributions converge into one radiant center, surrounded by rings marked 2, 5, and 10 years."
+        >
+        <figcaption>
+          <strong>Number Lottery</strong> is the moment when the closed capsule
+          gives us the number of tokens ResonantDAO starts with. The time capsule
+          stays with us after the number is revealed.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="declaration shell" id="why" aria-label="Core declaration">
+      <p>The number is revealed once. <em>The capsule continues.</em></p>
+    </section>
+
+    <section class="section shell" id="ritual" aria-labelledby="ritual-title">
+      <div class="section-heading">
+        <h2 id="ritual-title">How it works</h2>
+        <p>
+          Everyone gets one word. We lock the capsule before anyone knows the
+          result. Each word changes the locked capsule; the capsule as a whole,
+          not a letter score, is what enters the calculation.
+        </p>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <h3>Pick the range</h3>
+          <p>Before anyone sends a word, we agree whether the number will be in the millions, billions, trillions, or another range.</p>
+        </article>
+        <article class="step">
+          <h3>Add your word</h3>
+          <p>Your word becomes one place in the capsule. Share it now, keep it sealed for later, or sit this one out.</p>
+        </article>
+        <article class="step">
+          <h3>Lock the capsule</h3>
+          <p>When the deadline arrives, we lock the list. No one can add, remove, or change a word after that.</p>
+        </article>
+        <article class="step">
+          <h3>Get the number</h3>
+          <p>The locked capsule becomes one digital fingerprint. We mix in a public number that arrives later, then place the result inside the range we chose.</p>
+        </article>
+      </div>
+
+      <div class="number-bridge" aria-labelledby="number-bridge-title">
+        <div class="number-bridge-heading">
+          <h3 id="number-bridge-title">How your word reaches the number</h3>
+          <p>
+            <strong>Your word never equals a fixed amount of tokens by itself.</strong>
+            It changes the shared result by becoming part of the capsule as a whole.
+          </p>
+        </div>
+
+        <div class="number-chain" aria-label="From one word to the founding supply">
+          <article class="number-node">
+            <span>01 · Your word</span>
+            <strong>Joins the list</strong>
+            <p>Your accepted word and its place become part of the capsule.</p>
+          </article>
+          <article class="number-node">
+            <span>02 · Locked capsule</span>
+            <strong>Becomes one fingerprint</strong>
+            <p>Change any word or its place and the digital fingerprint changes.</p>
+          </article>
+          <article class="number-node">
+            <span>03 · Later number</span>
+            <strong>Arrives after the lock</strong>
+            <p>A public number nobody could know in time to edit the capsule is mixed in.</p>
+          </article>
+          <article class="number-node">
+            <span>04 · Founding supply</span>
+            <strong>Lands inside the range</strong>
+            <p>The result becomes a supply inside the range everyone agreed on first.</p>
+          </article>
+        </div>
+
+        <p class="number-proof">
+          <strong>Same locked capsule + same later number = same founding supply.</strong>
+        </p>
+        <p class="number-boundary">
+          This is the proposed path, not a finished calculation. The exact public
+          recipe still needs to be built and tested before we collect real words.
+        </p>
+      </div>
+    </section>
+
+    <section class="section shell" aria-labelledby="belong-title">
+      <div class="section-heading">
+        <h2 id="belong-title">You choose how to take part</h2>
+        <p>
+          Share a word now, save it for later, or simply be here. Every way of
+          taking part belongs.
+        </p>
+      </div>
+
+      <div class="modes">
+        <article class="mode">
+          <span class="mode-symbol" aria-hidden="true">◌</span>
+          <h3>Public</h3>
+          <p>Everyone can see your word now and when the capsule comes back.</p>
+        </article>
+        <article class="mode">
+          <span class="mode-symbol" aria-hidden="true">●</span>
+          <h3>Sealed</h3>
+          <p>Your word stays out of public view unless you choose to open it later. The secure version still needs to be designed and tested.</p>
+        </article>
+        <article class="mode">
+          <span class="mode-symbol" aria-hidden="true">—</span>
+          <h3>Silent</h3>
+          <p>You can leave this space quiet and still be fully part of the community.</p>
+        </article>
+      </div>
+
+      <div class="ethical-floor" aria-label="Participation invitation">
+        <p>Offer a word when it feels right.</p>
+        <p>Silence still keeps you in the circle.</p>
+      </div>
+    </section>
+
+    <section class="section shell" aria-labelledby="return-title">
+      <div class="section-heading">
+        <h2 id="return-title">We open it again</h2>
+        <p>
+          The number comes out at the start. The words come back later so we can
+          see what changed—and what did not.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <article class="time-card">
+          <span class="year">2</span>
+          <h3>Then / Now Echo</h3>
+          <p>We put our old words beside what we think now and see how the community has changed.</p>
+        </article>
+        <article class="time-card">
+          <span class="year">5</span>
+          <h3>Divergence Assembly</h3>
+          <p>We look at what stayed, what changed, what failed, and what we got wrong.</p>
+        </article>
+        <article class="time-card">
+          <span class="year">10</span>
+          <h3>Constellation</h3>
+          <p>We open another layer and pass the capsule to the people who will care for it next.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="closing shell" aria-labelledby="closing-title">
+      <p class="eyebrow">The invitation</p>
+      <h2 id="closing-title">Hold one word.<br>Help us make it real.</h2>
+      <p>
+        We are not collecting words yet. First, we want the community to help
+        decide what belongs in the capsule, how a word can stay sealed, and how
+        we care for it for ten years.
+      </p>
+      <a class="button primary" href="idea/">Read the full idea</a>
+
+      <p class="notice">
+        This is still an idea we are testing. We have not chosen the token
+        supply, and we are not collecting words yet. Before this goes live, we
+        need to show that no one can quietly steer the number, define what
+        “sealed” really protects, and make sure the capsule can last ten years.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-row shell">
+      <span>Resonant Time Capsule</span>
+      <span>One founding number · 2 / 5 / 10 years</span>
+    </div>
+  </footer>
+</body>
+</html>

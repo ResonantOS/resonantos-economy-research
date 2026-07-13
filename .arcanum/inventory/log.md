@@ -3,6 +3,55 @@
 Status: active
 Owner: ResonantOS economy research owner
 
+## 2026-06-30 authority definition lifecycle clarity applied
+
+- Mode: definitions-governance + authority docs sync
+- Canonical source: `definitions/DEFINITIONS.md`; authority surfaces:
+  `authority/promotion-policy.md`, `authority/AUTHORITY-MODEL.md`.
+- Dispatch basis:
+  [authority-definition-lifecycle-clarity](entries/authority-definition-lifecycle-clarity.md)
+  and `dispatch/authority-definition-lifecycle-clarity/findings.md`.
+- Definitions updated: ER-D1 (two-status clarification and open
+  witness/challenge matrix).
+- Index synced: yes (`definitions/DEFINITIONS-INDEX.md` now separates lifecycle
+  status from promotion boundary).
+- Reader surfaces updated: `README.md` status vocabulary legend and
+  `glossary/GLOSSARY.md` non-lifecycle boundary note; private absolute CAv2
+  evidence path replaced with local authority citations.
+- Machine index updated: yes (entry residue now says the matrix scaffold exists
+  but witness evidence remains open).
+- Contradictions flagged: 0
+- Notes: This sync clarifies authority; it does not validate ER-D1, prove
+  economy resilience, promote an economy mechanism, transfer CAv2 authority, or
+  create token, bounty, payout, governance, launch, policy, validation, or
+  implementation readiness.
+
+## 2026-06-30 authority definition lifecycle clarity dispatch
+
+- Mode: dispatch (research)
+- dispatch_id: `2026-06-30-authority-definition-lifecycle-clarity`
+- Row kind: dispatch + close (both appended, append-only)
+- Working folder: `dispatch/authority-definition-lifecycle-clarity/`
+- Source-kind boundary: local-research-only; CAv2 supporting precedent only; no
+  economy proof, validation proof, policy authority, implementation readiness,
+  token, bounty, payout, governance, or launch claim.
+- exit_reason: resolved; 9 dispatch agents (3 explorer, 1 synthesizer,
+  3 skeptic, 1 writer, 1 auditor), 1 loop used; 2 check-tension gate agents
+  (gate infra, not in tree).
+- Durable outputs: `research.md` and `findings.md`.
+- Result: FIX / change-request package. ER-D1 is clarified as definition
+  lifecycle `grounded` under ER-D23 while the economy condition remains
+  `candidate`. The dispatch produced a required ER-D1 witness/challenge matrix
+  request, Definition Lifecycle Crosswalk request, index split request, and
+  reader-facing status legend request.
+- Entry created: [authority-definition-lifecycle-clarity](entries/authority-definition-lifecycle-clarity.md)
+  (type `strategy-result`).
+- Index updated: yes. Machine index updated: yes.
+- Contradictions flagged: 0
+- Notes: Non-authority read model. The finding does not validate ER-D1, promote
+  an economy mechanism, transfer CAv2 authority, or create any token, bounty,
+  payout, governance, launch, policy, validation, or implementation effect.
+
 ## 2026-06-28 inventory synthesis (session headline)
 
 - Mode: query -> synthesis
@@ -680,3 +729,61 @@ Owner: ResonantOS economy research owner
   stale by one more entry) — left for the proposed generator (finding #4) rather than
   perpetuating the hand-sync the strategy identifies as the drift root. Non-authority
   read model; nothing promotes economy/token/governance/mechanism/validation.
+
+## 2026-07-12 Number Lottery research dispatch (registered)
+
+- Mode: dispatch (research) — registered, run pending
+- Dispatch: `2026-07-12-number-lottery` in `telemetry/agents/subagents-dispatch.yaml`
+- Working folder: `development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/`
+- Source-kind boundary: ResonantDAO whitepaper is primary source for official framing;
+  Augmentatism, ResonantOS, cryptography, commons-governance, and behavioral sources
+  are external related evidence until source-labelled and bridged locally.
+- Gate: frozen dispatch approved after check-tension PASS/PASS.
+- Promotion posture: local research only; no token, governance, payout, launch,
+  cryptographic-security, fairness, or economy-validation claim.
+- Inventory entry: deferred until reusable closeout.
+
+## 2026-07-12 Number Lottery research dispatch (closed)
+
+- Mode: dispatch (research) — closed `resolved`
+- Dispatch: `2026-07-12-number-lottery` (dispatch + close rows)
+- Exit: 8 agents, 1 reviewer zig-zag loop, final auditor ACCEPT
+- Entry created: `entries/number-lottery-refinement.md`
+- Human index updated: yes
+- Machine index: not hand-patched; the live repository already records its
+  `index.json` generator/truth-check gap, so this closeout does not conceal that
+  existing drift with another manual projection edit.
+- Durable result: word-derived supply and serious character summation rejected;
+  ritual-only capsule boundary survives as fixture-ready research behind nine
+  unrun fixtures.
+- Promotion posture: local research only; no validation, token-policy,
+  cryptographic-security, fairness, governance, launch, or implementation claim.
+
+## 2026-07-12 Number Lottery Refine closeout
+
+- Mode: Refine `deep`, bounded research
+- Status: complete `flag`
+- Run: `development/refinement-runs/2026-07-12-number-lottery/`
+- Canonical stages: 10/10 complete with artifacts/receipts
+- Plan: L0–L4, 7 task contracts, 14 SWUs; none selected or executed
+- Next route: none automatic; optional `SWU-NL-001` Task Session after explicit
+  approval, or separate economic/token-policy decision route
+- Inventory entry updated: `entries/number-lottery-refinement.md`
+- Machine index remains explicitly stale pending its generator/truth-check route.
+- Promotion posture: refinement evidence only; no live mechanism, validation,
+  token decision, privacy claim, or launch readiness.
+
+## 2026-07-12 Number Lottery operator correction
+
+- Mode: post-close Refine amendment
+- Operator decision: the existing 1B whitepaper value will be replaced and is
+  not a Number Lottery constraint
+- Current result: supply selection is in scope; raw character/unbounded word
+  sums remain rejected; cohort-root plus post-close beacon is the leading
+  unvalidated candidate
+- Historical evidence: explorer/reviewer/writer/auditor receipts preserved
+  unchanged; preserve-1B and no-token-coupling conclusions marked superseded
+- Current artifacts: `development/refinement-runs/2026-07-12-number-lottery/OPERATOR-CORRECTION-2026-07-12.md`
+  and amended `RESULT.md`
+- Next route: corrected selector Design/Plan and ten-fixture evidence package;
+  no real cohort, final number, mint, or launch authorized

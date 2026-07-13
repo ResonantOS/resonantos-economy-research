@@ -1,0 +1,54 @@
+{
+  "run_id": "2026-07-12-number-lottery",
+  "dispatch_id": "refine-2026-07-12-number-lottery",
+  "status": "complete-flag-amended",
+  "operator_correction": {
+    "path": "OPERATOR-CORRECTION-2026-07-12.md",
+    "status": "accepted",
+    "supersedes": ["preserve-1b-as-project-constraint", "exclude-all-ritual-to-supply-coupling"],
+    "preserves_historical_stage_receipts": true
+  },
+  "frozen_dispatch_sha256": "de5c0a561c97b09f51a2338c01ecc88cbf64d6da4b97bf0ed65fef5d573443c1",
+  "worker_dispatch": {
+    "dispatch_id": "2026-07-12-number-lottery",
+    "status": "closed-resolved",
+    "agents_spawned": 8,
+    "loops_used": 1,
+    "final_approver": "Brandenburg, Martin",
+    "final_verdict": "ACCEPT",
+    "artifacts": [
+      "stages/research-dispatch/research.md",
+      "stages/research-dispatch/synthesis.md",
+      "stages/research-dispatch/reviewer-popper.md",
+      "stages/research-dispatch/reviewer-quine.md",
+      "stages/research-dispatch/revised-synthesis.md",
+      "stages/research-dispatch/findings.md",
+      "stages/research-dispatch/auditor-receipt.md"
+    ]
+  },
+  "artifacts": [
+    {"id": "seed", "owner": "refine", "path": "REFINE-SEED-PROPOSAL.md", "status": "present"},
+    {"id": "dispatch", "owner": "refine", "validator": "dispatch-spec", "path": "REFINE-DISPATCH.json", "status": "pass-after-recorded-repair"},
+    {"id": "runtime-handoff", "owner": "refine", "path": "RUNTIME-HANDOFF.md", "status": "worker-approval-pending"},
+    {"id": "manifest", "owner": "refine", "path": "RUN-MANIFEST.md", "status": "present"},
+    {"id": "result", "owner": "refine", "path": "RESULT.md", "status": "present-amended"},
+    {"id": "operator-correction", "owner": "refine", "path": "OPERATOR-CORRECTION-2026-07-12.md", "status": "accepted"},
+    {"id": "dispatch-validation", "owner": "dispatch-spec", "path": "stages/00-dispatch-validation.txt", "status": "pass-after-recorded-repair"},
+    {"id": "check-tension-checker-attempt-1", "owner": "domainspec-check-tension", "path": "stages/01-check-tension-checker-attempt-1.md", "status": "reprove-repaired"},
+    {"id": "check-tension-reviewer-attempt-1", "owner": "domainspec-check-tension", "path": "stages/01-check-tension-reviewer-attempt-1.md", "status": "reprove-repaired"},
+    {"id": "check-tension-checker", "owner": "domainspec-check-tension", "path": "stages/01-check-tension-checker.md", "status": "pass"},
+    {"id": "check-tension-reviewer", "owner": "domainspec-check-tension", "path": "stages/01-check-tension-reviewer.md", "status": "pass-independent"}
+  ],
+  "native_stages": [
+    {"step_id": "s01", "capability": "context-builder", "status": "pass", "artifacts": ["context-builder/context-pack.md", "context-builder/context-pack.json", "stages/01-CONTEXT-BUILDER-RECEIPT.md"]},
+    {"step_id": "s02", "capability": "invoke", "status": "pass", "artifacts": ["stages/02-DEFINE.md", "stages/02-GLOSSARY.md", "stages/02-INVOKE-DEFINE-RECEIPT.md"]},
+    {"step_id": "s03", "capability": "interrogation", "status": "flag", "artifacts": ["stages/03-REFINE-REVIEW.md", "stages/03-INTERROGATION-RECEIPT.md"], "residue": "direct supply coupling remains a candidate comparison; technical and behavioral evidence pending"},
+    {"step_id": "s04", "capability": "refine", "status": "pass-with-flag-historical", "artifacts": ["stages/04-RESEARCH-DECISION.md", "stages/research-dispatch/research.md", "stages/04-RESEARCH-RECEIPT.md"], "residue": "historical source finding retained; operator correction now authorizes replacement and supersedes the constraint"},
+    {"step_id": "s05", "capability": "distill", "status": "pass", "artifacts": ["stages/05-DISTILL.md", "stages/05-selected-unit.json", "stages/05-DISTILL-RECEIPT.md"], "selected_unit": "Ritual Capsule Boundary Contract"},
+    {"step_id": "s06", "capability": "invoke", "status": "pass-with-flag", "artifacts": ["stages/06-DESIGN.md", "stages/06-GLOSSARY-CONSISTENCY.md", "stages/06-LAYERING-SEED.md", "stages/06-INVOKE-DESIGN-RECEIPT.md"], "residue": "nine fixtures unrun; no mutation-capable readiness"},
+    {"step_id": "s07", "capability": "interrogation", "status": "flag", "artifacts": ["stages/07-DESIGN-REVIEW.md", "stages/07-verdict-matrix.json", "stages/07-INTERROGATION-RECEIPT.md"], "residue": "execution blocked; 10 repairs/deferred items"},
+    {"step_id": "s08", "capability": "distill", "status": "pass-for-plan-block-implementation", "artifacts": ["stages/08-DISTILL-REPAIR.md", "stages/08-toy-game-evidence.json", "stages/08-DISTILL-REPAIR-RECEIPT.md"], "residue": "all fixtures specification-only and unrun"},
+    {"step_id": "s09", "capability": "invoke", "status": "flag-mutation-blocked", "artifacts": ["stages/09-PLAN.md", "stages/09-IMPLEMENTATION-LAYERING.md", "stages/09-WORK-PACK.md", "stages/09-EXECUTION-PACK.md", "stages/09-DISTILL-VALIDATION.md", "stages/09-INVOKE-PLAN-RECEIPT.md", "stages/09-work-pack/tasks/TASK-NL-001.md", "stages/09-work-pack/tasks/TASK-NL-002.md", "stages/09-work-pack/tasks/TASK-NL-003.md", "stages/09-work-pack/tasks/TASK-NL-004.md", "stages/09-work-pack/tasks/TASK-NL-005.md", "stages/09-work-pack/tasks/TASK-NL-006.md", "stages/09-work-pack/tasks/TASK-NL-VERIFY-007.md"], "residue": "no SWU selected/executed; owner/evidence gates open"},
+    {"step_id": "s10", "capability": "interrogation-and-refine", "status": "flag-amended", "artifacts": ["stages/10-FINAL-INTERROGATION.md", "stages/10-FINAL-RECEIPT.md", "RESULT.md", "OPERATOR-CORRECTION-2026-07-12.md"], "residue": "historical final interrogation superseded at the 1B/no-coupling premise by operator correction; selector design and execution remain unvalidated"}
+  ]
+}

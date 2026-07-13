@@ -273,6 +273,25 @@ The economy should be attacked as a coupled system:
   definition with an `Open / to-ground:` note; run
   `tools/check_load_bearing_terms.py` to check.
 
+## Status Vocabulary
+
+Status words here are local research vocabulary, not truth or readiness
+verdicts.
+
+- `grounded` means a definition is tracked enough for local research use at its
+  stated source posture and promotion boundary; it does not mean validated,
+  official, proven, correct, fixture-passed, policy-ready, or
+  implementation-ready.
+- `promotion-candidate` means an idea would need owner-gated movement before it
+  could constrain anything; it is not automatic escalation.
+- `resolved` is dispatch closeout vocabulary, not a truth verdict.
+- `survived` means not killed by a bounded pass, not generally proven.
+
+For example, [ER-D1 Economy Resilience](definitions/DEFINITIONS.md#er-d1-economy-resilience)
+is definition-lifecycle `grounded` under ER-D23, while the economy condition
+itself remains `candidate`: a research target with open witness and
+collapse-test work.
+
 ## Deep-Dive Corpus Order (after the inventory Start Here)
 
 **Onboard via the [inventory Start Here path](.arcanum/inventory/index.md)

@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Pre-commit gate (WP3) — keep .arcanum/inventory/index.json a true projection of the
+# entry files, and enforce filesystem-truth. Runs the generator's --check (drift) and
+# the truth validator; BLOCKS the commit on failure with the exact fix. Adds to — never
+# replaces — validate-index-json.sh. No external dependency (git + bash + python3 only;
+# DEC-ECON-STANDALONE-001). Bypass with: git commit --no-verify
+set -uo pipefail
+ROOT="$(git rev-parse --show-toplevel)"
+fail=0
+
+if ! python3 "$ROOT/tools/build_inventory_index.py" --check; then
+  echo ""
+  echo "pre-commit: inventory index is out of sync with .arcanum/inventory/entries/."
+  echo "  fix: python3 tools/build_inventory_index.py && git add .arcanum/inventory/index.json"
+  fail=1
+fi
+
+if ! bash "$ROOT/.agents/skills/inventory/scripts/validate-inventory-truth.sh"; then
+  echo ""
+  echo "pre-commit: inventory filesystem-truth check failed (see above)."
+  echo "  fix: register a missing tag in .arcanum/inventory/tags.md, or correct the entry/source ref; then re-run."
+  fail=1
+fi
+
+if [ "$fail" -ne 0 ]; then
+  echo ""
+  echo "Commit blocked by the inventory gate. To bypass: git commit --no-verify"
+  exit 1
+fi
+exit 0

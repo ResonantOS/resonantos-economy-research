@@ -1,0 +1,553 @@
+{
+  "dispatch_id": "refine-2026-07-12-number-lottery",
+  "parent_dispatch_id": null,
+  "intent": {
+    "raw": "Refine Number Lottery: derive a meaningful ResonantDAO token-supply candidate from community words and a 2/5/10-year public or private time capsule, then explore further engagement events.",
+    "objective": "Produce a source-bounded, adversarially reviewed, non-executed design that separates symbolic derivation from economic supply calibration and preserves privacy, authority, and promotion boundaries.",
+    "target_artifact": "development/refinement-runs/2026-07-12-number-lottery/RESULT.md",
+    "operator_sentence": "Use community words and time-capsule releases to help derive a meaningful initial token number and create durable engagement rituals.",
+    "arcanum_vocabulary": [
+      "refine",
+      "dispatch-spec",
+      "context-builder",
+      "invoke",
+      "interrogation",
+      "distill"
+    ]
+  },
+  "mode": "mixed",
+  "route_menu": {
+    "context_hint": "The initial idea combines four separable design objects; Refine must compare them before recomposition.",
+    "items": [
+      {
+        "id": "ritual-only",
+        "label": "Symbolic ritual only",
+        "description": "Community input creates narrative meaning but does not determine total supply.",
+        "capability_ref": "distill",
+        "pattern": "tournament"
+      },
+      {
+        "id": "bounded-seed",
+        "label": "Bounded supply seed",
+        "description": "Community input produces a symbolic seed mapped into an externally justified economic range.",
+        "capability_ref": "invoke",
+        "pattern": "validation"
+      },
+      {
+        "id": "direct-derivation",
+        "label": "Direct supply derivation",
+        "description": "Community input directly determines supply and therefore carries the highest manipulation and economic burden.",
+        "capability_ref": "interrogation",
+        "pattern": "toy_game"
+      },
+      {
+        "id": "capsule-without-supply",
+        "label": "Capsule without supply",
+        "description": "The time capsule becomes an independent community ritual if supply coupling fails.",
+        "capability_ref": "invoke",
+        "pattern": "route"
+      }
+    ],
+    "selected_item_id": null
+  },
+  "techniques": [
+    "sequence",
+    "frame_handoff",
+    "handle_handoff",
+    "validation_loop",
+    "owner_boundary_check",
+    "observability_grouping",
+    "minimum_component_catalog",
+    "conditional_component",
+    "data_quality_completeness",
+    "route_menu",
+    "approval_checkpoint",
+    "dialectic",
+    "zig_zag",
+    "residue_ledger",
+    "tournament",
+    "pareto_gate",
+    "recomposition_proof",
+    "toy_game",
+    "assessment_failure_reference",
+    "memory_loop",
+    "data_quality_deduplication",
+    "protected_context_flag",
+    "system_agnostic_standard",
+    "local_nuance_coordination",
+    "execution_receipt_handoff",
+    "state_namespace_boundary",
+    "memory_promotion_split"
+  ],
+  "technique_overlays": [
+    {
+      "overlay_id": "baseline_sequence",
+      "trigger": "The canonical Refine stages require explicit owner handoffs, validation, observability, and minimum evidence fields.",
+      "techniques": ["sequence", "frame_handoff", "handle_handoff", "validation_loop", "owner_boundary_check", "observability_grouping", "minimum_component_catalog", "conditional_component", "data_quality_completeness"],
+      "applies_to_steps": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10"],
+      "validation_expectation": "Every non-first stage consumes a prior artifact or decision and returns an owner-held artifact or exact blocked reason."
+    },
+    {
+      "overlay_id": "route_menu_for_ambiguity",
+      "trigger": "The idea ambiguously couples a supply-selection mechanism, a capsule, a cipher, and community events.",
+      "techniques": ["route_menu", "one_or_more_option_set", "approval_checkpoint"],
+      "applies_to_steps": ["s02", "s05", "s06", "s09"],
+      "validation_expectation": "Candidate routes remain separate until selection criteria and an explicit decision are recorded."
+    },
+    {
+      "overlay_id": "dialectic_for_tension",
+      "trigger": "Symbolic participation and engagement can conflict with economic safety, privacy, and non-manipulability.",
+      "techniques": ["dialectic", "zig_zag", "residue_ledger"],
+      "applies_to_steps": ["s03", "s07"],
+      "validation_expectation": "Named roles preserve disagreement until both meaning and safety claims are bounded; unresolved tension becomes residue."
+    },
+    {
+      "overlay_id": "tournament_for_alternatives",
+      "trigger": "Several plausible derivation and capsule designs must be compared without premature convergence.",
+      "techniques": ["tournament", "pareto_gate", "recomposition_proof"],
+      "applies_to_steps": ["s05", "s06"],
+      "validation_expectation": "The selected coherent unit records comparison criteria, rejected alternatives, and how it recomposes into the wider capsule and economy context."
+    },
+    {
+      "overlay_id": "toy_game_for_low_cost_falsification",
+      "trigger": "A small simulation can expose Sybil capture, normalization ambiguity, key loss, coercion, offensive content, and supply instability before planning.",
+      "techniques": ["toy_game", "validation_loop", "assessment_failure_reference"],
+      "applies_to_steps": ["s08"],
+      "validation_expectation": "The repair stage emits concrete scenario evidence and interprets failures as typed negatives or design repairs."
+    },
+    {
+      "overlay_id": "memory_residue_for_context_recovery",
+      "trigger": "Prior economy-resilience, anti-exploitation, and authority-boundary work materially constrains this mechanism.",
+      "techniques": ["memory_loop", "residue_ledger", "data_quality_deduplication"],
+      "applies_to_steps": ["s01", "s03", "s10"],
+      "validation_expectation": "The run references existing repo-owned evidence and preserves rejected or unresolved candidates without silently promoting memory."
+    },
+    {
+      "overlay_id": "protected_context_for_external_or_sensitive_evidence",
+      "trigger": "The run uses external whitepapers and models private capsule content without collecting or canonizing private submissions.",
+      "techniques": ["protected_context_flag", "system_agnostic_standard", "local_nuance_coordination"],
+      "applies_to_steps": ["s01", "s04", "s06", "s10"],
+      "validation_expectation": "External and privacy-sensitive material is source-labelled, summarized by handle, and blocked from automatic authority or memory promotion."
+    }
+  ],
+  "subagent_strategy": {
+    "status": "recommended",
+    "trigger": "P1 synthesis and parallelism: formal mechanism, commons governance, behavioral effects, and adversarial review are independent lenses that must later be joined.",
+    "explanation": "A tensioned research fan-out reduces monoculture and keeps symbolic appeal from overriding economic, privacy, and authority constraints.",
+    "context": [
+      "The operator wants a meaningful initial token number derived from community words.",
+      "The repository requires token mechanisms to remain research-only and to face failure-corpus, behavioral, formal, and authority gates.",
+      "The capsule may include public and privacy-preserving submissions with 2-, 5-, and 10-year horizons."
+    ],
+    "roles": [
+      {
+        "role_id": "explorer-formal",
+        "purpose": "Compare deterministic encoding, commitment, aggregation, and supply-mapping candidates without claiming cryptographic security by label.",
+        "owns": "formal-mechanisms explorer receipt",
+        "applies_to_steps": ["s01", "s04", "s05", "s06"]
+      },
+      {
+        "role_id": "explorer-commons",
+        "purpose": "Evaluate participation, capture, legitimacy, voice, and institution-design consequences.",
+        "owns": "commons-governance explorer receipt",
+        "applies_to_steps": ["s01", "s03", "s05", "s06"]
+      },
+      {
+        "role_id": "explorer-behavioral",
+        "purpose": "Evaluate meaning, motivation, status, coercion, exclusion, reveal rituals, and engagement events.",
+        "owns": "behavioral explorer receipt",
+        "applies_to_steps": ["s01", "s03", "s05", "s06"]
+      },
+      {
+        "role_id": "synthesizer",
+        "purpose": "Reconcile explorer returns into a candidate matrix without erasing incompatible constraints.",
+        "owns": "candidate synthesis receipt",
+        "applies_to_steps": ["s05", "s06"]
+      },
+      {
+        "role_id": "reviewer-non-vacuity",
+        "purpose": "Demand the smallest concrete witness for every surviving candidate.",
+        "owns": "non-vacuity verdict",
+        "applies_to_steps": ["s07", "s08"]
+      },
+      {
+        "role_id": "reviewer-definitional",
+        "purpose": "Attack encoding/encryption, randomness/fairness, symbolism/economics, and engagement/authority collapses.",
+        "owns": "definitional-soundness verdict",
+        "applies_to_steps": ["s07", "s08"]
+      },
+      {
+        "role_id": "writer",
+        "purpose": "Persist cited findings and the candidate verdict matrix after review convergence.",
+        "owns": "findings.md",
+        "applies_to_steps": ["s09", "s10"]
+      },
+      {
+        "role_id": "auditor",
+        "purpose": "Independently audit claim-to-evidence, authority, receipt, and final-plan boundaries.",
+        "owns": "final approval recommendation",
+        "applies_to_steps": ["s10"]
+      }
+    ],
+    "parallelism": "mixed",
+    "join_policy": "parent_synthesis",
+    "authorization": "requires_user_permission",
+    "permission_prompt": "Confirm the frozen Number Lottery worker dispatch after the check-tension gate passes?",
+    "receipt_requirements": ["agent_id", "role_id", "spawn_status", "join_status", "close_status", "dispatch_id", "step_id", "capability_ref", "status", "artifacts", "validation", "observer_status", "blockers", "residue", "reroute", "handoff_note"],
+    "dispatch_sheet_preview": {
+      "dispatch_type": "research",
+      "schema_version": "0.6.0",
+      "goal": "Determine which, if any, community-word derivation and time-capsule design can create durable meaning without pretending to validate token economics, cryptographic privacy, fairness, or governance authority.",
+      "anti_bias_global": "methodology and source-corpus diversity plus distinct adversarial attack-vectors applied to participatory meaning versus economic, privacy, and authority safety",
+      "max_loops": 1,
+      "final_approver": "Brandenburg, Martin",
+      "working_folder": "development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/",
+      "groups": [
+        {
+          "group_id": "explorers",
+          "n": 3,
+          "anti_bias": "methodology + source-corpus composite",
+          "predicted_disagreements": [
+            "Fritz runs formal and computational analysis over technical cryptography and mechanism-design sources while Ostrom runs institutional analysis over commons-governance and collective-action sources on the methodology and source-corpus axes; a bias toward mathematical determinism in Fritz would be exposed by Ostrom's capture and legitimacy tests.",
+            "Fritz runs formal and computational analysis over technical cryptography and mechanism-design sources while Kahneman runs empirical behavioral analysis over motivation, risk, and decision-science sources on the methodology and source-corpus axes; a bias toward technical correctness in Fritz would be exposed by Kahneman's motivation, coercion, and legibility tests.",
+            "Ostrom runs institutional analysis over commons-governance and collective-action sources while Kahneman runs empirical behavioral analysis over motivation, risk, and decision-science sources on the methodology and source-corpus axes; a bias toward durable institutional rules in Ostrom would be exposed by Kahneman's individual and group behavioral failure tests."
+          ],
+          "agents": [
+            {
+              "agent_name": "Fritz, Tobias",
+              "role": "explorer",
+              "angle": "formal computational methodology over technical cryptography and mechanism-design source corpora: compare normalization, encoding, commitments, aggregation, bounded mapping, auditability, and manipulation witnesses",
+              "model": "gpt-5.4",
+              "token_budget": 1800,
+              "initial_prompt": "Read-only research. Compare formal and computational candidate mechanisms for turning community words or commitments into a reproducible symbolic integer. Distinguish encoding, hashing, commitments, encryption, and randomness; never infer security without a threat model. Separate symbolic seed derivation from economic supply calibration. Use the supplied public sources and primary technical sources only after bounded research begins. Return candidate mechanisms, assumptions, toy witnesses, attack surfaces, citations, and typed negatives."
+            },
+            {
+              "agent_name": "Ostrom, Elinor",
+              "role": "explorer",
+              "angle": "institutional methodology over commons-governance and collective-action source corpora: test participation rules, Sybil and whale capture, legitimacy, voice, stewardship, consent, and owner boundaries",
+              "model": "gpt-5.4",
+              "token_budget": 1800,
+              "initial_prompt": "Read-only research. Evaluate the proposed word-derived number and time capsule as a commons institution. Test participation rules, Sybil or whale capture, legitimacy, consent, voice, moderation, stewardship across 2/5/10 years, and the boundary between ritual signal and governance authority. Preserve research != policy and score != authority. Return design options, failure cases, engagement rituals, citations, and owner-gated decisions."
+            },
+            {
+              "agent_name": "Kahneman, Daniel",
+              "role": "explorer",
+              "angle": "empirical behavioral methodology over motivation, risk, and decision-science source corpora: test meaning, motivation crowding, status, coercion, exclusion, memory, grief, reveal effects, and recurring engagement",
+              "model": "gpt-5.4",
+              "token_budget": 1800,
+              "initial_prompt": "Read-only research. Evaluate the behavioral and community effects of public and privacy-preserving word submissions, token-number symbolism, and 2/5/10-year reveals. Test motivation crowding, status, coercion, exclusion, contributor regret, forgotten keys, death or absence, harmful content, reveal-day disappointment, and repeated engagement. Return event candidates, expected effects, failure modes, citations, and concrete mitigations without universalizing behavioral evidence."
+            }
+          ]
+        },
+        {
+          "group_id": "synthesizer",
+          "n": 1,
+          "agents": [
+            {
+              "agent_name": "Simon, Herbert",
+              "role": "synthesizer",
+              "model": "gpt-5.4",
+              "token_budget": 2600,
+              "initial_prompt": "Reconcile the explorer returns into a candidate matrix spanning derivation rule, privacy posture, economic coupling, governance boundary, engagement timeline, toy witness, and residue. Preserve incompatibilities; do not average conflicting evidence or select a supply number. Hand the candidate picture to the two reviewers."
+            }
+          ]
+        },
+        {
+          "group_id": "reviewers",
+          "n": 2,
+          "anti_bias": "attack-vector",
+          "predicted_disagreements": [
+            "Popper runs the non-vacuity attack while Quine runs the definitional-soundness attack on the attack-vector axis; a bias toward accepting a runnable but conceptually collapsed mechanism in Popper would be exposed by Quine, while Quine's abstract collapse test would be exposed by Popper's demand for a concrete witness."
+          ],
+          "agents": [
+            {
+              "agent_name": "Popper, Karl",
+              "role": "skeptic",
+              "angle": "non-vacuity attack-vector: demand a smallest runnable witness for derivation, privacy, manipulation resistance, reveal, and economic-boundary claims; no witness means KILL",
+              "model": "gpt-5.4",
+              "token_budget": 1500,
+              "initial_prompt": "Attack the synthesis using the non-vacuity gate. For each candidate, demand the smallest concrete witness covering normalization, duplicate or Sybil inputs, private/public mode, key loss, staged reveal, manipulation, and separation from economic validation. No adequate witness means KILL. Return a candidate verdict matrix and exact repair requests."
+            },
+            {
+              "agent_name": "Quine, Willard Van Orman",
+              "role": "skeptic",
+              "angle": "definitional attack-vector: test whether the design collapses encoding into encryption, randomness into fairness, symbolism into economics, participation into authority, or a renamed checksum into meaning; tautology means KILL",
+              "model": "gpt-5.4",
+              "token_budget": 1500,
+              "initial_prompt": "Attack the synthesis using the definitional-soundness gate. Identify collapses among encoding, encryption, hashing, commitments, randomness, fairness, symbolic meaning, economic supply safety, participation, credit, and governance authority. Kill tautological or merely re-skinned candidates; otherwise return exact terminology constraints and repairs."
+            }
+          ]
+        },
+        {
+          "group_id": "writer",
+          "n": 1,
+          "agents": [
+            {
+              "agent_name": "Senge, Peter",
+              "role": "writer",
+              "model": "gpt-5.4",
+              "token_budget": 3000,
+              "initial_prompt": "Write findings.md only after the synthesizer-reviewer exchange converges. Include a cited candidate verdict matrix, symbolic-versus-economic boundary, privacy threat model, 2/5/10-year capsule design, engagement-event portfolio, toy scenarios, rejected alternatives, open residue, and a non-executed plan. Every load-bearing claim cites its source or upstream receipt."
+            }
+          ]
+        },
+        {
+          "group_id": "auditor",
+          "n": 1,
+          "agents": [
+            {
+              "agent_name": "Brandenburg, Martin",
+              "role": "auditor",
+              "model": "gpt-5.4",
+              "token_budget": 1400,
+              "initial_prompt": "Audit findings.md only against the dispatch goal, citation discipline, claim <= evidence, research != policy, score != authority, public/private boundaries, candidate verdict completeness, and absence of token-supply or cryptographic-security overclaim. Return ACCEPT or FIX with exact required revisions."
+            }
+          ]
+        }
+      ],
+      "connections": [
+        {"from": "explorers", "to": "synthesizer", "type": "sequential"},
+        {"from": "synthesizer", "to": "reviewers", "type": "zig-zag", "loop_cap": 1},
+        {"from": "reviewers", "to": "writer", "type": "sequential"},
+        {"from": "writer", "to": "auditor", "type": "sequential"},
+        {"from": "auditor", "to": "writer", "type": "feedback", "loop_cap": 1}
+      ]
+    }
+  },
+  "subagent_lifecycle": {
+    "status": "none",
+    "agents": []
+  },
+  "native_stage_receipts": [
+    {"dispatch_id": "refine-2026-07-12-number-lottery", "step_id": "s01", "capability_ref": "context-builder", "receipt_kind": "native-stage", "status": "not_run", "artifacts": [], "blockers": ["frozen worker dispatch approval pending"]},
+    {"dispatch_id": "refine-2026-07-12-number-lottery", "step_id": "s02", "capability_ref": "invoke", "receipt_kind": "native-stage", "status": "not_run", "artifacts": [], "blockers": ["frozen worker dispatch approval pending"]},
+    {"dispatch_id": "refine-2026-07-12-number-lottery", "step_id": "s03", "capability_ref": "interrogation", "receipt_kind": "native-stage", "status": "not_run", "artifacts": [], "blockers": ["frozen worker dispatch approval pending"]},
+    {"dispatch_id": "refine-2026-07-12-number-lottery", "step_id": "s04", "capability_ref": "refine", "receipt_kind": "native-stage", "status": "not_run", "artifacts": [], "blockers": ["frozen worker dispatch approval pending"]},
+    {"dispatch_id": "refine-2026-07-12-number-lottery", "step_id": "s05", "capability_ref": "distill", "receipt_kind": "native-stage", "status": "not_run", "artifacts": [], "blockers": ["frozen worker dispatch approval pending"]},
+    {"dispatch_id": "refine-2026-07-12-number-lottery", "step_id": "s06", "capability_ref": "invoke", "receipt_kind": "native-stage", "status": "not_run", "artifacts": [], "blockers": ["frozen worker dispatch approval pending"]},
+    {"dispatch_id": "refine-2026-07-12-number-lottery", "step_id": "s07", "capability_ref": "interrogation", "receipt_kind": "native-stage", "status": "not_run", "artifacts": [], "blockers": ["frozen worker dispatch approval pending"]},
+    {"dispatch_id": "refine-2026-07-12-number-lottery", "step_id": "s08", "capability_ref": "distill", "receipt_kind": "native-stage", "status": "not_run", "artifacts": [], "blockers": ["frozen worker dispatch approval pending"]},
+    {"dispatch_id": "refine-2026-07-12-number-lottery", "step_id": "s09", "capability_ref": "invoke", "receipt_kind": "native-stage", "status": "not_run", "artifacts": [], "blockers": ["frozen worker dispatch approval pending"]},
+    {"dispatch_id": "refine-2026-07-12-number-lottery", "step_id": "s10", "capability_ref": "interrogation", "receipt_kind": "native-stage", "status": "not_run", "artifacts": [], "blockers": ["frozen worker dispatch approval pending"]}
+  ],
+  "steps": [
+    {
+      "step_id": "s01",
+      "name": "Context Builder evidence baseline",
+      "capability_ref": "context-builder",
+      "mode": "standard --strict --emit both --handoff runtime --persist development/refinement-runs/2026-07-12-number-lottery/context-builder",
+      "pattern": "route",
+      "parallel": false,
+      "techniques": ["memory_loop", "protected_context_flag", "frame_handoff", "minimum_component_catalog"],
+      "inputs": [{"kind": "intent", "ref": "REFINE-SEED-PROPOSAL.md"}],
+      "outputs": [{"kind": "frame", "ref": "context-builder/context-pack.md"}, {"kind": "handle", "ref": "context-builder/context-pack.json"}],
+      "stop_conditions": ["block if official-source posture, repo authority, or privacy boundary cannot be represented"]
+    },
+    {
+      "step_id": "s02",
+      "name": "Invoke Define",
+      "capability_ref": "invoke",
+      "mode": "define",
+      "pattern": "sequential",
+      "parallel": false,
+      "techniques": ["route_menu", "one_or_more_option_set", "handle_handoff"],
+      "inputs": [{"kind": "frame", "ref": "s01:context-builder/context-pack.md"}, {"kind": "artifact", "ref": "REFINE-SEED-PROPOSAL.md"}],
+      "outputs": [{"kind": "artifact", "ref": "stages/02-DEFINE.md"}, {"kind": "route_menu", "ref": "stages/02-route-menu.json"}],
+      "stop_conditions": ["block if symbolic number, token economics, privacy construction, and community ritual remain collapsed"]
+    },
+    {
+      "step_id": "s03",
+      "name": "Interrogation refine-review",
+      "capability_ref": "interrogation",
+      "mode": "refine-review",
+      "pattern": "dialectic",
+      "parallel": false,
+      "techniques": ["dialectic", "zig_zag", "residue_ledger", "owner_boundary_check"],
+      "roles": ["participatory-meaning advocate", "economy-privacy-authority skeptic"],
+      "inputs": [{"kind": "artifact", "ref": "s02:stages/02-DEFINE.md"}, {"kind": "artifact", "ref": "s02:stages/02-route-menu.json"}],
+      "outputs": [{"kind": "artifact", "ref": "stages/03-REFINE-REVIEW.md"}, {"kind": "ledger", "ref": "stages/03-residue.json"}],
+      "join_policy": "parent_synthesis",
+      "convergence_criteria": ["all direct economic-safety claims are demoted or separately evidenced", "all privacy claims name the construction and threat model", "unresolved tensions have an owner and next route"],
+      "stop_conditions": ["block on token policy promotion, privacy overclaim, or authority collapse"]
+    },
+    {
+      "step_id": "s04",
+      "name": "Research decision and bounded external comparison",
+      "capability_ref": "refine",
+      "mode": "bounded-research",
+      "pattern": "decision",
+      "parallel": false,
+      "techniques": ["protected_context_flag", "system_agnostic_standard", "local_nuance_coordination"],
+      "inputs": [{"kind": "artifact", "ref": "s03:stages/03-REFINE-REVIEW.md"}, {"kind": "human_answer", "ref": "operator-confirmed-bounded-research-2026-07-12"}],
+      "outputs": [{"kind": "decision", "ref": "stages/04-RESEARCH-DECISION.md"}, {"kind": "artifact", "ref": "stages/research-dispatch/findings.md"}],
+      "stop_conditions": ["one bounded external comparison pass", "block if source kind or allowed use cannot be recorded", "do not collect private capsule content"]
+    },
+    {
+      "step_id": "s05",
+      "name": "Distill coherent unit tournament",
+      "capability_ref": "distill",
+      "mode": "standard",
+      "pattern": "tournament",
+      "parallel": false,
+      "techniques": ["tournament", "pareto_gate", "scu_swu_reduction", "recomposition_proof"],
+      "roles": ["ritual-only candidate", "bounded-seed candidate", "direct-derivation candidate", "capsule-without-supply candidate"],
+      "inputs": [{"kind": "decision", "ref": "s04:stages/04-RESEARCH-DECISION.md"}, {"kind": "artifact", "ref": "s04:stages/research-dispatch/findings.md"}],
+      "outputs": [{"kind": "artifact", "ref": "stages/05-DISTILL.md"}, {"kind": "decision", "ref": "stages/05-selected-unit.json"}],
+      "join_policy": "pareto",
+      "convergence_criteria": ["candidate is non-dominated across meaning, safety, privacy, reproducibility, participation, and owner-boundary criteria", "rejected alternatives retain typed reasons", "selected unit states how it recomposes into capsule and economy contexts"],
+      "stop_conditions": ["a no-survivor result is valid and routes to capsule-without-supply or typed negative"]
+    },
+    {
+      "step_id": "s06",
+      "name": "Invoke Redefine and Design",
+      "capability_ref": "invoke",
+      "mode": "design",
+      "pattern": "sequential",
+      "parallel": false,
+      "techniques": ["recomposition_proof", "component_descriptor", "protected_context_flag", "approval_checkpoint"],
+      "inputs": [{"kind": "artifact", "ref": "s05:stages/05-DISTILL.md"}, {"kind": "decision", "ref": "s05:stages/05-selected-unit.json"}],
+      "outputs": [{"kind": "artifact", "ref": "stages/06-DESIGN.md"}],
+      "stop_conditions": ["design remains non-executed and external-owner-gated", "private mode has no plaintext collection requirement"]
+    },
+    {
+      "step_id": "s07",
+      "name": "Interrogation refine-design-review",
+      "capability_ref": "interrogation",
+      "mode": "refine-design-review",
+      "pattern": "dialectic",
+      "parallel": false,
+      "techniques": ["dialectic", "zig_zag", "residue_ledger", "owner_boundary_check"],
+      "roles": ["design proponent", "non-vacuity reviewer", "definitional-soundness reviewer"],
+      "inputs": [{"kind": "artifact", "ref": "s06:stages/06-DESIGN.md"}],
+      "outputs": [{"kind": "artifact", "ref": "stages/07-DESIGN-REVIEW.md"}, {"kind": "ledger", "ref": "stages/07-verdict-matrix.json"}],
+      "join_policy": "parent_synthesis",
+      "convergence_criteria": ["every candidate has non-vacuity and definitional verdicts", "every surviving privacy claim has a threat-model boundary", "every engagement mechanism names gaming and coercion risks"],
+      "stop_conditions": ["KILL candidates without witnesses or with semantic collapse"]
+    },
+    {
+      "step_id": "s08",
+      "name": "Distill Repair with toy-game evidence",
+      "capability_ref": "distill",
+      "mode": "validate-repair",
+      "pattern": "toy_game",
+      "parallel": false,
+      "techniques": ["toy_game", "validation_loop", "assessment_failure_reference"],
+      "inputs": [{"kind": "artifact", "ref": "s07:stages/07-DESIGN-REVIEW.md"}, {"kind": "ledger", "ref": "s07:stages/07-verdict-matrix.json"}],
+      "outputs": [{"kind": "artifact", "ref": "stages/08-DISTILL-REPAIR.md"}, {"kind": "artifact", "ref": "stages/08-toy-game-evidence.json"}],
+      "evidence_artifact": "stages/08-toy-game-evidence.json",
+      "stop_conditions": ["block planning if no concrete normalization, Sybil, key-loss, reveal, moderation, and supply-boundary scenarios exist"]
+    },
+    {
+      "step_id": "s09",
+      "name": "Invoke Plan",
+      "capability_ref": "invoke",
+      "mode": "plan",
+      "pattern": "sequential",
+      "parallel": false,
+      "techniques": ["sequence", "approval_checkpoint", "owner_boundary_check"],
+      "inputs": [{"kind": "artifact", "ref": "s08:stages/08-DISTILL-REPAIR.md"}, {"kind": "artifact", "ref": "s08:stages/08-toy-game-evidence.json"}],
+      "outputs": [{"kind": "artifact", "ref": "stages/09-PLAN.md"}],
+      "stop_conditions": ["plan is non-executed", "token-supply selection and launch remain external-owner decisions"]
+    },
+    {
+      "step_id": "s10",
+      "name": "Final Interrogation and Refine synthesis",
+      "capability_ref": "interrogation",
+      "mode": "refine-final",
+      "pattern": "synthesis",
+      "parallel": false,
+      "techniques": ["validation_loop", "memory_loop", "residue_ledger", "protected_context_flag", "owner_boundary_check", "observability_grouping"],
+      "inputs": [{"kind": "artifact", "ref": "s09:stages/09-PLAN.md"}, {"kind": "ledger", "ref": "s07:stages/07-verdict-matrix.json"}, {"kind": "artifact", "ref": "s08:stages/08-toy-game-evidence.json"}],
+      "outputs": [{"kind": "artifact", "ref": "RESULT.md"}, {"kind": "trace_event", "ref": "refine-2026-07-12-number-lottery:final"}],
+      "stop_conditions": ["block final pass if any native stage lacks a receipt or exact blocked reason", "block any claim that a symbolic number is economically validated", "block inventory or policy promotion from execution evidence"]
+    }
+  ],
+  "gates": [
+    {"gate_id": "g01-native-handles", "kind": "validation", "owner": "refine", "condition": "Every runtime-backed stage identifies an installed native capability handle and expected receipt before execution.", "on_fail": "block"},
+    {"gate_id": "g02-check-tension", "kind": "quality", "owner": "domainspec-check-tension", "condition": "Two independent gate agents return PASS on the proposed worker sheet; any sheet repair is re-gated.", "on_fail": "block"},
+    {"gate_id": "g03-frozen-dispatch-approval", "kind": "human_approval", "owner": "operator", "condition": "The operator explicitly approves the check-tension-passed frozen worker dispatch before registration or worker spawn.", "on_fail": "ask"},
+    {"gate_id": "g04-research-confirmation", "kind": "human_approval", "owner": "operator", "condition": "Bounded external research was approved on 2026-07-12 and remains limited to one comparison pass.", "on_fail": "block"},
+    {"gate_id": "g05-stage-receipts", "kind": "quality", "owner": "refine", "condition": "Every selected stage has an artifact and native receipt, or an exact blocked reason.", "on_fail": "block"},
+    {"gate_id": "g06-authority-boundary", "kind": "promotion_guardrail", "owner": "repository authority", "condition": "Research artifacts cannot select token policy, governance weight, payout, launch, or implementation; external owner review is mandatory.", "on_fail": "block"},
+    {"gate_id": "g07-score-boundary", "kind": "promotion_guardrail", "owner": "repository authority", "condition": "Word totals, participation counts, derived integers, tokens, and capsule status do not create governance authority.", "on_fail": "block"},
+    {"gate_id": "g08-privacy-boundary", "kind": "policy", "owner": "refine", "condition": "No real private submissions are collected; encryption claims require a named construction and threat model.", "on_fail": "block"},
+    {"gate_id": "g09-final-readiness", "kind": "quality", "owner": "interrogation", "condition": "Final synthesis cites stage evidence, preserves residue, reports rejected alternatives, and stays non-executed.", "on_fail": "block"}
+  ],
+  "observability": {
+    "dispatch_id_required": true,
+    "parent_dispatch_id": null,
+    "trace_events": ["strategy_materialized", "dispatch_schema_validated", "check_tension_started", "check_tension_completed", "frozen_dispatch_approved", "stage_started", "stage_receipt_recorded", "research_decision_recorded", "final_synthesis_recorded", "dispatch_closed"],
+    "signal_grouping": "refine-2026-07-12-number-lottery"
+  },
+  "boundary_evidence": {
+    "boundaries": [
+      {
+        "boundary_id": "b01-external-context",
+        "kind": "external_context",
+        "from_owner": "external public sources",
+        "to_owner": "context-builder and research stage",
+        "applies_to_steps": ["s01", "s04", "s06", "s10"],
+        "contract": "External material is source-labelled and summarized by handle; it does not become official ResonantDAO policy or canonical repo authority.",
+        "on_violation": "block"
+      },
+      {
+        "boundary_id": "b02-capability-handoffs",
+        "kind": "capability_handoff",
+        "from_owner": "stage capability",
+        "to_owner": "next stage capability",
+        "applies_to_steps": ["s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10"],
+        "contract": "Only owner-held artifact handles and structured receipts cross stages; no stage claims another capability's lifecycle or promotion authority.",
+        "on_violation": "block"
+      },
+      {
+        "boundary_id": "b03-worker-authorization",
+        "kind": "human_approval",
+        "from_owner": "operator",
+        "to_owner": "refine runtime",
+        "applies_to_steps": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10"],
+        "contract": "Check-tension preparation approval is not worker execution approval; the frozen dispatch requires explicit confirmation.",
+        "on_violation": "block"
+      }
+    ],
+    "authority": {
+      "lifecycle": "refine owns run lifecycle; ER-D23 owns definition lifecycle",
+      "execution": "parent native runtime after approval",
+      "validation": "dispatch-spec validator, stage owners, and final auditor",
+      "evidence": "stage capability owners and source records",
+      "memory": "inventory is a non-authority read model",
+      "promotion": "external ResonantDAO or ResonantOS owner only"
+    },
+    "receipts": [
+      {
+        "receipt_id": "r01-native-stage",
+        "producer": "each native stage owner",
+        "required_fields": ["dispatch_id", "step_id", "capability_ref", "status", "artifacts", "validation", "observer_status", "blockers", "residue", "handoff_note"],
+        "stores": ["RUN-MANIFEST.md", "evidence-index.json"],
+        "on_missing": "block"
+      },
+      {
+        "receipt_id": "r02-subagent-lifecycle",
+        "producer": "refine parent coordinator",
+        "required_fields": ["dispatch_id", "artifacts", "validation_result", "approval_record", "residue"],
+        "stores": ["REFINE-DISPATCH.json", "RUNTIME-HANDOFF.md"],
+        "on_missing": "block"
+      }
+    ],
+    "state_namespaces": [
+      {"namespace": "development/refinement-runs/2026-07-12-number-lottery", "owner": "refine", "write_policy": "Refine-owned run evidence only"},
+      {"namespace": "telemetry/agents/subagents-dispatch.yaml", "owner": "domainspec-register-dispatch", "write_policy": "append only after frozen dispatch approval"},
+      {"namespace": ".arcanum/inventory", "owner": "inventory", "write_policy": "non-authority result indexing only after reusable closeout"}
+    ],
+    "promotion_splits": [
+      {"source": "refinement execution evidence", "target": "repository inventory", "rule": "Inventory may index accepted results but cannot promote definitions, mechanisms, or policy.", "on_violation": "block"},
+      {"source": "research recommendation", "target": "token supply or launch policy", "rule": "Requires external owner decision; this repository cannot perform the promotion.", "on_violation": "block"}
+    ]
+  },
+  "promotion_guardrails": [
+    "Symbolic derivation is not economic validation.",
+    "Encoding is not encryption without a construction and threat model.",
+    "Randomness is not fairness without a protected target and audit path.",
+    "Participation, word totals, token amounts, credit, and scores are not governance authority.",
+    "A Refine result is research evidence, not token policy, launch readiness, or implementation authority."
+  ]
+}

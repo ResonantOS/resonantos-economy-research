@@ -1,0 +1,18 @@
+{
+  "status": "flag-repairable",
+  "execution_readiness": "block",
+  "plan_readiness": "pass-after-repair",
+  "findings": [
+    {"id": "DR-1", "verdict": "revise", "gate": "identity-non-collapse"},
+    {"id": "DR-2", "verdict": "revise", "gate": "non-participation-privacy"},
+    {"id": "DR-3", "verdict": "revise", "gate": "source-versioning"},
+    {"id": "DR-4", "verdict": "revise", "gate": "grinding"},
+    {"id": "DR-5", "verdict": "revise", "gate": "historical-root-vs-display"},
+    {"id": "DR-6", "verdict": "revise", "gate": "status-capture"},
+    {"id": "DR-7", "verdict": "revise", "gate": "policy-validation-non-collapse"},
+    {"id": "DR-8", "verdict": "flag", "gate": "name-semantics"},
+    {"id": "DR-9", "verdict": "defer", "gate": "commitment-extension"},
+    {"id": "DR-10", "verdict": "revise", "gate": "fixture-specification-not-validation"}
+  ],
+  "next_route": "distill-validate-repair"
+}

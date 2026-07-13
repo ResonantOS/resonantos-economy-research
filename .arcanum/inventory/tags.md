@@ -13,6 +13,7 @@ Owner: ResonantOS economy research owner
 | `authority` | Authority model, promotion policy, constitution, or decision evidence. |
 | `bets` | Falsifiable candidate-mechanism conjecture staked against a prize; never an economic stake. |
 | `cav2` | CyberAlchemy v2 local source lineage or copied snapshot. |
+| `community-ritual` | Symbolic community-participation or ceremony research; not a reward, governance, or authority mechanism. |
 | `constitution` | Constitution rule, axiom, or structural research-credibility rule. |
 | `craft` | Craft work-tracking ledger surface (contexts, gates, blockers, decisions, gaps). |
 | `definitions` | Canonical definition spine, index, drift audit, or lifecycle. |
@@ -47,6 +48,8 @@ Owner: ResonantOS economy research owner
 | `synthesis` | Cross-artifact synthesis or session-level reconciliation read model. |
 | `task-session` | Bounded executable work-pack or next-route handoff for materializing approved artifacts. |
 | `telemetry` | Append-only dispatch ledger or agent telemetry surface. |
+| `time-capsule` | Long-horizon community memory or cohort-capsule research artifact; not a validated mechanism. |
+| `token-boundary` | Research boundary separating token-supply questions from policy, launch, minting, or implementation authority. |
 | `tower` | Research tower or subtower source. |
 | `validation-scaffold` | Validation fixture package / scaffold evidence; review-only, not economy validation or mechanism implementation. |
 | `workflow` | Repeatable research, harvest, dispatch, or promotion work route. |

@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The full idea behind Resonant Time Capsule: how one word from each founding contributor can help create one initial supply and a memory revisited in 2, 5, and 10 years.">
+  <meta name="theme-color" content="#070811">
+  <meta property="og:title" content="Resonant Time Capsule — The Full Idea">
+  <meta property="og:description" content="A number we make together. A memory we keep together.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='24' fill='none' stroke='%23f4ba68' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="preload" as="image" href="../assets/resonant-time-capsule-poster.png" fetchpriority="high">
+  <title>The Full Idea — Resonant Time Capsule</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #070811;
+      --ink-soft: #0e1020;
+      --paper: #f6e8cf;
+      --paper-soft: #cbc2b2;
+      --amber: #f4ba68;
+      --amber-bright: #ffd99e;
+      --violet: #7660dd;
+      --cyan: #74d7df;
+      --line: rgba(244, 186, 104, 0.22);
+      --panel: rgba(16, 18, 34, 0.78);
+      --max: 1120px;
+      --reading: 760px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--paper);
+      background:
+        radial-gradient(circle at 50% -12%, rgba(118, 96, 221, 0.28), transparent 34rem),
+        radial-gradient(circle at 8% 45%, rgba(244, 186, 104, 0.07), transparent 30rem),
+        radial-gradient(circle at 90% 75%, rgba(116, 215, 223, 0.06), transparent 30rem),
+        var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.68;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.24;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: radial-gradient(circle at center, black, transparent 90%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--cyan);
+      outline-offset: 5px;
+      border-radius: 7px;
+    }
+
+    .shell {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-block: 26px;
+    }
+
+    .back,
+    .status {
+      color: var(--paper-soft);
+      font-size: 0.76rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--paper);
+      text-decoration: none;
+    }
+
+    .back span {
+      color: var(--amber);
+      font-size: 1.15rem;
+    }
+
+    .status {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      padding: clamp(64px, 10vw, 136px) 0 56px;
+    }
+
+    .eyebrow {
+      margin: 0 0 22px;
+      color: var(--amber-bright);
+      font-size: 0.76rem;
+      font-weight: 850;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      text-wrap: balance;
+    }
+
+    h1,
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -0.05em;
+    }
+
+    h1 {
+      max-width: 970px;
+      margin: 0;
+      font-size: clamp(3.4rem, 8vw, 7.2rem);
+      line-height: 0.94;
+    }
+
+    .hero-lead {
+      max-width: 780px;
+      margin: 34px 0 0;
+      color: var(--paper-soft);
+      font-size: clamp(1.12rem, 2.3vw, 1.55rem);
+    }
+
+    .hero-lead strong {
+      color: var(--paper);
+      font-weight: 650;
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .pill {
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--paper-soft);
+      background: rgba(255, 255, 255, 0.025);
+      font-size: 0.72rem;
+      font-weight: 750;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .poster {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: clamp(50px, 8vw, 88px);
+      border: 1px solid rgba(244, 186, 104, 0.28);
+      border-radius: 24px;
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.48);
+    }
+
+    .contents {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      padding: 30px 0 10px;
+    }
+
+    .contents a {
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 999px;
+      color: var(--paper-soft);
+      text-decoration: none;
+      font-size: 0.78rem;
+      transition: border-color 160ms ease, color 160ms ease;
+    }
+
+    .contents a:hover {
+      border-color: var(--amber);
+      color: var(--paper);
+    }
+
+    .section {
+      padding: clamp(74px, 10vw, 126px) 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: clamp(30px, 6vw, 84px);
+      align-items: start;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      line-height: 0.98;
+    }
+
+    .prose {
+      max-width: var(--reading);
+    }
+
+    .prose > :first-child {
+      margin-top: 0;
+    }
+
+    .prose p,
+    .prose li {
+      color: var(--paper-soft);
+      font-size: 1.02rem;
+    }
+
+    .prose strong {
+      color: var(--paper);
+    }
+
+    .promise {
+      margin: 34px 0 0;
+      padding: 28px 30px;
+      border-left: 2px solid var(--amber);
+      background: linear-gradient(90deg, rgba(244, 186, 104, 0.08), transparent);
+      color: var(--paper);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.45rem, 3vw, 2.25rem);
+      line-height: 1.25;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 48px;
+    }
+
+    .cards.five {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.014));
+    }
+
+    .card .number {
+      display: block;
+      margin-bottom: 34px;
+      color: var(--amber);
+      font-size: 0.75rem;
+      font-weight: 850;
+      letter-spacing: 0.13em;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+      line-height: 1.25;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--paper-soft);
+      font-size: 0.92rem;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 48px;
+    }
+
+    .time {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--panel);
+    }
+
+    .time span {
+      display: block;
+      margin-bottom: 34px;
+      color: var(--amber-bright);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 4.6rem;
+      line-height: 0.85;
+    }
+
+    .time h3 {
+      margin: 0 0 10px;
+    }
+
+    .time p {
+      margin: 0;
+      color: var(--paper-soft);
+      font-size: 0.92rem;
+    }
+
+    .plain-list {
+      display: grid;
+      gap: 12px;
+      margin: 34px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .plain-list li {
+      position: relative;
+      padding: 17px 18px 17px 48px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .plain-list li::before {
+      content: "";
+      position: absolute;
+      top: 24px;
+      left: 20px;
+      width: 9px;
+      aspect-ratio: 1;
+      border: 1px solid var(--amber);
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(244, 186, 104, 0.26);
+    }
+
+    .callout {
+      margin-top: 40px;
+      padding: 26px 28px;
+      border: 1px solid rgba(116, 215, 223, 0.24);
+      border-radius: 17px;
+      color: var(--paper-soft);
+      background: rgba(116, 215, 223, 0.04);
+    }
+
+    .callout strong {
+      color: var(--paper);
+    }
+
+    .closing {
+      padding: clamp(90px, 13vw, 170px) 0 100px;
+      text-align: center;
+    }
+
+    .closing h2 {
+      max-width: 890px;
+      margin-inline: auto;
+      font-size: clamp(3rem, 7vw, 6.6rem);
+    }
+
+    .closing p {
+      max-width: 700px;
+      margin: 28px auto 34px;
+      color: var(--paper-soft);
+      font-size: 1.08rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 22px;
+      border: 1px solid var(--amber);
+      border-radius: 999px;
+      color: #17100a;
+      background: linear-gradient(135deg, var(--amber-bright), var(--amber));
+      box-shadow: 0 12px 34px rgba(244, 186, 104, 0.18);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: transform 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 30px 0 42px;
+      border-top: 1px solid var(--line);
+      color: var(--paper-soft);
+      font-size: 0.8rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    @media (max-width: 980px) {
+      .section-head {
+        grid-template-columns: 1fr;
+      }
+
+      .cards.five {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        width: min(calc(100% - 26px), var(--max));
+      }
+
+      .site-header {
+        align-items: flex-start;
+        padding-block: 20px;
+      }
+
+      .status {
+        max-width: 130px;
+        text-align: right;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+
+      h1 {
+        font-size: clamp(3.1rem, 15vw, 5.2rem);
+      }
+
+      .poster {
+        border-radius: 14px;
+      }
+
+      .cards,
+      .cards.five,
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .contents {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contents a {
+        text-align: center;
+      }
+
+      .footer-row {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header shell">
+    <a class="back" href="../"><span aria-hidden="true">←</span> Back to the capsule</a>
+    <p class="status">Early idea — not live yet</p>
+  </header>
+
+  <main>
+    <section class="hero shell" id="top">
+      <p class="eyebrow">The full idea</p>
+      <h1>A number we make together. A memory we keep together.</h1>
+      <p class="hero-lead">
+        Resonant Time Capsule asks each founding contributor for one word. Once
+        the capsule is closed, those words help create the number of tokens
+        ResonantDAO starts with. <strong>The number appears once. The words come
+        back after 2, 5, and 10 years.</strong>
+      </p>
+      <div class="pills" aria-label="Current project status">
+        <span class="pill">Early idea</span>
+        <span class="pill">No words collected</span>
+        <span class="pill">No supply selected</span>
+      </div>
+      <img
+        class="poster"
+        src="../assets/resonant-time-capsule-poster.png"
+        width="1672"
+        height="941"
+        decoding="async"
+        fetchpriority="high"
+        alt="Many luminous contributions converge into one radiant center, surrounded by rings marked 2, 5, and 10 years."
+      >
+      <nav class="contents" aria-label="Page sections">
+        <a href="#short-version">Short version</a>
+        <a href="#experience">What happens</a>
+        <a href="#participation">How to take part</a>
+        <a href="#number">How the number appears</a>
+        <a href="#returns">2 / 5 / 10 years</a>
+        <a href="#before-live">Before it goes live</a>
+        <a href="#path">Path to the ceremony</a>
+        <a href="#now">Where we are now</a>
+      </nav>
+    </section>
+
+    <section class="section shell" id="short-version">
+      <div class="section-head">
+        <h2>The short version</h2>
+        <div class="prose">
+          <p>
+            ResonantDAO can choose any initial token supply. We could pick a
+            round number and move on. Instead, we can turn that one-time choice
+            into something the founding community makes together.
+          </p>
+          <p>
+            Every person is invited to hold one word for the future. Some words
+            may be public. Some may stay sealed. Some people may choose not to
+            add a word at all. Once the deadline arrives, the capsule is locked.
+            A later public number completes the calculation and gives us the
+            supply ResonantDAO begins with.
+          </p>
+          <p>
+            The supply is only the capsule's first moment. The community opens
+            the story again after two years, five years, and ten years to see
+            what changed, what stayed, and what it got wrong.
+          </p>
+          <p class="promise">
+            One word from each of us. One founding number. A memory we return to
+            in 2, 5, and 10 years.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="experience">
+      <div class="section-head">
+        <h2>What happens</h2>
+        <div class="prose">
+          <p>
+            The experience should feel simple even if the work behind it is not.
+            A participant only needs to understand five moments.
+          </p>
+        </div>
+      </div>
+      <div class="cards five">
+        <article class="card">
+          <span class="number">01</span>
+          <h3>We pick the range</h3>
+          <p>Before words arrive, the community agrees whether the final number will live in the millions, billions, trillions, or another range.</p>
+        </article>
+        <article class="card">
+          <span class="number">02</span>
+          <h3>You hold one word</h3>
+          <p>It may be a hope, warning, promise, question, or something the future community should find.</p>
+        </article>
+        <article class="card">
+          <span class="number">03</span>
+          <h3>We lock the capsule</h3>
+          <p>When the deadline arrives, no one can add, remove, or change a word.</p>
+        </article>
+        <article class="card">
+          <span class="number">04</span>
+          <h3>The number appears</h3>
+          <p>A public number that arrives after the lock completes the calculation and gives us the starting supply.</p>
+        </article>
+        <article class="card">
+          <span class="number">05</span>
+          <h3>The capsule stays</h3>
+          <p>The result becomes part of ResonantDAO's beginning, while the words wait for future returns.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="participation">
+      <div class="section-head">
+        <h2>You choose how to take part</h2>
+        <div class="prose">
+          <p>
+            The capsule should not force everyone into the same kind of
+            visibility. There are three valid paths.
+          </p>
+        </div>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="number">PUBLIC</span>
+          <h3>Share it now</h3>
+          <p>Your word is visible from the beginning and may be shown again when the capsule returns.</p>
+        </article>
+        <article class="card">
+          <span class="number">SEALED</span>
+          <h3>Save it for later</h3>
+          <p>Your word stays out of public view unless you choose to open it later. The secure version still needs to be designed and tested.</p>
+        </article>
+        <article class="card">
+          <span class="number">SILENT</span>
+          <h3>Do not add a word</h3>
+          <p>You remain fully part of the community. Nothing is taken away, and silence is not treated as disagreement.</p>
+        </article>
+      </div>
+      <div class="callout">
+        <strong>No word buys influence. No silence becomes a penalty.</strong>
+        A contribution must not become rank, reward, membership proof, or
+        governance power.
+      </div>
+    </section>
+
+    <section class="section shell" id="number">
+      <div class="section-head">
+        <h2>How the number appears</h2>
+        <div class="prose">
+          <p>
+            The exact method still needs to be built and tested, but the shape
+            is clear.
+          </p>
+          <ol class="plain-list">
+            <li>We agree on the possible number range before collecting anything.</li>
+            <li>We publish the rules for which contributions count and how they are ordered.</li>
+            <li>We lock the complete list before anyone knows the final result.</li>
+            <li>We add one public number that arrives only after the lock.</li>
+            <li>The same published calculation must give everyone the same supply.</li>
+          </ol>
+          <div class="callout">
+            <strong>This is not a simple letter sum.</strong> Adding character
+            values is too easy to manipulate and treats languages unevenly. The
+            stronger idea uses the closed capsule as a whole.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="returns">
+      <div class="section-head">
+        <h2>The number starts it. Time completes it.</h2>
+        <div class="prose">
+          <p>
+            The capsule is not a monument to agreement. It gives the community
+            a way to meet its old hopes and mistakes without rewriting them.
+          </p>
+        </div>
+      </div>
+      <div class="timeline">
+        <article class="time">
+          <span>2</span>
+          <h3>Then / Now Echo</h3>
+          <p>We place our old words beside what we think now and see how the community has changed.</p>
+        </article>
+        <article class="time">
+          <span>5</span>
+          <h3>Divergence Assembly</h3>
+          <p>We look at what stayed, what changed, what failed, and what we got wrong.</p>
+        </article>
+        <article class="time">
+          <span>10</span>
+          <h3>Constellation</h3>
+          <p>We open another layer and pass the capsule to the people who will care for it next.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="before-live">
+      <div class="section-head">
+        <h2>What must be true before this goes live</h2>
+        <div class="prose">
+          <p>
+            A beautiful ceremony is not enough. Before we ask anyone for a real
+            word, we need clear answers to six practical questions.
+          </p>
+          <ul class="plain-list">
+            <li><strong>Can anyone quietly steer the number?</strong> Late changes, duplicate entries, and switching the final public input must fail visibly.</li>
+            <li><strong>Can two independent people get the same result?</strong> The same capsule and rules must always produce the same supply.</li>
+            <li><strong>What does “sealed” really protect?</strong> We must not promise encryption, anonymity, or future recovery unless those things are real.</li>
+            <li><strong>Will the number work as a token supply?</strong> It must fit the token's decimals, minting system, wallets, and other technical limits.</li>
+            <li><strong>What happens if a future word becomes harmful?</strong> The capsule needs clear choices for display, quarantine, non-opening, and consent.</li>
+            <li><strong>Who cares for it for ten years?</strong> The promise cannot depend on one person, one password, or one company surviving.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="path">
+      <div class="section-head">
+        <h2>From idea to real ceremony</h2>
+        <div class="prose">
+          <p>
+            The safest path is to prove the idea in small steps before the
+            community gives it anything real.
+          </p>
+        </div>
+      </div>
+      <div class="cards five">
+        <article class="card">
+          <span class="number">STEP 1</span>
+          <h3>Make the story clear</h3>
+          <p>People should understand one word, one number, and the 2/5/10-year return without needing a technical explanation.</p>
+        </article>
+        <article class="card">
+          <span class="number">STEP 2</span>
+          <h3>Build a fake capsule</h3>
+          <p>Use invented words and edge cases to see whether the same rules always give the same result.</p>
+        </article>
+        <article class="card">
+          <span class="number">STEP 3</span>
+          <h3>Test the experience</h3>
+          <p>Check whether people understand public, sealed, and silent choices without feeling pushed.</p>
+        </article>
+        <article class="card">
+          <span class="number">STEP 4</span>
+          <h3>Solve the sealed path</h3>
+          <p>Bring in security, privacy, legal, and archive owners before accepting anything private.</p>
+        </article>
+        <article class="card">
+          <span class="number">STEP 5</span>
+          <h3>Decide whether to begin</h3>
+          <p>Only open the real founding capsule after the number, participation, and ten-year-care tests hold up.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="not-this">
+      <div class="section-head">
+        <h2>What this is not</h2>
+        <div class="prose">
+          <ul class="plain-list">
+            <li>It is not a token sale, giveaway, or prize lottery.</li>
+            <li>It is not proof that the chosen supply is economically perfect.</li>
+            <li>It is not a way to rank founders or decide who gets governance power.</li>
+            <li>It is not a promise that sealed words are already secure or recoverable.</li>
+            <li>It is not proof that the ritual will make people more engaged.</li>
+            <li>It is not collecting real words yet.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="now">
+      <div class="section-head">
+        <h2>Where we are now</h2>
+        <div class="prose">
+          <p>
+            The product story is clear enough to share. We have an approved
+            voice, a poster, a public one-page site, and a detailed research
+            blueprint.
+          </p>
+          <p>
+            The mechanism is still an idea. No real capsule has been created,
+            no final number range has been chosen, no secure sealed path exists,
+            and no token supply has been selected.
+          </p>
+          <p>
+            The next honest proof is small: build a fake capsule with difficult
+            cases and ask two independent implementations to produce the same
+            number. If they cannot, repair or reject the method before asking the
+            community for anything real.
+          </p>
+          <div class="callout">
+            <strong>Current status:</strong> ready for public explanation and
+            synthetic testing; not ready for intake, minting, or launch.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing shell">
+      <p class="eyebrow">The idea in one line</p>
+      <h2>One word. One founding number. A future we can return to.</h2>
+      <p>
+        Go back to the short page, see the whole story at a glance, and help us
+        keep the idea human before it becomes technical.
+      </p>
+      <a class="button" href="../">Back to the time capsule</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-row shell">
+      <span>Resonant Time Capsule</span>
+      <span>Full idea · early concept · not live yet</span>
+    </div>
+  </footer>
+</body>
+</html>

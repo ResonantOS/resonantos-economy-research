@@ -1,0 +1,93 @@
+{
+  "artifact_id": "number-lottery-toy-game-specifications",
+  "evidence_kind": "manual-reasoning-witness-and-fixture-specification",
+  "status": "specification-only",
+  "executed": false,
+  "validation_effect": "none",
+  "fixtures": [
+    {
+      "id": "canonicalization.json",
+      "status": "specification-only",
+      "executed": false,
+      "evidence_owner": "future research-evidence-harness",
+      "inputs": ["reordered object fields", "Unicode composed/decomposed forms", "multiple scripts", "empty record", "malformed record", "AB and BA character-sum control"],
+      "expected": ["accepted inputs yield exact frozen canonical bytes", "two independent implementations match", "malformed/profile-incompatible inputs fail explicitly", "character sum control collides and remains killed"],
+      "failure_verdict": "block canonical profile on any cross-implementation mismatch or silent repair"
+    },
+    {
+      "id": "cohort-abuse.json",
+      "status": "specification-only",
+      "executed": false,
+      "evidence_owner": "eligibility-governance owner plus evidence harness",
+      "inputs": ["duplicate artifact", "duplicate eligibility receipt", "one actor controlling 100 wallets", "distinct valid receipts"],
+      "expected": ["one accepted artifact per valid external receipt", "no wallet-to-human claim", "duplicates follow frozen rule"],
+      "failure_verdict": "block if wallet count is reported as unique humans or duplicate control changes silently"
+    },
+    {
+      "id": "participation-modes.json",
+      "status": "specification-only",
+      "executed": false,
+      "evidence_owner": "privacy-behavioral owner plus evidence harness",
+      "inputs": ["public submission", "no submission", "future committed-but-unopened case"],
+      "expected": ["public content only on public path", "no RCBC record for non-participation", "no penalty/reward/authority consequence", "commitment case remains disabled until extension approval"],
+      "failure_verdict": "block if absence is tracked by default or changes status eligibility reward or authority"
+    },
+    {
+      "id": "harmful-reveal.json",
+      "status": "specification-only",
+      "executed": false,
+      "evidence_owner": "moderation-privacy-legal owners plus evidence harness",
+      "inputs": ["accepted artifact later classified as harassment", "doxxing content", "appeal outcome"],
+      "expected": ["no automatic event display", "signed disposition overlay", "historical root unchanged", "non-content-bearing public receipt", "no status effect"],
+      "failure_verdict": "block if harmful content auto-publishes or disposition rewrites history silently"
+    },
+    {
+      "id": "loss-and-reveal.json",
+      "status": "specification-only",
+      "executed": false,
+      "evidence_owner": "privacy-security-stewardship owners plus evidence harness",
+      "inputs": ["lost opening", "lost encryption key", "early request", "year-2 display consent", "year-5 refusal", "year-10 silence death or incapacity"],
+      "expected": ["no inferred consent", "no forced display", "ceremony continues", "sealed orphan or no-survivor outcome"],
+      "failure_verdict": "block hidden-message extension on forced reveal inferred consent or undeclared recovery dependency"
+    },
+    {
+      "id": "steward-migration.json",
+      "status": "specification-only",
+      "executed": false,
+      "evidence_owner": "preservation-governance owners plus evidence harness",
+      "inputs": ["steward disappears before year 5", "storage migration", "algorithm deprecation", "successor appointment"],
+      "expected": ["same historical root reproduced", "continuity receipt published", "consent and policy unchanged", "source drift reported"],
+      "failure_verdict": "block if successor can silently alter cohort consent root or policy state"
+    },
+    {
+      "id": "grinding.json",
+      "status": "specification-only",
+      "executed": false,
+      "evidence_owner": "security-mechanism owner plus evidence harness",
+      "inputs": ["final submitter observes provisional state", "10000 message variants", "10000 randomness variants", "batch-close alternative", "hidden-output alternative"],
+      "expected": ["selection advantage measured", "intake design killed or repaired when advantage is material", "no fairness claim"],
+      "failure_verdict": "block cohort design on material steering advantage without a witnessed mitigation"
+    },
+    {
+      "id": "status-capture.json",
+      "status": "specification-only",
+      "executed": false,
+      "evidence_owner": "governance-behavioral owner plus evidence harness",
+      "inputs": ["founder", "whale donor", "technical steward", "moderator", "ordinary eligible submitter"],
+      "expected": ["no extra artifact count", "no featured placement by status", "no reveal privilege", "no rank reward reputation or governance change"],
+      "failure_verdict": "block event/intake design on any role or funding based symbolic weight"
+    },
+    {
+      "id": "economic-boundary.json",
+      "status": "specification-only",
+      "executed": false,
+      "evidence_owner": "token-governance owners plus evidence harness",
+      "inputs": ["vary every public artifact", "vary ordering and root", "vary symbolic integer and labels", "vary moderation dispositions", "vary event outcomes", "versioned PolicySourceSnapshot"],
+      "expected": ["no modeled dependency to total maximum initial or circulating supply", "no token allocation or emission change", "no reward credit reputation rank or governance change", "source drift flags external owner review"],
+      "failure_verdict": "hard kill RCBC on any ritual-to-policy write dependency",
+      "non_claim": "passing would not validate the economic quality of 1B or any other supply"
+    }
+  ],
+  "overall_verdict": "pass as a bounded specification artifact; block as validation evidence",
+  "next_route": "invoke-plan"
+}

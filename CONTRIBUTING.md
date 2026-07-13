@@ -24,6 +24,12 @@ proximity.
 4. Pick the narrowest route: source reading, claim update, subtower harvest,
    fixture expansion, dispatch, or authority promotion request.
 
+**Enable the pre-commit gate** (one-time per clone): `git config core.hooksPath .githooks`.
+It keeps `.arcanum/inventory/index.json` a true projection of the entry files — on a
+drift or a filesystem-truth failure it blocks the commit with the fix. Bypass a single
+commit with `git commit --no-verify`. If the index drifts:
+`python3 tools/build_inventory_index.py && git add .arcanum/inventory/index.json`.
+
 ## Acceptable Contribution Shapes
 
 - Add or correct a source record with source kind, bridge risk, local relevance,

@@ -51,6 +51,27 @@ source evidence
 No arrow is automatic. A candidate can be blocked, demoted, split, or sent back
 to corpus work.
 
+## Definition, Ontology, And Lifecycle Boundary
+
+The local definition lifecycle is owned by
+[ER-D23](../definitions/DEFINITIONS.md#er-d23-load-bearing-term-lifecycle), not by
+inventory, ontology, dispatch closeout, or fresh prose. A definition can be
+`grounded` for local research use while the condition it names remains
+`candidate`, open to challenge, and unvalidated.
+
+For ER-D1, this means:
+
+- definition lifecycle: `grounded` under ER-D23;
+- economy-condition status: `candidate`;
+- authority effect: none beyond local research use;
+- required next evidence: source posture, witness or typed negative,
+  collapse-test, attack lane, and skeptic gate for each conjunct.
+
+Inventory and any future ontology surface may model candidate meaning, evidence,
+relations, lifecycle state, and residue. They cannot decide the lifecycle
+verdict, promote a definition, validate an economy mechanism, or create policy,
+governance, token, bounty, payout, launch, or implementation authority.
+
 ## Non-Collapse Rules
 
 1. Contribution credit is not governance authority.

@@ -1,9 +1,52 @@
 {
   "schema_version": "inventory.index.v0.1",
   "inventory_root": ".arcanum/inventory",
-  "generated_at": "2026-06-29T16:09:27Z",
+  "generated_at": "2026-07-13T03:40:44Z",
   "human_index": "index.md",
   "entries": [
+    {
+      "id": "authority-definition-lifecycle-clarity",
+      "path": "entries/authority-definition-lifecycle-clarity.md",
+      "kind": "entry",
+      "type": "strategy-result",
+      "title": "Authority Definition Lifecycle Clarity",
+      "summary": "The dispatch answered the reader-facing authority question: \"How do we know Economy Resilience is the right definition?\" The accepted answer is deliberately demoted: this repository does **not** know that ER-D1 is right in the strong sense.",
+      "tags": [
+        "strategy-result",
+        "dispatch",
+        "subagents",
+        "definitions",
+        "authority",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../dispatch/authority-definition-lifecycle-clarity/findings.md",
+        "../../../dispatch/authority-definition-lifecycle-clarity/research.md",
+        "../../../definitions/DEFINITIONS.md",
+        "../../../authority/promotion-policy.md",
+        "../../../authority/AUTHORITY-MODEL.md",
+        "../../../telemetry/agents/subagents-dispatch.yaml",
+        "2026-06-30-authority-definition-lifecycle-clarity"
+      ],
+      "updated": "2026-07-13",
+      "status": "closed",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "authority-definition-lifecycle-clarity",
+        "er-d1-two-status-clarification",
+        "definition-lifecycle-grounded-economy-condition-candidate",
+        "er-d1-witness-challenge-matrix",
+        "definition-lifecycle-crosswalk",
+        "grounded-not-validated",
+        "resolved-not-truth-verdict",
+        "survived-not-general-validation"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "ER-D1 still needs actual witnesses or typed negatives for each conjunct."
+      ]
+    },
     {
       "id": "bets-and-prizes-device",
       "path": "entries/bets-and-prizes-device.md",
@@ -567,6 +610,40 @@
       ]
     },
     {
+      "id": "number-lottery-refinement",
+      "path": "entries/number-lottery-refinement.md",
+      "kind": "entry",
+      "type": "strategy-result",
+      "title": "Number Lottery Refinement",
+      "summary": "Number Lottery Refinement",
+      "tags": [
+        "strategy-result",
+        "dispatch",
+        "subagents",
+        "token-boundary",
+        "time-capsule",
+        "community-ritual",
+        "refine"
+      ],
+      "sources": [
+        "../../../development/refinement-runs/2026-07-12-number-lottery/",
+        "../../../development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/research.md",
+        "../../../development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/findings.md",
+        "../../../development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/auditor-receipt.md",
+        "../../../development/refinement-runs/2026-07-12-number-lottery/REFINE-DISPATCH.json",
+        "../../../development/refinement-runs/2026-07-12-number-lottery/OPERATOR-CORRECTION-2026-07-12.md"
+      ],
+      "updated": "2026-07-13",
+      "status": "research",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "- Research closure does not validate cryptography, confidentiality, unique-human participation, consent, fairness, behavioral engagement, governance, or token economics."
+      ]
+    },
+    {
       "id": "onboarding-docs-review",
       "path": "entries/onboarding-docs-review.md",
       "kind": "entry",
@@ -840,6 +917,7 @@
   ],
   "indexes": {
     "by_id": {
+      "authority-definition-lifecycle-clarity": "entries/authority-definition-lifecycle-clarity.md",
       "bets-and-prizes-device": "entries/bets-and-prizes-device.md",
       "cav2-authority-lifecycle-owned-build-harvest": "entries/cav2-authority-lifecycle-owned-build-harvest.md",
       "cav2-lean-development-pack-review": "entries/cav2-lean-development-pack-review.md",
@@ -854,6 +932,7 @@
       "harvest-strategy": "entries/harvest-strategy.md",
       "load-bearing-term-tracking-discipline": "entries/load-bearing-term-tracking-discipline.md",
       "local-source-snapshots": "entries/local-source-snapshots.md",
+      "number-lottery-refinement": "entries/number-lottery-refinement.md",
       "onboarding-docs-review": "entries/onboarding-docs-review.md",
       "repo-skill-surface": "entries/repo-skill-surface.md",
       "repository-working-guide": "entries/repository-working-guide.md",
@@ -884,7 +963,9 @@
         "research-tower-root"
       ],
       "strategy-result": [
-        "ergonomics-strategy"
+        "authority-definition-lifecycle-clarity",
+        "ergonomics-strategy",
+        "number-lottery-refinement"
       ],
       "synthesis": [
         "cav2-authority-lifecycle-owned-build-harvest",
@@ -918,6 +999,7 @@
         "economy-resilience-program"
       ],
       "authority": [
+        "authority-definition-lifecycle-clarity",
         "cav2-authority-lifecycle-owned-build-harvest",
         "harvest-strategy",
         "repository-working-guide"
@@ -929,6 +1011,9 @@
         "cav2-authority-lifecycle-owned-build-harvest",
         "local-source-snapshots"
       ],
+      "community-ritual": [
+        "number-lottery-refinement"
+      ],
       "constitution": [
         "cav2-lean-findings-development-pack",
         "load-bearing-term-tracking-discipline"
@@ -937,6 +1022,7 @@
         "load-bearing-term-tracking-discipline"
       ],
       "definitions": [
+        "authority-definition-lifecycle-clarity",
         "cav2-lean-findings-development-pack",
         "load-bearing-term-tracking-discipline",
         "strategy-result-four-surface-reconciliation"
@@ -946,6 +1032,7 @@
         "cav2-lean-findings-development-pack"
       ],
       "dispatch": [
+        "authority-definition-lifecycle-clarity",
         "cav2-authority-lifecycle-owned-build-harvest",
         "cav2-lean-development-pack-review",
         "cav2-lean-findings",
@@ -953,6 +1040,7 @@
         "economy-resilience-program",
         "ergonomics-strategy",
         "harvest-strategy",
+        "number-lottery-refinement",
         "onboarding-docs-review",
         "strategy-result-cav2-lean-harvest",
         "strategy-result-four-surface-reconciliation",
@@ -1015,12 +1103,14 @@
         "bets-and-prizes-device"
       ],
       "refine": [
-        "contribution-edge-fixture-full-refine-plan"
+        "contribution-edge-fixture-full-refine-plan",
+        "number-lottery-refinement"
       ],
       "reflection": [
         "domainspec-subagents-reflection-loop"
       ],
       "resonantos-economy": [
+        "authority-definition-lifecycle-clarity",
         "bets-and-prizes-device",
         "cav2-authority-lifecycle-owned-build-harvest",
         "cav2-lean-development-pack-review",
@@ -1055,17 +1145,21 @@
         "local-source-snapshots"
       ],
       "strategy-result": [
+        "authority-definition-lifecycle-clarity",
         "economy-resilience-program",
         "ergonomics-strategy",
+        "number-lottery-refinement",
         "onboarding-docs-review",
         "strategy-result-cav2-lean-harvest",
         "strategy-result-four-surface-reconciliation"
       ],
       "subagents": [
+        "authority-definition-lifecycle-clarity",
         "cav2-lean-development-pack-review",
         "domainspec-subagents-reflection-loop",
         "economy-resilience-program",
         "ergonomics-strategy",
+        "number-lottery-refinement",
         "onboarding-docs-review",
         "strategy-result-cav2-lean-harvest",
         "strategy-result-four-surface-reconciliation",
@@ -1083,6 +1177,12 @@
       "telemetry": [
         "subagents-dispatch-strategy",
         "telemetry-agent-pool"
+      ],
+      "time-capsule": [
+        "number-lottery-refinement"
+      ],
+      "token-boundary": [
+        "number-lottery-refinement"
       ],
       "tower": [
         "research-tower-root"
@@ -1145,10 +1245,16 @@
       "../../../TOWER.md": [
         "research-tower-root"
       ],
+      "../../../authority/AUTHORITY-MODEL.md": [
+        "authority-definition-lifecycle-clarity"
+      ],
       "../../../authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md": [
         "cav2-lean-development-pack-review",
         "cav2-lean-findings-development-pack",
         "load-bearing-term-tracking-discipline"
+      ],
+      "../../../authority/promotion-policy.md": [
+        "authority-definition-lifecycle-clarity"
       ],
       "../../../definitions/DEFINITION-DRIFT-AUDIT.md": [
         "cav2-lean-findings-development-pack",
@@ -1159,6 +1265,7 @@
         "cav2-lean-findings-development-pack"
       ],
       "../../../definitions/DEFINITIONS.md": [
+        "authority-definition-lifecycle-clarity",
         "cav2-lean-findings-development-pack",
         "load-bearing-term-tracking-discipline"
       ],
@@ -1178,6 +1285,24 @@
         "cav2-authority-lifecycle-owned-build-harvest",
         "cav2-lean-findings-development-pack"
       ],
+      "../../../development/refinement-runs/2026-07-12-number-lottery/": [
+        "number-lottery-refinement"
+      ],
+      "../../../development/refinement-runs/2026-07-12-number-lottery/OPERATOR-CORRECTION-2026-07-12.md": [
+        "number-lottery-refinement"
+      ],
+      "../../../development/refinement-runs/2026-07-12-number-lottery/REFINE-DISPATCH.json": [
+        "number-lottery-refinement"
+      ],
+      "../../../development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/auditor-receipt.md": [
+        "number-lottery-refinement"
+      ],
+      "../../../development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/findings.md": [
+        "number-lottery-refinement"
+      ],
+      "../../../development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/research.md": [
+        "number-lottery-refinement"
+      ],
       "../../../development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/REFINE-DISPATCH.json": [
         "contribution-edge-fixture-full-refine-plan"
       ],
@@ -1194,6 +1319,12 @@
       ],
       "../../../dispatch/PROPOSED-META-PROGRAM.md": [
         "economy-resilience-program"
+      ],
+      "../../../dispatch/authority-definition-lifecycle-clarity/findings.md": [
+        "authority-definition-lifecycle-clarity"
+      ],
+      "../../../dispatch/authority-definition-lifecycle-clarity/research.md": [
+        "authority-definition-lifecycle-clarity"
       ],
       "../../../dispatch/economy-synthesis/findings.md": [
         "economy-resilience-program"
@@ -1319,6 +1450,7 @@
         "telemetry-agent-pool"
       ],
       "../../../telemetry/agents/subagents-dispatch.yaml": [
+        "authority-definition-lifecycle-clarity",
         "cav2-authority-lifecycle-owned-build-harvest",
         "cav2-lean-development-pack-review",
         "cav2-lean-findings",
@@ -1359,6 +1491,9 @@
       ],
       "2026-06-29-ergonomics-strategy": [
         "ergonomics-strategy"
+      ],
+      "2026-06-30-authority-definition-lifecycle-clarity": [
+        "authority-definition-lifecycle-clarity"
       ],
       "BET-PRZ-01-a": [
         "bets-and-prizes-device"
@@ -1402,6 +1537,7 @@
         "telemetry-agent-pool"
       ],
       "closed": [
+        "authority-definition-lifecycle-clarity",
         "economy-resilience-program",
         "ergonomics-strategy",
         "onboarding-docs-review",
@@ -1410,6 +1546,9 @@
       ],
       "closed-first-harvest": [
         "harvest-strategy"
+      ],
+      "research": [
+        "number-lottery-refinement"
       ]
     },
     "by_evidence_card": {},

@@ -38,7 +38,25 @@ participants learn the reward rules.
 Domain-context voice: this is the repo's top-level research target. It is a
 candidate condition to study, not a proven invariant.
 
-Use carefully: future versions need workflow witnesses for each conjunct.
+Definition lifecycle: `grounded` under ER-D23, meaning tracked enough for local
+research use at this source posture and promotion boundary.
+
+Economy-condition status: `candidate`. The conjunct set is the current research
+target; it is not validated, official, proven, fixture-passed, promoted,
+policy-ready, or implementation-ready.
+
+Use carefully: future versions need workflow witnesses or typed negatives for
+each conjunct.
+
+Required witness/challenge matrix (current status: open):
+
+| Conjunct | Source posture | Witness or typed negative | Collapse test / attack lane | Current route |
+| --- | --- | --- | --- | --- |
+| `contribution_value_visible` | operator-reading; local-inference | open | A workflow where contribution value cannot be made visible without erasing important invisible work would force revision. | ER-D23 `grounded` definition / candidate condition |
+| `reward_gaming_bounded` | operator-reading; local-inference | open | A witnessed reward path that is profitably farmed without useful contribution would force revision or split. | ER-D23 `grounded` definition / candidate condition |
+| `authority_not_promoted_by_signal` | operator-reading; local-inference | open | A witnessed path where signal alone changes authority, governance power, or launch readiness would zero this conjunct. | ER-D23 `grounded` definition / candidate condition |
+| `treasury_or_financial_risk_gated` | operator-reading; local-inference; open-residue | open | A financial mechanism that bypasses Phase-2 gates or treats candidate treasury/runway terms as readiness would force revision. | ER-D23 `grounded` definition / candidate condition |
+| `community_mentalities_do_not_collapse_to_task_extraction` | operator-reading; local-inference | open | A witnessed incentive loop where contributors optimize task extraction over community purpose would force revision. | ER-D23 `grounded` definition / candidate condition |
 
 Misuse warning: do not equate resilience with token price stability,
 participation volume, or clean audits.

@@ -1,0 +1,20 @@
+{
+  "unit_id": "RCBC",
+  "name": "Ritual Capsule Boundary Contract",
+  "status": "selected-for-design-not-validated",
+  "abstraction_level": "capability-workflow-boundary",
+  "responsibility": "Freeze one admitted cohort under versioned rules and emit a reproducible provenance-bearing symbolic integer plus commemorative event identifiers while preventing ritual inputs and outputs from changing token supply rewards credit reputation or governance authority.",
+  "minimum_scope": {
+    "submission_modes": ["public-artifact", "abstain"],
+    "outputs": ["canonical-public-manifest", "ordered-cohort-root", "provenance-bearing-symbolic-integer", "commemorative-labels", "event-contracts", "zero-effect-receipt"],
+    "policy_reference": {"planned_total_supply": 1000000000, "status": "current-draft-source-fact-not-validated"}
+  },
+  "extensions": [
+    {"id": "CommittedArtifactExtension", "status": "deferred-pending-construction-threat-model-and-fixtures"},
+    {"id": "EncryptedRecoveryExtension", "status": "deferred-outside-minimum-unit"}
+  ],
+  "eliminated": ["character-codepoint-sum", "direct-word-derived-supply"],
+  "deferred": ["externally-bounded-economic-mapping"],
+  "required_fixture_boundary": ["canonicalization.json", "cohort-abuse.json", "participation-modes.json", "harmful-reveal.json", "loss-and-reveal.json", "steward-migration.json", "grinding.json", "status-capture.json", "economic-boundary.json"],
+  "next_route": "invoke-design"
+}
