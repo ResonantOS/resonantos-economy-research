@@ -1,0 +1,111 @@
+preset:
+  id: github_repository_readme
+  label: GitHub Repository README
+  status: candidate_whisper_preset
+  host_surface: github_repository
+  reader_effect_proof: none
+
+lineage:
+  precedent_url: https://github.com/ConsultingFuture4200/repo-readme
+  inspected_commit: e8f866b6e186c523a5f9b3147cb2ce6015908e29
+  reuse_kind: abstracted_and_paraphrased_precedent
+  license_posture: unresolved_no_license_file_observed
+  verbatim_copying: prohibited
+
+selectors:
+  operation:
+    allowed: [create, revise_existing]
+  project_kind:
+    allowed: [general, library, application, framework_ecosystem]
+    conflict_result: abstain_manual_selection
+  depth_strategy:
+    allowed: [direct, progressive_disclosure]
+  overlay_ids:
+    composable: true
+    local_available: [governed_research_repository]
+
+reader_job:
+  posture: candidate_authoring_contract
+  required_shape:
+    primary: [verb, object, completion_witness]
+    supporting: optional_ordered_list
+  kill_if: no_unique_decision_beyond_existing_whisper_owners
+
+revision_preservation:
+  required_before_restructure:
+    - verified_facts
+    - commands_and_expected_results
+    - working_links
+    - current_status
+    - license_evidence_or_unknown
+    - evidence_and_authority_boundaries
+  forbidden_inference:
+    - license
+    - command
+    - url
+    - maturity
+    - reader_result
+
+audience_disclosure:
+  placement: [inline, linked, on_demand]
+  obligation: [required_inline, may_defer]
+  required_inline_defaults:
+    - status
+    - prerequisites
+    - safety_limits
+    - evidence_posture
+    - authority_boundaries
+    - stop_conditions
+    - irreversible_consequences
+
+first_action_path:
+  applicability: procedural_or_executable_reader_job_only
+  fields:
+    - applicability
+    - prerequisite
+    - action
+    - expected_observable_result
+    - verification
+    - stop_condition
+    - deeper_route
+
+governed_research_repository:
+  requires:
+    - local_research_status_inline
+    - local_research_only_posture_inline
+    - claim_evidence_boundary_inline
+    - research_policy_boundary_inline
+    - non_authority_boundary_inline
+    - canonical_inventory_start_here_inline
+    - deeper_evidence_and_authority_routes
+  refuses:
+    - historical_evidence_rewrite
+    - append_only_rewrite
+    - policy_or_authority_promotion
+
+validation:
+  deterministic_status: [structure_check_pass, structure_check_flag, structure_check_block]
+  deterministic_only:
+    - declared_structure
+    - unresolved_placeholders
+    - balanced_code_fences
+    - local_link_targets
+    - image_alt_presence
+    - mermaid_accessibility_metadata_presence
+    - required_inline_marker_placement
+    - declared_license_evidence
+  human_only:
+    - truth
+    - completeness
+    - safety
+    - meaning
+    - reader_understanding
+    - policy
+    - authority
+
+kill_rules:
+  - hides_required_boundary
+  - copies_unlicensed_template_expression
+  - treats_conversion_engagement_stars_or_speed_as_quality
+  - duplicates_existing_owner_without_unique_decision
+  - confidently_infers_selector_when_evidence_conflicts

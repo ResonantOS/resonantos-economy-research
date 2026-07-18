@@ -1,0 +1,78 @@
+{
+  "schema_version": "resonantos.whisper-overlay-snapshot.v1",
+  "manifest": ".arcanum/runtime-overlays/whisper/manifest.json",
+  "manifest_sha256": "24b02528ba90760f82f8572fcf4f1a8e26b55e7a395a59e01aa9f8a050670ba1",
+  "files": [
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/README.md",
+      "size": 4864,
+      "sha256": "b8c3923dbea22501500c8afe99a4ec80612d342e5aa4e96c561c7130af9b454d"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/fixtures/README.md",
+      "size": 866,
+      "sha256": "1f1c3eba1716dac3eca0ce89bfe83521391c86890bbabfdd0a4cbf545f35a315"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/fixtures/dangerous-conversion-block.md",
+      "size": 422,
+      "sha256": "f1a3acdfc68ce9176d631d5d0df58d1bd122d03fe4c7e43cf2f26d85afb8c739"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/fixtures/expectations.json",
+      "size": 1154,
+      "sha256": "8f5a3dc47c0a234950ddb7fb885adc34bc84a921dfc660f77840ed6f5d90b4b2"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/fixtures/governed-research-pass.md",
+      "size": 815,
+      "sha256": "ba4b47c28b8a9dbaafb0f167adbf1b563e0151729b09d6c846026e4e98e0ff6e"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/fixtures/human-language-pair.md",
+      "size": 1015,
+      "sha256": "0e058c2031c50d73e3729f04a3755354d43304c6f12a3c5414293c723c9d1eaa"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/fixtures/library-pass.md",
+      "size": 417,
+      "sha256": "b4f2164bb737e3af934b35320a56c716fd847d25d2633b6265c7a3dc3d0ca8f7"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/preset.yaml",
+      "size": 3035,
+      "sha256": "59ab1c94d8dbee3905036d8089fb2c34fa88876fce35f15a3d954d2c8b941c0c"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/template.md",
+      "size": 1183,
+      "sha256": "cb329ea0de9dc53f245b2d543fad3338e19c045454d6e6f943fe6a9797ab042d"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/tools/validate_readme_preset.py",
+      "size": 5943,
+      "sha256": "9c56b65bf35d5e643999449fd75667b429fac6b472ae7cf8e5f55f8c44c9cd33"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/local-overlays.md",
+      "size": 837,
+      "sha256": "888d149f5956eee75adbe08cfe3a4dc62a2a0daae27fa1267615af57658286d0"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/product-research-blueprint/README.md",
+      "size": 2144,
+      "sha256": "dfd0609a047169a137d6b52583d777b99ee20c7f8b92a76323e5d276bb84644d"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/product-research-blueprint/preset.yaml",
+      "size": 7801,
+      "sha256": "30579eb8889e84e7750da2cdb515cf0e486631bbcbcb8fb277b2b4f54f13132b"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/product-research-blueprint/template.md",
+      "size": 3622,
+      "sha256": "e6ad076697144e665db0c210eb31869269ef4df11990d83a72fc35311e68c9bd"
+    }
+  ],
+  "missing": []
+}

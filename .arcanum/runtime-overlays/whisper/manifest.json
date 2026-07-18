@@ -1,0 +1,23 @@
+{
+  "schema_version": "resonantos.whisper-local-overlays.v1",
+  "owner": "resonantos-economy-research",
+  "generated_root": ".agents/skills/whisper",
+  "failure_behavior": "block_sync_closeout_until_owned_paths_are_restored_and_verified",
+  "overlays": [
+    {
+      "path": ".agents/skills/whisper/presets/product-research-blueprint",
+      "kind": "directory",
+      "posture": "existing_repository_local_preset"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme",
+      "kind": "directory",
+      "posture": "candidate_repository_local_preset"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/local-overlays.md",
+      "kind": "file",
+      "posture": "repository_local_discovery_index"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "markdown": [
+    {
+      "path": "library-pass.md",
+      "expected": "structure_check_pass"
+    },
+    {
+      "path": "governed-research-pass.md",
+      "expected": "structure_check_pass"
+    },
+    {
+      "path": "dangerous-conversion-block.md",
+      "expected": "structure_check_block"
+    }
+  ],
+  "selector_cases": [
+    {
+      "id": "library_only",
+      "evidence": ["library"],
+      "expected": "library"
+    },
+    {
+      "id": "application_only",
+      "evidence": ["application"],
+      "expected": "application"
+    },
+    {
+      "id": "mixed_monorepo",
+      "evidence": ["library", "application"],
+      "expected": "abstain_manual_selection"
+    },
+    {
+      "id": "no_primary_kind",
+      "evidence": [],
+      "expected": "general"
+    }
+  ],
+  "lifecycle_cases": [
+    {
+      "id": "historical_findings_rewrite",
+      "lifecycle": "historical",
+      "request": "modernize_prose",
+      "expected": "refuse_rewrite_offer_active_summary"
+    },
+    {
+      "id": "active_readme_revision",
+      "lifecycle": "active",
+      "request": "revise_existing",
+      "expected": "freeze_verified_facts_then_propose"
+    }
+  ]
+}
