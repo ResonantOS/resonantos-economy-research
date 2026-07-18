@@ -1,0 +1,243 @@
+preset:
+  id: product_research_blueprint
+  label: Product Research Blueprint
+  status: candidate_whisper_preset
+  transport: product_research_blueprint
+  example:
+    source: research/tower-system-taxonomy/Tower-System.pdf
+    extracted_pattern:
+      - title_page_with_status_sources_and_one_line_promise
+      - story_first_product_view
+      - concrete_day_with_it_scene
+      - audience_and_job_to_be_done
+      - why_it_can_work_from_owned_or_precedent_parts
+      - honest_part_what_is_bet_not_feature
+      - system_view_layers_flow_reuse_map_components
+      - load_bearing_stances_and_evidence_boundary
+      - where_to_go_next
+
+intent:
+  objective: >
+    Produce an in-depth but tightly selected proposal and description blueprint
+    research document that explains the idea, why to chase it, what goals and
+    impacts it targets, what gaps remain, and what must be verified before
+    implementation or promotion.
+  reader_reward: >
+    The reader should understand the vision, believe the work is worth pursuing,
+    see the honest proof boundary, and know the next verification moves.
+  compression_rule: >
+    Preserve only what changes the reader's next decision. Cut clever details
+    that do not affect the idea, evidence boundary, verification plan, goals, or
+    impact.
+
+resonance_core:
+  tone: visionary_but_proof_honest
+  voice: founder_researcher_field_notebook
+  style_register: story_first_then_systematic
+  emotional_residue:
+    - this_idea_has_a_real_center
+    - the_hard_parts_are_named
+    - the_next_steps_are_worth_doing
+  value_signal:
+    - clear_problem_pressure
+    - believable_assembly_from_existing_strength
+    - disciplined_gap_ownership
+    - practical_next_verification
+  forbidden_feels:
+    - hype_without_evidence
+    - academic_throat_clearing
+    - exhaustive_inventory_dump
+    - pretending_a_bet_is_shipped
+    - drowning_the_vision_in_governance
+
+relevance_core:
+  target_public_options:
+    - internal_product_owner
+    - research_group
+    - technical_founder
+    - product_builder
+    - strategic_partner
+    - technical_investor
+  reader_state: >
+    Curious and capable, but not yet carrying the whole research context.
+  assumed_knowledge: >
+    Can follow product, research, and system vocabulary when terms are anchored
+    in a concrete scene.
+  likely_objections:
+    - Is this distinct from existing work?
+    - What is proven versus imagined?
+    - Why chase this before simpler work?
+    - What would invalidate it?
+    - What is the first credible proof?
+  authority_mode: >
+    Source-backed proposal. It can recommend a direction, but must not promote
+    definitions, schemas, implementation authority, token claims, public claims,
+    or legal readiness by prose alone.
+
+trajectory_core:
+  narrative_anchor: >
+    Start from a concrete moment where the current world fails, then show the
+    target scene where the idea changes the work.
+  introduction_strategy:
+    - name_the_friction
+    - show_the_reader_a_scene
+    - compress_the_solution_into_one_sentence
+  body_parts:
+    - title_and_status
+    - executive_brief
+    - the_frustration
+    - the_idea_in_one_image
+    - a_day_with_it
+    - who_it_is_for_and_the_job_it_does
+    - why_chase_this
+    - product_goals_and_impact
+    - system_blueprint
+    - owned_parts_vs_bets
+    - gaps_and_load_bearing_stances
+    - verification_plan
+    - mvp_or_stage_sequence
+    - risks_and_non_goals
+    - next_decisions
+    - source_trace
+  ending_strategy: >
+    End with the smallest proof or decision that determines whether to continue,
+    not with a generic inspirational close.
+  length:
+    default_words: 3500-6500
+    rendered_target: 8-14 pages
+    short_variant: 1800-3000 words
+    long_variant: 7000-10000 words
+
+composition_contract:
+  title_page:
+    required:
+      - document_family
+      - idea_name
+      - one_line_promise
+      - status
+      - evidence_sources
+      - prepared_date
+  product_view:
+    required:
+      - problem_scene
+      - idea_metaphor_or_one_image
+      - target_user_scene
+      - audience_jobs
+      - why_it_can_work
+      - honest_part
+      - one_line_promise
+  system_view:
+    required:
+      - one_sentence_system_model
+      - layer_stack_or_workflow
+      - given_vs_optimized_or_fixed_vs_variable
+      - data_flow_or_user_flow
+      - reuse_map
+      - component_inventory
+      - load_bearing_stances
+      - evidence_boundary
+      - where_to_go_next
+  research_view:
+    required:
+      - gaps
+      - verification_questions
+      - validation_witnesses
+      - pass_fail_signals
+      - open_risks
+      - non_goals
+      - source_trace
+
+section_guidance:
+  executive_brief:
+    purpose: Give the reader the whole document in one page.
+    include:
+      - idea_in_one_sentence
+      - why_now
+      - why_chase
+      - current_status
+      - first_proof
+  the_frustration:
+    purpose: Make the problem felt before explaining the system.
+    rule: Use one concrete scene and at most three broken things.
+  the_idea_in_one_image:
+    purpose: Compress the product into a durable mental model.
+    rule: Prefer one strong metaphor or mechanism over a taxonomy.
+  a_day_with_it:
+    purpose: Show the future workflow as if the product is working.
+    rule: Mark the scene as target experience if it is not yet proven.
+  why_chase_this:
+    purpose: Justify pursuit without pretending certainty.
+    include:
+      - compounding_advantage
+      - owned_or_adjacent_strength
+      - strategic_differentiation
+      - smallest_credible_proof
+  product_goals_and_impact:
+    purpose: Explain what success changes.
+    include:
+      - user_goal
+      - system_goal
+      - research_goal
+      - business_or_ecosystem_goal
+      - impact_if_successful
+      - impact_if_wrong_but_well_tested
+  system_blueprint:
+    purpose: Explain the mechanism after the reader wants it.
+    rule: Use layers, workflow, or components only when they clarify action.
+  owned_parts_vs_bets:
+    purpose: Keep credibility calibrated.
+    evidence_tiers:
+      - executed
+      - owned_design_stage
+      - build_from_owned
+      - net_new
+      - blocked_or_unknown
+  gaps_and_load_bearing_stances:
+    purpose: Name the hinges.
+    rule: A gap is load-bearing only if resolving it changes build, kill, or sequence.
+  verification_plan:
+    purpose: Turn uncertainty into tests.
+    include:
+      - question
+      - witness
+      - method
+      - pass_signal
+      - fail_signal
+      - next_route
+  mvp_or_stage_sequence:
+    purpose: Show pursuit order.
+    rule: Put credit, evidence, privacy, authority, and legal gates before money or public claims when relevant.
+
+validation:
+  required_checks:
+    - title_page_names_status_sources_and_one_line_promise
+    - first_two_pages_can_be_read_without_prior_context
+    - problem_scene_precedes_architecture
+    - one_line_promise_reappears_after_honest_gap_section
+    - every material current-state claim has evidence_or_is_marked_assumption
+    - evidence_tiers_are_explicit
+    - gaps_are_load_bearing_not_miscellaneous
+    - verification_plan_has_pass_and_fail_signals
+    - goals_and_impacts_are_concrete
+    - non_goals_block_unsafe_or_overbroad_claims
+    - next_decision_is_specific
+  fail_conditions:
+    - sounds_like_pitch_deck_without_research_boundary
+    - becomes_exhaustive_notes_instead_of_blueprint
+    - hides_unproven_core_inside_confident_product_language
+    - claims_implementation_legal_token_public_or_authority_readiness_without_gate
+    - lacks_a_scene_that_shows_the_product_working
+
+output_contract:
+  primary_artifact: proposal-blueprint.md
+  optional_artifacts:
+    - source-trace.md
+    - verification-plan.md
+    - review.html
+  next_route_options:
+    - revise
+    - decision-gate
+    - task-session
+    - research-dispatch
+    - publish-prep
+    - deferred
