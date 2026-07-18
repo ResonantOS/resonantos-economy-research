@@ -5,6 +5,20 @@ Owner: ResonantOS economy research owner
 
 This folder is reserved for validation harnesses, fixtures, and reports.
 
+## Try One Known-Answer Case
+
+Before trusting a validator, rehearse one case whose answer is already known.
+
+1. Open the [contribution-edge fixture matrix](contribution-edge-fixtures/MATRIX.md).
+2. Pick one positive case and one case that must stop.
+3. Predict the result before reading the recorded expectation.
+4. Check whether the schema and matrix explain the same decision.
+
+The expected result is agreement about how the record should be handled. Stop
+if a fixture pass is described as proof that the economy works, that a person
+deserves payment, or that anyone gains decision-making power. The fixture is a
+crash-test dummy for the evidence machinery, not a live community result.
+
 Current validation is review-only:
 
 - source links resolve;

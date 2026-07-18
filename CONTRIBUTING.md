@@ -30,6 +30,31 @@ drift or a filesystem-truth failure it blocks the commit with the fix. Bypass a 
 commit with `git commit --no-verify`. If the index drifts:
 `python3 tools/build_inventory_index.py && git add .arcanum/inventory/index.json`.
 
+## Your First Safe Contribution
+
+Start with one small active-document route, not a new economy mechanism.
+
+1. Pick a confusing link or explanation in `README.md`, `GUIDE.md`,
+   `CONTRIBUTING.md`, `QUERYING.md`, `prizes/README.md`, or
+   `validation/README.md`.
+2. Read the linked owner before changing the explanation. Preserve status,
+   evidence limits, blocked uses, and stop conditions.
+3. Make the smallest change that helps a reader complete one task.
+4. Run:
+
+   ```bash
+   python3 tools/check_markdown_links.py README.md GUIDE.md CONTRIBUTING.md \
+     QUERYING.md prizes/README.md validation/README.md
+   python3 tools/build_inventory_index.py --check
+   git diff --check
+   ```
+
+   The expected result is three clean checks and a diff that changes only the
+   intended reader route.
+5. Stop and ask the canonical owner if the change would alter a definition,
+   authority rule, source claim, register, schema, historical result, or
+   generated runtime file.
+
 ## Acceptable Contribution Shapes
 
 - Add or correct a source record with source kind, bridge risk, local relevance,

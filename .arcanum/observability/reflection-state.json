@@ -1,6 +1,6 @@
 {
   "schema_version": "arcanum.reflection-state.v0.1",
-  "updated": "2026-07-17T12:35:49Z",
+  "updated": "2026-07-18T03:21:26Z",
   "sigils": {
     "domainspec-subagents-strategy": {
       "last_reflection": "2026-06-27T02:22:14Z",
@@ -25,16 +25,16 @@
       "next_trigger": "output threshold reached; run workflow-reflect when maintenance is authorized"
     },
     "whisper": {
-      "last_reflection": "2026-07-17T12:35:49Z",
-      "last_report": ".arcanum/observability/reflections/2026-07-17-whisper-correction-convergence.md",
-      "meaningful_executions_since_reflection": 3,
-      "generated_outputs_since_reflection": 15,
+      "last_reflection": "2026-07-18T03:05:45Z",
+      "last_report": ".arcanum/observability/reflections/2026-07-17-whisper-repo-readme-and-beginner-language-addendum.md",
+      "meaningful_executions_since_reflection": 1,
+      "generated_outputs_since_reflection": 34,
       "related_workflow_gaps_since_reflection": 0,
       "severe_workflow_gaps_since_reflection": 0,
       "quality_bar_failures_since_reflection": 0,
       "output_contract_drift_since_reflection": 0,
-      "last_observed_at": "2026-07-18T02:21:54Z",
-      "next_trigger": "reflect after 2 more meaningful executions, 25 more outputs, 2 more related corrections, 2 meaning-core corrections, any output drift, or one severe gate/safety gap"
+      "last_observed_at": "2026-07-18T03:21:26Z",
+      "next_trigger": "reflect after 4 more meaningful executions, 6 more outputs, 3 related gaps, 2 meaning-core corrections, any later rejected pass, or one severe gate/safety gap"
     },
     "task-session": {
       "last_reflection": null,

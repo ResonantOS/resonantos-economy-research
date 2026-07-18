@@ -1,0 +1,101 @@
+text_intent_substrate:
+  transport_schema:
+    length_words:
+      min: 50
+      max: 20000
+    max_characters: 150000
+    opening_contract:
+      validation_rules:
+        first_paragraph_cannot_match:
+          - "(?i)^this (section|document|page) (explains|describes|will)"
+      external_reference_policy:
+        external_reference_terms: []
+        allowed_after_paragraph: 1
+  readability_dynamics:
+    layer_id: repository_reader_task_pilot_v1
+    defaults:
+      severity_default: flag
+      max_words_per_paragraph: 90
+      max_sentences_per_paragraph: 6
+      max_consecutive_dense_paragraphs: 1
+    delivery_flow:
+      intent_narration_patterns:
+        - "(?i)^this section (explains|describes|shows)"
+        - "(?i)^we will (explain|describe|show|discuss)"
+      detect_exact_duplicate_prose_blocks: true
+      duplicate_block_min_words: 10
+      human_review_checks:
+        - plain_action_before_formal_label_for_unfamiliar_readers
+        - correctness_and_visible_boundaries_before_brevity
+        - first_action_has_expected_result_and_stop_condition_when_applicable
+
+intent:
+  objective: >
+    Add a candidate GitHub repository README preset and improve the repository's
+    active newcomer documentation without rewriting evidence history or claiming
+    reader benefit that has not been tested.
+  primary_reader_job:
+    verb: choose_and_complete
+    object: first_safe_repository_action
+    completion_witness: expected_result_and_limit_are_both_identified
+  author_objective: >
+    Make the repository easier to enter and the writing workflow more concrete,
+    example-led, and owner-aware.
+  desired_reader_change: >
+    A newcomer can recognize the repository's purpose, choose a route, and know
+    what the first action can and cannot establish.
+  success_signal: >
+    Structural fixtures, link checks, overlay preservation, and a complete
+    documentation disposition ledger pass; reader understanding remains no-conclusion.
+
+resonance_core:
+  tone: down_to_earth_candid_and_precise
+  voice: collaborative_research_guide
+  forbidden_feels:
+    - protocol_manual_before_human_situation
+    - marketing_funnel
+    - universal_best_practice
+    - polished_overclaim
+
+relevance_core:
+  reader_state: unfamiliar_with_repository_terms
+  reader_job_rule: ordinary_situation_and_action_before_formal_label
+  required_boundaries:
+    - local_research_only
+    - claim_at_or_below_evidence
+    - research_not_policy
+    - score_not_authority
+    - structural_pass_not_reader_proof
+
+trajectory_core:
+  entry: recognizable_situation_or_question
+  new_information: repository_term_only_after_plain_meaning
+  consequence: what_the_reader_can_do_or_decide
+  transition: owner_link_for_deeper_detail
+
+surface_map:
+  active_pilots:
+    - README.md
+    - GUIDE.md
+    - CONTRIBUTING.md
+    - QUERYING.md
+    - prizes/README.md
+    - prizes/EXPERIMENT-EXAMPLES.md
+    - validation/README.md
+  required_inline:
+    - status
+    - evidence_limit
+    - authority_limit
+    - prerequisite
+    - stop_condition
+  excluded:
+    - historical_evidence
+    - append_only_records
+    - generated_core
+    - canonical_authority_contracts
+
+evidence_state:
+  external_precedent_license: unresolved
+  preset_status: candidate
+  reader_effect: no_conclusion
+  migration_shape: bounded_pilot_plus_coverage_audit

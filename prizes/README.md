@@ -4,6 +4,28 @@ Status: active research device
 Promotion scope: local-research-only
 Owner route: standalone research authority (repository-local research-credibility constitution)
 
+## Start With One Disagreement
+
+A community event goes well, but the public recap names only the speaker. One
+person says, “Add a short note about the people who found the accessible room,
+called absent members, and repaired the schedule.” Another replies, “Careful:
+that note might sound like a promise of payment or influence.”
+
+There are now two separate ideas to test:
+
+1. the note helps people notice hidden work more accurately; and
+2. the message does not create the wrong expectation.
+
+The repository calls the larger research target a **prize** and each prediction
+that can lose a **bet**. Neither word means money here. A prize is closer to an
+open engineering challenge, and a bet is closer to writing down your prediction
+before seeing the answer.
+
+Try the same move on any attractive economy idea: split it into independent
+predictions, write what would prove each one wrong, and do not let one good
+result answer the others. The [everyday experiment examples](EXPERIMENT-EXAMPLES.md)
+show four different stories before the formal field contracts below.
+
 ## What This Is
 
 This is the research device that turns the tower from a *precedent cataloguer* into

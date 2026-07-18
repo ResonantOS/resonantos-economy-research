@@ -1,7 +1,7 @@
 {
   "schema_version": "inventory.index.v0.1",
   "inventory_root": ".arcanum/inventory",
-  "generated_at": "2026-07-18T02:22:35Z",
+  "generated_at": "2026-07-18T03:21:10Z",
   "human_index": "index.md",
   "entries": [
     {
@@ -1245,6 +1245,42 @@
       "evidence_card_ids": [],
       "evidence_set_ids": [],
       "residue": []
+    },
+    {
+      "id": "whisper-repo-readme-writing-patterns",
+      "path": "entries/whisper-repo-readme-writing-patterns.md",
+      "kind": "entry",
+      "type": "strategy-result",
+      "title": "Whisper Repo-README Writing Patterns",
+      "summary": "Whisper Repo-README Writing Patterns",
+      "tags": [
+        "strategy-result",
+        "dispatch",
+        "subagents",
+        "synthesis",
+        "skills",
+        "onboarding",
+        "workflow",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../telemetry/agents/subagents-dispatch.yaml",
+        "../../../.agents/skills/domainspec-check-tension/SKILL.md",
+        "../../../.agents/skills/whisper/SKILL.md",
+        "../../../dispatch/whisper-repo-readme-writing-patterns/research.md",
+        "../../../dispatch/whisper-repo-readme-writing-patterns/findings.md",
+        "../../../dispatch/whisper-repo-readme-writing-patterns/whisper/WHISPER-RESULT.md",
+        "../../../.agents/skills/whisper/presets/github-repository-readme/README.md",
+        "../../runtime-overlays/whisper/README.md",
+        "2026-07-17-whisper-repo-readme-patterns"
+      ],
+      "updated": "2026-07-18",
+      "status": "research",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": []
     }
   ],
   "indexes": {
@@ -1280,7 +1316,8 @@
       "strategy-result-four-surface-reconciliation": "entries/strategy-result-four-surface-reconciliation.md",
       "subagents-dispatch-strategy": "entries/subagents-dispatch-strategy.md",
       "telemetry-agent-pool": "entries/telemetry-agent-pool.md",
-      "time-capsule-live-intake-refine": "entries/time-capsule-live-intake-refine.md"
+      "time-capsule-live-intake-refine": "entries/time-capsule-live-intake-refine.md",
+      "whisper-repo-readme-writing-patterns": "entries/whisper-repo-readme-writing-patterns.md"
     },
     "by_type": {
       "development-handoff": [
@@ -1310,7 +1347,8 @@
         "monetary-circulation-tower",
         "number-lottery-refinement",
         "repository-onboarding-experiment-literacy",
-        "time-capsule-live-intake-refine"
+        "time-capsule-live-intake-refine",
+        "whisper-repo-readme-writing-patterns"
       ],
       "synthesis": [
         "cav2-authority-lifecycle-owned-build-harvest",
@@ -1403,7 +1441,8 @@
         "strategy-result-cav2-lean-harvest",
         "strategy-result-four-surface-reconciliation",
         "subagents-dispatch-strategy",
-        "time-capsule-live-intake-refine"
+        "time-capsule-live-intake-refine",
+        "whisper-repo-readme-writing-patterns"
       ],
       "dispatch-spec": [
         "contribution-edge-fixture-full-refine-plan"
@@ -1455,7 +1494,8 @@
         "domainspec-subagents-reflection-loop"
       ],
       "onboarding": [
-        "repository-onboarding-experiment-literacy"
+        "repository-onboarding-experiment-literacy",
+        "whisper-repo-readme-writing-patterns"
       ],
       "owned-build": [
         "cav2-authority-lifecycle-owned-build-harvest"
@@ -1507,7 +1547,8 @@
         "repository-working-guide",
         "research-tower-root",
         "strategy-result-cav2-lean-harvest",
-        "strategy-result-four-surface-reconciliation"
+        "strategy-result-four-surface-reconciliation",
+        "whisper-repo-readme-writing-patterns"
       ],
       "review": [
         "cav2-lean-development-pack-review",
@@ -1519,7 +1560,8 @@
         "domainspec-subagents-reflection-loop"
       ],
       "skills": [
-        "repo-skill-surface"
+        "repo-skill-surface",
+        "whisper-repo-readme-writing-patterns"
       ],
       "source-snapshot": [
         "cav2-lean-selector-map",
@@ -1537,7 +1579,8 @@
         "repository-onboarding-experiment-literacy",
         "strategy-result-cav2-lean-harvest",
         "strategy-result-four-surface-reconciliation",
-        "time-capsule-live-intake-refine"
+        "time-capsule-live-intake-refine",
+        "whisper-repo-readme-writing-patterns"
       ],
       "subagents": [
         "authority-definition-lifecycle-clarity",
@@ -1555,7 +1598,8 @@
         "strategy-result-four-surface-reconciliation",
         "subagents-dispatch-strategy",
         "telemetry-agent-pool",
-        "time-capsule-live-intake-refine"
+        "time-capsule-live-intake-refine",
+        "whisper-repo-readme-writing-patterns"
       ],
       "synthesis": [
         "contribution-measurement-failure-allocation-guide",
@@ -1565,7 +1609,8 @@
         "ergonomics-strategy",
         "load-bearing-term-tracking-discipline",
         "monetary-circulation-tower",
-        "repository-onboarding-experiment-literacy"
+        "repository-onboarding-experiment-literacy",
+        "whisper-repo-readme-writing-patterns"
       ],
       "task-session": [
         "contribution-edge-fixture-full-refine-plan"
@@ -1603,7 +1648,8 @@
         "current-state-mental-map",
         "harvest-strategy",
         "mechanism-directed-prior-art",
-        "repository-working-guide"
+        "repository-working-guide",
+        "whisper-repo-readme-writing-patterns"
       ],
       "workflow-reflect": [
         "domainspec-subagents-reflection-loop"
@@ -1612,6 +1658,9 @@
     "by_source": {
       "../../../.agents/skills/README.md": [
         "repo-skill-surface"
+      ],
+      "../../../.agents/skills/domainspec-check-tension/SKILL.md": [
+        "whisper-repo-readme-writing-patterns"
       ],
       "../../../.agents/skills/domainspec-experiment-dispatch/SKILL.md": [
         "repository-onboarding-experiment-literacy"
@@ -1627,6 +1676,12 @@
       "../../../.agents/skills/sigil-development/SKILL.md": [
         "domainspec-subagents-reflection-loop",
         "repo-skill-surface"
+      ],
+      "../../../.agents/skills/whisper/SKILL.md": [
+        "whisper-repo-readme-writing-patterns"
+      ],
+      "../../../.agents/skills/whisper/presets/github-repository-readme/README.md": [
+        "whisper-repo-readme-writing-patterns"
       ],
       "../../../.agents/skills/workflow-reflect/SKILL.md": [
         "domainspec-subagents-reflection-loop",
@@ -1790,6 +1845,15 @@
       "../../../dispatch/towers/PROPOSED-MONETARY-CIRCULATION-RESEARCH.md": [
         "economy-resilience-program",
         "monetary-circulation-tower"
+      ],
+      "../../../dispatch/whisper-repo-readme-writing-patterns/findings.md": [
+        "whisper-repo-readme-writing-patterns"
+      ],
+      "../../../dispatch/whisper-repo-readme-writing-patterns/research.md": [
+        "whisper-repo-readme-writing-patterns"
+      ],
+      "../../../dispatch/whisper-repo-readme-writing-patterns/whisper/WHISPER-RESULT.md": [
+        "whisper-repo-readme-writing-patterns"
       ],
       "../../../formulae/dispatch-spec/development/run-validation-fixtures.sh": [
         "contribution-edge-fixture-full-refine-plan"
@@ -2021,7 +2085,8 @@
         "repository-onboarding-experiment-literacy",
         "strategy-result-four-surface-reconciliation",
         "subagents-dispatch-strategy",
-        "time-capsule-live-intake-refine"
+        "time-capsule-live-intake-refine",
+        "whisper-repo-readme-writing-patterns"
       ],
       "../../../tools/check_load_bearing_terms.py": [
         "load-bearing-term-tracking-discipline"
@@ -2048,6 +2113,9 @@
       "../../observability/signals/sigil-invocations.jsonl": [
         "domainspec-subagents-reflection-loop"
       ],
+      "../../runtime-overlays/whisper/README.md": [
+        "whisper-repo-readme-writing-patterns"
+      ],
       "2026-06-28-four-surface-reconciliation": [
         "strategy-result-four-surface-reconciliation"
       ],
@@ -2062,6 +2130,9 @@
       ],
       "2026-07-17-repository-onboarding-experiment-literacy": [
         "repository-onboarding-experiment-literacy"
+      ],
+      "2026-07-17-whisper-repo-readme-patterns": [
+        "whisper-repo-readme-writing-patterns"
       ],
       "PRZ-01..06": [
         "bets-and-prizes-device"
@@ -2145,7 +2216,8 @@
         "deferred-contribution-basis"
       ],
       "research": [
-        "number-lottery-refinement"
+        "number-lottery-refinement",
+        "whisper-repo-readme-writing-patterns"
       ]
     },
     "by_evidence_card": {},

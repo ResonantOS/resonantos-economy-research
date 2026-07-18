@@ -9,6 +9,18 @@ it tells you **how solid that answer is** instead of just sounding confident. Th
 page shows how to ask well, with real examples. The method behind it lives in
 [GUIDE.md](GUIDE.md).
 
+## Try One Question
+
+Copy this before reading the detailed patterns:
+
+> Pick one claim about rewards in this repository. Tell me what supports it,
+> what would prove it wrong, and what it is not allowed to decide.
+
+A useful answer gives you three things: a source path, a concrete attack or
+missing witness, and a boundary. If it only gives a confident summary, ask it to
+show the exact record. If it proposes a payout or governance rule, stop; you
+asked a research question, not for policy.
+
 ## What a good question looks like
 
 Three things make a question easy to answer well:

@@ -19,6 +19,23 @@ This guide is the **working method**. [README.md](README.md) explains what the
 repository is and how the towers fit together; this file explains how research is
 framed and how you query the tower in practice.
 
+## First Useful Action
+
+Use one question to rehearse the method before learning every repository term.
+
+- **Before you start:** open this repository at its root and read the inventory
+  [Start Here path](.arcanum/inventory/index.md).
+- **Ask:** “What supports the idea that invisible work should be recognized,
+  what attacks it, and what remains untested?”
+- **Expected result:** the answer separates recorded evidence, local inference,
+  and open residue; it also names what the result cannot authorize.
+- **Verify:** follow at least one cited path and check that the source says what
+  the answer claims.
+- **Stop if:** the answer turns an activity record, score, fixture, or research
+  result into payment, policy, or decision-making power.
+- **Go deeper:** use [QUERYING.md](QUERYING.md) for more prompts, then return to
+  the full working route below.
+
 ## Framing
 
 Work from seven habits. They are not style preferences — they are how a claim

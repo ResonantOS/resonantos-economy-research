@@ -1,0 +1,14 @@
+{
+  "schema_version": "resonantos.documentation-baseline.v1",
+  "captured_from_commit": "261e8ba824566dc7861f580d6f1ba4a3e749739d",
+  "reader_effect_at_baseline": "unrun",
+  "files": [
+    {"path": "README.md", "sha256": "460c93540f4f0e563af15e072540cddda7eb96124ddccef6ace991c16c5771ba"},
+    {"path": "GUIDE.md", "sha256": "35695c9daea1886077d77e456fbd3bcdac66d49129e28ba4b70413ea1ab2b812"},
+    {"path": "CONTRIBUTING.md", "sha256": "969178f1b1da7f72b032f6af873dfe8bce71ac55161d9efad2d56e75705f458d"},
+    {"path": "QUERYING.md", "sha256": "d1aaf6b507b4e737c6731a5beafc7a2c8789d48cf94d6f8b20157a9bdbb78a96"},
+    {"path": "prizes/README.md", "sha256": "0c545cf0aeb70435a0fd7a9a2c52c9837d8b4becc67424516c54f4814041d906"},
+    {"path": "prizes/EXPERIMENT-EXAMPLES.md", "sha256": "a2101ef58fc47078023c79f0db28efa5e5b5157442fc7c8f1cde1f816da7b8b4"},
+    {"path": "validation/README.md", "sha256": "4730e00bf6042b771576416bec0aeed6671494bc488738e986858052a5f049fb"}
+  ]
+}

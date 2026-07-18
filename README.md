@@ -72,6 +72,20 @@ their counts into an introduction.
    [inventory Start Here path](.arcanum/inventory/index.md) and query the
    [current evidence map](maps/current-state/README.md).
 
+### Try One Question Now
+
+If you want to feel how the repository works before reading the whole map, open
+an agent in this repository and ask:
+
+> What does this repository know about recognizing invisible work, and what is
+> still only an idea?
+
+A useful answer should point to recorded evidence, separate what is supported
+from what is still open, and name one important limit. Stop if the answer jumps
+straight to a reward, token, payout, or decision-making rule; that means it has
+crossed the repository's research boundary. Continue with
+[QUERYING.md](QUERYING.md) when you want more examples.
+
 The inventory remains the **sole canonical Start Here path**. This front porch
 is candidate teaching material: its mechanics and links are checked, but no
 independent newcomer has yet passed the held-out comprehension witness.

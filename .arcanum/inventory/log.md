@@ -1144,3 +1144,71 @@ Owner: ResonantOS economy research owner
   superiority has been witnessed
 - Promotion posture: language correction only; no economy, mechanism, policy,
   payout, governance, launch, implementation, or authority effect
+
+## 2026-07-17 Whisper repo-readme writing-pattern research registered
+
+- Dispatch: `2026-07-17-whisper-repo-readme-patterns`
+- Row: `dispatch`; close row pending
+- Working folder: `dispatch/whisper-repo-readme-writing-patterns/`
+- P1: synthesis, context protection, isolation, and parallelism
+- Gate: independent checker PASS; independent reviewer PASS; human confirmed
+- Lanes: external source archaeology, reader-evidence testing, local Whisper and
+  documentation-owner mapping, synthesis, three-gate review, writing, and audit
+- Source boundary: public `ConsultingFuture4200/repo-readme` is external
+  precedent; local Whisper and inventory are repository evidence; neither
+  conversion nor engagement is accepted as truth or transfer evidence
+- Registration state: appended and running
+- Inventory: `entries/whisper-repo-readme-writing-patterns.md`
+- Promotion posture: non-authority research only; no writing behavior, preset,
+  documentation policy, or repository-wide migration is accepted before the
+  final auditor verdict
+
+## 2026-07-17 Whisper repo-readme writing-pattern research closed
+
+- Dispatch: `2026-07-17-whisper-repo-readme-patterns`
+- Row: `close`; exit reason `resolved`; three explorers, one synthesizer, three
+  skeptics, one writer, one auditor; one zig-zag loop and no auditor repair
+- Outputs: verbatim `research.md` plus auditor-accepted `findings.md`
+- Source verdict: the external package implements README skeletons and GitHub
+  presentation recipes but supplies no reader-effect or conversion evidence;
+  its unresolved license posture blocks exact template copying
+- Transfer verdict: one repository-only candidate preset survives; profile
+  READMEs and universal funnel claims do not
+- Ownership verdict: generated Whisper core remains untouched; local-preset
+  placement requires a non-generated preservation contract and sync rehearsal
+- Documentation verdict: active surfaces may enter bounded pilots; authority,
+  generated, historical, structured-state, and append-only surfaces are
+  deferred or excluded under their owner rules
+- Validation verdict: structure checks are capability receipts only; reader
+  benefit requires a preregistered author-independent comparison
+- Inventory: updated `entries/whisper-repo-readme-writing-patterns.md`
+- Promotion posture: accepted research boundary only; no preset, reader benefit,
+  documentation improvement, policy, or authority claim
+
+## 2026-07-17 Whisper README preset and documentation pilot
+
+- Source: auditor-accepted
+  `dispatch/whisper-repo-readme-writing-patterns/findings.md`
+- Sigil lifecycle: manual reflection addendum accepted a targeted update; core
+  Whisper contract preserved
+- Local preset: `github_repository_readme`, repository-only, candidate; profile
+  README excluded; source lineage records unresolved license and prohibits
+  verbatim copying
+- Fixtures: library and governed-research positives pass; a polished
+  boundary-hiding README blocks; mixed selector abstains; historical rewrite is
+  refused
+- Overlay preservation: non-generated manifest plus guard; staged export,
+  restore, and SHA-256 verification pass for three paths and fourteen files
+- Active documentation pilots: root README, GUIDE, CONTRIBUTING, QUERYING,
+  prize README, experiment examples, and validation README
+- Coverage: 1,073 Markdown files classified — 25 pilot, 382 defer, 666 exclude,
+  zero unclassified
+- Validation: YAML, preset fixtures, overlay receipt, 209 selected local link
+  targets, inventory truth, pre-commit gate, and whitespace pass; existing
+  Whisper validator retains density flags and the global load-bearing term sweep
+  remains open
+- Upstream: generic reader task, disclosure, action-path, structure inspection,
+  review mapping, and runtime-doc repairs recorded as a patch request; generated
+  core untouched
+- Final status: `flag`; reader effect `no-conclusion`; no policy, payout,
+  governance, implementation, or authority promotion

@@ -32,6 +32,21 @@ owns formal experiment review, and the
 [fixture package](../validation/contribution-edge-fixtures/README.md) owns the
 reusable record format.
 
+## Pick The Closest Story
+
+You do not need to read every example in order.
+
+| If your situation sounds like... | Start with... | The one question it isolates |
+| --- | --- | --- |
+| Important work disappeared from a public recap | [The Event Work Nobody Saw](#example-1--the-event-work-nobody-saw) | Does a short evidence note improve recognition without creating entitlement? |
+| Quiet maintenance is visible only after something breaks | [Quiet Software Maintenance](#example-2--quiet-software-maintenance) | Can records reveal maintenance without rewarding noisy activity? |
+| One review may be biased or mistaken | [A Second Independent Review](#example-3--a-second-independent-review) | Does another reviewer change the decision for the right reason? |
+| The numbers look successful but the test procedure failed | [The Numbers Look Good, But The Test Broke](#example-4--the-numbers-look-good-but-the-test-broke) | Can we refuse a verdict when the evidence process is broken? |
+
+After one story makes sense, use [Build Your First Experiment](#build-your-first-experiment)
+to replace its people and situation with your own. The formal names below help
+you save the result in the repository; they are not the starting point.
+
 ## The Six Pieces
 
 The repository uses precise names because different steps have different

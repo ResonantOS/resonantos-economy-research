@@ -1,0 +1,4467 @@
+{
+  "schema_version": "resonantos.documentation-coverage.v1",
+  "policy": "strictest_applicable_owner_or_lifecycle_rule_wins",
+  "total_markdown_files": 1073,
+  "disposition_counts": {
+    "defer": 382,
+    "exclude": 666,
+    "pilot": 25
+  },
+  "unclassified": [],
+  "classes": {
+    "active_front_door_pilot": {
+      "reader_role": "newcomer_or_active_researcher",
+      "authority_posture": "local_research_only",
+      "lifecycle": "active",
+      "canonical_owner": "active_document_owner",
+      "transport": "markdown",
+      "allowed_change": "bounded_reader_task_pilot_with_baseline",
+      "disposition": "pilot",
+      "reason": "selected active front door in the bounded reader-task pilot"
+    },
+    "append_only_evidence": {
+      "reader_role": "auditor_or_future_agent",
+      "authority_posture": "evidence_not_authority",
+      "lifecycle": "append_only",
+      "canonical_owner": "telemetry_or_observability_owner",
+      "transport": "markdown",
+      "allowed_change": "append_new_record_only",
+      "disposition": "exclude",
+      "reason": "append-only evidence; no prose modernization"
+    },
+    "canonical_navigation": {
+      "reader_role": "repository_navigator",
+      "authority_posture": "non_authority_read_model",
+      "lifecycle": "active",
+      "canonical_owner": "inventory_or_current_state_owner",
+      "transport": "markdown",
+      "allowed_change": "navigation_only_through_owner",
+      "disposition": "pilot",
+      "reason": "canonical routing surface; content changes only when owner state changes"
+    },
+    "canonical_reference_authority": {
+      "reader_role": "reference_reader",
+      "authority_posture": "canonical_reference_contract",
+      "lifecycle": "active",
+      "canonical_owner": "authority",
+      "transport": "markdown",
+      "allowed_change": "owner_led_ambiguity_or_navigation_repair_only",
+      "disposition": "defer",
+      "reason": "precision and authority contract, not a persuasion or general readability surface"
+    },
+    "canonical_reference_claims": {
+      "reader_role": "reference_reader",
+      "authority_posture": "canonical_reference_contract",
+      "lifecycle": "active",
+      "canonical_owner": "claims",
+      "transport": "markdown",
+      "allowed_change": "owner_led_ambiguity_or_navigation_repair_only",
+      "disposition": "defer",
+      "reason": "precision and authority contract, not a persuasion or general readability surface"
+    },
+    "canonical_reference_definitions": {
+      "reader_role": "reference_reader",
+      "authority_posture": "canonical_reference_contract",
+      "lifecycle": "active",
+      "canonical_owner": "definitions",
+      "transport": "markdown",
+      "allowed_change": "owner_led_ambiguity_or_navigation_repair_only",
+      "disposition": "defer",
+      "reason": "precision and authority contract, not a persuasion or general readability surface"
+    },
+    "canonical_reference_glossary": {
+      "reader_role": "reference_reader",
+      "authority_posture": "canonical_reference_contract",
+      "lifecycle": "active",
+      "canonical_owner": "glossary",
+      "transport": "markdown",
+      "allowed_change": "owner_led_ambiguity_or_navigation_repair_only",
+      "disposition": "defer",
+      "reason": "precision and authority contract, not a persuasion or general readability surface"
+    },
+    "canonical_reference_sources": {
+      "reader_role": "reference_reader",
+      "authority_posture": "canonical_reference_contract",
+      "lifecycle": "active",
+      "canonical_owner": "sources",
+      "transport": "markdown",
+      "allowed_change": "owner_led_ambiguity_or_navigation_repair_only",
+      "disposition": "defer",
+      "reason": "precision and authority contract, not a persuasion or general readability surface"
+    },
+    "current_whisper_implementation": {
+      "reader_role": "maintainer_or_auditor",
+      "authority_posture": "implementation_evidence_only",
+      "lifecycle": "active_implementation_receipt",
+      "canonical_owner": "whisper_downstream_handoff",
+      "transport": "markdown",
+      "allowed_change": "append_or_correct_before_closeout",
+      "disposition": "pilot",
+      "reason": "current bounded implementation and validation surface"
+    },
+    "deferred_owner_review": {
+      "reader_role": "specialist_or_future_agent",
+      "authority_posture": "non_authority_documentation",
+      "lifecycle": "active",
+      "canonical_owner": "path_specific_owner",
+      "transport": "markdown",
+      "allowed_change": "owner_review_required",
+      "disposition": "defer",
+      "reason": "not selected for the bounded pilot; preserve until its owner reviews a concrete reader task"
+    },
+    "generated_runtime_or_formula": {
+      "reader_role": "runtime_operator",
+      "authority_posture": "generated_or_formula_owner",
+      "lifecycle": "generated",
+      "canonical_owner": "upstream_generation_owner",
+      "transport": "markdown",
+      "allowed_change": "regenerate_or_use_explicit_local_overlay",
+      "disposition": "exclude",
+      "reason": "exclude from direct documentation rewrite"
+    },
+    "historical_research_or_execution": {
+      "reader_role": "research_auditor",
+      "authority_posture": "historical_evidence",
+      "lifecycle": "historical",
+      "canonical_owner": "originating_research_or_execution_run",
+      "transport": "markdown",
+      "allowed_change": "preserve; link from an active summary",
+      "disposition": "exclude",
+      "reason": "historical evidence or execution receipt"
+    },
+    "role_specific_training": {
+      "reader_role": "role_specific_participant_or_facilitator",
+      "authority_posture": "candidate_training_material",
+      "lifecycle": "active",
+      "canonical_owner": "training_role_owner",
+      "transport": "markdown",
+      "allowed_change": "role_specific_pilot_only",
+      "disposition": "defer",
+      "reason": "separate teaching transport; no README funnel transfer"
+    },
+    "structured_state_contract": {
+      "reader_role": "state_or_contract_reader",
+      "authority_posture": "structured_state_or_definition_contract",
+      "lifecycle": "active",
+      "canonical_owner": "structured_state_owner",
+      "transport": "markdown",
+      "allowed_change": "owner_led_structural_update_only",
+      "disposition": "exclude",
+      "reason": "structured state is not a narrative rewrite target"
+    },
+    "whisper_local_overlay_pilot": {
+      "reader_role": "whisper_operator",
+      "authority_posture": "candidate_local_overlay",
+      "lifecycle": "generated_surface_local_overlay",
+      "canonical_owner": ".arcanum/runtime-overlays/whisper/manifest.json",
+      "transport": "markdown",
+      "allowed_change": "local_overlay_with_hash_preservation",
+      "disposition": "pilot",
+      "reason": "repository-local preset selected by accepted findings"
+    },
+    "whisper_overlay_ownership_contract": {
+      "reader_role": "runtime_maintainer",
+      "authority_posture": "repository_local_runtime_ownership",
+      "lifecycle": "active",
+      "canonical_owner": ".arcanum/runtime-overlays/whisper/manifest.json",
+      "transport": "markdown",
+      "allowed_change": "owner_led_overlay_preservation_update",
+      "disposition": "pilot",
+      "reason": "non-generated ownership and preservation evidence for local Whisper overlays"
+    }
+  },
+  "documents": [
+    {
+      "path": ".agents/skills/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/constitution-governance/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/constitution-governance/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/constitution-governance/templates/composition-pack.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/constitution-governance/templates/constitution.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/constitution-governance/templates/validation-adapter.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/context-builder/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/context-builder/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/context-builder/templates/codex-goal-handoff-pack.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/context-builder/templates/runtime-handoff-pack.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/decision-gate/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/decision-gate/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/definitions-governance/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/definitions-governance/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/discovery-to-inventory/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/discovery-to-inventory/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/domainspec-check-tension/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/domainspec-experiment-dispatch/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/domainspec-register-dispatch/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/domainspec-research-dispatch/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/domainspec-review-dispatch/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/domainspec-robot-talks/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/domainspec-subagents-strategy/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/inventory/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/inventory/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/inventory/templates/entry.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/inventory/templates/evidence-card-lint.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/inventory/templates/evidence-card-schema.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/inventory/templates/evidence-card.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/inventory/templates/evidence-set-schema.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/inventory/templates/evidence-set.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/inventory/templates/index.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/inventory/templates/lint-report.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/inventory/templates/log.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/inventory/templates/package-readme.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/inventory/templates/schema.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/inventory/templates/source-summary.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/inventory/templates/tags.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/observability-setup/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/observability-setup/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/observability-setup/templates/package-readme.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-harness/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-harness/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-vault/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-vault/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-vault/templates/business-ontology-map.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-vault/templates/business-system-bridge.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-vault/templates/confidence-promotion.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-vault/templates/delegated-research.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-vault/templates/inflection-map.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-vault/templates/ontology-convention-change.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-vault/templates/ontology-drift-report.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-vault/templates/ontology-map.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-vault/templates/premise-review.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-vault/templates/session-distillation.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-vault/templates/synthesis-findings.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-vault/templates/system-ontology-map.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/ontology-vault/templates/traceability-matrix.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/orchestrate/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/publication-research-pipeline/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/publication-research-pipeline/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/research-evidence-harness/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/research-evidence-harness/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/research-evidence-harness/templates/result-summary.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/research-tower/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/research-tower/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/research-tower/templates/claim-ledger.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/research-tower/templates/definition-card.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/research-tower/templates/final-learning-pack.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/research-tower/templates/glossary-entry.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/research-tower/templates/notation-bridge.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/research-tower/templates/related-framework-crosswalk.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/research-tower/templates/subagent-closeout-ledger.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/research-tower/templates/tower-readme.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/robot-talks/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/robot-talks/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/sigil-development/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/sigil-development/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/sigil-development/templates/reflection-report.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/sigil-development/templates/usage-telemetry.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/signal-observer/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/signal-observer/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/business-plan/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/business-plan/template.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/README.md",
+      "class_id": "whisper_local_overlay_pilot"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/fixtures/README.md",
+      "class_id": "whisper_local_overlay_pilot"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/fixtures/dangerous-conversion-block.md",
+      "class_id": "whisper_local_overlay_pilot"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/fixtures/governed-research-pass.md",
+      "class_id": "whisper_local_overlay_pilot"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/fixtures/human-language-pair.md",
+      "class_id": "whisper_local_overlay_pilot"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/fixtures/library-pass.md",
+      "class_id": "whisper_local_overlay_pilot"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/github-repository-readme/template.md",
+      "class_id": "whisper_local_overlay_pilot"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/live-presentation/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/live-presentation/audition-template.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/local-overlays.md",
+      "class_id": "whisper_local_overlay_pilot"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/product-research-blueprint/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/product-research-blueprint/template.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/veritasium-formal.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/veritasium-run-skill-anatomy-residue.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/presets/veritasium.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/review/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/schemas/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/schemas/examples/delivery-flow-fail.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/whisper/schemas/examples/delivery-flow-pass.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/workflow-reflect/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".agents/skills/workflow-reflect/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": ".arcanum/inventory/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/authority-definition-lifecycle-clarity.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/bets-and-prizes-device.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/cav2-authority-lifecycle-owned-build-harvest.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/cav2-lean-development-pack-review.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/cav2-lean-findings-development-pack.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/cav2-lean-findings.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/cav2-lean-selector-map.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/contribution-edge-fixture-full-refine-plan.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/contribution-edge-fixtures.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/contribution-measurement-failure-allocation-guide.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/contribution-mechanism-tower.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/current-state-mental-map.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/deferred-contribution-basis.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/domainspec-subagents-reflection-loop.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/economy-resilience-program.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/ergonomics-strategy.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/harvest-strategy.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/load-bearing-term-tracking-discipline.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/local-source-snapshots.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/mechanism-directed-prior-art.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/monetary-circulation-tower.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/number-lottery-refinement.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/onboarding-docs-review.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/repo-skill-surface.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/repository-onboarding-experiment-literacy.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/repository-working-guide.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/research-tower-root.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/strategy-result-cav2-lean-harvest.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/strategy-result-four-surface-reconciliation.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/subagents-dispatch-strategy.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/telemetry-agent-pool.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/time-capsule-live-intake-refine.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/entries/whisper-repo-readme-writing-patterns.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/inventory/index.md",
+      "class_id": "canonical_navigation"
+    },
+    {
+      "path": ".arcanum/inventory/log.md",
+      "class_id": "append_only_evidence"
+    },
+    {
+      "path": ".arcanum/inventory/schema.md",
+      "class_id": "structured_state_contract"
+    },
+    {
+      "path": ".arcanum/inventory/tags.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".arcanum/observability/README.md",
+      "class_id": "append_only_evidence"
+    },
+    {
+      "path": ".arcanum/observability/reflections/2026-06-27-domainspec-subagents-strategy-inventory-hook.md",
+      "class_id": "append_only_evidence"
+    },
+    {
+      "path": ".arcanum/observability/reflections/2026-07-17-whisper-correction-convergence.md",
+      "class_id": "append_only_evidence"
+    },
+    {
+      "path": ".arcanum/observability/reflections/2026-07-17-whisper-repo-readme-and-beginner-language-addendum.md",
+      "class_id": "append_only_evidence"
+    },
+    {
+      "path": ".arcanum/runtime-overlays/whisper/README.md",
+      "class_id": "whisper_overlay_ownership_contract"
+    },
+    {
+      "path": ".arcanum/runtime-overlays/whisper/receipts/README.md",
+      "class_id": "whisper_overlay_ownership_contract"
+    },
+    {
+      "path": ".claude/agents/arcanum-stage-worker.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/constitution-governance/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/constitution-governance/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/constitution-governance/templates/composition-pack.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/constitution-governance/templates/constitution.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/constitution-governance/templates/validation-adapter.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/context-builder/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/context-builder/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/context-builder/templates/codex-goal-handoff-pack.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/context-builder/templates/runtime-handoff-pack.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/craft/ARCHITECTURE.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/craft/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/craft/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/craft/examples/platform-governance-CRAFT.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/craft/examples/product-launch-CRAFT.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/decision-gate/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/decision-gate/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/definitions-governance/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/definitions-governance/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/discovery-to-inventory/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/discovery-to-inventory/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/dispatch-spec/ARCANUM-DISPATCH-SYNTHESIS.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/dispatch-spec/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/dispatch-spec/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/dispatch-spec/TECHNIQUE-CATALOG.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/dispatch-spec/WEAVER-EXTRACTION.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/distill/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/distill/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/distill/templates/usage-telemetry.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/domainspec-check-tension/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/domainspec-experiment-dispatch/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/domainspec-register-dispatch/SKILL.md",
+      "class_id": "structured_state_contract"
+    },
+    {
+      "path": ".claude/skills/domainspec-research-dispatch/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/domainspec-review-dispatch/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/domainspec-robot-talks/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/domainspec-subagents-strategy/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/interrogation/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/interrogation/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/inventory/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/inventory/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/inventory/templates/entry.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/inventory/templates/evidence-card-lint.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/inventory/templates/evidence-card-schema.md",
+      "class_id": "structured_state_contract"
+    },
+    {
+      "path": ".claude/skills/inventory/templates/evidence-card.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/inventory/templates/evidence-set-schema.md",
+      "class_id": "structured_state_contract"
+    },
+    {
+      "path": ".claude/skills/inventory/templates/evidence-set.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/inventory/templates/index.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/inventory/templates/lint-report.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/inventory/templates/log.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/inventory/templates/package-readme.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/inventory/templates/schema.md",
+      "class_id": "structured_state_contract"
+    },
+    {
+      "path": ".claude/skills/inventory/templates/source-summary.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/inventory/templates/tags.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/define.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/design.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/full.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/handoff.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/plan.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/refresh.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/architecture/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/architecture/architecture.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/architecture/examples/missing-input.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/architecture/examples/passing.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/domainspec-spec/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/domainspec-spec/SPEC.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/domainspec-spec/architecture-bundle.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/domainspec-spec/events.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/domainspec-spec/execution-pack.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/domainspec-spec/interfaces.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/domainspec-spec/mappings.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/domainspec-spec/operations.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/domainspec-spec/queries.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/domainspec-spec/states.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/generic/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/generic/examples/missing-input.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/generic/examples/passing.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/generic/generic.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/implementation-layering.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/implementation-plan/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/implementation-plan/examples/missing-input.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/implementation-plan/examples/passing.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/implementation-plan/implementation-plan.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/module-formulae/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/module-formulae/architecture-bundle.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/module-formulae/bundle-profile.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/module-formulae/concept-model.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/module-formulae/execution-pack.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/module-formulae/flows-policies.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/module-formulae/glossary-ontology.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/module-formulae/implementation-plan.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/module-formulae/interfaces.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/module-formulae/module-spec.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/module-formulae/observability.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/module-formulae/operations.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/module-formulae/research-brief.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/module-formulae/vocabulary-map.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/refresh/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/refresh/examples/missing-input.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/refresh/examples/passing.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/refresh/refresh.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/research/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/research/examples/missing-input.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/research/examples/passing.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/research/research.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/session-handoff/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/session-handoff/examples/missing-input.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/session-handoff/examples/passing.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/session-handoff/session-handoff.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/sigil/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/sigil/examples/missing-input.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/sigil/examples/passing.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/sigil/sigil.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/spell/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/spell/examples/missing-input.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/spell/examples/passing.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/spell/spell.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/ux-plan/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/ux-plan/examples/missing-input.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/ux-plan/examples/passing.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/ux-plan/ux-plan.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/templates/work-pack.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/invoke/validate.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/observability-setup/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/observability-setup/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/observability-setup/templates/package-readme.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-harness/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-harness/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-vault/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-vault/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-vault/templates/business-ontology-map.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-vault/templates/business-system-bridge.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-vault/templates/confidence-promotion.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-vault/templates/delegated-research.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-vault/templates/inflection-map.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-vault/templates/ontology-convention-change.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-vault/templates/ontology-drift-report.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-vault/templates/ontology-map.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-vault/templates/premise-review.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-vault/templates/session-distillation.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-vault/templates/synthesis-findings.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-vault/templates/system-ontology-map.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/ontology-vault/templates/traceability-matrix.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/orchestrate/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/publication-research-pipeline/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/publication-research-pipeline/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/refine/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/refine/REFINEMENT-LOOP.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/refine/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/refine/examples/existing-work-pack-preflight.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/refine/examples/goal-blocked.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/refine/examples/seed-proposal.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/refine/templates/reflection-report.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/refine/templates/result.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/refine/templates/run-manifest.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/refine/templates/runtime-handoff.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/refine/templates/seed-proposal.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/refine/templates/usage-telemetry.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/research-evidence-harness/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/research-evidence-harness/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/research-evidence-harness/templates/result-summary.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/research-tower/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/research-tower/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/research-tower/templates/claim-ledger.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/research-tower/templates/definition-card.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/research-tower/templates/final-learning-pack.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/research-tower/templates/glossary-entry.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/research-tower/templates/notation-bridge.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/research-tower/templates/related-framework-crosswalk.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/research-tower/templates/subagent-closeout-ledger.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/research-tower/templates/tower-readme.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/robot-talks/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/robot-talks/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/sigil-development/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/sigil-development/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/sigil-development/templates/reflection-report.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/sigil-development/templates/usage-telemetry.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/signal-observer/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/signal-observer/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/spellcraft/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/spellcraft/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/structured-interview-kits/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/task-session/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/task-session/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/task-session/runtime-adapters/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/task-session/runtime-adapters/codex-goal.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/task-session/runtime-adapters/runtime-handoff.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/workflow-reflect/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": ".claude/skills/workflow-reflect/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "AGENTS.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "CLAUDE.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "class_id": "active_front_door_pilot"
+    },
+    {
+      "path": "CRAFT.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "DECISIONS.md",
+      "class_id": "structured_state_contract"
+    },
+    {
+      "path": "FINAL-LEARNING-PACK.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "GUIDE.md",
+      "class_id": "active_front_door_pilot"
+    },
+    {
+      "path": "NOTATION.md",
+      "class_id": "structured_state_contract"
+    },
+    {
+      "path": "QUERYING.md",
+      "class_id": "active_front_door_pilot"
+    },
+    {
+      "path": "README.md",
+      "class_id": "active_front_door_pilot"
+    },
+    {
+      "path": "RELATED-FRAMEWORK-CROSSWALK.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "TOWER.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "authority/AUTHORITY-MODEL.md",
+      "class_id": "canonical_reference_authority"
+    },
+    {
+      "path": "authority/README.md",
+      "class_id": "canonical_reference_authority"
+    },
+    {
+      "path": "authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md",
+      "class_id": "canonical_reference_authority"
+    },
+    {
+      "path": "authority/decisions/2026-06-26-standalone-repository.md",
+      "class_id": "canonical_reference_authority"
+    },
+    {
+      "path": "authority/decisions/2026-06-29-ergonomics-open-decisions.md",
+      "class_id": "canonical_reference_authority"
+    },
+    {
+      "path": "authority/decisions/2026-06-29-method-authority-localized.md",
+      "class_id": "canonical_reference_authority"
+    },
+    {
+      "path": "authority/decisions/README.md",
+      "class_id": "canonical_reference_authority"
+    },
+    {
+      "path": "authority/promotion-policy.md",
+      "class_id": "canonical_reference_authority"
+    },
+    {
+      "path": "authority/source-spine.md",
+      "class_id": "canonical_reference_authority"
+    },
+    {
+      "path": "claims/SOURCE-CLAIM-LEDGER.md",
+      "class_id": "canonical_reference_claims"
+    },
+    {
+      "path": "definitions/DEFINITION-DRIFT-AUDIT.md",
+      "class_id": "canonical_reference_definitions"
+    },
+    {
+      "path": "definitions/DEFINITIONS-INDEX.md",
+      "class_id": "canonical_reference_definitions"
+    },
+    {
+      "path": "definitions/DEFINITIONS.md",
+      "class_id": "canonical_reference_definitions"
+    },
+    {
+      "path": "development/cav2-lean-findings-development-pack.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/constitution-pack.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/contribution-edge-fixture-implementation-plan.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/goal-runs/2026-07-17-live-intake-v2-whole-work-pack/CODEX-GOAL-PROFILE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/goal-runs/2026-07-17-live-intake-v2-whole-work-pack/CODEX-GOAL-SIDECAR.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/goal-runs/2026-07-17-live-intake-v2-whole-work-pack/FRONTIER.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/goal-runs/2026-07-17-live-intake-v2-whole-work-pack/HANDOFF.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/goal-runs/2026-07-17-time-capsule-tomorrow/FRONTIER.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/goal-runs/2026-07-17-time-capsule-tomorrow/GOAL-RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/goal-runs/2026-07-17-time-capsule-tomorrow/ROUND-001.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/goal-runs/2026-07-17-time-capsule-tomorrow/ROUND-002.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/goal-runs/2026-07-17-time-capsule-tomorrow/STAGED-CRAFT-DELTA.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/goals/contribution-edge-fixtures-one-shot/00-goal-command.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/goals/contribution-edge-fixtures-one-shot/CODEX-GOAL-PROFILE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/goals/contribution-edge-fixtures-one-shot/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/implementation-boundary-plan.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/ARCHITECTURE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/CONTEXT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/DECISIONS-AND-GAPS.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/DEFINE-TRANSPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/DESIGN-TRANSPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/DISPATCH-TECHNIQUE-TRACE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/DISTILL-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/EXECUTION-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/FORM-COPY.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/FORM-SPEC.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/GLOSSARY-CONSISTENCY.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/GLOSSARY.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/IMPLEMENTATION-LAYERING.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/INVENTORY-HANDOFF.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/INVOKE-RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/ORCHESTRATE-RECEIPT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/PLAN-TRANSPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/SPEC.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/TEMPLATE-SELECTION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/UX-PLAN.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/WORK-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/XRAY-LANES.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/XRAY-RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/tasks/TASK-TC-001.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/tasks/TASK-TC-002.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/tasks/TASK-TC-003.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/tasks/TASK-TC-004.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/tasks/TASK-TC-005.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/tasks/TASK-TC-006.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/tasks/TASK-TC-007.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/tasks/TASK-TC-READINESS-008.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/waves/W0.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/waves/W1.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/waves/W2.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/waves/W3.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/ARCHITECTURE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/DESIGN-TRANSPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/DISPATCH-TECHNIQUE-TRACE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/DISTILL-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/GLOSSARY-CONSISTENCY.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/IMPLEMENTATION-LAYERING.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/INVOKE-RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/PLAN-TRANSPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/TEMPLATE-SELECTION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/UX-PLAN.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/WORK-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/work-pack/TASK-FORM-001.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/work-pack/TASK-FORM-002.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/work-pack/TASK-FORM-003.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/work-pack/TASK-FORM-VERIFY-004.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/DISPATCH-TECHNIQUE-TRACE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/DISTILL-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/INVOKE-RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/REFRESH-PATCH-PROPOSAL.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/REFRESH-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/TARGET-INVENTORY.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/DISPATCH-TECHNIQUE-TRACE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/DISTILL-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/EXECUTION-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/GAP-LEDGER.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/IMPLEMENTATION-LAYERING.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/INTERVIEW-GAP-CHECK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/INVOKE-RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/PLAN-TRANSPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/TEMPLATE-SELECTION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/VALIDATION-STRATEGY.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/WORK-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/shared/context.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/shared/cross-task-decisions.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/shared/cross-task-gaps.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/shared/traceability.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-001.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-002.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-003.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-004.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-005.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-006.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-007.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-008.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-READINESS-009.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/waves/W0-L0-contract.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/waves/W1-L1-intake.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/waves/W2-L1-close.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/waves/W3-L2-live-readiness.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/waves/W4-L3-recovery.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/waves/W5-L3-close.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/ARCHITECTURE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/BROWSER-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/COMPOSITION-PLAN.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/DESIGN-TRANSPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/DISPATCH-TECHNIQUE-TRACE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/DISTILL-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/GLOSSARY-CONSISTENCY.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/INVOKE-RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/LANGUAGE-AUDITION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/LEARNING-RESIDUE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/STORY-COPY.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/TEMPLATE-SELECTION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/TEXT-INTENT-SUBSTRATE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/UPSTREAM-PATCH-REQUESTS.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/UX-PLAN.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/WHISPER-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/video/time-capsule-number-short-2026-07-17/COMPOSITION-PLAN.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/video/time-capsule-number-short-2026-07-17/CONCEPT-MAP.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/video/time-capsule-number-short-2026-07-17/EDIT-DECISION-LIST.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/video/time-capsule-number-short-2026-07-17/FULL-VOICE-SCRIPT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/video/time-capsule-number-short-2026-07-17/LEARNING-RESIDUE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/video/time-capsule-number-short-2026-07-17/ON-SCREEN-WRITTEN-COPY.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/video/time-capsule-number-short-2026-07-17/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/video/time-capsule-number-short-2026-07-17/SITE-EMBED-HANDOFF.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/video/time-capsule-number-short-2026-07-17/SOURCE-TRACE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/video/time-capsule-number-short-2026-07-17/TEXT-INTENT-SUBSTRATE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/video/time-capsule-number-short-2026-07-17/TRANSPORT-CONTRACT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/video/time-capsule-number-short-2026-07-17/VALIDATION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/video/time-capsule-number-short-2026-07-17/VOICE-AUDITION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/video/time-capsule-number-short-2026-07-17/VOICE-MODEL-INPUT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/video/time-capsule-number-short-2026-07-17/WHISPER-RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/ARCHITECTURE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/COMPOSITION-PLAN.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/DESIGN-TRANSPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/DISPATCH-TECHNIQUE-TRACE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/DISTILL-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/GLOSSARY-CONSISTENCY.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/INVOKE-RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/LEARNING-RESIDUE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/TEMPLATE-SELECTION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/TEXT-INTENT-SUBSTRATE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/UX-PLAN.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/WEB-COPY.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/WHISPER-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-word-to-number-refresh/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-word-to-number-refresh/DISPATCH-TECHNIQUE-TRACE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-word-to-number-refresh/INVOKE-RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-word-to-number-refresh/LANGUAGE-AUDITION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-word-to-number-refresh/LEARNING-RESIDUE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-word-to-number-refresh/MECHANISM-CLARITY-DESIGN.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-word-to-number-refresh/MECHANISM-COMPOSITION-PLAN.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-word-to-number-refresh/REFRESH-PATCH-PROPOSAL.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-word-to-number-refresh/REFRESH-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-word-to-number-refresh/REVISED-MECHANISM-COPY.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-word-to-number-refresh/TEXT-INTENT-SUBSTRATE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-word-to-number-refresh/WHISPER-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/OPERATOR-CORRECTION-2026-07-12.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/REFINE-SEED-PROPOSAL.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/RUN-MANIFEST.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/RUNTIME-HANDOFF.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/context-builder/context-pack.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/HOSTABLE-SITE-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/HTML-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/NUMBER-LOTTERY-PRESENTER.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/NUMBER-LOTTERY-PROJECTED.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/TIME-CAPSULE-CONCEPT-AND-PLAN.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/VOICE-CORRECTIONS.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/WHISPER-RECEIPT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/composition-plan.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/deployment/DEPLOYMENT-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/learning-residue.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/live-presentation-language-audition-v2.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/live-presentation-language-audition.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/site/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/ACCESS-MATRIX.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/text-intent-substrate.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/validation-report-full.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/validation-report-v2.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/validation-report.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/01-CONTEXT-BUILDER-RECEIPT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/01-check-tension-checker-attempt-1.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/01-check-tension-checker.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/01-check-tension-reviewer-attempt-1.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/01-check-tension-reviewer.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/02-DEFINE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/02-GLOSSARY.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/02-INVOKE-DEFINE-RECEIPT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/03-INTERROGATION-RECEIPT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/03-REFINE-REVIEW.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/04-RESEARCH-DECISION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/04-RESEARCH-RECEIPT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/05-DISTILL-RECEIPT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/05-DISTILL.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/06-DESIGN.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/06-GLOSSARY-CONSISTENCY.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/06-INVOKE-DESIGN-RECEIPT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/06-LAYERING-SEED.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/07-DESIGN-REVIEW.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/07-INTERROGATION-RECEIPT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/08-DISTILL-REPAIR-RECEIPT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/08-DISTILL-REPAIR.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/09-DISTILL-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/09-EXECUTION-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/09-IMPLEMENTATION-LAYERING.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/09-INVOKE-PLAN-RECEIPT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/09-PLAN.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/09-WORK-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/09-work-pack/tasks/TASK-NL-001.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/09-work-pack/tasks/TASK-NL-002.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/09-work-pack/tasks/TASK-NL-003.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/09-work-pack/tasks/TASK-NL-004.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/09-work-pack/tasks/TASK-NL-005.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/09-work-pack/tasks/TASK-NL-006.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/09-work-pack/tasks/TASK-NL-VERIFY-007.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/10-FINAL-INTERROGATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/10-FINAL-RECEIPT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/auditor-receipt.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/research.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/reviewer-popper.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/reviewer-quine.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/reviewer-receipt.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/revised-synthesis.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/synthesis.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/synthesizer-receipt.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/writer-receipt.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/CHECK-TENSION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/REFINE-SEED-PROPOSAL.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/RUN-MANIFEST.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/RUNTIME-HANDOFF.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/01-context-builder/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/01-context-builder/RECEIPT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/02-glossary.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/02-invoke-define.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/02-live-intake-spec.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/03-interrogation-refine-review.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/04-research-decision.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/05-distill.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/06-architecture-bundle.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/06-glossary-consistency.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/06-invoke-design.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/07-interrogation-design-review.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/08-distill-repair.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-execution-pack.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-implementation-layering.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-invoke-plan.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-plan-validation.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack/tasks/TASK-LIR-001.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack/tasks/TASK-LIR-002.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack/tasks/TASK-LIR-003.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack/tasks/TASK-LIR-004.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack/tasks/TASK-LIR-005.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack/tasks/TASK-LIR-006.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack/tasks/TASK-LIR-READINESS-007.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/10-final-interrogation.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/subagents-review/attacks.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/subagents-review/database-reliability-review.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/subagents-review/findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/subagents-review/form-accessibility-review.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/subagents-review/privacy-safety-review.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T040433Z-cav2-fixture-implementation-plan/REFINE-SEED-PROPOSAL.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T040433Z-cav2-fixture-implementation-plan/RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T040433Z-cav2-fixture-implementation-plan/RUN-MANIFEST.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T040433Z-cav2-fixture-implementation-plan/RUNTIME-HANDOFF.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T040433Z-cav2-fixture-implementation-plan/stages/compact-stage-receipts.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/REFINE-SEED-PROPOSAL.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/RUN-MANIFEST.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/RUNTIME-HANDOFF.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/stages/01-context-builder/RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/stages/02-invoke-define/RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/stages/03-interrogation-review/RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/stages/04-research-decision/RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/stages/05-distill/RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/stages/06-invoke-design/RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/stages/07-interrogation-design-review/RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/stages/08-distill-repair/RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/stages/09-invoke-plan/RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/stages/10-final-synthesis/RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260629-inventory-index-generator/DECISION-D3-curated-fields.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260629-inventory-index-generator/REFINE-SEED-PROPOSAL.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260629-inventory-index-generator/RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260629-inventory-index-generator/RUN-MANIFEST.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260629-inventory-index-generator/RUNTIME-HANDOFF.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260629-inventory-index-generator/stages/02-define.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260629-inventory-index-generator/stages/06-design.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/refinement-runs/20260629-inventory-index-generator/stages/09-plan.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/research/2026-07-17-agentless-time-capsule-protocol/FINAL-LEARNING-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/research/2026-07-17-agentless-time-capsule-protocol/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/research/2026-07-17-agentless-time-capsule-protocol/TOWER.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/research/2026-07-17-agentless-time-capsule-protocol/bridge-decisions.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/research/2026-07-17-agentless-time-capsule-protocol/claims/claim-ledger.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/research/2026-07-17-agentless-time-capsule-protocol/definitions.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/research/2026-07-17-agentless-time-capsule-protocol/distill.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/research/2026-07-17-agentless-time-capsule-protocol/gates/closure-gates.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/research/2026-07-17-agentless-time-capsule-protocol/glossary.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/research/2026-07-17-agentless-time-capsule-protocol/levels/L0-corpus.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/research/2026-07-17-agentless-time-capsule-protocol/levels/L1-residue-map.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/research/2026-07-17-agentless-time-capsule-protocol/levels/L2-closure-plan.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/research/2026-07-17-agentless-time-capsule-protocol/related-work.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/research/2026-07-17-agentless-time-capsule-protocol/residue/open-residue.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/research/2026-07-17-agentless-time-capsule-protocol/sources/source-record.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-001/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-001/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-002/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-002/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-003/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-003/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-004/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-004/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-005/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-005/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-006/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-006/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-010/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-010/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-011/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-011/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-012/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-012/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-013/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-013/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-014/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-014/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-015/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-015/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-016/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-016/DECISION-GATE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-016/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-demo/SWU-LIR-001/BROWSER-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-demo/SWU-LIR-001/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-demo/SWU-LIR-001/DECISIONS.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-demo/SWU-LIR-001/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-demo/SWU-LIR-002/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-demo/SWU-LIR-002/FIXTURE-VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-demo/SWU-LIR-002/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-intake-form-2h/SWU-FORM-001/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-intake-form-2h/SWU-FORM-001/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-intake-form-2h/SWU-FORM-002/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-intake-form-2h/SWU-FORM-002/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-intake-form-2h/SWU-FORM-003/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-intake-form-2h/SWU-FORM-003/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-intake-form-2h/SWU-FORM-VERIFY-004/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-intake-form-2h/SWU-FORM-VERIFY-004/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-intake-form-2h/TASK-SESSION-CLOSEOUT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/api/node_modules/@esbuild/linux-x64/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/api/node_modules/@types/node/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/api/node_modules/esbuild/LICENSE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/api/node_modules/esbuild/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/api/node_modules/get-tsconfig/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/api/node_modules/resolve-pkg-maps/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/api/node_modules/tsx/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/api/node_modules/typescript/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/api/node_modules/typescript/SECURITY.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/api/node_modules/undici-types/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "development/wp3-precommit-gate/WORK-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/CHECK-TENSION-GATE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/CHECK-TENSION-HARVEST-GATE.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/PROPOSED-DISPATCH.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/PROPOSED-HARVEST-DISPATCH.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/PROPOSED-META-PROGRAM.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/PROPOSED-PROGRAM-SYNTHESIS.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/SUBAGENT-CLOSEOUT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/authority-definition-lifecycle-clarity/findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/authority-definition-lifecycle-clarity/research.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/deferred-contribution-basis/findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/deferred-contribution-basis/research.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/economy-synthesis/findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/economy-synthesis/reviewer-meadows-final.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/economy-synthesis/reviewer-meadows-initial.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/economy-synthesis/reviewer-popper-final.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/economy-synthesis/reviewer-popper-initial.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/economy-synthesis/reviewer-quine-final.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/economy-synthesis/reviewer-quine-initial.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/economy-synthesis/synthesis-draft.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/ergonomics-strategy/findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/ergonomics-strategy/research.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/repository-onboarding-experiment-literacy/findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/repository-onboarding-experiment-literacy/research.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/repository-onboarding-experiment-literacy/whisper/VALIDATION.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/repository-onboarding-experiment-literacy/whisper/WHISPER-RESULT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/repository-onboarding-experiment-literacy/whisper/language-audition.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/reviews/PROPOSED-CONTRIBUTION-MECHANISM-REVIEW.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/towers/PROPOSED-CONTRIBUTION-MECHANISM-RESEARCH.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/towers/PROPOSED-MONETARY-CIRCULATION-RESEARCH.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/towers/PROPOSED-TOWER-1-failed-dao-crypto.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/towers/PROPOSED-TOWER-2-formal-mechanisms.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/towers/PROPOSED-TOWER-3-science-of-science.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/towers/PROPOSED-TOWER-4-socioeconomic-behavior.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/whisper-repo-readme-writing-patterns/findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/whisper-repo-readme-writing-patterns/research.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "dispatch/whisper-repo-readme-writing-patterns/whisper/LEARNING-RESIDUE.md",
+      "class_id": "current_whisper_implementation"
+    },
+    {
+      "path": "dispatch/whisper-repo-readme-writing-patterns/whisper/UPSTREAM-WHISPER-PATCH-REQUEST.md",
+      "class_id": "current_whisper_implementation"
+    },
+    {
+      "path": "dispatch/whisper-repo-readme-writing-patterns/whisper/VALIDATION.md",
+      "class_id": "current_whisper_implementation"
+    },
+    {
+      "path": "dispatch/whisper-repo-readme-writing-patterns/whisper/WHISPER-RESULT.md",
+      "class_id": "current_whisper_implementation"
+    },
+    {
+      "path": "dispatch/whisper-repo-readme-writing-patterns/whisper/composition-plan.md",
+      "class_id": "current_whisper_implementation"
+    },
+    {
+      "path": "dispatch/whisper-repo-readme-writing-patterns/whisper/documentation-coverage.md",
+      "class_id": "current_whisper_implementation"
+    },
+    {
+      "path": "distills/DISTILLED-KNOWLEDGE.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "formulae/dispatch-spec/ARCANUM-DISPATCH-SYNTHESIS.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/README.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/SKILL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/TECHNIQUE-CATALOG.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/WEAVER-EXTRACTION.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/CODEX-EXEC-MIGRATION.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/CODEX-EXEC-SURFACE-INVENTORY.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/DEFINE-TRANSPORT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/DEFINE.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/DESIGN-TRANSPORT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/DESIGN.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/GLOSSARY-CONSISTENCY.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/GLOSSARY.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/IMPLEMENTATION-LAYERING-SEED.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/ORCHESTRATION-RUNTIME-ARCHITECTURE.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/ORCHESTRATION-RUNTIME-PLAN.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/SKILL-SURFACE-DISPATCH-CANONICALIZATION-IMPLEMENTATION-LAYERING.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/SKILL-SURFACE-DISPATCH-CANONICALIZATION-L0-CONTEXT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/SKILL-SURFACE-DISPATCH-CANONICALIZATION-L0-RESULT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/SKILL-SURFACE-DISPATCH-CANONICALIZATION-LIVE-REFRESH-DECISION.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/SKILL-SURFACE-DISPATCH-CANONICALIZATION-SWU-002-CONTEXT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/SKILL-SURFACE-DISPATCH-CANONICALIZATION-SWU-002-RESULT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/SKILL-SURFACE-DISPATCH-CANONICALIZATION-SWU-003-CONTEXT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/SKILL-SURFACE-DISPATCH-CANONICALIZATION-SWU-003-RESULT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/SKILL-SURFACE-DISPATCH-CANONICALIZATION-SWU-004-CONTEXT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/SKILL-SURFACE-DISPATCH-CANONICALIZATION-SWU-004-RESULT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/SKILL-SURFACE-DISPATCH-CANONICALIZATION-SWU-005-BLOCK-RESULT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/SKILL-SURFACE-DISPATCH-CANONICALIZATION-SWU-005-CONTEXT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/SKILL-SURFACE-DISPATCH-CANONICALIZATION-SWU-005-RESULT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/SKILL-SURFACE-DISPATCH-CANONICALIZATION-WORK-PACK.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/TANDEM-ARCANUM-CROSSWALK.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/TANDEM-INTEGRATION-OPTIONS.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/TANDEM-INTERACTION-TENSIONS.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/TANDEM-RESEARCH-SUBAGENT-STRATEGY.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260528T231321Z-expand-dispatch-techniques/GOAL-HANDOFF.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260528T231321Z-expand-dispatch-techniques/REFINE-SEED-PROPOSAL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260528T231321Z-expand-dispatch-techniques/RESULT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260528T231321Z-expand-dispatch-techniques/RUN-MANIFEST.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260528T231321Z-expand-dispatch-techniques/stages/01-context-builder-summary.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260528T231321Z-expand-dispatch-techniques/stages/02-invoke-define.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260528T231321Z-expand-dispatch-techniques/stages/03-interrogation-refine-review.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260528T231321Z-expand-dispatch-techniques/stages/04-research-decision.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260528T231321Z-expand-dispatch-techniques/stages/05-distill.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260528T231321Z-expand-dispatch-techniques/stages/06-invoke-design.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260528T231321Z-expand-dispatch-techniques/stages/07-interrogation-design-review.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260528T231321Z-expand-dispatch-techniques/stages/08-distill-repair.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260528T231321Z-expand-dispatch-techniques/stages/09-invoke-plan.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260528T231321Z-expand-dispatch-techniques/stages/10-final-interrogation-and-synthesis.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/GOAL-HANDOFF.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/REFINE-SEED-PROPOSAL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/RESULT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/RUN-MANIFEST.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/requests/01-context-builder.request.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/requests/02-invoke-define.request.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/requests/03-interrogation-refine-review.request.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/requests/05-distill.request.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/requests/06-invoke-design.request.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/requests/07-interrogation-design-review.request.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/requests/08-distill-repair.request.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/requests/09-invoke-plan.request.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/requests/10-final-interrogation.request.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/01-context-builder.dry-run.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/01-context-builder.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/02-invoke-define.dry-run.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/02-local-define.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/03-interrogation-refine-review.dry-run.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/03-local-refine-review.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/04-research-decision.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/05-distill.dry-run.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/05-local-distill.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/06-invoke-design.dry-run.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/06-local-architecture.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/07-interrogation-design-review.dry-run.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/07-local-design-review.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/08-distill-repair.dry-run.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/08-local-distill-repair.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/09-invoke-plan.dry-run.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/09-local-plan.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/10-final-interrogation.dry-run.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260529T102019Z-boundary-evidence-schema/stages/10-local-final-interrogation.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260619T143132Z-anti-bias-and-technique-selection/DESIGN.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260619T143132Z-anti-bias-and-technique-selection/PLAN.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260619T143132Z-anti-bias-and-technique-selection/REFINE-SEED-PROPOSAL.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260619T143132Z-anti-bias-and-technique-selection/RESULT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260619T143132Z-anti-bias-and-technique-selection/RUN-MANIFEST.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/refinement-runs/20260619T143132Z-anti-bias-and-technique-selection/stages/04-research-decision.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/reports/CODEX-EXEC-SURFACE-LINE-REPORT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/session-evidence/TASK-ORCH-006/TASK-SESSION-REPORT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/session-evidence/TASK-ORCH-006/context-pack.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "formulae/dispatch-spec/development/session-evidence/TASK-ORCH-007-009/TASK-SESSION-REPORT.md",
+      "class_id": "generated_runtime_or_formula"
+    },
+    {
+      "path": "gates/closure-gates.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "glossary/GLOSSARY.md",
+      "class_id": "canonical_reference_glossary"
+    },
+    {
+      "path": "harvest/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "harvest/cav2-authority-lifecycle/cav2-return-package.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "harvest/cav2-authority-lifecycle/findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "harvest/cav2-authority-lifecycle/research.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "harvest/cav2-authority-lifecycle/reviewer-positions.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "harvest/cav2-authority-lifecycle/selector-map.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "harvest/cav2-lean/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "harvest/cav2-lean/findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "harvest/cav2-lean/research.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "harvest/cav2-lean/reviewer-positions.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "harvest/cav2-lean/selector-map.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "lanes/ATTACK-LANES.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "lanes/TWO-LANE-DIALECTICS.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "levels/L0-corpus.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "levels/L1-residue-map.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "levels/L2-closure-plan.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "maps/current-state/README.md",
+      "class_id": "canonical_navigation"
+    },
+    {
+      "path": "ops/research-workflow.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "ops/subagents-strategy/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "ops/subagents-strategy/constitution/robot-talks-constitution.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "ops/subagents-strategy/constitution/subagents-strategy-constitution-proposal.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "ops/subagents-strategy/docs/LEDGER-MODEL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "ops/subagents-strategy/skills/check-tension/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "ops/subagents-strategy/skills/domainspec-subagents-strategy/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "ops/subagents-strategy/skills/experiment/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "ops/subagents-strategy/skills/register-dispatch/SKILL.md",
+      "class_id": "structured_state_contract"
+    },
+    {
+      "path": "ops/subagents-strategy/skills/research/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "ops/subagents-strategy/skills/review/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "ops/subagents-strategy/skills/robot-talks/SKILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "prizes/BET-REGISTER.md",
+      "class_id": "structured_state_contract"
+    },
+    {
+      "path": "prizes/DEFERRED-CONTRIBUTION-BETS-PLAIN-LANGUAGE.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "prizes/EXPERIMENT-EXAMPLES.md",
+      "class_id": "active_front_door_pilot"
+    },
+    {
+      "path": "prizes/PRIZE-REGISTER.md",
+      "class_id": "structured_state_contract"
+    },
+    {
+      "path": "prizes/README.md",
+      "class_id": "active_front_door_pilot"
+    },
+    {
+      "path": "prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.validation.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "prizes/SEED.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "prizes/training/APPROVED-LANGUAGE-AUDITION.md",
+      "class_id": "role_specific_training"
+    },
+    {
+      "path": "prizes/training/BROWSER-VALIDATION.md",
+      "class_id": "role_specific_training"
+    },
+    {
+      "path": "prizes/training/CONTRIBUTION-MEASUREMENT-FAILURE-AND-ALLOCATION.md",
+      "class_id": "role_specific_training"
+    },
+    {
+      "path": "prizes/training/FACILITATOR-GUIDE.md",
+      "class_id": "role_specific_training"
+    },
+    {
+      "path": "prizes/training/PARTICIPANT-WORKBOOK.md",
+      "class_id": "role_specific_training"
+    },
+    {
+      "path": "prizes/training/README.md",
+      "class_id": "role_specific_training"
+    },
+    {
+      "path": "prizes/training/VALIDATION.md",
+      "class_id": "role_specific_training"
+    },
+    {
+      "path": "prizes/training/task-sessions/2026-07-13-browser-validation/CONTEXT-PACK.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "prizes/training/task-sessions/2026-07-13-browser-validation/TASK-SESSION-REPORT.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "research/four-surface-reconciliation/findings.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "research/four-surface-reconciliation/research.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "residue/open-residue.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "reviews/cav2-lean-development-pack-review/attacks.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "reviews/cav2-lean-development-pack-review/findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "reviews/onboarding-docs-review/attacks.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "reviews/onboarding-docs-review/findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "sources/local-snapshots/CLOSURE-STRATEGY.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/README.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/SOURCE-MAP.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/authority/AUTHORITY-MODEL.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/authority/boundaries.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/authority/constitutions/STABLE-REPOSITORY-CONSTITUTION.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/authority/decisions/2026-06-26-resonantos-economy-research-standalone.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/authority/definitions/DEFINITIONS.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/authority/imports/resonantos-economy-research/README.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/authority/promotion-policy.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/development/refinement-runs/20260621T043600Z-authority-artifact-lifecycle-placement/RESULT.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/development/research/2026-06-25-cav2-authority-synthesis/findings.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/development/reviews/2026-06-21-authority-elevation-protocol-review/findings.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/development/reviews/2026-06-22-operational-ontology-authority-lifecycle-review/findings.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/evidence-exchange/findings.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/evidence-exchange/proposal-blueprint.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/evidence-exchange/research.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/implementation/README.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/ontology/AUTHORITY-KINDS.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/ontology/AUTHORITY-POSTURES.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/ontology/LIFECYCLE-MODEL.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/validation/README.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/cav2/validation/authority-kind-closure-validator-SPEC.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/domainspec-lean/FRAMEWORK-IMPLICATIONS.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/domainspec-lean/GLOSSARY.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/domainspec-lean/LEAN-ARCHITECTURE.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/domainspec-lean/OPEN-PROBLEM-LOOP-CLOSURE.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/domainspec-lean/PRIZES.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/domainspec-lean/README.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/domainspec-lean/research-social-dynamic/README.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/local-snapshots/domainspec-lean/theorem/README.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "sources/source-records.md",
+      "class_id": "canonical_reference_sources"
+    },
+    {
+      "path": "subtowers/MECHANISM-PRIOR-ART-CONTRACT.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/CLAIMS.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/DEFINITIONS.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/DISTILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/FINAL-LEARNING-PACK.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/GLOSSARY.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/RELATED-WORK.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/SOURCE-RECORDS.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/TOWER.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/gates/closure-gates.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/levels/L0-corpus.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/levels/L1-residue-map.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/levels/L2-closure-plan.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/residue/open-residue.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/returns/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/returns/research/findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/returns/research/research.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/returns/research/robot-talks.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/returns/research/synthesis-candidate.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/contribution-mechanism/returns/research/synthesis-revised.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/failed-dao-crypto/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/failed-dao-crypto/TOWER.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/failed-dao-crypto/gates/closure-gates.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/failed-dao-crypto/levels/L0-corpus.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/failed-dao-crypto/levels/L1-residue-map.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/failed-dao-crypto/levels/L2-closure-plan.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/failed-dao-crypto/residue/open-residue.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/failed-dao-crypto/returns/contribution-mechanism-prior-art.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/failed-dao-crypto/returns/deferred-contribution-basis-prior-art.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/failed-dao-crypto/returns/research.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/failed-dao-crypto/returns/tower-findings.draft.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/failed-dao-crypto/returns/tower-findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/failed-dao-crypto/returns/tower-skeptic.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/formal-mechanisms/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/formal-mechanisms/TOWER.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/formal-mechanisms/gates/closure-gates.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/formal-mechanisms/levels/L0-corpus.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/formal-mechanisms/levels/L1-residue-map.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/formal-mechanisms/levels/L2-closure-plan.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/formal-mechanisms/residue/open-residue.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/formal-mechanisms/returns/contribution-mechanism-prior-art.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/formal-mechanisms/returns/deferred-contribution-basis-prior-art.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/formal-mechanisms/returns/research.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/formal-mechanisms/returns/tower-findings.draft.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/formal-mechanisms/returns/tower-findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/formal-mechanisms/returns/tower-skeptic.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/monetary-circulation/CLAIMS.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/monetary-circulation/DEFINITIONS.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/monetary-circulation/DISTILL.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/monetary-circulation/FINAL-LEARNING-PACK.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/monetary-circulation/GLOSSARY.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/monetary-circulation/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/monetary-circulation/RELATED-WORK.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/monetary-circulation/SOURCE-RECORDS.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/monetary-circulation/TOWER.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/monetary-circulation/gates/closure-gates.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/monetary-circulation/levels/L0-corpus.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/monetary-circulation/levels/L1-residue-map.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/monetary-circulation/levels/L2-closure-plan.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/monetary-circulation/residue/open-residue.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/monetary-circulation/returns/README.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/monetary-circulation/returns/research/findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/monetary-circulation/returns/research/research.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/monetary-circulation/returns/research/robot-talks.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/monetary-circulation/returns/research/synthesis-candidate.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/monetary-circulation/returns/research/synthesis-revised.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/official-whitepaper/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/official-whitepaper/TOWER.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/official-whitepaper/gates/closure-gates.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/official-whitepaper/levels/L0-corpus.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/official-whitepaper/levels/L1-residue-map.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/official-whitepaper/levels/L2-closure-plan.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/official-whitepaper/residue/open-residue.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/official-whitepaper/returns/deferred-contribution-basis-prior-art.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/science-of-science/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/science-of-science/TOWER.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/science-of-science/gates/closure-gates.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/science-of-science/levels/L0-corpus.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/science-of-science/levels/L1-residue-map.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/science-of-science/levels/L2-closure-plan.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/science-of-science/residue/open-residue.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/science-of-science/returns/contribution-mechanism-prior-art.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/science-of-science/returns/deferred-contribution-basis-prior-art.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/science-of-science/returns/research.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/science-of-science/returns/tower-findings.draft.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/science-of-science/returns/tower-findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/science-of-science/returns/tower-skeptic.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/socioeconomic-behavior/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/socioeconomic-behavior/TOWER.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/socioeconomic-behavior/gates/closure-gates.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/socioeconomic-behavior/levels/L0-corpus.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/socioeconomic-behavior/levels/L1-residue-map.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/socioeconomic-behavior/levels/L2-closure-plan.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/socioeconomic-behavior/residue/open-residue.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "subtowers/socioeconomic-behavior/returns/contribution-mechanism-prior-art.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/socioeconomic-behavior/returns/deferred-contribution-basis-prior-art.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/socioeconomic-behavior/returns/research.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/socioeconomic-behavior/returns/tower-findings.draft.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/socioeconomic-behavior/returns/tower-findings.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "subtowers/socioeconomic-behavior/returns/tower-skeptic.md",
+      "class_id": "historical_research_or_execution"
+    },
+    {
+      "path": "telemetry/agents/README.md",
+      "class_id": "append_only_evidence"
+    },
+    {
+      "path": "validation/README.md",
+      "class_id": "active_front_door_pilot"
+    },
+    {
+      "path": "validation/contribution-edge-fixtures/IMPLEMENTATION-CHECKLIST.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "validation/contribution-edge-fixtures/MATRIX.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "validation/contribution-edge-fixtures/README.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "validation/contribution-edge-fixtures/SCHEMA.md",
+      "class_id": "structured_state_contract"
+    },
+    {
+      "path": "validation/contribution-edge-fixtures/TYPED-NEGATIVES.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "validation/contribution-edge-fixtures/fixture-appeal-recusal.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "validation/contribution-edge-fixtures/fixture-attention-capture.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "validation/contribution-edge-fixtures/fixture-authority-handoff-no-effect.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "validation/contribution-edge-fixtures/fixture-invisible-work-exclusion.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "validation/contribution-edge-fixtures/fixture-positive-observed-use.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "validation/contribution-edge-fixtures/fixture-reviewer-bottleneck.md",
+      "class_id": "deferred_owner_review"
+    },
+    {
+      "path": "validation/flow-conservation/README.md",
+      "class_id": "deferred_owner_review"
+    }
+  ]
+}
