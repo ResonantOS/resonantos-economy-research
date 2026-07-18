@@ -10,6 +10,7 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 *.tmp.json
+.playwright-cli/
 
 # Local private source snapshots — operative locally, never in git/remote (not export-safe)
 sources/local-snapshots/
