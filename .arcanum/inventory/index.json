@@ -1,7 +1,7 @@
 {
   "schema_version": "inventory.index.v0.1",
   "inventory_root": ".arcanum/inventory",
-  "generated_at": "2026-07-18T00:48:04Z",
+  "generated_at": "2026-07-18T01:35:16Z",
   "human_index": "index.md",
   "entries": [
     {
@@ -78,7 +78,7 @@
         "dlean-prize-not-achievement",
         "dlean-bet-register-boundary"
       ],
-      "updated": "2026-06-29",
+      "updated": "2026-07-17",
       "status": "active",
       "authority_posture": "non-authority-read-model",
       "selectors": [
@@ -412,7 +412,7 @@
         "../../../prizes/BET-REGISTER.md",
         "../../../validation/contribution-edge-fixtures/TYPED-NEGATIVES.md"
       ],
-      "updated": "2026-07-18",
+      "updated": "2026-07-17",
       "status": "candidate",
       "authority_posture": "non-authority-read-model",
       "selectors": [
@@ -463,7 +463,7 @@
         "../../../subtowers/contribution-mechanism/returns/research/research.md",
         "../../../subtowers/contribution-mechanism/returns/research/robot-talks.md"
       ],
-      "updated": "2026-07-18",
+      "updated": "2026-07-17",
       "status": "bounded",
       "authority_posture": "non-authority-read-model",
       "selectors": [],
@@ -495,7 +495,7 @@
         "monetary-circulation-tower.md",
         "bets-and-prizes-device.md"
       ],
-      "updated": "2026-07-18",
+      "updated": "2026-07-17",
       "status": "active",
       "authority_posture": "non-authority-read-model",
       "selectors": [
@@ -538,7 +538,7 @@
         "../../../subtowers/formal-mechanisms/returns/deferred-contribution-basis-prior-art.md",
         "../../../subtowers/socioeconomic-behavior/returns/deferred-contribution-basis-prior-art.md"
       ],
-      "updated": "2026-07-13",
+      "updated": "2026-07-17",
       "status": "dispatch",
       "authority_posture": "non-authority-read-model",
       "selectors": [],
@@ -615,7 +615,7 @@
         "SYN-ECON-PROGRAM-FINDINGS",
         "SYN-ECON-TOWER-*"
       ],
-      "updated": "2026-06-27",
+      "updated": "2026-07-17",
       "status": "closed",
       "authority_posture": "non-authority-read-model",
       "selectors": [
@@ -808,7 +808,7 @@
         "../../../subtowers/formal-mechanisms/returns/deferred-contribution-basis-prior-art.md",
         "../../../subtowers/socioeconomic-behavior/returns/deferred-contribution-basis-prior-art.md"
       ],
-      "updated": "2026-07-18",
+      "updated": "2026-07-17",
       "status": "active",
       "authority_posture": "non-authority-read-model",
       "selectors": [
@@ -852,7 +852,7 @@
         "../../../subtowers/monetary-circulation/returns/research/robot-talks.md",
         "../../../dispatch/economy-synthesis/findings.md"
       ],
-      "updated": "2026-07-18",
+      "updated": "2026-07-17",
       "status": "bounded",
       "authority_posture": "non-authority-read-model",
       "selectors": [],
@@ -964,6 +964,56 @@
       "evidence_set_ids": [],
       "residue": [
         "No personal/global skill installation was changed; this is a repo-local skill surface."
+      ]
+    },
+    {
+      "id": "repository-onboarding-experiment-literacy",
+      "path": "entries/repository-onboarding-experiment-literacy.md",
+      "kind": "entry",
+      "type": "strategy-result",
+      "title": "Repository Onboarding and Experiment Literacy",
+      "summary": "The accepted research finds that core onboarding and experiment mechanics already exist, while the claim that discovery and example variation are the primary newcomer difficulty remains unwitnessed and therefore killed at claim level.",
+      "tags": [
+        "strategy-result",
+        "dispatch",
+        "subagents",
+        "synthesis",
+        "onboarding",
+        "ergonomics",
+        "prizes",
+        "bets",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../dispatch/repository-onboarding-experiment-literacy/findings.md",
+        "../../../dispatch/repository-onboarding-experiment-literacy/research.md",
+        "../../../prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md",
+        "../../../prizes/README.md",
+        "../../../.agents/skills/domainspec-experiment-dispatch/SKILL.md",
+        "../../../authority/AUTHORITY-MODEL.md",
+        "../../../README.md",
+        "../../../GUIDE.md",
+        "../../../prizes/EXPERIMENT-EXAMPLES.md",
+        "../../../dispatch/repository-onboarding-experiment-literacy/whisper/VALIDATION.md",
+        "../../../telemetry/agents/subagents-dispatch.yaml",
+        "2026-07-17-repository-onboarding-experiment-literacy"
+      ],
+      "updated": "2026-07-18",
+      "status": "closed",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "repository-onboarding-experiment-literacy",
+        "candidate-front-porch-architecture",
+        "experiment-lifecycle-owner-table",
+        "independent-bets-no-evidence-inheritance",
+        "mechanically-decidable-fictional-examples",
+        "newcomer-artifact-transfer-witness",
+        "invalid-owner-conflict-residue"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "- Newcomer difficulty being primarily discovery/variation is killed until an unaided audience diagnostic exists."
       ]
     },
     {
@@ -1188,7 +1238,7 @@
         "../../../development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md",
         "../../../telemetry/agents/subagents-dispatch.yaml"
       ],
-      "updated": "2026-07-18",
+      "updated": "2026-07-17",
       "status": "candidate-plan",
       "authority_posture": null,
       "selectors": [],
@@ -1223,6 +1273,7 @@
       "number-lottery-refinement": "entries/number-lottery-refinement.md",
       "onboarding-docs-review": "entries/onboarding-docs-review.md",
       "repo-skill-surface": "entries/repo-skill-surface.md",
+      "repository-onboarding-experiment-literacy": "entries/repository-onboarding-experiment-literacy.md",
       "repository-working-guide": "entries/repository-working-guide.md",
       "research-tower-root": "entries/research-tower-root.md",
       "strategy-result-cav2-lean-harvest": "entries/strategy-result-cav2-lean-harvest.md",
@@ -1258,6 +1309,7 @@
         "ergonomics-strategy",
         "monetary-circulation-tower",
         "number-lottery-refinement",
+        "repository-onboarding-experiment-literacy",
         "time-capsule-live-intake-refine"
       ],
       "synthesis": [
@@ -1304,7 +1356,8 @@
         "bets-and-prizes-device",
         "contribution-measurement-failure-allocation-guide",
         "contribution-mechanism-tower",
-        "mechanism-directed-prior-art"
+        "mechanism-directed-prior-art",
+        "repository-onboarding-experiment-literacy"
       ],
       "cav2": [
         "cav2-authority-lifecycle-owned-build-harvest",
@@ -1346,6 +1399,7 @@
         "monetary-circulation-tower",
         "number-lottery-refinement",
         "onboarding-docs-review",
+        "repository-onboarding-experiment-literacy",
         "strategy-result-cav2-lean-harvest",
         "strategy-result-four-surface-reconciliation",
         "subagents-dispatch-strategy",
@@ -1360,7 +1414,8 @@
         "subagents-dispatch-strategy"
       ],
       "ergonomics": [
-        "ergonomics-strategy"
+        "ergonomics-strategy",
+        "repository-onboarding-experiment-literacy"
       ],
       "fixture-backlog": [
         "economy-resilience-program"
@@ -1399,6 +1454,9 @@
       "observability": [
         "domainspec-subagents-reflection-loop"
       ],
+      "onboarding": [
+        "repository-onboarding-experiment-literacy"
+      ],
       "owned-build": [
         "cav2-authority-lifecycle-owned-build-harvest"
       ],
@@ -1412,7 +1470,8 @@
       ],
       "prizes": [
         "bets-and-prizes-device",
-        "contribution-measurement-failure-allocation-guide"
+        "contribution-measurement-failure-allocation-guide",
+        "repository-onboarding-experiment-literacy"
       ],
       "refine": [
         "contribution-edge-fixture-full-refine-plan",
@@ -1444,6 +1503,7 @@
         "mechanism-directed-prior-art",
         "monetary-circulation-tower",
         "onboarding-docs-review",
+        "repository-onboarding-experiment-literacy",
         "repository-working-guide",
         "research-tower-root",
         "strategy-result-cav2-lean-harvest",
@@ -1474,6 +1534,7 @@
         "monetary-circulation-tower",
         "number-lottery-refinement",
         "onboarding-docs-review",
+        "repository-onboarding-experiment-literacy",
         "strategy-result-cav2-lean-harvest",
         "strategy-result-four-surface-reconciliation",
         "time-capsule-live-intake-refine"
@@ -1489,6 +1550,7 @@
         "monetary-circulation-tower",
         "number-lottery-refinement",
         "onboarding-docs-review",
+        "repository-onboarding-experiment-literacy",
         "strategy-result-cav2-lean-harvest",
         "strategy-result-four-surface-reconciliation",
         "subagents-dispatch-strategy",
@@ -1502,7 +1564,8 @@
         "economy-resilience-program",
         "ergonomics-strategy",
         "load-bearing-term-tracking-discipline",
-        "monetary-circulation-tower"
+        "monetary-circulation-tower",
+        "repository-onboarding-experiment-literacy"
       ],
       "task-session": [
         "contribution-edge-fixture-full-refine-plan"
@@ -1550,6 +1613,9 @@
       "../../../.agents/skills/README.md": [
         "repo-skill-surface"
       ],
+      "../../../.agents/skills/domainspec-experiment-dispatch/SKILL.md": [
+        "repository-onboarding-experiment-literacy"
+      ],
       "../../../.agents/skills/domainspec-subagents-strategy/SKILL.md": [
         "domainspec-subagents-reflection-loop",
         "repo-skill-surface",
@@ -1580,9 +1646,11 @@
       ],
       "../../../GUIDE.md": [
         "harvest-strategy",
+        "repository-onboarding-experiment-literacy",
         "repository-working-guide"
       ],
       "../../../README.md": [
+        "repository-onboarding-experiment-literacy",
         "repository-working-guide",
         "research-tower-root"
       ],
@@ -1591,7 +1659,8 @@
       ],
       "../../../authority/AUTHORITY-MODEL.md": [
         "authority-definition-lifecycle-clarity",
-        "contribution-measurement-failure-allocation-guide"
+        "contribution-measurement-failure-allocation-guide",
+        "repository-onboarding-experiment-literacy"
       ],
       "../../../authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md": [
         "cav2-lean-development-pack-review",
@@ -1703,6 +1772,15 @@
       "../../../dispatch/ergonomics-strategy/research.md": [
         "ergonomics-strategy"
       ],
+      "../../../dispatch/repository-onboarding-experiment-literacy/findings.md": [
+        "repository-onboarding-experiment-literacy"
+      ],
+      "../../../dispatch/repository-onboarding-experiment-literacy/research.md": [
+        "repository-onboarding-experiment-literacy"
+      ],
+      "../../../dispatch/repository-onboarding-experiment-literacy/whisper/VALIDATION.md": [
+        "repository-onboarding-experiment-literacy"
+      ],
       "../../../dispatch/reviews/PROPOSED-CONTRIBUTION-MECHANISM-REVIEW.md": [
         "contribution-mechanism-tower"
       ],
@@ -1773,15 +1851,20 @@
       "../../../prizes/DEFERRED-CONTRIBUTION-BETS-PLAIN-LANGUAGE.md": [
         "bets-and-prizes-device"
       ],
+      "../../../prizes/EXPERIMENT-EXAMPLES.md": [
+        "repository-onboarding-experiment-literacy"
+      ],
       "../../../prizes/PRIZE-REGISTER.md": [
         "bets-and-prizes-device"
       ],
       "../../../prizes/README.md": [
-        "bets-and-prizes-device"
+        "bets-and-prizes-device",
+        "repository-onboarding-experiment-literacy"
       ],
       "../../../prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md": [
         "bets-and-prizes-device",
-        "mechanism-directed-prior-art"
+        "mechanism-directed-prior-art",
+        "repository-onboarding-experiment-literacy"
       ],
       "../../../prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.validation.md": [
         "bets-and-prizes-device"
@@ -1935,6 +2018,7 @@
         "deferred-contribution-basis",
         "ergonomics-strategy",
         "onboarding-docs-review",
+        "repository-onboarding-experiment-literacy",
         "strategy-result-four-surface-reconciliation",
         "subagents-dispatch-strategy",
         "time-capsule-live-intake-refine"
@@ -1975,6 +2059,9 @@
       ],
       "2026-06-30-authority-definition-lifecycle-clarity": [
         "authority-definition-lifecycle-clarity"
+      ],
+      "2026-07-17-repository-onboarding-experiment-literacy": [
+        "repository-onboarding-experiment-literacy"
       ],
       "PRZ-01..06": [
         "bets-and-prizes-device"
@@ -2047,6 +2134,7 @@
         "economy-resilience-program",
         "ergonomics-strategy",
         "onboarding-docs-review",
+        "repository-onboarding-experiment-literacy",
         "strategy-result-cav2-lean-harvest",
         "strategy-result-four-surface-reconciliation"
       ],

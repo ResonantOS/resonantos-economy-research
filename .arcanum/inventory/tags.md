@@ -32,6 +32,7 @@ Owner: ResonantOS economy research owner
 | `load-bearing` | Load-bearing-term tracking discipline (REC-C14 / ER-D23) and its candidate lifecycle. |
 | `mechanism-generator` | Bets & prizes device that produces candidate economic mechanisms that have survived attack. |
 | `observability` | Local usage signals, reflection state, or observer outputs. |
+| `onboarding` | Newcomer orientation, teaching sequence, experiment literacy, or comprehension-witness surface. |
 | `owned-build` | Candidate build-from-owned or reciprocal-return evidence; never authority by itself. |
 | `pool` | Agent-name pool or role-fit list. |
 | `prior-art` | Mechanism-directed, source-bounded precedent research that revises a bet or witness without validating it. |

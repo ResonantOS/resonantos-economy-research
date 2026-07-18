@@ -1069,3 +1069,61 @@ Owner: ResonantOS economy research owner
 - Inventory: `entries/time-capsule-live-intake-refine.md`
 - Promotion posture: candidate non-executed plan only; no real data,
   implementation, security/privacy approval, token, launch, or authority effect
+
+## 2026-07-17 Repository onboarding and experiment-literacy research dispatch registered
+
+- Dispatch: `2026-07-17-repository-onboarding-experiment-literacy`
+- Row: `dispatch`; close row pending
+- Working folder: `dispatch/repository-onboarding-experiment-literacy/`
+- Purpose: evidence-bounded research for a story-led newcomer path, plain-language
+  bet and fixture mechanics, varied worked examples, and a downstream Whisper
+  composition
+- Source boundary: repository-owned artifacts are primary local evidence;
+  bounded external pedagogy remains related evidence only
+- Promotion posture: research and instructional evidence only; no solved economy,
+  validated mechanism, token or payout policy, governance authority, launch, or
+  implementation effect
+
+## 2026-07-17 Repository onboarding and experiment-literacy research dispatch closed
+
+- Dispatch: `2026-07-17-repository-onboarding-experiment-literacy`
+- Row: `close`; exit reason `resolved`; three explorers, one synthesizer, three
+  skeptics, one writer, one auditor; one zig-zag loop and one writer repair
+- Outputs: verbatim `research.md` plus auditor-accepted `findings.md`
+- Result: core instructional mechanics already exist; a README front porch,
+  concise GUIDE bridge, and narrow derived example gallery are accepted
+  composition candidates, not validated pedagogy
+- Typed negatives: primary discovery/variation difficulty, story-first
+  superiority, analogy efficacy, and newcomer usability all remain killed until
+  their audience witnesses run
+- Residue: experiment owners disagree on pre-freeze invalid design versus
+  post-freeze non-adjudicable execution; findings expose rather than harmonize it
+- Inventory: `entries/repository-onboarding-experiment-literacy.md`
+- Next route: downstream Whisper composition from accepted findings
+- Promotion posture: non-authority research only; no economy, mechanism,
+  newcomer-usability, token, payout, governance, launch, implementation, or
+  promotion claim
+
+## 2026-07-17 Repository onboarding Whisper composition
+
+- Source: auditor-accepted
+  `dispatch/repository-onboarding-experiment-literacy/findings.md`
+- Transport: candidate `repository_onboarding`; intent frozen; delivery flow and
+  retell chain active
+- Public surfaces: story-led README front porch, one GUIDE fixture/live bridge,
+  and derived `prizes/EXPERIMENT-EXAMPLES.md` gallery
+- Examples: independent open bets for invisible event work; fictional
+  `FALSIFIED` maintenance case; fictional narrow `SURVIVED` second-review case;
+  post-freeze non-adjudicable onboarding case; held-out mentorship exercise
+- Validation: Whisper draft PASS, substrate YAML PASS, 161 local links/anchors
+  PASS, inventory truth PASS, whitespace PASS; global load-bearing strict sweep
+  remains a pre-existing unrelated FLAG
+- Editorial result: semantic repetition, heading/body, reading sequence,
+  load-bearing examples, retell chain, and authority boundary PASS
+- Final status: `flag`; no independent newcomer witness or comparative
+  story-first run has occurred
+- Inventory: updated `entries/repository-onboarding-experiment-literacy.md`; no
+  new authority surface created
+- Promotion posture: evidence-grounded candidate pedagogy only; no validated
+  usability, mechanism, policy, payout, governance, launch, or implementation
+  claim
