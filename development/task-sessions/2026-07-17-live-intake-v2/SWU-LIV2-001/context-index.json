@@ -1,0 +1,123 @@
+{
+  "identity": {
+    "task_or_swu": "SWU-LIV2-001",
+    "title": "Phrase profile and normalization vectors",
+    "source_reference": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-001.md#swu-liv2-001--phrase-profile-and-normalization-vectors",
+    "session_id": "2026-07-17-live-intake-v2/SWU-LIV2-001",
+    "session_evidence_path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-001/",
+    "mode": "lean-strict",
+    "runtime": "local-task-session",
+    "repository_revision": "c617ace5f10df9f46ec9f203743f4baca5cacbd6-dirty",
+    "captured_at": "2026-07-17T16:46:43Z"
+  },
+  "strict_coverage": {
+    "covered": 10,
+    "total": 10,
+    "status": "pass"
+  },
+  "obligations": [
+    {"id":"O-001-01","status":"covered","summary":"Freeze immutable version and domain tags.","source_refs":["task:SWU-LIV2-001"]},
+    {"id":"O-001-02","status":"covered","summary":"Make the normalization order explicit and executable.","source_refs":["task:implementation-rule-4"]},
+    {"id":"O-001-03","status":"covered","summary":"Collapse TAB/LF/CR and reject other C0/C1 controls.","source_refs":["task:implementation-rule-4","fixture:control-rejected"]},
+    {"id":"O-001-04","status":"covered","summary":"Reject bidi controls and enumerated invisible separators.","source_refs":["task:implementation-rule-4","fixture:bidi-and-zero-width"]},
+    {"id":"O-001-05","status":"covered","summary":"Preserve valid NFC, RTL, and emoji ZWJ text.","source_refs":["task:edge-cases","fixture:nfc-rtl-emoji"]},
+    {"id":"O-001-06","status":"covered","summary":"Count grapheme clusters and enforce 0 through 160.","source_refs":["task:implementation-rule-4","fixture:160-161"]},
+    {"id":"O-001-07","status":"covered","summary":"Declare positive and negative fixtures and reject drift.","source_refs":["task:done","validation:L0"]},
+    {"id":"O-001-08","status":"covered","summary":"Emit fixture count and SHA-256 hashes on success.","source_refs":["task:acceptance"]},
+    {"id":"O-001-09","status":"covered","summary":"Respect exact implementation and evidence write scope.","source_refs":["task:write-scope","goal:write-boundary"]},
+    {"id":"O-001-10","status":"covered","summary":"Preserve invented-data, visibility, no-feed, and token boundaries.","source_refs":["decision:D-15","goal:safety-boundary"]}
+  ],
+  "selected_sources": [
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-001.md",
+      "selectors": ["Implementation Rules 1 and 4", "Edge Cases And Failure Modes", "SWU-LIV2-001", "Synchronization"],
+      "obligations": ["O-001-01","O-001-02","O-001-03","O-001-04","O-001-05","O-001-06","O-001-07","O-001-08","O-001-09"],
+      "sha256": "7f416ac5b82f04d54812083e1c29cb3d4a5b6600a6f4bc8403de9967b414f9be"
+    },
+    {
+      "path": "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/fixtures/time-capsule-fixtures-v1.js",
+      "selectors": ["phraseProfile", "phrases"],
+      "obligations": ["O-001-02","O-001-03","O-001-04","O-001-05","O-001-06","O-001-07","O-001-08","O-001-10"],
+      "sha256": "8604afb174046a86a71dd1b8e8760826abbbcdb5cb865a37b7da3bd49c71d77b"
+    },
+    {
+      "path": "DECISIONS.md",
+      "selectors": ["D-15 Future Message Visibility"],
+      "obligations": ["O-001-10"],
+      "sha256": "f4ecab3de66e4d398629930e2b8e36e11351d8861afcb61ab05f095549fc4c46"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/WORK-PACK.md",
+      "selectors": ["Shared SWU Manifest rows 001-002", "Gates", "Atomicity And First-Unit Review"],
+      "obligations": ["O-001-08","O-001-09","O-001-10"],
+      "sha256": "c0d66deedb913f4b33e4bb2ec93884042f9fa2df88d8b91677e18d3e95bbe031"
+    },
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/VALIDATION-STRATEGY.md",
+      "selectors": ["L0 contract", "Negative Evidence Is First-Class", "Secret And Real-Data Rule", "Receipt Shape"],
+      "obligations": ["O-001-07","O-001-08","O-001-09","O-001-10"],
+      "sha256": "34d035f65d125b38b52fff1657bc7b9a976955290889ac830392ca9a453bc27b"
+    },
+    {
+      "path": "development/goal-runs/2026-07-17-live-intake-v2-whole-work-pack/CODEX-GOAL-SIDECAR.md",
+      "selectors": ["Iteration Policy", "Write Boundary", "Safety And Product Boundary"],
+      "obligations": ["O-001-08","O-001-09","O-001-10"],
+      "sha256": "a15fa7ef29f7e78ceddb0930cc3475cca457c6ed4f88867d14b55b386db4224d"
+    },
+    {
+      "path": "development/goal-runs/2026-07-17-live-intake-v2-whole-work-pack/HANDOFF.md",
+      "selectors": ["Constraints And Non-Goals", "Write Scope", "Fallback Exploration Rule"],
+      "obligations": ["O-001-09","O-001-10"],
+      "sha256": "cb76b8b1c5ddc837bff032a4473e3680232bc7794e95d2ce74071189251ed898"
+    }
+  ],
+  "write_scope": {
+    "implementation": [
+      "development/time-capsule-live-intake-v2/contracts/phrase-profile-v1.json",
+      "development/time-capsule-live-intake-v2/fixtures/phrase-profile-v1.json",
+      "development/time-capsule-live-intake-v2/tools/validate-phrase-profile.mjs"
+    ],
+    "evidence": [
+      "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-001/",
+      "active SWU-001 status/frontier rows after validation"
+    ]
+  },
+  "validation": {
+    "command": "node development/time-capsule-live-intake-v2/tools/validate-phrase-profile.mjs",
+    "negative_checks": ["temporary fixture expectation drift", "temporary contract algorithm drift"],
+    "receipt_requires": ["fixture_count", "contract_sha256", "fixtures_sha256"]
+  },
+  "decisions": [
+    {
+      "id": "D-SWU001-LOCAL-JSON",
+      "classification": "assumption",
+      "selection": "dependency-free JSON plus Node ESM validator",
+      "reason": "smallest browser and Node-neutral conformance surface"
+    },
+    {
+      "id": "D-SWU001-ZERO-WIDTH",
+      "classification": "resolved-contradiction",
+      "selection": "reject U+200B, U+2060, and U+FEFF; allow U+200C and U+200D",
+      "reason": "the selected fixture explicitly accepts emoji ZWJ while rejecting zero-width space"
+    }
+  ],
+  "gaps_and_blockers": {
+    "active": [],
+    "deferred": ["cross-engine browser execution", "manual access and retell gates", "real intake and later external gates"]
+  },
+  "fallback_exploration": {
+    "status": "none-needed",
+    "rule": "Only explore for a named unsupported-runtime or segmentation gap exposed by the exact validator."
+  },
+  "extra_sources": [
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-demo/SWU-LIR-002/",
+      "reason": "repository Task Session evidence naming convention",
+      "changed_result": false
+    }
+  ],
+  "output_paths": {
+    "markdown": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-001/CONTEXT-PACK.md",
+    "json_index": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-001/context-index.json"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "capabilities": ["invoke", "whisper", "distill"],
+  "objective": "story-first Time Capsule design for a first-time participant",
+  "mode": "design",
+  "result": "flag",
+  "output_drift": false,
+  "material_decisions": [
+    "story before mechanism",
+    "short message instead of word",
+    "mechanism after first act",
+    "isolated non-collecting prototype"
+  ],
+  "pending_gates": [
+    "operator design approval",
+    "five-person comprehension test",
+    "saved-message owner decision",
+    "ceremony rule approval"
+  ],
+  "machine_validation": {
+    "dispatch_spec": "pass",
+    "inline_javascript": "pass",
+    "unique_ids": "pass",
+    "firefox_desktop": "pass",
+    "firefox_mobile": "pass",
+    "all_quiet_path": "pass",
+    "console_errors": 0,
+    "storage_and_cookies": "empty"
+  },
+  "next_route": "human-review"
+}

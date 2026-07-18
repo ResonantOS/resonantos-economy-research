@@ -1,0 +1,29 @@
+{
+  "identity":{"task_or_swu":"SWU-LIV2-006","title":"Regenerate the V2 access matrix","session_id":"2026-07-17-live-intake-v2/SWU-LIV2-006","mode":"lean-strict","runtime":"local-task-session","repository_revision":"c617ace5f10df9f46ec9f203743f4baca5cacbd6-dirty","captured_at":"2026-07-17T21:42:25Z","dependency_receipts":["SWU-LIV2-001:pass","fixture-profile:2.0.0"]},
+  "strict_coverage":{"covered":10,"total":10,"status":"pass"},
+  "obligations":[
+    {"id":"O-006-01","status":"covered","summary":"Identify protocol and fixture as V2 2.0.0."},
+    {"id":"O-006-02","status":"covered","summary":"Use up to two short phrases per 2/5/10-year horizon."},
+    {"id":"O-006-03","status":"covered","summary":"Preserve fixed public-at-opening visibility."},
+    {"id":"O-006-04","status":"covered","summary":"Preserve non-collecting candidate preview boundary."},
+    {"id":"O-006-05","status":"covered","summary":"Explain fingerprint, later Bitcoin block, and ritual-only number."},
+    {"id":"O-006-06","status":"covered","summary":"Quiet creates no phrase, receipt, or record."},
+    {"id":"O-006-07","status":"covered","summary":"Keep five evidence modes separate."},
+    {"id":"O-006-08","status":"covered","summary":"Require all 25 critical retell cells without coaching."},
+    {"id":"O-006-09","status":"covered","summary":"Keep receipts non-sensitive and mode-specific."},
+    {"id":"O-006-10","status":"covered","summary":"Respect one-file scope and make no human execution claim."}
+  ],
+  "selected_sources":[
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-002.md","selectors":["Objective","Procedure","Privacy Rule","SWU-LIV2-006","Synchronization"],"sha256":"fa99c928d299ae5a14cbd61f793c4908e6258ec27f6fa6c4855ced4067833b70"},
+    {"path":"development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/fixtures/time-capsule-fixtures-v1.js","selectors":["version","capability","promotionBoundary","phraseProfile","states","accessModes","retellProtocol"],"sha256":"8604afb174046a86a71dd1b8e8760826abbbcdb5cb865a37b7da3bd49c71d77b"},
+    {"path":"development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/ACCESS-MATRIX.md","selectors":["Decidable Gate","Matrix","Record Template"],"sha256":"fba7e51ead81938e2143e5cff2fc2ba77358017d0469c5d34d3e7dd0e8e759f3"},
+    {"path":"development/goal-runs/2026-07-17-live-intake-v2-whole-work-pack/CODEX-GOAL-SIDECAR.md","selectors":["Protected Gates","Write Boundary","Safety And Product Boundary"],"sha256":"a15fa7ef29f7e78ceddb0930cc3475cca457c6ed4f88867d14b55b386db4224d"}
+  ],
+  "write_scope":{"implementation":["development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/ACCESS-MATRIX.md"],"evidence":["development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-006/","active SWU-006 status/frontier rows after validation"]},
+  "validation":{"method":"selector-by-selector parity review","required_selectors":["fixture 2.0.0","quota and horizons","public_at_opening","preview boundary","number method","quiet path","five access modes","five critical prompts","5x5 pass and rerun rules","receipt privacy and manual unrun status"]},
+  "decisions":[{"id":"D-SWU006-PROSPECTIVE","classification":"assumption","selection":"prospective executable protocol without stale evidence promotion"}],
+  "gaps_and_blockers":{"active":[],"deferred":["SWU-LIV2-007 operator evidence","SWU-LIV2-008 native-IME evidence","SWU-LIV2-009 five-person evidence"]},
+  "fallback_exploration":{"status":"none-needed","rule":"Fixture 2.0.0 is the bounded parity authority."},
+  "extra_sources":[],
+  "output_paths":{"markdown":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-006/CONTEXT-PACK.md","json_index":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-006/context-index.json"}
+}

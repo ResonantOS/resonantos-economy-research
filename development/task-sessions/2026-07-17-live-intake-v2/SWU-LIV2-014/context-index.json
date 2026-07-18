@@ -1,0 +1,99 @@
+{
+  "identity": {
+    "task_or_swu": "SWU-LIV2-014",
+    "title": "At-rest AEAD and log redaction",
+    "session_id": "2026-07-17-live-intake-v2/SWU-LIV2-014",
+    "mode": "lean-strict",
+    "runtime": "local-task-session",
+    "repository_revision": "c617ace5f10df9f46ec9f203743f4baca5cacbd6-dirty",
+    "captured_at": "2026-07-17T22:19:41Z",
+    "dependency_receipts": ["SWU-LIV2-011:pass", "SWU-LIV2-013:pass"]
+  },
+  "strict_coverage": {"covered": 10, "total": 10, "status": "pass"},
+  "obligations": [
+    {"id": "O-014-01", "status": "covered", "summary": "Provide entrusted at-rest protection without an E2E claim."},
+    {"id": "O-014-02", "status": "covered", "summary": "Pin AES-256-GCM key nonce tag and format parameters."},
+    {"id": "O-014-03", "status": "covered", "summary": "Bind every phrase slot and version coordinate as AAD."},
+    {"id": "O-014-04", "status": "covered", "summary": "Generate fresh AEAD and commitment nonces."},
+    {"id": "O-014-05", "status": "covered", "summary": "Require a separate no-default exact-length data key seam."},
+    {"id": "O-014-06", "status": "covered", "summary": "Use one sanitized failure for all payload authentication errors."},
+    {"id": "O-014-07", "status": "covered", "summary": "Construct structured logs from a fixed safe allowlist."},
+    {"id": "O-014-08", "status": "covered", "summary": "Keep plaintext and key out of DB receipt and audit artifacts."},
+    {"id": "O-014-09", "status": "covered", "summary": "Prove round trip misuse redaction integration and regressions."},
+    {"id": "O-014-10", "status": "covered", "summary": "Respect crypto logging evidence and invented-data scope only."}
+  ],
+  "selected_sources": [
+    {
+      "path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-003.md",
+      "selectors": ["Security And Failure Rules", "SWU-LIV2-014", "Synchronization"],
+      "sha256": "a2232f9db90cd5e60484d31b24a09639aec8b8e22386fab961f8affa8f2de0ff"
+    },
+    {
+      "path": "DECISIONS.md",
+      "selectors": ["D-01", "D-03"],
+      "sha256": "f4ecab3de66e4d398629930e2b8e36e11351d8861afcb61ab05f095549fc4c46"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/contracts/field-lifecycle-v1.json",
+      "selectors": ["phrase_plaintext", "phrase_aead_nonce", "phrase_ciphertext", "invite/session fields", "forbidden_audit_phrase_copy", "receipt fields", "invariants"],
+      "sha256": "1b929ece943a55de31d3d36ee8f50a4c76cb756e2ad85afda20bf5e66a6f4e87"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/api/src/envelope/service.ts",
+      "selectors": ["PhraseAad", "ProtectedPhrase", "PhrasePayloadPort", "protect/reveal call sites"],
+      "sha256": "d197a2be23401b8dbc8e462b02b0dd4465aeef3ae701b5dc9840e1ff9ff8ba95"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/api/migrations/0001_initial_intake.sql",
+      "selectors": ["message_occurrences", "idempotency_results", "audit_events"],
+      "sha256": "933aad74f89bbfe9a2ba9cd5c3e4d72d4a5f975baf0dcfe88246e1b0a7fc908b"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-013/VALIDATION-RECEIPT.json",
+      "selectors": ["payload-port residue", "checks", "regressions"],
+      "sha256": "6598ae5273d7ffb4a2e28e7bfd060eb0ba0476bfc72cc5135b585c9bf35126da"
+    }
+  ],
+  "write_scope": {
+    "implementation": [
+      "development/time-capsule-live-intake-v2/api/src/crypto/",
+      "development/time-capsule-live-intake-v2/api/src/logging/",
+      "development/time-capsule-live-intake-v2/api/package.json"
+    ],
+    "evidence": [
+      "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-014/",
+      "active SWU-014 status/frontier rows after validation"
+    ]
+  },
+  "validation": {
+    "command": "npm --prefix development/time-capsule-live-intake-v2/api test -- crypto-redaction",
+    "required_negatives": [
+      "wrong key", "wrong AAD", "wrong nonce length", "format tamper",
+      "ciphertext tamper", "tag tamper", "missing or malformed key",
+      "forbidden value in arbitrary log input", "plaintext or key in persisted artifacts"
+    ]
+  },
+  "decisions": [
+    {"id": "D-SWU014-AEAD", "classification": "assumption", "selection": "Node built-in AES-256-GCM with versioned ciphertext and explicit AAD"},
+    {"id": "D-SWU014-AAD", "classification": "assumption", "selection": "fixed-key-order JSON UTF-8 encoding"},
+    {"id": "D-SWU014-LOGGING", "classification": "assumption", "selection": "allowlist-only structured event output"}
+  ],
+  "gaps_and_blockers": {
+    "active": [],
+    "deferred": [
+      "production key custody and rotation",
+      "independent backup and restore procedure",
+      "HTTP wiring",
+      "staging approval"
+    ]
+  },
+  "fallback_exploration": {
+    "status": "none-needed",
+    "rule": "Stop if the existing port cannot carry the pinned format or any secret/plaintext enters the scanned artifacts."
+  },
+  "extra_sources": [],
+  "output_paths": {
+    "markdown": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-014/CONTEXT-PACK.md",
+    "json_index": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-014/context-index.json"
+  }
+}

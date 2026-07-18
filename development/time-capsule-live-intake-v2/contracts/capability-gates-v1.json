@@ -1,0 +1,68 @@
+{
+  "schema_version": "resonant.time-capsule.capability-gates.schema.v1",
+  "contract_id": "resonant.time-capsule.capability-gates",
+  "version": "1.0.0",
+  "domain": "resonant-time-capsule/capability-evidence-gates/v1",
+  "status": "frozen",
+  "default": "deny",
+  "states": ["preview", "synthetic", "staged", "live", "closing", "closed", "recovery", "opening"],
+  "not_applicable_closure_gates": ["G-04"],
+  "gate_registry": [
+    {"gate_id":"GATE-L0-MACHINE","blocker_id":"BLOCKER-L0-MACHINE","required_handles":["SWU-LIV2-001-RECEIPT","SWU-LIV2-002-RECEIPT","SWU-LIV2-003-RECEIPT","SWU-LIV2-004-RECEIPT","SWU-LIV2-005-RECEIPT"]},
+    {"gate_id":"GATE-L0-HUMAN","blocker_id":"BLOCKER-L0-HUMAN","required_handles":["SWU-LIV2-007-RECEIPT","SWU-LIV2-008-RECEIPT","SWU-LIV2-009-RECEIPT"]},
+    {"gate_id":"GATE-L1-RECONCILIATION","blocker_id":"BLOCKER-L1-RECONCILIATION","required_handles":["SWU-LIV2-010-RECEIPT","SWU-LIV2-011-RECEIPT","SWU-LIV2-012-RECEIPT","SWU-LIV2-013-RECEIPT","SWU-LIV2-014-RECEIPT","SWU-LIV2-015-RECEIPT","SWU-LIV2-016-RECEIPT","SWU-LIV2-017-RECEIPT","SWU-LIV2-018-RECEIPT","SWU-LIV2-019-RECEIPT","SWU-LIV2-020-RECEIPT"]},
+    {"gate_id":"GATE-STAGED-OPERATIONS","blocker_id":"BLOCKER-STAGED-OPERATIONS","required_handles":["SWU-LIV2-021-RECEIPT","SWU-LIV2-022-RECEIPT","SWU-LIV2-023-RECEIPT"]},
+    {"gate_id":"GATE-REAL-INTAKE","blocker_id":"BLOCKER-REAL-INTAKE","required_handles":["SWU-LIV2-024-RECEIPT","SWU-LIV2-025-APPROVAL-RECEIPT"]},
+    {"gate_id":"GATE-MODERATION-COMPLETE","blocker_id":"BLOCKER-MODERATION-COMPLETE","required_handles":["MODERATION-RECONCILIATION-RECEIPT"]},
+    {"gate_id":"GATE-FINAL-READINESS","blocker_id":"BLOCKER-FINAL-READINESS","required_handles":["SWU-LIV2-033-RECEIPT","SWU-LIV2-034-RECEIPT","SWU-LIV2-035-RECEIPT","TASK-LIV2-READINESS-009-READY","SWU-LIV2-036-EXPLICIT-APPROVAL"]},
+    {"gate_id":"GATE-CLOSE-COMMIT","blocker_id":"BLOCKER-CLOSE-COMMIT","required_handles":["CLOSE-FENCE-RECEIPT","SNAPSHOT-RECEIPT","MANIFEST-RECEIPT","FINGERPRINT-RECEIPT"]},
+    {"gate_id":"G-01","blocker_id":"G-01","required_handles":["G-01-TIMELOCK-RECEIPT"]},
+    {"gate_id":"G-02","blocker_id":"G-02","required_handles":["G-02-CHAIN-PINNING-RECEIPT"]},
+    {"gate_id":"G-03","blocker_id":"G-03","required_handles":["G-03-STATIC-RECOVERY-RECEIPT"]},
+    {"gate_id":"G-05","blocker_id":"G-05","required_handles":["G-05-DETERMINISM-RECEIPT"]},
+    {"gate_id":"G-06","blocker_id":"G-06","required_handles":["G-06-STORAGE-RECEIPT"]},
+    {"gate_id":"G-07","blocker_id":"G-07","required_handles":["G-07-IRREVERSIBILITY-RECEIPT"]},
+    {"gate_id":"G-08","blocker_id":"G-08","required_handles":["G-08-TEN-YEAR-RISK-ACCEPTANCE"]},
+    {"gate_id":"G-09","blocker_id":"G-09","required_handles":["G-09-RECOVERY-PACKAGE-RECEIPT"]},
+    {"gate_id":"G-10","blocker_id":"G-10","required_handles":["G-10-CLOSE-REHEARSAL-RECEIPT"]},
+    {"gate_id":"GATE-EMERGENCY-RECOVERY","blocker_id":"BLOCKER-EMERGENCY-RECOVERY","required_handles":["SWU-LIV2-029-RECEIPT"]},
+    {"gate_id":"GATE-ARCHIVE-RETRIEVAL","blocker_id":"BLOCKER-ARCHIVE-RETRIEVAL","required_handles":["SWU-LIV2-030-RECEIPT"]},
+    {"gate_id":"GATE-BITCOIN-CARRIER","blocker_id":"BLOCKER-BITCOIN-CARRIER","required_handles":["SWU-LIV2-031-SIX-CONFIRMATION-RECEIPT"]},
+    {"gate_id":"GATE-NUMBER-VECTORS","blocker_id":"BLOCKER-NUMBER-VECTORS","required_handles":["SWU-LIV2-032-RECEIPT"]},
+    {"gate_id":"GATE-HORIZON-DUE","blocker_id":"BLOCKER-HORIZON-NOT-DUE","required_handles":["HORIZON-DUE-RECEIPT"]},
+    {"gate_id":"GATE-STATIC-OPENING","blocker_id":"BLOCKER-STATIC-OPENING","required_handles":["SWU-LIV2-028-STATIC-DECODER-RECEIPT","OPENING-MANIFEST-MATCH-RECEIPT"]}
+  ],
+  "transitions": [
+    {"from":"preview","to":"synthetic","required_gates":["GATE-L0-MACHINE"]},
+    {"from":"synthetic","to":"staged","required_gates":["GATE-L0-HUMAN","GATE-L1-RECONCILIATION","GATE-STAGED-OPERATIONS"]},
+    {"from":"staged","to":"live","required_gates":["GATE-REAL-INTAKE"]},
+    {"from":"live","to":"closing","required_gates":["GATE-MODERATION-COMPLETE","GATE-FINAL-READINESS"]},
+    {"from":"closing","to":"closed","required_gates":["GATE-CLOSE-COMMIT"]},
+    {"from":"closed","to":"recovery","required_gates":["G-01","G-02","G-03","G-05","G-06","G-07","G-08","G-09","G-10","GATE-EMERGENCY-RECOVERY","GATE-ARCHIVE-RETRIEVAL","GATE-BITCOIN-CARRIER","GATE-NUMBER-VECTORS"]},
+    {"from":"recovery","to":"opening","required_gates":["GATE-HORIZON-DUE","GATE-STATIC-OPENING"]}
+  ],
+  "actions": [
+    {"action":"accept_invented_data","allowed_states":["synthetic","staged"],"required_gates":[],"denied_blocker_id":"BLOCKER-INVENTED-DATA-STATE"},
+    {"action":"accept_real_data","allowed_states":["live"],"required_gates":["GATE-REAL-INTAKE"],"denied_blocker_id":"BLOCKER-REAL-DATA-STATE"},
+    {"action":"publish_preopening_feed","allowed_states":[],"required_gates":[],"denied_blocker_id":"BLOCKER-PREOPENING-FEED-FORBIDDEN"},
+    {"action":"derive_ritual_number","allowed_states":["recovery"],"required_gates":["GATE-BITCOIN-CARRIER","GATE-NUMBER-VECTORS"],"denied_blocker_id":"BLOCKER-RITUAL-NUMBER-STATE"}
+  ],
+  "ritual_number": {
+    "range_minimum": 1000000000,
+    "range_maximum": 99999999999,
+    "non_effects": [
+      "does_not_mint_tokens", "does_not_set_token_supply", "does_not_allocate_tokens",
+      "does_not_create_rewards", "does_not_create_rank", "does_not_create_membership",
+      "does_not_create_governance_power", "does_not_claim_economic_appropriateness"
+    ]
+  },
+  "invariants": {
+    "fail_closed": true,
+    "evidence_handles_are_receipts_not_booleans": true,
+    "fixtures_do_not_satisfy_real_gates": true,
+    "synthetic_and_staged_use_invented_data_only": true,
+    "pre_opening_public_feed": false,
+    "private_return": false,
+    "production_close_requires_separate_explicit_approval": true
+  }
+}

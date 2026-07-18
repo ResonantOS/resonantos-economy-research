@@ -1,0 +1,94 @@
+{
+  "schema_version": "resonant.time-capsule.command-state.schema.v1",
+  "contract_id": "resonant.time-capsule.command-state",
+  "version": "1.0.0",
+  "domain": "resonant-time-capsule/confirmed-envelope-command/v1",
+  "status": "frozen",
+  "envelope_schema_ref": "resonant.time-capsule.envelope.v1",
+  "authoritative_close_instant_utc": "2026-07-21T00:00:00.000Z",
+  "supported_operation": "confirm_envelope",
+  "digest_format": "sha256:<64 lowercase hexadecimal characters>",
+  "state_fields": [
+    "rules_digest",
+    "close_state",
+    "close_epoch",
+    "envelope_version",
+    "idempotency_records"
+  ],
+  "command_fields": [
+    "operation",
+    "authenticated_scope",
+    "session_scope",
+    "expected_rules_digest",
+    "expected_envelope_version",
+    "expected_close_epoch",
+    "idempotency_key",
+    "command_digest",
+    "server_commit_instant_utc"
+  ],
+  "close_states": ["open", "closing", "closed"],
+  "idempotency_scope": ["session_scope", "operation", "idempotency_key"],
+  "algorithm": [
+    {
+      "order": 1,
+      "id": "authenticate-scope",
+      "rule": "Authenticated scope must be present and equal the command session scope."
+    },
+    {
+      "order": 2,
+      "id": "verify-rules-digest",
+      "rule": "Expected rules digest must equal the current immutable rules digest."
+    },
+    {
+      "order": 3,
+      "id": "compare-close-state-epoch-and-fence",
+      "rule": "Current state must be open, expected epoch must equal current epoch, and server commit instant must be strictly before the authoritative UTC close instant."
+    },
+    {
+      "order": 4,
+      "id": "resolve-idempotency",
+      "rule": "For the same scope, operation, and key, the same command digest replays the stored result and a different digest conflicts."
+    },
+    {
+      "order": 5,
+      "id": "compare-expected-envelope-version",
+      "rule": "Expected envelope version must equal current version, including null for the initial commit."
+    },
+    {
+      "order": 6,
+      "id": "commit-next-immutable-version",
+      "rule": "Create exactly one next version and one idempotency record atomically."
+    }
+  ],
+  "outcomes": {
+    "commit": {"classification": "commit", "mutated": true},
+    "replay": {"classification": "replay", "mutated": false},
+    "scope_unauthenticated": {"classification": "rejected", "mutated": false},
+    "scope_mismatch": {"classification": "rejected", "mutated": false},
+    "rules_digest_mismatch": {"classification": "conflict", "mutated": false},
+    "close_state_not_open": {"classification": "rejected", "mutated": false},
+    "close_epoch_mismatch": {"classification": "conflict", "mutated": false},
+    "close_fence_reached": {"classification": "rejected", "mutated": false},
+    "idempotency_key_reused": {"classification": "conflict", "mutated": false},
+    "envelope_version_mismatch": {"classification": "conflict", "mutated": false},
+    "invalid_command": {"classification": "rejected", "mutated": false}
+  },
+  "replay_boundary": {
+    "rule": "Replay is resolved only after scope, rules, current open epoch, and UTC fence checks pass.",
+    "after_epoch_advance_or_close": "return typed epoch or close rejection, not the earlier mutation result"
+  },
+  "atomicity": {
+    "failure_or_replay_mutates_state": false,
+    "commit_mutations": ["increment envelope_version once", "append one scoped idempotency record"],
+    "partial_commit_allowed": false
+  },
+  "non_effects": [
+    "does_not_authenticate_a_real_participant",
+    "does_not_choose_http_or_database_transport",
+    "does_not_store_or_publish_phrase_content",
+    "does_not_enable_real_intake",
+    "does_not_create_a_live_public_feed",
+    "does_not_mint_or_allocate_tokens",
+    "does_not_assign_reward_rank_membership_or_governance_power"
+  ]
+}

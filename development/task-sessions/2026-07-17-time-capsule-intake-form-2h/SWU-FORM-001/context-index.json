@@ -1,0 +1,18 @@
+{
+  "schema_version": "context-builder.index.v1",
+  "task": "SWU-FORM-001",
+  "mode": "lean",
+  "strict_coverage": "pass",
+  "obligations": 6,
+  "covered": 6,
+  "sources": [
+    "DECISIONS.md#D-02",
+    "DECISIONS.md#D-15",
+    "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/ARCHITECTURE.md",
+    "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/UX-PLAN.md",
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/index.html"
+  ],
+  "write_scope": [
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/index.html"
+  ]
+}

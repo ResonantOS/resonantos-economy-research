@@ -1,0 +1,38 @@
+{
+  "schema_version": "context-builder.session-evidence.v1",
+  "task_id": "SWU-LIR-001",
+  "parent_task_id": "TASK-LIR-001",
+  "mode": "lean",
+  "strict": true,
+  "status": "pass",
+  "captured_at": "2026-07-17T04:30:49Z",
+  "git_sha": "c617ace5f10df9f46ec9f203743f4baca5cacbd6",
+  "obligations": [
+    {"id":"O-01","status":"covered","sources":["task","form-spec"]},
+    {"id":"O-02","status":"covered","sources":["task","work-pack","architecture","findings"]},
+    {"id":"O-03","status":"covered","sources":["task","form-spec","findings"]},
+    {"id":"O-04","status":"covered","sources":["task","architecture","findings","form-copy"]},
+    {"id":"O-05","status":"covered","sources":["task","form-spec","findings"]},
+    {"id":"O-06","status":"covered","sources":["task","form-spec","form-copy","findings"]},
+    {"id":"O-07","status":"covered","sources":["task","form-spec","findings"]},
+    {"id":"O-08","status":"covered","sources":["task","work-pack"]},
+    {"id":"O-09","status":"covered","sources":["task","work-pack","site"]}
+  ],
+  "sources": [
+    {"id":"task","path":"development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack/tasks/TASK-LIR-001.md","sha256":"eec6697ec1b094a8e49b8e8a31a59c519152bba733c24d1784d080f71a8b3827"},
+    {"id":"work-pack","path":"development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md","sha256":"d54d4f6120ec39037c5b57b858f4cf221172d3aa7f98810769be41408ef83a00"},
+    {"id":"architecture","path":"development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/06-architecture-bundle.md","sha256":"390f5c01fd48ac095b729790b2f78ef01974c6bd9dfe6d68e5597b585ea85d1f"},
+    {"id":"findings","path":"development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/subagents-review/findings.md","sha256":"842d1effed44e54298c7cb078ba5e105a66363ff32a97a0c33e09018e2f5a872"},
+    {"id":"form-spec","path":"development/invoke-runs/2026-07-16-time-capsule-intake/FORM-SPEC.md","sha256":"5b55bbb2928c34a6683f525a949b9ac77b705252e7b1726adedd0073e4cdb53c"},
+    {"id":"form-copy","path":"development/invoke-runs/2026-07-16-time-capsule-intake/FORM-COPY.md","sha256":"70a9cd199877dbc5918907e9e8131cada8735495117f7c32bee587153a3c8fb6"},
+    {"id":"wireframe","path":"development/invoke-runs/2026-07-16-time-capsule-intake/FORM-WIREFRAME.html","sha256":"c1f4a80ec6f4d82fd47e5fbd917604cfd38c6bb5468ee2d29c8b33a1acfb48ac"},
+    {"id":"site","path":"development/refinement-runs/2026-07-12-number-lottery/presentation/site/index.html","sha256":"44646e4f8f633b14ee2a1b53c086627d788af4a7a580909a6e6c359a9bab0ae7"}
+  ],
+  "coverage": {"covered": 9, "total": 9, "percent": 100},
+  "write_scope": [
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/",
+    "development/task-sessions/2026-07-17-time-capsule-demo/SWU-LIR-001/",
+    "output/playwright/time-capsule-swu-lir-001-*"
+  ],
+  "blockers": []
+}

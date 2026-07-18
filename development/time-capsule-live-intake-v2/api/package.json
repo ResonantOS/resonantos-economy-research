@@ -1,0 +1,25 @@
+{
+  "name": "@resonant/time-capsule-intake-api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json --noEmit",
+    "test": "npm run",
+    "service-config": "npm run build --silent && node --import tsx --test src/server/service-config.test.ts",
+    "migrations": "npm run build --silent && node --experimental-sqlite --import tsx --test src/datastore/migrations.test.ts",
+    "invite-session": "npm run build --silent && node --experimental-sqlite --import tsx --test src/admission/invite-session.test.ts",
+    "envelope-commands": "npm run build --silent && node --experimental-sqlite --import tsx --test src/envelope/envelope-commands.test.ts",
+    "crypto-redaction": "npm run build --silent && node --experimental-sqlite --import tsx --test src/crypto/crypto-redaction.test.ts",
+    "moderation": "npm run build --silent && node --experimental-sqlite --import tsx --test src/moderation/moderation.test.ts",
+    "start": "node --import tsx src/server/main.ts"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.11",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
+  }
+}

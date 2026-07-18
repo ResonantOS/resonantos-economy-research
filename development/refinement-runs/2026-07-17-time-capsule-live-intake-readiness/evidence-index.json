@@ -1,0 +1,64 @@
+{
+  "run_id": "2026-07-17-time-capsule-live-intake-readiness",
+  "status": "complete-flag",
+  "preset": "full",
+  "research_mode": "research-if-gap-appears",
+  "research_authorized": false,
+  "research_executed": false,
+  "artifacts": [
+    {"id": "seed", "owner": "refine", "path": "REFINE-SEED-PROPOSAL.md", "status": "pass"},
+    {"id": "dispatch", "owner": "dispatch-spec", "path": "REFINE-DISPATCH.json", "status": "pass"},
+    {"id": "runtime-handoff", "owner": "refine", "path": "RUNTIME-HANDOFF.md", "status": "pass"},
+    {"id": "subagent-sheet", "owner": "refine", "path": "SUBAGENT-REVIEW-SHEET.json", "status": "pass-closed"},
+    {"id": "tension-gate", "owner": "domainspec-check-tension", "path": "CHECK-TENSION.md", "status": "pass"},
+    {"id": "review-attacks", "owner": "parent", "path": "subagents-review/attacks.md", "status": "pass"},
+    {"id": "review-findings", "owner": "parent", "path": "subagents-review/findings.md", "status": "fix-accepted"},
+    {"id": "result", "owner": "refine", "path": "RESULT.md", "status": "flag"}
+  ],
+  "stages": [
+    {"step_id": "01", "capability_ref": "context-builder", "status": "pass", "paths": ["stages/01-context-builder/CONTEXT-PACK.md", "stages/01-context-builder/context-index.json", "stages/01-context-builder/RECEIPT.md"]},
+    {"step_id": "02", "capability_ref": "invoke", "status": "pass", "paths": ["stages/02-invoke-define.md", "stages/02-live-intake-spec.md", "stages/02-glossary.md"]},
+    {"step_id": "03", "capability_ref": "interrogation", "status": "pass", "paths": ["stages/03-interrogation-refine-review.md", "subagents-review/findings.md"]},
+    {"step_id": "04", "capability_ref": "refine", "status": "pass", "paths": ["stages/04-research-decision.md"]},
+    {"step_id": "05", "capability_ref": "distill", "status": "pass", "paths": ["stages/05-distill.md"]},
+    {"step_id": "06", "capability_ref": "invoke", "status": "flag", "paths": ["stages/06-invoke-design.md", "stages/06-architecture-bundle.md", "stages/06-glossary-consistency.md"]},
+    {"step_id": "07", "capability_ref": "interrogation", "status": "pass", "paths": ["stages/07-interrogation-design-review.md"]},
+    {"step_id": "08", "capability_ref": "distill", "status": "pass", "paths": ["stages/08-distill-repair.md"]},
+    {"step_id": "09", "capability_ref": "invoke", "status": "flag", "paths": ["stages/09-invoke-plan.md", "stages/09-implementation-layering.md", "stages/09-work-pack.md", "stages/09-execution-pack.md", "stages/09-plan-validation.md"]},
+    {"step_id": "10", "capability_ref": "interrogation+refine", "status": "pass", "paths": ["stages/10-final-interrogation.md", "RESULT.md"]}
+  ],
+  "subagent_receipts": [
+    {
+      "role_id": "form-accessibility",
+      "path": "subagents-review/form-accessibility-review.md",
+      "return_status": "FIX",
+      "spawn_status": "completed",
+      "join_status": "completed",
+      "close_status": "closed",
+      "parent_disposition": "accepted-and-carried"
+    },
+    {
+      "role_id": "database-reliability",
+      "path": "subagents-review/database-reliability-review.md",
+      "return_status": "block-live",
+      "spawn_status": "spawned",
+      "join_status": "completed",
+      "close_status": "closed",
+      "parent_disposition": "accepted-and-carried"
+    },
+    {
+      "role_id": "privacy-safety",
+      "path": "subagents-review/privacy-safety-review.md",
+      "return_status": "block-live",
+      "spawn_status": "completed",
+      "join_status": "completed",
+      "close_status": "closed",
+      "parent_disposition": "accepted-and-carried"
+    }
+  ],
+  "blocked_fields": [
+    "BL-01 through BL-07 block their assigned later layers",
+    "public-live and sealed-live require distinct owner and evidence gates",
+    "SWU-LIR-001 requires explicit Task Session authorization"
+  ]
+}

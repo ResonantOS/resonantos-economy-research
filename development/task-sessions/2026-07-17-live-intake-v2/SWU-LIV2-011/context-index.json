@@ -1,0 +1,31 @@
+{
+  "identity":{"task_or_swu":"SWU-LIV2-011","title":"SQLite migrations and invariants","session_id":"2026-07-17-live-intake-v2/SWU-LIV2-011","mode":"lean-strict","runtime":"local-task-session","repository_revision":"c617ace5f10df9f46ec9f203743f4baca5cacbd6-dirty","captured_at":"2026-07-17T21:52:50Z","dependency_receipts":["SWU-LIV2-010:pass"]},
+  "strict_coverage":{"covered":10,"total":10,"status":"pass"},
+  "obligations":[
+    {"id":"O-011-01","status":"covered","summary":"Repeatable checksummed migration from empty to latest."},
+    {"id":"O-011-02","status":"covered","summary":"Represent declared logical intake entities."},
+    {"id":"O-011-03","status":"covered","summary":"Enforce foreign key and uniqueness invariants."},
+    {"id":"O-011-04","status":"covered","summary":"One active invite per envelope with recovery shape."},
+    {"id":"O-011-05","status":"covered","summary":"Make versions and audit records append-only."},
+    {"id":"O-011-06","status":"covered","summary":"Isolate SQLite pragmas in adapter."},
+    {"id":"O-011-07","status":"covered","summary":"Use digest/ciphertext shape with no secrets/plaintext."},
+    {"id":"O-011-08","status":"covered","summary":"Prove empty-latest-cold-copy restore check."},
+    {"id":"O-011-09","status":"covered","summary":"Exercise constraint and checksum negatives."},
+    {"id":"O-011-10","status":"covered","summary":"Respect migrations/datastore/tests and synthetic scope."}
+  ],
+  "selected_sources":[
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-003.md","selectors":["Data And Interface Model","State Rules","Security And Failure Rules","SWU-LIV2-011","Synchronization"],"sha256":"574b7092dd63c1af9877be00bdf838362261f57b065615aec91afb2de10683b4"},
+    {"path":"DECISIONS.md","selectors":["D-02","D-03"],"sha256":"f4ecab3de66e4d398629930e2b8e36e11351d8861afcb61ab05f095549fc4c46"},
+    {"path":"development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/06-architecture-bundle.md","selectors":["Logical Entities","Data Classification Descriptor","Command Contract"],"sha256":"390f5c01fd48ac095b729790b2f78ef01974c6bd9dfe6d68e5597b585ea85d1f"},
+    {"path":"development/time-capsule-live-intake-v2/contracts/command-state-v1.json","selectors":["state_fields","idempotency_scope"],"sha256":"eb2b28b4abea900f01bf25d1584dbe0f2671ab6e381a7981cc3ad7a98d4f1dff"},
+    {"path":"development/time-capsule-live-intake-v2/contracts/field-lifecycle-v1.json","selectors":["required_categories","invite/session/envelope/version descriptors"],"sha256":"1b929ece943a55de31d3d36ee8f50a4c76cb756e2ad85afda20bf5e66a6f4e87"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-010/VALIDATION-RECEIPT.json","selectors":["runtime","dependency inventory","synthetic boundary"],"sha256":"fcada2b5d42fcf4ce3cfc07c91f0add2adccdf8e65bcab3a8be346675d242e1d"}
+  ],
+  "write_scope":{"implementation":["development/time-capsule-live-intake-v2/api/migrations/","development/time-capsule-live-intake-v2/api/src/datastore/","development/time-capsule-live-intake-v2/api/package.json","development/time-capsule-live-intake-v2/api/package-lock.json if synchronization is required"],"evidence":["development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-011/","active SWU-011 status/frontier rows after validation"]},
+  "validation":{"command":"npm --prefix development/time-capsule-live-intake-v2/api test -- migrations","required_negatives":["foreign key","second active invite","duplicate version","duplicate slot","duplicate idempotency scope","version update/delete","audit update/delete","checksum drift"]},
+  "decisions":[{"id":"D-SWU011-SQLITE","classification":"assumption","selection":"built-in node:sqlite"},{"id":"D-SWU011-MIGRATION","classification":"assumption","selection":"checksummed ordered SQL migration"},{"id":"D-SWU011-ACTIVE-INVITE","classification":"assumption","selection":"partial unique active-invite index"}],
+  "gaps_and_blockers":{"active":[],"deferred":["SWU-LIV2-012 repositories","SWU-LIV2-013 commands","SWU-LIV2-020 full restore"]},
+  "fallback_exploration":{"status":"none-needed","rule":"node:sqlite failure blocks rather than changing datastore or adding native dependency."},
+  "extra_sources":[],
+  "output_paths":{"markdown":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-011/CONTEXT-PACK.md","json_index":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-011/context-index.json"}
+}

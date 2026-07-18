@@ -1,0 +1,36 @@
+{
+  "spell": "goal",
+  "goal_context_id": "selected-work-pack:time-capsule-live-intake-readiness",
+  "decision_profile_ref": "neutral-default",
+  "rounds": [
+    {
+      "round_index": 1,
+      "frontier_size": 1,
+      "nodes_classified": {"t1": 1, "t2": 0, "t3": 0, "unknown": 0},
+      "nodes_dispatched": 1,
+      "audit_verdicts": {"pass": 1, "flag": 0, "block": 0, "veto": 0},
+      "downroutes": 0,
+      "staged_deltas": 0,
+      "stop_reason": "none"
+    },
+    {
+      "round_index": 2,
+      "frontier_size": 1,
+      "nodes_classified": {"t1": 1, "t2": 0, "t3": 0, "unknown": 0},
+      "nodes_dispatched": 1,
+      "audit_verdicts": {"pass": 0, "flag": 1, "block": 0, "veto": 0},
+      "downroutes": 0,
+      "staged_deltas": 1,
+      "stop_reason": "audit-veto"
+    }
+  ],
+  "final": {
+    "result": "flag",
+    "batch_promotions": {"applied": 0, "rejected": 0, "held": 1},
+    "stop_reason": "audit-veto",
+    "budget_spent": {"turns": 2, "spawns": 0, "tokens": 401299, "ceiling": null},
+    "gap_discovery": {"rounds": 0, "new_proposals": 0},
+    "subagent_closeout": {"spawned": 0, "joined": 0, "closed": 0, "blocked": 0, "timed_out": 0, "handed_off": 0, "open": 0},
+    "next_route": "task-session"
+  }
+}

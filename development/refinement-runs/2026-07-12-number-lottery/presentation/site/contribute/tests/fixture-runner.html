@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="fixture-runner.css">
+  <script src="../fixtures/time-capsule-fixtures-v1.js?v=2.0.0" defer></script>
+  <script src="fixture-runner.js?v=2.0.0" defer></script>
+  <title>Time Capsule fixture runner</title>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Local evidence · not a participant form</p>
+    <h1>Time Capsule fixture runner</h1>
+    <p>
+      This page checks the public-at-opening, non-collecting candidate form
+      against fixture profile <code id="fixture-version">loading</code>. It
+      uses invented values and creates no production evidence.
+    </p>
+
+    <section class="summary" aria-live="polite" aria-atomic="true">
+      <strong id="result">Waiting for the simulator…</strong>
+      <span id="count"></span>
+    </section>
+
+    <table>
+      <caption>Machine-checkable browser results</caption>
+      <thead><tr><th scope="col">Check</th><th scope="col">Result</th><th scope="col">Detail</th></tr></thead>
+      <tbody id="results"></tbody>
+    </table>
+
+    <details>
+      <summary>Raw result</summary>
+      <pre id="raw-result"></pre>
+    </details>
+
+    <p class="boundary">
+      A machine pass does not satisfy the screen-reader, native-IME, or
+      participant-retell gate. See <code>ACCESS-MATRIX.md</code>.
+    </p>
+
+    <iframe id="simulator" title="Simulator under test" src="../index.html"></iframe>
+  </main>
+</body>
+</html>

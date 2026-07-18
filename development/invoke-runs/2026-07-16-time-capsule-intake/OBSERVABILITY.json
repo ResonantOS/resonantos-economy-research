@@ -1,0 +1,31 @@
+{
+  "schema": "arcanum.invoke.run-observation.v1",
+  "date": "2026-07-16",
+  "spell": "invoke",
+  "modes": ["define", "design", "plan"],
+  "target": "resonant-time-capsule-intake",
+  "status": "flag",
+  "phases_attempted": ["context", "interview-gap-check", "template-selection", "define", "design", "plan", "distill-validation"],
+  "sigils_used": ["context-builder", "structured-interview-kits", "inventory", "dispatch-spec", "implementation-layering", "distill"],
+  "interview_result": {
+    "questions_asked": 0,
+    "rationale": "The operator fixed the quota and existing evidence allowed the credential/personhood distinction to be settled as an interface boundary."
+  },
+  "design_views": 6,
+  "glossary_consistency": "pass-with-candidate-residue",
+  "complexity": "high",
+  "output_mode": "split",
+  "layer_coverage": ["L0", "L1", "L2", "L3"],
+  "task_count": 8,
+  "swu_count": 14,
+  "distill_verdict": "pass-for-l0",
+  "full_dispatch_required": false,
+  "execution_authorized": false,
+  "next_route": "task-session:SWU-TC-001-after-explicit-approval",
+  "target_gaps": 7,
+  "notes": [
+    "Real intake remains gated.",
+    "Central observability log was not appended because it already contains unrelated working-tree changes."
+  ]
+}
+

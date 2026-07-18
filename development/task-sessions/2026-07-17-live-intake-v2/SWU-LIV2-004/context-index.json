@@ -1,0 +1,33 @@
+{
+  "identity": {"task_or_swu":"SWU-LIV2-004","title":"Field lifecycle and public allowlist","session_id":"2026-07-17-live-intake-v2/SWU-LIV2-004","mode":"lean-strict","runtime":"local-task-session","repository_revision":"c617ace5f10df9f46ec9f203743f4baca5cacbd6-dirty","captured_at":"2026-07-17T21:28:42Z","dependency_receipts":["SWU-LIV2-002:pass"]},
+  "strict_coverage": {"covered":10,"total":10,"status":"pass"},
+  "obligations": [
+    {"id":"O-004-01","status":"covered","summary":"Freeze version/domain and complete v1 catalog."},
+    {"id":"O-004-02","status":"covered","summary":"Give each field and derived copy one full descriptor."},
+    {"id":"O-004-03","status":"covered","summary":"Cover every task-named field category."},
+    {"id":"O-004-04","status":"covered","summary":"Default unknown fields to forbidden."},
+    {"id":"O-004-05","status":"covered","summary":"Reject forbidden public joins."},
+    {"id":"O-004-06","status":"covered","summary":"Keep plaintext out of logs analytics backups exports and pre-opening views."},
+    {"id":"O-004-07","status":"covered","summary":"Keep invite session envelope and audit relationships private."},
+    {"id":"O-004-08","status":"covered","summary":"Preserve no-live-feed and public-at-opening only."},
+    {"id":"O-004-09","status":"covered","summary":"Exclude participant-key/private-return fields."},
+    {"id":"O-004-10","status":"covered","summary":"Respect exact two-file implementation scope."}
+  ],
+  "selected_sources": [
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-001.md","selectors":["Rule 6","SWU-LIV2-004","Synchronization"],"obligations":["O-004-01","O-004-02","O-004-03","O-004-04","O-004-05","O-004-06","O-004-07","O-004-08","O-004-09","O-004-10"],"sha256":"586bec34610354451d7c60b43ff1e38fb1cde67eb224e72604ed1ef4da7b5df5"},
+    {"path":"development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/06-architecture-bundle.md","selectors":["Logical Entities","Data Classification Descriptor"],"obligations":["O-004-01","O-004-02","O-004-03","O-004-04","O-004-05","O-004-06","O-004-07"],"sha256":"390f5c01fd48ac095b729790b2f78ef01974c6bd9dfe6d68e5597b585ea85d1f"},
+    {"path":"DECISIONS.md","selectors":["D-01-D-06","D-15"],"obligations":["O-004-06","O-004-07","O-004-08","O-004-09"],"sha256":"f4ecab3de66e4d398629930e2b8e36e11351d8861afcb61ab05f095549fc4c46"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/shared/cross-task-decisions.md","selectors":["D-01/D-15","D-02","D-04","D-05","D-06/D-07"],"obligations":["O-004-06","O-004-07","O-004-08","O-004-09"],"sha256":"0df4bb9622a48ff25f598464baeb6e4e11960f978ab6e249b0151e75ce9ae842"},
+    {"path":"development/time-capsule-live-intake-v2/contracts/envelope-v1.schema.json","selectors":["envelope","slots","non-effects"],"obligations":["O-004-03","O-004-07"],"sha256":"d7dc33bc4bc77e09baed28f62497930771534da5572c7b9c612909d9aa071ad5"}
+  ],
+  "write_scope": {"implementation":["development/time-capsule-live-intake-v2/contracts/field-lifecycle-v1.json","development/time-capsule-live-intake-v2/tools/validate-field-lifecycle.mjs"],"evidence":["development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-004/","active SWU-004 status/frontier rows after validation"]},
+  "validation": {"command":"node development/time-capsule-live-intake-v2/tools/validate-field-lifecycle.mjs","required_negatives":["plaintext","invite","session","envelope relation","audit pseudoref","private receipt","unknown field","mixed private/public join","participant key"]},
+  "decisions": [
+    {"id":"D-SWU004-INLINE-FIXTURES","classification":"assumption","selection":"inline projection fixtures in the two-file scope"},
+    {"id":"D-SWU004-NO-FEED","classification":"resolved-contradiction","selection":"no initial phrase is public before its opening"}
+  ],
+  "gaps_and_blockers": {"active":[],"deferred":["SQL columns","encryption","backup","moderation","bundle","manifest","opening implementation"]},
+  "fallback_exploration": {"status":"none-needed","rule":"Explore only for a named catalog-validation gap."},
+  "extra_sources": [],
+  "output_paths": {"markdown":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-004/CONTEXT-PACK.md","json_index":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-004/context-index.json"}
+}

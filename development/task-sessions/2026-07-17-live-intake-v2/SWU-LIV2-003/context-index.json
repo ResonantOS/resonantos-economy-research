@@ -1,0 +1,56 @@
+{
+  "identity": {
+    "task_or_swu": "SWU-LIV2-003",
+    "title": "Version, idempotency, and close-epoch state contract",
+    "session_id": "2026-07-17-live-intake-v2/SWU-LIV2-003",
+    "mode": "lean-strict",
+    "runtime": "local-task-session",
+    "repository_revision": "c617ace5f10df9f46ec9f203743f4baca5cacbd6-dirty",
+    "captured_at": "2026-07-17T21:18:53Z",
+    "dependency_receipts": ["SWU-LIV2-002:pass"]
+  },
+  "strict_coverage": {"covered": 10, "total": 10, "status": "pass"},
+  "obligations": [
+    {"id":"O-003-01","status":"covered","summary":"Freeze version/domain and transport-neutral command/state fields."},
+    {"id":"O-003-02","status":"covered","summary":"Enforce exact scope-rules-close-idempotency-version-commit precedence."},
+    {"id":"O-003-03","status":"covered","summary":"Replay same scoped key and digest deterministically."},
+    {"id":"O-003-04","status":"covered","summary":"Reject same scoped key with changed digest."},
+    {"id":"O-003-05","status":"covered","summary":"Reject stale rules, close state/epoch, and version."},
+    {"id":"O-003-06","status":"covered","summary":"Fence server commit time at or after the exact UTC close."},
+    {"id":"O-003-07","status":"covered","summary":"Commit exactly one next immutable version."},
+    {"id":"O-003-08","status":"covered","summary":"Prove no partial state on replay or failure."},
+    {"id":"O-003-09","status":"covered","summary":"Provide explicit transition vectors and hashes."},
+    {"id":"O-003-10","status":"covered","summary":"Respect exact write scope and product boundaries."}
+  ],
+  "selected_sources": [
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-001.md","selectors":["Implementation Rule 5","SWU-LIV2-003","Synchronization"],"obligations":["O-003-01","O-003-02","O-003-03","O-003-04","O-003-05","O-003-06","O-003-07","O-003-08","O-003-09","O-003-10"],"sha256":"33a6b6cc808f12e42850fa2a137c1f4d44e67a20d89358ea52990d8bce0bfe54"},
+    {"path":"DECISIONS.md","selectors":["D-04","D-07"],"obligations":["O-003-03","O-003-04","O-003-05","O-003-06","O-003-07","O-003-08","O-003-10"],"sha256":"f4ecab3de66e4d398629930e2b8e36e11351d8861afcb61ab05f095549fc4c46"},
+    {"path":"development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/06-architecture-bundle.md","selectors":["Command Contract","Cohort And Close State Machine"],"obligations":["O-003-01","O-003-02","O-003-03","O-003-04","O-003-05","O-003-06","O-003-07","O-003-08"],"sha256":"390f5c01fd48ac095b729790b2f78ef01974c6bd9dfe6d68e5597b585ea85d1f"},
+    {"path":"development/time-capsule-live-intake-v2/contracts/envelope-v1.schema.json","selectors":["identity","phrase_profile","state"],"obligations":["O-003-01","O-003-05","O-003-07"],"sha256":"d7dc33bc4bc77e09baed28f62497930771534da5572c7b9c612909d9aa071ad5"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-002/TASK-SESSION-REPORT.md","selectors":["Result","Done-Criteria Audit","Receipt"],"obligations":["O-003-09","O-003-10"],"sha256":"acece16cd743fc03998dab16e14bcf86ab047d48b7ad246e141a63e57d25c8e3"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/WORK-PACK.md","selectors":["Frontier","Gates","Receipt Contract"],"obligations":["O-003-09","O-003-10"],"sha256":"ac4eacf04d6d30b9989a60a40b3f2e760f255afcb0b4ff530e4d73307c0deb31"}
+  ],
+  "write_scope": {
+    "implementation": [
+      "development/time-capsule-live-intake-v2/contracts/command-state-v1.json",
+      "development/time-capsule-live-intake-v2/fixtures/command-state-v1.json",
+      "development/time-capsule-live-intake-v2/tools/validate-command-state.mjs"
+    ],
+    "evidence": ["development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-003/", "active SWU-003 status/frontier rows after validation"]
+  },
+  "validation": {
+    "command": "node development/time-capsule-live-intake-v2/tools/validate-command-state.mjs",
+    "required_negatives": ["scope","rules","close state","close epoch","UTC fence","idempotency digest","expected version","precedence overlap","partial mutation"]
+  },
+  "decisions": [
+    {"id":"D-SWU003-PURE","classification":"assumption","selection":"pure JSON state vectors and dependency-free classifier"},
+    {"id":"D-SWU003-REPLAY-FENCE","classification":"resolved-contradiction","selection":"current open epoch and UTC fence checks precede replay"}
+  ],
+  "gaps_and_blockers": {"active":[],"deferred":["SQL transaction realization","concurrency","server clock evidence","real close"]},
+  "fallback_exploration": {"status":"none-needed","rule":"Explore only for a named pure-runtime gap."},
+  "extra_sources": [],
+  "output_paths": {
+    "markdown": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-003/CONTEXT-PACK.md",
+    "json_index": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-003/context-index.json"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "run_id": "codex-goal-profile-live-intake-v2-2026-07-17",
+  "capability": "codex-goal-profile",
+  "mode": "one-shot-profile",
+  "source_work_pack": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/WORK-PACK.md",
+  "selected_stream": "LIVE-INTAKE-V2-WHOLE-WORK-PACK",
+  "one_shot": true,
+  "readiness": "pass-gated",
+  "goal_budget": 4000,
+  "handoff_strict_coverage": "pass",
+  "obligation_count": 12,
+  "selected_source_count": 20,
+  "swu_count": 36,
+  "initial_frontier": ["SWU-LIV2-001"],
+  "subagents": "not-authorized",
+  "decision_profile": null,
+  "fallback_exploration": "named-gaps-or-active-swu-requirement-only",
+  "protected_gates": ["manual-access-retell","owner-approval","real-intake","public-vps","external-archive-spend","testnet-or-mainnet","real-share-custody","key-destruction","production-close"],
+  "result": "pass",
+  "next_route": "native-codex-goal-when-user-starts-it"
+}

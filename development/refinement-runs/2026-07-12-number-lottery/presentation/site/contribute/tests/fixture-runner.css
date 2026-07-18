@@ -1,0 +1,99 @@
+:root {
+  color-scheme: dark;
+  font: 16px/1.55 system-ui, sans-serif;
+  background: #080a12;
+  color: #e8dfd1;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  width: min(1040px, calc(100% - 32px));
+  margin: 48px auto;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font: 700 clamp(2rem, 6vw, 4rem)/1.05 Georgia, serif;
+  color: #fff0d5;
+}
+
+.eyebrow,
+code,
+th {
+  color: #c48a45;
+}
+
+.summary,
+.boundary {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin: 28px 0;
+  padding: 16px 20px;
+  border: 1px solid #77542c;
+  background: #12131c;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #0d0f17;
+}
+
+caption {
+  padding: 12px 0;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #37303a;
+  text-align: left;
+  vertical-align: top;
+}
+
+.pass {
+  color: #b6d6af;
+}
+
+.fail {
+  color: #ffb4a5;
+}
+
+pre {
+  overflow: auto;
+  padding: 16px;
+  background: #05060a;
+}
+
+iframe {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip-path: inset(50%);
+}
+
+@media (max-width: 640px) {
+  .summary {
+    display: block;
+  }
+
+  table,
+  thead,
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+  }
+
+  thead {
+    position: absolute;
+    clip-path: inset(50%);
+  }
+}

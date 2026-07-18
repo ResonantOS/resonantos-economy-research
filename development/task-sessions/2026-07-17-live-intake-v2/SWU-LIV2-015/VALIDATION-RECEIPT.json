@@ -1,0 +1,60 @@
+{
+  "swu_id": "SWU-LIV2-015",
+  "result": "pass",
+  "validated_at": "2026-07-17T22:33:07Z",
+  "command": "npm --prefix development/time-capsule-live-intake-v2/api test -- moderation",
+  "coverage": {
+    "moderation_tests": 6,
+    "service_regression": 17,
+    "migration_regression": 6,
+    "invite_session_regression": 8,
+    "envelope_command_regression": 15,
+    "crypto_redaction_regression": 7,
+    "phrase_vectors": 20,
+    "envelope_vectors": 26
+  },
+  "moderation_model": {
+    "queue_scope": "steward_private",
+    "principal_boundary": "authenticated moderator principal supplied by a later transport adapter",
+    "final_dispositions": ["accepted", "rejected"],
+    "accepted_reasons": ["within_policy"],
+    "rejected_reasons": ["harmful_content", "personal_data", "spam", "other_safety"],
+    "decision_state": "cohort open and action instant strictly before close",
+    "participant_projection": "own-envelope disposition and reason metadata only",
+    "close_eligibility": "accepted only; pending and rejected fail closed",
+    "public_feed_or_route": false
+  },
+  "artifacts": [
+    {"path":"development/time-capsule-live-intake-v2/api/package.json","sha256":"0a10443fd56064f9572e01a052f6a306ee0b5f506faec10d3243f837e14a8e15"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/moderation/repository.ts","sha256":"fc90520309dc20cb9ee7c9d3cd49be616e4c33637258effa7e51747b44bb572b"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/moderation/service.ts","sha256":"648efafbb1e720f60b1727f8a37d54423e97076f99ac19689d309aeac7cb4b40"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/moderation/moderation.test.ts","sha256":"d5780bbfacde0a1b7d9fc69a1bd0789d479f2738bc58484138c9d4e07881ef06"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-015/CONTEXT-PACK.md","sha256":"280669ea63900377efaac94fe7e8a8357672e1872e6f170e918a49015360c439"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-015/context-index.json","sha256":"2f1684b806e267d20253c4970da66553ff2d3e74309652024f981ab9de8d1280"}
+  ],
+  "checks": [
+    {"id":"strict-context-coverage","result":"pass","covered":10,"total":10},
+    {"id":"missing-and-non-moderator-authority-before-lookup","result":"pass"},
+    {"id":"private-pending-queue-decrypts-invented-phrases","result":"pass"},
+    {"id":"no-public-feed-or-projection","result":"pass"},
+    {"id":"accepted-and-rejected-final-transitions","result":"pass"},
+    {"id":"bounded-disposition-specific-reasons","result":"pass"},
+    {"id":"exact-version-open-state-and-close-fence","result":"pass"},
+    {"id":"same-and-conflicting-duplicate-failures","result":"pass"},
+    {"id":"disposition-and-audit-atomic-rollback","result":"pass"},
+    {"id":"participant-own-envelope-metadata-status","result":"pass"},
+    {"id":"accepted-only-disposition-eligibility","result":"pass"},
+    {"id":"audit-and-structured-log-no-phrase-or-steward-ref","result":"pass"},
+    {"id":"prior-package-regressions","result":"pass","tests":53,"fixture_vectors":46},
+    {"id":"no-repository-sqlite-files","result":"pass"},
+    {"id":"git-diff-check","result":"pass"}
+  ],
+  "blockers": [],
+  "residue": [
+    "The service requires an already authenticated moderator principal; steward credential issuance, verification, access logging, HTTP wiring, and UI remain deferred.",
+    "Accepted is per-occurrence disposition eligibility only; the later close selector must reconcile the accepted occurrence against the latest immutable envelope snapshot.",
+    "No public-now feed, hide/restore path, public projection, or real participant data is implemented.",
+    "The current Node.js 22.12 SQLite adapter still requires the explicit experimental SQLite runtime flag recorded by SWU-LIV2-011."
+  ],
+  "extra_sources": []
+}

@@ -1,0 +1,390 @@
+package:
+  package_id: time-capsule-number-short-2026-07-17
+  title: "What We Leave Becomes a Number"
+  subtitle: "The Resonant Time Capsule"
+  status: approved_script
+  transport: short_initiative_video_model_input_package
+  target_public: first-time visitors and people meeting the initiative through social sharing
+  runtime_target_seconds: 60
+  voice_target_words:
+    min: 115
+    max: 135
+  primary_aspect_ratio: "16:9"
+  crop_contract: "center 9:16 safe"
+  human_gate:
+    status: approved
+    approved_on: "2026-07-17"
+    approval_surface: VOICE-AUDITION.md
+  source_authority:
+    - ../../STORY-COPY.md
+    - ../../TEXT-INTENT-SUBSTRATE.md
+    - ../../LANGUAGE-AUDITION.md
+    - ../../assets/time-capsule-story-hero.png
+  source_trace: SOURCE-TRACE.md
+  canonical_posture: non-canonical working production material
+
+voice_profile:
+  delivery: intimate, warm, quietly cinematic, clear, conversational
+  pace_words_per_minute: 130
+  pause_policy: short pause after the opening; full beat before the visual number and before “the real one”
+  pronunciation:
+    ResonantDAO: "resonant dow"
+  exclusions:
+    - announcer voice
+    - crypto promotion
+    - breathless pacing
+    - theatrical prophecy
+    - sales cadence
+
+assets:
+  ASSET-FIELD-01: >-
+    Deep midnight field with fine orbital geometry and restrained amber, cream,
+    indigo, and muted cyan light, matching the existing time-capsule hero artwork.
+  ASSET-PARCEL-01: >-
+    Small folded message parcel with a warm luminous seam, tactile paper-like edges,
+    no readable text, no logo, and no token or coin symbolism.
+  ASSET-THREAD-01: >-
+    Thin warm light path belonging to one parcel; many paths may cross and weave but
+    remain individually traceable until they enter the capsule.
+  ASSET-CAPSULE-01: >-
+    One radiant circular capsule with concentric brass-like rings, warm white core,
+    and precise orbital geometry, consistent across every scene.
+  ASSET-FINGERPRINT-01: >-
+    One concentric geometric light trace formed only after the capsule closes; an
+    abstract digital fingerprint without legible data or text.
+  ASSET-CLOSING-PULSE-01: >-
+    One distant public amber pulse that travels from outside the capsule field and
+    touches the closed fingerprint once.
+  ASSET-TIME-RINGS-01: >-
+    Three future destination rings reached by separate light paths; exact 2, 5, and
+    10-year labels are added in editorial.
+
+acts:
+  - act_id: ACT-01
+    title: Something Leaves
+  - act_id: ACT-02
+    title: Many Become One
+  - act_id: ACT-03
+    title: A Number Appears
+  - act_id: ACT-04
+    title: The Messages Continue
+
+segments:
+  - segment_id: VID-RTC-001
+    act_id: ACT-01
+    title: Not For Today
+    duration_seconds: 5
+    generation_clip_seconds: 6
+    story_job: Open with an intimate reason for the time capsule.
+    concepts: [something_for_later]
+    prior_model: The initiative begins with a technical number mechanism.
+    voice_copy: >-
+      Some messages aren’t meant for today.
+    written_copy:
+      - text: "SOME MESSAGES AREN’T FOR TODAY."
+        role: opening_line
+        position: center
+        display_seconds: 4
+    visual_mode: generated_video
+    visual_prompt: >-
+      Cinematic macro shot, 16:9 with all action inside a centered 9:16-safe area.
+      In a dark intimate room, one open human hand holds ASSET-PARCEL-01. The folded
+      parcel emits one restrained amber seam of light against ASSET-FIELD-01 beginning
+      to appear beyond the hand. Tactile paper, natural skin, quiet breathing space,
+      no readable writing, no exact typography, six-second continuous shot.
+    negative_prompt: >-
+      text, letters, logos, coins, tokens, wallet, blockchain icon, cyberpunk neon,
+      magical spark explosion, excessive particles, malformed hand, extra fingers,
+      surveillance interface, advertising gloss
+    continuity_assets: [ASSET-FIELD-01, ASSET-PARCEL-01]
+    camera_and_motion: Slow push from fingertips toward the parcel; the field appears only at the final beat.
+    sound_direction: Quiet room tone, soft paper fold, one warm low tone.
+    transition_in: Fade up from black on the parcel seam.
+    transition_out: Parcel light becomes the first point in the next scene.
+    source_refs: [CLM-RTC-001, CLM-RTC-005]
+    claim_posture: metaphor
+    editor_notes: Add the opening line in editorial; hold half a beat after “today.”
+
+  - segment_id: VID-RTC-002
+    act_id: ACT-01
+    title: Who It Can Be For
+    duration_seconds: 12
+    generation_clip_seconds: 8
+    story_job: Open the message to self, another person, everyone, or an unfilled space.
+    concepts: [personal_direction, voluntary_agency]
+    prior_model: Every participant must write publicly to the community.
+    voice_copy: >-
+      A thought for your future self. A promise to someone you love. A question for
+      people you haven’t met yet. Or an open space, if nothing needs to be said.
+    written_copy:
+      - text: "FOR YOUR FUTURE SELF."
+        role: addressee
+        position: center
+        display_seconds: 3
+      - text: "FOR SOMEONE ELSE."
+        role: addressee
+        position: center
+        display_seconds: 3
+      - text: "FOR EVERYONE."
+        role: addressee
+        position: center
+        display_seconds: 3
+      - text: "OR LEAVE THE SPACE OPEN."
+        role: agency
+        position: center
+        display_seconds: 3
+    visual_mode: generated_video
+    visual_prompt: >-
+      Four-beat cinematic montage in one 16:9 clip, center-safe for 9:16. Show the same
+      ASSET-PARCEL-01 beside a bathroom mirror at dawn, passed gently between two hands,
+      then held near several softly lit human silhouettes without identifiable faces.
+      End on one quiet empty point of ASSET-FIELD-01 where no parcel launches. Warm,
+      humane, restrained, no words or generated typography, eight-second source clip.
+    negative_prompt: >-
+      text, legible note, romantic cliché, crowd rally, globe network, forced diversity
+      collage, token, coin, reward badge, cyberpunk, identifiable celebrity, malformed
+      hands, surveillance camera, empty point turning into a parcel
+    continuity_assets: [ASSET-FIELD-01, ASSET-PARCEL-01]
+    camera_and_motion: Four gentle match dissolves anchored by the parcel’s amber seam; final frame stays still.
+    sound_direction: Four sparse material tones; leave the final open space quiet.
+    transition_in: First parcel point expands into the dawn mirror.
+    transition_out: A different parcel enters from beyond the quiet point.
+    source_refs: [CLM-RTC-001]
+    claim_posture: source
+    editor_notes: The open space creates no parcel and receives no “participation” effect.
+
+  - segment_id: VID-RTC-003
+    act_id: ACT-02
+    title: Parcels Cross The Distance
+    duration_seconds: 8
+    generation_clip_seconds: 8
+    story_job: Give different contributions one shared direction without erasing their origins.
+    concepts: [message_record, plurality]
+    prior_model: One special message determines the result.
+    voice_copy: >-
+      What we do leave becomes a small parcel of light. Different voices,
+      different places, moving toward the same point.
+    written_copy:
+      - text: "DIFFERENT VOICES."
+        role: plurality
+        position: upper_center
+        display_seconds: 3
+      - text: "ONE DIRECTION."
+        role: shared_motion
+        position: lower_center
+        display_seconds: 4
+    visual_mode: generated_video
+    visual_prompt: >-
+      Wide cinematic 16:9 view of ASSET-FIELD-01. Several distinct ASSET-PARCEL-01
+      objects enter from different frame edges, each carried by its own ASSET-THREAD-01.
+      Their paths curve through fine orbital geometry toward a distant warm center while
+      remaining visually separate. Keep all meaningful motion inside the centered
+      9:16-safe area, no world map, no text, physically calm eight-second shot.
+    negative_prompt: >-
+      globe, map borders, data dashboard, email icons, shipping boxes, delivery truck,
+      coins, crypto logos, readable text, chaotic traffic, laser beams, excessive
+      particles, duplicated parcels, collision
+    continuity_assets: [ASSET-FIELD-01, ASSET-PARCEL-01, ASSET-THREAD-01]
+    camera_and_motion: Slow forward drift following the paths while keeping several origins visible.
+    sound_direction: Individual soft tones enter one by one and begin to harmonize.
+    transition_in: Match the arriving parcel seam from the prior scene.
+    transition_out: Follow the warm center until the capsule rings become visible.
+    source_refs: [CLM-RTC-002, CLM-RTC-005]
+    claim_posture: metaphor
+    editor_notes: Do not let one parcel become larger or brighter than the others.
+
+  - segment_id: VID-RTC-004
+    act_id: ACT-02
+    title: One Shared Capsule
+    duration_seconds: 8
+    generation_clip_seconds: 8
+    story_job: Make many records visibly become one connected whole.
+    concepts: [shared_capsule]
+    prior_model: Each contribution receives its own number or isolated capsule.
+    voice_copy: >-
+      Alone, each is only one message. Together, they find one another. The paths
+      connect. The parcels become one shared capsule.
+    written_copy:
+      - text: "WHAT WE LEAVE"
+        role: input
+        position: upper_center
+        display_seconds: 4
+      - text: "ONE SHARED CAPSULE"
+        role: reveal
+        position: lower_center
+        display_seconds: 5
+    visual_mode: generated_video
+    visual_prompt: >-
+      Cinematic 16:9 convergence shot matching ASSET-FIELD-01. ASSET-PARCEL-01 objects
+      arrive along individually visible ASSET-THREAD-01 paths and pass through the
+      concentric rings of one ASSET-CAPSULE-01. Each arrival adds one precise point to
+      the same circular structure; no parcel receives a number. Warm white core,
+      amber brass geometry, centered 9:16-safe composition, no typography.
+    negative_prompt: >-
+      multiple capsules, one dominant parcel, score labels, voting interface, coins,
+      token allocation, blockchain logo, explosion, portal fantasy, unreadable text,
+      cyberpunk machinery, cluttered particle cloud
+    continuity_assets: [ASSET-FIELD-01, ASSET-PARCEL-01, ASSET-THREAD-01, ASSET-CAPSULE-01]
+    camera_and_motion: Controlled push toward the capsule as paths weave; stop when the final parcel enters.
+    sound_direction: Tones converge into one low harmonic chord; tactile ring closures.
+    transition_in: Distant warm center resolves into the capsule rings.
+    transition_out: Final ring rotates into the fingerprint geometry.
+    source_refs: [CLM-RTC-002, CLM-RTC-005]
+    claim_posture: metaphor
+    editor_notes: The whole must be legible before the word “fingerprint” is introduced.
+
+  - segment_id: VID-RTC-005
+    act_id: ACT-03
+    title: The Capsule Becomes A Number
+    duration_seconds: 10
+    generation_clip_seconds: 8
+    story_job: Show the complete causal bridge from capsule to starting token number.
+    concepts: [shared_fingerprint, closing_signal, starting_token_number]
+    prior_model: The messages are counted, scored, or stored by the public signal.
+    voice_copy: >-
+      When the capsule closes, it becomes one fingerprint. One public signal joins
+      it. And a number appears: how many tokens ResonantDAO starts with.
+    written_copy:
+      - text: "ONE SHARED FINGERPRINT"
+        role: mechanism
+        position: upper_center
+        display_seconds: 4
+      - text: "THE STARTING TOKEN NUMBER"
+        role: outcome
+        position: lower_center
+        display_seconds: 5
+    visual_mode: motion_graphic
+    visual_prompt: >-
+      Precise cinematic motion-graphic base, 16:9 and center-safe for 9:16. One closed
+      ASSET-CAPSULE-01 emits ASSET-FINGERPRINT-01 as concentric geometric light rings.
+      After the fingerprint is complete, one ASSET-CLOSING-PULSE-01 travels from outside
+      the field and touches it once. The combined light contracts into a clean empty
+      central area reserved for editorial digits. No messages or text appear in the pulse.
+    negative_prompt: >-
+      generated numbers, letters, code, hash strings, blockchain logo, Bitcoin coin,
+      message text inside pulse, score counter, slot machine, casino reveal, price chart,
+      explosion, rainbow spectrum, illegible infographic
+    continuity_assets: [ASSET-FIELD-01, ASSET-CAPSULE-01, ASSET-FINGERPRINT-01, ASSET-CLOSING-PULSE-01]
+    camera_and_motion: Lock camera on the capsule; fingerprint expands, pulse arrives once, light contracts to center.
+    sound_direction: Harmonic chord narrows to one tone; public pulse adds a single dry click; near-silence follows.
+    transition_in: Rotating capsule ring becomes the first fingerprint ring.
+    transition_out: Cut on the contracted center light to the editorial number beat.
+    source_refs: [CLM-RTC-003]
+    claim_posture: source
+    editor_notes: Add exact copy and digits in editorial. Never show the public signal carrying content.
+
+  - segment_id: VID-RTC-006
+    act_id: ACT-03
+    title: Forty-Two
+    duration_seconds: 8
+    generation_clip_seconds: 6
+    story_job: Deliver a memorable easter egg without presenting it as the real answer.
+    concepts: [illustrative_number, honesty_boundary]
+    prior_model: The number shown in the film is the selected result.
+    voice_copy: >-
+      For a moment, a number appears. The real one comes later, from the capsule we
+      shape together.
+    written_copy:
+      - text: "42"
+        role: easter_egg
+        position: center
+        display_seconds: 3
+      - text: "THE REAL ONE COMES LATER."
+        role: boundary
+        position: lower_center
+        display_seconds: 5
+    visual_mode: motion_graphic
+    visual_prompt: >-
+      Restrained cinematic 16:9 number-reveal plate based on ASSET-FIELD-01 and the warm
+      center light from ASSET-CAPSULE-01. Hold a calm dark field with a precise amber halo
+      and subtle concentric geometry, leaving the center completely clean for editorial
+      typography. After three seconds the halo softens rather than celebrating. Keep all
+      light inside the centered 9:16-safe region. Generate no digits or words.
+    negative_prompt: >-
+      generated 42, any number, text, slot machine, jackpot, confetti, fireworks, casino,
+      coin shower, token stack, triumphant logo, meme typography, lens flare overload,
+      cyberpunk neon
+    continuity_assets: [ASSET-FIELD-01, ASSET-CAPSULE-01]
+    camera_and_motion: Static center hold; one slow halo breath, then a gentle reduction in brightness.
+    sound_direction: One soft low impact on `42`; a second, quieter tone on “later”; no triumph sting.
+    transition_in: Contracted center light holds under editorial `42`.
+    transition_out: Halo divides into three continuing paths.
+    source_refs: [CLM-RTC-005]
+    claim_posture: metaphor
+    editor_notes: Keep `42` visual-only. The boundary line must appear while it is still visible, not afterward.
+
+  - segment_id: VID-RTC-007
+    act_id: ACT-04
+    title: The Messages Keep Traveling
+    duration_seconds: 5
+    generation_clip_seconds: 6
+    story_job: Separate the one-time number from the later message openings.
+    concepts: [number_once, future_returns]
+    prior_model: Each future opening creates a new starting number.
+    voice_copy: >-
+      The number stays. The messages travel—to two, five, and ten years.
+    written_copy:
+      - text: "THE NUMBER STAYS."
+        role: timing_boundary
+        position: center
+        display_seconds: 2
+      - text: "2 YEARS · 5 YEARS · 10 YEARS"
+        role: future_horizons
+        position: lower_center
+        display_seconds: 3
+    visual_mode: generated_video
+    visual_prompt: >-
+      Cinematic pullback from the softened ASSET-CAPSULE-01. The capsule remains fixed
+      while three ASSET-THREAD-01 paths carrying small ASSET-PARCEL-01 lights leave its
+      perimeter and travel toward three ASSET-TIME-RINGS-01 destinations. The center does
+      not generate another number. Midnight, amber, cream, muted cyan, exact 16:9 with
+      centered 9:16-safe action, no labels or typography.
+    negative_prompt: >-
+      multiple numbers, changing digits, countdown, clocks, calendar pages, repeated
+      capsule, coins, rewards, generated text, time travel portal, fast streaks, clutter
+    continuity_assets: [ASSET-FIELD-01, ASSET-PARCEL-01, ASSET-THREAD-01, ASSET-CAPSULE-01, ASSET-TIME-RINGS-01]
+    camera_and_motion: Smooth pullback; three paths separate only after the fixed capsule is clearly visible.
+    sound_direction: Center tone holds; three distant chimes answer in sequence.
+    transition_in: The number halo separates into three parcel paths.
+    transition_out: Follow the nearest parcel until it becomes the closing hero fragment.
+    source_refs: [CLM-RTC-004, CLM-RTC-005]
+    claim_posture: metaphor
+    editor_notes: Add literal year labels in editorial; do not use poetic substitutes.
+
+  - segment_id: VID-RTC-008
+    act_id: ACT-04
+    title: Leave Something For Later
+    duration_seconds: 4
+    generation_clip_seconds: 6
+    story_job: Return the impact to a simple, shareable invitation.
+    concepts: [invitation, return]
+    prior_model: The viewer has only watched a mechanism explanation.
+    voice_copy: >-
+      Then they return. Leave something for later.
+    written_copy:
+      - text: "LEAVE SOMETHING FOR LATER."
+        role: closing_invitation
+        position: center
+        display_seconds: 3
+      - text: "time-capsule.cyberalchemize.com"
+        role: share_url
+        position: lower_center
+        display_seconds: 3
+    visual_mode: generated_video
+    visual_prompt: >-
+      Closing cinematic plate that recreates the visual balance of the existing
+      time-capsule hero artwork: ASSET-FIELD-01, a few ASSET-PARCEL-01 fragments entering from
+      the left, ASSET-CAPSULE-01 glowing at center-right, and three distant future rings.
+      Preserve a clean dark centered area for editorial invitation and a lower area for
+      the URL. 16:9, center-safe for 9:16, calm, no generated typography.
+    negative_prompt: >-
+      generated text, logo, slogan, QR code, coin, token, call-to-action button, product
+      mockup, confetti, triumphant ending, excessive particles, bright white background
+    continuity_assets: [ASSET-FIELD-01, ASSET-PARCEL-01, ASSET-CAPSULE-01, ASSET-TIME-RINGS-01]
+    camera_and_motion: Very slow settling drift; final frame holds cleanly for editorial text.
+    sound_direction: One returning parcel tone, warm room tone, natural fade.
+    transition_in: Nearest future parcel becomes a fragment in the hero composition.
+    transition_out: Hold one second after the voice, then fade to black.
+    source_refs: [CLM-RTC-001, CLM-RTC-004, CLM-RTC-005]
+    claim_posture: metaphor
+    editor_notes: Keep the invitation optional in tone; the URL remains readable through the final hold.

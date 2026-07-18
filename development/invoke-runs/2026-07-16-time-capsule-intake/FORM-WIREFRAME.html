@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resonant Time Capsule — Form Preview</title>
+  <meta name="description" content="Non-collecting preview of the Resonant Time Capsule word form.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #070910;
+      --panel: #10131d;
+      --panel-soft: #151827;
+      --paper: #f4ead9;
+      --muted: #c5b9a8;
+      --gold: #c78d38;
+      --gold-dark: #8b5e23;
+      --line: rgba(199, 141, 56, 0.34);
+      --cyan: #72c8cf;
+      --focus: #f3ba64;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 50% -10%, rgba(139, 94, 35, 0.2), transparent 34rem),
+        var(--bg);
+      color: var(--paper);
+      font: 16px/1.55 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a { color: inherit; }
+
+    .shell {
+      width: min(1120px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    .status {
+      margin: 18px auto 0;
+      padding: 12px 16px;
+      border: 1px solid rgba(114, 200, 207, 0.35);
+      border-radius: 12px;
+      background: rgba(114, 200, 207, 0.07);
+      color: #d9f3f4;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    header {
+      padding: 64px 0 36px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow,
+    .horizon-tag {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, legend {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      max-width: 860px;
+      margin: 0;
+      font-size: clamp(3.2rem, 8vw, 7rem);
+      line-height: 0.92;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.04rem, 2vw, 1.28rem);
+    }
+
+    .mechanism {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 34px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .mechanism li {
+      min-height: 120px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(16, 19, 29, 0.78);
+      color: var(--muted);
+    }
+
+    .mechanism strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--paper);
+    }
+
+    main { padding: 46px 0 90px; }
+
+    .form-intro {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 0.95;
+    }
+
+    .form-intro p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    form { display: grid; gap: 18px; }
+
+    fieldset {
+      min-width: 0;
+      margin: 0;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background:
+        linear-gradient(135deg, rgba(199, 141, 56, 0.07), transparent 38%),
+        var(--panel);
+    }
+
+    legend {
+      padding: 0 12px;
+      color: var(--paper);
+      font-size: clamp(1.55rem, 3vw, 2.35rem);
+    }
+
+    .horizon-copy {
+      max-width: 720px;
+      margin: 0 0 20px;
+      color: var(--muted);
+    }
+
+    .slots {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .slot {
+      padding: 18px;
+      border: 1px solid rgba(244, 234, 217, 0.12);
+      border-radius: 14px;
+      background: var(--panel-soft);
+    }
+
+    label.word-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 750;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid rgba(244, 234, 217, 0.22);
+      border-radius: 10px;
+      background: #090b13;
+      color: var(--paper);
+      font: inherit;
+    }
+
+    input:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    .hint {
+      margin: 7px 0 14px;
+      color: #9f9588;
+      font-size: 0.78rem;
+    }
+
+    .visibility {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .choice {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 10px;
+      border-radius: 10px;
+      background: rgba(7, 9, 16, 0.56);
+    }
+
+    .choice input { margin-top: 5px; }
+    .choice strong { display: block; }
+    .choice span { color: var(--muted); font-size: 0.8rem; }
+
+    .review {
+      margin-top: 12px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(139, 94, 35, 0.22), rgba(16, 19, 29, 0.95));
+    }
+
+    .review h2 { font-size: clamp(2rem, 4vw, 3.6rem); }
+    .review p { max-width: 760px; color: var(--muted); }
+
+    .acknowledge {
+      display: grid;
+      gap: 10px;
+      margin: 22px 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+    }
+
+    .acknowledge li::before {
+      content: "◌";
+      margin-right: 9px;
+      color: var(--gold);
+    }
+
+    button {
+      padding: 13px 20px;
+      border: 1px solid var(--gold-dark);
+      border-radius: 999px;
+      background: #6f4a1f;
+      color: #f8ead1;
+      font: inherit;
+      font-weight: 800;
+    }
+
+    button:disabled { cursor: not-allowed; opacity: 0.72; }
+
+    footer {
+      padding: 30px 0 46px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 800px) {
+      .mechanism { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .form-intro { grid-template-columns: 1fr; }
+      .slots { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .shell { width: min(100% - 20px, 1120px); }
+      header { padding-top: 42px; }
+      .mechanism { grid-template-columns: 1fr; }
+      fieldset, .review { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <p class="status shell" role="status">
+    Form preview — it stores nothing and sends nothing. Please do not enter real words.
+  </p>
+
+  <header>
+    <div class="shell">
+      <p class="eyebrow">Resonant Time Capsule</p>
+      <h1>Leave words for the future.</h1>
+      <p class="lead">
+        You have two places at each opening: two years, five years, and ten years.
+        Leave none, one, or two words in each. Every place is optional.
+      </p>
+      <ol class="mechanism" aria-label="How the words shape the founding number">
+        <li><strong>1 · Your places</strong>Every accepted word becomes one record in its future opening.</li>
+        <li><strong>2 · The locked capsule</strong>All records become one digital fingerprint.</li>
+        <li><strong>3 · A later public value</strong>It arrives after no one can change the capsule.</li>
+        <li><strong>4 · One starting supply</strong>The result lands inside the range chosen in advance.</li>
+      </ol>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="form-intro">
+      <h2>Your six places</h2>
+      <p>
+        A hope, warning, question, promise—anything the future community should
+        meet. A word never equals a fixed amount of tokens by itself; it changes
+        the shared fingerprint by taking one place in the capsule.
+      </p>
+    </div>
+
+    <form action="" method="get" autocomplete="off" aria-label="Time Capsule form preview">
+      <fieldset>
+        <legend>Two years · Then / Now Echo</legend>
+        <p class="horizon-copy">What would you like the community to meet again in two years?</p>
+        <div class="slots">
+          <div class="slot">
+            <label class="word-label" for="y2w1">First word</label>
+            <input id="y2w1" name="y2w1" type="text" maxlength="32" placeholder="One word" aria-describedby="y2w1-hint">
+            <p class="hint" id="y2w1-hint">One word, without spaces · 32 characters maximum</p>
+            <div class="visibility" role="group" aria-label="First two-year word visibility">
+              <label class="choice"><input type="radio" name="y2w1-mode"><span><strong>Visible now</strong>Seen from the beginning and revisited in two years.</span></label>
+              <label class="choice"><input type="radio" name="y2w1-mode"><span><strong>Save for this opening</strong>Not shown now. We ask again before showing it later.</span></label>
+            </div>
+          </div>
+          <div class="slot">
+            <label class="word-label" for="y2w2">Another word, if you want one</label>
+            <input id="y2w2" name="y2w2" type="text" maxlength="32" placeholder="Optional second word" aria-describedby="y2w2-hint">
+            <p class="hint" id="y2w2-hint">The second and final place for this opening</p>
+            <div class="visibility" role="group" aria-label="Second two-year word visibility">
+              <label class="choice"><input type="radio" name="y2w2-mode"><span><strong>Visible now</strong>Seen from the beginning and revisited in two years.</span></label>
+              <label class="choice"><input type="radio" name="y2w2-mode"><span><strong>Save for this opening</strong>Not shown now. We ask again before showing it later.</span></label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Five years · Divergence Assembly</legend>
+        <p class="horizon-copy">What should still be here when the community looks at what changed—and what did not?</p>
+        <div class="slots">
+          <div class="slot">
+            <label class="word-label" for="y5w1">First word</label>
+            <input id="y5w1" name="y5w1" type="text" maxlength="32" placeholder="One word" aria-describedby="y5w1-hint">
+            <p class="hint" id="y5w1-hint">One word, without spaces · 32 characters maximum</p>
+            <div class="visibility" role="group" aria-label="First five-year word visibility">
+              <label class="choice"><input type="radio" name="y5w1-mode"><span><strong>Visible now</strong>Seen from the beginning and revisited in five years.</span></label>
+              <label class="choice"><input type="radio" name="y5w1-mode"><span><strong>Save for this opening</strong>Not shown now. We ask again before showing it later.</span></label>
+            </div>
+          </div>
+          <div class="slot">
+            <label class="word-label" for="y5w2">Another word, if you want one</label>
+            <input id="y5w2" name="y5w2" type="text" maxlength="32" placeholder="Optional second word" aria-describedby="y5w2-hint">
+            <p class="hint" id="y5w2-hint">The second and final place for this opening</p>
+            <div class="visibility" role="group" aria-label="Second five-year word visibility">
+              <label class="choice"><input type="radio" name="y5w2-mode"><span><strong>Visible now</strong>Seen from the beginning and revisited in five years.</span></label>
+              <label class="choice"><input type="radio" name="y5w2-mode"><span><strong>Save for this opening</strong>Not shown now. We ask again before showing it later.</span></label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Ten years · Constellation</legend>
+        <p class="horizon-copy">What would you send to the people caring for ResonantDAO ten years from now?</p>
+        <div class="slots">
+          <div class="slot">
+            <label class="word-label" for="y10w1">First word</label>
+            <input id="y10w1" name="y10w1" type="text" maxlength="32" placeholder="One word" aria-describedby="y10w1-hint">
+            <p class="hint" id="y10w1-hint">One word, without spaces · 32 characters maximum</p>
+            <div class="visibility" role="group" aria-label="First ten-year word visibility">
+              <label class="choice"><input type="radio" name="y10w1-mode"><span><strong>Visible now</strong>Seen from the beginning and revisited in ten years.</span></label>
+              <label class="choice"><input type="radio" name="y10w1-mode"><span><strong>Save for this opening</strong>Not shown now. We ask again before showing it later.</span></label>
+            </div>
+          </div>
+          <div class="slot">
+            <label class="word-label" for="y10w2">Another word, if you want one</label>
+            <input id="y10w2" name="y10w2" type="text" maxlength="32" placeholder="Optional second word" aria-describedby="y10w2-hint">
+            <p class="hint" id="y10w2-hint">The second and final place for this opening</p>
+            <div class="visibility" role="group" aria-label="Second ten-year word visibility">
+              <label class="choice"><input type="radio" name="y10w2-mode"><span><strong>Visible now</strong>Seen from the beginning and revisited in ten years.</span></label>
+              <label class="choice"><input type="radio" name="y10w2-mode"><span><strong>Save for this opening</strong>Not shown now. We ask again before showing it later.</span></label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <section class="review" aria-labelledby="review-title">
+        <p class="horizon-tag">Before anything is confirmed</p>
+        <h2 id="review-title">Every way of taking part belongs.</h2>
+        <p>
+          Empty, public, and saved places are all valid. Saved words are not
+          promised anonymity or recovery in this preview, and real collection
+          stays closed until that protection has passed review.
+        </p>
+        <ul class="acknowledge">
+          <li>No word buys allocation, rank, reward, membership, or governance power.</li>
+          <li>No silence becomes a penalty or a statement made on your behalf.</li>
+          <li>The number is made once. Opening words later never changes it.</li>
+        </ul>
+        <button type="button" disabled aria-disabled="true">Preview only — collection is closed</button>
+      </section>
+    </form>
+  </main>
+
+  <footer>
+    <div class="shell">Resonant Time Capsule · Candidate form design · No data collection</div>
+  </footer>
+</body>
+</html>

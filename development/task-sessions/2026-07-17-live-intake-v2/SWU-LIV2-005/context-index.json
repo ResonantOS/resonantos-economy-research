@@ -1,0 +1,29 @@
+{
+  "identity":{"task_or_swu":"SWU-LIV2-005","title":"Capability gates and negative fixtures","session_id":"2026-07-17-live-intake-v2/SWU-LIV2-005","mode":"lean-strict","runtime":"local-task-session","repository_revision":"c617ace5f10df9f46ec9f203743f4baca5cacbd6-dirty","captured_at":"2026-07-17T21:35:34Z","dependency_receipts":["SWU-LIV2-003:pass","SWU-LIV2-004:pass"]},
+  "strict_coverage":{"covered":10,"total":10,"status":"pass"},
+  "obligations":[
+    {"id":"O-005-01","status":"covered","summary":"Freeze distinct fail-closed capability graph."},
+    {"id":"O-005-02","status":"covered","summary":"Require every ordered evidence gate."},
+    {"id":"O-005-03","status":"covered","summary":"Block preview shortcuts and ungated synthetic."},
+    {"id":"O-005-04","status":"covered","summary":"Invented data only until evidenced live."},
+    {"id":"O-005-05","status":"covered","summary":"Block closing without moderation/readiness/approval."},
+    {"id":"O-005-06","status":"covered","summary":"Block publication without applicable closure/recovery/Bitcoin gates."},
+    {"id":"O-005-07","status":"covered","summary":"Block opening until due/static-decoder evidence."},
+    {"id":"O-005-08","status":"covered","summary":"Preserve no feed privacy and number non-effects."},
+    {"id":"O-005-09","status":"covered","summary":"Return stable blocker IDs and detect drift."},
+    {"id":"O-005-10","status":"covered","summary":"Respect exact scope and never fabricate evidence."}
+  ],
+  "selected_sources":[
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-001.md","selectors":["Rule 7","SWU-LIV2-005","Synchronization"],"sha256":"0f493ac9f276170faf9f68b6ac49f34014faabc636dcaf859bfde99d1434343f"},
+    {"path":"development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/06-architecture-bundle.md","selectors":["View 1","View 5","DD-01/DD-03/DD-10"],"sha256":"390f5c01fd48ac095b729790b2f78ef01974c6bd9dfe6d68e5597b585ea85d1f"},
+    {"path":"development/research/2026-07-17-agentless-time-capsule-protocol/gates/closure-gates.md","selectors":["G-01-G-10","Fail-closed rule"],"sha256":"17d8ad438304834ffcef1919bf70768f7ebc82f8b7cf96f82d79e88807417664"},
+    {"path":"DECISIONS.md","selectors":["D-09","D-15","Assumptions"],"sha256":"f4ecab3de66e4d398629930e2b8e36e11351d8861afcb61ab05f095549fc4c46"}
+  ],
+  "write_scope":{"implementation":["development/time-capsule-live-intake-v2/contracts/capability-gates-v1.json","development/time-capsule-live-intake-v2/fixtures/capability-gates-v1.json","development/time-capsule-live-intake-v2/tools/validate-capability-gates.mjs"],"evidence":["development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-005/","active SWU-005 status/frontier rows after validation"]},
+  "validation":{"command":"node development/time-capsule-live-intake-v2/tools/validate-capability-gates.mjs","required_negatives":["missing gate","shortcut","real data before live","close without moderation","publish without recovery/Bitcoin","opening before due","number non-effects"]},
+  "decisions":[{"id":"D-SWU005-REGISTRY","classification":"assumption","selection":"evidence-handle registry plus transition/action rules"},{"id":"D-SWU005-RECOVERY","classification":"assumption","selection":"closed-to-recovery is recovery-complete publication promotion"}],
+  "gaps_and_blockers":{"active":[],"deferred":["all future real/manual evidence handles"]},
+  "fallback_exploration":{"status":"none-needed","rule":"Extra evidence cannot satisfy or bypass fixture handles."},
+  "extra_sources":[],
+  "output_paths":{"markdown":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-005/CONTEXT-PACK.md","json_index":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-005/context-index.json"}
+}

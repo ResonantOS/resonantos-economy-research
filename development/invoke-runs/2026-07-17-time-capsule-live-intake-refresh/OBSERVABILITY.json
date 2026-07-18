@@ -1,0 +1,60 @@
+{
+  "run_id": "arcanum-hook-019f70bb-8e31-7c31-bc23-b6133b007132",
+  "timestamp": "2026-07-17T15:45:15Z",
+  "spell": "invoke",
+  "mode": "refresh",
+  "target_artifact": "Time Capsule live-intake workflow",
+  "mutation_mode": "proposal-only",
+  "source_signal_count": 10,
+  "target_artifact_count": 11,
+  "delta_classes": {
+    "evidence_added": 2,
+    "status_changed": 1,
+    "artifact_drift": 3,
+    "route_changed": 3,
+    "no_op": 1
+  },
+  "proposed_count": 8,
+  "applied_count": 0,
+  "skipped_count": 3,
+  "quality_bar_status": "partial",
+  "phase_status": "flag",
+  "dispatch_techniques": [
+    "sequence",
+    "concrete_path_evidence",
+    "artifact_contract_bridge",
+    "residue_ledger",
+    "owner_boundary_check",
+    "handle_handoff",
+    "validation_loop",
+    "observability_grouping"
+  ],
+  "dispatch_validation": "technique-trace-pass-full-dispatch-deferred-to-plan",
+  "distill": {
+    "mode": "standard",
+    "verdict": "pass-for-refresh-plan-gated-execution",
+    "smallest_next_unit": "Live Intake Plan V2"
+  },
+  "gaps": {
+    "invoke": [
+      "Existing high-complexity plan requires a revised plan cycle rather than a refresh patch."
+    ],
+    "target": [
+      "Human access and comprehension evidence remains unrun.",
+      "Public-live owner and implementation proofs remain absent.",
+      "Close, recovery and Bitcoin ceremony proofs remain absent."
+    ]
+  },
+  "next_route": "invoke-plan-live-intake-v2",
+  "outputs": [
+    "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/CONTEXT-PACK.md",
+    "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/context-index.json",
+    "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/TARGET-INVENTORY.md",
+    "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/DISPATCH-TECHNIQUE-TRACE.md",
+    "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/DISTILL-VALIDATION.md",
+    "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/REFRESH-REPORT.md",
+    "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/REFRESH-PATCH-PROPOSAL.md",
+    "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/refresh-report.json",
+    "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/INVOKE-RESULT.md"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "context-pack.v1",
+  "objective": "Story-first participant design for the Resonant Time Capsule",
+  "status": "bounded-candidate",
+  "selectors": [
+    ".arcanum/inventory/entries/number-lottery-refinement.md",
+    ".arcanum/inventory/entries/time-capsule-live-intake-refine.md",
+    "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/",
+    "development/invoke-runs/2026-07-17-time-capsule-word-to-number-refresh/",
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/",
+    "operator-corrections-2026-07-17"
+  ],
+  "write_boundary": "development/invoke-runs/2026-07-17-time-capsule-story-first-design/",
+  "excluded": ["hosted site", "live intake", "database", "deployment", "production cryptography"]
+}
+

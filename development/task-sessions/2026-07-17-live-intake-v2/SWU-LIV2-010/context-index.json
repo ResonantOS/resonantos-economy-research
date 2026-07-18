@@ -1,0 +1,30 @@
+{
+  "identity":{"task_or_swu":"SWU-LIV2-010","title":"Service/config isolation","session_id":"2026-07-17-live-intake-v2/SWU-LIV2-010","mode":"lean-strict","runtime":"local-task-session","repository_revision":"c617ace5f10df9f46ec9f203743f4baca5cacbd6-dirty","captured_at":"2026-07-17T21:46:49Z","dependency_receipts":["SWU-LIV2-005:pass"]},
+  "strict_coverage":{"covered":10,"total":10,"status":"pass"},
+  "obligations":[
+    {"id":"O-010-01","status":"covered","summary":"Create isolated Node.js/TypeScript package."},
+    {"id":"O-010-02","status":"covered","summary":"Expose health only; no intake or datastore."},
+    {"id":"O-010-03","status":"covered","summary":"Require complete explicit configuration."},
+    {"id":"O-010-04","status":"covered","summary":"Accept synthetic capability only."},
+    {"id":"O-010-05","status":"covered","summary":"Bind loopback only with no public mutation."},
+    {"id":"O-010-06","status":"covered","summary":"Carry no default or production secret."},
+    {"id":"O-010-07","status":"covered","summary":"Reveal no config or internals through responses."},
+    {"id":"O-010-08","status":"covered","summary":"Provide clean install, build, tests, inventory."},
+    {"id":"O-010-09","status":"covered","summary":"Use invented local automated inputs only."},
+    {"id":"O-010-10","status":"covered","summary":"Respect exact package and evidence scope."}
+  ],
+  "selected_sources":[
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-003.md","selectors":["Objective","External effects","SWU-LIV2-010","Synchronization"],"sha256":"9f93ce186259264f021f01c029c0ae03293288e2b187dd290bc34720cf248c99"},
+    {"path":"DECISIONS.md","selectors":["D-03"],"sha256":"f4ecab3de66e4d398629930e2b8e36e11351d8861afcb61ab05f095549fc4c46"},
+    {"path":"development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/06-architecture-bundle.md","selectors":["View 1 capability table","View 6 application/runtime"],"sha256":"390f5c01fd48ac095b729790b2f78ef01974c6bd9dfe6d68e5597b585ea85d1f"},
+    {"path":"development/time-capsule-live-intake-v2/contracts/capability-gates-v1.json","selectors":["default","states","accept_invented_data","invariants"],"sha256":"908cebf4df692a106a186f23c633a8d11bcd2a4c491d129effd657ee640c4769"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/IMPLEMENTATION-LAYERING.md","selectors":["L1 invented-data kernel"],"sha256":"8d23a774dc94ed3d492fd3967bb8c2c00444f764cfffd28cc76bd0db5db33e0f"}
+  ],
+  "write_scope":{"implementation":["development/time-capsule-live-intake-v2/api/package.json","development/time-capsule-live-intake-v2/api/package-lock.json","development/time-capsule-live-intake-v2/api/tsconfig.json","development/time-capsule-live-intake-v2/api/src/config/","development/time-capsule-live-intake-v2/api/src/server/"],"evidence":["development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-010/","active SWU-010 status/frontier rows after validation"]},
+  "validation":{"commands":["npm --prefix development/time-capsule-live-intake-v2/api ci","npm --prefix development/time-capsule-live-intake-v2/api test -- service-config"],"required_negatives":["missing config","non-synthetic runtime","non-loopback host","invalid port","invalid log level","unknown route","config disclosure"]},
+  "decisions":[{"id":"D-SWU010-HTTP","classification":"assumption","selection":"built-in node:http"},{"id":"D-SWU010-RUNTIME","classification":"assumption","selection":"synthetic only"},{"id":"D-SWU010-TEST-ROUTER","classification":"assumption","selection":"npm selector routes focused test script"}],
+  "gaps_and_blockers":{"active":[],"deferred":["SWU-LIV2-011 datastore","all public/live/human gates"]},
+  "fallback_exploration":{"status":"none-needed","rule":"Toolchain failure blocks rather than implicitly changing stack."},
+  "extra_sources":[],
+  "output_paths":{"markdown":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-010/CONTEXT-PACK.md","json_index":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-010/context-index.json"}
+}

@@ -1,0 +1,74 @@
+{
+  "mode": "refresh",
+  "phaseStatus": "pass",
+  "mutationMode": "proposal-only",
+  "evidenceDate": "2026-07-17",
+  "sourceSignals": [
+    {
+      "id": "RS-01",
+      "source_path": "operator correction 2026-07-17",
+      "signal_type": "evidence_added",
+      "target_artifacts": ["ARCHITECTURE.md", "UX-PLAN.md", "WEB-COPY.md", "COMPOSITION-PLAN.md", "WHISPER-VALIDATION.md"],
+      "claim": "The audience's missing understanding is how words become the number.",
+      "evidence": "Direct operator report from the attempted explanation.",
+      "confidence": "high",
+      "mutation_safety": "needs_review"
+    },
+    {
+      "id": "RS-02",
+      "source_path": "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/",
+      "signal_type": "artifact_drift",
+      "target_artifacts": ["ARCHITECTURE.md", "UX-PLAN.md", "WEB-COPY.md", "COMPOSITION-PLAN.md", "WHISPER-VALIDATION.md"],
+      "claim": "The current shared-pattern abstraction and collapsed disclosure do not expose word-to-number causality.",
+      "evidence": "Current hero uses shared pattern while the exact record-root-beacon-range chain appears only in supporting artifacts.",
+      "confidence": "high",
+      "mutation_safety": "safe"
+    },
+    {
+      "id": "RS-03",
+      "source_path": "RS-01+RS-02",
+      "signal_type": "route_changed",
+      "target_artifacts": ["ARCHITECTURE.md", "UX-PLAN.md", "WEB-COPY.md", "COMPOSITION-PLAN.md"],
+      "claim": "The experience should use Visible Transformation First and a truthful local demonstration.",
+      "evidence": "The failed concept is causal and is best answered by showing each transformation before participation.",
+      "confidence": "high",
+      "mutation_safety": "needs_review"
+    }
+  ],
+  "targetArtifacts": [
+    "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/ARCHITECTURE.md",
+    "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/UX-PLAN.md",
+    "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/WEB-COPY.md",
+    "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/COMPOSITION-PLAN.md",
+    "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/WHISPER-VALIDATION.md"
+  ],
+  "deltaSummary": [
+    {"class":"evidence_added","count":1},
+    {"class":"artifact_drift","count":1},
+    {"class":"route_changed","count":1}
+  ],
+  "proposedChanges": [
+    "Replace Memory First with Visible Transformation First.",
+    "Expose word-to-record-to-fingerprint-to-later-value-to-range-result above the form.",
+    "Add a truthful computed toy demonstration.",
+    "Reopen whole-capsule-effect comprehension validation."
+  ],
+  "appliedChanges": [],
+  "skippedChanges": [
+    "Prior target artifacts were not edited in proposal-only mode.",
+    "The current HTML was not mutated."
+  ],
+  "blockers": [],
+  "unresolvedGaps": [
+    "Production algorithm fixtures and independent reproduction remain pending.",
+    "Human mechanism-retell evidence remains pending."
+  ],
+  "nextRoute": "operator-review-then-task-session",
+  "validation": [
+    "dispatch-spec validation",
+    "JSON parsing",
+    "mechanism consistency review",
+    "human mechanism-retell pending"
+  ]
+}
+

@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-07-17T04:42:11Z",
+  "dispatch_id": "task-session-2026-07-17-swu-lir-001",
+  "sigil": "task-session",
+  "tier": "arcana",
+  "mode": "local-auto-safe",
+  "swu_id": "SWU-LIR-001",
+  "request_summary": "Build and validate a demonstrable, non-collecting Time Capsule word form while keeping sealed cryptography unavailable.",
+  "result": "pass",
+  "meaningful_execution": true,
+  "generated_output_count": 12,
+  "quality_bar_status": "pass",
+  "changed_files": [
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/index.html",
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/simulator.css",
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/simulator.js",
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/README.md",
+    "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md",
+    "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack/tasks/TASK-LIR-001.md"
+  ],
+  "validation": [
+    "strict context coverage 9/9",
+    "Dispatch Spec pass",
+    "static HTML, JavaScript, label, slot, and banned-flow checks pass",
+    "Playwright Firefox desktop, mobile, keyboard, Unicode, quiet, receipt, close, refresh, storage, request, and console checks pass"
+  ],
+  "residue": [
+    "manual screen-reader combinations",
+    "native IME matrix",
+    "participant consequence retell threshold"
+  ],
+  "observer": {
+    "signals": [
+      "quality-pass",
+      "useful-pattern"
+    ],
+    "anti_pattern_hits": [],
+    "output_contract_drift": false,
+    "user_correction": false,
+    "recommendation": "reflect-now",
+    "reflection_trigger": "output-threshold"
+  }
+}

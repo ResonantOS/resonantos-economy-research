@@ -1,0 +1,50 @@
+{
+  "swu_id": "SWU-LIV2-010",
+  "result": "pass",
+  "validated_at": "2026-07-17T21:50:15Z",
+  "commands": [
+    "npm --prefix development/time-capsule-live-intake-v2/api ci",
+    "npm --prefix development/time-capsule-live-intake-v2/api test -- service-config"
+  ],
+  "runtime": {"node":"22.12.0","npm":"10.9.0"},
+  "tests": {"top_level":5,"total":17,"passed":17,"failed":0},
+  "dependency_inventory": {
+    "direct_development": [
+      {"name":"@types/node","version":"22.18.11"},
+      {"name":"tsx","version":"4.20.6"},
+      {"name":"typescript","version":"5.9.3"}
+    ],
+    "installed_packages": 8,
+    "audit_vulnerabilities": 0,
+    "runtime_dependencies": 0
+  },
+  "artifacts": [
+    {"path":"development/time-capsule-live-intake-v2/api/package.json","sha256":"c701a828ca3a2fa936acc6fabe32f1b1cdf645f9386f441dd5773327ae149e8e"},
+    {"path":"development/time-capsule-live-intake-v2/api/package-lock.json","sha256":"38709002ace0e8088a396c496cb8cd60913e13e18ce33be56cb29cdd7fa0cd0e"},
+    {"path":"development/time-capsule-live-intake-v2/api/tsconfig.json","sha256":"7e49c3786e69a979d1ebcbcacf1c9ef3b9aacef6aef53738f6faba41e69cdddd"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/config/index.ts","sha256":"c584b87eba9cf660450e8fa5bb4fb1119c862e48882039dfb9381c661bb7df5e"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/server/index.ts","sha256":"98aa5569d15f8342cfb3ede33db7ebd3048751b5cdec033b7ab78723854fd58e"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/server/main.ts","sha256":"64276a09e4530eff59b13ea144572996b5ad898c750fbe62285e65bfe85b48ce"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/server/service-config.test.ts","sha256":"0ccf78879b50afd851313df8f2dcdd06a0f705b0ca6938b749c4b784b8558c49"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-010/CONTEXT-PACK.md","sha256":"34e8ac8db4a977fb508e2533b73d00e5e4e36153631f61b8c661199de7095d6b"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-010/context-index.json","sha256":"15851617977c098949513b9a7d5503de9ce1f00cf327c33468ec522eab0ed1cb"}
+  ],
+  "checks": [
+    {"id":"strict-context-coverage","result":"pass","covered":10,"total":10},
+    {"id":"clean-install","result":"pass"},
+    {"id":"typescript-build","result":"pass"},
+    {"id":"all-config-required-no-defaults","result":"pass","fields":4},
+    {"id":"synthetic-only-runtime","result":"pass"},
+    {"id":"loopback-only-host","result":"pass"},
+    {"id":"port-and-log-validation","result":"pass"},
+    {"id":"no-secret-config-fields","result":"pass"},
+    {"id":"non-reflective-config-errors","result":"pass"},
+    {"id":"exact-health-response","result":"pass","body":{"status":"ok"}},
+    {"id":"generic-unknown-route","result":"pass"},
+    {"id":"no-config-disclosure","result":"pass"},
+    {"id":"package-audit","result":"pass","vulnerabilities":0}
+  ],
+  "blockers": [],
+  "residue": ["This is a health-only synthetic scaffold; SQLite, intake, sessions, and real deployment remain later SWUs."],
+  "extra_sources": []
+}

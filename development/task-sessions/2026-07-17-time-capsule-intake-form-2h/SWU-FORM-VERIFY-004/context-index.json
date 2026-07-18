@@ -1,0 +1,19 @@
+{
+  "schema_version": "context-builder.index.v1",
+  "task": "SWU-FORM-VERIFY-004",
+  "mode": "lean",
+  "strict_coverage": "pass",
+  "obligations": 7,
+  "covered": 7,
+  "sources": [
+    "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/WORK-PACK.md",
+    "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/work-pack/TASK-FORM-001.md",
+    "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/work-pack/TASK-FORM-002.md",
+    "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/work-pack/TASK-FORM-003.md"
+  ],
+  "write_scope": [
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/README.md",
+    "development/task-sessions/2026-07-17-time-capsule-intake-form-2h/",
+    "output/playwright/time-capsule-intake/"
+  ]
+}

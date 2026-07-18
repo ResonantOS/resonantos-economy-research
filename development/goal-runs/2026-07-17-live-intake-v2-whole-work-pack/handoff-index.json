@@ -1,0 +1,83 @@
+{
+  "identity": {
+    "task_or_swu": "LIVE-INTAKE-V2-WHOLE-WORK-PACK",
+    "source_reference": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/WORK-PACK.md",
+    "session_or_run_id": "codex-goal-profile-live-intake-v2-2026-07-17",
+    "session_evidence_path": "development/goal-runs/2026-07-17-live-intake-v2-whole-work-pack/",
+    "runtime_handoff": "codex-goal",
+    "repository_revision": "c617ace5f10df9f46ec9f203743f4baca5cacbd6-dirty",
+    "evidence_date": "2026-07-17"
+  },
+  "strict_coverage": "pass",
+  "fallback_exploration": {
+    "status": "named-gaps-only",
+    "allowed_gap_ids": ["G-L0-01","G-L0-02","G-L0-03","G-L1-01","G-L2-01","G-L2-02","G-L2-03","G-L3-01","G-L3-02","G-L3-03","G-L3-04","G-L3-05","G-L3-06","G-L3-07","G-L3-08","G-L3-09"]
+  },
+  "obligations": [
+    {"id":"O-01","status":"covered","summary":"Execute 36 SWUs one at a time.","selected_evidence":[{"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/WORK-PACK.md","selector":"Shared SWU Manifest and Gates","excerpt_summary":"One Task Session and one receipt per SWU."}],"resolution":""},
+    {"id":"O-02","status":"covered","summary":"Respect waves, dependencies, and two-lane L0.","selected_evidence":[{"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/EXECUTION-PACK.md","selector":"Wave Choreography and Promotion Stops","excerpt_summary":"Safe machine branches may continue; L2 waits for human evidence."}],"resolution":""},
+    {"id":"O-03","status":"covered","summary":"Generate strict per-SWU runtime handoff packs.","selected_evidence":[{"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/WORK-PACK.md","selector":"Gates","excerpt_summary":"Every execution uses one SWU and an execution-time Context Builder pack."}],"resolution":""},
+    {"id":"O-04","status":"covered","summary":"Use invented data through L2 unless live gate passes.","selected_evidence":[{"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/VALIDATION-STRATEGY.md","selector":"Secret And Real-Data Rule","excerpt_summary":"Automated tests through L2 use invented values."}],"resolution":""},
+    {"id":"O-05","status":"covered","summary":"Use exact task-local write scopes.","selected_evidence":[{"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/","selector":"each SWU Write scope","excerpt_summary":"Write boundaries are declared per SWU."}],"resolution":"Directory selector resolves through the nine task contracts listed in selected_sources."},
+    {"id":"O-06","status":"covered","summary":"Validate and receipt every SWU before dependents.","selected_evidence":[{"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/VALIDATION-STRATEGY.md","selector":"Receipt Shape","excerpt_summary":"Receipts include validation, blockers, residue, and reroute."}],"resolution":""},
+    {"id":"O-07","status":"covered","summary":"Preserve human and owner gates.","selected_evidence":[{"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/GAP-LEDGER.md","selector":"G-L0, G-L2, G-L3","excerpt_summary":"Manual evidence has named owners and cannot be inferred."}],"resolution":""},
+    {"id":"O-08","status":"covered","summary":"Preserve external and irreversible gates.","selected_evidence":[{"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/DISPATCH.json","selector":"boundary_evidence and promotion_guardrails","excerpt_summary":"Production/external state is owned by manual gates."}],"resolution":""},
+    {"id":"O-09","status":"covered","summary":"Preserve privacy, visibility, and token non-effects.","selected_evidence":[{"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/shared/cross-task-decisions.md","selector":"decision-to-effect table","excerpt_summary":"D-01 through D-16 binding effects."}],"resolution":""},
+    {"id":"O-10","status":"covered","summary":"Bound capability and subagent policy.","selected_evidence":[{"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/DISPATCH.json","selector":"subagent_strategy and steps","excerpt_summary":"No subagents; controlled Context Builder, Task Session, and manual owners."}],"resolution":""},
+    {"id":"O-11","status":"covered","summary":"Complete only after all applicable receipts and close.","selected_evidence":[{"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-READINESS-009.md","selector":"Audit Algorithm and Done Criteria","excerpt_summary":"Readiness only offers SWU-036 for separate approval."}],"resolution":""},
+    {"id":"O-12","status":"covered","summary":"Report extra sources and their effect.","selected_evidence":[{"path":"development/goal-runs/2026-07-17-live-intake-v2-whole-work-pack/HANDOFF.md","selector":"Fallback Exploration Rule","excerpt_summary":"Extra sources require named justification and change report."}],"resolution":""}
+  ],
+  "selected_sources": [
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/WORK-PACK.md","selectors":["Objective","Shared SWU Manifest","Gates"],"obligations":["O-01","O-03","O-05","O-06","O-11"],"evidence_kind":"contract"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/EXECUTION-PACK.md","selectors":["Wave Choreography","Scheduling Rules","Promotion Stops"],"obligations":["O-02","O-07","O-08"],"evidence_kind":"contract"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/IMPLEMENTATION-LAYERING.md","selectors":["Layer Decision Table","Two-Lane L0 Rule","Non-Regression Guardrails"],"obligations":["O-02","O-04","O-09"],"evidence_kind":"architecture"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/GAP-LEDGER.md","selectors":["G-L0-01 through G-L3-09"],"obligations":["O-07","O-08","O-11"],"evidence_kind":"contract"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/VALIDATION-STRATEGY.md","selectors":["Evidence Classes","Secret And Real-Data Rule","Receipt Shape"],"obligations":["O-04","O-06","O-09"],"evidence_kind":"test"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/DISPATCH.json","selectors":["subagent_strategy","gates","boundary_evidence","promotion_guardrails"],"obligations":["O-07","O-08","O-10"],"evidence_kind":"contract"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-001.md","selectors":["SWU-LIV2-001 through 005"],"obligations":["O-01","O-05","O-06"],"evidence_kind":"contract"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-002.md","selectors":["SWU-LIV2-006 through 009"],"obligations":["O-02","O-07"],"evidence_kind":"contract"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-003.md","selectors":["SWU-LIV2-010 through 015"],"obligations":["O-04","O-05","O-06","O-09"],"evidence_kind":"contract"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-004.md","selectors":["SWU-LIV2-016 through 020"],"obligations":["O-01","O-05","O-06"],"evidence_kind":"contract"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-005.md","selectors":["SWU-LIV2-021 through 025"],"obligations":["O-04","O-07","O-08"],"evidence_kind":"contract"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-006.md","selectors":["SWU-LIV2-026 through 030"],"obligations":["O-05","O-06","O-07","O-08"],"evidence_kind":"contract"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-007.md","selectors":["SWU-LIV2-031 through 032"],"obligations":["O-05","O-06","O-08","O-09"],"evidence_kind":"contract"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-008.md","selectors":["SWU-LIV2-033 through 036"],"obligations":["O-07","O-08","O-09","O-11"],"evidence_kind":"contract"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-READINESS-009.md","selectors":["Audit Algorithm","Done Criteria"],"obligations":["O-06","O-08","O-11"],"evidence_kind":"contract"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/shared/cross-task-decisions.md","selectors":["decision-to-effect table"],"obligations":["O-09"],"evidence_kind":"decision"},
+    {"path":"DECISIONS.md","selectors":["D-01 through D-16","Implementation And Proof Gates","Assumptions"],"obligations":["O-07","O-08","O-09"],"evidence_kind":"decision"},
+    {"path":"development/research/2026-07-17-agentless-time-capsule-protocol/gates/closure-gates.md","selectors":["G-01 through G-10","Fail-closed rule"],"obligations":["O-06","O-07","O-08","O-11"],"evidence_kind":"contract"},
+    {"path":"development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/README.md","selectors":["Participant Contract","Important Boundary","Future Live Adapter Seam"],"obligations":["O-04","O-09"],"evidence_kind":"architecture"},
+    {"path":"development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/fixtures/time-capsule-fixtures-v1.js","selectors":["phraseProfile","accessModes","retellProtocol"],"obligations":["O-02","O-05","O-06","O-07"],"evidence_kind":"test"}
+  ],
+  "write_scope": [
+    "active SWU declared write scope only",
+    "development/task-sessions/<active-run>/",
+    "development/goal-runs/2026-07-17-live-intake-v2-whole-work-pack/",
+    "work-pack/task status synchronization after validated receipts"
+  ],
+  "validation_surface": [
+    "active SWU Validation field",
+    "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/VALIDATION-STRATEGY.md",
+    "standard SWU receipt contract",
+    "wave exit and promotion gates",
+    "TASK-LIV2-READINESS-009 final audit"
+  ],
+  "gaps_and_blockers": [
+    {"id":"G-L0-01..03","status":"deferred","summary":"Manual access and retell evidence is required before L2.","runtime_fallback_allowed":false},
+    {"id":"G-L2-01..03","status":"deferred","summary":"Owner and operations evidence is required before real intake.","runtime_fallback_allowed":false},
+    {"id":"G-L3-01..08","status":"deferred","summary":"Protocol, archive, custody, Bitcoin, number, rehearsal, and risk evidence is required before close.","runtime_fallback_allowed":true},
+    {"id":"G-L3-09","status":"block","summary":"Production external and irreversible actions require separate explicit authorization.","runtime_fallback_allowed":false}
+  ],
+  "authority_precedence": [
+    "DECISIONS.md D-01 through D-16 and later explicit user approvals",
+    "WORK-PACK.md, task contracts, and EXECUTION-PACK.md",
+    "completed Task Session and manual-owner receipts",
+    "goal handoff and sidecar runtime controls",
+    "inventory and extra sources as non-authority evidence"
+  ],
+  "output_paths": {
+    "markdown": "development/goal-runs/2026-07-17-live-intake-v2-whole-work-pack/HANDOFF.md",
+    "json_index": "development/goal-runs/2026-07-17-live-intake-v2-whole-work-pack/handoff-index.json"
+  }
+}
+

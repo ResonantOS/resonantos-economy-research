@@ -1,0 +1,166 @@
+{
+  "dispatch_id": "invoke-live-intake-v2-plan-2026-07-17",
+  "parent_dispatch_id": null,
+  "intent": {
+    "raw": "invoke plan for Live Intake Plan V2",
+    "objective": "Author and validate a non-executed high-complexity implementation plan with one safe first SWU and explicit real/irreversible gates.",
+    "target_artifact": "Live Intake Plan V2",
+    "arcanum_vocabulary": ["invoke", "context-builder", "inventory", "dispatch-spec", "distill", "implementation-layering", "task-session"],
+    "operator_sentence": "Plan the intake, database, safety, future opening, Bitcoin commitment, and ritual number without executing them."
+  },
+  "mode": "sequence",
+  "techniques": [
+    "sequence", "concrete_path_evidence", "handle_handoff", "scu_swu_reduction",
+    "recomposition_proof", "validation_loop", "artifact_contract_bridge",
+    "residue_ledger", "authority_split_gate", "state_namespace_boundary",
+    "execution_receipt_handoff", "owner_boundary_check", "observability_grouping"
+  ],
+  "technique_overlays": [
+    {
+      "overlay_id": "protected-live-intake-plan",
+      "trigger": "The route plans protected participant data, external archive/Bitcoin evidence, and an irreversible close across multiple owners.",
+      "techniques": ["authority_split_gate", "state_namespace_boundary", "execution_receipt_handoff"],
+      "applies_to_steps": ["s1-context", "s5-plan", "s7-handoff"],
+      "validation_expectation": "Plan-only writes remain separate from runtime secrets/live state; later execution returns one-SWU receipts and requires its own authority."
+    }
+  ],
+  "subagent_strategy": {
+    "status": "none",
+    "explanation": "The user requested Invoke Plan, current decisions are complete, and local sequential synthesis is sufficient; no delegated execution is authorized.",
+    "parallelism": "none",
+    "join_policy": "none",
+    "authorization": "not_needed",
+    "roles": [],
+    "receipt_requirements": []
+  },
+  "subagent_lifecycle": {"status": "none", "agents": []},
+  "steps": [
+    {
+      "step_id": "s1-context",
+      "name": "Build bounded planning context",
+      "capability_ref": "context-builder",
+      "mode": "deep-strict",
+      "pattern": "sequential",
+      "techniques": ["concrete_path_evidence", "handle_handoff", "state_namespace_boundary"],
+      "inputs": [{"kind":"intent","ref":"intent.raw"}],
+      "outputs": [{"kind":"frame","ref":"CONTEXT-PACK.md"},{"kind":"handle","ref":"context-index.json"}],
+      "stop_conditions": ["block if an implementation obligation lacks a source or explicit resolution"]
+    },
+    {
+      "step_id": "s2-gap-check",
+      "name": "Check planning ambiguity and approval",
+      "capability_ref": "interrogation",
+      "mode": "gap-check",
+      "pattern": "decision",
+      "techniques": ["sequence", "owner_boundary_check"],
+      "inputs": [{"kind":"frame","ref":"CONTEXT-PACK.md"}],
+      "outputs": [{"kind":"decision","ref":"INTERVIEW-GAP-CHECK.md"}],
+      "stop_conditions": ["ask one question if an acceptance-critical choice is unresolved"]
+    },
+    {
+      "step_id": "s3-inventory",
+      "name": "Select planning templates and target inventory evidence",
+      "capability_ref": "inventory",
+      "capability_status": "local-extension",
+      "capability_metadata": {"source":"installed repository skill .agents/skills/inventory/SKILL.md","purpose":"machine-index-first template and target evidence lookup"},
+      "mode": "lookup",
+      "pattern": "sequential",
+      "techniques": ["sequence", "handle_handoff"],
+      "inputs": [{"kind":"handle","ref":"context-index.json"},{"kind":"decision","ref":"INTERVIEW-GAP-CHECK.md"}],
+      "outputs": [{"kind":"handle","ref":"TEMPLATE-SELECTION.md"}],
+      "stop_conditions": ["block if mandatory work-pack/layering/execution templates are unavailable"]
+    },
+    {
+      "step_id": "s4-dispatch",
+      "name": "Validate planning route and authority boundaries",
+      "capability_ref": "dispatch-spec",
+      "mode": "validate",
+      "pattern": "validation",
+      "techniques": ["sequence", "artifact_contract_bridge", "authority_split_gate", "observability_grouping"],
+      "inputs": [{"kind":"handle","ref":"TEMPLATE-SELECTION.md"},{"kind":"artifact","ref":"DISPATCH.json"}],
+      "outputs": [{"kind":"artifact","ref":"DISPATCH-TECHNIQUE-TRACE.md"},{"kind":"trace_event","ref":"dispatch_validated"}],
+      "evidence_artifact": "DISPATCH-TECHNIQUE-TRACE.md",
+      "stop_conditions": ["block on schema error, false authority, missing receipt boundary, or unused technique"]
+    },
+    {
+      "step_id": "s5-plan",
+      "name": "Author split work-pack and implementation layering",
+      "capability_ref": "invoke",
+      "mode": "plan",
+      "pattern": "synthesis",
+      "techniques": ["sequence", "scu_swu_reduction", "validation_loop", "residue_ledger", "artifact_contract_bridge", "state_namespace_boundary"],
+      "inputs": [{"kind":"frame","ref":"CONTEXT-PACK.md"},{"kind":"decision","ref":"INTERVIEW-GAP-CHECK.md"},{"kind":"handle","ref":"TEMPLATE-SELECTION.md"},{"kind":"artifact","ref":"DISPATCH-TECHNIQUE-TRACE.md"}],
+      "outputs": [{"kind":"handle","ref":"WORK-PACK.md"},{"kind":"handle","ref":"IMPLEMENTATION-LAYERING.md"},{"kind":"handle","ref":"EXECUTION-PACK.md"},{"kind":"ledger","ref":"GAP-LEDGER.md"}],
+      "stop_conditions": ["block if task details, SWU atomicity, layer waves, validation, or exact first-unit navigation are missing"]
+    },
+    {
+      "step_id": "s6-distill",
+      "name": "Validate atomicity, narrow first unit, and recomposition",
+      "capability_ref": "distill",
+      "mode": "validate",
+      "pattern": "distill",
+      "techniques": ["scu_swu_reduction", "recomposition_proof", "validation_loop", "residue_ledger"],
+      "inputs": [{"kind":"handle","ref":"WORK-PACK.md"},{"kind":"handle","ref":"IMPLEMENTATION-LAYERING.md"},{"kind":"handle","ref":"EXECUTION-PACK.md"},{"kind":"ledger","ref":"GAP-LEDGER.md"}],
+      "outputs": [{"kind":"artifact","ref":"DISTILL-VALIDATION.md"},{"kind":"decision","ref":"distill-pass-for-SWU-LIV2-001"}],
+      "evidence_artifact": "DISTILL-VALIDATION.md",
+      "stop_conditions": ["block on task-shaped SWU, missing recomposition, hidden acceptance gap, or broad first unit"]
+    },
+    {
+      "step_id": "s7-handoff",
+      "name": "Offer one-SWU Task Session handoff",
+      "capability_ref": "task-session",
+      "mode": "deferred-handoff",
+      "pattern": "handoff",
+      "techniques": ["handle_handoff", "execution_receipt_handoff", "owner_boundary_check", "authority_split_gate"],
+      "inputs": [{"kind":"decision","ref":"distill-pass-for-SWU-LIV2-001"},{"kind":"handle","ref":"WORK-PACK.md"},{"kind":"handle","ref":"work-pack/tasks/TASK-LIV2-001.md"}],
+      "outputs": [{"kind":"handoff","ref":"task-session:SWU-LIV2-001-after-explicit-authorization"}],
+      "stop_conditions": ["do not execute without explicit Task Session authorization", "do not infer authority for later SWUs"]
+    }
+  ],
+  "gates": [
+    {"gate_id":"g01-context","kind":"quality","owner":"context-builder","condition":"All 12 planning obligations are covered or explicitly resolved.","on_fail":"block"},
+    {"gate_id":"g02-plan-contract","kind":"validation","owner":"invoke","condition":"Layering, split work-pack, task details, waves, validation, and SWU contracts are complete.","on_fail":"block"},
+    {"gate_id":"g03-atomicity","kind":"validation","owner":"distill","condition":"All non-exempt SWUs have one behavior and independent acceptance; SWU-LIV2-001 is narrowest.","on_fail":"block"},
+    {"gate_id":"g04-live-authority","kind":"promotion_guardrail","owner":"manual owners","condition":"Plan or invented-data evidence cannot enable real intake, external close, or token effects.","on_fail":"block"},
+    {"gate_id":"g05-execution-approval","kind":"human_approval","owner":"user","condition":"A later Task Session explicitly names one SWU; only SWU-LIV2-001 is currently eligible.","on_fail":"defer"}
+  ],
+  "observability": {
+    "dispatch_id_required": true,
+    "parent_dispatch_id": null,
+    "trace_events": ["context_selected","gap_check_passed","templates_selected","dispatch_validated","plan_authored","distill_validated","handoff_deferred"],
+    "signal_grouping": "dispatch_id and run_id"
+  },
+  "boundary_evidence": {
+    "boundaries": [
+      {"boundary_id":"b01-plan-only","kind":"state_write","from_owner":"invoke","to_owner":"target repository planning area","applies_to_steps":["s1-context","s5-plan","s6-distill"],"contract":"Write planning and observability artifacts only; no app, API, database, deployment, secret, live data, archive, Bitcoin, or token mutation.","on_violation":"block"},
+      {"boundary_id":"b02-one-swu","kind":"capability_handoff","from_owner":"invoke","to_owner":"task-session","applies_to_steps":["s7-handoff"],"contract":"Handoff contains exact SWU, source anchors, write scope, validation, receipt shape, and requires new authorization.","on_violation":"block"},
+      {"boundary_id":"b03-protected-data","kind":"human_approval","from_owner":"task-session","to_owner":"manual owners","applies_to_steps":["s7-handoff"],"contract":"Real phrases, credentials, key/share custody, external publication, and destructive cleanup require the layer-specific human gate.","on_violation":"block"}
+    ],
+    "authority": {
+      "lifecycle":"invoke authors plan; target development cycle owns implementation",
+      "execution":"task-session one SWU at a time; manual owners for protected actions",
+      "validation":"task-local validators, Distill, independent readiness auditor",
+      "evidence":"Task Session and owner-held receipts",
+      "memory":"inventory remains a non-authority lookup projection",
+      "promotion":"user plus named layer owners; production close requires separate authorization"
+    },
+    "receipts": [
+      {"receipt_id":"r01-one-swu-result","producer":"task-session or manual owner","required_fields":["run_id","artifacts","validation_result","dispatch_id","step_id","capability_ref","status","validation","observer_status","blockers","residue","handoff_note"],"stores":["development/task-sessions/<run>/"],"on_missing":"block"}
+    ],
+    "state_namespaces": [
+      {"namespace":"invoke plan artifacts","owner":"invoke","write_policy":"This run may create only the named V2 plan and observer record."},
+      {"namespace":"implementation and test data","owner":"task-session","write_policy":"One authorized SWU; invented data through L2 unless the real-intake gate passes."},
+      {"namespace":"production secrets and live state","owner":"manual operations/security owners","write_policy":"Never stored in plan/repository receipts; protected execution only."},
+      {"namespace":"external archive and Bitcoin state","owner":"ceremony owners","write_policy":"Disposable rehearsal or separately approved production close only."}
+    ],
+    "promotion_splits": [
+      {"source":"plan or SWU receipt","target":"real intake or production close","rule":"Evidence becomes eligible for owner review only; no receipt self-promotes a capability.","on_violation":"block"},
+      {"source":"ritual number receipt","target":"token/economic/governance state","rule":"No promotion path exists in this plan.","on_violation":"block"}
+    ]
+  },
+  "promotion_guardrails": [
+    "Invoke does not execute the plan.",
+    "Only SWU-LIV2-001 may be offered next and still requires authorization.",
+    "No real intake, external publication, key destruction, or token action follows from plan validation."
+  ]
+}

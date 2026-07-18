@@ -1,0 +1,35 @@
+{
+  "swu_id": "SWU-LIV2-004",
+  "result": "pass",
+  "validated_at": "2026-07-17T21:33:06Z",
+  "command": "node development/time-capsule-live-intake-v2/tools/validate-field-lifecycle.mjs",
+  "contract": "resonant.time-capsule.field-lifecycle@1.0.0",
+  "coverage": {
+    "total_fields": 38,
+    "coverage_percent": 100,
+    "public_export_allowlisted": 14,
+    "public_export_forbidden": 24
+  },
+  "projection_fixtures": {"total":13,"valid":3,"invalid":10},
+  "drift_checks": {"total":2,"passed":2,"checks":["private-export-drift-rejected","field-coverage-drift-rejected"]},
+  "artifacts": [
+    {"path":"development/time-capsule-live-intake-v2/contracts/field-lifecycle-v1.json","sha256":"1b929ece943a55de31d3d36ee8f50a4c76cb756e2ad85afda20bf5e66a6f4e87"},
+    {"path":"development/time-capsule-live-intake-v2/tools/validate-field-lifecycle.mjs","sha256":"9e06a90c61435d191d671e6008d8dd5065b4f9fc2bf24a3c1035eedf05917753"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-004/CONTEXT-PACK.md","sha256":"8207d4e20a641274d8406db5b14730a8a7b448827b51539ff04c4d554543719f"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-004/context-index.json","sha256":"fccadd83c6f6f1159181f24603662bd01854c328031ed5d75adabebe29a464cb"}
+  ],
+  "checks": [
+    {"id":"strict-context-coverage","result":"pass","covered":10,"total":10},
+    {"id":"descriptor-coverage","result":"pass","percent":100},
+    {"id":"required-category-coverage","result":"pass","categories":13},
+    {"id":"unknown-field-default","result":"pass","value":"forbidden"},
+    {"id":"public-opening-only","result":"pass"},
+    {"id":"no-live-feed","result":"pass"},
+    {"id":"no-participant-keys","result":"pass"},
+    {"id":"no-token-fields","result":"pass"},
+    {"id":"node-syntax-json-parse","result":"pass"}
+  ],
+  "blockers": [],
+  "residue": ["Concrete storage, encryption, backup, moderation, manifest, and opening consumers remain later SWUs."],
+  "extra_sources": []
+}

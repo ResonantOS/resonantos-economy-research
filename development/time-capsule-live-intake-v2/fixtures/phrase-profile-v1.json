@@ -1,0 +1,112 @@
+{
+  "fixture_set_id": "resonant.time-capsule.phrase-profile.fixtures",
+  "version": "1.0.0",
+  "profile_ref": {
+    "profile_id": "resonant.time-capsule.phrase-profile",
+    "version": "1.0.0",
+    "domain": "resonant-time-capsule/phrase/public-at-opening/v1"
+  },
+  "invented_values_only": true,
+  "vectors": [
+    {
+      "id": "quiet-empty",
+      "input": "",
+      "expected": {"valid": true, "empty": true, "normalized": "", "graphemes": 0}
+    },
+    {
+      "id": "unicode-whitespace-only",
+      "input": " \t\n\r\u00A0\u2003 ",
+      "expected": {"valid": true, "empty": true, "normalized": "", "graphemes": 0}
+    },
+    {
+      "id": "trim-phrase",
+      "input": "  keep becoming  ",
+      "expected": {"valid": true, "empty": false, "normalized": "keep becoming", "graphemes": 13}
+    },
+    {
+      "id": "collapse-whitespace",
+      "input": "remember\nthis\tlight",
+      "expected": {"valid": true, "empty": false, "normalized": "remember this light", "graphemes": 19}
+    },
+    {
+      "id": "collapse-unicode-whitespace",
+      "input": "space\u00A0\u2003between",
+      "expected": {"valid": true, "empty": false, "normalized": "space between", "graphemes": 13}
+    },
+    {
+      "id": "nfc-combining",
+      "input": "re\u0301sonance returns",
+      "expected": {"valid": true, "empty": false, "normalized": "résonance returns", "graphemes": 17}
+    },
+    {
+      "id": "rtl-arabic",
+      "input": "تذكّر هذه اللحظة",
+      "expected": {"valid": true, "empty": false, "normalized": "تذكّر هذه اللحظة", "graphemes": 15}
+    },
+    {
+      "id": "emoji-zwj",
+      "input": "Meet me here again 👩‍🚀",
+      "expected": {"valid": true, "empty": false, "normalized": "Meet me here again 👩‍🚀", "graphemes": 20}
+    },
+    {
+      "id": "script-zwnj",
+      "input": "می‌خواهم به یاد بیاورم",
+      "expected": {"valid": true, "empty": false, "normalized": "می‌خواهم به یاد بیاورم", "graphemes": 21}
+    },
+    {
+      "id": "grapheme-limit-valid",
+      "input_repeat": {"value": "a", "count": 160},
+      "expected": {"valid": true, "empty": false, "normalized_repeat": {"value": "a", "count": 160}, "graphemes": 160}
+    },
+    {
+      "id": "input-type-rejected",
+      "input": null,
+      "expected": {"valid": false, "error_code": "phrase_input_type", "error_contains": "Unicode string"}
+    },
+    {
+      "id": "unpaired-surrogate-rejected",
+      "input": "future\uD800mark",
+      "expected": {"valid": false, "error_code": "phrase_invalid_unicode", "error_contains": "unpaired surrogate"}
+    },
+    {
+      "id": "bidi-format-control-rejected",
+      "input": "hello\u202Eworld",
+      "expected": {"valid": false, "error_code": "phrase_directional_control", "error_contains": "directional"}
+    },
+    {
+      "id": "bidi-isolate-control-rejected",
+      "input": "hello\u2066world\u2069",
+      "expected": {"valid": false, "error_code": "phrase_directional_control", "error_contains": "directional"}
+    },
+    {
+      "id": "zero-width-space-rejected",
+      "input": "reso\u200Bnance",
+      "expected": {"valid": false, "error_code": "phrase_invisible_separator", "error_contains": "invisible"}
+    },
+    {
+      "id": "word-joiner-rejected",
+      "input": "reso\u2060nance",
+      "expected": {"valid": false, "error_code": "phrase_invisible_separator", "error_contains": "invisible"}
+    },
+    {
+      "id": "bom-rejected",
+      "input": "reso\uFEFFnance",
+      "expected": {"valid": false, "error_code": "phrase_invisible_separator", "error_contains": "invisible"}
+    },
+    {
+      "id": "c0-control-rejected",
+      "input": "echo\u0007later",
+      "expected": {"valid": false, "error_code": "phrase_control_character", "error_contains": "control"}
+    },
+    {
+      "id": "c1-control-rejected",
+      "input": "echo\u0085later",
+      "expected": {"valid": false, "error_code": "phrase_control_character", "error_contains": "control"}
+    },
+    {
+      "id": "grapheme-limit-rejected",
+      "input_repeat": {"value": "a", "count": 161},
+      "expected": {"valid": false, "error_code": "phrase_too_long", "error_contains": "160 grapheme clusters or fewer", "normalized_repeat": {"value": "a", "count": 161}, "graphemes": 161}
+    }
+  ]
+}

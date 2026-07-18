@@ -1,0 +1,220 @@
+{
+  "fixture_set_id": "resonant.time-capsule.command-state.fixtures",
+  "version": "1.0.0",
+  "contract_ref": "resonant.time-capsule.command-state@1.0.0",
+  "invented_values_only": true,
+  "base_state": {
+    "rules_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "close_state": "open",
+    "close_epoch": 3,
+    "envelope_version": 2,
+    "idempotency_records": []
+  },
+  "base_command": {
+    "operation": "confirm_envelope",
+    "authenticated_scope": "invite:invented-alpha",
+    "session_scope": "invite:invented-alpha",
+    "expected_rules_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "expected_envelope_version": 2,
+    "expected_close_epoch": 3,
+    "idempotency_key": "cmd-new",
+    "command_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "server_commit_instant_utc": "2026-07-20T23:59:59.999Z"
+  },
+  "vectors": [
+    {
+      "id": "commit-next-version",
+      "mutations": [],
+      "expected": {"classification": "commit", "mutated": true, "envelope_version": 3, "receipt_ref": "receipt:confirm_envelope:cmd-new"}
+    },
+    {
+      "id": "commit-initial-version",
+      "mutations": [
+        {"op": "set_state", "field": "envelope_version", "value": null},
+        {"op": "set_command", "field": "expected_envelope_version", "value": null}
+      ],
+      "expected": {"classification": "commit", "mutated": true, "envelope_version": 1, "receipt_ref": "receipt:confirm_envelope:cmd-new"}
+    },
+    {
+      "id": "replay-same-key-same-digest-before-version-check",
+      "mutations": [
+        {"op": "set_command", "field": "idempotency_key", "value": "cmd-replay"},
+        {"op": "set_command", "field": "command_digest", "value": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"},
+        {"op": "set_command", "field": "expected_envelope_version", "value": 1},
+        {"op": "add_record", "record": {
+          "session_scope": "invite:invented-alpha",
+          "operation": "confirm_envelope",
+          "idempotency_key": "cmd-replay",
+          "command_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "result": {
+            "outcome": "committed",
+            "envelope_version": 2,
+            "receipt_ref": "receipt:confirm_envelope:cmd-replay",
+            "idempotency_key": "cmd-replay",
+            "command_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "server_commit_instant_utc": "2026-07-20T12:00:00.000Z"
+          }
+        }}
+      ],
+      "expected": {"classification": "replay", "mutated": false, "envelope_version": 2, "receipt_ref": "receipt:confirm_envelope:cmd-replay"}
+    },
+    {
+      "id": "same-key-other-scope-does-not-collide",
+      "mutations": [
+        {"op": "add_record", "record": {
+          "session_scope": "invite:invented-other",
+          "operation": "confirm_envelope",
+          "idempotency_key": "cmd-new",
+          "command_digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+          "result": {
+            "outcome": "committed",
+            "envelope_version": 1,
+            "receipt_ref": "receipt:confirm_envelope:cmd-new",
+            "idempotency_key": "cmd-new",
+            "command_digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+            "server_commit_instant_utc": "2026-07-20T10:00:00.000Z"
+          }
+        }}
+      ],
+      "expected": {"classification": "commit", "mutated": true, "envelope_version": 3, "receipt_ref": "receipt:confirm_envelope:cmd-new"}
+    },
+    {
+      "id": "reject-unauthenticated-scope",
+      "mutations": [{"op": "set_command", "field": "authenticated_scope", "value": null}],
+      "expected": {"classification": "rejected", "mutated": false, "error_code": "scope_unauthenticated", "error_contains": "authenticated scope"}
+    },
+    {
+      "id": "reject-scope-mismatch",
+      "mutations": [{"op": "set_command", "field": "authenticated_scope", "value": "invite:invented-other"}],
+      "expected": {"classification": "rejected", "mutated": false, "error_code": "scope_mismatch", "error_contains": "session scope"}
+    },
+    {
+      "id": "conflict-rules-digest",
+      "mutations": [{"op": "set_command", "field": "expected_rules_digest", "value": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"}],
+      "expected": {"classification": "conflict", "mutated": false, "error_code": "rules_digest_mismatch", "error_contains": "rules digest"}
+    },
+    {
+      "id": "reject-closing-state",
+      "mutations": [{"op": "set_state", "field": "close_state", "value": "closing"}],
+      "expected": {"classification": "rejected", "mutated": false, "error_code": "close_state_not_open", "error_contains": "not open"}
+    },
+    {
+      "id": "reject-closed-state",
+      "mutations": [{"op": "set_state", "field": "close_state", "value": "closed"}],
+      "expected": {"classification": "rejected", "mutated": false, "error_code": "close_state_not_open", "error_contains": "not open"}
+    },
+    {
+      "id": "conflict-stale-close-epoch",
+      "mutations": [{"op": "set_command", "field": "expected_close_epoch", "value": 2}],
+      "expected": {"classification": "conflict", "mutated": false, "error_code": "close_epoch_mismatch", "error_contains": "close epoch"}
+    },
+    {
+      "id": "reject-at-close-fence",
+      "mutations": [{"op": "set_command", "field": "server_commit_instant_utc", "value": "2026-07-21T00:00:00.000Z"}],
+      "expected": {"classification": "rejected", "mutated": false, "error_code": "close_fence_reached", "error_contains": "close fence"}
+    },
+    {
+      "id": "reject-after-close-fence",
+      "mutations": [{"op": "set_command", "field": "server_commit_instant_utc", "value": "2026-07-21T00:00:00.001Z"}],
+      "expected": {"classification": "rejected", "mutated": false, "error_code": "close_fence_reached", "error_contains": "close fence"}
+    },
+    {
+      "id": "reject-invalid-commit-instant",
+      "mutations": [{"op": "set_command", "field": "server_commit_instant_utc", "value": "not-a-time"}],
+      "expected": {"classification": "rejected", "mutated": false, "error_code": "invalid_command", "error_contains": "commit instant"}
+    },
+    {
+      "id": "conflict-idempotency-key-reused",
+      "mutations": [
+        {"op": "add_record", "record": {
+          "session_scope": "invite:invented-alpha",
+          "operation": "confirm_envelope",
+          "idempotency_key": "cmd-new",
+          "command_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "result": {
+            "outcome": "committed",
+            "envelope_version": 2,
+            "receipt_ref": "receipt:confirm_envelope:cmd-new",
+            "idempotency_key": "cmd-new",
+            "command_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "server_commit_instant_utc": "2026-07-20T12:00:00.000Z"
+          }
+        }}
+      ],
+      "expected": {"classification": "conflict", "mutated": false, "error_code": "idempotency_key_reused", "error_contains": "different command digest"}
+    },
+    {
+      "id": "conflict-stale-envelope-version",
+      "mutations": [{"op": "set_command", "field": "expected_envelope_version", "value": 1}],
+      "expected": {"classification": "conflict", "mutated": false, "error_code": "envelope_version_mismatch", "error_contains": "envelope version"}
+    },
+    {
+      "id": "conflict-initial-version-must-be-null",
+      "mutations": [{"op": "set_state", "field": "envelope_version", "value": null}],
+      "expected": {"classification": "conflict", "mutated": false, "error_code": "envelope_version_mismatch", "error_contains": "envelope version"}
+    },
+    {
+      "id": "conflict-existing-version-cannot-expect-null",
+      "mutations": [{"op": "set_command", "field": "expected_envelope_version", "value": null}],
+      "expected": {"classification": "conflict", "mutated": false, "error_code": "envelope_version_mismatch", "error_contains": "envelope version"}
+    },
+    {
+      "id": "precedence-scope-before-rules",
+      "mutations": [
+        {"op": "set_command", "field": "authenticated_scope", "value": "invite:invented-other"},
+        {"op": "set_command", "field": "expected_rules_digest", "value": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"}
+      ],
+      "expected": {"classification": "rejected", "mutated": false, "error_code": "scope_mismatch", "error_contains": "session scope"}
+    },
+    {
+      "id": "precedence-rules-before-close",
+      "mutations": [
+        {"op": "set_command", "field": "expected_rules_digest", "value": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"},
+        {"op": "set_state", "field": "close_state", "value": "closed"}
+      ],
+      "expected": {"classification": "conflict", "mutated": false, "error_code": "rules_digest_mismatch", "error_contains": "rules digest"}
+    },
+    {
+      "id": "precedence-close-before-replay",
+      "mutations": [
+        {"op": "set_state", "field": "close_state", "value": "closed"},
+        {"op": "add_record", "record": {
+          "session_scope": "invite:invented-alpha",
+          "operation": "confirm_envelope",
+          "idempotency_key": "cmd-new",
+          "command_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "result": {"outcome": "committed", "envelope_version": 3, "receipt_ref": "receipt:confirm_envelope:cmd-new", "idempotency_key": "cmd-new", "command_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "server_commit_instant_utc": "2026-07-20T12:00:00.000Z"}
+        }}
+      ],
+      "expected": {"classification": "rejected", "mutated": false, "error_code": "close_state_not_open", "error_contains": "not open"}
+    },
+    {
+      "id": "precedence-epoch-before-replay",
+      "mutations": [
+        {"op": "set_command", "field": "expected_close_epoch", "value": 2},
+        {"op": "add_record", "record": {
+          "session_scope": "invite:invented-alpha",
+          "operation": "confirm_envelope",
+          "idempotency_key": "cmd-new",
+          "command_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "result": {"outcome": "committed", "envelope_version": 3, "receipt_ref": "receipt:confirm_envelope:cmd-new", "idempotency_key": "cmd-new", "command_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "server_commit_instant_utc": "2026-07-20T12:00:00.000Z"}
+        }}
+      ],
+      "expected": {"classification": "conflict", "mutated": false, "error_code": "close_epoch_mismatch", "error_contains": "close epoch"}
+    },
+    {
+      "id": "precedence-idempotency-before-version",
+      "mutations": [
+        {"op": "set_command", "field": "expected_envelope_version", "value": 1},
+        {"op": "add_record", "record": {
+          "session_scope": "invite:invented-alpha",
+          "operation": "confirm_envelope",
+          "idempotency_key": "cmd-new",
+          "command_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "result": {"outcome": "committed", "envelope_version": 2, "receipt_ref": "receipt:confirm_envelope:cmd-new", "idempotency_key": "cmd-new", "command_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc", "server_commit_instant_utc": "2026-07-20T12:00:00.000Z"}
+        }}
+      ],
+      "expected": {"classification": "conflict", "mutated": false, "error_code": "idempotency_key_reused", "error_contains": "different command digest"}
+    }
+  ]
+}

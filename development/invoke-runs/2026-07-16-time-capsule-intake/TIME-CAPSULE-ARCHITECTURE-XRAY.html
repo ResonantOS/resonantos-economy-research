@@ -1,0 +1,1156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resonant Time Capsule — Architecture X-Ray</title>
+  <meta name="description" content="A visual architecture x-ray of the Resonant Time Capsule intake, capsule root, supply selector, and 2/5/10-year releases.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #070811;
+      --bg-raised: #0c0f19;
+      --panel: #111520;
+      --panel-soft: #171b28;
+      --paper: #f2e8d8;
+      --paper-soft: #c8bdad;
+      --paper-faint: #918779;
+      --gold: #c38b42;
+      --gold-deep: #744b20;
+      --cyan: #6cc5cc;
+      --cyan-deep: #244f58;
+      --violet: #9f8ae8;
+      --rose: #d5837f;
+      --green: #7eb997;
+      --line: rgba(195, 139, 66, 0.28);
+      --line-soft: rgba(242, 232, 216, 0.11);
+      --focus: #f0b75f;
+      --max: 1280px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 82% 8%, rgba(108, 197, 204, 0.08), transparent 28rem),
+        radial-gradient(circle at 14% 2%, rgba(195, 139, 66, 0.15), transparent 34rem),
+        var(--bg);
+      color: var(--paper);
+      font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a { color: inherit; }
+    button, input { font: inherit; }
+
+    .shell {
+      width: min(var(--max), calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .site-bar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      min-height: 58px;
+      border-bottom: 1px solid var(--line-soft);
+      background: rgba(7, 8, 17, 0.86);
+      backdrop-filter: blur(18px);
+    }
+
+    .site-bar .shell {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 760;
+    }
+
+    .brand-mark {
+      width: 11px;
+      height: 11px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 22px rgba(195, 139, 66, 0.7);
+    }
+
+    .status {
+      color: var(--paper-soft);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+    }
+
+    .hero {
+      padding: clamp(42px, 6vw, 70px) 0 36px;
+    }
+
+    .kicker,
+    .section-kicker,
+    .mini-label {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-size: 0.74rem;
+      font-weight: 850;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, .metric strong {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -0.045em;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(3.25rem, 6.7vw, 6rem);
+      line-height: 0.91;
+    }
+
+    h1 em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.5fr);
+      gap: clamp(34px, 6vw, 84px);
+      align-items: end;
+      margin-top: 26px;
+    }
+
+    .hero-copy {
+      max-width: 790px;
+      margin: 0;
+      color: var(--paper-soft);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+    }
+
+    .hero-note {
+      padding: 20px;
+      border-left: 2px solid var(--cyan);
+      background: linear-gradient(90deg, rgba(108, 197, 204, 0.09), transparent);
+      color: var(--paper-soft);
+    }
+
+    .hero-note strong { color: var(--paper); }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      padding: 0 0 40px;
+    }
+
+    .metric {
+      min-height: 98px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(195, 139, 66, 0.08), rgba(17, 21, 32, 0.84));
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--paper);
+      font-size: clamp(2rem, 3.2vw, 3.3rem);
+      line-height: 1;
+    }
+
+    .metric span { color: var(--paper-soft); font-size: 0.84rem; }
+
+    section { scroll-margin-top: 76px; }
+
+    .section {
+      padding: 58px 0;
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
+      gap: 42px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2.6rem, 4.8vw, 4.8rem);
+      line-height: 0.92;
+    }
+
+    .section-head > p {
+      max-width: 700px;
+      margin: 0;
+      color: var(--paper-soft);
+    }
+
+    .layer-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 18px;
+    }
+
+    .layer-control {
+      padding: 9px 14px;
+      border: 1px solid var(--line-soft);
+      border-radius: 999px;
+      background: rgba(17, 21, 32, 0.72);
+      color: var(--paper-soft);
+      cursor: pointer;
+    }
+
+    .layer-control:hover,
+    .layer-control[aria-pressed="true"] {
+      border-color: var(--gold);
+      background: rgba(195, 139, 66, 0.16);
+      color: var(--paper);
+    }
+
+    .layer-control:focus-visible,
+    .inspectable:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    .diagram-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 330px;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .diagram-card,
+    .inspector,
+    .info-card,
+    .risk-card,
+    .glossary-card {
+      border: 1px solid var(--line-soft);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(195, 139, 66, 0.06), transparent 45%),
+        var(--bg-raised);
+    }
+
+    .diagram-card {
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .diagram-scroll {
+      overflow-x: auto;
+      scrollbar-color: var(--gold-deep) transparent;
+    }
+
+    .architecture-map {
+      display: block;
+      width: 100%;
+      min-width: 980px;
+      height: auto;
+      aspect-ratio: 5 / 3;
+    }
+
+    .architecture-map .layer {
+      opacity: 1;
+      transition: opacity 180ms ease, filter 180ms ease;
+    }
+
+    .architecture-map[data-view="contribution"] .layer:not(.layer-contribution),
+    .architecture-map[data-view="number"] .layer:not(.layer-number),
+    .architecture-map[data-view="release"] .layer:not(.layer-release),
+    .architecture-map[data-view="boundaries"] .layer:not(.layer-boundaries) {
+      opacity: 0.11;
+      filter: grayscale(0.5);
+    }
+
+    .architecture-map .node rect,
+    .architecture-map .node circle {
+      fill: #151a27;
+      stroke: rgba(242, 232, 216, 0.3);
+      stroke-width: 2;
+    }
+
+    .architecture-map .node.external rect {
+      fill: #0b1018;
+      stroke: var(--cyan);
+      stroke-dasharray: 8 7;
+    }
+
+    .architecture-map .node.output circle {
+      fill: url(#supplyGlow);
+      stroke: var(--gold);
+      stroke-width: 3;
+    }
+
+    .architecture-map .node:hover rect,
+    .architecture-map .node:hover circle,
+    .architecture-map .node:focus rect,
+    .architecture-map .node:focus circle {
+      stroke: var(--focus);
+      filter: drop-shadow(0 0 12px rgba(240, 183, 95, 0.28));
+    }
+
+    .architecture-map .node-title {
+      fill: var(--paper);
+      font-size: 17px;
+      font-weight: 760;
+    }
+
+    .architecture-map .node-copy {
+      fill: var(--paper-soft);
+      font-size: 13px;
+    }
+
+    .architecture-map .node-tag {
+      fill: var(--gold);
+      font-size: 10px;
+      font-weight: 850;
+      letter-spacing: 1.5px;
+    }
+
+    .architecture-map .owner-tag { fill: var(--cyan); }
+
+    .architecture-map .system-boundary {
+      fill: rgba(17, 21, 32, 0.34);
+      stroke: rgba(195, 139, 66, 0.5);
+      stroke-width: 2;
+    }
+
+    .architecture-map .private-zone {
+      fill: rgba(159, 138, 232, 0.05);
+      stroke: rgba(159, 138, 232, 0.45);
+      stroke-dasharray: 7 7;
+    }
+
+    .architecture-map .boundary-label {
+      fill: var(--gold);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: 2px;
+    }
+
+    .architecture-map .private-label { fill: var(--violet); }
+
+    .architecture-map .flow-line {
+      fill: none;
+      stroke: rgba(242, 232, 216, 0.52);
+      stroke-width: 2.5;
+      marker-end: url(#arrow);
+    }
+
+    .architecture-map .owner-line {
+      fill: none;
+      stroke: rgba(108, 197, 204, 0.58);
+      stroke-width: 2;
+      stroke-dasharray: 7 7;
+      marker-end: url(#arrowCyan);
+    }
+
+    .architecture-map .rule-line {
+      fill: none;
+      stroke: rgba(195, 139, 66, 0.64);
+      stroke-width: 2;
+      stroke-dasharray: 4 6;
+      marker-end: url(#arrowGold);
+    }
+
+    .architecture-map .release-line {
+      fill: none;
+      stroke: rgba(159, 138, 232, 0.72);
+      stroke-width: 2.5;
+      marker-end: url(#arrowViolet);
+    }
+
+    .architecture-map .risk-dot {
+      fill: var(--gold);
+      stroke: #090b12;
+      stroke-width: 2;
+    }
+
+    .architecture-map .capsule-shell {
+      fill: url(#capsuleFill);
+      stroke: var(--gold);
+      stroke-width: 2.5;
+    }
+
+    .architecture-map .capsule-seam { stroke: rgba(242, 232, 216, 0.2); stroke-width: 1.5; }
+    .architecture-map .root-core { fill: #0b0d15; stroke: var(--cyan); stroke-width: 2.5; }
+
+    .inspector {
+      position: relative;
+      min-height: 520px;
+      padding: 24px;
+      overflow: hidden;
+    }
+
+    .inspector::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: -80px;
+      width: 190px;
+      height: 190px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      box-shadow: 0 0 0 28px rgba(195, 139, 66, 0.03), 0 0 0 58px rgba(195, 139, 66, 0.02);
+      pointer-events: none;
+    }
+
+    .inspector-state {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 5px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--gold);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .inspector h3 {
+      margin: 22px 0 8px;
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .inspector-explain { color: var(--paper-soft); }
+
+    .evidence-block {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .evidence-block strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--paper);
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .evidence-block p { margin: 0; color: var(--paper-faint); font-size: 0.86rem; }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 20px;
+      margin: 16px 0 0;
+      color: var(--paper-faint);
+      font-size: 0.78rem;
+    }
+
+    .legend span { display: inline-flex; align-items: center; gap: 8px; }
+    .legend i { display: inline-block; width: 22px; height: 0; border-top: 2px solid var(--paper-soft); }
+    .legend .external { border-top-color: var(--cyan); border-top-style: dashed; }
+    .legend .candidate { width: 8px; height: 8px; border: 0; border-radius: 50%; background: var(--gold); }
+
+    .layer-grid,
+    .dependency-grid,
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .info-card,
+    .glossary-card {
+      padding: 22px;
+    }
+
+    .info-card .card-number {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 34px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 850;
+    }
+
+    .info-card h3,
+    .glossary-card h3,
+    .risk-card h3 {
+      margin: 0 0 9px;
+      font-size: 1.55rem;
+      line-height: 1.05;
+    }
+
+    .info-card p,
+    .glossary-card p,
+    .risk-card p {
+      margin: 0;
+      color: var(--paper-soft);
+      font-size: 0.9rem;
+    }
+
+    .info-card .outcome {
+      margin-top: 20px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line-soft);
+      color: var(--paper-faint);
+      font-size: 0.78rem;
+    }
+
+    .timeline-wrap {
+      overflow-x: auto;
+      padding: 28px 0 10px;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(10, minmax(118px, 1fr));
+      min-width: 1180px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline li {
+      position: relative;
+      padding: 28px 14px 0 0;
+      border-top: 1px solid var(--line);
+      color: var(--paper-soft);
+      font-size: 0.8rem;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: 0;
+      width: 11px;
+      height: 11px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      background: var(--bg);
+    }
+
+    .timeline li:nth-last-child(-n+3)::before { border-color: var(--violet); }
+    .timeline strong { display: block; margin-bottom: 4px; color: var(--paper); }
+
+    .invariants {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .invariant {
+      padding: 15px 17px;
+      border: 1px solid var(--line-soft);
+      border-radius: 14px;
+      color: var(--paper-soft);
+      background: rgba(17, 21, 32, 0.52);
+      font-size: 0.85rem;
+    }
+
+    .invariant strong { color: var(--paper); }
+
+    .dependency-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .dependency-grid .info-card {
+      position: relative;
+      min-height: 190px;
+      border-style: dashed;
+      border-color: rgba(108, 197, 204, 0.28);
+    }
+
+    .dependency-grid .info-card::before {
+      content: "external owner";
+      display: block;
+      margin-bottom: 20px;
+      color: var(--cyan);
+      font-size: 0.66rem;
+      font-weight: 850;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .risk-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      padding: 20px;
+    }
+
+    .risk-marker {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .risk-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 14px;
+    }
+
+    .risk-meta span {
+      padding: 4px 8px;
+      border: 1px solid var(--line-soft);
+      border-radius: 999px;
+      color: var(--paper-faint);
+      font-size: 0.68rem;
+    }
+
+    .glossary-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .misuse {
+      display: block;
+      margin-top: 15px;
+      color: var(--rose);
+      font-size: 0.74rem;
+    }
+
+    .evidence-split {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .evidence-side {
+      padding: 24px;
+      border: 1px solid var(--line-soft);
+      border-radius: 18px;
+      background: var(--bg-raised);
+    }
+
+    .evidence-side.inference { border-style: dashed; }
+    .evidence-side h3 { margin: 0 0 10px; font-size: 1.6rem; }
+    .evidence-side p, .evidence-side li { color: var(--paper-soft); }
+
+    .source-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .source-links a {
+      padding: 8px 12px;
+      border: 1px solid var(--line-soft);
+      border-radius: 999px;
+      color: var(--paper-soft);
+      text-decoration: none;
+      font-size: 0.78rem;
+    }
+
+    .source-links a:hover { border-color: var(--gold); color: var(--paper); }
+
+    footer {
+      padding: 38px 0 54px;
+      border-top: 1px solid var(--line-soft);
+      color: var(--paper-faint);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 1040px) {
+      .diagram-layout { grid-template-columns: 1fr; }
+      .inspector { min-height: 0; }
+      .layer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .dependency-grid, .glossary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 720px) {
+      .site-bar .shell { align-items: flex-start; padding-block: 13px; }
+      .status { max-width: 150px; text-align: right; }
+      .hero-grid, .section-head { grid-template-columns: 1fr; gap: 24px; }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .layer-grid, .dependency-grid, .glossary-grid, .risk-grid, .evidence-split, .invariants { grid-template-columns: 1fr; }
+      .hero { padding-top: 36px; }
+      .section { padding: 48px 0; }
+      .architecture-map { min-width: 900px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-bar">
+    <div class="shell">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>Resonant Time Capsule</a>
+      <span class="status">Architecture x-ray · candidate design · no live intake</span>
+    </div>
+  </div>
+
+  <main id="top">
+    <header class="hero shell">
+      <p class="kicker">From one word to one shared number</p>
+      <h1>See how the capsule<br><em>holds together.</em></h1>
+      <div class="hero-grid">
+        <p class="hero-copy">
+          Each accepted word becomes one place in the capsule. When intake
+          closes, every accepted place is gathered into one manifest and
+          fingerprinted into one root. That root meets a later public value to
+          place the founding supply inside the range we agreed on. The 2-, 5-,
+          and 10-year openings happen after that number is fixed.
+        </p>
+        <aside class="hero-note">
+          <strong>Read the diagram left to right.</strong><br>
+          Solid paths are specified in the current design. Dashed paths come
+          from outside owners. Amber dots mark behavior that still needs evidence.
+        </aside>
+      </div>
+    </header>
+
+    <div class="metrics shell" aria-label="Architecture at a glance">
+      <div class="metric"><strong>6</strong><span>maximum accepted word places per admitted participant</span></div>
+      <div class="metric"><strong>3</strong><span>future openings: 2, 5, and 10 years</span></div>
+      <div class="metric"><strong>1</strong><span>frozen capsule root across every accepted place</span></div>
+      <div class="metric"><strong>1×</strong><span>initial supply calculation—never repeated at a release</span></div>
+    </div>
+
+    <section class="section" id="architecture">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Component map</p>
+            <h2>The whole system</h2>
+          </div>
+          <p>
+            Select a layer to isolate it, then focus or point at a component to
+            see what it does, where the design says so, and what it cannot claim.
+          </p>
+        </div>
+
+        <div class="layer-controls" aria-label="Architecture layers">
+          <button class="layer-control" type="button" data-view="all" aria-pressed="true">Whole system</button>
+          <button class="layer-control" type="button" data-view="contribution" aria-pressed="false">Contribution</button>
+          <button class="layer-control" type="button" data-view="number" aria-pressed="false">Number selection</button>
+          <button class="layer-control" type="button" data-view="release" aria-pressed="false">Future releases</button>
+          <button class="layer-control" type="button" data-view="boundaries" aria-pressed="false">External boundaries</button>
+        </div>
+
+        <div class="diagram-layout">
+          <div class="diagram-card">
+            <div class="diagram-scroll">
+              <svg class="architecture-map" id="architecture-map" data-view="all" viewBox="0 0 1500 900" role="img" aria-labelledby="map-title map-desc">
+                <title id="map-title">Resonant Time Capsule component architecture</title>
+                <desc id="map-desc">A left-to-right flow from participant and admission through the form, private submission envelope, accepted records, frozen capsule root, later beacon, one initial supply, and the 2, 5, and 10 year releases. External owner dependencies surround the system boundary.</desc>
+                <defs>
+                  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(242,232,216,.65)"/></marker>
+                  <marker id="arrowCyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6cc5cc"/></marker>
+                  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#c38b42"/></marker>
+                  <marker id="arrowViolet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9f8ae8"/></marker>
+                  <linearGradient id="capsuleFill" x1="0" x2="1"><stop offset="0" stop-color="#302117"/><stop offset="0.48" stop-color="#141824"/><stop offset="1" stop-color="#183039"/></linearGradient>
+                  <radialGradient id="supplyGlow"><stop offset="0" stop-color="#a66f2f"/><stop offset="0.72" stop-color="#2b1d12"/><stop offset="1" stop-color="#111520"/></radialGradient>
+                </defs>
+
+                <g class="layer layer-boundaries">
+                  <rect class="system-boundary" x="145" y="145" width="1210" height="565" rx="28"/>
+                  <text class="boundary-label" x="175" y="178">TIME CAPSULE SYSTEM · SPECIFIED CANDIDATE BOUNDARY</text>
+                  <rect class="private-zone" x="565" y="300" width="225" height="185" rx="22"/>
+                  <text class="boundary-label private-label" x="587" y="327">PRIVATE INTAKE STATE</text>
+                </g>
+
+                <g class="layer layer-number inspectable node" tabindex="0" role="button" aria-label="Inspect Rules Registry" data-title="Rules Registry" data-kind="specified component" data-source="ARCHITECTURE.md · View 2.1" data-explain="Freezes every result-affecting rule before intake: the slot limit, word profile, close time, root profile, supply band, beacon contract, mapping, and releases." data-boundary="A changed rule creates a successor cohort. It cannot be edited after the result is visible.">
+                  <rect x="610" y="195" width="250" height="82" rx="16"/>
+                  <text class="node-tag" x="632" y="220">RULES BEFORE WORDS</text>
+                  <text class="node-title" x="632" y="246">Rules Registry</text>
+                  <text class="node-copy" x="632" y="266">versions · close · profiles · band</text>
+                  <circle class="risk-dot" cx="845" cy="208" r="7"/>
+                </g>
+
+                <g class="layer layer-contribution inspectable node external" tabindex="0" role="button" aria-label="Inspect Participant" data-title="Participant" data-kind="external actor" data-source="SPEC.md · Actors" data-explain="An admitted participant may fill zero, one, or two places at each of the three future openings and chooses visibility per filled place." data-boundary="A participant is not proven unique merely because a credential or wallet exists.">
+                  <rect x="10" y="350" width="145" height="105" rx="18"/>
+                  <text class="node-tag owner-tag" x="30" y="377">ACTOR</text>
+                  <text class="node-title" x="30" y="405">Participant</text>
+                  <text class="node-copy" x="30" y="429">0–6 accepted places</text>
+                </g>
+
+                <g class="layer layer-contribution inspectable node" tabindex="0" role="button" aria-label="Inspect Admission Boundary" data-title="Admission Boundary" data-kind="specified component" data-source="ARCHITECTURE.md · View 2.2" data-explain="Consumes one opaque credential, opens one six-slot envelope, and enforces no more than two accepted records per horizon." data-boundary="It enforces a quota. Credential issuance and unique-human claims stay outside the system.">
+                  <rect x="185" y="350" width="170" height="105" rx="18"/>
+                  <text class="node-tag" x="205" y="377">QUOTA GATE</text>
+                  <text class="node-title" x="205" y="405">Admission</text>
+                  <text class="node-copy" x="205" y="429">opaque credential</text>
+                </g>
+
+                <g class="layer layer-contribution inspectable node" tabindex="0" role="button" aria-label="Inspect Form and Draft Store" data-title="Form And Draft Store" data-kind="specified component" data-source="ARCHITECTURE.md · View 2.3; FORM-SPEC.md" data-explain="Shows two optional word places at each opening, validates them, keeps drafts editable before close, and records a visibility choice per word." data-boundary="The L0 form is non-collecting. A live form remains gated.">
+                  <rect x="385" y="350" width="180" height="105" rx="18"/>
+                  <text class="node-tag" x="405" y="377">VISIBLE SURFACE</text>
+                  <text class="node-title" x="405" y="405">Form + drafts</text>
+                  <text class="node-copy" x="405" y="429">2y · 5y · 10y</text>
+                </g>
+
+                <g class="layer layer-contribution inspectable node" tabindex="0" role="button" aria-label="Inspect Submission Envelope" data-title="Submission Envelope" data-kind="private component" data-source="SPEC.md · Submission Envelope" data-explain="Groups the six optional slots under a private credential handle and tracks draft, confirmed, closed, or rejected state." data-boundary="The credential and envelope never enter the public capsule manifest.">
+                  <rect x="590" y="350" width="175" height="105" rx="18"/>
+                  <text class="node-tag" x="610" y="377" fill="#9f8ae8">PRIVATE STATE</text>
+                  <text class="node-title" x="610" y="405">Six-slot envelope</text>
+                  <text class="node-copy" x="610" y="429">latest confirmed version</text>
+                </g>
+
+                <g class="layer layer-contribution inspectable node" tabindex="0" role="button" aria-label="Inspect Disposition and Records" data-title="Disposition And Records" data-kind="specified component" data-source="ARCHITECTURE.md · View 2.4–2.5" data-explain="Applies frozen schema, timing, and display rules, then turns accepted slot versions into canonical public or sealed records." data-boundary="A display quarantine does not rewrite the frozen record or grant status. Real sealed plaintext must never reach the server.">
+                  <rect x="805" y="350" width="190" height="105" rx="18"/>
+                  <text class="node-tag" x="825" y="377">ACCEPTED RECORDS</text>
+                  <text class="node-title" x="825" y="405">Disposition gate</text>
+                  <text class="node-copy" x="825" y="429">public | sealed | rejected</text>
+                  <circle class="risk-dot" cx="978" cy="365" r="7"/>
+                </g>
+
+                <g class="layer layer-number inspectable" tabindex="0" role="button" aria-label="Inspect Frozen Capsule Core" data-title="Frozen Capsule Core" data-kind="custom capsule-core shape" data-source="ARCHITECTURE.md · Manifest And Root Builder" data-explain="All final accepted records are canonicalized and converge into one manifest and one authenticated capsule root—the system's frozen collective fingerprint." data-boundary="The root authenticates the specified record set. It does not prove identity, consent, fairness, or economics.">
+                  <rect class="capsule-shell" x="1025" y="330" width="190" height="145" rx="72"/>
+                  <line class="capsule-seam" x1="1120" y1="335" x2="1120" y2="470"/>
+                  <circle class="root-core" cx="1120" cy="402" r="38"/>
+                  <text class="node-tag" x="1057" y="360">FROZEN CAPSULE</text>
+                  <text class="node-copy" x="1048" y="390">manifest</text>
+                  <text class="node-copy" x="1087" y="407">ROOT</text>
+                  <text class="node-copy" x="1143" y="390">digest</text>
+                  <circle class="risk-dot" cx="1198" cy="349" r="7"/>
+                </g>
+
+                <g class="layer layer-number inspectable node" tabindex="0" role="button" aria-label="Inspect Supply Selector" data-title="Supply Selector" data-kind="specified candidate component" data-source="ARCHITECTURE.md · Initial Supply Algorithm" data-explain="Combines the frozen rules digest, capsule root, and the declared post-close beacon, then uses rejection sampling to select an integer inside the frozen band." data-boundary="It emits a reproducible receipt. It does not mint tokens or prove the band is economically optimal.">
+                  <rect x="1240" y="350" width="150" height="105" rx="18"/>
+                  <text class="node-tag" x="1260" y="377">ONE-TIME MAP</text>
+                  <text class="node-title" x="1260" y="405">Selector</text>
+                  <text class="node-copy" x="1260" y="429">root + later beacon</text>
+                  <circle class="risk-dot" cx="1374" cy="365" r="7"/>
+                </g>
+
+                <g class="layer layer-number inspectable node output" tabindex="0" role="button" aria-label="Inspect Initial Supply Receipt" data-title="Initial Supply Receipt" data-kind="output" data-source="SPEC.md · Initial Supply Result" data-explain="The one selected integer plus every input needed to reproduce it. This output happens once after close." data-boundary="Later capsule openings cannot recalculate it. The receipt has no mint authority.">
+                  <circle cx="1450" cy="402" r="42"/>
+                  <text class="node-tag" x="1421" y="391">ONE</text>
+                  <text class="node-title" x="1417" y="412" font-size="14">SUPPLY</text>
+                  <text class="node-copy" x="1422" y="431" font-size="10">receipt</text>
+                </g>
+
+                <g class="layer layer-release inspectable node" tabindex="0" role="button" aria-label="Inspect Release Coordinator" data-title="Release Coordinator" data-kind="specified component" data-source="ARCHITECTURE.md · View 2.7" data-explain="At the matching horizon, revisits public words and accepts only valid, separately confirmed sealed openings for display review." data-boundary="Non-response remains sealed. Every release has supply effect: none.">
+                  <rect x="1000" y="550" width="195" height="105" rx="18"/>
+                  <text class="node-tag" x="1020" y="577" fill="#9f8ae8">AFTER THE NUMBER</text>
+                  <text class="node-title" x="1020" y="605">Release coordinator</text>
+                  <text class="node-copy" x="1020" y="629">reconfirm · display · receipt</text>
+                </g>
+
+                <g class="layer layer-release">
+                  <g class="inspectable node" tabindex="0" role="button" aria-label="Inspect two year release" data-title="2-Year Opening" data-kind="release view" data-source="SPEC.md · Release Horizon" data-explain="Then / Now Echo: public words return and separately confirmed sealed words may enter the display view." data-boundary="No response stays sealed. Supply remains unchanged.">
+                    <rect x="1230" y="520" width="130" height="60" rx="30"/>
+                    <text class="node-title" x="1253" y="557">2 years</text>
+                  </g>
+                  <g class="inspectable node" tabindex="0" role="button" aria-label="Inspect five year release" data-title="5-Year Opening" data-kind="release view" data-source="SPEC.md · Release Horizon" data-explain="Divergence Assembly: the community examines what persisted, changed, failed, or was rejected." data-boundary="New rules apply only to successor cohorts. Supply remains unchanged.">
+                    <rect x="1230" y="590" width="130" height="60" rx="30"/>
+                    <text class="node-title" x="1253" y="627">5 years</text>
+                  </g>
+                  <g class="inspectable node" tabindex="0" role="button" aria-label="Inspect ten year release" data-title="10-Year Opening" data-kind="release view" data-source="SPEC.md · Release Horizon" data-explain="Constellation: consent-safe openings and a handoff to the next stewards." data-boundary="Loss and no-survivor outcomes remain valid. Supply remains unchanged.">
+                    <rect x="1230" y="660" width="130" height="60" rx="30"/>
+                    <text class="node-title" x="1246" y="697">10 years</text>
+                  </g>
+                </g>
+
+                <g class="layer layer-release inspectable node" tabindex="0" role="button" aria-label="Inspect Preservation and Verification" data-title="Preservation And Verification" data-kind="specified component" data-source="ARCHITECTURE.md · View 2.8" data-explain="Preserves public manifests and receipts, checks integrity annually, records migrations, and enables independent reproduction." data-boundary="Custody is not consent. Ten-year continuity still needs an approved external owner and restore evidence.">
+                  <rect x="760" y="560" width="200" height="95" rx="18"/>
+                  <text class="node-tag" x="780" y="587">LONG-TERM CARE</text>
+                  <text class="node-title" x="780" y="614">Preserve + verify</text>
+                  <text class="node-copy" x="780" y="638">integrity · migration · restore</text>
+                  <circle class="risk-dot" cx="943" cy="575" r="7"/>
+                </g>
+
+                <g class="layer layer-boundaries">
+                  <g class="inspectable node external" tabindex="0" role="button" aria-label="Inspect admission owner" data-title="Governance / Membership" data-kind="external owner" data-source="ARCHITECTURE.md · View 6" data-explain="Issues credentials and owns the legitimacy, recovery, revocation, audit, and Sybil posture of admission." data-boundary="The Time Capsule cannot turn a credential into unique-human proof.">
+                    <rect x="170" y="28" width="220" height="78" rx="16"/>
+                    <text class="node-tag owner-tag" x="190" y="53">EXTERNAL OWNER</text>
+                    <text class="node-title" x="190" y="78">Governance / membership</text>
+                    <text class="node-copy" x="190" y="98">credential issuance</text>
+                  </g>
+                  <g class="inspectable node external" tabindex="0" role="button" aria-label="Inspect security and privacy owner" data-title="Security / Privacy / Custody" data-kind="external owner" data-source="ARCHITECTURE.md · View 6" data-explain="Must approve any commitment, encryption, key, recovery, migration, and no-survivor profile before real sealed intake." data-boundary="The sealed path stays disabled until this owner gate and its fixtures pass.">
+                    <rect x="465" y="28" width="250" height="78" rx="16"/>
+                    <text class="node-tag owner-tag" x="485" y="53">EXTERNAL OWNER</text>
+                    <text class="node-title" x="485" y="78">Security / privacy / custody</text>
+                    <text class="node-copy" x="485" y="98">sealed profile</text>
+                  </g>
+                  <g class="inspectable node external" tabindex="0" role="button" aria-label="Inspect token protocol owner" data-title="Token / Protocol" data-kind="external owner" data-source="ARCHITECTURE.md · View 6" data-explain="Approves the real token unit and inclusive supply band, and may consume a validated selected integer." data-boundary="The capsule neither calibrates token economics nor mints the result.">
+                    <rect x="790" y="28" width="210" height="78" rx="16"/>
+                    <text class="node-tag owner-tag" x="810" y="53">EXTERNAL OWNER</text>
+                    <text class="node-title" x="810" y="78">Token / protocol</text>
+                    <text class="node-copy" x="810" y="98">unit · band · compatibility</text>
+                  </g>
+                  <g class="inspectable node external" tabindex="0" role="button" aria-label="Inspect beacon source" data-title="Post-Close Beacon" data-kind="external dependency" data-source="ARCHITECTURE.md · View 6" data-explain="Provides the predeclared public value only after the root is frozen, under a fixed round and fallback contract." data-boundary="Public does not automatically mean independent or uncontrollable. The provider remains undecided.">
+                    <rect x="1080" y="28" width="220" height="78" rx="16"/>
+                    <text class="node-tag owner-tag" x="1100" y="53">EXTERNAL INPUT</text>
+                    <text class="node-title" x="1100" y="78">Post-close beacon</text>
+                    <text class="node-copy" x="1100" y="98">provider · round · fallback</text>
+                  </g>
+
+                  <g class="inspectable node external" tabindex="0" role="button" aria-label="Inspect moderation owner" data-title="Content / Legal" data-kind="external owner" data-source="ARCHITECTURE.md · View 6" data-explain="Owns versioned moderation, appeal, harmful-release, display, death/incapacity, and related legal rules." data-boundary="A display decision cannot rewrite the frozen capsule root.">
+                    <rect x="290" y="770" width="220" height="78" rx="16"/>
+                    <text class="node-tag owner-tag" x="310" y="795">EXTERNAL OWNER</text>
+                    <text class="node-title" x="310" y="820">Content / legal</text>
+                    <text class="node-copy" x="310" y="840">moderation · appeal · display</text>
+                  </g>
+                  <g class="inspectable node external" tabindex="0" role="button" aria-label="Inspect independent verifier" data-title="Independent Verifier" data-kind="external actor" data-source="SPEC.md · Actors" data-explain="Reproduces canonical records, root, beacon input, mapping, and supply from public receipts." data-boundary="Reproduction proves the specified computation—not fairness, identity, privacy, or economic value.">
+                    <rect x="650" y="770" width="220" height="78" rx="16"/>
+                    <text class="node-tag owner-tag" x="670" y="795">EXTERNAL ACTOR</text>
+                    <text class="node-title" x="670" y="820">Independent verifier</text>
+                    <text class="node-copy" x="670" y="840">reproduction receipts</text>
+                  </g>
+                  <g class="inspectable node external" tabindex="0" role="button" aria-label="Inspect archive successor owner" data-title="Archive / Successor" data-kind="external owner" data-source="ARCHITECTURE.md · View 6" data-explain="Owns redundant storage, migration, annual drills, successor authority, restore, and explicit loss outcomes." data-boundary="Stewardship is not consent and cannot gain token-policy authority.">
+                    <rect x="1010" y="770" width="220" height="78" rx="16"/>
+                    <text class="node-tag owner-tag" x="1030" y="795">EXTERNAL OWNER</text>
+                    <text class="node-title" x="1030" y="820">Archive / successor</text>
+                    <text class="node-copy" x="1030" y="840">continuity · restore · handoff</text>
+                  </g>
+                </g>
+
+                <g class="layer layer-contribution">
+                  <path class="flow-line" d="M155 402 H185"/>
+                  <path class="flow-line" d="M355 402 H385"/>
+                  <path class="flow-line" d="M565 402 H590"/>
+                  <path class="flow-line" d="M765 402 H805"/>
+                </g>
+                <g class="layer layer-number">
+                  <path class="flow-line" d="M995 402 H1025"/>
+                  <path class="flow-line" d="M1215 402 H1240"/>
+                  <path class="flow-line" d="M1390 402 H1405"/>
+                  <path class="rule-line" d="M735 277 V320 H675 V350"/>
+                  <path class="rule-line" d="M760 277 V305 H900 V350"/>
+                  <path class="rule-line" d="M820 277 V300 H1315 V350"/>
+                </g>
+                <g class="layer layer-release">
+                  <path class="release-line" d="M1120 475 V515 H1098 V550"/>
+                  <path class="release-line" d="M1195 602 H1212 V550 H1230"/>
+                  <path class="release-line" d="M1195 602 H1230 V620"/>
+                  <path class="release-line" d="M1195 602 H1212 V690 H1230"/>
+                  <path class="flow-line" d="M1025 450 C965 500 930 535 900 560"/>
+                </g>
+                <g class="layer layer-boundaries">
+                  <path class="owner-line" d="M280 106 V220 H270 V350"/>
+                  <path class="owner-line" d="M590 106 V255 H900 V350"/>
+                  <path class="owner-line" d="M895 106 V160 H735 V195"/>
+                  <path class="owner-line" d="M1190 106 V245 H1315 V350"/>
+                  <path class="owner-line" d="M400 770 V700 H900 V455"/>
+                  <path class="owner-line" d="M760 770 V700 H1120 V475"/>
+                  <path class="owner-line" d="M1120 770 V710 H860 V655"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <aside class="inspector" aria-live="polite" aria-label="Component inspector">
+            <span class="inspector-state" id="inspector-kind">How to read</span>
+            <h3 id="inspector-title">Choose a component</h3>
+            <p class="inspector-explain" id="inspector-explain">
+              Point at, focus, or select any node. This panel will explain the
+              component in ordinary language without hiding its boundary.
+            </p>
+            <div class="evidence-block">
+              <strong>Design source</strong>
+              <p id="inspector-source">SPEC.md · ARCHITECTURE.md · FORM-SPEC.md</p>
+            </div>
+            <div class="evidence-block">
+              <strong>What it cannot claim</strong>
+              <p id="inspector-boundary">The page explains a candidate design. It does not validate or launch it.</p>
+            </div>
+          </aside>
+        </div>
+
+        <div class="legend" aria-label="Diagram legend">
+          <span><i></i>specified internal flow</span>
+          <span><i class="external"></i>external owner or input</span>
+          <span><i class="candidate"></i>behavior still needs evidence</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="layers">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="section-kicker">Layer outcomes</p><h2>Four ways to see it</h2></div>
+          <p>Each layer answers one reader question. Together they explain why a polished form alone is not enough.</p>
+        </div>
+        <div class="layer-grid">
+          <article class="info-card"><span class="card-number">01</span><h3>Contribution</h3><p>How one admitted participant gets six optional places without publishing the credential that enforces the quota.</p><p class="outcome">After this layer: you can explain what enters the system and what stays private.</p></article>
+          <article class="info-card"><span class="card-number">02</span><h3>Frozen capsule</h3><p>How many accepted public or sealed records become one canonical manifest and one authenticated root.</p><p class="outcome">After this layer: you can explain the digital fingerprint without using letter scores.</p></article>
+          <article class="info-card"><span class="card-number">03</span><h3>Number selection</h3><p>Why the root freezes before the beacon arrives, and how the result lands inside a range chosen earlier.</p><p class="outcome">After this layer: you can explain the one-time number without calling it economic optimization.</p></article>
+          <article class="info-card"><span class="card-number">04</span><h3>Future releases</h3><p>How 2-, 5-, and 10-year display views revisit words while leaving the root and supply untouched.</p><p class="outcome">After this layer: you can explain why the capsule continues after the number is final.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="lifecycle">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="section-kicker">Lifecycle</p><h2>Order is a safety property</h2></div>
+          <p>The root must freeze before the beacon is observed. The supply must be reproduced before any future release. Moving a step earlier changes what people can influence.</p>
+        </div>
+        <div class="timeline-wrap">
+          <ol class="timeline">
+            <li><strong>Rules draft</strong>Owners decide fields.</li>
+            <li><strong>Rules frozen</strong>No result-aware edits.</li>
+            <li><strong>Intake open</strong>Draft and confirm slots.</li>
+            <li><strong>Intake closed</strong>All writes fail.</li>
+            <li><strong>Manifest frozen</strong>Accepted records settle.</li>
+            <li><strong>Beacon observed</strong>Later public value enters.</li>
+            <li><strong>Supply reproduced</strong>One result and receipt.</li>
+            <li><strong>2-year release</strong>Then / Now Echo.</li>
+            <li><strong>5-year release</strong>Divergence Assembly.</li>
+            <li><strong>10-year release</strong>Constellation + handoff.</li>
+          </ol>
+        </div>
+        <div class="invariants" aria-label="Architecture invariants">
+          <div class="invariant"><strong>Quota:</strong> zero to two accepted words per horizon.</div>
+          <div class="invariant"><strong>Privacy:</strong> credential never enters the public manifest.</div>
+          <div class="invariant"><strong>Finality:</strong> releases never alter root or supply.</div>
+          <div class="invariant"><strong>Parity:</strong> public and sealed records have no extra weight.</div>
+          <div class="invariant"><strong>Consent:</strong> no release response means remain sealed.</div>
+          <div class="invariant"><strong>Authority:</strong> participation grants no allocation, rank, reward, or governance.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="dependencies">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="section-kicker">Dependency boundary</p><h2>What the capsule does not own</h2></div>
+          <p>These are not implementation details to fill in quietly. Each is a separate owner gate whose absence blocks the affected live behavior.</p>
+        </div>
+        <div class="dependency-grid">
+          <article class="info-card"><h3>Admission</h3><p>Credential issuance, recovery, revocation, audit, and Sybil posture belong to governance or membership.</p></article>
+          <article class="info-card"><h3>Sealed protection</h3><p>Commitment, encryption, keys, recovery, migration, and no-survivor behavior belong to security, privacy, and custody.</p></article>
+          <article class="info-card"><h3>Token space</h3><p>The real token unit, inclusive band, decimals, overflow, and compatibility belong to token and protocol owners.</p></article>
+          <article class="info-card"><h3>Beacon</h3><p>Provider, round, availability, independence posture, and fallback belong to the mechanism/security decision.</p></article>
+          <article class="info-card"><h3>Display safety</h3><p>Moderation, appeals, harmful reveals, legal change, death, and incapacity belong to content/legal/privacy owners.</p></article>
+          <article class="info-card"><h3>Ten-year care</h3><p>Redundancy, restore, migration, succession, and loss reporting belong to archive and successor owners.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="risks">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="section-kicker">Open gates</p><h2>Architecture settled.<br>Behavior unproven.</h2></div>
+          <p>The components and flows can be drawn now. Their security, fairness, continuity, and economic suitability still need executable evidence and owner decisions.</p>
+        </div>
+        <div class="risk-grid">
+          <article class="risk-card"><span class="risk-marker">?</span><div><h3>Supply band</h3><p>Which real unit and inclusive range are technically and economically acceptable?</p><div class="risk-meta"><span>high impact</span><span>owner open</span><span>blocks real selector</span></div></div></article>
+          <article class="risk-card"><span class="risk-marker">?</span><div><h3>Beacon contract</h3><p>Which provider and fallback remain useful after availability and influence attacks?</p><div class="risk-meta"><span>high impact</span><span>unselected</span><span>blocks real selector</span></div></div></article>
+          <article class="risk-card"><span class="risk-marker">?</span><div><h3>Admission legitimacy</h3><p>How is one credential issued without pretending it proves one unique human?</p><div class="risk-meta"><span>high impact</span><span>governance owner</span><span>blocks intake</span></div></div></article>
+          <article class="risk-card"><span class="risk-marker">?</span><div><h3>Sealed meaning</h3><p>What exactly is hidden, recoverable, migratable, or permanently lost?</p><div class="risk-meta"><span>high impact</span><span>security/privacy</span><span>blocks sealed intake</span></div></div></article>
+          <article class="risk-card"><span class="risk-marker">?</span><div><h3>Future display harm</h3><p>How can content be quarantined without rewriting the frozen capsule?</p><div class="risk-meta"><span>high impact</span><span>content/legal</span><span>blocks release</span></div></div></article>
+          <article class="risk-card"><span class="risk-marker">?</span><div><h3>Independent reproduction</h3><p>Can two implementations agree on every byte, root, counter, and supply result?</p><div class="risk-meta"><span>required evidence</span><span>fixture owner</span><span>blocks acceptance</span></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="glossary">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="section-kicker">Reader on-ramp</p><h2>Plain terms for the diagram</h2></div>
+          <p>These definitions explain the page. They are local reading aids, not promoted canonical definitions.</p>
+        </div>
+        <div class="glossary-grid">
+          <article class="glossary-card"><h3>Word place</h3><p>One optional position assigned to one future opening. A filled place becomes one record.</p><span class="misuse">Not a fixed amount of tokens.</span></article>
+          <article class="glossary-card"><h3>Envelope</h3><p>The private six-slot view tied to an opaque credential and used to enforce the quota.</p><span class="misuse">Not a public identity.</span></article>
+          <article class="glossary-card"><h3>Record</h3><p>The canonical public description of an accepted public word or approved sealed commitment.</p><span class="misuse">Not contributor rank or value.</span></article>
+          <article class="glossary-card"><h3>Capsule root</h3><p>One authenticated fingerprint of the complete frozen accepted record set.</p><span class="misuse">Not proof of fairness, identity, or consent.</span></article>
+          <article class="glossary-card"><h3>Beacon</h3><p>A predeclared public value observed only after the root is frozen.</p><span class="misuse">Public does not automatically mean uncontrollable.</span></article>
+          <article class="glossary-card"><h3>Release view</h3><p>The 2-, 5-, or 10-year display of public and separately confirmed opened words.</p><span class="misuse">Never a supply recalculation.</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="evidence">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="section-kicker">Evidence boundary</p><h2>What is drawn.<br>What is inferred.</h2></div>
+          <p>The diagram keeps source-backed structure separate from the visual decisions used to make that structure easier to see.</p>
+        </div>
+        <div class="evidence-split">
+          <article class="evidence-side"><p class="mini-label">Specified in the current design</p><h3>Component and flow facts</h3><ul><li>component names and roles;</li><li>quota and privacy invariants;</li><li>root-before-beacon sequence;</li><li>one-time supply and later releases;</li><li>external owner boundaries and open gates.</li></ul></article>
+          <article class="evidence-side inference"><p class="mini-label">Visual inference</p><h3>How the page groups them</h3><ul><li>four reader layers;</li><li>spatial position and color;</li><li>the capsule-shaped manifest/root core;</li><li>external owners around the perimeter;</li><li>amber dots for unvalidated behavior.</li></ul></article>
+        </div>
+        <div class="source-links" aria-label="Source artifacts">
+          <a href="ARCHITECTURE.md">Architecture source</a>
+          <a href="SPEC.md">Definition source</a>
+          <a href="FORM-SPEC.md">Form contract</a>
+          <a href="DECISIONS-AND-GAPS.md">Decisions and gaps</a>
+          <a href="XRAY-LANES.md">X-ray lane model</a>
+          <a href="FORM-WIREFRAME.html">Form preview</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">Resonant Time Capsule · x-ray architecture mode · L0 local HTML/SVG · candidate design, not live intake</div>
+  </footer>
+
+  <script>
+    const map = document.getElementById('architecture-map');
+    const controls = document.querySelectorAll('.layer-control');
+    const inspector = {
+      kind: document.getElementById('inspector-kind'),
+      title: document.getElementById('inspector-title'),
+      explain: document.getElementById('inspector-explain'),
+      source: document.getElementById('inspector-source'),
+      boundary: document.getElementById('inspector-boundary')
+    };
+
+    controls.forEach((control) => {
+      control.addEventListener('click', () => {
+        controls.forEach((item) => item.setAttribute('aria-pressed', 'false'));
+        control.setAttribute('aria-pressed', 'true');
+        map.dataset.view = control.dataset.view;
+      });
+    });
+
+    function inspect(node) {
+      inspector.kind.textContent = node.dataset.kind || 'component';
+      inspector.title.textContent = node.dataset.title || 'Component';
+      inspector.explain.textContent = node.dataset.explain || '';
+      inspector.source.textContent = node.dataset.source || 'Current x-ray sources';
+      inspector.boundary.textContent = node.dataset.boundary || 'No additional boundary recorded.';
+    }
+
+    document.querySelectorAll('.inspectable').forEach((node) => {
+      node.addEventListener('mouseenter', () => inspect(node));
+      node.addEventListener('focus', () => inspect(node));
+      node.addEventListener('click', () => inspect(node));
+      node.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          inspect(node);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

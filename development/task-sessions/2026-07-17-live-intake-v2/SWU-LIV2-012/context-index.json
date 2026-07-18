@@ -1,0 +1,30 @@
+{
+  "identity":{"task_or_swu":"SWU-LIV2-012","title":"Private invite session lifecycle","session_id":"2026-07-17-live-intake-v2/SWU-LIV2-012","mode":"lean-strict","runtime":"local-task-session","repository_revision":"c617ace5f10df9f46ec9f203743f4baca5cacbd6-dirty","captured_at":"2026-07-17T22:01:23Z","dependency_receipts":["SWU-LIV2-011:pass"]},
+  "strict_coverage":{"covered":10,"total":10,"status":"pass"},
+  "obligations":[
+    {"id":"O-012-01","status":"covered","summary":"Consume body secret after fragment sanitization."},
+    {"id":"O-012-02","status":"covered","summary":"Store domain-separated digests only."},
+    {"id":"O-012-03","status":"covered","summary":"Verify format/digest without reflection or enumeration."},
+    {"id":"O-012-04","status":"covered","summary":"Atomically rotate and issue scoped session."},
+    {"id":"O-012-05","status":"covered","summary":"Secure cookie plus separate CSRF token."},
+    {"id":"O-012-06","status":"covered","summary":"Require cookie CSRF origin active unexpired scope."},
+    {"id":"O-012-07","status":"covered","summary":"Atomically revoke invite and sessions."},
+    {"id":"O-012-08","status":"covered","summary":"Recover new digest on same envelope with rollback."},
+    {"id":"O-012-09","status":"covered","summary":"Keep secrets out of database audit and failures."},
+    {"id":"O-012-10","status":"covered","summary":"Respect admission/session invented-data scope."}
+  ],
+  "selected_sources":[
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-003.md","selectors":["Data And Interface Model","State Rules","Security And Failure Rules","SWU-LIV2-012","Synchronization"],"sha256":"2e6f25d302c0b61389b9686b75805d25914974da1fd07213ef2f0a9794045165"},
+    {"path":"DECISIONS.md","selectors":["D-02"],"sha256":"f4ecab3de66e4d398629930e2b8e36e11351d8861afcb61ab05f095549fc4c46"},
+    {"path":"development/time-capsule-live-intake-v2/contracts/field-lifecycle-v1.json","selectors":["invite_secret","invite_digest","session_capability","session_digest","audit_pseudoref"],"sha256":"1b929ece943a55de31d3d36ee8f50a4c76cb756e2ad85afda20bf5e66a6f4e87"},
+    {"path":"development/time-capsule-live-intake-v2/api/migrations/0001_initial_intake.sql","selectors":["invite_bindings","sessions","audit_events"],"sha256":"933aad74f89bbfe9a2ba9cd5c3e4d72d4a5f975baf0dcfe88246e1b0a7fc908b"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-011/VALIDATION-RECEIPT.json","selectors":["schema","checks","residue"],"sha256":"705f63edc1b1a6e4a67e4dac367711fd0d29e8dec3685d6c37555dc8ddde777d"}
+  ],
+  "write_scope":{"implementation":["development/time-capsule-live-intake-v2/api/src/admission/","development/time-capsule-live-intake-v2/api/package.json"],"evidence":["development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-012/","active SWU-012 status/frontier rows after validation"]},
+  "validation":{"command":"npm --prefix development/time-capsule-live-intake-v2/api test -- invite-session","required_negatives":["malformed invite","unknown invite","revoked invite","wrong origin","missing or wrong csrf","expired session","closed cohort","recovery digest conflict","secret reflection"]},
+  "decisions":[{"id":"D-SWU012-SESSION-DIGEST","classification":"assumption","selection":"bind cookie capability and CSRF token in stored digest"},{"id":"D-SWU012-PURE-HANDLER","classification":"assumption","selection":"unwired pure handler"},{"id":"D-SWU012-RECOVERY-SECRET","classification":"assumption","selection":"caller retains and supplies new recovery secret"}],
+  "gaps_and_blockers":{"active":[],"deferred":["real invite issuance/delivery","steward HTTP authentication","later HTTP/client adapter"]},
+  "fallback_exploration":{"status":"none-needed","rule":"New schema, provider, or secret service need blocks and reroutes."},
+  "extra_sources":[],
+  "output_paths":{"markdown":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-012/CONTEXT-PACK.md","json_index":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-012/context-index.json"}
+}

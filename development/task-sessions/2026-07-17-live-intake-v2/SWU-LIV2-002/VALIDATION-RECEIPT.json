@@ -1,0 +1,58 @@
+{
+  "swu_id": "SWU-LIV2-002",
+  "result": "pass",
+  "validated_at": "2026-07-17T20:06:47Z",
+  "command": "node development/time-capsule-live-intake-v2/tools/validate-envelope.mjs",
+  "schema": "resonant.time-capsule.envelope.v1",
+  "domain": "resonant-time-capsule/envelope/public-at-opening/v1",
+  "phrase_profile": "resonant.time-capsule.phrase-profile@1.0.0",
+  "fixtures": {"total": 26, "positive": 6, "negative": 20},
+  "drift_checks": {
+    "total": 2,
+    "passed": 2,
+    "checks": [
+      "schema-slot-limit-drift-rejected",
+      "fixture-expectation-drift-rejected"
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "development/time-capsule-live-intake-v2/contracts/envelope-v1.schema.json",
+      "sha256": "d7dc33bc4bc77e09baed28f62497930771534da5572c7b9c612909d9aa071ad5"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/fixtures/envelope-v1.json",
+      "sha256": "bd7bb782e8eda401e20aaa8c0423e74c856bc7ac0e59e04daaf2c0c85e97bda9"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/tools/validate-envelope.mjs",
+      "sha256": "134510da50ca9290bd41f69ebd0bc3549033473d18cc2ec5074bf9d8d674c6aa"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/contracts/phrase-profile-v1.json",
+      "sha256": "47b78bf8fe93ad3ee5ffd6c34e2838105cd83e68d4ffae9eb2749624b9c25ec5"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-002/CONTEXT-PACK.md",
+      "sha256": "38bc0c4782844c5c61e91f2c52758e0cf41670f3563e02f64d297d56767ca9be"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-002/context-index.json",
+      "sha256": "8291707825336d6209cb500b75320179cf37873d8161c5b097b75d9da7664572"
+    }
+  ],
+  "checks": [
+    {"id": "node-syntax", "result": "pass"},
+    {"id": "schema-json-parse", "result": "pass"},
+    {"id": "fixtures-json-parse", "result": "pass"},
+    {"id": "strict-context-coverage", "result": "pass", "covered": 9, "total": 9},
+    {"id": "fixed-slot-order", "result": "pass", "slots": 6},
+    {"id": "public-at-opening-only", "result": "pass"}
+  ],
+  "blockers": [],
+  "residue": [
+    "A portable JSON Schema is frozen, but real intake remains disabled.",
+    "Cross-engine and human access evidence remain later gates."
+  ],
+  "extra_sources": []
+}

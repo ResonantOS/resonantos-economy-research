@@ -1,0 +1,47 @@
+{
+  "schema_version": "time-capsule.browser-evidence.v1",
+  "captured_at": "2026-07-17",
+  "browser": "firefox via playwright-cli",
+  "source_url": "http://127.0.0.1:8765/contribute/index.html",
+  "fixture_runner": {
+    "fixture_id": "resonant-time-capsule-intake",
+    "version": "2.0.0",
+    "status": "pass",
+    "checks_passed": 32,
+    "checks_total": 32
+  },
+  "desktop": {
+    "viewport": [1440, 1000],
+    "document_width": 1440,
+    "horizontal_overflow": false,
+    "forms": 1,
+    "phrase_places": 6
+  },
+  "mobile": {
+    "viewport": [360, 800],
+    "document_width": 360,
+    "horizontal_overflow": false,
+    "small_visible_targets": 0
+  },
+  "journey": {
+    "review_items": 6,
+    "confirm_disabled_before_acknowledgements": true,
+    "confirm_enabled_after_acknowledgements": true,
+    "receipt_visible": true,
+    "interaction_resource_delta": 0,
+    "keyboard_receipt_reached": true,
+    "second_place_keyboard_focus_after_first": "phrase-2-2"
+  },
+  "browser_state": {
+    "console_errors": 0,
+    "console_warnings": 0,
+    "local_storage_items": 0,
+    "session_storage_items": 0,
+    "cookies": 0
+  },
+  "unclaimed_manual_evidence": [
+    "screen-reader walkthrough",
+    "native IME walkthrough",
+    "five-person consequence retell"
+  ]
+}

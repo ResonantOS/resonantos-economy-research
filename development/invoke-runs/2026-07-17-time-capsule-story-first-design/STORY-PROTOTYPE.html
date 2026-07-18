@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A story-first, non-collecting design rehearsal for the Resonant Time Capsule.">
+  <meta name="theme-color" content="#070912">
+  <title>Leave something for later — Time Capsule design</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --night: #070912;
+      --night-2: #0b0e19;
+      --surface: rgba(16, 18, 31, .88);
+      --surface-2: rgba(24, 23, 31, .9);
+      --cream: #fff1dd;
+      --muted: #cfc4b5;
+      --dim: #9f968a;
+      --amber: #a96122;
+      --amber-light: #e2a457;
+      --amber-pale: #ffd69a;
+      --violet: #7665d7;
+      --cyan: #7bd4da;
+      --line: rgba(214, 143, 63, .35);
+      --line-soft: rgba(255, 241, 221, .12);
+      --danger: #ff9b8e;
+      --max: 1180px;
+      --radius: 28px;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 14% 2%, rgba(118, 101, 215, .2), transparent 32rem),
+        radial-gradient(circle at 92% 38%, rgba(169, 97, 34, .17), transparent 32rem),
+        linear-gradient(180deg, #070912, #080a12 48%, #090912);
+      font-family: var(--sans);
+      line-height: 1.55;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(circle at center, #000, transparent 88%);
+    }
+
+    button, textarea { font: inherit; }
+    button { color: inherit; }
+    button:focus-visible, textarea:focus-visible, a:focus-visible {
+      outline: 3px solid var(--cyan);
+      outline-offset: 4px;
+    }
+
+    .shell { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .preview {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+      padding: 10px 20px;
+      border-bottom: 1px solid var(--line);
+      color: var(--cream);
+      background: rgba(7, 9, 18, .92);
+      backdrop-filter: blur(18px);
+      font-size: .76rem;
+      letter-spacing: .06em;
+      text-align: center;
+    }
+    .preview strong { color: var(--amber-pale); }
+
+    .site-head {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-block: 24px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .brand-mark { width: 24px; aspect-ratio: 1; border: 1px solid var(--amber-light); border-radius: 50%; box-shadow: inset 0 0 14px rgba(226,164,87,.35), 0 0 18px rgba(226,164,87,.16); }
+    .design-tag { color: var(--dim); font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; }
+
+    .hero {
+      position: relative;
+      min-height: calc(100svh - 39px);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      isolation: isolate;
+      border-bottom: 1px solid var(--line);
+      background: var(--night);
+    }
+    @media (min-width: 1101px) {
+      .hero {
+        height: min(calc(100svh - 39px), 56.28vw);
+        min-height: min(700px, calc(100svh - 39px));
+      }
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(7,9,18,.94) 0%, rgba(7,9,18,.83) 28%, rgba(7,9,18,.46) 57%, rgba(7,9,18,.12) 82%),
+        linear-gradient(180deg, rgba(7,9,18,.3), transparent 38%, rgba(7,9,18,.66));
+    }
+    .hero-backdrop {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-block: clamp(56px, 9vh, 110px) clamp(74px, 11vh, 130px);
+    }
+    .hero-content {
+      max-width: 690px;
+    }
+    .eyebrow { margin: 0 0 20px; color: var(--amber-light); font-size: .76rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+    h1, h2, h3, p { text-wrap: balance; }
+    h1 {
+      max-width: 690px;
+      margin: 0;
+      font: 500 clamp(4rem, 8vw, 7.4rem)/.88 var(--serif);
+      letter-spacing: -.065em;
+      text-shadow: 0 8px 34px rgba(0,0,0,.5);
+    }
+    .hero-copy {
+      max-width: 610px;
+      margin: 30px 0 0;
+      color: #e7dac8;
+      font-size: clamp(1.08rem, 2vw, 1.38rem);
+      text-shadow: 0 3px 18px rgba(0,0,0,.72);
+    }
+    .hero-copy strong { color: var(--cream); font-weight: 650; }
+    .token-bridge {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 10px;
+      width: fit-content;
+      max-width: 640px;
+      margin-top: 22px;
+      padding: 11px 15px;
+      border: 1px solid rgba(226, 164, 87, .48);
+      border-radius: 14px;
+      color: #dfd1be;
+      background: rgba(7, 9, 18, .66);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, .24);
+      backdrop-filter: blur(10px);
+      font-size: clamp(.72rem, 1vw, .82rem);
+      font-weight: 800;
+      letter-spacing: .075em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+    .token-bridge .arrow { color: var(--amber-light); }
+    .token-bridge strong { color: var(--amber-pale); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 13px 22px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--cream);
+      background: rgba(255,255,255,.035);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); border-color: var(--amber-light); background: rgba(255,255,255,.07); }
+    .button.primary { border-color: var(--amber-light); color: #1b1007; background: linear-gradient(135deg, #f2bd78, #bd6f29); box-shadow: 0 14px 38px rgba(169,97,34,.28); }
+    .button.ghost { background: rgba(7,9,18,.3); backdrop-filter: blur(10px); }
+    .button[disabled] { opacity: .45; cursor: not-allowed; transform: none; }
+
+    .story-band { padding: 80px 0; border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+    .story-heading { max-width: 760px; margin-bottom: 42px; }
+    .story-heading h2 { margin: 0; font: 500 clamp(2.5rem, 5vw, 4.6rem)/1 var(--serif); letter-spacing: -.045em; }
+    .returns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .return {
+      min-height: 210px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(145deg, rgba(255,255,255,.04), rgba(169,97,34,.045)), var(--surface);
+    }
+    .return span { color: var(--amber-light); font-size: .75rem; font-weight: 850; letter-spacing: .15em; text-transform: uppercase; }
+    .return h3 { margin: 42px 0 10px; font: 500 1.7rem/1.1 var(--serif); }
+    .return p { margin: 0; color: var(--muted); }
+
+    .method-section {
+      position: relative;
+      overflow: hidden;
+      padding: 104px 0;
+      border-bottom: 1px solid var(--line-soft);
+      background:
+        radial-gradient(circle at 16% 18%, rgba(118,101,215,.12), transparent 27rem),
+        radial-gradient(circle at 88% 70%, rgba(169,97,34,.13), transparent 30rem),
+        rgba(5,7,14,.46);
+    }
+    .method-intro {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 54px;
+      align-items: end;
+      margin-bottom: 38px;
+    }
+    .method-intro h2 {
+      margin: 0;
+      font: 500 clamp(3.2rem, 6vw, 5.8rem)/.92 var(--serif);
+      letter-spacing: -.055em;
+    }
+    .method-intro-copy { max-width: 650px; }
+    .method-intro-copy > p { margin: 0; color: var(--muted); font-size: clamp(1.05rem, 1.7vw, 1.25rem); }
+    .method-legend { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 22px; color: var(--dim); font-size: .72rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+    .method-legend span { display: inline-flex; align-items: center; gap: 8px; }
+    .method-legend i { width: 24px; height: 0; border-top: 1px solid var(--amber-light); }
+    .method-legend .candidate i { border-top-style: dashed; border-top-color: var(--violet); }
+
+    .method-map { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .method-phase {
+      position: relative;
+      min-width: 0;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(169,97,34,.025)), rgba(13,15,26,.92);
+      box-shadow: 0 24px 70px rgba(0,0,0,.22);
+    }
+    .method-phase.candidate { border-style: dashed; border-color: rgba(118,101,215,.66); }
+    .method-phase:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      z-index: 2;
+      top: 178px;
+      right: -20px;
+      width: 24px;
+      color: var(--amber-light);
+      font-size: 1.1rem;
+      text-align: center;
+    }
+    .phase-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; align-items: center; }
+    .phase-index { color: var(--amber-light); font-size: .68rem; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
+    .evidence-chip { padding: 5px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--amber-pale); font-size: .57rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+    .evidence-chip.candidate { border-style: dashed; border-color: rgba(118,101,215,.7); color: #c7bfff; }
+    .method-phase h3 { margin: 24px 0 12px; font: 500 clamp(2rem, 3vw, 2.65rem)/1 var(--serif); letter-spacing: -.035em; }
+    .phase-copy { min-height: 82px; margin: 0; color: var(--muted); }
+    .method-definition { margin: 14px 0 0; color: var(--dim); font-size: .76rem; }
+    .method-definition strong { color: var(--cream); }
+
+    .method-visual { display: block; width: 100%; height: auto; margin: 22px 0 18px; border: 1px solid var(--line-soft); border-radius: 18px; background: rgba(4,6,13,.52); }
+    .method-visual text { fill: var(--muted); font: 700 9px var(--sans); letter-spacing: .04em; }
+    .method-visual .svg-label { fill: var(--amber-pale); font-size: 10px; }
+    .method-visual .svg-node { fill: rgba(255,255,255,.035); stroke: rgba(255,241,221,.22); }
+    .method-visual .svg-node-strong { fill: rgba(169,97,34,.11); stroke: var(--amber-light); }
+    .method-visual .svg-node-candidate { fill: rgba(118,101,215,.09); stroke: var(--violet); stroke-dasharray: 5 4; }
+    .method-visual .svg-line { fill: none; stroke: var(--amber-light); stroke-width: 1.4; }
+    .method-visual .svg-line-soft { fill: none; stroke: rgba(255,241,221,.26); stroke-width: 1.2; }
+    .method-visual .svg-line-candidate { fill: none; stroke: var(--violet); stroke-width: 1.2; stroke-dasharray: 5 5; }
+    .method-visual .svg-glow { fill: rgba(226,164,87,.12); stroke: var(--amber-light); filter: drop-shadow(0 0 8px rgba(226,164,87,.34)); }
+
+    .method-steps { display: grid; gap: 12px; list-style: none; margin: 0; padding: 0; counter-reset: method-step; }
+    .method-steps li { display: grid; grid-template-columns: 24px 1fr; gap: 10px; color: var(--muted); font-size: .82rem; }
+    .method-steps li::before { counter-increment: method-step; content: counter(method-step); width: 22px; height: 22px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--amber-pale); font-size: .62rem; font-weight: 850; }
+    .method-steps strong { color: var(--cream); }
+    .method-formula, .candidate-note { margin-top: 20px; padding: 14px; border-left: 2px solid var(--amber-light); background: rgba(169,97,34,.07); }
+    .method-formula span, .candidate-note span { display: block; margin-bottom: 7px; color: var(--amber-light); font-size: .62rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    .method-formula code { display: block; overflow-wrap: anywhere; color: var(--cream); font-size: .72rem; line-height: 1.55; }
+    .candidate-note { border-left-color: var(--violet); background: rgba(118,101,215,.07); color: var(--muted); font-size: .75rem; }
+    .candidate-note span { color: #c7bfff; }
+
+    .method-boundary { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 18px; }
+    .boundary-panel { padding: 24px; border: 1px solid var(--line); border-radius: 20px; background: rgba(11,13,23,.72); }
+    .boundary-panel.candidate { border-style: dashed; border-color: rgba(118,101,215,.62); }
+    .boundary-panel h3 { margin: 0; font: 500 1.65rem/1.05 var(--serif); }
+    .boundary-panel > p { margin: 10px 0 0; color: var(--muted); font-size: .86rem; }
+    .boundary-list { display: grid; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: .82rem; }
+    .boundary-list li { position: relative; padding-left: 18px; }
+    .boundary-list li::before { content: "•"; position: absolute; left: 0; color: var(--amber-light); }
+    .boundary-panel.candidate .boundary-list li::before { color: #a99cf6; }
+
+    .experience { padding: 92px 0 110px; }
+    .experience-intro { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; margin-bottom: 34px; }
+    .experience-intro h2 { margin: 0; font: 500 clamp(2.5rem, 5vw, 4.5rem)/1 var(--serif); letter-spacing: -.045em; }
+    .experience-intro p { max-width: 660px; margin: 0; color: var(--muted); font-size: 1.08rem; align-self: end; }
+
+    .capsule-shell {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(118,101,215,.045)), var(--surface);
+      box-shadow: 0 34px 100px rgba(0,0,0,.38);
+    }
+    .capsule-top {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--line-soft);
+      background: rgba(255,255,255,.018);
+    }
+    .progress-text { color: var(--amber-pale); font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .progress-track { height: 3px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,.09); }
+    .progress-bar { height: 100%; width: 16.66%; background: linear-gradient(90deg, var(--amber), var(--amber-light)); transition: width .3s ease; }
+    .local-note { color: var(--dim); font-size: .72rem; }
+
+    .panel { display: none; min-height: 560px; padding: clamp(28px, 5vw, 64px); }
+    .panel.active { display: block; }
+    .panel-head { max-width: 760px; margin-bottom: 34px; }
+    .panel-head .moment { display: block; margin-bottom: 14px; color: var(--amber-light); font-size: .76rem; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; }
+    .panel-head h3 { margin: 0; font: 500 clamp(2.4rem, 5vw, 4.2rem)/1 var(--serif); letter-spacing: -.045em; }
+    .panel-head p { max-width: 680px; margin: 18px 0 0; color: var(--muted); font-size: 1.05rem; }
+
+    .message-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .message-box { padding: 18px; border: 1px solid var(--line-soft); border-radius: 18px; background: rgba(0,0,0,.12); }
+    .message-box label { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 10px; font-size: .82rem; font-weight: 800; }
+    .counter { color: var(--dim); font-size: .72rem; font-weight: 500; }
+    textarea {
+      display: block;
+      width: 100%;
+      min-height: 126px;
+      resize: vertical;
+      padding: 16px;
+      border: 1px solid rgba(255,241,221,.18);
+      border-radius: 14px;
+      color: var(--cream);
+      background: rgba(7,9,18,.76);
+      line-height: 1.5;
+    }
+    textarea::placeholder { color: #777168; }
+    textarea[aria-invalid="true"] { border-color: var(--danger); }
+    .field-note { min-height: 22px; margin: 8px 0 0; color: var(--dim); font-size: .76rem; }
+    .field-note.error { color: var(--danger); }
+
+    .panel-actions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 34px; }
+    .panel-actions .right { display: flex; flex-wrap: wrap; gap: 10px; margin-left: auto; }
+
+    .choice-list { display: grid; gap: 12px; }
+    .choice-card { display: grid; grid-template-columns: minmax(150px,.45fr) minmax(0,1fr); gap: 22px; align-items: center; padding: 18px; border: 1px solid var(--line-soft); border-radius: 18px; background: rgba(0,0,0,.11); }
+    .choice-quote { overflow: hidden; color: var(--cream); font: 500 1.25rem/1.2 var(--serif); text-overflow: ellipsis; }
+    .choice-quote small { display: block; margin-top: 7px; color: var(--amber-light); font: 700 .68rem/1.2 var(--sans); letter-spacing: .11em; text-transform: uppercase; }
+    .choice-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .choice-options label { position: relative; display: block; min-height: 100%; padding: 14px 14px 14px 42px; border: 1px solid var(--line-soft); border-radius: 14px; cursor: pointer; }
+    .choice-options input { position: absolute; left: 15px; top: 17px; accent-color: var(--amber-light); }
+    .choice-options strong { display: block; font-size: .86rem; }
+    .choice-options span { display: block; margin-top: 4px; color: var(--dim); font-size: .75rem; }
+    .choice-options em { color: var(--amber-pale); font-style: normal; }
+    .quiet-state { padding: 38px; border: 1px dashed var(--line); border-radius: 18px; color: var(--muted); text-align: center; }
+
+    .ritual-layout { display: grid; grid-template-columns: .74fr 1.26fr; gap: 32px; align-items: center; }
+    .ritual-copy blockquote { margin: 0 0 24px; color: var(--cream); font: 500 clamp(1.8rem, 3.4vw, 3rem)/1.12 var(--serif); }
+    .ritual-copy p { color: var(--muted); }
+    .ritual-visual { padding: 26px; border: 1px solid var(--line); border-radius: 22px; background: rgba(7,9,18,.62); }
+    .ritual-steps { display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; gap: 8px; list-style: none; margin: 0; padding: 0; }
+    .ritual-step { position: relative; min-height: 132px; display: grid; place-content: center; padding: 12px; border: 1px solid var(--line-soft); border-radius: 16px; text-align: center; background: rgba(255,255,255,.025); }
+    .ritual-step:not(:last-child)::after { content: "→"; position: absolute; right: -13px; top: 50%; z-index: 2; color: var(--amber-light); transform: translateY(-50%); }
+    .ritual-step span { color: var(--amber-light); font-size: .64rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    .ritual-step strong { display: block; margin-top: 9px; font-size: .8rem; }
+    .ritual-step.message strong { max-width: 96px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .ritual-equation { margin-top: 18px; padding: 16px; border-left: 2px solid var(--amber-light); color: var(--muted); background: rgba(169,97,34,.08); font-size: .82rem; }
+    .ritual-equation strong { color: var(--cream); }
+
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .review-horizon { min-height: 180px; padding: 20px; border: 1px solid var(--line-soft); border-radius: 16px; background: rgba(0,0,0,.11); }
+    .review-horizon h4 { margin: 0 0 14px; color: var(--amber-light); font-size: .74rem; letter-spacing: .13em; text-transform: uppercase; }
+    .review-item { margin: 0 0 12px; color: var(--cream); }
+    .review-item span { display: block; margin-top: 3px; color: var(--dim); font-size: .72rem; }
+    .review-quiet { color: var(--dim); font-style: italic; }
+    .boundary-box { margin-top: 22px; padding: 18px; border: 1px solid var(--line); border-radius: 16px; color: var(--muted); background: rgba(169,97,34,.07); }
+    .boundary-box strong { color: var(--cream); }
+
+    .receipt { text-align: center; }
+    .receipt-mark { width: 90px; aspect-ratio: 1; display: grid; place-items: center; margin: 0 auto 24px; border: 1px solid var(--amber-light); border-radius: 50%; color: var(--amber-pale); font: 500 2.2rem var(--serif); box-shadow: inset 0 0 30px rgba(169,97,34,.16), 0 0 44px rgba(169,97,34,.12); }
+    .receipt h3 { margin: 0; font: 500 clamp(2.7rem, 5vw, 4.8rem)/1 var(--serif); letter-spacing: -.045em; }
+    .receipt > p { max-width: 650px; margin: 18px auto 0; color: var(--muted); }
+    .receipt-stamp { display: inline-block; margin-top: 26px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--amber-pale); font-size: .72rem; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+    .receipt .actions { justify-content: center; }
+
+    .proof-note { padding: 78px 0; border-top: 1px solid var(--line-soft); }
+    details { max-width: 850px; margin: 0 auto; padding: 22px 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface-2); }
+    summary { cursor: pointer; color: var(--cream); font-weight: 750; }
+    details p, details li { color: var(--muted); }
+    details code { color: var(--amber-pale); }
+    footer { padding: 30px 0 50px; color: var(--dim); font-size: .76rem; text-align: center; }
+
+    @media (max-width: 900px) {
+      .method-intro, .method-map, .method-boundary, .experience-intro, .ritual-layout { grid-template-columns: 1fr; }
+      .returns, .review-grid { grid-template-columns: 1fr; }
+      .method-intro { gap: 24px; }
+      .method-phase:not(:last-child)::after { content: "↓"; top: auto; right: auto; bottom: -22px; left: 50%; transform: translateX(-50%); }
+      .phase-copy { min-height: 0; }
+      .return { min-height: 160px; }
+      .return h3 { margin-top: 26px; }
+      .choice-card { grid-template-columns: 1fr; }
+      .ritual-steps { grid-template-columns: 1fr; }
+      .ritual-step { min-height: 86px; }
+      .ritual-step:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -19px; transform: translateX(-50%); }
+    }
+
+    @media (min-width: 641px) and (max-height: 1000px) {
+      .hero-inner { padding-block: 42px 50px; }
+      .eyebrow { margin-bottom: 14px; }
+      h1 { font-size: clamp(4rem, 7vw, 6.1rem); }
+      .hero-copy { margin-top: 20px; }
+      .token-bridge { margin-top: 16px; }
+      .actions { margin-top: 20px; }
+    }
+
+    @media (max-width: 640px) {
+      .shell { width: min(calc(100% - 24px), var(--max)); }
+      .site-head { padding-block: 18px; }
+      .design-tag { display: none; }
+      .hero { min-height: calc(100svh - 37px); }
+      .hero::before {
+        background:
+          linear-gradient(90deg, rgba(7,9,18,.93), rgba(7,9,18,.68)),
+          linear-gradient(180deg, rgba(7,9,18,.22), rgba(7,9,18,.48) 55%, rgba(7,9,18,.9));
+      }
+      .hero-backdrop { object-position: 64% center; }
+      .hero-inner { align-items: flex-end; padding-block: 60px 54px; }
+      h1 { font-size: clamp(3.2rem, 18vw, 5rem); }
+      .hero-copy { margin-top: 22px; font-size: 1.03rem; }
+      .token-bridge { margin-top: 18px; padding: 10px 12px; }
+      .actions { margin-top: 24px; }
+      .story-band, .experience { padding-block: 66px; }
+      .method-section { padding-block: 76px; }
+      .method-phase { padding: 22px; }
+      .message-grid, .choice-options { grid-template-columns: 1fr; }
+      .capsule-top { grid-template-columns: 1fr; gap: 8px; }
+      .local-note { display: none; }
+      .panel { min-height: 0; padding: 28px 18px; }
+      .panel-actions, .panel-actions .right { width: 100%; }
+      .panel-actions .button { flex: 1 1 145px; }
+      .preview { font-size: .68rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .001ms !important; animation-duration: .001ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview" role="status">
+    <span aria-hidden="true">◌</span>
+    <strong>Design rehearsal</strong>
+    <span>Nothing is sent or saved.</span>
+  </div>
+
+  <header class="hero" aria-labelledby="hero-title">
+    <img class="hero-backdrop" src="assets/time-capsule-story-hero.png" width="1672" height="941" alt="Many luminous message fragments travel through a midnight field into one radiant circular capsule. Three paths continue toward future openings.">
+    <div class="site-head shell">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Resonant Time Capsule</span></div>
+      <span class="design-tag">Story-first candidate · July 2026</span>
+    </div>
+    <div class="hero-inner shell">
+      <div class="hero-content">
+        <p class="eyebrow">A time capsule for ResonantDAO</p>
+        <h1 id="hero-title">Leave something for later.</h1>
+        <p class="hero-copy">
+          Leave a <strong>message or any small mark</strong>—for your future self,
+          someone else, or the community. You can also leave nothing at all. What we
+          do leave shapes the capsule that helps choose how many tokens ResonantDAO starts
+          with. Anything left can return in 2, 5, or 10 years.
+        </p>
+        <div class="token-bridge" aria-label="What we leave joins one capsule, which helps choose how many tokens ResonantDAO starts with.">
+          <span>What we leave</span><span class="arrow" aria-hidden="true">→</span>
+          <span>one capsule</span><span class="arrow" aria-hidden="true">→</span>
+          <strong>the starting token number</strong>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="#capsule">Leave a message or mark</a>
+          <button class="button ghost" type="button" id="quiet-start">Or leave nothing</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="story-band" id="returns" aria-labelledby="returns-title">
+      <div class="shell">
+        <div class="story-heading">
+          <p class="eyebrow">The capsule opens three times</p>
+          <h2 id="returns-title">Not to change the number.<br>To meet what we left.</h2>
+        </div>
+        <div class="returns">
+          <article class="return"><span>02 years</span><h3>Recognize what stayed</h3><p>Meet a hope, promise, question, or small detail you chose to notice today.</p></article>
+          <article class="return"><span>05 years</span><h3>Notice what changed</h3><p>Compare what you believe now with the life, relationships, and choices that unfolded.</p></article>
+          <article class="return"><span>10 years</span><h3>Carry something across</h3><p>Find what you decided was worth protecting from the quiet work of time.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="method-section" id="method" aria-labelledby="method-title">
+      <div class="shell">
+        <div class="method-intro">
+          <div>
+            <p class="eyebrow">How the ritual travels through time</p>
+            <h2 id="method-title">One number.<br>Three returns.</h2>
+          </div>
+          <div class="method-intro-copy">
+            <p>The capsule closes once to help choose the starting token number. Then it stays alive long enough to return what people left—one horizon at a time.</p>
+            <div class="method-legend" aria-label="Diagram legend">
+              <span><i aria-hidden="true"></i> Explained method</span>
+              <span class="candidate"><i aria-hidden="true"></i> Stewardship still to choose</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="method-map">
+          <article class="method-phase" id="method-number" aria-labelledby="method-number-title">
+            <div class="phase-top"><span class="phase-index">01 · Create the number</span><span class="evidence-chip">Shared method</span></div>
+            <h3 id="method-number-title">Close one shared moment</h3>
+            <p class="phase-copy">What people leave becomes one frozen manifest. Its fingerprint joins a public Bitcoin block, and a rule places the result inside the chosen number range.</p>
+            <p class="method-definition"><strong>Fingerprint:</strong> a short code that changes if any record changes.</p>
+            <svg class="method-visual" viewBox="0 0 370 230" role="img" aria-labelledby="number-svg-title number-svg-desc">
+              <title id="number-svg-title">How the starting token number is created</title>
+              <desc id="number-svg-desc">Several message records enter one manifest. The manifest produces a fingerprint. The fingerprint joins a later Bitcoin block and is mapped into the agreed token range.</desc>
+              <defs><marker id="number-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#e2a457"/></marker></defs>
+              <rect class="svg-node" x="12" y="34" width="72" height="30" rx="7"/><text x="48" y="53" text-anchor="middle">message</text>
+              <rect class="svg-node" x="12" y="82" width="72" height="30" rx="7"/><text x="48" y="101" text-anchor="middle">mark</text>
+              <rect class="svg-node" x="12" y="130" width="72" height="30" rx="7"/><text x="48" y="149" text-anchor="middle">commitment</text>
+              <path class="svg-line" d="M84 49 L112 91" marker-end="url(#number-arrow)"/>
+              <path class="svg-line" d="M84 97 L112 97" marker-end="url(#number-arrow)"/>
+              <path class="svg-line" d="M84 145 L112 103" marker-end="url(#number-arrow)"/>
+              <rect class="svg-node-strong" x="116" y="63" width="78" height="68" rx="12"/><text class="svg-label" x="155" y="91" text-anchor="middle">ONE</text><text class="svg-label" x="155" y="107" text-anchor="middle">MANIFEST</text>
+              <path class="svg-line" d="M194 97 L218 97" marker-end="url(#number-arrow)"/>
+              <circle class="svg-glow" cx="253" cy="97" r="31"/><text class="svg-label" x="253" y="94" text-anchor="middle">FINGER-</text><text class="svg-label" x="253" y="108" text-anchor="middle">PRINT</text>
+              <text class="svg-label" x="253" y="151" text-anchor="middle">+</text>
+              <rect class="svg-node" x="224" y="164" width="58" height="34" rx="7"/><text x="253" y="178" text-anchor="middle">BITCOIN</text><text x="253" y="190" text-anchor="middle">BLOCK</text>
+              <path class="svg-line" d="M284 97 L315 97" marker-end="url(#number-arrow)"/>
+              <path class="svg-line-soft" d="M282 181 Q310 170 322 126"/>
+              <circle class="svg-node-strong" cx="340" cy="97" r="24"/><text class="svg-label" x="340" y="94" text-anchor="middle">TOKEN</text><text class="svg-label" x="340" y="108" text-anchor="middle">NUMBER</text>
+            </svg>
+            <ol class="method-steps">
+              <li><span><strong>Publish first.</strong> Agree on the range and mapping rule before intake closes.</span></li>
+              <li><span><strong>Freeze the whole.</strong> Public messages and saved-message commitments enter one manifest.</span></li>
+              <li><span><strong>Add a later public signal.</strong> The fingerprint joins the Bitcoin closing block.</span></li>
+              <li><span><strong>Map once.</strong> The published rule produces the starting token number.</span></li>
+            </ol>
+            <div class="method-formula"><span>Candidate mapping shape</span><code>minimum + (hash(fingerprint + block) mod range size)</code></div>
+          </article>
+
+          <article class="method-phase candidate" id="method-care" aria-labelledby="method-care-title">
+            <div class="phase-top"><span class="phase-index">02 · Maintain the capsule</span><span class="evidence-chip candidate">Stewardship proposal</span></div>
+            <h3 id="method-care-title">Keep three future bundles alive</h3>
+            <p class="phase-copy">The frozen public proof can be copied widely. Saved messages need a separate protected bundle for each opening—and people responsible for keeping those bundles recoverable.</p>
+            <p class="method-definition"><strong>Release bundle:</strong> the saved messages and proofs due at one opening.</p>
+            <svg class="method-visual" viewBox="0 0 370 230" role="img" aria-labelledby="care-svg-title care-svg-desc">
+              <title id="care-svg-title">Candidate capsule maintenance model</title>
+              <desc id="care-svg-desc">A public manifest remains visible above three protected release bundles for the two, five, and ten-year openings. Independent stewards and verified copies keep those bundles recoverable.</desc>
+              <defs><marker id="care-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7665d7"/></marker></defs>
+              <rect class="svg-node-strong" x="126" y="18" width="118" height="42" rx="10"/><text class="svg-label" x="185" y="36" text-anchor="middle">PUBLIC MANIFEST</text><text x="185" y="49" text-anchor="middle">copy + verify</text>
+              <path class="svg-line-candidate" d="M185 60 L185 92" marker-end="url(#care-arrow)"/>
+              <rect class="svg-node-candidate" x="18" y="108" width="96" height="62" rx="13"/><text class="svg-label" x="66" y="136" text-anchor="middle">2 YEAR</text><text x="66" y="151" text-anchor="middle">locked bundle</text>
+              <rect class="svg-node-candidate" x="137" y="108" width="96" height="62" rx="13"/><text class="svg-label" x="185" y="136" text-anchor="middle">5 YEAR</text><text x="185" y="151" text-anchor="middle">locked bundle</text>
+              <rect class="svg-node-candidate" x="256" y="108" width="96" height="62" rx="13"/><text class="svg-label" x="304" y="136" text-anchor="middle">10 YEAR</text><text x="304" y="151" text-anchor="middle">locked bundle</text>
+              <path class="svg-line-candidate" d="M185 92 Q91 90 66 108"/>
+              <path class="svg-line-candidate" d="M185 92 L185 108"/>
+              <path class="svg-line-candidate" d="M185 92 Q279 90 304 108"/>
+              <circle class="svg-node-candidate" cx="66" cy="205" r="14"/><text x="66" y="208" text-anchor="middle">S1</text>
+              <circle class="svg-node-candidate" cx="145" cy="205" r="14"/><text x="145" y="208" text-anchor="middle">S2</text>
+              <circle class="svg-node-candidate" cx="225" cy="205" r="14"/><text x="225" y="208" text-anchor="middle">S3</text>
+              <circle class="svg-node-candidate" cx="304" cy="205" r="14"/><text x="304" y="208" text-anchor="middle">S4+</text>
+              <path class="svg-line-candidate" d="M66 170 L66 191"/><path class="svg-line-candidate" d="M185 170 Q165 186 145 191"/><path class="svg-line-candidate" d="M185 170 Q205 186 225 191"/><path class="svg-line-candidate" d="M304 170 L304 191"/>
+            </svg>
+            <ol class="method-steps">
+              <li><span><strong>Separate the horizons.</strong> Package 2, 5, and 10-year messages independently.</span></li>
+              <li><span><strong>Keep verified copies.</strong> A damaged or lost device must not become the end of the capsule.</span></li>
+              <li><span><strong>Split access.</strong> No single absent person should be able to lock everyone out.</span></li>
+              <li><span><strong>Practice recovery.</strong> Check copies, formats, and steward succession while there is still time to repair them.</span></li>
+            </ol>
+            <div class="candidate-note"><span>Candidate starting point—not approved</span>Three independent storage locations, 3-of-5 steward access, and a yearly restore check.</div>
+          </article>
+
+          <article class="method-phase" id="method-open" aria-labelledby="method-open-title">
+            <div class="phase-top"><span class="phase-index">03 · Open in the future</span><span class="evidence-chip">Verification path</span></div>
+            <h3 id="method-open-title">Open only what is due</h3>
+            <p class="phase-copy">When one horizon arrives, its bundle opens. The message and its secret proof are published together, so anyone can check that the message was already inside the original capsule.</p>
+            <p class="method-definition"><strong>Commitment:</strong> the old fingerprint of one saved message, kept in the public manifest.</p>
+            <svg class="method-visual" viewBox="0 0 370 230" role="img" aria-labelledby="open-svg-title open-svg-desc">
+              <title id="open-svg-title">How the capsule opens over time</title>
+              <desc id="open-svg-desc">A timeline reaches two, five, and ten years. At each date only that release bundle opens, its message and proof are checked against the original commitment, and later bundles remain closed.</desc>
+              <defs><marker id="open-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#e2a457"/></marker></defs>
+              <path class="svg-line-soft" d="M34 66 L336 66"/>
+              <circle class="svg-node-strong" cx="68" cy="66" r="21"/><text class="svg-label" x="68" y="70" text-anchor="middle">2Y</text>
+              <circle class="svg-node-strong" cx="185" cy="66" r="21"/><text class="svg-label" x="185" y="70" text-anchor="middle">5Y</text>
+              <circle class="svg-node-strong" cx="302" cy="66" r="21"/><text class="svg-label" x="302" y="70" text-anchor="middle">10Y</text>
+              <path class="svg-line" d="M68 87 L68 116" marker-end="url(#open-arrow)"/><path class="svg-line" d="M185 87 L185 116" marker-end="url(#open-arrow)"/><path class="svg-line" d="M302 87 L302 116" marker-end="url(#open-arrow)"/>
+              <rect class="svg-node" x="28" y="121" width="80" height="42" rx="9"/><text class="svg-label" x="68" y="140" text-anchor="middle">OPEN</text><text x="68" y="153" text-anchor="middle">due bundle</text>
+              <rect class="svg-node" x="145" y="121" width="80" height="42" rx="9"/><text class="svg-label" x="185" y="140" text-anchor="middle">OPEN</text><text x="185" y="153" text-anchor="middle">due bundle</text>
+              <rect class="svg-node" x="262" y="121" width="80" height="42" rx="9"/><text class="svg-label" x="302" y="140" text-anchor="middle">OPEN</text><text x="302" y="153" text-anchor="middle">due bundle</text>
+              <path class="svg-line" d="M68 163 Q100 194 148 194"/><path class="svg-line" d="M185 163 L185 182"/><path class="svg-line" d="M302 163 Q270 194 222 194"/>
+              <rect class="svg-node-strong" x="139" y="181" width="92" height="34" rx="9"/><text class="svg-label" x="185" y="195" text-anchor="middle">REVEAL + CHECK</text><text x="185" y="207" text-anchor="middle">matches manifest</text>
+            </svg>
+            <ol class="method-steps">
+              <li><span><strong>Reach the date.</strong> The published opening schedule says which bundle is due.</span></li>
+              <li><span><strong>Recover access.</strong> Enough stewards reunite the access needed for that bundle.</span></li>
+              <li><span><strong>Reveal with proof.</strong> Publish the message and secret used to make its old commitment.</span></li>
+              <li><span><strong>Verify in public.</strong> Anyone can reproduce the commitment; later bundles remain closed.</span></li>
+            </ol>
+          </article>
+        </div>
+
+        <div class="method-boundary">
+          <article class="boundary-panel">
+            <h3>What never changes</h3>
+            <p>The opening adds visibility. It does not rewrite the original ritual.</p>
+            <ul class="boundary-list">
+              <li>The master manifest and fingerprint stay frozen.</li>
+              <li>The starting token number is produced only once.</li>
+              <li>Every saved reveal must match its original commitment.</li>
+              <li>Only the bundle whose date arrived is opened.</li>
+            </ul>
+          </article>
+          <article class="boundary-panel candidate">
+            <h3>What still needs a decision</h3>
+            <p>This is the work required before the rehearsal becomes a real capsule.</p>
+            <ul class="boundary-list">
+              <li>The final token range and exact mapping rule.</li>
+              <li>Encryption, archive format, and long-term file migration.</li>
+              <li>Who the stewards are and how they are replaced.</li>
+              <li>How many copies, access shares, and recovery checks are enough.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience shell" id="capsule" aria-labelledby="capsule-title">
+      <div class="experience-intro">
+        <h2 id="capsule-title">What would you like to find later?</h2>
+        <p>Leave up to two messages or marks for each opening. Write to yourself, to another person, or to everyone. A word, a symbol, or one small sentence is enough.</p>
+      </div>
+
+      <div class="capsule-shell">
+        <div class="capsule-top">
+          <span class="progress-text" id="progress-text">Step 1 of 6 · Two years</span>
+          <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+          <span class="local-note">This draft lives only on this page.</span>
+        </div>
+
+        <form id="story-form" novalidate autocomplete="off">
+          <section class="panel active" data-panel="0" aria-labelledby="panel-2-title">
+            <div class="panel-head">
+              <span class="moment">Opening one · 2 years</span>
+              <h3 id="panel-2-title">What do you hope still feels true?</h3>
+              <p>Name a hope, promise, question, or small detail you would want to recognize again.</p>
+            </div>
+            <div class="message-grid">
+              <div class="message-box">
+                <label for="message-2-1">Your first message or mark <span class="counter" data-counter="message-2-1">0 / 140</span></label>
+                <textarea id="message-2-1" maxlength="140" placeholder="For example: I hope I still make time for what makes me curious." data-message data-horizon="2 years" data-slot="1"></textarea>
+                <p class="field-note">A word, a symbol, or one small sentence.</p>
+              </div>
+              <div class="message-box">
+                <label for="message-2-2">Another, if you want <span class="counter" data-counter="message-2-2">0 / 140</span></label>
+                <textarea id="message-2-2" maxlength="140" placeholder="Another detail you would want to recognize." data-message data-horizon="2 years" data-slot="2"></textarea>
+                <p class="field-note">Two is the most for this opening.</p>
+              </div>
+            </div>
+            <div class="panel-actions"><span></span><div class="right"><button class="button" type="button" data-next>Continue to 5 years</button></div></div>
+          </section>
+
+          <section class="panel" data-panel="1" aria-labelledby="panel-5-title" hidden>
+            <div class="panel-head">
+              <span class="moment">Opening two · 5 years</span>
+              <h3 id="panel-5-title">What might you understand differently?</h3>
+              <p>Leave a belief or question that the life you build may answer in another way.</p>
+            </div>
+            <div class="message-grid">
+              <div class="message-box">
+                <label for="message-5-1">Your first message or mark <span class="counter" data-counter="message-5-1">0 / 140</span></label>
+                <textarea id="message-5-1" maxlength="140" placeholder="For example: Today I believe change begins with attention." data-message data-horizon="5 years" data-slot="1"></textarea>
+                <p class="field-note">A word, a symbol, or one small sentence.</p>
+              </div>
+              <div class="message-box">
+                <label for="message-5-2">Another, if you want <span class="counter" data-counter="message-5-2">0 / 140</span></label>
+                <textarea id="message-5-2" maxlength="140" placeholder="Another belief, question, or direction to compare." data-message data-horizon="5 years" data-slot="2"></textarea>
+                <p class="field-note">Two is the most for this opening.</p>
+              </div>
+            </div>
+            <div class="panel-actions"><button class="button ghost" type="button" data-back>Back</button><div class="right"><button class="button" type="button" data-next>Continue to 10 years</button></div></div>
+          </section>
+
+          <section class="panel" data-panel="2" aria-labelledby="panel-10-title" hidden>
+            <div class="panel-head">
+              <span class="moment">Opening three · 10 years</span>
+              <h3 id="panel-10-title">What deserves to cross a decade?</h3>
+              <p>Choose something you would not want the quiet work of time to erase.</p>
+            </div>
+            <div class="message-grid">
+              <div class="message-box">
+                <label for="message-10-1">Your first message or mark <span class="counter" data-counter="message-10-1">0 / 140</span></label>
+                <textarea id="message-10-1" maxlength="140" placeholder="For example: Remember what felt possible when we began." data-message data-horizon="10 years" data-slot="1"></textarea>
+                <p class="field-note">A word, a symbol, or one small sentence.</p>
+              </div>
+              <div class="message-box">
+                <label for="message-10-2">Another, if you want <span class="counter" data-counter="message-10-2">0 / 140</span></label>
+                <textarea id="message-10-2" maxlength="140" placeholder="Another thing worth carrying across the decade." data-message data-horizon="10 years" data-slot="2"></textarea>
+                <p class="field-note">Two is the most for this opening.</p>
+              </div>
+            </div>
+            <div class="panel-actions"><button class="button ghost" type="button" data-back>Back</button><div class="right"><button class="button primary" type="button" data-next>Choose when they are read</button></div></div>
+          </section>
+
+          <section class="panel" data-panel="3" aria-labelledby="choices-title" hidden>
+            <div class="panel-head">
+              <span class="moment" id="choices-moment">Your choice</span>
+              <h3 id="choices-title">When should each message be read?</h3>
+              <p id="choices-copy">You decide whether it can be seen from the beginning or waits for its future opening. In this rehearsal, both choices are only a preview.</p>
+            </div>
+            <div class="choice-list" id="choice-list"></div>
+            <div class="panel-actions"><button class="button ghost" type="button" data-back>Back to messages</button><div class="right"><button class="button primary" type="button" id="choices-next">See where they go</button></div></div>
+          </section>
+
+          <section class="panel" data-panel="4" aria-labelledby="ritual-title" hidden>
+            <div class="panel-head">
+              <span class="moment">The shared ritual</span>
+              <h3 id="ritual-title">Now see where it goes.</h3>
+            </div>
+            <div class="ritual-layout">
+              <div class="ritual-copy">
+                <blockquote id="ritual-quote">“What you leave is not given a score.”</blockquote>
+                <p id="ritual-copy-main">It becomes one record in the shared capsule. Its length gives it no extra weight.</p>
+                <p id="ritual-copy-detail">If it is saved for an opening, only its commitment enters the public manifest. The message and its small proof return later.</p>
+              </div>
+              <div class="ritual-visual">
+                <ol class="ritual-steps" aria-label="What someone leaves becomes one capsule record. All records become one shared fingerprint. The Bitcoin closing block joins it to help choose how many tokens ResonantDAO starts with.">
+                  <li class="ritual-step message"><span id="ritual-input-label">Your message</span><strong id="ritual-message">your short message</strong></li>
+                  <li class="ritual-step"><span id="ritual-record-label">One record</span><strong id="ritual-record">message/mark + opening + place</strong></li>
+                  <li class="ritual-step"><span>Shared capsule</span><strong>all accepted records</strong></li>
+                  <li class="ritual-step"><span>Closing moment</span><strong>fingerprint + Bitcoin block</strong></li>
+                  <li class="ritual-step"><span>Starting amount</span><strong>the token number</strong></li>
+                </ol>
+                <div class="ritual-equation"><strong>The Bitcoin block does not store the messages.</strong> It marks the closing moment and joins the shared fingerprint in the public rule.</div>
+              </div>
+            </div>
+            <div class="panel-actions"><button class="button ghost" type="button" data-back>Back</button><div class="right"><button class="button primary" type="button" data-next>Review my journey</button></div></div>
+          </section>
+
+          <section class="panel" data-panel="5" aria-labelledby="review-title" hidden>
+            <div class="panel-head">
+              <span class="moment">Before this rehearsal closes</span>
+              <h3 id="review-title">These are the moments you chose.</h3>
+              <p id="review-copy">The real capsule would turn each accepted message into one record. The starting token number would be chosen once; the messages would return later.</p>
+            </div>
+            <div class="review-grid" id="review-grid"></div>
+            <div class="boundary-box"><strong>This is still only a design rehearsal.</strong> No account exists. No message has left this browser. “Saved for its opening” is a planned experience, not a working privacy or recovery service.</div>
+            <div class="panel-actions"><button class="button ghost" type="button" data-back>Back to the ritual</button><div class="right"><button class="button primary" type="button" id="close-rehearsal">Close this rehearsal</button></div></div>
+          </section>
+
+          <section class="panel receipt" data-panel="6" aria-labelledby="receipt-title" hidden>
+            <div class="receipt-mark" aria-hidden="true">◌</div>
+            <h3 id="receipt-title">You reached a future opening.</h3>
+            <p id="receipt-copy">You have seen the journey: a message for yourself, another person, or the community becomes part of the shared capsule. The capsule helps choose how many tokens ResonantDAO starts with, and the messages return over time.</p>
+            <span class="receipt-stamp">Not sent · not saved</span>
+            <div class="actions"><button class="button primary" type="reset" id="start-again">Start again</button><a class="button ghost" href="#proof">See the proof idea</a></div>
+          </section>
+        </form>
+      </div>
+    </section>
+
+    <section class="proof-note" id="proof">
+      <div class="shell">
+        <details>
+          <summary>How can saved messages return without changing the fingerprint?</summary>
+          <p>Each saved message gets a random secret. The message and secret produce a small digital commitment. The public capsule keeps that commitment, not the message text.</p>
+          <p>All public records and saved-message commitments become one master manifest. Its fingerprint is anchored at closing. At the 2, 5, or 10-year opening, the capsule stewards reveal the message and its secret proof. Anyone can check that they reproduce the old commitment.</p>
+          <p>The candidate shape is <code>commitment = SHA256(capsule + opening + place + message + secret)</code>. This design does not implement or approve storage, encryption, keys, recovery, or the final ceremony rule.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">Candidate experience · review prototype · no live intake</footer>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const form = document.getElementById("story-form");
+      const panels = [...document.querySelectorAll("[data-panel]")];
+      const messages = [...document.querySelectorAll("[data-message]")];
+      const progressText = document.getElementById("progress-text");
+      const progressBar = document.getElementById("progress-bar");
+      const choiceList = document.getElementById("choice-list");
+      const choicesMoment = document.getElementById("choices-moment");
+      const choicesTitle = document.getElementById("choices-title");
+      const choicesCopy = document.getElementById("choices-copy");
+      const choicesNext = document.getElementById("choices-next");
+      const quietStart = document.getElementById("quiet-start");
+      const ritualQuote = document.getElementById("ritual-quote");
+      const ritualTitle = document.getElementById("ritual-title");
+      const ritualCopyMain = document.getElementById("ritual-copy-main");
+      const ritualCopyDetail = document.getElementById("ritual-copy-detail");
+      const ritualInputLabel = document.getElementById("ritual-input-label");
+      const ritualMessage = document.getElementById("ritual-message");
+      const ritualRecordLabel = document.getElementById("ritual-record-label");
+      const ritualRecord = document.getElementById("ritual-record");
+      const ritualSteps = document.querySelector(".ritual-steps");
+      const reviewGrid = document.getElementById("review-grid");
+      const reviewCopy = document.getElementById("review-copy");
+      const receiptCopy = document.getElementById("receipt-copy");
+      const labels = ["Two years", "Five years", "Ten years", "Visibility", "Shared ritual", "Review", "Receipt"];
+      let active = 0;
+
+      const clean = value => value.trim().replace(/\s+/g, " ");
+      const entries = () => messages
+        .map(input => ({
+          id: input.id,
+          text: clean(input.value),
+          horizon: input.dataset.horizon,
+          slot: input.dataset.slot,
+          mode: form.elements[`mode-${input.id}`]?.value || ""
+        }))
+        .filter(item => item.text);
+
+      function updateCounters() {
+        messages.forEach(input => {
+          const counter = document.querySelector(`[data-counter="${input.id}"]`);
+          if (counter) counter.textContent = `${input.value.length} / 140`;
+        });
+      }
+
+      function showPanel(index) {
+        active = Math.max(0, Math.min(index, panels.length - 1));
+        panels.forEach((panel, i) => {
+          const on = i === active;
+          panel.classList.toggle("active", on);
+          panel.hidden = !on;
+        });
+        progressText.textContent = `Step ${Math.min(active + 1, 6)} of 6 · ${labels[active]}`;
+        progressBar.style.width = `${Math.min((active + 1) / 6 * 100, 100)}%`;
+        const heading = panels[active].querySelector("h3");
+        if (heading) {
+          heading.setAttribute("tabindex", "-1");
+          heading.focus({ preventScroll: true });
+        }
+        document.querySelector(".capsule-shell").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      function buildChoices() {
+        const items = entries();
+        choiceList.replaceChildren();
+        if (!items.length) {
+          choicesMoment.textContent = "The quiet path";
+          choicesTitle.textContent = "Nothing has to be said.";
+          choicesCopy.textContent = "You can go back and leave any small mark, or keep every opening empty.";
+          const quiet = document.createElement("div");
+          quiet.className = "quiet-state";
+          quiet.innerHTML = "<strong>An open space belongs here too.</strong><br>Continue as you are, or go back if a word, symbol, or line appears.";
+          choiceList.append(quiet);
+          choicesNext.textContent = "See how quiet continues";
+          return;
+        }
+        choicesMoment.textContent = "Your choice";
+        choicesTitle.textContent = "When should each message be read?";
+        choicesCopy.textContent = "You decide whether it can be seen from the beginning or waits for its future opening. In this rehearsal, both choices are only a preview.";
+        choicesNext.textContent = "See where they go";
+        items.forEach((item, index) => {
+          const card = document.createElement("article");
+          card.className = "choice-card";
+          card.innerHTML = `
+            <div class="choice-quote">“${escapeHtml(item.text)}”<small>${item.horizon} · message ${item.slot}</small></div>
+            <div class="choice-options" role="radiogroup" aria-label="When should ${escapeHtml(item.text)} be read?">
+              <label><input type="radio" name="mode-${item.id}" value="public"><strong>Share from the beginning</strong><span>It may be part of the public capsule from the start.</span></label>
+              <label><input type="radio" name="mode-${item.id}" value="saved"><strong>Save for this opening</strong><span><em>Preview only.</em> A commitment appears now; the message returns later.</span></label>
+            </div>`;
+          choiceList.append(card);
+          if (index === 0) card.querySelector("input").focus({ preventScroll: true });
+        });
+      }
+
+      function choicesValid() {
+        const items = entries();
+        let firstMissing = null;
+        items.forEach(item => {
+          const group = form.elements[`mode-${item.id}`];
+          if (!group?.value && !firstMissing) firstMissing = document.querySelector(`input[name="mode-${item.id}"]`);
+        });
+        if (firstMissing) {
+          firstMissing.focus();
+          return false;
+        }
+        return true;
+      }
+
+      function buildRitual() {
+        const first = entries()[0];
+        if (first) {
+          ritualTitle.textContent = "Now see where it goes.";
+          ritualQuote.textContent = "“What you leave is not given a score.”";
+          ritualCopyMain.textContent = "It becomes one record in the shared capsule. Its length gives it no extra weight.";
+          ritualCopyDetail.textContent = "If it is saved for an opening, only its commitment enters the public manifest. The message and its small proof return later.";
+          ritualInputLabel.textContent = "What you left";
+          ritualMessage.textContent = `“${first.text}”`;
+          ritualRecordLabel.textContent = "One record";
+          ritualRecord.textContent = "message/mark + opening + place";
+          ritualSteps.setAttribute("aria-label", "What someone leaves becomes one capsule record. All records become one shared fingerprint. The Bitcoin closing block joins it to help choose how many tokens ResonantDAO starts with.");
+          return;
+        }
+        ritualTitle.textContent = "See how an open space continues.";
+        ritualQuote.textContent = "“Nothing has to be filled.”";
+        ritualCopyMain.textContent = "You left the openings quiet. No message is invented and no record is added for you.";
+        ritualCopyDetail.textContent = "The capsule is shaped by what people choose to leave—and the freedom to leave nothing remains yours.";
+        ritualInputLabel.textContent = "Open space";
+        ritualMessage.textContent = "nothing left";
+        ritualRecordLabel.textContent = "No record";
+        ritualRecord.textContent = "nothing to add";
+        ritualSteps.setAttribute("aria-label", "An empty opening creates no record. Accepted records still become one shared fingerprint, which joins the Bitcoin closing block to help choose how many tokens ResonantDAO starts with.");
+      }
+
+      function buildReview() {
+        const hasEntries = entries().length > 0;
+        reviewGrid.replaceChildren();
+        ["2 years", "5 years", "10 years"].forEach(horizon => {
+          const card = document.createElement("article");
+          card.className = "review-horizon";
+          const heading = document.createElement("h4");
+          heading.textContent = horizon;
+          card.append(heading);
+          const horizonEntries = entries().filter(item => item.horizon === horizon);
+          if (!horizonEntries.length) {
+            const quiet = document.createElement("p");
+            quiet.className = "review-quiet";
+            quiet.textContent = "Left open";
+            card.append(quiet);
+          } else {
+            horizonEntries.forEach(item => {
+              const row = document.createElement("p");
+              row.className = "review-item";
+              row.textContent = `“${item.text}”`;
+              const mode = document.createElement("span");
+              mode.textContent = item.mode === "saved" ? "Saved for this opening · preview only" : "Shared from the beginning";
+              row.append(mode);
+              card.append(row);
+            });
+          }
+          reviewGrid.append(card);
+        });
+        reviewCopy.textContent = hasEntries
+          ? "The real capsule would turn each accepted message into one record. The starting token number would be chosen once; the messages would return later."
+          : "You left every opening open. No record is invented for an empty place; the starting token number comes from what enters the capsule.";
+        receiptCopy.textContent = hasEntries
+          ? "You have seen the journey: what you left becomes part of the shared capsule. The capsule helps choose how many tokens ResonantDAO starts with, and messages or marks return over time."
+          : "You left the openings quiet. Nothing was sent, and nothing was missing. The shared capsule continues with whatever others choose to leave.";
+      }
+
+      function escapeHtml(value) {
+        return value.replace(/[&<>'"]/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[char]));
+      }
+
+      messages.forEach(input => input.addEventListener("input", updateCounters));
+      quietStart.addEventListener("click", () => {
+        messages.forEach(input => { input.value = ""; });
+        updateCounters();
+        buildChoices();
+        showPanel(3);
+        progressText.textContent = "Quiet path · nothing is required";
+      });
+      document.querySelectorAll("[data-next]").forEach(button => button.addEventListener("click", () => {
+        if (active === 2) buildChoices();
+        if (active === 4) buildReview();
+        showPanel(active + 1);
+      }));
+      document.querySelectorAll("[data-back]").forEach(button => button.addEventListener("click", () => showPanel(active - 1)));
+      choicesNext.addEventListener("click", () => {
+        if (!choicesValid()) return;
+        buildRitual();
+        showPanel(4);
+      });
+      document.getElementById("close-rehearsal").addEventListener("click", () => showPanel(6));
+      form.addEventListener("submit", event => event.preventDefault());
+      form.addEventListener("reset", () => {
+        window.setTimeout(() => {
+          choiceList.replaceChildren();
+          reviewGrid.replaceChildren();
+          updateCounters();
+          showPanel(0);
+        }, 0);
+      });
+      updateCounters();
+    })();
+  </script>
+</body>
+</html>

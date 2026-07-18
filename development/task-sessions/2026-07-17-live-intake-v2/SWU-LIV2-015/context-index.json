@@ -1,0 +1,54 @@
+{
+  "identity": {
+    "task_or_swu": "SWU-LIV2-015",
+    "title": "Private moderation queue",
+    "session_id": "2026-07-17-live-intake-v2/SWU-LIV2-015",
+    "mode": "lean-strict",
+    "runtime": "local-task-session",
+    "repository_revision": "c617ace5f10df9f46ec9f203743f4baca5cacbd6-dirty",
+    "captured_at": "2026-07-17T22:27:46Z",
+    "dependency_receipts": ["SWU-LIV2-013:pass", "SWU-LIV2-014:pass"]
+  },
+  "strict_coverage": {"covered": 10, "total": 10, "status": "pass"},
+  "obligations": [
+    {"id":"O-015-01","status":"covered","summary":"Require moderator authority before occurrence lookup."},
+    {"id":"O-015-02","status":"covered","summary":"Reveal plaintext only in the steward-private pending queue."},
+    {"id":"O-015-03","status":"covered","summary":"Bind exact occurrence/version and enforce open pre-close state."},
+    {"id":"O-015-04","status":"covered","summary":"Append one accepted or rejected decision with bounded reason."},
+    {"id":"O-015-05","status":"covered","summary":"Commit disposition and text-free audit atomically."},
+    {"id":"O-015-06","status":"covered","summary":"Reject same and conflicting duplicate decisions deterministically."},
+    {"id":"O-015-07","status":"covered","summary":"Scope metadata-only participant status to its owning envelope."},
+    {"id":"O-015-08","status":"covered","summary":"Treat only accepted occurrences as disposition-eligible for close."},
+    {"id":"O-015-09","status":"covered","summary":"Keep phrase and steward reference out of audit/log/public surfaces."},
+    {"id":"O-015-10","status":"covered","summary":"Respect moderation-only invented-data scope."}
+  ],
+  "selected_sources": [
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-003.md","selectors":["SWU-LIV2-015","State Rules","Security And Failure Rules","Synchronization"],"sha256":"504823f581afabc216e8069dc43d6641d29bdec94316af45d053c6837d1078b5"},
+    {"path":"DECISIONS.md","selectors":["D-05 saved-message exclusion","D-15 final disposition"],"sha256":"f4ecab3de66e4d398629930e2b8e36e11351d8861afcb61ab05f095549fc4c46"},
+    {"path":"development/time-capsule-live-intake-v2/contracts/field-lifecycle-v1.json","selectors":["phrase fields","moderation fields","audit fields","forbidden_audit_phrase_copy","pre_opening_live_feed"],"sha256":"1b929ece943a55de31d3d36ee8f50a4c76cb756e2ad85afda20bf5e66a6f4e87"},
+    {"path":"development/time-capsule-live-intake-v2/api/migrations/0001_initial_intake.sql","selectors":["message_occurrences","moderation_dispositions","append-only triggers","audit_events"],"sha256":"933aad74f89bbfe9a2ba9cd5c3e4d72d4a5f975baf0dcfe88246e1b0a7fc908b"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/envelope/repository.ts","selectors":["OccurrenceRecord","findOccurrence","transaction"],"sha256":"54a78a348f564a38ed83b1aa4030f316b1586aa4d2441e8c71f00edf690f52b9"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/crypto/payload.ts","selectors":["AeadPhrasePayload.reveal","PhraseAad binding"],"sha256":"790b22da6437f85103c0e14381a9b8656f108aaefa1f68c4940331d4585e9399"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-014/VALIDATION-RECEIPT.json","selectors":["encryption_profile","checks","residue"],"sha256":"a9fea3b5b685b707de9b7531a57a0016385b1f1d8baaff7c6d2eba3099f7e6a4"}
+  ],
+  "write_scope": {
+    "implementation":["development/time-capsule-live-intake-v2/api/src/moderation/","development/time-capsule-live-intake-v2/api/package.json"],
+    "evidence":["development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-015/","active SWU-015 status/frontier rows after validation"]
+  },
+  "validation": {
+    "command":"npm --prefix development/time-capsule-live-intake-v2/api test -- moderation",
+    "required_negatives":["unauthorized before lookup","wrong occurrence version","closed or fenced cohort","invalid reason","same duplicate","conflicting duplicate","audit failure rollback","wrong participant envelope","pending/rejected close ineligibility","phrase or steward reference in audit/log/public surface"]
+  },
+  "decisions": [
+    {"id":"D-SWU015-PRINCIPAL","classification":"assumption","selection":"require transport-supplied typed moderator principal"},
+    {"id":"D-SWU015-REASONS","classification":"assumption","selection":"fixed disposition-specific reason vocabulary"},
+    {"id":"D-SWU015-ELIGIBILITY","classification":"assumption","selection":"report disposition eligibility while later close reconciles current snapshot"}
+  ],
+  "gaps_and_blockers": {"active":[],"deferred":["steward credentials","UI and HTTP adapter","operational access logging","close snapshot reconciliation","staging approval"]},
+  "fallback_exploration": {"status":"none-needed","rule":"Stop if authority-before-lookup, append-only finality, or text-free audit cannot be preserved."},
+  "extra_sources": [],
+  "output_paths": {
+    "markdown":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-015/CONTEXT-PACK.md",
+    "json_index":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-015/context-index.json"
+  }
+}

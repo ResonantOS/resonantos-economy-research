@@ -1,0 +1,60 @@
+{
+  "identity": {
+    "task_or_swu": "SWU-LIV2-002",
+    "title": "Envelope and slot schema",
+    "source_reference": "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-001.md#swu-liv2-002--envelope-and-slot-schema",
+    "session_id": "2026-07-17-live-intake-v2/SWU-LIV2-002",
+    "session_evidence_path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-002/",
+    "mode": "lean-strict",
+    "runtime": "local-task-session",
+    "repository_revision": "c617ace5f10df9f46ec9f203743f4baca5cacbd6-dirty",
+    "captured_at": "2026-07-17T16:54:18Z",
+    "dependency_receipts": ["SWU-LIV2-001:pass"]
+  },
+  "strict_coverage": {"covered": 9, "total": 9, "status": "pass"},
+  "obligations": [
+    {"id":"O-002-01","status":"covered","summary":"Version and domain-tag the envelope schema and bind phrase profile v1."},
+    {"id":"O-002-02","status":"covered","summary":"Require six unique slots in canonical 2/5/10 by 1/2 order."},
+    {"id":"O-002-03","status":"covered","summary":"Allow empty slots but require one nonempty phrase in a confirmed envelope."},
+    {"id":"O-002-04","status":"covered","summary":"Require first position before a nonempty second position."},
+    {"id":"O-002-05","status":"covered","summary":"Allow duplicate phrase text but reject duplicate slot identities."},
+    {"id":"O-002-06","status":"covered","summary":"Permit only public_at_opening visibility."},
+    {"id":"O-002-07","status":"covered","summary":"Require nonempty phrases to be canonical under phrase profile v1."},
+    {"id":"O-002-08","status":"covered","summary":"Provide explicit valid/invalid fixtures and fail on drift."},
+    {"id":"O-002-09","status":"covered","summary":"Respect exact implementation and evidence write scope."}
+  ],
+  "selected_sources": [
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-001.md","selectors":["Implementation Rules 1-4","Edge Cases","SWU-LIV2-002"],"obligations":["O-002-01","O-002-02","O-002-03","O-002-04","O-002-05","O-002-06","O-002-07","O-002-08","O-002-09"],"sha256":"78d99e180127bbe5e7e56f1f311e198b28c88a59328ebdf576369355f57ea6ea"},
+    {"path":"development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/README.md","selectors":["Participant Contract","Important Boundary","Future Live Adapter Seam"],"obligations":["O-002-02","O-002-03","O-002-06","O-002-09"],"sha256":"aabb41b49c444c71c86a136b42b3aed7a6640cd56994cfac771c9e3337138a15"},
+    {"path":"DECISIONS.md","selectors":["D-02","D-15"],"obligations":["O-002-02","O-002-06","O-002-09"],"sha256":"f4ecab3de66e4d398629930e2b8e36e11351d8861afcb61ab05f095549fc4c46"},
+    {"path":"development/time-capsule-live-intake-v2/contracts/phrase-profile-v1.json","selectors":["identity","algorithm","limits","errors","non_effects"],"obligations":["O-002-01","O-002-07"],"sha256":"47b78bf8fe93ad3ee5ffd6c34e2838105cd83e68d4ffae9eb2749624b9c25ec5"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-001/TASK-SESSION-REPORT.md","selectors":["Result","Done-Criteria Audit","Validation Receipt"],"obligations":["O-002-01","O-002-07","O-002-08","O-002-09"],"sha256":"83908a317682904fbc3e842143aa3867a914a25f350cf1ac1906e93b3965d451"},
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/WORK-PACK.md","selectors":["SWU rows 001-006","Gates","Next Route"],"obligations":["O-002-08","O-002-09"],"sha256":"81fa6f32517ac1e0d3a786add3ada3c9947a417c66f144531d1443421ca0e536"}
+  ],
+  "write_scope": {
+    "implementation": [
+      "development/time-capsule-live-intake-v2/contracts/envelope-v1.schema.json",
+      "development/time-capsule-live-intake-v2/fixtures/envelope-v1.json",
+      "development/time-capsule-live-intake-v2/tools/validate-envelope.mjs"
+    ],
+    "evidence": [
+      "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-002/",
+      "active SWU-002 status/frontier rows after validation"
+    ]
+  },
+  "validation": {
+    "command": "node development/time-capsule-live-intake-v2/tools/validate-envelope.mjs",
+    "required_negatives": ["slot count/order/identity","all-empty","second-without-first","wrong visibility","noncanonical phrase","undeclared fields","schema/fixture drift"]
+  },
+  "decisions": [
+    {"id":"D-SWU002-SCHEMA","classification":"assumption","selection":"JSON Schema 2020-12 plus x-resonant-invariants and dependency-free Node validator"},
+    {"id":"D-SWU002-CANONICAL","classification":"assumption","selection":"store canonical normalized phrase directly in each slot"}
+  ],
+  "gaps_and_blockers": {"active":[],"deferred":["cross-engine browser parity","manual access evidence","real-intake and external gates"]},
+  "fallback_exploration": {"status":"none-needed","rule":"Explore only for a named validator/runtime gap."},
+  "extra_sources": [],
+  "output_paths": {
+    "markdown": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-002/CONTEXT-PACK.md",
+    "json_index": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-002/context-index.json"
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "dispatch_id": "invoke-whisper-2026-07-17-time-capsule-ux-clarity",
+  "parent_dispatch_id": null,
+  "intent": {
+    "raw": "Design an impactful, easy-to-understand UX and completely rewrite the copy because the prior concept was not understood by everyone.",
+    "objective": "Produce a governed six-view UX design and complete interactive-web copy deck that explains the Resonant Time Capsule quickly without implementing, publishing, or widening safety claims.",
+    "target_artifact": "Time Capsule UX clarity design and web copy package",
+    "arcanum_vocabulary": ["invoke", "whisper", "context-builder", "inventory", "distill", "dispatch-spec"],
+    "operator_sentence": "Make the concept understandable before asking people to participate."
+  },
+  "mode": "sequence",
+  "techniques": [
+    "sequence",
+    "frame_handoff",
+    "handle_handoff",
+    "artifact_contract_bridge",
+    "scu_swu_reduction",
+    "recomposition_proof",
+    "validation_loop",
+    "route_projection_boundary",
+    "authority_split_gate",
+    "concrete_path_evidence"
+  ],
+  "subagent_strategy": {
+    "status": "none",
+    "explanation": "The operator requested two parent-executed authoring skills; one bounded evidence corpus and one composition owner are sufficient.",
+    "parallelism": "none",
+    "join_policy": "none",
+    "authorization": "not_needed"
+  },
+  "steps": [
+    {
+      "step_id": "s01",
+      "name": "Build bounded clarity context",
+      "capability_ref": "context-builder",
+      "mode": "standard --strict --emit both",
+      "pattern": "route",
+      "parallel": false,
+      "techniques": ["frame_handoff", "handle_handoff", "concrete_path_evidence"],
+      "inputs": [{"kind":"intent","ref":"operator request 2026-07-17"}],
+      "outputs": [
+        {"kind":"frame","ref":"CONTEXT-PACK.md"},
+        {"kind":"handle","ref":"context-index.json"}
+      ],
+      "stop_conditions": ["Any claim, audience need, safety boundary, or current-surface observation lacks a source or explicit gap."]
+    },
+    {
+      "step_id": "s02",
+      "name": "Select design and copy transports",
+      "capability_ref": "inventory",
+      "capability_status": "local-extension",
+      "mode": "template-profile-lookup",
+      "pattern": "decision",
+      "parallel": false,
+      "techniques": ["sequence", "handle_handoff", "route_projection_boundary"],
+      "inputs": [
+        {"kind":"handle","ref":"s01:context-index.json"},
+        {"kind":"handle","ref":".arcanum/inventory/index.json"}
+      ],
+      "outputs": [{"kind":"decision","ref":"TEMPLATE-SELECTION.md"}],
+      "stop_conditions": ["The chosen template cannot represent six views, interactive states, or complete copy coverage."]
+    },
+    {
+      "step_id": "s03",
+      "name": "Design the comprehension architecture",
+      "capability_ref": "invoke",
+      "mode": "design",
+      "pattern": "sequential",
+      "parallel": false,
+      "techniques": ["sequence", "artifact_contract_bridge", "authority_split_gate"],
+      "inputs": [
+        {"kind":"frame","ref":"s01:CONTEXT-PACK.md"},
+        {"kind":"decision","ref":"s02:TEMPLATE-SELECTION.md"}
+      ],
+      "outputs": [
+        {"kind":"artifact","ref":"ARCHITECTURE.md"},
+        {"kind":"artifact","ref":"UX-PLAN.md"},
+        {"kind":"artifact","ref":"GLOSSARY-CONSISTENCY.md"}
+      ],
+      "stop_conditions": ["The design forces a word, conflates number selection with later openings, or implies live privacy, rewards, or collection."]
+    },
+    {
+      "step_id": "s04",
+      "name": "Reduce and prove the design unit",
+      "capability_ref": "distill",
+      "mode": "standard",
+      "pattern": "distill",
+      "parallel": false,
+      "techniques": ["scu_swu_reduction", "recomposition_proof", "authority_split_gate"],
+      "inputs": [
+        {"kind":"artifact","ref":"s03:ARCHITECTURE.md"},
+        {"kind":"artifact","ref":"s03:UX-PLAN.md"}
+      ],
+      "outputs": [{"kind":"artifact","ref":"DISTILL-VALIDATION.md"}],
+      "evidence_artifact": "DISTILL-VALIDATION.md",
+      "stop_conditions": ["The selected unit cannot recompose into the complete story or absorbs implementation-owner authority."]
+    },
+    {
+      "step_id": "s05",
+      "name": "Compose the complete interactive-web copy",
+      "capability_ref": "whisper",
+      "capability_status": "local-extension",
+      "mode": "interactive-web-copy-extension --standard-distill",
+      "pattern": "sequential",
+      "parallel": false,
+      "techniques": ["sequence", "frame_handoff", "artifact_contract_bridge", "route_projection_boundary"],
+      "inputs": [
+        {"kind":"frame","ref":"s01:CONTEXT-PACK.md"},
+        {"kind":"artifact","ref":"s04:DISTILL-VALIDATION.md"}
+      ],
+      "outputs": [
+        {"kind":"artifact","ref":"TEXT-INTENT-SUBSTRATE.md"},
+        {"kind":"artifact","ref":"COMPOSITION-PLAN.md"},
+        {"kind":"artifact","ref":"WEB-COPY.md"},
+        {"kind":"artifact","ref":"LEARNING-RESIDUE.md"}
+      ],
+      "stop_conditions": ["Copy becomes coercive, abstract before concrete, reward-like, technically false, or incomplete across interaction states."]
+    },
+    {
+      "step_id": "s06",
+      "name": "Validate and transport the candidate",
+      "capability_ref": "invoke",
+      "mode": "design-validation",
+      "pattern": "validation",
+      "parallel": false,
+      "techniques": ["validation_loop", "artifact_contract_bridge", "recomposition_proof"],
+      "inputs": [
+        {"kind":"artifact","ref":"s03:ARCHITECTURE.md"},
+        {"kind":"artifact","ref":"s05:WEB-COPY.md"}
+      ],
+      "outputs": [
+        {"kind":"artifact","ref":"WHISPER-VALIDATION.md"},
+        {"kind":"artifact","ref":"DESIGN-TRANSPORT.md"},
+        {"kind":"artifact","ref":"INVOKE-RESULT.md"}
+      ],
+      "evidence_artifact": "WHISPER-VALIDATION.md",
+      "stop_conditions": ["The package claims proven comprehension without first-time participant evidence."]
+    }
+  ],
+  "gates": [
+    {
+      "gate_id": "g01-definition",
+      "kind": "validation",
+      "owner": "invoke",
+      "condition": "Product name, timing, word limits, optionality, reward boundary, and rehearsal state match approved define outputs.",
+      "on_fail": "block"
+    },
+    {
+      "gate_id": "g02-design-unit",
+      "kind": "validation",
+      "owner": "distill",
+      "condition": "One clear narrative and one progressive form recompose into the full concept without absorbing implementation authority.",
+      "on_fail": "block"
+    },
+    {
+      "gate_id": "g03-copy-boundary",
+      "kind": "promotion_guardrail",
+      "owner": "whisper",
+      "condition": "Copy implies no personal reward, compulsory word, live submission, sealed protection, or proven fairness.",
+      "on_fail": "block"
+    },
+    {
+      "gate_id": "g04-human-comprehension",
+      "kind": "validation",
+      "owner": "future participant test",
+      "condition": "The five-person retell thresholds in UX-PLAN.md pass on an implemented candidate.",
+      "on_fail": "flag"
+    },
+    {
+      "gate_id": "g05-implementation",
+      "kind": "human_approval",
+      "owner": "operator",
+      "condition": "Source mutation and browser implementation require a separately authorized Task Session.",
+      "on_fail": "defer"
+    }
+  ],
+  "observability": {
+    "dispatch_id_required": true,
+    "trace_events": [
+      "invoke.context.completed",
+      "invoke.design.completed",
+      "distill.validation.completed",
+      "whisper.composition.completed",
+      "invoke.transport.completed"
+    ]
+  },
+  "boundary_evidence": {
+    "state_namespaces": [
+      {
+        "namespace": "design authoring outputs",
+        "owner": "invoke-whisper route",
+        "write_policy": "Writes limited to development/invoke-runs/2026-07-17-time-capsule-ux-clarity/."
+      },
+      {
+        "namespace": "current site and production intake",
+        "owner": "future Task Session and live-intake owners",
+        "write_policy": "Read-only; no source mutation, deployment, or collection in this dispatch."
+      }
+    ],
+    "promotion_splits": [
+      {
+        "source": "candidate design and copy",
+        "target": "published or live experience",
+        "rule": "Author review cannot replace first-time participant retell, accessibility, safety, and operator approval.",
+        "on_violation": "block"
+      }
+    ]
+  },
+  "promotion_guardrails": [
+    "Do not claim the new explanation has succeeded before the comprehension test runs.",
+    "Do not enable collection, persistence, identity, saved-for-later protection, deployment, or token effects from this design dispatch."
+  ]
+}

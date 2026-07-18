@@ -1,0 +1,53 @@
+{
+  "identity": {
+    "task_or_swu": "refine-live-intake-readiness",
+    "source_reference": "development/invoke-runs/2026-07-16-time-capsule-intake/WORK-PACK.md",
+    "session_or_run_id": "2026-07-17-time-capsule-live-intake-readiness",
+    "session_evidence_path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/01-context-builder/",
+    "runtime_handoff": "runtime",
+    "repository_revision": "c617ace5f10df9f46ec9f203743f4baca5cacbd6",
+    "evidence_date": "2026-07-17"
+  },
+  "strict_coverage": "pass",
+  "fallback_exploration": {
+    "status": "named-gaps-only",
+    "allowed_gap_ids": ["G-R1", "G-R2", "G-R3", "G-R4", "G-R5", "G-R6"]
+  },
+  "obligations": [
+    {"id": "O-01", "status": "covered", "summary": "Complete participant form journey", "selected_evidence": [{"path": "development/invoke-runs/2026-07-16-time-capsule-intake/FORM-SPEC.md", "selector": "Steps; Client Validation; Form Acceptance Checklist", "excerpt_summary": "Six optional places, visibility, review, confirmation, receipt, edit, and close behavior."}], "resolution": ""},
+    {"id": "O-02", "status": "covered", "summary": "Data entities, state, and transactional invariants", "selected_evidence": [{"path": "development/invoke-runs/2026-07-16-time-capsule-intake/ARCHITECTURE.md", "selector": "View 3; Workflow Process", "excerpt_summary": "Candidate entities, canonical state, and close flow."}, {"path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/tasks/TASK-TC-004.md", "selector": "Implementation Detail", "excerpt_summary": "Synthetic transaction, concurrency, close, and receipt cases."}], "resolution": ""},
+    {"id": "O-03", "status": "covered", "summary": "Privacy and sealed-content safety", "selected_evidence": [{"path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/tasks/TASK-TC-006.md", "selector": "Implementation Detail", "excerpt_summary": "Threat model precedes code; sealed mode can be killed."}], "resolution": ""},
+    {"id": "O-04", "status": "covered", "summary": "Abuse, moderation, and incident behavior", "selected_evidence": [{"path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/tasks/TASK-TC-005.md", "selector": "Implementation Detail", "excerpt_summary": "Consent, moderation, non-display, harmful-content, and appeal transitions."}], "resolution": ""},
+    {"id": "O-05", "status": "covered", "summary": "Stewardship, recovery, and successor behavior", "selected_evidence": [{"path": "development/invoke-runs/2026-07-16-time-capsule-intake/DECISIONS-AND-GAPS.md", "selector": "G-06", "excerpt_summary": "Ten-year continuity requires redundancy, migration, successor authority, and loss outcomes."}], "resolution": ""},
+    {"id": "O-06", "status": "resolved", "summary": "Application and deployment boundary", "selected_evidence": [{"path": "development/invoke-runs/2026-07-16-time-capsule-intake/WORK-PACK.md", "selector": "SWU Manifest", "excerpt_summary": "Backend paths are future write scopes, not selected application modules."}], "resolution": "No production runtime exists in this repository; keep design system-agnostic and route implementation-target selection later."},
+    {"id": "O-07", "status": "covered", "summary": "Validation and bounded implementation units", "selected_evidence": [{"path": "development/invoke-runs/2026-07-16-time-capsule-intake/IMPLEMENTATION-LAYERING.md", "selector": "Layer Decision Table", "excerpt_summary": "Static, synthetic, safety, and staging promotion evidence."}, {"path": "development/invoke-runs/2026-07-16-time-capsule-intake/WORK-PACK.md", "selector": "Validation Strategy; SWU Manifest", "excerpt_summary": "Existing validation and SWU contracts."}], "resolution": ""},
+    {"id": "O-08", "status": "covered", "summary": "Authority and non-effect boundaries", "selected_evidence": [{"path": "development/invoke-runs/2026-07-16-time-capsule-intake/ARCHITECTURE.md", "selector": "Design Gate", "excerpt_summary": "Plan-ready but not intake-ready; no real selection or ceremony."}], "resolution": ""},
+    {"id": "O-09", "status": "covered", "summary": "Architecture visibility and evidence boundary", "selected_evidence": [{"path": "development/invoke-runs/2026-07-16-time-capsule-intake/XRAY-LANES.md", "selector": "Lane Handles; Evidence Boundary", "excerpt_summary": "Components, dependencies, flow, lifecycle, risks, and visual inference boundaries."}], "resolution": ""}
+  ],
+  "selected_sources": [
+    {"path": "development/invoke-runs/2026-07-16-time-capsule-intake/SPEC.md", "selectors": ["Actors", "Invariants", "Lifecycle"], "obligations": ["O-01", "O-02", "O-08"], "evidence_kind": "contract", "sha256": "8a9cdc4c4a557a78277d8896e361724a911c9eb4eaeb2f73c929284f6b778392"},
+    {"path": "development/invoke-runs/2026-07-16-time-capsule-intake/ARCHITECTURE.md", "selectors": ["Views 2-6", "Design Gate"], "obligations": ["O-02", "O-03", "O-05", "O-08", "O-09"], "evidence_kind": "architecture", "sha256": "5675ddd9bbf06c1140627adc886a999bb0c887d84026566af9f10138cc2774f8"},
+    {"path": "development/invoke-runs/2026-07-16-time-capsule-intake/FORM-SPEC.md", "selectors": ["Steps", "Client Validation", "Server Invariants", "Privacy And Storage Boundaries"], "obligations": ["O-01", "O-02", "O-03"], "evidence_kind": "contract", "sha256": "5b55bbb2928c34a6683f525a949b9ac77b705252e7b1726adedd0073e4cdb53c"},
+    {"path": "development/invoke-runs/2026-07-16-time-capsule-intake/DECISIONS-AND-GAPS.md", "selectors": ["Settled Decisions", "Target-Artifact Gaps"], "obligations": ["O-03", "O-04", "O-05", "O-08"], "evidence_kind": "decision", "sha256": "137fbdf5f017a2a48f4103fa0924c753e1f074b3530f1200cc3ed9352588b640"},
+    {"path": "development/invoke-runs/2026-07-16-time-capsule-intake/IMPLEMENTATION-LAYERING.md", "selectors": ["Layer Decision Table", "Guardrails"], "obligations": ["O-03", "O-07", "O-08"], "evidence_kind": "contract", "sha256": "387e2df65ea7d6bb81a001923db0efe37d2697ca0ca9b8721200257c5f2a9d09"},
+    {"path": "development/invoke-runs/2026-07-16-time-capsule-intake/WORK-PACK.md", "selectors": ["Delivery Boundary", "SWU Manifest", "Blockers", "Validation Strategy"], "obligations": ["O-06", "O-07", "O-08"], "evidence_kind": "contract", "sha256": "370f21bec96898ac83793ecb699b710163a8d47d0f503af360aa71ea1681e160"},
+    {"path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/tasks/TASK-TC-002.md", "selectors": ["Implementation Detail", "SWU-TC-003", "SWU-TC-004"], "obligations": ["O-02", "O-07"], "evidence_kind": "contract"},
+    {"path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/tasks/TASK-TC-004.md", "selectors": ["Implementation Detail", "Synchronization"], "obligations": ["O-02", "O-06", "O-07"], "evidence_kind": "contract"},
+    {"path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/tasks/TASK-TC-005.md", "selectors": ["Implementation Detail", "Synchronization"], "obligations": ["O-04", "O-05"], "evidence_kind": "contract"},
+    {"path": "development/invoke-runs/2026-07-16-time-capsule-intake/work-pack/tasks/TASK-TC-006.md", "selectors": ["Implementation Detail", "SWU-TC-011", "SWU-TC-012"], "obligations": ["O-03", "O-05", "O-07"], "evidence_kind": "contract"},
+    {"path": "development/invoke-runs/2026-07-16-time-capsule-intake/XRAY-LANES.md", "selectors": ["Lane Handles", "Evidence Boundary"], "obligations": ["O-09"], "evidence_kind": "architecture"},
+    {"path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/REFINE-SEED-PROPOSAL.md", "selectors": ["Target", "Done Criteria", "Non-Goals"], "obligations": ["O-01", "O-02", "O-03", "O-04", "O-05", "O-06", "O-07", "O-08", "O-09"], "evidence_kind": "contract"}
+  ],
+  "write_scope": ["development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/", "required append-only dispatch and non-authority traces"],
+  "validation_surface": ["dispatch validator", "strict obligation coverage", "three review receipts", "interrogation verdicts", "Distill closure and repair", "plan SWU coverage", "JSON/file/claim checks"],
+  "gaps_and_blockers": [
+    {"id": "G-R1", "status": "deferred", "summary": "Application runtime and implementation repository not selected.", "runtime_fallback_allowed": false},
+    {"id": "G-R2", "status": "deferred", "summary": "Real credential governance not approved.", "runtime_fallback_allowed": false},
+    {"id": "G-R3", "status": "deferred", "summary": "Sealed threat, crypto, custody, migration, and loss profile absent.", "runtime_fallback_allowed": false},
+    {"id": "G-R4", "status": "deferred", "summary": "Moderation, appeal, privacy/legal, and incident policy absent.", "runtime_fallback_allowed": false},
+    {"id": "G-R5", "status": "deferred", "summary": "Ten-year archive and successor authority absent.", "runtime_fallback_allowed": false},
+    {"id": "G-R6", "status": "deferred", "summary": "No corrected fixtures or independent reproduction results.", "runtime_fallback_allowed": false}
+  ],
+  "authority_precedence": ["repository AGENTS.md and authority rules", "confirmed Refine seed and validated dispatch", "existing Invoke source contracts", "run-local evidence", "non-authority inventory/observability"],
+  "output_paths": {"markdown": "stages/01-context-builder/CONTEXT-PACK.md", "json_index": "stages/01-context-builder/context-index.json"}
+}

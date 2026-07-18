@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en" data-intake-mode="preview">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A non-collecting preview of the Resonant Time Capsule contribution form.">
+  <meta name="theme-color" content="#080a12">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='24' fill='none' stroke='%238d672f' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="simulator.css">
+  <script src="simulator.js" defer></script>
+  <title>Enter the Time Capsule — ResonantDAO</title>
+</head>
+<body>
+  <a class="skip-link" href="#capsule-form">Skip to the form</a>
+
+  <div class="preview-bar" role="status">
+    <span aria-hidden="true">◌</span>
+    <strong>Preview only</strong>
+    <span>Nothing is sent or saved. Refreshing clears everything.</span>
+  </div>
+
+  <header class="site-header shell">
+    <a class="brand" href="../" aria-label="Back to Resonant Time Capsule">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Resonant Time Capsule</span>
+    </a>
+    <span class="capability-pill">Candidate intake · not live yet</span>
+  </header>
+
+  <main>
+    <section class="hero shell" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">A message can outlive the moment</p>
+        <h1 id="page-title">Leave something<br>for later.</h1>
+        <p class="hero-lead">
+          Write a short phrase for two, five, or ten years from now. It stays
+          out of public view until that opening—then it becomes part of the
+          capsule everyone can read.
+        </p>
+        <p class="permission-line">Leave one mark, leave six, or leave none. There is no perfect thing to say.</p>
+      </div>
+
+      <aside class="journey-card" aria-labelledby="journey-title">
+        <p class="card-kicker">How your phrase reaches the ritual number</p>
+        <h2 id="journey-title">Many small messages become one shared mark.</h2>
+        <ol class="journey-steps">
+          <li><span>01</span><p><strong>You leave a phrase.</strong> It takes one place in a future opening.</p></li>
+          <li><span>02</span><p><strong>The capsule closes.</strong> Every accepted place becomes one digital fingerprint.</p></li>
+          <li><span>03</span><p><strong>Bitcoin adds a later signal.</strong> The block containing that fingerprint supplies the public value.</p></li>
+          <li><span>04</span><p><strong>The ritual reveals a number.</strong> The shared result lands inside the range chosen in advance.</p></li>
+        </ol>
+        <p class="number-boundary">Your phrase does not equal a fixed number of tokens. It changes the shared whole.</p>
+      </aside>
+    </section>
+
+    <section class="form-section shell" aria-labelledby="form-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">One continuous form</p>
+          <h2 id="form-title">Choose when your message returns.</h2>
+        </div>
+        <p>
+          You may leave up to two short phrases for each opening. Every phrase
+          you save will become public when its year arrives.
+        </p>
+      </div>
+
+      <div class="boundary-callout" id="form-boundary">
+        <strong>This page is a working preview.</strong>
+        It lets us test the complete experience, but it has no server connection:
+        nothing entered here is submitted, stored, or placed in the capsule.
+      </div>
+
+      <form id="capsule-form" novalidate autocomplete="off" aria-describedby="form-boundary form-errors">
+        <div class="form-progress" aria-label="Form path">
+          <span><b>1</b> Leave your phrases</span>
+          <span><b>2</b> Review one page</span>
+          <span><b>3</b> Confirm the preview</span>
+        </div>
+
+        <div id="form-errors" class="form-errors" role="alert" aria-live="assertive" tabindex="-1" hidden></div>
+
+        <div class="horizon-grid">
+          <fieldset class="horizon" data-horizon="2">
+            <legend><span>02 years</span>A near echo</legend>
+            <p class="horizon-copy">What do you want to remember while this moment is still close?</p>
+            <p class="opening-note">Hidden from public view until the 2-year opening, then public.</p>
+            <div class="slots">
+              <div class="phrase-field" data-slot="2-1">
+                <div class="field-heading">
+                  <label for="phrase-2-1">Your first phrase</label>
+                  <span class="phrase-count" id="count-2-1" aria-hidden="true">0 / 160</span>
+                </div>
+                <textarea id="phrase-2-1" name="phrase_2_1" rows="3" maxlength="320" dir="auto" placeholder="A hope, question, promise…" aria-describedby="hint-2-1 error-2-1" data-phrase data-position="1"></textarea>
+                <p class="hint" id="hint-2-1">A few words or one small sentence · up to 160 characters</p>
+                <p class="field-error" id="error-2-1" data-error aria-live="polite"></p>
+              </div>
+
+              <div class="phrase-field locked" data-slot="2-2" aria-disabled="true">
+                <div class="field-heading">
+                  <label for="phrase-2-2">A second phrase, if one appears</label>
+                  <span class="phrase-count" id="count-2-2" aria-hidden="true">0 / 160</span>
+                </div>
+                <textarea id="phrase-2-2" name="phrase_2_2" rows="3" maxlength="320" dir="auto" placeholder="This place opens after the first" aria-describedby="hint-2-2 error-2-2" data-phrase data-position="2" disabled></textarea>
+                <p class="hint" id="hint-2-2">Optional · the second and final place for this opening</p>
+                <p class="field-error" id="error-2-2" data-error aria-live="polite"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="horizon" data-horizon="5">
+            <legend><span>05 years</span>A changed horizon</legend>
+            <p class="horizon-copy">What would you like to meet again after life has changed shape?</p>
+            <p class="opening-note">Hidden from public view until the 5-year opening, then public.</p>
+            <div class="slots">
+              <div class="phrase-field" data-slot="5-1">
+                <div class="field-heading">
+                  <label for="phrase-5-1">Your first phrase</label>
+                  <span class="phrase-count" id="count-5-1" aria-hidden="true">0 / 160</span>
+                </div>
+                <textarea id="phrase-5-1" name="phrase_5_1" rows="3" maxlength="320" dir="auto" placeholder="Something worth meeting again…" aria-describedby="hint-5-1 error-5-1" data-phrase data-position="1"></textarea>
+                <p class="hint" id="hint-5-1">A few words or one small sentence · up to 160 characters</p>
+                <p class="field-error" id="error-5-1" data-error aria-live="polite"></p>
+              </div>
+
+              <div class="phrase-field locked" data-slot="5-2" aria-disabled="true">
+                <div class="field-heading">
+                  <label for="phrase-5-2">A second phrase, if one appears</label>
+                  <span class="phrase-count" id="count-5-2" aria-hidden="true">0 / 160</span>
+                </div>
+                <textarea id="phrase-5-2" name="phrase_5_2" rows="3" maxlength="320" dir="auto" placeholder="This place opens after the first" aria-describedby="hint-5-2 error-5-2" data-phrase data-position="2" disabled></textarea>
+                <p class="hint" id="hint-5-2">Optional · the second and final place for this opening</p>
+                <p class="field-error" id="error-5-2" data-error aria-live="polite"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="horizon" data-horizon="10">
+            <legend><span>10 years</span>A distant constellation</legend>
+            <p class="horizon-copy">What do you hope reaches the person—or people—who open this?</p>
+            <p class="opening-note">Hidden from public view until the 10-year opening, then public.</p>
+            <div class="slots">
+              <div class="phrase-field" data-slot="10-1">
+                <div class="field-heading">
+                  <label for="phrase-10-1">Your first phrase</label>
+                  <span class="phrase-count" id="count-10-1" aria-hidden="true">0 / 160</span>
+                </div>
+                <textarea id="phrase-10-1" name="phrase_10_1" rows="3" maxlength="320" dir="auto" placeholder="A message for a more distant day…" aria-describedby="hint-10-1 error-10-1" data-phrase data-position="1"></textarea>
+                <p class="hint" id="hint-10-1">A few words or one small sentence · up to 160 characters</p>
+                <p class="field-error" id="error-10-1" data-error aria-live="polite"></p>
+              </div>
+
+              <div class="phrase-field locked" data-slot="10-2" aria-disabled="true">
+                <div class="field-heading">
+                  <label for="phrase-10-2">A second phrase, if one appears</label>
+                  <span class="phrase-count" id="count-10-2" aria-hidden="true">0 / 160</span>
+                </div>
+                <textarea id="phrase-10-2" name="phrase_10_2" rows="3" maxlength="320" dir="auto" placeholder="This place opens after the first" aria-describedby="hint-10-2 error-10-2" data-phrase data-position="2" disabled></textarea>
+                <p class="hint" id="hint-10-2">Optional · the second and final place for this opening</p>
+                <p class="field-error" id="error-10-2" data-error aria-live="polite"></p>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-closing">
+          <div class="quiet-card">
+            <span aria-hidden="true">—</span>
+            <div>
+              <strong>You can leave any mark—or none.</strong>
+              <p>Silence is welcome too. Choosing the quiet path creates no receipt and no record.</p>
+            </div>
+            <button class="text-button" type="button" id="quiet-exit">Choose the quiet path</button>
+          </div>
+
+          <div class="close-note">
+            <span>Candidate close</span>
+            <strong>Monday July 20 · 21:00 São Paulo</strong>
+            <small>Tuesday July 21 · 00:00 UTC</small>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="button primary" type="submit">Review my phrases</button>
+          <button class="button" type="reset">Clear the form</button>
+          <button class="text-button" type="button" id="close-simulator">Test the closed state</button>
+        </div>
+      </form>
+
+      <section class="review-panel" id="review-panel" aria-labelledby="review-title" tabindex="-1" hidden>
+        <div class="review-heading">
+          <div>
+            <p class="eyebrow">Still only on this page</p>
+            <h2 id="review-title">See the whole capsule before you confirm.</h2>
+          </div>
+          <button class="text-button" type="button" id="keep-editing">Keep editing</button>
+        </div>
+        <p class="review-intro">
+          Each phrase is shown beside the year when it would become public.
+          Quiet places remain part of the shape without creating a message.
+        </p>
+        <div class="review-grid" id="review-grid"></div>
+
+        <aside class="number-reminder">
+          <strong>Your words shape the fingerprint, not a personal token score.</strong>
+          <p>All accepted places become one shared digital mark. The later Bitcoin block helps turn that mark into the ritual number.</p>
+        </aside>
+
+        <fieldset class="acknowledgements">
+          <legend>Two things to carry forward</legend>
+          <label>
+            <input type="checkbox" data-ack>
+            <span>I understand that every phrase I save becomes public when its 2-, 5-, or 10-year opening arrives.</span>
+          </label>
+          <label>
+            <input type="checkbox" data-ack>
+            <span>I understand that my phrases affect one shared fingerprint; no phrase equals tokens, allocation, rank, or governance power.</span>
+          </label>
+        </fieldset>
+
+        <button class="button primary confirm-button" type="button" id="confirm-preview" disabled>Confirm this preview</button>
+      </section>
+
+      <section class="receipt" id="receipt" aria-labelledby="receipt-title" tabindex="-1" hidden>
+        <span class="receipt-mark" aria-hidden="true">◌</span>
+        <div>
+          <p class="eyebrow">Volatile preview receipt</p>
+          <h2 id="receipt-title">Your phrases completed the rehearsal.</h2>
+          <p id="receipt-summary"></p>
+          <dl>
+            <div><dt>Receipt</dt><dd id="receipt-id">Not created</dd></div>
+            <div><dt>State</dt><dd id="receipt-state">Preview only · not submitted</dd></div>
+            <div><dt>Candidate close</dt><dd id="receipt-close">2026-07-21 00:00 UTC</dd></div>
+            <div><dt>Persistence</dt><dd>None · refresh clears this page</dd></div>
+          </dl>
+          <p class="receipt-boundary">This preview receipt proves no identity, inclusion, confidentiality, durability, fairness, or token allocation.</p>
+          <button class="text-button" type="button" id="edit-after-receipt">Return to the form</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="sr-only" id="live-status" role="status" aria-live="polite"></div>
+
+  <footer>
+    <div class="footer-row shell">
+      <span>Resonant Time Capsule</span>
+      <span>Non-collecting candidate intake · version 2</span>
+    </div>
+  </footer>
+</body>
+</html>

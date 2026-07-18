@@ -1,0 +1,31 @@
+{
+  "context_pack": "CONTEXT-PACK.md",
+  "mode": "lean-strict",
+  "swu_id": "SWU-LIR-002",
+  "coverage": {
+    "covered": 9,
+    "total": 9,
+    "status": "pass"
+  },
+  "write_scope": [
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/fixtures/",
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/",
+    "development/task-sessions/2026-07-17-time-capsule-demo/SWU-LIR-002/"
+  ],
+  "excluded": [
+    "form source mutation",
+    "backend or database",
+    "production data or credentials",
+    "sealed cryptography",
+    "deployment and DNS",
+    "token state"
+  ],
+  "selectors": [
+    "TASK-LIR-001.md#SWU-LIR-002",
+    "06-architecture-bundle.md#L0-Contract-Simulation",
+    "findings.md#CR-04-CR-05-CR-09",
+    "form-accessibility-review.md#FAR-11",
+    "SWU-LIR-001/BROWSER-VALIDATION.md#Residue",
+    "site/contribute/index.html+simulator.js"
+  ]
+}

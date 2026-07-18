@@ -1,0 +1,62 @@
+{
+  "swu_id": "SWU-LIV2-001",
+  "result": "pass",
+  "validated_at": "2026-07-17T16:46:43Z",
+  "command": "node development/time-capsule-live-intake-v2/tools/validate-phrase-profile.mjs",
+  "profile": "resonant.time-capsule.phrase-profile@1.0.0",
+  "domain": "resonant-time-capsule/phrase/public-at-opening/v1",
+  "fixtures": {
+    "total": 20,
+    "positive": 10,
+    "negative": 10
+  },
+  "drift_checks": {
+    "total": 2,
+    "passed": 2,
+    "checks": [
+      "contract-limit-drift-rejected",
+      "fixture-expectation-drift-rejected"
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "development/time-capsule-live-intake-v2/contracts/phrase-profile-v1.json",
+      "sha256": "47b78bf8fe93ad3ee5ffd6c34e2838105cd83e68d4ffae9eb2749624b9c25ec5"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/fixtures/phrase-profile-v1.json",
+      "sha256": "30f88f63a87881a108ad89d5aa3063c771650e6dbcbeb121afdc42387d6acc13"
+    },
+    {
+      "path": "development/time-capsule-live-intake-v2/tools/validate-phrase-profile.mjs",
+      "sha256": "b42e15481fcd5e050b68c2ead86b658ffc5e8745ed457b804286e32499ed1829"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-001/CONTEXT-PACK.md",
+      "sha256": "8d91e0507c16c4e28a7868082301223d52b2c4441fe28e8cce75245f5f9d8c7e"
+    },
+    {
+      "path": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-001/context-index.json",
+      "sha256": "ae7f67a9c0a47b2ee9e1ed0649c22bf59799c2dba9d5a6809e02afb85ce2feb2"
+    }
+  ],
+  "checks": [
+    {"id": "node-syntax", "result": "pass"},
+    {"id": "contract-json-parse", "result": "pass"},
+    {"id": "fixtures-json-parse", "result": "pass"},
+    {"id": "strict-context-coverage", "result": "pass", "covered": 10, "total": 10},
+    {"id": "git-diff-check", "result": "pass"}
+  ],
+  "blockers": [],
+  "residue": [
+    "Cross-engine browser execution remains later integration evidence.",
+    "This L0 machine receipt does not authorize collection or L2 promotion."
+  ],
+  "extra_sources": [
+    {
+      "path": "development/task-sessions/2026-07-17-time-capsule-demo/SWU-LIR-002/",
+      "requirement": "Task Session evidence naming convention",
+      "changed_result": false
+    }
+  ]
+}

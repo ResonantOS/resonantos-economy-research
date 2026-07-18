@@ -1,0 +1,44 @@
+{
+  "swu_id": "SWU-LIV2-006",
+  "result": "pass",
+  "validated_at": "2026-07-17T21:44:28Z",
+  "validation_method": "fixture-backed selector-by-selector parity review",
+  "fixture": "resonant-time-capsule-intake@2.0.0",
+  "coverage": {
+    "strict_context_obligations": 10,
+    "parity_checks_total": 23,
+    "parity_checks_passed": 23,
+    "access_modes": 5,
+    "critical_retell_prompts": 5,
+    "participant_cells": 25
+  },
+  "manual_evidence": {
+    "screen_reader_keyboard_rtl": "unrun",
+    "native_ime": "unrun",
+    "five_person_retell": "unrun"
+  },
+  "artifacts": [
+    {"path":"development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/ACCESS-MATRIX.md","sha256":"a1a48432d1309b5f840f54dd6fd9de71f1975908503423f79b5e2d57d647081a"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-006/CONTEXT-PACK.md","sha256":"4ff03a009f6cb4cfa4885bc4b89f5a159ea83c51fa9f0326d9c41b35c25c3a8f"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-006/context-index.json","sha256":"0d791f2023509efee207626aefc1c76d0310b00e346ea1f810991d9415d6726d"}
+  ],
+  "checks": [
+    {"id":"strict-context-coverage","result":"pass","covered":10,"total":10},
+    {"id":"fixture-version","result":"pass","value":"2.0.0"},
+    {"id":"short-phrase-quota","result":"pass"},
+    {"id":"fixed-public-at-opening","result":"pass"},
+    {"id":"preview-no-storage-boundary","result":"pass"},
+    {"id":"shared-fingerprint-number-method","result":"pass"},
+    {"id":"ritual-number-non-effect","result":"pass"},
+    {"id":"quiet-no-record","result":"pass"},
+    {"id":"five-access-modes","result":"pass"},
+    {"id":"five-critical-prompts","result":"pass"},
+    {"id":"all-25-cells-pass-rule","result":"pass"},
+    {"id":"full-rerun-rule","result":"pass"},
+    {"id":"receipt-privacy","result":"pass"},
+    {"id":"manual-evidence-not-promoted","result":"pass"}
+  ],
+  "blockers": [],
+  "residue": ["SWU-LIV2-007 through 009 still require real mode-specific human receipts."],
+  "extra_sources": []
+}

@@ -1,0 +1,60 @@
+{
+  "swu_id": "SWU-LIV2-014",
+  "result": "pass",
+  "validated_at": "2026-07-17T22:25:09Z",
+  "command": "npm --prefix development/time-capsule-live-intake-v2/api test -- crypto-redaction",
+  "coverage": {
+    "crypto_redaction_tests": 7,
+    "service_regression": 17,
+    "migration_regression": 6,
+    "invite_session_regression": 8,
+    "phrase_vectors": 20,
+    "envelope_vectors": 26,
+    "envelope_command_tests": 15
+  },
+  "encryption_profile": {
+    "boundary": "entrusted application-level at-rest encryption; not end-to-end encryption",
+    "implementation": "Node.js built-in node:crypto",
+    "algorithm": "aes-256-gcm",
+    "key_bits": 256,
+    "nonce_bytes": 12,
+    "tag_bytes": 16,
+    "ciphertext_format_version": 1,
+    "aad_encoding": "fixed-order JSON encoded as UTF-8",
+    "aad_fields": ["domain", "cohort_id", "envelope_id", "version_no", "horizon_years", "position", "purpose"],
+    "runtime_dependencies_added": 0
+  },
+  "artifacts": [
+    {"path":"development/time-capsule-live-intake-v2/api/package.json","sha256":"ea0a916ebc02a028ee875f5c5d3d9dd08aa14ff4e71b3648d05cd0d6ce98625d"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/crypto/key.ts","sha256":"30d0e4bfe503a6fc20eed96c641ac3dff020547685e58f0673152cf7ae4f32fe"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/crypto/payload.ts","sha256":"790b22da6437f85103c0e14381a9b8656f108aaefa1f68c4940331d4585e9399"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/logging/structured.ts","sha256":"bd16ac7dcc882269b9ced2c3240140204878f558468f8f0b0aed6cdceca542f5"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/crypto/crypto-redaction.test.ts","sha256":"6c9c4ef1e433b9cdad9ebb6831b673952d237a578798b673cfb13ff27f61d593"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-014/CONTEXT-PACK.md","sha256":"aa58fe41fc728a9b580fdc475f44beeb79c4ba694fe415ed09ff95a82def2cc8"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-014/context-index.json","sha256":"7fa209f2c4324b7ae2ebb0a070e7b4c87611fb9dba6cfaa856bcb23f706c522e"}
+  ],
+  "checks": [
+    {"id":"strict-context-coverage","result":"pass","covered":10,"total":10},
+    {"id":"pinned-known-answer-vector","result":"pass"},
+    {"id":"fresh-aead-and-commitment-nonces","result":"pass"},
+    {"id":"aad-binds-all-slot-and-version-coordinates","result":"pass"},
+    {"id":"wrong-key-aad-and-payload-tamper-fail-uniformly","result":"pass"},
+    {"id":"sanitized-protection-errors","result":"pass"},
+    {"id":"canonical-exact-length-key-loader-with-no-default","result":"pass"},
+    {"id":"allowlist-only-structured-log-scan","result":"pass"},
+    {"id":"real-envelope-payload-port-integration","result":"pass"},
+    {"id":"sqlite-wal-cold-copy-receipt-audit-no-plaintext-or-key","result":"pass"},
+    {"id":"no-package-env-or-runtime-key-default","result":"pass"},
+    {"id":"prior-package-regressions","result":"pass","tests":46,"fixture_vectors":46},
+    {"id":"no-repository-sqlite-files","result":"pass"},
+    {"id":"git-diff-check","result":"pass"}
+  ],
+  "blockers": [],
+  "residue": [
+    "The adapter provides entrusted server-side at-rest encryption, not end-to-end encryption or technical exclusion of authorized stewards.",
+    "Production key custody, rotation, separate key backup, operational database backup/restore, and staging wiring remain unimplemented and unclaimed.",
+    "The structured logger is a tested allowlist-only seam; HTTP request lifecycle wiring belongs to a later staged adapter.",
+    "The current Node.js 22.12 SQLite adapter still requires the explicit experimental SQLite runtime flag recorded by SWU-LIV2-011."
+  ],
+  "extra_sources": []
+}

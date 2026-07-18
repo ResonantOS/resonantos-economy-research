@@ -1,0 +1,94 @@
+{
+  "dispatch_id": "task-session-2026-07-17-swu-lir-001",
+  "parent_dispatch_id": "refine-2026-07-17-time-capsule-live-intake-readiness",
+  "intent": {
+    "raw": "Run Task Session for SWU-LIR-001 until a real blocker and have a safe form ready to show tomorrow.",
+    "objective": "Implement and validate the non-collecting Time Capsule contract simulator without real intake, persistence, cryptography, deployment, or token effects.",
+    "target_artifact": "site/contribute non-collecting simulator",
+    "operator_sentence": "Build the safest demonstrable form first."
+  },
+  "mode": "sequence",
+  "techniques": [
+    "sequence",
+    "frame_handoff",
+    "handle_handoff",
+    "validation_loop",
+    "execution_receipt_handoff",
+    "state_namespace_boundary",
+    "authority_split_gate"
+  ],
+  "steps": [
+    {
+      "step_id": "s01",
+      "name": "Build strict task context",
+      "capability_ref": "context-builder",
+      "mode": "lean --strict --emit both",
+      "pattern": "route",
+      "parallel": false,
+      "techniques": ["frame_handoff", "handle_handoff"],
+      "inputs": [{"kind":"intent","ref":"SWU-LIR-001"}],
+      "outputs": [
+        {"kind":"frame","ref":"CONTEXT-PACK.md"},
+        {"kind":"handle","ref":"context-index.json"}
+      ],
+      "stop_conditions": ["Any task obligation lacks controlling evidence, write scope, or validation."]
+    },
+    {
+      "step_id": "s02",
+      "name": "Execute bounded simulator task",
+      "capability_ref": "task-session",
+      "mode": "local --auto-safe-decisions",
+      "pattern": "sequential",
+      "parallel": false,
+      "techniques": ["sequence", "state_namespace_boundary", "authority_split_gate"],
+      "inputs": [
+        {"kind":"frame","ref":"s01:CONTEXT-PACK.md"},
+        {"kind":"handle","ref":"s01:context-index.json"},
+        {"kind":"decision","ref":"DECISIONS.md"}
+      ],
+      "outputs": [{"kind":"artifact","ref":"site/contribute/"}],
+      "stop_conditions": ["A change would enable collection, persistence, sealed cryptography, deployment, or token effects."]
+    },
+    {
+      "step_id": "s03",
+      "name": "Audit browser evidence and synchronize receipt",
+      "capability_ref": "task-session",
+      "mode": "validate",
+      "pattern": "validation",
+      "parallel": false,
+      "techniques": ["validation_loop", "execution_receipt_handoff"],
+      "inputs": [{"kind":"artifact","ref":"s02:site/contribute/"}],
+      "outputs": [{"kind":"artifact","ref":"TASK-SESSION-REPORT.md"}],
+      "evidence_artifact": "TASK-SESSION-REPORT.md",
+      "stop_conditions": ["Any done criterion fails after bounded repair."]
+    }
+  ],
+  "gates": [
+    {"gate_id":"g01-context","kind":"validation","owner":"context-builder","condition":"All nine obligations are covered and the write/validation surfaces are explicit.","on_fail":"block"},
+    {"gate_id":"g02-authorization","kind":"human_approval","owner":"operator","condition":"The 2026-07-17 request explicitly authorizes SWU-LIR-001 source mutation.","on_fail":"block"},
+    {"gate_id":"g03-zero-flow","kind":"validation","owner":"task-session","condition":"Interaction adds no requests, navigation, history, storage, analytics, or service worker.","on_fail":"block"},
+    {"gate_id":"g04-no-crypto","kind":"promotion_guardrail","owner":"security/privacy/custody","condition":"Sealed remains disabled and no cryptographic guarantee is implemented or implied.","on_fail":"block"},
+    {"gate_id":"g05-publication","kind":"human_approval","owner":"operator","condition":"This route does not publish or deploy; publication requires a separate approval.","on_fail":"defer"}
+  ],
+  "observability": {
+    "dispatch_id_required": true,
+    "parent_dispatch_id": "refine-2026-07-17-time-capsule-live-intake-readiness",
+    "trace_events": ["task.context.completed", "task.execution.completed", "task.validation.completed", "task.receipt.synchronized"]
+  },
+  "boundary_evidence": {
+    "state_namespaces": [
+      {"namespace":"simulator volatile memory","owner":"task-session","write_policy":"Browser memory only; refresh clears it."},
+      {"namespace":"production intake and deployment","owner":"future owner-gated routes","write_policy":"No writes in this dispatch."}
+    ],
+    "receipts": [
+      {"receipt_id":"task-session-receipt","producer":"task-session","required_fields":["artifacts","validation_result","status","blockers","handoff_note"],"stores":["TASK-SESSION-REPORT.md"],"on_missing":"block"}
+    ],
+    "promotion_splits": [
+      {"source":"non-collecting simulator evidence","target":"live intake readiness","rule":"L0 interaction evidence cannot authorize collection, sealed protection, deployment, or token effects.","on_violation":"block"}
+    ]
+  },
+  "promotion_guardrails": [
+    "No real words, credentials, persistence, network intake, cryptography, deployment, or token state.",
+    "A simulated receipt or close state proves no identity, inclusion, confidentiality, durability, fairness, or allocation."
+  ]
+}

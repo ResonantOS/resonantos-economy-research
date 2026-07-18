@@ -1,0 +1,32 @@
+{
+  "schema": "arcanum.context-index.v1",
+  "context_id": "2026-07-17-time-capsule-word-to-number-refresh",
+  "status": "pass",
+  "mode": "standard-strict",
+  "objective": "Refresh the candidate UX and copy so word-to-number causality is visible and understandable.",
+  "mutation_mode": "proposal-only",
+  "write_boundary": [
+    "development/invoke-runs/2026-07-17-time-capsule-word-to-number-refresh/",
+    ".arcanum/observability/signals/sigil-invocations.jsonl#append-only"
+  ],
+  "sources": [
+    {"id":"S-01","kind":"operator-correction","ref":"operator correction 2026-07-17","authority":"controlling"},
+    {"id":"S-02","kind":"approved-define","ref":"development/invoke-runs/2026-07-16-time-capsule-intake/SPEC.md","authority":"controlling"},
+    {"id":"S-03","kind":"candidate-mechanism","ref":"development/invoke-runs/2026-07-16-time-capsule-intake/ARCHITECTURE.md","authority":"controlling-for-proposal"},
+    {"id":"S-04","kind":"target-design","ref":"development/invoke-runs/2026-07-17-time-capsule-ux-clarity/ARCHITECTURE.md","authority":"refresh-target"},
+    {"id":"S-05","kind":"target-design","ref":"development/invoke-runs/2026-07-17-time-capsule-ux-clarity/UX-PLAN.md","authority":"refresh-target"},
+    {"id":"S-06","kind":"target-copy","ref":"development/invoke-runs/2026-07-17-time-capsule-ux-clarity/WEB-COPY.md","authority":"refresh-target"},
+    {"id":"S-07","kind":"target-composition","ref":"development/invoke-runs/2026-07-17-time-capsule-ux-clarity/COMPOSITION-PLAN.md","authority":"refresh-target"},
+    {"id":"S-08","kind":"target-validation","ref":"development/invoke-runs/2026-07-17-time-capsule-ux-clarity/WHISPER-VALIDATION.md","authority":"refresh-target"},
+    {"id":"S-09","kind":"inventory-index","ref":".arcanum/inventory/index.json","authority":"locator"}
+  ],
+  "target_artifacts": [
+    "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/ARCHITECTURE.md",
+    "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/UX-PLAN.md",
+    "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/WEB-COPY.md",
+    "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/COMPOSITION-PLAN.md",
+    "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/WHISPER-VALIDATION.md"
+  ],
+  "obligations": ["O-01","O-02","O-03","O-04","O-05","O-06","O-07","O-08","O-09","O-10"]
+}
+

@@ -1,0 +1,32 @@
+{
+  "schema": "arcanum.context-index.v1",
+  "context_id": "2026-07-17-time-capsule-ux-clarity",
+  "status": "pass",
+  "mode": "standard-strict",
+  "objective": "Design a quickly understood Time Capsule experience and complete web copy rewrite without implementing or publishing it.",
+  "write_boundary": [
+    "development/invoke-runs/2026-07-17-time-capsule-ux-clarity/"
+  ],
+  "sources": [
+    {"id":"C-01","kind":"operator-intent","ref":"operator request 2026-07-17","authority":"controlling"},
+    {"id":"C-02","kind":"approved-define","ref":"development/invoke-runs/2026-07-16-time-capsule-intake/SPEC.md","authority":"controlling"},
+    {"id":"C-03","kind":"glossary","ref":"development/invoke-runs/2026-07-16-time-capsule-intake/GLOSSARY.md","authority":"controlling"},
+    {"id":"C-04","kind":"ux-contract","ref":"development/invoke-runs/2026-07-16-time-capsule-intake/UX-PLAN.md","authority":"controlling"},
+    {"id":"C-05","kind":"copy-boundary","ref":"development/invoke-runs/2026-07-16-time-capsule-intake/FORM-COPY.md","authority":"controlling"},
+    {"id":"C-06","kind":"voice-evidence","ref":"development/refinement-runs/2026-07-12-number-lottery/presentation/VOICE-CORRECTIONS.md","authority":"supporting"},
+    {"id":"C-07","kind":"composition-residue","ref":"development/refinement-runs/2026-07-12-number-lottery/presentation/learning-residue.md","authority":"supporting"},
+    {"id":"C-08","kind":"concept","ref":"development/refinement-runs/2026-07-12-number-lottery/presentation/TIME-CAPSULE-CONCEPT-AND-PLAN.md","authority":"supporting"},
+    {"id":"C-09","kind":"current-surface","ref":"development/refinement-runs/2026-07-12-number-lottery/presentation/site/index.html","authority":"evidence"},
+    {"id":"C-10","kind":"current-surface","ref":"development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/index.html","authority":"evidence"},
+    {"id":"C-11","kind":"safety-readiness","ref":"development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md","authority":"controlling"},
+    {"id":"C-12","kind":"inventory-index","ref":".arcanum/inventory/index.json","authority":"locator"},
+    {"id":"C-13","kind":"public-voice-reference","ref":"https://augmentatism.com/","authority":"supporting-only"}
+  ],
+  "obligations": ["O-01","O-02","O-03","O-04","O-05","O-06","O-07","O-08","O-09","O-10","O-11","O-12"],
+  "deferred_evidence": [
+    "five-person first-pass retell test",
+    "screen-reader and keyboard walkthrough of an implementation",
+    "mobile visual validation of an implementation"
+  ]
+}
+

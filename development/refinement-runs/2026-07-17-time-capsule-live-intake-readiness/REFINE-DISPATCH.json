@@ -1,0 +1,397 @@
+{
+  "dispatch_id": "refine-2026-07-17-time-capsule-live-intake-readiness",
+  "parent_dispatch_id": null,
+  "intent": {
+    "raw": "Validate if Refine is needed so we can implement the form, the database, and the safety; confirmed focused Refine run.",
+    "objective": "Produce an implementation-ready, non-executed plan for the Time Capsule live form, intake database, and safety architecture without authorizing real data, cryptography, deployment, token state, or launch.",
+    "target_artifact": "Time Capsule live intake implementation-readiness package",
+    "arcanum_vocabulary": ["refine", "context-builder", "invoke", "interrogation", "distill", "dispatch-spec", "task-session"],
+    "operator_sentence": "Refine the form, database, and safety plan before implementation."
+  },
+  "mode": "mixed",
+  "route_menu": {
+    "context_hint": "The existing static form is L0-ready, while the database and safety layers remain unresolved.",
+    "items": [
+      {"id": "static-form-only", "label": "Static form only", "description": "Skip Refine and route the existing non-collecting form SWUs to Task Session.", "capability_ref": "task-session", "pattern": "route"},
+      {"id": "focused-live-intake", "label": "Focused live intake", "description": "Refine the form API, database, data lifecycle, and safety boundaries while preserving the existing product concept.", "capability_ref": "refine", "pattern": "sequence"},
+      {"id": "full-mechanism", "label": "Full capsule and token mechanism", "description": "Re-open supply selection, beacon, token engineering, ceremony, and launch; broader than the implementation question.", "capability_ref": "refine", "pattern": "sequence"}
+    ],
+    "selected_item_id": "focused-live-intake"
+  },
+  "techniques": [
+    "sequence",
+    "frame_handoff",
+    "handle_handoff",
+    "validation_loop",
+    "owner_boundary_check",
+    "observability_grouping",
+    "minimum_component_catalog",
+    "conditional_component",
+    "data_quality_completeness",
+    "route_menu",
+    "approval_checkpoint",
+    "dialectic",
+    "zig_zag",
+    "residue_ledger",
+    "tournament",
+    "pareto_gate",
+    "recomposition_proof",
+    "x_ray",
+    "component_descriptor",
+    "entity_component_reference",
+    "toy_game",
+    "assessment_failure_reference",
+    "protected_context_flag",
+    "system_agnostic_standard",
+    "local_nuance_coordination",
+    "delegation_boundary",
+    "authority_split_gate",
+    "execution_receipt_handoff",
+    "concrete_path_evidence",
+    "state_namespace_boundary"
+  ],
+  "technique_overlays": [
+    {
+      "overlay_id": "baseline_sequence",
+      "trigger": "The canonical ten-stage Refine loop requires explicit owner handoffs, evidence receipts, and completeness checks.",
+      "techniques": ["sequence", "frame_handoff", "handle_handoff", "validation_loop", "owner_boundary_check", "observability_grouping", "minimum_component_catalog", "conditional_component", "data_quality_completeness"],
+      "applies_to_steps": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10"],
+      "validation_expectation": "Every stage consumes a prior artifact, returns a receipt or blocker, and preserves capability ownership."
+    },
+    {
+      "overlay_id": "route_menu_for_ambiguity",
+      "trigger": "Static-form execution, focused intake refinement, and full mechanism refinement are materially different routes.",
+      "techniques": ["route_menu", "one_or_more_option_set", "approval_checkpoint"],
+      "applies_to_steps": ["s01", "s04", "s10"],
+      "validation_expectation": "The focused live-intake route remains selected and broader token or launch scope remains deferred."
+    },
+    {
+      "overlay_id": "dialectic_for_tension",
+      "trigger": "Inviting participation, durable storage, privacy minimization, moderation, and long-term recoverability can conflict.",
+      "techniques": ["dialectic", "zig_zag", "residue_ledger"],
+      "applies_to_steps": ["s03", "s07", "s10"],
+      "validation_expectation": "Product, data, and safety objections remain visible until explicitly reconciled, deferred, or blocked."
+    },
+    {
+      "overlay_id": "tournament_for_alternatives",
+      "trigger": "The application boundary, database lifecycle, credential session, and sealed-content posture have multiple viable options.",
+      "techniques": ["tournament", "pareto_gate", "recomposition_proof"],
+      "applies_to_steps": ["s05", "s06", "s08"],
+      "validation_expectation": "Alternatives record assumptions, elimination conditions, rejected options, and why the selected unit recomposes."
+    },
+    {
+      "overlay_id": "xray_for_hidden_structure",
+      "trigger": "The visible form hides trust boundaries, sensitive state, owner dependencies, and release-time data flows.",
+      "techniques": ["x_ray", "component_descriptor", "entity_component_reference"],
+      "applies_to_steps": ["s01", "s02", "s06"],
+      "validation_expectation": "The existing architecture X-Ray is consumed by handle and the design emits explicit data/trust-boundary artifacts."
+    },
+    {
+      "overlay_id": "toy_game_for_low_cost_falsification",
+      "trigger": "Real intake is unsafe; invented-data scenarios can falsify transaction, consent, abuse, loss, and recovery assumptions first.",
+      "techniques": ["toy_game", "validation_loop", "assessment_failure_reference"],
+      "applies_to_steps": ["s05", "s08", "s09"],
+      "validation_expectation": "The plan names synthetic attack fixtures and interprets failure as a block, repair, or killed feature."
+    },
+    {
+      "overlay_id": "protected_context_for_sensitive_evidence",
+      "trigger": "Future credentials, words, commitments, keys, moderation records, and incident evidence are sensitive even though this run uses no real data.",
+      "techniques": ["protected_context_flag", "system_agnostic_standard", "local_nuance_coordination", "state_namespace_boundary"],
+      "applies_to_steps": ["s01", "s06", "s09", "s10"],
+      "validation_expectation": "Sensitive fields and state namespaces are explicit; no generated artifact treats them as public or canonical by default."
+    }
+  ],
+  "subagent_strategy": {
+    "status": "recommended",
+    "trigger": "Three independent high-risk surfaces must review the same corpus before parent synthesis.",
+    "explanation": "Role-bound reviewers reduce product-only, database-only, and security-only blind spots while keeping the parent responsible for reconciliation and final approval.",
+    "context": [
+      "The static form is planned but the production application surface is unresolved.",
+      "The test backend is limited to invented data and in-memory or isolated state.",
+      "Real public intake and sealed intake have different owners and safety gates.",
+      "The user explicitly approved the three role-bound subagents."
+    ],
+    "roles": [
+      {"role_id": "form-accessibility", "purpose": "Attack participant comprehension, voluntariness, accessibility, consent, and honest copy.", "owns": "read-only form and participant-journey review receipt", "applies_to_steps": ["s03", "s06", "s07"]},
+      {"role_id": "database-reliability", "purpose": "Attack API, transaction, state, retention, backup, migration, and recovery assumptions.", "owns": "read-only backend and database review receipt", "applies_to_steps": ["s03", "s06", "s07"]},
+      {"role_id": "privacy-safety", "purpose": "Attack privacy, security, abuse, moderation, incident, custody, and stewardship claims.", "owns": "read-only safety and threat-boundary review receipt", "applies_to_steps": ["s03", "s06", "s07"]}
+    ],
+    "parallelism": "fanout",
+    "join_policy": "all",
+    "authorization": "approved",
+    "permission_prompt": "Confirmed by the operator on 2026-07-17: run the focused Refine strategy including all three role-bound subagents.",
+    "receipt_requirements": ["agent_id", "role_id", "dispatch_id", "step_id", "capability_ref", "status", "artifacts", "validation", "observer_status", "blockers", "residue", "handoff_note", "spawn_status", "join_status", "close_status", "reroute"]
+  },
+  "subagent_lifecycle": {
+    "status": "pass",
+    "agents": [
+      {
+        "agent_id": "/root/form_accessibility_review",
+        "role_id": "form-accessibility",
+        "dispatch_id": "2026-07-17-time-capsule-live-intake-review",
+        "step_id": "s03",
+        "capability_ref": "interrogation-review",
+        "status": "FIX",
+        "artifacts": ["subagents-review/form-accessibility-review.md"],
+        "validation": ["parent inspected 11 cited findings", "static repairs and live blockers carried into CR-01 through CR-22"],
+        "observer_status": "parent-verified",
+        "blockers": ["FAR-01", "FAR-02", "FAR-03", "FAR-04", "FAR-06", "FAR-07", "FAR-09", "FAR-10"],
+        "receipt_artifact": "subagents-review/form-accessibility-review.md",
+        "residue": "No comprehension, Unicode/IME, assistive-technology, close, recovery, or release-consent evidence has run.",
+        "handoff_note": "Accepted into parent synthesis without implying live authorization.",
+        "spawn_status": "spawned",
+        "join_status": "completed",
+        "close_status": "closed",
+        "reroute": "parent-synthesis-completed"
+      },
+      {
+        "agent_id": "/root/database_reliability_review",
+        "role_id": "database-reliability",
+        "dispatch_id": "2026-07-17-time-capsule-live-intake-review",
+        "step_id": "s03",
+        "capability_ref": "interrogation-review",
+        "status": "block",
+        "artifacts": ["subagents-review/database-reliability-review.md"],
+        "validation": ["parent inspected 10 cited counter-examples", "reliability requirements carried into architecture and work-pack"],
+        "observer_status": "parent-verified",
+        "blockers": ["DBR-01", "DBR-03", "DBR-04", "DBR-05", "DBR-06", "DBR-08", "DBR-10"],
+        "receipt_artifact": "subagents-review/database-reliability-review.md",
+        "residue": "Production stack and data-lifecycle owners remain unselected.",
+        "handoff_note": "Accepted into parent synthesis as live blockers, not stack selection.",
+        "spawn_status": "spawned",
+        "join_status": "completed",
+        "close_status": "closed",
+        "reroute": "parent-synthesis-completed"
+      },
+      {
+        "agent_id": "/root/privacy_safety_review",
+        "role_id": "privacy-safety",
+        "dispatch_id": "2026-07-17-time-capsule-live-intake-review",
+        "step_id": "s03",
+        "capability_ref": "interrogation-review",
+        "status": "block",
+        "artifacts": ["subagents-review/privacy-safety-review.md"],
+        "validation": ["parent inspected 13 cited findings", "public and sealed live gates remain independent"],
+        "observer_status": "parent-verified",
+        "blockers": ["PS-01", "PS-02", "PS-03", "PS-04", "PS-05", "PS-06", "PS-07", "PS-08", "PS-09", "PS-10", "PS-11", "PS-12", "PS-13"],
+        "receipt_artifact": "subagents-review/privacy-safety-review.md",
+        "residue": "Sealed mode retains low-entropy, client, custody, recovery, migration, and survivor blockers.",
+        "handoff_note": "Accepted into parent synthesis without selecting a cryptographic profile.",
+        "spawn_status": "spawned",
+        "join_status": "completed",
+        "close_status": "closed",
+        "reroute": "parent-synthesis-completed"
+      }
+    ]
+  },
+  "native_stage_receipts": [
+    {"dispatch_id": "refine-2026-07-17-time-capsule-live-intake-readiness", "step_id": "s01", "capability_ref": "context-builder", "receipt_kind": "native-stage", "status": "pass", "artifacts": ["stages/01-context-builder/CONTEXT-PACK.md", "stages/01-context-builder/context-index.json", "stages/01-context-builder/RECEIPT.md"], "validation": ["9 of 9 obligations covered", "12 local sources selected", "strict runtime handoff complete"], "blockers": []},
+    {"dispatch_id": "refine-2026-07-17-time-capsule-live-intake-readiness", "step_id": "s02", "capability_ref": "invoke", "receipt_kind": "native-stage", "status": "pass", "artifacts": ["stages/02-invoke-define.md", "stages/02-live-intake-spec.md", "stages/02-glossary.md"], "validation": ["four capability states defined", "actors, data classes, guarantees, non-guarantees, and owners explicit"], "blockers": []},
+    {"dispatch_id": "refine-2026-07-17-time-capsule-live-intake-readiness", "step_id": "s03", "capability_ref": "interrogation", "receipt_kind": "native-stage", "status": "pass", "artifacts": ["stages/03-interrogation-refine-review.md", "subagents-review/attacks.md", "subagents-review/findings.md"], "validation": ["three reviewers joined", "34 raw findings reconciled to 22 accepted change requests"], "blockers": []},
+    {"dispatch_id": "refine-2026-07-17-time-capsule-live-intake-readiness", "step_id": "s04", "capability_ref": "refine", "receipt_kind": "native-stage", "status": "pass", "artifacts": ["stages/04-research-decision.md"], "validation": ["no external research needed for local owner decisions or unrun evidence"], "blockers": []},
+    {"dispatch_id": "refine-2026-07-17-time-capsule-live-intake-readiness", "step_id": "s05", "capability_ref": "distill", "receipt_kind": "native-stage", "status": "pass", "artifacts": ["stages/05-distill.md"], "validation": ["LIR-SCU-01 selected", "alternatives and recomposition proof recorded"], "blockers": []},
+    {"dispatch_id": "refine-2026-07-17-time-capsule-live-intake-readiness", "step_id": "s06", "capability_ref": "invoke", "receipt_kind": "native-stage", "status": "flag", "artifacts": ["stages/06-invoke-design.md", "stages/06-architecture-bundle.md", "stages/06-glossary-consistency.md"], "validation": ["six architecture views present", "public and sealed live gates remain independent"], "blockers": ["live owner and evidence gates remain unresolved"]},
+    {"dispatch_id": "refine-2026-07-17-time-capsule-live-intake-readiness", "step_id": "s07", "capability_ref": "interrogation", "receipt_kind": "native-stage", "status": "pass", "artifacts": ["stages/07-interrogation-design-review.md"], "validation": ["CR-01 through CR-22 mapped", "DR-01 through DR-03 assigned"], "blockers": []},
+    {"dispatch_id": "refine-2026-07-17-time-capsule-live-intake-readiness", "step_id": "s08", "capability_ref": "distill", "receipt_kind": "native-stage", "status": "pass", "artifacts": ["stages/08-distill-repair.md"], "validation": ["repair obligations fit bounded plan units", "first SCU preserved"], "blockers": []},
+    {"dispatch_id": "refine-2026-07-17-time-capsule-live-intake-readiness", "step_id": "s09", "capability_ref": "invoke", "receipt_kind": "native-stage", "status": "flag", "artifacts": ["stages/09-invoke-plan.md", "stages/09-implementation-layering.md", "stages/09-work-pack.md", "stages/09-execution-pack.md", "stages/09-plan-validation.md"], "validation": ["four layers, seven tasks, thirteen SWUs", "first-unit closure and recomposition pass"], "blockers": ["BL-01 through BL-07 block assigned later layers"]},
+    {"dispatch_id": "refine-2026-07-17-time-capsule-live-intake-readiness", "step_id": "s10", "capability_ref": "interrogation", "receipt_kind": "native-stage", "status": "pass", "artifacts": ["stages/10-final-interrogation.md", "RESULT.md"], "validation": ["all stage artifacts exist", "review dispatch resolved", "no live or implementation overclaim"], "blockers": [], "handoff_note": "Interrogation verified closure; Refine synthesized RESULT.md with an overall flag."}
+  ],
+  "steps": [
+    {
+      "step_id": "s01",
+      "name": "Context Builder Evidence Baseline",
+      "capability_ref": "context-builder",
+      "mode": "standard --strict --emit both --handoff runtime",
+      "pattern": "route",
+      "parallel": false,
+      "techniques": ["frame_handoff", "handle_handoff", "data_quality_completeness", "x_ray", "protected_context_flag"],
+      "inputs": [{"kind": "intent", "ref": "REFINE-SEED-PROPOSAL.md"}],
+      "outputs": [{"kind": "frame", "ref": "stages/01-context-builder/CONTEXT-PACK.md"}, {"kind": "handle", "ref": "stages/01-context-builder/context-index.json"}],
+      "join_policy": "none",
+      "stop_conditions": ["Any implementation obligation lacks a source, explicit gap, owner, or deferred status."]
+    },
+    {
+      "step_id": "s02",
+      "name": "Invoke Define",
+      "capability_ref": "invoke",
+      "mode": "define",
+      "pattern": "sequential",
+      "parallel": false,
+      "techniques": ["sequence", "frame_handoff", "minimum_component_catalog", "component_descriptor", "owner_boundary_check"],
+      "inputs": [{"kind": "frame", "ref": "s01:context-pack"}, {"kind": "handle", "ref": "s01:context-index"}],
+      "outputs": [{"kind": "artifact", "ref": "stages/02-invoke-define.md"}],
+      "join_policy": "none",
+      "stop_conditions": ["The live-intake problem, actors, data classes, guarantees, non-guarantees, or owners remain undefined."
+      ]
+    },
+    {
+      "step_id": "s03",
+      "name": "Interrogation Refine Review",
+      "capability_ref": "interrogation",
+      "mode": "refine-review",
+      "pattern": "dialectic",
+      "parallel": true,
+      "techniques": ["dialectic", "zig_zag", "delegation_boundary", "execution_receipt_handoff", "concrete_path_evidence"],
+      "roles": ["form-accessibility", "database-reliability", "privacy-safety"],
+      "inputs": [{"kind": "artifact", "ref": "s02:define"}, {"kind": "frame", "ref": "s01:context-pack"}],
+      "outputs": [{"kind": "artifact", "ref": "stages/03-interrogation-refine-review.md"}, {"kind": "ledger", "ref": "subagents-review/findings.md"}],
+      "join_policy": "all",
+      "convergence_criteria": ["Every reviewer returns a cited receipt.", "Conflicting findings are accepted, refuted, deferred, or routed.", "Safety blockers remain visible."],
+      "stop_conditions": ["A reviewer remains unjoined.", "A finding claims readiness without evidence."]
+    },
+    {
+      "step_id": "s04",
+      "name": "Research Decision",
+      "capability_ref": "refine",
+      "mode": "research-if-gap-appears",
+      "pattern": "decision",
+      "parallel": false,
+      "techniques": ["route_menu", "approval_checkpoint", "residue_ledger", "protected_context_flag"],
+      "inputs": [{"kind": "artifact", "ref": "s03:refine-review"}],
+      "outputs": [{"kind": "decision", "ref": "stages/04-research-decision.md"}],
+      "join_policy": "human_gate",
+      "stop_conditions": ["External research is needed but lacks a named gap and explicit operator confirmation."]
+    },
+    {
+      "step_id": "s05",
+      "name": "Distill Coherent Implementation Unit",
+      "capability_ref": "distill",
+      "mode": "standard",
+      "pattern": "distill",
+      "parallel": false,
+      "techniques": ["scu_swu_reduction", "tournament", "pareto_gate", "recomposition_proof", "toy_game"],
+      "roles": ["proposer", "balancer"],
+      "inputs": [{"kind": "artifact", "ref": "s03:refine-review"}, {"kind": "decision", "ref": "s04:research-decision"}],
+      "outputs": [{"kind": "artifact", "ref": "stages/05-distill.md"}],
+      "join_policy": "pareto",
+      "convergence_criteria": ["One smallest coherent unit closes under synthetic data.", "Rejected alternatives and elimination conditions are recorded.", "The unit recomposes into later public and sealed paths."],
+      "evidence_artifact": "stages/05-distill.md",
+      "stop_conditions": ["Every candidate requires real sensitive data or an unresolved owner decision."]
+    },
+    {
+      "step_id": "s06",
+      "name": "Invoke Redefine And Design",
+      "capability_ref": "invoke",
+      "mode": "design",
+      "pattern": "sequential",
+      "parallel": false,
+      "techniques": ["sequence", "x_ray", "component_descriptor", "state_namespace_boundary", "authority_split_gate", "recomposition_proof"],
+      "inputs": [{"kind": "artifact", "ref": "s05:distill"}, {"kind": "ledger", "ref": "s03:findings"}],
+      "outputs": [{"kind": "artifact", "ref": "stages/06-invoke-design.md"}],
+      "join_policy": "none",
+      "stop_conditions": ["The design conflates static, synthetic, public-live, or sealed-live states.", "A safety or authority boundary has no owner or fail behavior."]
+    },
+    {
+      "step_id": "s07",
+      "name": "Interrogation Design Review",
+      "capability_ref": "interrogation",
+      "mode": "refine-design-review",
+      "pattern": "validation",
+      "parallel": false,
+      "techniques": ["validation_loop", "dialectic", "residue_ledger", "concrete_path_evidence"],
+      "roles": ["parent-reviewer"],
+      "inputs": [{"kind": "artifact", "ref": "s06:design"}, {"kind": "ledger", "ref": "s03:findings"}],
+      "outputs": [{"kind": "artifact", "ref": "stages/07-interrogation-design-review.md"}],
+      "join_policy": "parent_synthesis",
+      "convergence_criteria": ["Every critical or major review finding is represented in the design, rejected with evidence, or retained as owned residue.", "No reconciliation weakens the static, synthetic, public-live, or sealed-live capability boundaries."],
+      "evidence_artifact": "stages/07-interrogation-design-review.md",
+      "stop_conditions": ["Any critical review finding is absent from the design or gap ledger."]
+    },
+    {
+      "step_id": "s08",
+      "name": "Distill Repair",
+      "capability_ref": "distill",
+      "mode": "validate",
+      "pattern": "validation",
+      "parallel": false,
+      "techniques": ["validation_loop", "recomposition_proof", "toy_game", "assessment_failure_reference"],
+      "roles": ["balancer", "proposer-repair"],
+      "inputs": [{"kind": "artifact", "ref": "s07:design-review"}, {"kind": "artifact", "ref": "s06:design"}],
+      "outputs": [{"kind": "artifact", "ref": "stages/08-distill-repair.md"}],
+      "join_policy": "parent_synthesis",
+      "evidence_artifact": "stages/08-distill-repair.md",
+      "stop_conditions": ["Repair would invent an owner decision, cryptographic guarantee, or production-readiness claim."]
+    },
+    {
+      "step_id": "s09",
+      "name": "Invoke Plan",
+      "capability_ref": "invoke",
+      "mode": "plan",
+      "pattern": "sequential",
+      "parallel": false,
+      "techniques": ["sequence", "scu_swu_reduction", "execution_receipt_handoff", "authority_split_gate", "toy_game", "state_namespace_boundary"],
+      "inputs": [{"kind": "artifact", "ref": "s08:repair"}, {"kind": "artifact", "ref": "s06:design"}],
+      "outputs": [{"kind": "artifact", "ref": "stages/09-invoke-plan.md"}],
+      "join_policy": "none",
+      "evidence_artifact": "stages/09-invoke-plan.md",
+      "stop_conditions": ["A work unit lacks write scope, validation, receipt, owner gate, or safe-data classification."]
+    },
+    {
+      "step_id": "s10",
+      "name": "Final Interrogation And Refine Synthesis",
+      "capability_ref": "interrogation",
+      "mode": "refine-final",
+      "pattern": "synthesis",
+      "parallel": false,
+      "techniques": ["validation_loop", "owner_boundary_check", "data_quality_completeness", "residue_ledger", "approval_checkpoint", "observability_grouping"],
+      "inputs": [{"kind": "artifact", "ref": "s09:plan"}, {"kind": "ledger", "ref": "s03:findings"}, {"kind": "decision", "ref": "s04:research-decision"}],
+      "outputs": [{"kind": "artifact", "ref": "stages/10-final-interrogation.md"}, {"kind": "artifact", "ref": "RESULT.md"}],
+      "join_policy": "parent_synthesis",
+      "stop_conditions": ["Any pass claim lacks an artifact.", "The plan implies live intake authorization.", "A spawned agent remains open or unjoined."]
+    }
+  ],
+  "gates": [
+    {"gate_id": "g01-dispatch-shape", "kind": "validation", "owner": "dispatch-spec", "condition": "REFINE-DISPATCH.json passes deterministic schema and semantic validation before stage execution.", "on_fail": "block"},
+    {"gate_id": "g02-operator-authorization", "kind": "human_approval", "owner": "operator", "condition": "Focused Refine and three role-bound reviewers were explicitly confirmed.", "on_fail": "block"},
+    {"gate_id": "g03-tension", "kind": "quality", "owner": "domainspec-check-tension", "condition": "Two independent tension checkers pass the review sheet before dispatch registration.", "on_fail": "reroute"},
+    {"gate_id": "g04-stage-receipts", "kind": "validation", "owner": "refine", "condition": "Every canonical stage has an artifact or exact blocked reason and native receipt fields.", "on_fail": "block"},
+    {"gate_id": "g05-research", "kind": "human_approval", "owner": "operator", "condition": "External research runs only after a named gap and a separate explicit confirmation.", "on_fail": "defer"},
+    {"gate_id": "g06-owner-boundary", "kind": "policy", "owner": "repository authority", "condition": "Research artifacts do not become implementation, security, privacy, token, governance, or launch authority by proximity.", "on_fail": "block"},
+    {"gate_id": "g07-real-data", "kind": "promotion_guardrail", "owner": "privacy/security/content/archive owners", "condition": "No plan step accepts real credentials, words, sealed content, keys, or moderation records without its later owner gate and evidence.", "on_fail": "block"},
+    {"gate_id": "g08-subagent-close", "kind": "validation", "owner": "parent", "condition": "Every spawned reviewer is joined and closed with a receipt before final synthesis.", "on_fail": "block"},
+    {"gate_id": "g09-next-route", "kind": "promotion_guardrail", "owner": "task-session", "condition": "Implementation begins only through an explicitly authorized bounded SWU after Refine closes.", "on_fail": "defer"}
+  ],
+  "observability": {
+    "dispatch_id_required": true,
+    "parent_dispatch_id": null,
+    "trace_events": ["refine.strategy.confirmed", "dispatch.validation.completed", "context.pack.completed", "subagent.review.registered", "subagent.review.joined", "stage.receipt.recorded", "research.decision.recorded", "distill.repair.completed", "refine.synthesis.completed", "dispatch.closed"],
+    "signal_grouping": "refine-2026-07-17-time-capsule-live-intake-readiness"
+  },
+  "boundary_evidence": {
+    "boundaries": [
+      {"boundary_id": "b01-subagent-review", "kind": "capability_handoff", "from_owner": "refine", "to_owner": "role-bound reviewers", "applies_to_steps": ["s03", "s06", "s07"], "contract": "Reviewers read the frozen local packet and write cited findings only; parent owns reconciliation and final approval.", "on_violation": "block"},
+      {"boundary_id": "b02-external-research", "kind": "external_context", "from_owner": "external sources", "to_owner": "refine", "applies_to_steps": ["s04"], "contract": "No external context is acquired without a named gap and explicit confirmation; external evidence cannot override local authority.", "on_violation": "block"},
+      {"boundary_id": "b03-real-data", "kind": "state_write", "from_owner": "future intake", "to_owner": "future application", "applies_to_steps": ["s06", "s09", "s10"], "contract": "This run may specify but cannot create or accept real credentials, words, commitments, ciphertext, keys, receipts, analytics, or incident records.", "on_violation": "block"},
+      {"boundary_id": "b04-implementation", "kind": "human_approval", "from_owner": "refine", "to_owner": "task-session", "applies_to_steps": ["s09", "s10"], "contract": "The final plan is non-executed; every implementation SWU requires separate authorization.", "on_violation": "block"}
+    ],
+    "authority": {
+      "lifecycle": "refine owns this run; target product owners own later decisions",
+      "execution": "task-session after explicit SWU authorization",
+      "validation": "dispatch-spec, stage capabilities, reviewers, and parent checks",
+      "evidence": "run-local artifacts and append-only dispatch receipts",
+      "memory": "inventory and observability are non-authority read models",
+      "promotion": "repository authority and named product/security/privacy/content/archive owners"
+    },
+    "receipts": [
+      {"receipt_id": "stage-receipt", "producer": "each canonical stage owner", "required_fields": ["dispatch_id", "step_id", "capability_ref", "status", "artifacts", "validation", "blockers", "residue", "handoff_note"], "stores": ["RUN-MANIFEST.md", "evidence-index.json", "REFINE-DISPATCH.json"], "on_missing": "block"},
+      {"receipt_id": "subagent-receipt", "producer": "each role-bound reviewer", "required_fields": ["dispatch_id", "artifacts", "validation_result", "status", "blockers", "residue", "handoff_note"], "stores": ["subagents-review/", "evidence-index.json"], "on_missing": "block"}
+    ],
+    "state_namespaces": [
+      {"namespace": "run-local refinement artifacts", "owner": "refine", "write_policy": "Write only under this run folder."},
+      {"namespace": "dispatch telemetry", "owner": "domainspec-register-dispatch", "write_policy": "Append exactly one dispatch and one close row; never edit prior rows."},
+      {"namespace": "production application and data", "owner": "future task-session and product owners", "write_policy": "No writes in this run."}
+    ],
+    "promotion_splits": [
+      {"source": "Refine result", "target": "implementation readiness", "rule": "A non-executed plan can nominate SWUs but cannot authorize them.", "on_violation": "block"},
+      {"source": "review findings", "target": "security/privacy approval", "rule": "Findings expose gaps; only named owners can accept residual risk or approve a profile.", "on_violation": "block"},
+      {"source": "inventory/observability", "target": "project authority", "rule": "Visibility and telemetry do not promote candidate knowledge or policy.", "on_violation": "block"}
+    ]
+  },
+  "promotion_guardrails": [
+    "No solved, safe, private, fair, production-ready, or launch-ready claim without its named evidence and owner.",
+    "The capsule module cannot mint, allocate, rank, reward, grant membership, or assign governance power.",
+    "Static, synthetic, real-public, and real-sealed capability states remain distinct.",
+    "The sealed feature may be killed; access control is never substituted for encryption.",
+    "Inventory and observability are evidence projections, not authority."
+  ]
+}

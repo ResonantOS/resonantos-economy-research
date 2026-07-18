@@ -1,0 +1,14 @@
+{
+  "schema_version": "invoke.observability.v1",
+  "recorded_at": "2026-07-17T15:03:17Z",
+  "spell": "invoke",
+  "modes": ["design", "plan"],
+  "target": "time-capsule-intake-form",
+  "complexity": "medium",
+  "design_views": 6,
+  "swu_count": 4,
+  "distill_mode": "compact",
+  "distill_verdict": "pass",
+  "subagent_strategy": "none",
+  "next_route": "task-session:SWU-FORM-001"
+}

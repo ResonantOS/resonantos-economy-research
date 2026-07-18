@@ -1,0 +1,263 @@
+{
+  "schema_version": "resonant.time-capsule.field-lifecycle.schema.v1",
+  "contract_id": "resonant.time-capsule.field-lifecycle",
+  "version": "1.0.0",
+  "domain": "resonant-time-capsule/field-lifecycle/public-at-opening/v1",
+  "status": "frozen",
+  "default_for_unspecified_field": "forbidden",
+  "descriptor_fields": [
+    "field", "class", "purpose", "derived_from", "allowed_states",
+    "allowed_stores", "allowed_processors", "log_policy", "analytics_policy",
+    "access_owner", "retention_start", "retention_end", "deletion_behavior",
+    "backup_behavior", "public_export"
+  ],
+  "classes": [
+    "public-rule", "public-content", "public-verification", "private-admission",
+    "private-intake", "private-operations", "sealed-artifact", "forbidden-telemetry"
+  ],
+  "states": ["preview", "synthetic", "staged", "live", "closing", "closed", "recovery", "opening"],
+  "required_categories": {
+    "plaintext": ["phrase_plaintext", "public_opening_phrase"],
+    "nonce": ["phrase_aead_nonce", "horizon_bundle_nonce"],
+    "ciphertext": ["phrase_ciphertext", "backup_ciphertext", "horizon_bundle_ciphertext"],
+    "invite": ["invite_secret", "invite_digest"],
+    "session": ["session_capability", "session_digest"],
+    "envelope": ["envelope_id", "slot_horizon_years", "slot_position", "slot_visibility"],
+    "version": ["envelope_version_no", "manifest_schema_version"],
+    "moderation": ["moderation_disposition", "moderation_reason_code", "moderation_owner_ref"],
+    "audit": ["audit_event_id", "audit_pseudoref", "audit_reason_code", "forbidden_audit_phrase_copy"],
+    "backup": ["backup_ciphertext", "backup_manifest", "backup_key_reference"],
+    "horizon_bundle": ["horizon_bundle_ciphertext", "horizon_bundle_nonce", "horizon_bundle_horizon"],
+    "manifest": ["public_record_id", "public_horizon_years", "public_visibility", "phrase_commitment", "manifest_schema_version", "manifest_order_index", "manifest_fingerprint", "manifest_close_epoch"],
+    "receipt": ["private_receipt_id", "private_receipt_commitment", "public_publication_receipt"]
+  },
+  "required_field_ids": [
+    "phrase_plaintext", "phrase_aead_nonce", "phrase_ciphertext",
+    "invite_secret", "invite_digest", "session_capability", "session_digest",
+    "envelope_id", "envelope_version_no", "slot_horizon_years", "slot_position", "slot_visibility",
+    "moderation_disposition", "moderation_reason_code", "moderation_owner_ref",
+    "audit_event_id", "audit_pseudoref", "audit_reason_code", "forbidden_audit_phrase_copy",
+    "backup_ciphertext", "backup_manifest", "backup_key_reference",
+    "horizon_bundle_ciphertext", "horizon_bundle_nonce", "horizon_bundle_horizon",
+    "public_record_id", "public_horizon_years", "public_visibility", "phrase_commitment",
+    "manifest_schema_version", "manifest_order_index", "manifest_fingerprint", "manifest_close_epoch",
+    "private_receipt_id", "private_receipt_commitment", "public_publication_receipt",
+    "public_opening_phrase", "public_moderation_placeholder"
+  ],
+  "fields": [
+    {
+      "field": "phrase_plaintext", "class": "private-intake", "purpose": "normalize, encrypt, and privately moderate one entrusted phrase", "derived_from": null,
+      "allowed_states": ["preview", "synthetic", "staged", "live", "closing"], "allowed_stores": ["bounded_process_memory"], "allowed_processors": ["phrase_normalizer", "aead_encryptor", "steward_moderation_view"],
+      "log_policy": "forbidden", "analytics_policy": "forbidden", "access_owner": "intake-data-owner", "retention_start": "authorized_processing_start", "retention_end": "encryption_or_moderation_view_end", "deletion_behavior": "erase", "backup_behavior": "excluded", "public_export": "forbidden"
+    },
+    {
+      "field": "phrase_aead_nonce", "class": "private-intake", "purpose": "authenticate encrypted phrase storage", "derived_from": "phrase_plaintext",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed", "recovery"], "allowed_stores": ["intake_database", "encrypted_backup"], "allowed_processors": ["aead_encryptor", "aead_decryptor", "bundle_builder"],
+      "log_policy": "forbidden", "analytics_policy": "forbidden", "access_owner": "intake-data-owner", "retention_start": "phrase_encryption", "retention_end": "governed_archive_end", "deletion_behavior": "impossible-after-publication", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "phrase_ciphertext", "class": "private-intake", "purpose": "store entrusted phrase content at rest", "derived_from": "phrase_plaintext",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed", "recovery"], "allowed_stores": ["intake_database", "encrypted_backup"], "allowed_processors": ["aead_decryptor", "steward_moderation_view", "bundle_builder"],
+      "log_policy": "forbidden", "analytics_policy": "forbidden", "access_owner": "intake-data-owner", "retention_start": "phrase_encryption", "retention_end": "governed_archive_end", "deletion_behavior": "impossible-after-publication", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "invite_secret", "class": "private-admission", "purpose": "present one bearer invitation", "derived_from": null,
+      "allowed_states": ["preview", "synthetic", "staged", "live"], "allowed_stores": ["participant_client_memory"], "allowed_processors": ["invite_exchange"],
+      "log_policy": "forbidden", "analytics_policy": "forbidden", "access_owner": "admission-owner", "retention_start": "invite_delivery", "retention_end": "exchange_or_revocation", "deletion_behavior": "erase", "backup_behavior": "excluded", "public_export": "forbidden"
+    },
+    {
+      "field": "invite_digest", "class": "private-admission", "purpose": "verify an invitation without storing its secret", "derived_from": "invite_secret",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed"], "allowed_stores": ["intake_database", "encrypted_backup"], "allowed_processors": ["invite_exchange", "invite_revocation"],
+      "log_policy": "forbidden", "analytics_policy": "forbidden", "access_owner": "admission-owner", "retention_start": "invite_issue", "retention_end": "admission_reconciliation_end", "deletion_behavior": "tombstone", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "session_capability", "class": "private-admission", "purpose": "authorize a bounded envelope session", "derived_from": "invite_secret",
+      "allowed_states": ["synthetic", "staged", "live"], "allowed_stores": ["participant_client_memory", "server_session_memory"], "allowed_processors": ["session_authorizer"],
+      "log_policy": "forbidden", "analytics_policy": "forbidden", "access_owner": "admission-owner", "retention_start": "session_issue", "retention_end": "expiry_revocation_or_close", "deletion_behavior": "erase", "backup_behavior": "excluded", "public_export": "forbidden"
+    },
+    {
+      "field": "session_digest", "class": "private-admission", "purpose": "verify and revoke a session capability", "derived_from": "session_capability",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed"], "allowed_stores": ["intake_database", "encrypted_backup"], "allowed_processors": ["session_authorizer", "session_revocation"],
+      "log_policy": "forbidden", "analytics_policy": "forbidden", "access_owner": "admission-owner", "retention_start": "session_issue", "retention_end": "session_reconciliation_end", "deletion_behavior": "tombstone", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "envelope_id", "class": "private-intake", "purpose": "identify one internal envelope without exposing admission linkage", "derived_from": null,
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed", "recovery"], "allowed_stores": ["intake_database", "encrypted_backup"], "allowed_processors": ["envelope_service", "snapshot_selector"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "intake-data-owner", "retention_start": "envelope_create", "retention_end": "governed_archive_end", "deletion_behavior": "tombstone", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "envelope_version_no", "class": "private-intake", "purpose": "order immutable confirmed envelope versions", "derived_from": "envelope_id",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed", "recovery"], "allowed_stores": ["intake_database", "encrypted_backup"], "allowed_processors": ["envelope_service", "snapshot_selector"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "intake-data-owner", "retention_start": "envelope_confirm", "retention_end": "governed_archive_end", "deletion_behavior": "tombstone", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "slot_horizon_years", "class": "private-intake", "purpose": "bind an internal slot to its opening horizon", "derived_from": "envelope_id",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed", "recovery"], "allowed_stores": ["intake_database", "encrypted_backup"], "allowed_processors": ["envelope_service", "bundle_builder"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "intake-data-owner", "retention_start": "envelope_confirm", "retention_end": "governed_archive_end", "deletion_behavior": "impossible-after-publication", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "slot_position", "class": "private-intake", "purpose": "order an internal slot within a horizon", "derived_from": "envelope_id",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed", "recovery"], "allowed_stores": ["intake_database", "encrypted_backup"], "allowed_processors": ["envelope_service", "snapshot_selector"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "intake-data-owner", "retention_start": "envelope_confirm", "retention_end": "governed_archive_end", "deletion_behavior": "impossible-after-publication", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "slot_visibility", "class": "private-intake", "purpose": "record fixed public-at-opening intent on the internal slot", "derived_from": "envelope_id",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed", "recovery"], "allowed_stores": ["intake_database", "encrypted_backup"], "allowed_processors": ["envelope_service", "manifest_builder"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "intake-data-owner", "retention_start": "envelope_confirm", "retention_end": "governed_archive_end", "deletion_behavior": "impossible-after-publication", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "moderation_disposition", "class": "private-operations", "purpose": "record accepted, rejected, or pending steward decision", "derived_from": "envelope_version_no",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed"], "allowed_stores": ["intake_database", "encrypted_backup"], "allowed_processors": ["steward_moderation_view", "snapshot_selector"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "moderation-owner", "retention_start": "moderation_action", "retention_end": "governed_archive_end", "deletion_behavior": "tombstone", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "moderation_reason_code", "class": "private-operations", "purpose": "explain a steward disposition without phrase text", "derived_from": "moderation_disposition",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed"], "allowed_stores": ["intake_database", "audit_store", "encrypted_backup"], "allowed_processors": ["steward_moderation_view", "audit_writer"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "moderation-owner", "retention_start": "moderation_action", "retention_end": "governed_archive_end", "deletion_behavior": "tombstone", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "moderation_owner_ref", "class": "private-operations", "purpose": "attribute a steward action to an internal owner", "derived_from": "moderation_disposition",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed"], "allowed_stores": ["intake_database", "audit_store", "encrypted_backup"], "allowed_processors": ["steward_moderation_view", "audit_writer"],
+      "log_policy": "forbidden", "analytics_policy": "forbidden", "access_owner": "moderation-owner", "retention_start": "moderation_action", "retention_end": "owner_audit_end", "deletion_behavior": "tombstone", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "audit_event_id", "class": "private-operations", "purpose": "order one non-content audit event", "derived_from": null,
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed", "recovery", "opening"], "allowed_stores": ["audit_store", "encrypted_backup"], "allowed_processors": ["audit_writer", "audit_reconciler"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "audit-owner", "retention_start": "audit_event", "retention_end": "owner_audit_end", "deletion_behavior": "tombstone", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "audit_pseudoref", "class": "private-operations", "purpose": "refer to an internal record without phrase or invite content", "derived_from": "audit_event_id",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed", "recovery", "opening"], "allowed_stores": ["audit_store", "encrypted_backup"], "allowed_processors": ["audit_writer", "audit_reconciler"],
+      "log_policy": "forbidden", "analytics_policy": "forbidden", "access_owner": "audit-owner", "retention_start": "audit_event", "retention_end": "owner_audit_end", "deletion_behavior": "tombstone", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "audit_reason_code", "class": "private-operations", "purpose": "record a non-content operation reason", "derived_from": "audit_event_id",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed", "recovery", "opening"], "allowed_stores": ["audit_store", "encrypted_backup"], "allowed_processors": ["audit_writer", "audit_reconciler"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "audit-owner", "retention_start": "audit_event", "retention_end": "owner_audit_end", "deletion_behavior": "tombstone", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "forbidden_audit_phrase_copy", "class": "forbidden-telemetry", "purpose": "prohibit phrase content in audit, logs, and analytics", "derived_from": "phrase_plaintext",
+      "allowed_states": [], "allowed_stores": [], "allowed_processors": [], "log_policy": "forbidden", "analytics_policy": "forbidden", "access_owner": "none", "retention_start": "never", "retention_end": "never", "deletion_behavior": "erase", "backup_behavior": "excluded", "public_export": "forbidden"
+    },
+    {
+      "field": "backup_ciphertext", "class": "private-intake", "purpose": "restore encrypted intake state without plaintext", "derived_from": "phrase_ciphertext",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed", "recovery"], "allowed_stores": ["encrypted_backup"], "allowed_processors": ["backup_writer", "restore_runner"],
+      "log_policy": "forbidden", "analytics_policy": "forbidden", "access_owner": "backup-owner", "retention_start": "backup_create", "retention_end": "backup_expiry", "deletion_behavior": "erase", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "backup_manifest", "class": "private-operations", "purpose": "describe encrypted backup scope and integrity", "derived_from": "backup_ciphertext",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed", "recovery"], "allowed_stores": ["encrypted_backup"], "allowed_processors": ["backup_writer", "restore_runner"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "backup-owner", "retention_start": "backup_create", "retention_end": "backup_expiry", "deletion_behavior": "erase", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "backup_key_reference", "class": "private-operations", "purpose": "identify separately protected recovery material without storing the key", "derived_from": "backup_manifest",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed", "recovery"], "allowed_stores": ["operations_registry"], "allowed_processors": ["backup_writer", "restore_runner"],
+      "log_policy": "forbidden", "analytics_policy": "forbidden", "access_owner": "backup-owner", "retention_start": "backup_create", "retention_end": "backup_expiry", "deletion_behavior": "erase", "backup_behavior": "excluded", "public_export": "forbidden"
+    },
+    {
+      "field": "horizon_bundle_ciphertext", "class": "sealed-artifact", "purpose": "publish the encrypted public-at-opening horizon content", "derived_from": "phrase_ciphertext",
+      "allowed_states": ["closed", "recovery", "opening"], "allowed_stores": ["public_archive"], "allowed_processors": ["bundle_builder", "static_decoder"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "archive-owner", "retention_start": "bundle_publish", "retention_end": "indefinite_publication", "deletion_behavior": "impossible-after-publication", "backup_behavior": "excluded", "public_export": "allowlisted"
+    },
+    {
+      "field": "horizon_bundle_nonce", "class": "sealed-artifact", "purpose": "authenticate one published encrypted horizon bundle", "derived_from": "horizon_bundle_ciphertext",
+      "allowed_states": ["closed", "recovery", "opening"], "allowed_stores": ["public_archive"], "allowed_processors": ["bundle_builder", "static_decoder"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "archive-owner", "retention_start": "bundle_publish", "retention_end": "indefinite_publication", "deletion_behavior": "impossible-after-publication", "backup_behavior": "excluded", "public_export": "allowlisted"
+    },
+    {
+      "field": "horizon_bundle_horizon", "class": "public-verification", "purpose": "bind published bundle bytes to a 2, 5, or 10 year opening", "derived_from": "slot_horizon_years",
+      "allowed_states": ["closed", "recovery", "opening"], "allowed_stores": ["public_archive", "public_manifest"], "allowed_processors": ["bundle_builder", "static_decoder", "manifest_builder"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "archive-owner", "retention_start": "bundle_publish", "retention_end": "indefinite_publication", "deletion_behavior": "impossible-after-publication", "backup_behavior": "excluded", "public_export": "allowlisted"
+    },
+    {
+      "field": "public_record_id", "class": "public-verification", "purpose": "identify one public manifest occurrence without private linkage", "derived_from": "envelope_id",
+      "allowed_states": ["closed", "recovery", "opening"], "allowed_stores": ["public_manifest", "public_archive"], "allowed_processors": ["manifest_builder", "static_decoder"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "publication-owner", "retention_start": "manifest_publish", "retention_end": "indefinite_publication", "deletion_behavior": "impossible-after-publication", "backup_behavior": "excluded", "public_export": "allowlisted"
+    },
+    {
+      "field": "public_horizon_years", "class": "public-rule", "purpose": "state the opening horizon in the public record", "derived_from": "slot_horizon_years",
+      "allowed_states": ["closed", "recovery", "opening"], "allowed_stores": ["public_manifest", "public_archive"], "allowed_processors": ["manifest_builder", "static_decoder"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "publication-owner", "retention_start": "manifest_publish", "retention_end": "indefinite_publication", "deletion_behavior": "impossible-after-publication", "backup_behavior": "excluded", "public_export": "allowlisted"
+    },
+    {
+      "field": "public_visibility", "class": "public-rule", "purpose": "state public-at-opening visibility in the public record", "derived_from": "slot_visibility",
+      "allowed_states": ["closed", "recovery", "opening"], "allowed_stores": ["public_manifest", "public_archive"], "allowed_processors": ["manifest_builder", "static_decoder"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "publication-owner", "retention_start": "manifest_publish", "retention_end": "indefinite_publication", "deletion_behavior": "impossible-after-publication", "backup_behavior": "excluded", "public_export": "allowlisted"
+    },
+    {
+      "field": "phrase_commitment", "class": "public-verification", "purpose": "commit to one accepted phrase without revealing it before opening", "derived_from": "phrase_plaintext",
+      "allowed_states": ["closed", "recovery", "opening"], "allowed_stores": ["public_manifest", "public_archive"], "allowed_processors": ["manifest_builder", "static_decoder", "fingerprint_builder"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "publication-owner", "retention_start": "manifest_publish", "retention_end": "indefinite_publication", "deletion_behavior": "impossible-after-publication", "backup_behavior": "excluded", "public_export": "allowlisted"
+    },
+    {
+      "field": "manifest_schema_version", "class": "public-rule", "purpose": "identify canonical manifest serialization rules", "derived_from": null,
+      "allowed_states": ["closed", "recovery", "opening"], "allowed_stores": ["public_manifest", "public_archive"], "allowed_processors": ["manifest_builder", "static_decoder", "fingerprint_builder"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "publication-owner", "retention_start": "manifest_publish", "retention_end": "indefinite_publication", "deletion_behavior": "impossible-after-publication", "backup_behavior": "excluded", "public_export": "allowlisted"
+    },
+    {
+      "field": "manifest_order_index", "class": "public-verification", "purpose": "preserve canonical record ordering", "derived_from": "public_record_id",
+      "allowed_states": ["closed", "recovery", "opening"], "allowed_stores": ["public_manifest", "public_archive"], "allowed_processors": ["manifest_builder", "static_decoder", "fingerprint_builder"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "publication-owner", "retention_start": "manifest_publish", "retention_end": "indefinite_publication", "deletion_behavior": "impossible-after-publication", "backup_behavior": "excluded", "public_export": "allowlisted"
+    },
+    {
+      "field": "manifest_fingerprint", "class": "public-verification", "purpose": "verify the canonical closed manifest", "derived_from": "manifest_order_index",
+      "allowed_states": ["closed", "recovery", "opening"], "allowed_stores": ["public_manifest", "public_archive"], "allowed_processors": ["fingerprint_builder", "static_decoder", "number_verifier"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "publication-owner", "retention_start": "manifest_publish", "retention_end": "indefinite_publication", "deletion_behavior": "impossible-after-publication", "backup_behavior": "excluded", "public_export": "allowlisted"
+    },
+    {
+      "field": "manifest_close_epoch", "class": "public-verification", "purpose": "bind the manifest to one durable close epoch", "derived_from": null,
+      "allowed_states": ["closed", "recovery", "opening"], "allowed_stores": ["public_manifest", "public_archive"], "allowed_processors": ["manifest_builder", "static_decoder"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "publication-owner", "retention_start": "manifest_publish", "retention_end": "indefinite_publication", "deletion_behavior": "impossible-after-publication", "backup_behavior": "excluded", "public_export": "allowlisted"
+    },
+    {
+      "field": "private_receipt_id", "class": "private-intake", "purpose": "identify a participant-facing confirmation receipt", "derived_from": "envelope_version_no",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed"], "allowed_stores": ["intake_database", "participant_client_memory", "encrypted_backup"], "allowed_processors": ["receipt_builder", "envelope_service"],
+      "log_policy": "forbidden", "analytics_policy": "forbidden", "access_owner": "intake-data-owner", "retention_start": "receipt_issue", "retention_end": "participant_access_end", "deletion_behavior": "tombstone", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "private_receipt_commitment", "class": "private-intake", "purpose": "let a participant reconcile a confirmed envelope without phrase text", "derived_from": "phrase_commitment",
+      "allowed_states": ["synthetic", "staged", "live", "closing", "closed"], "allowed_stores": ["intake_database", "participant_client_memory", "encrypted_backup"], "allowed_processors": ["receipt_builder", "envelope_service"],
+      "log_policy": "forbidden", "analytics_policy": "forbidden", "access_owner": "intake-data-owner", "retention_start": "receipt_issue", "retention_end": "participant_access_end", "deletion_behavior": "tombstone", "backup_behavior": "included-with-expiry", "public_export": "forbidden"
+    },
+    {
+      "field": "public_publication_receipt", "class": "public-verification", "purpose": "prove publication of canonical public artifacts", "derived_from": "manifest_fingerprint",
+      "allowed_states": ["closed", "recovery", "opening"], "allowed_stores": ["public_manifest", "public_archive"], "allowed_processors": ["publication_controller", "static_decoder"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "publication-owner", "retention_start": "publication", "retention_end": "indefinite_publication", "deletion_behavior": "impossible-after-publication", "backup_behavior": "excluded", "public_export": "allowlisted"
+    },
+    {
+      "field": "public_opening_phrase", "class": "public-content", "purpose": "release one accepted phrase only when its horizon opens", "derived_from": "horizon_bundle_ciphertext",
+      "allowed_states": ["opening"], "allowed_stores": ["opening_projection", "public_archive"], "allowed_processors": ["static_decoder", "opening_renderer"],
+      "log_policy": "forbidden", "analytics_policy": "forbidden", "access_owner": "public-at-opening", "retention_start": "horizon_open", "retention_end": "indefinite_publication", "deletion_behavior": "impossible-after-publication", "backup_behavior": "excluded", "public_export": "allowlisted"
+    },
+    {
+      "field": "public_moderation_placeholder", "class": "public-content", "purpose": "preserve a stable public occurrence when display is suppressed after opening", "derived_from": "public_record_id",
+      "allowed_states": ["opening"], "allowed_stores": ["opening_projection", "public_archive"], "allowed_processors": ["opening_renderer"],
+      "log_policy": "metadata-only", "analytics_policy": "forbidden", "access_owner": "publication-owner", "retention_start": "post_opening_hide", "retention_end": "indefinite_publication", "deletion_behavior": "impossible-after-publication", "backup_behavior": "excluded", "public_export": "allowlisted"
+    }
+  ],
+  "public_projection_fixtures": [
+    {"id":"valid-manifest-projection","fields":["public_record_id","public_horizon_years","public_visibility","phrase_commitment","manifest_schema_version","manifest_order_index","manifest_fingerprint","manifest_close_epoch"],"expected":{"valid":true}},
+    {"id":"valid-public-archive-projection","fields":["horizon_bundle_ciphertext","horizon_bundle_nonce","horizon_bundle_horizon","manifest_fingerprint","public_publication_receipt"],"expected":{"valid":true}},
+    {"id":"valid-opening-projection","fields":["public_record_id","public_horizon_years","public_visibility","public_opening_phrase"],"expected":{"valid":true}},
+    {"id":"reject-plaintext-export","fields":["public_record_id","phrase_plaintext"],"expected":{"valid":false,"error_code":"public_export_forbidden"}},
+    {"id":"reject-invite-export","fields":["public_record_id","invite_digest"],"expected":{"valid":false,"error_code":"public_export_forbidden"}},
+    {"id":"reject-session-export","fields":["session_capability"],"expected":{"valid":false,"error_code":"public_export_forbidden"}},
+    {"id":"reject-envelope-link-export","fields":["public_record_id","envelope_id"],"expected":{"valid":false,"error_code":"public_export_forbidden"}},
+    {"id":"reject-audit-export","fields":["audit_pseudoref"],"expected":{"valid":false,"error_code":"public_export_forbidden"}},
+    {"id":"reject-private-receipt-export","fields":["private_receipt_id"],"expected":{"valid":false,"error_code":"public_export_forbidden"}},
+    {"id":"reject-forbidden-telemetry-export","fields":["forbidden_audit_phrase_copy"],"expected":{"valid":false,"error_code":"public_export_forbidden"}},
+    {"id":"reject-unknown-export","fields":["invented_unknown_field"],"expected":{"valid":false,"error_code":"public_export_unknown_field"}},
+    {"id":"reject-participant-key-export","fields":["participant_private_key"],"expected":{"valid":false,"error_code":"public_export_unknown_field"}},
+    {"id":"reject-duplicate-export-field","fields":["manifest_fingerprint","manifest_fingerprint"],"expected":{"valid":false,"error_code":"public_export_duplicate_field"}}
+  ],
+  "invariants": {
+    "public_export_is_allowlist_only": true,
+    "unknown_fields_are_forbidden": true,
+    "public_content_states": ["opening"],
+    "pre_opening_live_feed": false,
+    "private_return_fields": false,
+    "participant_key_fields": false,
+    "phrase_plaintext_in_logs_analytics_backups_or_public_export": false,
+    "token_mint_allocation_reward_rank_membership_or_governance_fields": false
+  }
+}

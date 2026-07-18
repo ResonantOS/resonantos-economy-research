@@ -1,0 +1,33 @@
+{
+  "stream": "LIVE-INTAKE-V2-WHOLE-WORK-PACK",
+  "updated_at": "2026-07-17T22:35:38Z",
+  "completed": ["SWU-LIV2-001", "SWU-LIV2-002", "SWU-LIV2-003", "SWU-LIV2-004", "SWU-LIV2-005", "SWU-LIV2-006", "SWU-LIV2-010", "SWU-LIV2-011", "SWU-LIV2-012", "SWU-LIV2-013", "SWU-LIV2-014", "SWU-LIV2-015"],
+  "selected_next": null,
+  "also_ready": [],
+  "dependency_blocked": [
+    "SWU-LIV2-007","SWU-LIV2-008","SWU-LIV2-009",
+    "SWU-LIV2-016","SWU-LIV2-017","SWU-LIV2-018",
+    "SWU-LIV2-019","SWU-LIV2-020","SWU-LIV2-021","SWU-LIV2-022",
+    "SWU-LIV2-023","SWU-LIV2-024","SWU-LIV2-025","SWU-LIV2-026",
+    "SWU-LIV2-027","SWU-LIV2-028","SWU-LIV2-029","SWU-LIV2-030",
+    "SWU-LIV2-031","SWU-LIV2-032","SWU-LIV2-033","SWU-LIV2-034",
+    "SWU-LIV2-035","SWU-LIV2-036","TASK-LIV2-READINESS-009"
+  ],
+  "manual_or_external_gates_passed": [],
+  "latest_receipt": {
+    "swu_id": "SWU-LIV2-015",
+    "result": "pass",
+    "task_session": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-015/TASK-SESSION-REPORT.md",
+    "validation_receipt": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-015/VALIDATION-RECEIPT.json",
+    "validation_receipt_sha256": "46d91232c695182f280dcd85ad0f7451fc98642581d272f18e5f82f9d4c3db28"
+  },
+  "completion_eligible": false,
+  "active_blocker": {
+    "swu_id": "SWU-LIV2-016",
+    "kind": "writer_transaction_time_clock_outside_write_scope",
+    "task_session": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-016/TASK-SESSION-REPORT.md",
+    "decision_gate": "development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-016/DECISION-GATE.md",
+    "recommended_option": "add_preceding_writer_clock_repair_swu"
+  },
+  "next_action": "Resolve the SWU-LIV2-016 writer-clock Decision Gate before implementation resumes."
+}

@@ -1,0 +1,200 @@
+{
+  "dispatch_id": "invoke-whisper-2026-07-17-word-to-number-refresh",
+  "parent_dispatch_id": "invoke-whisper-2026-07-17-time-capsule-ux-clarity",
+  "intent": {
+    "raw": "What people do not understand is how words will become the number.",
+    "objective": "Refresh the candidate UX and copy so the word-to-record-to-fingerprint-to-later-value-to-range-result chain is visible before participation.",
+    "target_artifact": "Time Capsule word-to-number mechanism clarity proposal",
+    "arcanum_vocabulary": ["invoke", "refresh", "whisper", "context-builder", "inventory", "dispatch-spec"],
+    "operator_sentence": "Show exactly how a word affects the number."
+  },
+  "mode": "sequence",
+  "techniques": [
+    "sequence",
+    "frame_handoff",
+    "handle_handoff",
+    "concrete_path_evidence",
+    "x_ray",
+    "artifact_contract_bridge",
+    "route_projection_boundary",
+    "residue_ledger",
+    "validation_loop",
+    "authority_split_gate"
+  ],
+  "subagent_strategy": {
+    "status": "none",
+    "explanation": "The correction is narrow, the evidence corpus is bounded, and the operator named the two parent-executed authoring skills.",
+    "parallelism": "none",
+    "join_policy": "none",
+    "authorization": "not_needed"
+  },
+  "steps": [
+    {
+      "step_id": "s01",
+      "name": "Build correction context",
+      "capability_ref": "context-builder",
+      "mode": "standard --strict --emit both",
+      "pattern": "route",
+      "parallel": false,
+      "techniques": ["frame_handoff", "handle_handoff", "concrete_path_evidence"],
+      "inputs": [{"kind":"intent","ref":"operator correction 2026-07-17"}],
+      "outputs": [
+        {"kind":"frame","ref":"CONTEXT-PACK.md"},
+        {"kind":"handle","ref":"context-index.json"}
+      ],
+      "stop_conditions": ["The exact mechanism, target artifacts, mutation mode, or correction claim lacks evidence."]
+    },
+    {
+      "step_id": "s02",
+      "name": "Resolve refresh target inventory",
+      "capability_ref": "inventory",
+      "capability_status": "local-extension",
+      "mode": "target-artifact-lookup",
+      "pattern": "decision",
+      "parallel": false,
+      "techniques": ["handle_handoff", "concrete_path_evidence"],
+      "inputs": [
+        {"kind":"handle","ref":"s01:context-index.json"},
+        {"kind":"handle","ref":".arcanum/inventory/index.json"}
+      ],
+      "outputs": [{"kind":"artifact","ref":"REFRESH-REPORT.md#Target Artifact Inventory"}],
+      "stop_conditions": ["The prior clarity package cannot be located or distinguished from the approved mechanism source."]
+    },
+    {
+      "step_id": "s03",
+      "name": "Author proposal-only refresh deltas",
+      "capability_ref": "invoke",
+      "mode": "refresh --proposal-only",
+      "pattern": "sequential",
+      "parallel": false,
+      "techniques": ["sequence", "x_ray", "artifact_contract_bridge", "residue_ledger", "authority_split_gate"],
+      "inputs": [
+        {"kind":"frame","ref":"s01:CONTEXT-PACK.md"},
+        {"kind":"artifact","ref":"s02:target-artifact-inventory"}
+      ],
+      "outputs": [
+        {"kind":"artifact","ref":"REFRESH-REPORT.md"},
+        {"kind":"artifact","ref":"refresh-report.json"},
+        {"kind":"artifact","ref":"REFRESH-PATCH-PROPOSAL.md"},
+        {"kind":"artifact","ref":"MECHANISM-CLARITY-DESIGN.md"}
+      ],
+      "stop_conditions": ["A proposed delta edits the prior package, chooses production inputs, or replaces the whole form when a mechanism-only delta is sufficient."]
+    },
+    {
+      "step_id": "s04",
+      "name": "Compose mechanism-first web copy",
+      "capability_ref": "whisper",
+      "capability_status": "local-extension",
+      "mode": "interactive-web-copy-extension",
+      "pattern": "sequential",
+      "parallel": false,
+      "techniques": ["sequence", "frame_handoff", "artifact_contract_bridge", "route_projection_boundary"],
+      "inputs": [
+        {"kind":"frame","ref":"s01:CONTEXT-PACK.md"},
+        {"kind":"artifact","ref":"s03:MECHANISM-CLARITY-DESIGN.md"}
+      ],
+      "outputs": [
+        {"kind":"artifact","ref":"TEXT-INTENT-SUBSTRATE.md"},
+        {"kind":"artifact","ref":"MECHANISM-COMPOSITION-PLAN.md"},
+        {"kind":"artifact","ref":"LANGUAGE-AUDITION.md"},
+        {"kind":"artifact","ref":"REVISED-MECHANISM-COPY.md"},
+        {"kind":"artifact","ref":"LEARNING-RESIDUE.md"}
+      ],
+      "stop_conditions": ["Copy uses letter sums, direct word values, decorative computed outputs, or unexplained mechanism abstractions."]
+    },
+    {
+      "step_id": "s05",
+      "name": "Validate correction and preserve human gate",
+      "capability_ref": "invoke",
+      "mode": "refresh-validation",
+      "pattern": "validation",
+      "parallel": false,
+      "techniques": ["validation_loop", "artifact_contract_bridge", "residue_ledger", "authority_split_gate"],
+      "inputs": [
+        {"kind":"artifact","ref":"s03:REFRESH-REPORT.md"},
+        {"kind":"artifact","ref":"s04:REVISED-MECHANISM-COPY.md"}
+      ],
+      "outputs": [
+        {"kind":"artifact","ref":"WHISPER-VALIDATION.md"},
+        {"kind":"artifact","ref":"INVOKE-RESULT.md"}
+      ],
+      "evidence_artifact": "WHISPER-VALIDATION.md",
+      "stop_conditions": ["The proposal claims people understand the chain without first-time retell evidence."]
+    }
+  ],
+  "gates": [
+    {
+      "gate_id": "g01-mechanism-fidelity",
+      "kind": "validation",
+      "owner": "Resonant Time Capsule product cycle",
+      "condition": "The public chain matches the candidate record, root, later-value, and range-mapping design without letter sums or direct word value.",
+      "on_fail": "block"
+    },
+    {
+      "gate_id": "g02-refresh-boundary",
+      "kind": "promotion_guardrail",
+      "owner": "invoke",
+      "condition": "Proposal-only mode makes no target artifact or HTML mutation.",
+      "on_fail": "block"
+    },
+    {
+      "gate_id": "g03-computed-example",
+      "kind": "validation",
+      "owner": "future Task Session",
+      "condition": "Every example hash and result is computed from declared invented fixtures and independently reproduced.",
+      "on_fail": "defer"
+    },
+    {
+      "gate_id": "g04-human-mechanism-retell",
+      "kind": "validation",
+      "owner": "future participant test",
+      "condition": "First-time readers pass the mechanism thresholds in MECHANISM-CLARITY-DESIGN.md.",
+      "on_fail": "flag"
+    },
+    {
+      "gate_id": "g05-implementation",
+      "kind": "human_approval",
+      "owner": "operator",
+      "condition": "Applying target deltas or editing HTML requires explicit approval and Task Session ownership.",
+      "on_fail": "defer"
+    }
+  ],
+  "observability": {
+    "dispatch_id_required": true,
+    "parent_dispatch_id": "invoke-whisper-2026-07-17-time-capsule-ux-clarity",
+    "trace_events": [
+      "invoke.refresh.context.completed",
+      "invoke.refresh.delta.completed",
+      "whisper.correction.completed",
+      "invoke.refresh.validation.completed"
+    ]
+  },
+  "boundary_evidence": {
+    "state_namespaces": [
+      {
+        "namespace": "refresh proposal artifacts",
+        "owner": "invoke/whisper correction route",
+        "write_policy": "Writes limited to the new refresh folder."
+      },
+      {
+        "namespace": "prior clarity package and current site",
+        "owner": "future approved Task Session",
+        "write_policy": "Read-only in this dispatch."
+      }
+    ],
+    "promotion_splits": [
+      {
+        "source": "mechanism-first authoring proposal",
+        "target": "implemented or validated public explanation",
+        "rule": "Operator approval, computed fixture proof, and human retell evidence remain separate gates.",
+        "on_violation": "block"
+      }
+    ]
+  },
+  "promotion_guardrails": [
+    "Do not present a toy result as ResonantDAO's real or proposed starting supply.",
+    "Do not claim comprehension success from authoring or browser evidence.",
+    "Do not select production range, public source, cryptographic profile, token result, or launch state."
+  ]
+}
+

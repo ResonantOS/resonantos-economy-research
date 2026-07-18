@@ -1,0 +1,32 @@
+{
+  "schema": "arcanum.invoke-whisper.correction-observation.v1",
+  "date": "2026-07-17",
+  "dispatch_id": "invoke-whisper-2026-07-17-word-to-number-refresh",
+  "parent_dispatch_id": "invoke-whisper-2026-07-17-time-capsule-ux-clarity",
+  "spell": "invoke",
+  "mode": "refresh",
+  "composition_skill": "whisper",
+  "target": "resonant-time-capsule-word-to-number-clarity",
+  "status": "flag",
+  "mutation_mode": "proposal-only",
+  "source_signal_count": 3,
+  "delta_classes": {
+    "evidence_added": 1,
+    "artifact_drift": 1,
+    "route_changed": 1
+  },
+  "target_artifact_count": 5,
+  "proposed_count": 5,
+  "applied_count": 0,
+  "skipped_count": 2,
+  "user_correction": true,
+  "correction": "The missing understanding is how words become part of the number.",
+  "prior_assumption_rejected": "Broad time-capsule comprehension was the primary failure.",
+  "selected_candidate": "visible-transformation-first",
+  "transport": "interactive-web-copy-extension",
+  "transport_proof": "unproven",
+  "human_gate": "pending",
+  "execution_authorized": false,
+  "next_route": "operator-review-then-task-session"
+}
+

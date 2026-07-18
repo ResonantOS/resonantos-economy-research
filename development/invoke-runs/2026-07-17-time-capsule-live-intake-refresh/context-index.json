@@ -1,0 +1,27 @@
+{
+  "schema_version": "context-builder.index.v1",
+  "task": "invoke-refresh-time-capsule-live-intake",
+  "mode": "standard",
+  "strict_coverage": "pass",
+  "obligations": 9,
+  "covered": 9,
+  "files_selected": 12,
+  "handoff_pack": "none",
+  "mutation_mode": "proposal-only",
+  "evidence_date": "2026-07-17",
+  "sources": [
+    "DECISIONS.md#D-02-D-16",
+    "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/INVOKE-RESULT.md",
+    "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/WORK-PACK.md",
+    "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/IMPLEMENTATION-LAYERING.md",
+    "development/task-sessions/2026-07-17-time-capsule-intake-form-2h/TASK-SESSION-CLOSEOUT.md",
+    "development/task-sessions/2026-07-17-time-capsule-intake-form-2h/SWU-FORM-VERIFY-004/BROWSER-EVIDENCE.json",
+    "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/RESULT.md",
+    "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md",
+    "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-execution-pack.md",
+    "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-implementation-layering.md",
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/ACCESS-MATRIX.md",
+    ".arcanum/inventory/entries/time-capsule-live-intake-refine.md"
+  ],
+  "blockers": []
+}

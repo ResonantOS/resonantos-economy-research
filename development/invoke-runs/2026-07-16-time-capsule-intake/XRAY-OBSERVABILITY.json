@@ -1,0 +1,54 @@
+{
+  "status": "pass",
+  "skill_status": "seed",
+  "mode": "architecture",
+  "depth": "standard",
+  "target_boundary": "Time Capsule intake, frozen record, one-time supply selection, and 2/5/10-year release architecture in the 2026-07-16 Invoke run",
+  "input": {
+    "source_shape": "four local Markdown design artifacts plus one non-collecting HTML form wireframe",
+    "sources": [
+      "SPEC.md",
+      "ARCHITECTURE.md",
+      "FORM-SPEC.md",
+      "DECISIONS-AND-GAPS.md",
+      "FORM-WIREFRAME.html"
+    ]
+  },
+  "clarification_needed": false,
+  "reader_baseline": "working-reader with newcomer-friendly labels",
+  "selected_lanes": [
+    "surface.summary",
+    "properties.catalog",
+    "components.map",
+    "dependencies.internal",
+    "dependencies.external",
+    "flow.graph",
+    "lifecycle.timeline",
+    "risk.questions",
+    "visual.model"
+  ],
+  "omitted_lanes": [],
+  "renderer_level": "L0",
+  "output_path": "TIME-CAPSULE-ARCHITECTURE-XRAY.html",
+  "evidence_inference_boundary": "explicit in page, lane model, and result receipt",
+  "dependency_coverage": {
+    "internal": "covered",
+    "external": "covered"
+  },
+  "missing_context_gaps": [
+    "real supply unit and inclusive band",
+    "beacon and fallback contract",
+    "credential issuance authority",
+    "sealed-content custody and threat model",
+    "future content display policy",
+    "ten-year archive and successor authority",
+    "independent reproduction evidence"
+  ],
+  "user_correction_signals": [
+    "prefer down-to-earth and inviting language",
+    "make the whole page darker with stronger contrast",
+    "fit the explanation into one coherent view",
+    "show how a word reaches the number",
+    "show system architecture through SVG components"
+  ]
+}

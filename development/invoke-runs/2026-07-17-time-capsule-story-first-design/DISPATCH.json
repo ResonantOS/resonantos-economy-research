@@ -1,0 +1,179 @@
+{
+  "dispatch_id": "invoke-whisper-2026-07-17-time-capsule-story-first-design",
+  "parent_dispatch_id": null,
+  "intent": {
+    "raw": "$invoke the design and show it to me with short phrases, use story telling for me as a user that will participate in this and doesnt know nothing from it",
+    "objective": "Produce a governed story-first participant design and isolated browser prototype that explains the Resonant Time Capsule to a newcomer.",
+    "target_artifact": "Story-first Time Capsule UX design and review prototype",
+    "arcanum_vocabulary": ["invoke", "whisper", "context-builder", "inventory", "distill", "dispatch-spec"],
+    "operator_sentence": "Let me live the story before I have to understand the mechanism."
+  },
+  "mode": "sequence",
+  "techniques": [
+    "sequence",
+    "frame_handoff",
+    "handle_handoff",
+    "artifact_contract_bridge",
+    "scu_swu_reduction",
+    "pareto_gate",
+    "recomposition_proof",
+    "validation_loop",
+    "route_projection_boundary",
+    "authority_split_gate",
+    "concrete_path_evidence",
+    "residue_ledger"
+  ],
+  "subagent_strategy": {
+    "status": "none",
+    "explanation": "The task is one bounded authoring route and no delegation was requested or required.",
+    "parallelism": "none",
+    "join_policy": "none",
+    "authorization": "not_needed"
+  },
+  "steps": [
+    {
+      "step_id": "s01",
+      "name": "Build bounded participant-story context",
+      "capability_ref": "context-builder",
+      "mode": "standard --strict --emit both",
+      "pattern": "route",
+      "parallel": false,
+      "techniques": ["frame_handoff", "handle_handoff", "concrete_path_evidence"],
+      "inputs": [{"kind":"intent","ref":"operator request 2026-07-17"}],
+      "outputs": [{"kind":"frame","ref":"CONTEXT-PACK.md"},{"kind":"handle","ref":"context-index.json"}],
+      "stop_conditions": ["A participant promise, ritual claim, or capability boundary lacks evidence or an explicit candidate label."]
+    },
+    {
+      "step_id": "s02",
+      "name": "Select design and composition transports",
+      "capability_ref": "inventory",
+      "capability_status": "local-extension",
+      "mode": "template-profile-lookup",
+      "pattern": "decision",
+      "parallel": false,
+      "techniques": ["sequence", "handle_handoff", "route_projection_boundary"],
+      "inputs": [{"kind":"handle","ref":"s01:context-index.json"},{"kind":"handle","ref":".arcanum/inventory/index.json"}],
+      "outputs": [{"kind":"decision","ref":"TEMPLATE-SELECTION.md"}],
+      "stop_conditions": ["The transport cannot express six architecture views, the full journey, and the rehearsal boundary."]
+    },
+    {
+      "step_id": "s03",
+      "name": "Design the story-first participant architecture",
+      "capability_ref": "invoke",
+      "mode": "design",
+      "pattern": "sequential",
+      "parallel": false,
+      "techniques": ["sequence", "artifact_contract_bridge", "authority_split_gate", "residue_ledger"],
+      "inputs": [{"kind":"frame","ref":"s01:CONTEXT-PACK.md"},{"kind":"decision","ref":"s02:TEMPLATE-SELECTION.md"}],
+      "outputs": [{"kind":"artifact","ref":"ARCHITECTURE.md"},{"kind":"artifact","ref":"UX-PLAN.md"},{"kind":"artifact","ref":"GLOSSARY-CONSISTENCY.md"},{"kind":"artifact","ref":"UPSTREAM-PATCH-REQUESTS.md"}],
+      "stop_conditions": ["The design implies a personal message score, Bitcoin message storage, working saved-message custody, or a new number at each opening."]
+    },
+    {
+      "step_id": "s04",
+      "name": "Reduce and prove the participant unit",
+      "capability_ref": "distill",
+      "mode": "standard",
+      "pattern": "distill",
+      "parallel": false,
+      "techniques": ["scu_swu_reduction", "recomposition_proof", "authority_split_gate"],
+      "inputs": [{"kind":"artifact","ref":"s03:ARCHITECTURE.md"},{"kind":"artifact","ref":"s03:UX-PLAN.md"}],
+      "outputs": [{"kind":"artifact","ref":"DISTILL-VALIDATION.md"}],
+      "evidence_artifact": "DISTILL-VALIDATION.md",
+      "stop_conditions": ["The selected unit loses the future return, number path, or voluntary participation boundary."]
+    },
+    {
+      "step_id": "s05",
+      "name": "Compose and audition the participant story",
+      "capability_ref": "whisper",
+      "capability_status": "local-extension",
+      "mode": "interactive-web-copy-extension --standard-distill",
+      "pattern": "sequential",
+      "parallel": false,
+      "techniques": ["sequence", "frame_handoff", "pareto_gate", "artifact_contract_bridge"],
+      "inputs": [{"kind":"frame","ref":"s01:CONTEXT-PACK.md"},{"kind":"artifact","ref":"s04:DISTILL-VALIDATION.md"}],
+      "outputs": [{"kind":"artifact","ref":"TEXT-INTENT-SUBSTRATE.md"},{"kind":"artifact","ref":"COMPOSITION-PLAN.md"},{"kind":"artifact","ref":"LANGUAGE-AUDITION.md"},{"kind":"artifact","ref":"STORY-COPY.md"},{"kind":"artifact","ref":"LEARNING-RESIDUE.md"}],
+      "stop_conditions": ["Copy becomes rule-first, coercive, grandiose, technically false, or incomplete across the journey."]
+    },
+    {
+      "step_id": "s06",
+      "name": "Project the candidate into an isolated review prototype",
+      "capability_ref": "invoke",
+      "mode": "design-projection",
+      "pattern": "validation",
+      "parallel": false,
+      "techniques": ["route_projection_boundary", "artifact_contract_bridge", "validation_loop"],
+      "inputs": [{"kind":"artifact","ref":"s03:ARCHITECTURE.md"},{"kind":"artifact","ref":"s05:STORY-COPY.md"}],
+      "outputs": [{"kind":"artifact","ref":"STORY-PROTOTYPE.html"},{"kind":"artifact","ref":"WHISPER-VALIDATION.md"},{"kind":"artifact","ref":"DESIGN-TRANSPORT.md"},{"kind":"artifact","ref":"INVOKE-RESULT.md"}],
+      "evidence_artifact": "WHISPER-VALIDATION.md",
+      "stop_conditions": ["The prototype collects, persists, transmits, or claims to implement saved-message protection."]
+    }
+  ],
+  "gates": [
+    {
+      "gate_id": "g01-story-integrity",
+      "kind": "validation",
+      "owner": "invoke",
+      "condition": "The visitor encounters invitation, future openings, message action, shared-number path, and honest receipt in that order.",
+      "on_fail": "block"
+    },
+    {
+      "gate_id": "g02-meaning-integrity",
+      "kind": "promotion_guardrail",
+      "owner": "whisper",
+      "condition": "The copy does not imply personal numeric weight, Bitcoin message storage, live saved-message safety, reward, or compulsory participation.",
+      "on_fail": "block"
+    },
+    {
+      "gate_id": "g03-capability-boundary",
+      "kind": "validation",
+      "owner": "invoke",
+      "condition": "The HTML is browser-only, volatile, and isolated from the hosted site.",
+      "on_fail": "block"
+    },
+    {
+      "gate_id": "g04-human-comprehension",
+      "kind": "validation",
+      "owner": "future participant test",
+      "condition": "The acceptance signals in UX-PLAN.md pass with first-time participants.",
+      "on_fail": "flag"
+    },
+    {
+      "gate_id": "g05-production",
+      "kind": "human_approval",
+      "owner": "operator",
+      "condition": "Hosted-site mutation, live intake, and ceremony implementation require separate authorization.",
+      "on_fail": "defer"
+    }
+  ],
+  "observability": {
+    "dispatch_id_required": true,
+    "trace_events": ["invoke.context.completed", "invoke.design.completed", "distill.validation.completed", "whisper.composition.completed", "invoke.prototype.validated"]
+  },
+  "boundary_evidence": {
+    "state_namespaces": [
+      {
+        "namespace": "candidate design outputs",
+        "owner": "invoke-whisper route",
+        "write_policy": "Writes limited to development/invoke-runs/2026-07-17-time-capsule-story-first-design/."
+      },
+      {
+        "namespace": "hosted site and live systems",
+        "owner": "future Task Session and production owners",
+        "write_policy": "Read-only; no publication, deployment, collection, persistence, or ceremony mutation."
+      }
+    ],
+    "promotion_splits": [
+      {
+        "source": "candidate story and prototype",
+        "target": "published participant experience",
+        "rule": "Operator review and first-time participant comprehension evidence are required before promotion.",
+        "on_violation": "block"
+      }
+    ]
+  },
+  "promotion_guardrails": [
+    "Do not claim the story has solved comprehension before participant evidence exists.",
+    "Do not reuse the prototype as live intake or a privacy implementation.",
+    "Do not treat candidate Bitcoin or range rules as approved ceremony rules."
+  ]
+}

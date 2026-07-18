@@ -1,0 +1,45 @@
+{
+  "schema": "arcanum.invoke-whisper.run-observation.v1",
+  "date": "2026-07-17",
+  "dispatch_id": "invoke-whisper-2026-07-17-time-capsule-ux-clarity",
+  "skills": ["invoke", "whisper"],
+  "target": "resonant-time-capsule-ux-clarity",
+  "status": "flag",
+  "phases_attempted": [
+    "context",
+    "interview-gap-check",
+    "inventory-template-selection",
+    "design",
+    "distill-validation",
+    "whisper-composition",
+    "transport-validation"
+  ],
+  "sigils_used": [
+    "context-builder",
+    "structured-interview-kits",
+    "inventory",
+    "invoke",
+    "distill",
+    "whisper",
+    "dispatch-spec"
+  ],
+  "interview_result": {
+    "questions_asked": 0,
+    "rationale": "Audience, destination, mechanics, action, boundaries, and the reported comprehension failure were already concrete."
+  },
+  "design_views": 6,
+  "distill_mode": "standard",
+  "distill_rounds": 2,
+  "whisper_transport": "interactive-web-copy-extension",
+  "transport_proof": "unproven",
+  "human_gate": "pending",
+  "full_dispatch_required": true,
+  "execution_authorized": false,
+  "next_route": "task-session-after-operator-approval",
+  "notes": [
+    "Candidate copy covers the complete interactive surface.",
+    "No current HTML, live intake, persistence, privacy mechanism, deployment, or token state was changed.",
+    "Do not claim comprehension success until first-time participant evidence passes."
+  ]
+}
+

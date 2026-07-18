@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-07-17T04:51:35Z",
+  "dispatch_id": "task-session-2026-07-17-swu-lir-002",
+  "parent_dispatch_id": "task-session-2026-07-17-swu-lir-001",
+  "sigil": "task-session",
+  "tier": "arcana",
+  "mode": "local-auto-safe",
+  "swu_id": "SWU-LIR-002",
+  "request_summary": "Version the simulator fixtures, prove machine parity, and continue only until the first real evidence blocker.",
+  "result": "flag",
+  "meaningful_execution": true,
+  "generated_output_count": 13,
+  "quality_bar_status": "partial",
+  "changed_files": [
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/fixtures/time-capsule-fixtures-v1.js",
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/fixture-runner.html",
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/fixture-runner.css",
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/fixture-runner.js",
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/ACCESS-MATRIX.md",
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/README.md",
+    "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md",
+    "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack/tasks/TASK-LIR-001.md"
+  ],
+  "validation": [
+    "strict context coverage 9/9",
+    "Dispatch Spec pass",
+    "JavaScript and HTML static checks pass",
+    "Playwright Firefox fixture runner 29/29 pass",
+    "clean console, no interaction requests, no storage/cookies, no overflow"
+  ],
+  "blockers": [
+    "actual screen-reader/browser evidence unrun",
+    "actual native-IME evidence unrun",
+    "five-person critical consequence-retell protocol unrun"
+  ],
+  "observer": {
+    "signals": [
+      "quality-pass",
+      "useful-pattern",
+      "workflow-gap"
+    ],
+    "anti_pattern_hits": [],
+    "output_contract_drift": false,
+    "user_correction": false,
+    "recommendation": "reflect-now",
+    "reflection_trigger": "output-threshold"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "swu_id": "SWU-LIV2-013",
+  "result": "pass",
+  "validated_at": "2026-07-17T22:15:59Z",
+  "command": "npm --prefix development/time-capsule-live-intake-v2/api test -- envelope-commands",
+  "coverage": {
+    "phrase_vectors": 20,
+    "envelope_vectors": 26,
+    "command_tests": 15,
+    "service_regression": 17,
+    "migration_regression": 6,
+    "invite_session_regression": 8
+  },
+  "command_model": {
+    "operation": "confirm_envelope",
+    "snapshot_receipt_slots": 6,
+    "initial_expected_version": null,
+    "idempotency_scope": ["session_scope","confirm_envelope","idempotency_key"],
+    "payload_port": "required; invented test port explicitly is not encryption"
+  },
+  "artifacts": [
+    {"path":"development/time-capsule-live-intake-v2/api/package.json","sha256":"951bb5bd1931850a5bdd00efbb1b034adc6a3da1f58673d71087a34323aaf31e"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/envelope/validation.ts","sha256":"04a8a10b30dd04d81b3a2679a7542513f885622c01c33a2c7ca3333f395986f1"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/envelope/repository.ts","sha256":"54a78a348f564a38ed83b1aa4030f316b1586aa4d2441e8c71f00edf690f52b9"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/envelope/service.ts","sha256":"d197a2be23401b8dbc8e462b02b0dd4465aeef3ae701b5dc9840e1ff9ff8ba95"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/envelope/envelope-commands.test.ts","sha256":"29a42fc8eeebd5a11ff3056bd1824ff026fe5658a4953bbacfb2460ccaa74481"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-013/CONTEXT-PACK.md","sha256":"083edabf34c2907d53bd5bd8475dc09cfde604a7dc529d17b3c1d48c22eb5d03"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-013/context-index.json","sha256":"6471bfd8155940d82cb255df0d903c6132a17783ba7950b85f26d1ded94250f9"}
+  ],
+  "checks": [
+    {"id":"strict-context-coverage","result":"pass","covered":10,"total":10},
+    {"id":"phrase-fixture-parity","result":"pass","vectors":20},
+    {"id":"envelope-fixture-parity","result":"pass","vectors":26},
+    {"id":"initial-confirm","result":"pass"},
+    {"id":"edit-and-slot-withdrawal","result":"pass"},
+    {"id":"unchanged-occurrence-reuse","result":"pass"},
+    {"id":"changed-occurrence-rotation","result":"pass"},
+    {"id":"replay-before-version-check","result":"pass"},
+    {"id":"frozen-precedence-and-typed-errors","result":"pass"},
+    {"id":"session-scoped-idempotency","result":"pass"},
+    {"id":"two-writer-one-commit","result":"pass"},
+    {"id":"mid-commit-full-rollback","result":"pass"},
+    {"id":"receipt-and-audit-no-phrase","result":"pass"},
+    {"id":"no-route-log-public-or-autosave-seam","result":"pass"},
+    {"id":"full-package-regression","result":"pass","tests":31},
+    {"id":"no-repository-sqlite-files","result":"pass"}
+  ],
+  "blockers": [],
+  "residue": ["The invented payload port is intentionally not encryption; SWU-LIV2-014 must supply reviewed AEAD and redaction before staging.","The immutable idempotency receipt is the private version occurrence map; later close selection must reconcile it before any retention change."],
+  "extra_sources": []
+}

@@ -1,0 +1,54 @@
+{
+  "dispatch_id": "2026-07-17-time-capsule-live-intake-review",
+  "schema_version": "0.6.0",
+  "dispatch_type": "review",
+  "goal": "Red-team the existing Time Capsule form, data, and safety contracts before the parent Refine run authors an implementation-ready non-executed plan.",
+  "context": "The current package is plan-ready only for a non-collecting form and synthetic fixtures. Real intake lacks a selected application stack, production database contract, credential governance, sealed-data threat model, moderation policy, incident ownership, and long-term stewardship. Reviewers attack the same local source packet and write cited findings only; they do not implement fixes or approve launch.",
+  "p1_trigger": ["parallelism", "context protection", "synthesis of three independent risk surfaces"],
+  "max_loops": 1,
+  "final_approver": "parent",
+  "anti_bias_global": "whether inviting participation, durable correctness, and fail-safe privacy can coexist without one surface silently weakening another",
+  "working_folder": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/subagents-review/",
+  "authorization": "approved-by-user-2026-07-17",
+  "groups": [
+    {
+      "group_id": "attackers",
+      "subject_role": "evaluate",
+      "n": 3,
+      "robot_talks": false,
+      "anti_bias": "attack-vector",
+      "predicted_disagreements": [
+        "form-accessibility runs a scope attack while database-reliability runs counter-examples on the attack-vector axis; form may accept a comprehensible bounded journey that data rejects until transaction and recovery boundaries close, so data exposes product optimism.",
+        "form-accessibility runs a scope attack while privacy-safety runs a definitional attack on the attack-vector axis; form may favor an inviting sealed choice that safety rejects when consent or confidentiality language exceeds its guarantees, so safety exposes engagement bias.",
+        "database-reliability runs counter-examples while privacy-safety runs a definitional attack on the attack-vector axis; data may accept correctly durable storage that safety rejects as unnecessary or harmful retention, so safety exposes correctness-without-minimization bias and data exposes safety claims without operable state."
+      ],
+      "agents": [
+        {
+          "agent_name": "Kahneman, Daniel",
+          "role": "explorer",
+          "model": "gpt-5.4",
+          "token_budget": 2400,
+          "angle": "scope attack: test whether the complete participant journey is understandable, voluntary, accessible, and honest about public, sealed, quiet, edit, close, receipt, and release consequences",
+          "output": "subagents-review/form-accessibility-review.md"
+        },
+        {
+          "agent_name": "Meadows, Donella H.",
+          "role": "explorer",
+          "model": "gpt-5.4",
+          "token_budget": 2400,
+          "angle": "counter-example attack: use concurrency, replay, partial failure, retention, migration, backup, restore, and close-time cases to break the API and database state model",
+          "output": "subagents-review/database-reliability-review.md"
+        },
+        {
+          "agent_name": "Taleb, Nassim Nicholas",
+          "role": "explorer",
+          "model": "gpt-5.4",
+          "token_budget": 2400,
+          "angle": "definitional attack: challenge every privacy, sealed, safety, consent, moderation, incident, recovery, and ten-year stewardship promise against explicit guarantees and tail failures",
+          "output": "subagents-review/privacy-safety-review.md"
+        }
+      ]
+    }
+  ],
+  "connections": []
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "context-builder.index.v1",
+  "target": "Live Intake Plan V2",
+  "mode": "deep",
+  "strict": true,
+  "generated_at": "2026-07-17T00:00:00Z",
+  "coverage": {"covered": 12, "total": 12, "status": "pass"},
+  "obligations": [
+    {"id":"O-01","status":"covered","sources":["development/task-sessions/2026-07-17-time-capsule-intake-form-2h/TASK-SESSION-CLOSEOUT.md","development/task-sessions/2026-07-17-time-capsule-intake-form-2h/SWU-FORM-VERIFY-004/BROWSER-EVIDENCE.json"]},
+    {"id":"O-02","status":"covered","sources":["development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/fixtures/time-capsule-fixtures-v1.js","development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/REFRESH-REPORT.md"]},
+    {"id":"O-03","status":"covered","sources":["DECISIONS.md#d-02--initial-admission-and-quota-credential","DECISIONS.md#d-03--initial-runtime-and-datastore","DECISIONS.md#d-04--participant-changes-before-close"]},
+    {"id":"O-04","status":"covered","sources":["DECISIONS.md#d-01--initial-saved-message-privacy-boundary","DECISIONS.md#d-05--live-public-feed-and-rapid-moderation","DECISIONS.md#d-15--future-message-visibility"]},
+    {"id":"O-05","status":"covered","sources":["DECISIONS.md#d-07--authoritative-closing-instant","development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/06-architecture-bundle.md#cohort-and-close-state-machine"]},
+    {"id":"O-06","status":"covered","sources":["DECISIONS.md#d-08--number-seed","DECISIONS.md#d-09--number-range","DECISIONS.md#d-13--bitcoin-commitment-carrier","DECISIONS.md#d-14--bitcoin-commitment-and-number-signal-coupling"]},
+    {"id":"O-07","status":"covered","sources":["DECISIONS.md#d-11--future-opening-architecture","DECISIONS.md#d-16--long-term-maintenance-model","development/research/2026-07-17-agentless-time-capsule-protocol/gates/closure-gates.md"]},
+    {"id":"O-08","status":"covered","sources":["development/refinement-runs/2026-07-12-number-lottery/presentation/deployment/DEPLOYMENT-VALIDATION.md"]},
+    {"id":"O-09","status":"covered","sources":["development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/DISTILL-VALIDATION.md","development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/06-architecture-bundle.md#view-1--context"]},
+    {"id":"O-10","status":"covered","sources":["development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md",".arcanum/inventory/entries/time-capsule-live-intake-refine.md"]},
+    {"id":"O-11","status":"covered","sources":["development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/DISTILL-VALIDATION.md#smallest-coherent-unit"]},
+    {"id":"O-12","status":"covered","sources":["DECISIONS.md#d-09--number-range","development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/README.md#participant-contract"]}
+  ],
+  "excluded": ["raw subagent reviews","private-return implementation","immediate public feed","token policy and minting","production secrets and external writes"]
+}
+

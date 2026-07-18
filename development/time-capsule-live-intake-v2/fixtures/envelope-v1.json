@@ -1,0 +1,184 @@
+{
+  "fixture_set_id": "resonant.time-capsule.envelope.fixtures",
+  "version": "1.0.0",
+  "schema_ref": "resonant.time-capsule.envelope.v1",
+  "invented_values_only": true,
+  "base_envelope": {
+    "schema_version": "resonant.time-capsule.envelope.v1",
+    "domain": "resonant-time-capsule/envelope/public-at-opening/v1",
+    "phrase_profile": {
+      "profile_id": "resonant.time-capsule.phrase-profile",
+      "version": "1.0.0",
+      "domain": "resonant-time-capsule/phrase/public-at-opening/v1"
+    },
+    "state": "confirmed",
+    "slots": [
+      {"horizon_years": 2, "position": 1, "visibility": "public_at_opening", "phrase": "keep becoming"},
+      {"horizon_years": 2, "position": 2, "visibility": "public_at_opening", "phrase": ""},
+      {"horizon_years": 5, "position": 1, "visibility": "public_at_opening", "phrase": ""},
+      {"horizon_years": 5, "position": 2, "visibility": "public_at_opening", "phrase": ""},
+      {"horizon_years": 10, "position": 1, "visibility": "public_at_opening", "phrase": ""},
+      {"horizon_years": 10, "position": 2, "visibility": "public_at_opening", "phrase": ""}
+    ]
+  },
+  "vectors": [
+    {
+      "id": "valid-one-phrase",
+      "mutations": [],
+      "expected": {"valid": true, "nonempty_phrases": 1}
+    },
+    {
+      "id": "valid-horizon-five-only",
+      "mutations": [
+        {"op": "set_phrase", "horizon_years": 2, "position": 1, "value": ""},
+        {"op": "set_phrase", "horizon_years": 5, "position": 1, "value": "remember this light"}
+      ],
+      "expected": {"valid": true, "nonempty_phrases": 1}
+    },
+    {
+      "id": "valid-second-after-first",
+      "mutations": [
+        {"op": "set_phrase", "horizon_years": 2, "position": 2, "value": "meet me here again"}
+      ],
+      "expected": {"valid": true, "nonempty_phrases": 2}
+    },
+    {
+      "id": "valid-duplicate-phrase-values",
+      "mutations": [
+        {"op": "set_phrase", "horizon_years": 2, "position": 1, "value": "the same mark"},
+        {"op": "set_phrase", "horizon_years": 2, "position": 2, "value": "the same mark"}
+      ],
+      "expected": {"valid": true, "nonempty_phrases": 2}
+    },
+    {
+      "id": "valid-all-six-places",
+      "mutations": [
+        {"op": "set_phrase", "horizon_years": 2, "position": 1, "value": "two one"},
+        {"op": "set_phrase", "horizon_years": 2, "position": 2, "value": "two two"},
+        {"op": "set_phrase", "horizon_years": 5, "position": 1, "value": "five one"},
+        {"op": "set_phrase", "horizon_years": 5, "position": 2, "value": "five two"},
+        {"op": "set_phrase", "horizon_years": 10, "position": 1, "value": "ten one"},
+        {"op": "set_phrase", "horizon_years": 10, "position": 2, "value": "ten two"}
+      ],
+      "expected": {"valid": true, "nonempty_phrases": 6}
+    },
+    {
+      "id": "valid-rtl-and-emoji",
+      "mutations": [
+        {"op": "set_phrase", "horizon_years": 2, "position": 1, "value": "تذكّر هذه اللحظة"},
+        {"op": "set_phrase", "horizon_years": 2, "position": 2, "value": "Meet me here again 👩‍🚀"}
+      ],
+      "expected": {"valid": true, "nonempty_phrases": 2}
+    },
+    {
+      "id": "invalid-schema-version",
+      "mutations": [{"op": "set_envelope_field", "field": "schema_version", "value": "resonant.time-capsule.envelope.v2"}],
+      "expected": {"valid": false, "error_code": "envelope_schema_version", "error_contains": "schema version"}
+    },
+    {
+      "id": "invalid-domain",
+      "mutations": [{"op": "set_envelope_field", "field": "domain", "value": "another-domain"}],
+      "expected": {"valid": false, "error_code": "envelope_domain", "error_contains": "domain"}
+    },
+    {
+      "id": "invalid-phrase-profile-version",
+      "mutations": [{"op": "set_profile_field", "field": "version", "value": "2.0.0"}],
+      "expected": {"valid": false, "error_code": "envelope_phrase_profile", "error_contains": "phrase profile"}
+    },
+    {
+      "id": "invalid-state",
+      "mutations": [{"op": "set_envelope_field", "field": "state", "value": "preview"}],
+      "expected": {"valid": false, "error_code": "envelope_state", "error_contains": "confirmed"}
+    },
+    {
+      "id": "invalid-all-empty",
+      "mutations": [{"op": "set_phrase", "horizon_years": 2, "position": 1, "value": ""}],
+      "expected": {"valid": false, "error_code": "envelope_empty", "error_contains": "at least one"}
+    },
+    {
+      "id": "invalid-second-without-first-two",
+      "mutations": [
+        {"op": "set_phrase", "horizon_years": 2, "position": 1, "value": ""},
+        {"op": "set_phrase", "horizon_years": 2, "position": 2, "value": "second only"}
+      ],
+      "expected": {"valid": false, "error_code": "envelope_second_without_first", "error_contains": "2-year"}
+    },
+    {
+      "id": "invalid-second-without-first-five",
+      "mutations": [
+        {"op": "set_phrase", "horizon_years": 5, "position": 2, "value": "second only"}
+      ],
+      "expected": {"valid": false, "error_code": "envelope_second_without_first", "error_contains": "5-year"}
+    },
+    {
+      "id": "invalid-second-without-first-ten",
+      "mutations": [
+        {"op": "set_phrase", "horizon_years": 10, "position": 2, "value": "second only"}
+      ],
+      "expected": {"valid": false, "error_code": "envelope_second_without_first", "error_contains": "10-year"}
+    },
+    {
+      "id": "invalid-private-visibility",
+      "mutations": [{"op": "set_slot_field", "index": 0, "field": "visibility", "value": "private_return"}],
+      "expected": {"valid": false, "error_code": "envelope_visibility", "error_contains": "public_at_opening"}
+    },
+    {
+      "id": "invalid-missing-slot",
+      "mutations": [{"op": "remove_slot", "index": 5}],
+      "expected": {"valid": false, "error_code": "envelope_slot_count", "error_contains": "exactly six"}
+    },
+    {
+      "id": "invalid-extra-slot",
+      "mutations": [{"op": "append_slot", "slot": {"horizon_years": 10, "position": 2, "visibility": "public_at_opening", "phrase": "extra"}}],
+      "expected": {"valid": false, "error_code": "envelope_slot_count", "error_contains": "exactly six"}
+    },
+    {
+      "id": "invalid-slot-order",
+      "mutations": [{"op": "swap_slots", "first": 0, "second": 1}],
+      "expected": {"valid": false, "error_code": "envelope_slot_identity", "error_contains": "slot 1"}
+    },
+    {
+      "id": "invalid-duplicate-slot-identity",
+      "mutations": [
+        {"op": "set_slot_field", "index": 1, "field": "horizon_years", "value": 2},
+        {"op": "set_slot_field", "index": 1, "field": "position", "value": 1}
+      ],
+      "expected": {"valid": false, "error_code": "envelope_slot_identity", "error_contains": "slot 2"}
+    },
+    {
+      "id": "invalid-missing-phrase-field",
+      "mutations": [{"op": "delete_slot_field", "index": 0, "field": "phrase"}],
+      "expected": {"valid": false, "error_code": "envelope_slot_fields", "error_contains": "slot fields"}
+    },
+    {
+      "id": "invalid-null-phrase",
+      "mutations": [{"op": "set_slot_field", "index": 0, "field": "phrase", "value": null}],
+      "expected": {"valid": false, "error_code": "envelope_phrase_type", "error_contains": "string"}
+    },
+    {
+      "id": "invalid-noncanonical-phrase",
+      "mutations": [{"op": "set_phrase", "horizon_years": 2, "position": 1, "value": "  keep becoming  "}],
+      "expected": {"valid": false, "error_code": "envelope_phrase_not_canonical", "error_contains": "canonical"}
+    },
+    {
+      "id": "invalid-too-long-phrase",
+      "mutations": [{"op": "set_phrase_repeat", "horizon_years": 2, "position": 1, "value": "a", "count": 161}],
+      "expected": {"valid": false, "error_code": "envelope_phrase_invalid", "error_contains": "160 grapheme"}
+    },
+    {
+      "id": "invalid-control-in-phrase",
+      "mutations": [{"op": "set_phrase", "horizon_years": 2, "position": 1, "value": "echo\u0007later"}],
+      "expected": {"valid": false, "error_code": "envelope_phrase_invalid", "error_contains": "control"}
+    },
+    {
+      "id": "invalid-extra-envelope-field",
+      "mutations": [{"op": "set_envelope_field", "field": "participant_id", "value": "invented-person"}],
+      "expected": {"valid": false, "error_code": "envelope_fields", "error_contains": "envelope fields"}
+    },
+    {
+      "id": "invalid-extra-slot-field",
+      "mutations": [{"op": "set_slot_field", "index": 0, "field": "token_score", "value": 42}],
+      "expected": {"valid": false, "error_code": "envelope_slot_fields", "error_contains": "slot fields"}
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://resonantdao.example/contracts/time-capsule/envelope-v1.schema.json",
+  "title": "Resonant Time Capsule Confirmed Envelope v1",
+  "description": "One confirmed six-place public-at-opening envelope. Quiet creates no envelope.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "domain",
+    "phrase_profile",
+    "state",
+    "slots"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "resonant.time-capsule.envelope.v1"
+    },
+    "domain": {
+      "const": "resonant-time-capsule/envelope/public-at-opening/v1"
+    },
+    "phrase_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["profile_id", "version", "domain"],
+      "properties": {
+        "profile_id": {
+          "const": "resonant.time-capsule.phrase-profile"
+        },
+        "version": {
+          "const": "1.0.0"
+        },
+        "domain": {
+          "const": "resonant-time-capsule/phrase/public-at-opening/v1"
+        }
+      }
+    },
+    "state": {
+      "const": "confirmed"
+    },
+    "slots": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "prefixItems": [
+        {
+          "allOf": [
+            {"$ref": "#/$defs/slot"},
+            {"properties": {"horizon_years": {"const": 2}, "position": {"const": 1}}}
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "#/$defs/slot"},
+            {"properties": {"horizon_years": {"const": 2}, "position": {"const": 2}}}
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "#/$defs/slot"},
+            {"properties": {"horizon_years": {"const": 5}, "position": {"const": 1}}}
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "#/$defs/slot"},
+            {"properties": {"horizon_years": {"const": 5}, "position": {"const": 2}}}
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "#/$defs/slot"},
+            {"properties": {"horizon_years": {"const": 10}, "position": {"const": 1}}}
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "#/$defs/slot"},
+            {"properties": {"horizon_years": {"const": 10}, "position": {"const": 2}}}
+          ]
+        }
+      ],
+      "items": false,
+      "contains": {
+        "type": "object",
+        "required": ["phrase"],
+        "properties": {
+          "phrase": {"type": "string", "minLength": 1}
+        }
+      },
+      "minContains": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "slots": {
+            "prefixItems": [
+              true,
+              {"properties": {"phrase": {"type": "string", "minLength": 1}}}
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "slots": {
+            "prefixItems": [
+              {"properties": {"phrase": {"type": "string", "minLength": 1}}}
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "slots": {
+            "prefixItems": [
+              true,
+              true,
+              true,
+              {"properties": {"phrase": {"type": "string", "minLength": 1}}}
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "slots": {
+            "prefixItems": [
+              true,
+              true,
+              {"properties": {"phrase": {"type": "string", "minLength": 1}}}
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "slots": {
+            "prefixItems": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              {"properties": {"phrase": {"type": "string", "minLength": 1}}}
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "slots": {
+            "prefixItems": [
+              true,
+              true,
+              true,
+              true,
+              {"properties": {"phrase": {"type": "string", "minLength": 1}}}
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "slot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["horizon_years", "position", "visibility", "phrase"],
+      "properties": {
+        "horizon_years": {"enum": [2, 5, 10]},
+        "position": {"enum": [1, 2]},
+        "visibility": {"const": "public_at_opening"},
+        "phrase": {"type": "string"}
+      }
+    }
+  },
+  "x-resonant-invariants": {
+    "slot_order": [
+      {"horizon_years": 2, "position": 1},
+      {"horizon_years": 2, "position": 2},
+      {"horizon_years": 5, "position": 1},
+      {"horizon_years": 5, "position": 2},
+      {"horizon_years": 10, "position": 1},
+      {"horizon_years": 10, "position": 2}
+    ],
+    "empty_slot": "phrase is the empty string",
+    "confirmed_minimum_nonempty_phrases": 1,
+    "second_position_requires_nonempty_first": true,
+    "duplicate_phrase_values_allowed": true,
+    "duplicate_slot_identities_allowed": false,
+    "nonempty_phrase_must_equal_phrase_profile_normalization": true,
+    "quiet_behavior": "no envelope",
+    "visibility": "public_at_opening",
+    "non_effects": [
+      "no_collection_or_persistence",
+      "no_pre_opening_public_feed",
+      "no_private_return_mode",
+      "no_token_mint_allocation_reward_rank_membership_or_governance_effect"
+    ]
+  }
+}

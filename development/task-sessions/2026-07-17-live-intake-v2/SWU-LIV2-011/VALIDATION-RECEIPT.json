@@ -1,0 +1,50 @@
+{
+  "swu_id": "SWU-LIV2-011",
+  "result": "pass",
+  "validated_at": "2026-07-17T21:58:00Z",
+  "command": "npm --prefix development/time-capsule-live-intake-v2/api test -- migrations",
+  "runtime": {"node":"22.12.0","sqlite_driver":"node:sqlite","experimental_flag_required":true},
+  "tests": {"migration_scenarios":6,"passed":6,"failed":0,"service_regression_assertions":17,"service_regression_passed":17},
+  "schema": {
+    "logical_tables": 10,
+    "migration_registry_tables": 1,
+    "migration_files": 1,
+    "applied_migrations": ["0001_initial_intake.sql"],
+    "append_only_triggers": 12
+  },
+  "validation_iterations": [
+    {"result":"fail","reason":"test helper inferred overloaded node:test callback as never","repair":"use explicit TestContext type"},
+    {"result":"fail","reason":"installed Node 22 requires --experimental-sqlite to expose node:sqlite","repair":"make runtime capability flag explicit in migration script"},
+    {"result":"pass","reason":"all service and migration checks passed after bounded repairs"}
+  ],
+  "artifacts": [
+    {"path":"development/time-capsule-live-intake-v2/api/package.json","sha256":"21178b4a423a273307396b8309ea6cf0b24479797b559e880bd4f334b878b423"},
+    {"path":"development/time-capsule-live-intake-v2/api/package-lock.json","sha256":"38709002ace0e8088a396c496cb8cd60913e13e18ce33be56cb29cdd7fa0cd0e"},
+    {"path":"development/time-capsule-live-intake-v2/api/migrations/0001_initial_intake.sql","sha256":"933aad74f89bbfe9a2ba9cd5c3e4d72d4a5f975baf0dcfe88246e1b0a7fc908b"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/datastore/index.ts","sha256":"d8b5e97684d0a8d1a5221c958c710a00f5971de521d63ad8f73a4ab47dcb22cf"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/datastore/migrations.test.ts","sha256":"8ecc601297d01602afb6b8cabc2bf45f61ef74a0b485a6f9a151f458ed759974"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-011/CONTEXT-PACK.md","sha256":"4d9654ca12b1d6887bbbadd85d044727b55e8a30a75e6b27cb1b3d5e1df8f08e"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-011/context-index.json","sha256":"ddb691d68e300b3cf0f8abf9115957c604cf7b9ff6b5386e7ebefb55e2e8fb1c"}
+  ],
+  "checks": [
+    {"id":"strict-context-coverage","result":"pass","covered":10,"total":10},
+    {"id":"empty-to-latest-idempotent","result":"pass"},
+    {"id":"foreign-keys-enabled","result":"pass"},
+    {"id":"wal-enabled","result":"pass"},
+    {"id":"busy-timeout-5000","result":"pass"},
+    {"id":"cohort-consistent-foreign-keys","result":"pass"},
+    {"id":"one-active-invite-per-envelope","result":"pass"},
+    {"id":"recovery-binding-shape","result":"pass"},
+    {"id":"version-and-slot-uniqueness","result":"pass"},
+    {"id":"scoped-idempotency-uniqueness","result":"pass"},
+    {"id":"append-only-versions-occurrences-idempotency-moderation-audit","result":"pass"},
+    {"id":"cold-copy-reopen-integrity","result":"pass"},
+    {"id":"migration-checksum-drift","result":"pass"},
+    {"id":"no-pragma-in-logical-migration","result":"pass"},
+    {"id":"no-plaintext-or-bearer-secret-columns","result":"pass"},
+    {"id":"no-repository-sqlite-files","result":"pass"}
+  ],
+  "blockers": [],
+  "residue": ["Node 22.12 requires --experimental-sqlite; driver maturity must be resolved before staged/live promotion.","Full backup, restore, migration, and corruption proof remains SWU-LIV2-020."],
+  "extra_sources": []
+}

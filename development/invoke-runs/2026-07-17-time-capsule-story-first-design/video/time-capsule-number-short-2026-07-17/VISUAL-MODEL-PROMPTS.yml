@@ -1,0 +1,178 @@
+prompt_schema_version: '1.0'
+package_id: time-capsule-number-short-2026-07-17
+primary_aspect_ratio: '16:9'
+crop_contract: center 9:16 safe
+editorial_text_policy: Generate no precise typography; add written_copy during editing.
+assets:
+  ASSET-FIELD-01: Deep midnight field with fine orbital geometry and restrained amber, cream, indigo,
+    and muted cyan light, matching the existing time-capsule hero artwork.
+  ASSET-PARCEL-01: Small folded message parcel with a warm luminous seam, tactile paper-like edges, no
+    readable text, no logo, and no token or coin symbolism.
+  ASSET-THREAD-01: Thin warm light path belonging to one parcel; many paths may cross and weave but remain
+    individually traceable until they enter the capsule.
+  ASSET-CAPSULE-01: One radiant circular capsule with concentric brass-like rings, warm white core, and
+    precise orbital geometry, consistent across every scene.
+  ASSET-FINGERPRINT-01: One concentric geometric light trace formed only after the capsule closes; an
+    abstract digital fingerprint without legible data or text.
+  ASSET-CLOSING-PULSE-01: One distant public amber pulse that travels from outside the capsule field and
+    touches the closed fingerprint once.
+  ASSET-TIME-RINGS-01: Three future destination rings reached by separate light paths; exact 2, 5, and
+    10-year labels are added in editorial.
+prompts:
+- segment_id: VID-RTC-001
+  title: Not For Today
+  visual_mode: generated_video
+  timeline_duration_seconds: 5
+  generation_clip_seconds: 6
+  continuity_assets:
+  - ASSET-FIELD-01
+  - ASSET-PARCEL-01
+  prompt: Cinematic macro shot, 16:9 with all action inside a centered 9:16-safe area. In a dark intimate
+    room, one open human hand holds ASSET-PARCEL-01. The folded parcel emits one restrained amber seam
+    of light against ASSET-FIELD-01 beginning to appear beyond the hand. Tactile paper, natural skin,
+    quiet breathing space, no readable writing, no exact typography, six-second continuous shot.
+  negative_prompt: text, letters, logos, coins, tokens, wallet, blockchain icon, cyberpunk neon, magical
+    spark explosion, excessive particles, malformed hand, extra fingers, surveillance interface, advertising
+    gloss
+  camera_and_motion: Slow push from fingertips toward the parcel; the field appears only at the final
+    beat.
+  transition_in: Fade up from black on the parcel seam.
+  transition_out: Parcel light becomes the first point in the next scene.
+- segment_id: VID-RTC-002
+  title: Who It Can Be For
+  visual_mode: generated_video
+  timeline_duration_seconds: 12
+  generation_clip_seconds: 8
+  continuity_assets:
+  - ASSET-FIELD-01
+  - ASSET-PARCEL-01
+  prompt: Four-beat cinematic montage in one 16:9 clip, center-safe for 9:16. Show the same ASSET-PARCEL-01
+    beside a bathroom mirror at dawn, passed gently between two hands, then held near several softly lit
+    human silhouettes without identifiable faces. End on one quiet empty point of ASSET-FIELD-01 where
+    no parcel launches. Warm, humane, restrained, no words or generated typography, eight-second source
+    clip.
+  negative_prompt: text, legible note, romantic cliché, crowd rally, globe network, forced diversity collage,
+    token, coin, reward badge, cyberpunk, identifiable celebrity, malformed hands, surveillance camera,
+    empty point turning into a parcel
+  camera_and_motion: Four gentle match dissolves anchored by the parcel’s amber seam; final frame stays
+    still.
+  transition_in: First parcel point expands into the dawn mirror.
+  transition_out: A different parcel enters from beyond the quiet point.
+- segment_id: VID-RTC-003
+  title: Parcels Cross The Distance
+  visual_mode: generated_video
+  timeline_duration_seconds: 8
+  generation_clip_seconds: 8
+  continuity_assets:
+  - ASSET-FIELD-01
+  - ASSET-PARCEL-01
+  - ASSET-THREAD-01
+  prompt: Wide cinematic 16:9 view of ASSET-FIELD-01. Several distinct ASSET-PARCEL-01 objects enter from
+    different frame edges, each carried by its own ASSET-THREAD-01. Their paths curve through fine orbital
+    geometry toward a distant warm center while remaining visually separate. Keep all meaningful motion
+    inside the centered 9:16-safe area, no world map, no text, physically calm eight-second shot.
+  negative_prompt: globe, map borders, data dashboard, email icons, shipping boxes, delivery truck, coins,
+    crypto logos, readable text, chaotic traffic, laser beams, excessive particles, duplicated parcels,
+    collision
+  camera_and_motion: Slow forward drift following the paths while keeping several origins visible.
+  transition_in: Match the arriving parcel seam from the prior scene.
+  transition_out: Follow the warm center until the capsule rings become visible.
+- segment_id: VID-RTC-004
+  title: One Shared Capsule
+  visual_mode: generated_video
+  timeline_duration_seconds: 8
+  generation_clip_seconds: 8
+  continuity_assets:
+  - ASSET-FIELD-01
+  - ASSET-PARCEL-01
+  - ASSET-THREAD-01
+  - ASSET-CAPSULE-01
+  prompt: Cinematic 16:9 convergence shot matching ASSET-FIELD-01. ASSET-PARCEL-01 objects arrive along
+    individually visible ASSET-THREAD-01 paths and pass through the concentric rings of one ASSET-CAPSULE-01.
+    Each arrival adds one precise point to the same circular structure; no parcel receives a number. Warm
+    white core, amber brass geometry, centered 9:16-safe composition, no typography.
+  negative_prompt: multiple capsules, one dominant parcel, score labels, voting interface, coins, token
+    allocation, blockchain logo, explosion, portal fantasy, unreadable text, cyberpunk machinery, cluttered
+    particle cloud
+  camera_and_motion: Controlled push toward the capsule as paths weave; stop when the final parcel enters.
+  transition_in: Distant warm center resolves into the capsule rings.
+  transition_out: Final ring rotates into the fingerprint geometry.
+- segment_id: VID-RTC-005
+  title: The Capsule Becomes A Number
+  visual_mode: motion_graphic
+  timeline_duration_seconds: 10
+  generation_clip_seconds: 8
+  continuity_assets:
+  - ASSET-FIELD-01
+  - ASSET-CAPSULE-01
+  - ASSET-FINGERPRINT-01
+  - ASSET-CLOSING-PULSE-01
+  prompt: Precise cinematic motion-graphic base, 16:9 and center-safe for 9:16. One closed ASSET-CAPSULE-01
+    emits ASSET-FINGERPRINT-01 as concentric geometric light rings. After the fingerprint is complete,
+    one ASSET-CLOSING-PULSE-01 travels from outside the field and touches it once. The combined light
+    contracts into a clean empty central area reserved for editorial digits. No messages or text appear
+    in the pulse.
+  negative_prompt: generated numbers, letters, code, hash strings, blockchain logo, Bitcoin coin, message
+    text inside pulse, score counter, slot machine, casino reveal, price chart, explosion, rainbow spectrum,
+    illegible infographic
+  camera_and_motion: Lock camera on the capsule; fingerprint expands, pulse arrives once, light contracts
+    to center.
+  transition_in: Rotating capsule ring becomes the first fingerprint ring.
+  transition_out: Cut on the contracted center light to the editorial number beat.
+- segment_id: VID-RTC-006
+  title: Forty-Two
+  visual_mode: motion_graphic
+  timeline_duration_seconds: 8
+  generation_clip_seconds: 6
+  continuity_assets:
+  - ASSET-FIELD-01
+  - ASSET-CAPSULE-01
+  prompt: Restrained cinematic 16:9 number-reveal plate based on ASSET-FIELD-01 and the warm center light
+    from ASSET-CAPSULE-01. Hold a calm dark field with a precise amber halo and subtle concentric geometry,
+    leaving the center completely clean for editorial typography. After three seconds the halo softens
+    rather than celebrating. Keep all light inside the centered 9:16-safe region. Generate no digits or
+    words.
+  negative_prompt: generated 42, any number, text, slot machine, jackpot, confetti, fireworks, casino,
+    coin shower, token stack, triumphant logo, meme typography, lens flare overload, cyberpunk neon
+  camera_and_motion: Static center hold; one slow halo breath, then a gentle reduction in brightness.
+  transition_in: Contracted center light holds under editorial `42`.
+  transition_out: Halo divides into three continuing paths.
+- segment_id: VID-RTC-007
+  title: The Messages Keep Traveling
+  visual_mode: generated_video
+  timeline_duration_seconds: 5
+  generation_clip_seconds: 6
+  continuity_assets:
+  - ASSET-FIELD-01
+  - ASSET-PARCEL-01
+  - ASSET-THREAD-01
+  - ASSET-CAPSULE-01
+  - ASSET-TIME-RINGS-01
+  prompt: Cinematic pullback from the softened ASSET-CAPSULE-01. The capsule remains fixed while three
+    ASSET-THREAD-01 paths carrying small ASSET-PARCEL-01 lights leave its perimeter and travel toward
+    three ASSET-TIME-RINGS-01 destinations. The center does not generate another number. Midnight, amber,
+    cream, muted cyan, exact 16:9 with centered 9:16-safe action, no labels or typography.
+  negative_prompt: multiple numbers, changing digits, countdown, clocks, calendar pages, repeated capsule,
+    coins, rewards, generated text, time travel portal, fast streaks, clutter
+  camera_and_motion: Smooth pullback; three paths separate only after the fixed capsule is clearly visible.
+  transition_in: The number halo separates into three parcel paths.
+  transition_out: Follow the nearest parcel until it becomes the closing hero fragment.
+- segment_id: VID-RTC-008
+  title: Leave Something For Later
+  visual_mode: generated_video
+  timeline_duration_seconds: 4
+  generation_clip_seconds: 6
+  continuity_assets:
+  - ASSET-FIELD-01
+  - ASSET-PARCEL-01
+  - ASSET-CAPSULE-01
+  - ASSET-TIME-RINGS-01
+  prompt: 'Closing cinematic plate that recreates the visual balance of the existing time-capsule hero
+    artwork: ASSET-FIELD-01, a few ASSET-PARCEL-01 fragments entering from the left, ASSET-CAPSULE-01
+    glowing at center-right, and three distant future rings. Preserve a clean dark centered area for editorial
+    invitation and a lower area for the URL. 16:9, center-safe for 9:16, calm, no generated typography.'
+  negative_prompt: generated text, logo, slogan, QR code, coin, token, call-to-action button, product
+    mockup, confetti, triumphant ending, excessive particles, bright white background
+  camera_and_motion: Very slow settling drift; final frame holds cleanly for editorial text.
+  transition_in: Nearest future parcel becomes a fragment in the hero composition.
+  transition_out: Hold one second after the voice, then fade to black.

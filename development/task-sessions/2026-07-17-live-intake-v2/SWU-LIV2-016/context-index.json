@@ -1,0 +1,47 @@
+{
+  "identity": {
+    "task_or_swu": "SWU-LIV2-016",
+    "title": "Transactional close fence",
+    "session_id": "2026-07-17-live-intake-v2/SWU-LIV2-016",
+    "mode": "lean-strict",
+    "runtime": "local-task-session",
+    "repository_revision": "c617ace5f10df9f46ec9f203743f4baca5cacbd6-dirty",
+    "captured_at": "2026-07-17T22:35:38Z",
+    "dependency_receipts": ["SWU-LIV2-013:pass", "SWU-LIV2-015:pass"]
+  },
+  "strict_coverage": {"covered":5,"total":10,"status":"block"},
+  "obligations": [
+    {"id":"O-016-01","status":"covered","summary":"Close coordinator can sample authoritative time after acquiring its transaction."},
+    {"id":"O-016-02","status":"block","summary":"Envelope writer trusts a pre-lock command timestamp and is outside scope."},
+    {"id":"O-016-03","status":"block","summary":"Moderation writer trusts a pre-transaction command timestamp and is outside scope."},
+    {"id":"O-016-04","status":"covered","summary":"Schema supports atomic state and epoch transition."},
+    {"id":"O-016-05","status":"covered","summary":"Audit storage can carry a durable close receipt and snapshot ID."},
+    {"id":"O-016-06","status":"covered","summary":"Immediate transaction can serialize two closers."},
+    {"id":"O-016-07","status":"block","summary":"Real writer crossing-race proof requires writer changes."},
+    {"id":"O-016-08","status":"block","summary":"Current command timestamps cannot be proven independent of request/browser input."},
+    {"id":"O-016-09","status":"covered","summary":"Invented local frozen-clock execution remains available."},
+    {"id":"O-016-10","status":"block","summary":"Required writer repair exceeds close-only write scope."}
+  ],
+  "selected_sources": [
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-004.md","selectors":["SWU-LIV2-016"],"sha256":"c668c500f1c7916d55fc5bffa6a60875bf36ab8a3ccca726fa21e39753e2dcd3"},
+    {"path":"DECISIONS.md","selectors":["D-07"],"sha256":"f4ecab3de66e4d398629930e2b8e36e11351d8861afcb61ab05f095549fc4c46"},
+    {"path":"development/time-capsule-live-intake-v2/contracts/command-state-v1.json","selectors":["server_commit_instant_utc","algorithm step 3","replay_boundary"],"sha256":"eb2b28b4abea900f01bf25d1584dbe0f2671ab6e381a7981cc3ad7a98d4f1dff"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/envelope/service.ts","selectors":["EnvelopeCommand.serverCommitInstantUtc","transaction fence check"],"sha256":"d197a2be23401b8dbc8e462b02b0dd4465aeef3ae701b5dc9840e1ff9ff8ba95"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/moderation/service.ts","selectors":["ModerationCommand.actionInstantUtc","decide transaction"],"sha256":"648efafbb1e720f60b1727f8a37d54423e97076f99ac19689d309aeac7cb4b40"},
+    {"path":"development/time-capsule-live-intake-v2/api/migrations/0001_initial_intake.sql","selectors":["cohorts","audit_events"],"sha256":"933aad74f89bbfe9a2ba9cd5c3e4d72d4a5f975baf0dcfe88246e1b0a7fc908b"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-015/VALIDATION-RECEIPT.json","selectors":["checks","residue"],"sha256":"46d91232c695182f280dcd85ad0f7451fc98642581d272f18e5f82f9d4c3db28"}
+  ],
+  "write_scope": {
+    "permitted":["development/time-capsule-live-intake-v2/api/src/close/","development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-016/","active blocker status synchronization"],
+    "required_but_not_permitted":["development/time-capsule-live-intake-v2/contracts/command-state-v1.json","development/time-capsule-live-intake-v2/api/src/envelope/service.ts","development/time-capsule-live-intake-v2/api/src/moderation/service.ts","affected fixtures and tests"]
+  },
+  "validation": {"command":"npm --prefix development/time-capsule-live-intake-v2/api test -- close-fence","status":"not_run_blocked_before_mutation"},
+  "decisions": [{"id":"D-SWU016-SCOPE-REPAIR","classification":"blocker","status":"unresolved","options":["add preceding writer-clock repair SWU","expand SWU-LIV2-016 scope"]}],
+  "gaps_and_blockers": {"active":["real writer transactions do not own an authoritative post-lock commit clock","required repair is outside selected write scope"],"deferred":[]},
+  "fallback_exploration": {"status":"blocked","rule":"Do not implement a close-only test double or weaken D-07."},
+  "extra_sources": [],
+  "output_paths": {
+    "markdown":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-016/CONTEXT-PACK.md",
+    "json_index":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-016/context-index.json"
+  }
+}

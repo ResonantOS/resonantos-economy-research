@@ -1,0 +1,31 @@
+{
+  "identity":{"task_or_swu":"SWU-LIV2-013","title":"Immutable envelope confirmation lifecycle","session_id":"2026-07-17-live-intake-v2/SWU-LIV2-013","mode":"lean-strict","runtime":"local-task-session","repository_revision":"c617ace5f10df9f46ec9f203743f4baca5cacbd6-dirty","captured_at":"2026-07-17T22:09:20Z","dependency_receipts":["SWU-LIV2-011:pass","SWU-LIV2-012:pass"]},
+  "strict_coverage":{"covered":10,"total":10,"status":"pass"},
+  "obligations":[
+    {"id":"O-013-01","status":"covered","summary":"Require authenticated and session scope equality."},
+    {"id":"O-013-02","status":"covered","summary":"Normalize and validate exact six-slot envelope."},
+    {"id":"O-013-03","status":"covered","summary":"Apply frozen command precedence exactly."},
+    {"id":"O-013-04","status":"covered","summary":"Use one full-snapshot confirm operation for edits/withdrawals."},
+    {"id":"O-013-05","status":"covered","summary":"Reuse unchanged occurrence IDs and create changed IDs."},
+    {"id":"O-013-06","status":"covered","summary":"Omit withdrawn slots and never auto-save."},
+    {"id":"O-013-07","status":"covered","summary":"Require payload port until AEAD SWU."},
+    {"id":"O-013-08","status":"covered","summary":"Commit version occurrences receipt and audit atomically."},
+    {"id":"O-013-09","status":"covered","summary":"Prove replay race close and rollback negatives."},
+    {"id":"O-013-10","status":"covered","summary":"Respect envelope-only invented-data scope."}
+  ],
+  "selected_sources":[
+    {"path":"development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/work-pack/tasks/TASK-LIV2-003.md","selectors":["State Rules","Security And Failure Rules","SWU-LIV2-013","Synchronization"],"sha256":"81533407bd5ddd5d7f7573fc34b91e8a099654ddb7fa3f550130a9083aefb7e0"},
+    {"path":"DECISIONS.md","selectors":["D-04","D-07"],"sha256":"f4ecab3de66e4d398629930e2b8e36e11351d8861afcb61ab05f095549fc4c46"},
+    {"path":"development/time-capsule-live-intake-v2/contracts/envelope-v1.schema.json","selectors":["slots","allOf","x-resonant-invariants"],"sha256":"d7dc33bc4bc77e09baed28f62497930771534da5572c7b9c612909d9aa071ad5"},
+    {"path":"development/time-capsule-live-intake-v2/contracts/command-state-v1.json","selectors":["algorithm","outcomes","replay_boundary","atomicity"],"sha256":"eb2b28b4abea900f01bf25d1584dbe0f2671ab6e381a7981cc3ad7a98d4f1dff"},
+    {"path":"development/time-capsule-live-intake-v2/api/migrations/0001_initial_intake.sql","selectors":["envelope_versions","message_occurrences","idempotency_results","audit_events"],"sha256":"933aad74f89bbfe9a2ba9cd5c3e4d72d4a5f975baf0dcfe88246e1b0a7fc908b"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-012/VALIDATION-RECEIPT.json","selectors":["cookie_profile","checks","residue"],"sha256":"a3e5d08bfafc777e498c96ee4e851767910428fc6f1f7ac0d015ed27888ea0fe"}
+  ],
+  "write_scope":{"implementation":["development/time-capsule-live-intake-v2/api/src/envelope/","development/time-capsule-live-intake-v2/api/package.json"],"evidence":["development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-013/","active SWU-013 status/frontier rows after validation"]},
+  "validation":{"command":"npm --prefix development/time-capsule-live-intake-v2/api test -- envelope-commands","required_negatives":["invalid envelope","scope mismatch","rules mismatch","closed state","epoch mismatch","fence reached","idempotency reuse","stale version","two-writer race","injected rollback"]},
+  "decisions":[{"id":"D-SWU013-ONE-OP","classification":"assumption","selection":"confirm_envelope owns confirm edit withdraw snapshots"},{"id":"D-SWU013-RECEIPT-SNAPSHOT","classification":"assumption","selection":"immutable idempotency result carries complete occurrence map"},{"id":"D-SWU013-PAYLOAD-PORT","classification":"assumption","selection":"required port with invented non-crypto test implementation"}],
+  "gaps_and_blockers":{"active":[],"deferred":["SWU-LIV2-014 AEAD/redaction","later HTTP adapter and derived session scope"]},
+  "fallback_exploration":{"status":"none-needed","rule":"If receipt mapping or atomicity fails, stop and route schema repair."},
+  "extra_sources":[],
+  "output_paths":{"markdown":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-013/CONTEXT-PACK.md","json_index":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-013/context-index.json"}
+}

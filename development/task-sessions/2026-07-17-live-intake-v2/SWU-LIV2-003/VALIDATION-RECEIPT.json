@@ -1,0 +1,37 @@
+{
+  "swu_id": "SWU-LIV2-003",
+  "result": "pass",
+  "validated_at": "2026-07-17T21:25:59Z",
+  "command": "node development/time-capsule-live-intake-v2/tools/validate-command-state.mjs",
+  "contract": "resonant.time-capsule.command-state@1.0.0",
+  "domain": "resonant-time-capsule/confirmed-envelope-command/v1",
+  "authoritative_close_instant_utc": "2026-07-21T00:00:00.000Z",
+  "transitions": {"total": 22, "commit": 3, "replay": 1, "conflict": 9, "rejected": 9},
+  "drift_checks": {
+    "total": 2,
+    "passed": 2,
+    "checks": ["algorithm-precedence-drift-rejected", "transition-expectation-drift-rejected"]
+  },
+  "artifacts": [
+    {"path":"development/time-capsule-live-intake-v2/contracts/command-state-v1.json","sha256":"eb2b28b4abea900f01bf25d1584dbe0f2671ab6e381a7981cc3ad7a98d4f1dff"},
+    {"path":"development/time-capsule-live-intake-v2/fixtures/command-state-v1.json","sha256":"1766a4024992c055da2c35b5ddf228314b3c827dbca8c96b9fa28159340f4afa"},
+    {"path":"development/time-capsule-live-intake-v2/tools/validate-command-state.mjs","sha256":"0fbe4edf1e4cc5867a17fbdfc697a83c2b67b15ff79b42f8b17ec14be4ee7350"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-003/CONTEXT-PACK.md","sha256":"4eafb1a0451ea68769e5ef9c2cb62360ca5f52941aedb5de5e5c2fabe0f837a8"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-003/context-index.json","sha256":"18fd261c6737ff3083f6f8b42bd7c9d28397f048859bce4fac0267b2f2d2e727"}
+  ],
+  "checks": [
+    {"id":"strict-context-coverage","result":"pass","covered":10,"total":10},
+    {"id":"node-syntax","result":"pass"},
+    {"id":"contract-json-parse","result":"pass"},
+    {"id":"fixtures-json-parse","result":"pass"},
+    {"id":"input-state-immutability","result":"pass","vectors":22},
+    {"id":"close-fence-at-or-after","result":"pass"},
+    {"id":"precedence-overlaps","result":"pass"}
+  ],
+  "blockers": [],
+  "residue": [
+    "The pure contract does not implement SQL transactions or concurrency.",
+    "Real server clock and close evidence remain later gates."
+  ],
+  "extra_sources": []
+}

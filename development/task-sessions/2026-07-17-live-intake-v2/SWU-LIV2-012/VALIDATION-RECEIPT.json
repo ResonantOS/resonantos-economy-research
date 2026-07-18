@@ -1,0 +1,53 @@
+{
+  "swu_id": "SWU-LIV2-012",
+  "result": "pass",
+  "validated_at": "2026-07-17T22:06:04Z",
+  "command": "npm --prefix development/time-capsule-live-intake-v2/api test -- invite-session",
+  "tests": {"invite_session":8,"invite_session_passed":8,"service_regression":17,"migration_regression":6,"total_passed":31,"failed":0},
+  "crypto_profile": {
+    "invite_digest": "SHA-256 with resonant.time-capsule.invite.v1 domain",
+    "session_digest": "SHA-256 over cookie capability plus CSRF token with resonant.time-capsule.session.v1 domain",
+    "random_token_bytes": 32,
+    "comparison": "fixed-size timingSafeEqual with dummy missing-record path"
+  },
+  "cookie_profile": {
+    "name": "__Secure-resonant_capsule_session",
+    "path": "/api",
+    "max_age_seconds": 900,
+    "secure": true,
+    "http_only": true,
+    "same_site": "Strict"
+  },
+  "artifacts": [
+    {"path":"development/time-capsule-live-intake-v2/api/package.json","sha256":"64e27a75223d7f9713494ee1a50f3f0bb08a5890d18ea29deda04cf8f3574d93"},
+    {"path":"development/time-capsule-live-intake-v2/api/package-lock.json","sha256":"38709002ace0e8088a396c496cb8cd60913e13e18ce33be56cb29cdd7fa0cd0e"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/admission/crypto.ts","sha256":"928347b7fe070be94b70df4ab9a4b3f6eadd7d59243e4404e4a08af1fda3a114"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/admission/fragment.ts","sha256":"dedfa457433bb187a9b2d151d9f50c14e1faec23bde52312646df3a1f8fe3b00"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/admission/repository.ts","sha256":"f6d681f119ab1d647e3bf86bdcd7f85da3c1a7883feb95a259c685212d086161"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/admission/service.ts","sha256":"82e559d2af9985a71f5621c6ab4e1c7fbc70c1facd496237bff61c07771259bf"},
+    {"path":"development/time-capsule-live-intake-v2/api/src/admission/invite-session.test.ts","sha256":"0a14ecaa45f04c7c38d09132be332041aea747d81113e20932cbcf9424bf58e4"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-012/CONTEXT-PACK.md","sha256":"2b494241afa987e09b7d6f63bbd230cfd59b60734e34fb12e1371af2ecd06a2b"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-012/context-index.json","sha256":"ee85bc640e8a11ce311029c0d538e8019c57d4407606daa5cbb9731fbe8311ad"}
+  ],
+  "checks": [
+    {"id":"strict-context-coverage","result":"pass","covered":10,"total":10},
+    {"id":"fragment-consumed-and-sanitized","result":"pass"},
+    {"id":"body-only-exchange-contract","result":"pass"},
+    {"id":"digest-only-persistence","result":"pass"},
+    {"id":"secure-cookie-flags","result":"pass"},
+    {"id":"cookie-csrf-origin-binding","result":"pass"},
+    {"id":"session-rotation","result":"pass"},
+    {"id":"unknown-revoked-malformed-nonenumerating","result":"pass"},
+    {"id":"revoke-invite-and-sessions-atomic","result":"pass"},
+    {"id":"recovery-preserves-envelope","result":"pass"},
+    {"id":"recovery-conflict-rolls-back","result":"pass"},
+    {"id":"expired-and-closed-denial","result":"pass"},
+    {"id":"non-content-audit","result":"pass"},
+    {"id":"no-admission-console-or-secret-reflection","result":"pass"},
+    {"id":"no-repository-sqlite-files","result":"pass"},
+    {"id":"full-package-regression","result":"pass","assertions":31}
+  ],
+  "blockers": [],
+  "residue": ["Pure handlers are intentionally unwired; real invitation issuance/delivery and steward authentication remain later owner/adapter work.","Node 22.12 node:sqlite experimental-flag residue continues from SWU-LIV2-011."],
+  "extra_sources": []
+}

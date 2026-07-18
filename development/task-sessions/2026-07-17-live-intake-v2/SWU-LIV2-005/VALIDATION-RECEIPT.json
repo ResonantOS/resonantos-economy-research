@@ -1,0 +1,44 @@
+{
+  "swu_id": "SWU-LIV2-005",
+  "result": "pass",
+  "validated_at": "2026-07-17T21:40:28Z",
+  "command": "node development/time-capsule-live-intake-v2/tools/validate-capability-gates.mjs",
+  "contract": "resonant.time-capsule.capability-gates@1.0.0",
+  "coverage": {
+    "states": 8,
+    "gates": 23,
+    "fixtures_total": 41,
+    "fixtures_allowed": 10,
+    "fixtures_blocked": 31,
+    "blocker_ids_covered": 28
+  },
+  "graph": {"declared_pairs":7,"undeclared_pairs_denied":57},
+  "closure_gates": {
+    "applicable": ["G-01","G-02","G-03","G-05","G-06","G-07","G-08","G-09","G-10"],
+    "not_applicable": ["G-04"]
+  },
+  "ritual_number_non_effects": 8,
+  "drift_checks": {"total":2,"passed":2,"checks":["state-graph-drift-rejected","blocker-expectation-drift-rejected"]},
+  "artifacts": [
+    {"path":"development/time-capsule-live-intake-v2/contracts/capability-gates-v1.json","sha256":"908cebf4df692a106a186f23c633a8d11bcd2a4c491d129effd657ee640c4769"},
+    {"path":"development/time-capsule-live-intake-v2/fixtures/capability-gates-v1.json","sha256":"4adb49d054b4b300b0be55aca3b48e25ee5c336b423882f28fef59a017fe75c8"},
+    {"path":"development/time-capsule-live-intake-v2/tools/validate-capability-gates.mjs","sha256":"7312e7a2ef90e443798c7070e6a09846ccfdb2e6b09a69691caff137a3394b6b"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-005/CONTEXT-PACK.md","sha256":"8277b59877965dfe1b9cc94010f92bd2129194fb4dc76768dcef0bf1da423dee"},
+    {"path":"development/task-sessions/2026-07-17-live-intake-v2/SWU-LIV2-005/context-index.json","sha256":"baa1d9642233a3ba6ce69535fd79834f0c34f476c81351e074f36d50a36ee4eb"}
+  ],
+  "checks": [
+    {"id":"strict-context-coverage","result":"pass","covered":10,"total":10},
+    {"id":"state-and-gate-registry","result":"pass"},
+    {"id":"declared-transition-execution","result":"pass","count":7},
+    {"id":"undeclared-transition-denial","result":"pass","count":57},
+    {"id":"stable-blocker-coverage","result":"pass","count":28},
+    {"id":"synthetic-only-invented-data","result":"pass"},
+    {"id":"real-data-gated","result":"pass"},
+    {"id":"no-preopening-feed","result":"pass"},
+    {"id":"ritual-number-non-effects","result":"pass","count":8},
+    {"id":"node-syntax-json-parse","result":"pass"}
+  ],
+  "blockers": [],
+  "residue": ["Gate evidence handles are contracts only; later SWUs must produce real receipts before promotion."],
+  "extra_sources": []
+}

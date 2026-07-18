@@ -1,0 +1,191 @@
+{
+  "mode": "refresh",
+  "phaseStatus": "flag",
+  "mutationMode": "proposal-only",
+  "evidenceDate": "2026-07-17",
+  "sourceSignals": [
+    {
+      "id": "RS-01",
+      "source_path": "development/task-sessions/2026-07-17-time-capsule-intake-form-2h/",
+      "signal_type": "evidence_added",
+      "target_artifacts": [
+        "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/INVOKE-RESULT.md",
+        "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md"
+      ],
+      "claim": "The V2 non-collecting public-at-opening form passes 32 of 32 machine fixtures plus keyboard and responsive browser evidence.",
+      "evidence": "Task Session closeout and BROWSER-EVIDENCE.json.",
+      "confidence": "high",
+      "mutation_safety": "safe"
+    },
+    {
+      "id": "RS-02",
+      "source_path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/WORK-PACK.md",
+      "signal_type": "status_changed",
+      "target_artifacts": [
+        "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/INVOKE-RESULT.md",
+        "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/WORK-PACK.md"
+      ],
+      "claim": "All four L0 SWUs are complete, so the pack is historical execution evidence rather than a current handoff.",
+      "evidence": "Every task-board row is completed and has a Task Session receipt.",
+      "confidence": "high",
+      "mutation_safety": "safe"
+    },
+    {
+      "id": "RS-03",
+      "source_path": "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/INVOKE-RESULT.md",
+      "signal_type": "artifact_drift",
+      "target_artifacts": [
+        "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/INVOKE-RESULT.md"
+      ],
+      "claim": "The recorded next route points to the already completed SWU-FORM-001.",
+      "evidence": "INVOKE-RESULT next route conflicts with the completed work-pack task board.",
+      "confidence": "high",
+      "mutation_safety": "safe"
+    },
+    {
+      "id": "RS-04",
+      "source_path": "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/ACCESS-MATRIX.md",
+      "signal_type": "no_op",
+      "target_artifacts": [
+        "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md"
+      ],
+      "claim": "Manual screen-reader, native-IME and five-person retell evidence remains unrun.",
+      "evidence": "The current matrix and both Task Session closeouts claim no such human evidence.",
+      "confidence": "high",
+      "mutation_safety": "safe"
+    },
+    {
+      "id": "RS-05",
+      "source_path": "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/ACCESS-MATRIX.md",
+      "signal_type": "artifact_drift",
+      "target_artifacts": [
+        "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/ACCESS-MATRIX.md"
+      ],
+      "claim": "The human protocol still describes Fixture V1 word and sealed-disabled semantics instead of Fixture V2 phrases and fixed public-at-opening visibility.",
+      "evidence": "ACCESS-MATRIX v1.0.0 conflicts with the V2 fixture profile and form contract.",
+      "confidence": "high",
+      "mutation_safety": "needs_review"
+    },
+    {
+      "id": "RS-06",
+      "source_path": "DECISIONS.md#D-02-D-06",
+      "signal_type": "evidence_added",
+      "target_artifacts": [
+        "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md",
+        "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-implementation-layering.md"
+      ],
+      "claim": "Admission, Node and SQLite stack, editing, live moderation and retention choices are now selected.",
+      "evidence": "Explicit user-selected Decision Gate records with consequences and proof boundaries.",
+      "confidence": "high",
+      "mutation_safety": "safe"
+    },
+    {
+      "id": "RS-07",
+      "source_path": "DECISIONS.md#D-15",
+      "signal_type": "route_changed",
+      "target_artifacts": [
+        "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-execution-pack.md",
+        "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack/tasks/TASK-LIR-006.md"
+      ],
+      "claim": "Initial messages are public at opening only; participant private return is deferred.",
+      "evidence": "D-15 explicitly removes participant keys, private return and the second encryption layer from the initial capsule.",
+      "confidence": "high",
+      "mutation_safety": "needs_review"
+    },
+    {
+      "id": "RS-08",
+      "source_path": "DECISIONS.md#D-11-D-16",
+      "signal_type": "route_changed",
+      "target_artifacts": [
+        "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-execution-pack.md",
+        "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-implementation-layering.md"
+      ],
+      "claim": "The selected close uses tlock and drand, Arweave, emergency 3-of-5, a direct Bitcoin commitment and the containing block as the ritual number signal.",
+      "evidence": "D-11 through D-16 select the initial close, recovery, commitment, number and no-scheduled-maintenance model.",
+      "confidence": "high",
+      "mutation_safety": "needs_review"
+    },
+    {
+      "id": "RS-09",
+      "source_path": "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md",
+      "signal_type": "artifact_drift",
+      "target_artifacts": [
+        "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md",
+        "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-execution-pack.md",
+        "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-implementation-layering.md"
+      ],
+      "claim": "The existing high-complexity plan predates the V2 form, selected stack, public-at-opening-only decision and selected close/recovery architecture.",
+      "evidence": "Direct comparison of the work-pack and layer model against RS-01 and RS-06 through RS-08.",
+      "confidence": "high",
+      "mutation_safety": "blocked"
+    },
+    {
+      "id": "RS-10",
+      "source_path": "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/DISTILL-VALIDATION.md",
+      "signal_type": "route_changed",
+      "target_artifacts": [
+        "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/INVOKE-RESULT.md",
+        "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md"
+      ],
+      "claim": "Invoke Plan must repair the graph before any backend Task Session.",
+      "evidence": "Distill rejects the whole live-intake and decade-recovery bundle as one executable unit.",
+      "confidence": "high",
+      "mutation_safety": "safe"
+    }
+  ],
+  "targetArtifacts": [
+    "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/INVOKE-RESULT.md",
+    "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/WORK-PACK.md",
+    "development/invoke-runs/2026-07-17-time-capsule-intake-form-2h/IMPLEMENTATION-LAYERING.md",
+    "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/RESULT.md",
+    "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md",
+    "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-execution-pack.md",
+    "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-implementation-layering.md",
+    "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack/tasks/TASK-LIR-001.md",
+    "development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack/tasks/TASK-LIR-006.md",
+    "development/refinement-runs/2026-07-12-number-lottery/presentation/site/contribute/tests/ACCESS-MATRIX.md",
+    ".arcanum/inventory/entries/time-capsule-live-intake-refine.md"
+  ],
+  "deltaSummary": [
+    {"class": "evidence_added", "count": 2},
+    {"class": "status_changed", "count": 1},
+    {"class": "artifact_drift", "count": 3},
+    {"class": "route_changed", "count": 3},
+    {"class": "no_op", "count": 1}
+  ],
+  "proposedChanges": [
+    "Close the two-hour pack as completed L0 and replace its stale route.",
+    "Map V2 machine evidence into the revised live-intake plan while preserving human gates.",
+    "Regenerate the human matrix for Fixture V2.",
+    "Carry D-02 through D-06 as decisions, not implementation proof.",
+    "Defer private return outside the initial release graph.",
+    "Add public-at-opening close, recovery, Bitcoin commitment and ritual-number planning.",
+    "Author and validate Live Intake Plan V2 before Task Session.",
+    "Synchronize Inventory only after the revised plan validates."
+  ],
+  "appliedChanges": [],
+  "skippedChanges": [
+    "No existing target artifact was edited in proposal-only mode.",
+    "No target task, backend, database, deployment or ceremony work was executed.",
+    "No blocker was resolved from decision evidence alone."
+  ],
+  "blockers": [
+    "Manual access and consequence-retell evidence remains unrun.",
+    "The high-complexity dependency graph needs revised Invoke Plan ownership.",
+    "Public-live, operations, close and recovery proofs remain absent."
+  ],
+  "unresolvedGaps": [
+    "Whether synthetic schema work may run beside the manual comprehension track must be decided in the revised plan.",
+    "Selected Node and SQLite stack has no implementation or restore receipt.",
+    "Public owner and long-horizon recovery gates remain open."
+  ],
+  "nextRoute": "invoke-plan-live-intake-v2",
+  "validation": [
+    "context-builder strict coverage 9 of 9",
+    "inventory machine-index-first lookup",
+    "interview gap-check no question required",
+    "dispatch technique trace pass",
+    "distill standard pass for refresh and plan-gated execution",
+    "JSON parse and source path checks"
+  ]
+}
