@@ -127,6 +127,11 @@ domainspec checkout — this repository stays standalone and imports no runtime.
 
 ## Files
 
+- [DEFERRED-CONTRIBUTION-BETS-PLAIN-LANGUAGE.md](DEFERRED-CONTRIBUTION-BETS-PLAIN-LANGUAGE.md) — standalone, sendable explanation of the three open deferred-contribution bets and their failure conditions.
+- [RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md](RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md) — newcomer walkthrough from mechanism proposition to independent bets, witnesses, experiment handoff, and bounded verdicts.
+- [RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.validation.md](RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.validation.md) — source map, boundary review, and the still-open newcomer-reader trial.
+- [training/](training/README.md) — 90-minute facilitator-led workshop with an approved voice, projected deck, trainer script, participant workbook, and validation record.
+- [training/CONTRIBUTION-MEASUREMENT-FAILURE-AND-ALLOCATION.md](training/CONTRIBUTION-MEASUREMENT-FAILURE-AND-ALLOCATION.md) — anonymized workshop-derived guide to contribution families, vector measurement, informative failure, conflict-aware review, qualified lotteries, newcomer access, and allocation-gaming experiments; no mechanism is registered or validated.
 - [PRIZE-REGISTER.md](PRIZE-REGISTER.md) — the open prizes.
 - [BET-REGISTER.md](BET-REGISTER.md) — bets staked against prizes.
 - [SEED.md](SEED.md) — the imported form, with source posture and blocked uses.

@@ -71,3 +71,15 @@ Expected outputs:
 - stress test categories;
 - launch blocker register;
 - legal/security/treasury handoff residue.
+
+## Program-Extension Evidence Perspective
+
+The [monetary-circulation tower](../subtowers/monetary-circulation/README.md)
+feeds Lane 3 and Lane 5 with one source-first view across supply state, release
+schedules, distribution, treasury resilience, liquidity and exit capacity,
+utility and sinks, and feedback. It is a research perspective, not a sixth
+mechanism lane: its job is to connect evidence that these two attack lanes need
+without turning that connection into token, treasury, market, or launch policy.
+Its bounded dispatch closed with auditor ACCEPT: generic feedback as one
+experiment was killed, a top-level health verdict is prohibited, and every
+surviving local handoff remains `unrunnable`.

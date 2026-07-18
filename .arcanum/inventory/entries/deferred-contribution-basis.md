@@ -53,6 +53,12 @@ prior-art sweep.
 3. Run deterministic and contextual checks without changing any `none` effect.
 4. Dispatch a separate bounded preventive-work prior-art sweep for E5.
 
+The research program also now has three registered falsification conjectures:
+`BET-PRZ-04-a` (recognition utility), `BET-PRZ-05-a` (community utility), and
+`BET-PRZ-06-a` (communication safety). Their witnesses and collapse-tests are in
+[the prize register](../../../prizes/PRIZE-REGISTER.md) and
+[the bet register](../../../prizes/BET-REGISTER.md). No bet has run or survived.
+
 ## Boundaries And Residue
 
 - Definition/non-drift is blocked before fixture use: the relevance claim,

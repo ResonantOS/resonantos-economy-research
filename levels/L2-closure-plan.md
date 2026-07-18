@@ -23,6 +23,23 @@ Close the first research pass by producing:
 6. Synthesis and review: produce borrow/block decisions and kill vacuous mechanisms.
 7. Evidence handoff: route measurable claims to research-evidence-harness before any implementation.
 
+## Closed Source-Research Extension — Monetary Circulation And Liquidity Resilience
+
+The completed four-tower dispatch remains frozen historical evidence. A
+separately confirmed fifth perspective researched the scattered supply,
+release, distribution, treasury, liquidity, utility, and monetary-feedback
+questions:
+
+- [monetary-circulation tower](../subtowers/monetary-circulation/README.md);
+- [tower plan](../subtowers/monetary-circulation/TOWER.md); and
+- [closed research dispatch](../dispatch/towers/PROPOSED-MONETARY-CIRCULATION-RESEARCH.md); and
+- [accepted findings](../subtowers/monetary-circulation/returns/research/findings.md).
+
+The dispatch closed `resolved` with auditor ACCEPT. Generic MC-E6 and a
+top-level health verdict were killed; every surviving local handoff remains
+`unrunnable`. This is still a source-corpus extension feeding existing attack
+Lanes 3 and 5, not a token-policy lane or validated Track D.
+
 ## First Recommended Lane
 
 Attack the problem first through the `authority-separated credit` lane, using

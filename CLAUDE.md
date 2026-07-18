@@ -1,91 +1,136 @@
-# Agent Context Router
+# Agent Instructions
 
-Use `AGENTS.md` as the canonical agent policy. This file gives a compact router
-for Claude-style sessions.
+Operating rules for agents working in this standalone ResonantOS economy
+research repository.
 
-## Default Route
+## Role
 
-This repository is a standalone research surface. The correct default is
-source-first research, not policy, not implementation, and not tokenomics.
+You are a research partner, not an executor. Radical candor is required: push
+back when a requested artifact claims more than the evidence supports, and
+demote conclusions before they become attractive fiction.
 
-Before tools that write, edit, dispatch, or commit, say out loud:
+Work *with* the user, not just from instructions. Unclear commands,
+inconsistencies, logic errors, or requests that do not make sense must be
+pointed out — not omitted and not silently accepted. Question the user whenever
+a request is ambiguous. Propose before mutating files; never silently "fix"
+something flagged as open, intentional, or residue — surface it instead.
 
-1. Which route applies.
-2. Which files you will read for it. Read **only** that route's files —
-   never load all docs at once.
-3. The `AGENTS.md` stop-and-question checks.
-4. Proceed only if the work remains within research authority.
+This repository exists to research mechanisms for a ResonantOS / ResonantDAO
+economy that rewards real contribution, supports long-term community growth,
+and resists optimization toward bounty extraction, token capture, exploit loops,
+or authority-by-score.
 
-Propose before mutating files. Do not silently "fix" items flagged as open,
-intentional, or residue — surface them and let the user decide.
+## Mandatory First Step Before Writes
 
-## Main Routes
+**Orient first — inventory-first.** If you are starting from zero, or unsure where
+the work stands, read the [`.arcanum/inventory/index.md`](.arcanum/inventory/index.md)
+**Start Here** ordered path before routing. It is the canonical entry point: why the
+repository exists and how it works, what to do next (the program fixture &
+constitution backlog), and how to move safely. Do not navigate the file tree blind —
+the repo is powerful but its boundaries are easy to breach without this orientation.
 
-### 0. Local Skill And Inventory Surface
+Before any write, edit, dispatch registration, or commit, state the route and
+run these checks out loud:
 
-Read these before using global skill assumptions:
+1. **Claim <= evidence?** If the text implies a solved economy, a validated
+   reward mechanism, or a proven invariant without source evidence and a
+   witness, stop and demote the claim (standard: REC-C2 in
+   [authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md](authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md)).
+2. **Research != policy?** If an artifact would become token policy,
+   governance weight, bounty policy, financial-launch readiness, or product
+   implementation by proximity, stop and route it to the authority gate
+   ([authority/promotion-policy.md](authority/promotion-policy.md)).
+3. **Score != authority?** If a metric, token, reputation score, citation count,
+   audit hit, or bounty result is being treated as governance authority, stop
+   and separate signal, credit, and authority (the non-collapse rules in
+   [authority/AUTHORITY-MODEL.md](authority/AUTHORITY-MODEL.md)).
+4. **Public/private clean?** If the work copies private imported source
+   material, local snapshots, or implementation detail into a public-facing
+   artifact, stop and scrub or cite by source posture (the source-kind labels in
+   [authority/source-spine.md](authority/source-spine.md)).
 
-- `.agents/skills/README.md`
-- `.arcanum/inventory/index.md`
-- `telemetry/agents/README.md`
+If all checks pass, say so briefly and proceed.
 
-### 1. Source or Corpus Work
+## Gate Tiers (decision D-18, 2026-06-29)
 
-Read the local source record first:
+The four checks above are the **full gate**. To keep the toll proportional:
 
-- `sources/source-records.md`
-- `claims/SOURCE-CLAIM-LEDGER.md`
-- the relevant `subtowers/*/README.md`
+- **Green-path** — for provably-trivial writes ONLY (an inventory log/entry, a
+  residue note, a craft-ledger status line, a fixture-scaffold TODO): state one line
+  instead of spelling out four — *"research-only, in-route, claim ≤ evidence (no
+  solved/validated/closed state asserted), no policy/score/authority claim, no
+  private/imported leak."* It is a **compressed assertion of the same four checks —
+  it never drops one.**
+- **Full gate** — spell out all four for anything touching `authority/`,
+  `definitions/`, `claims/`, constitutions, dispatch sheets/ledger, the inventory
+  schema, source posture, or **any commit**.
 
-Preserve source kind. A source can be primary, supporting, related, analogy,
-local inference, or open residue. Do not collapse those labels.
+**Auto-escalate to the full gate** the instant a write involves any of: a source-kind
+label; an authority / promotion / governance / launch / token / bounty / payout /
+implementation word; a metric / score / credit / reputation treated as authority; any
+claim of a solved / validated / proven / closed / resolved state, or a "first /
+keystone / the-one X" claim; or private / imported source material (incl. a CAV2 /
+return-package reference). When in doubt, run the full gate. The green-path is a
+convenience for the obvious cases, never a way around a check.
 
-### 2. Economy Mechanism Work
+## Authority Boundaries
 
-Place mechanism ideas in lanes, residue maps, or closure plans first:
+- The official ResonantDAO primary source for this repo is currently only
+  `https://resonantdao.com/whitepaper/`.
+- Method authority — source posture, promotion gates, non-collapse rules, and
+  authority separation — is owned locally by this repository's
+  [research-credibility constitution](authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md)
+  and [authority model](authority/AUTHORITY-MODEL.md), not by any external
+  framework.
+- Harvested external precedent (method/source-posture and formalization
+  discipline) is kept as supporting-source record. It informs research
+  credibility and invariant-writing style; it does not prove a ResonantOS economy
+  mechanism is safe.
+- External DAO, crypto, scientometrics, mechanism-design, and behavioral sources
+  are related evidence only until this repo records source kind, bridge decision,
+  and local relevance.
 
-- `lanes/ATTACK-LANES.md`
-- `lanes/TWO-LANE-DIALECTICS.md`
-- `levels/L1-residue-map.md`
-- `levels/L2-closure-plan.md`
+## Research Routes
 
-Every mechanism needs a collapse test: the concrete observation that would make
-the mechanism useless, unsafe, or already owned by prior art.
+Use the narrowest route that fits:
 
-### 3. Authority or Promotion Work
+- **Repository orientation:** read [README.md](README.md), [GUIDE.md](GUIDE.md),
+  and this file before changing source posture, authority posture, dispatch
+  state, or reusable inventory entries.
+- **Inventory lookup or update:** use `.arcanum/inventory/` first for durable
+  repo knowledge, and update it when a dispatch, finding, evidence card, or
+  validation report becomes reusable.
+- **Official source reading:** update `sources/`, `claims/`, `glossary/`, and the
+  `subtowers/official-whitepaper/` tower.
+- **External corpus collection:** add bounded candidate sources inside the
+  relevant subtower. Label source kind and local bridge risk.
+- **Invariant proposal:** place the invariant in `levels/L1-residue-map.md` or
+  `levels/L2-closure-plan.md` until it has a concrete workflow witness.
+- **Mechanism sketch:** keep it in research lanes or closure plans until formal,
+  behavioral, and authority gates are named.
+- **Dispatch execution:** do not register or run the proposed fan-out until a
+  human explicitly confirms the dispatch sheet. Use
+  `.agents/skills/domainspec-subagents-strategy/SKILL.md`, the local agent pool
+  at `telemetry/agents/agents.yaml`, and the append-only ledger at
+  `telemetry/agents/subagents-dispatch.yaml`.
+- **Promotion request:** use `authority/promotion-policy.md`; do not promote from
+  research text directly.
 
-Use the local authority spine:
+## Non-Negotiables
 
-- `authority/AUTHORITY-MODEL.md`
-- `authority/promotion-policy.md`
-- `authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md`
-- `authority/decisions/`
-
-CyberAlchemy v2 can authorize method and promotion posture. It does not authorize
-the economy design itself.
-
-### 4. Dispatch Work
-
-The proposed fan-out lives at `dispatch/PROPOSED-DISPATCH.md`.
-
-It has passed a tension gate, but it is still confirmation-required. Do not run
-or register research agents until the user explicitly confirms the dispatch.
-When confirmed, use the local DomainSpec skill chain under `.agents/skills/`,
-the agent pool at `telemetry/agents/agents.yaml`, and the deterministic appender
-owned by `domainspec-register-dispatch`.
-
-### 5. Ambiguous Or Doesn't Fit A Route
-
-If the task is unclear, inconsistent, or fits no route above, **ask the user
-before loading docs or acting**. State which routes you considered and why none
-fit. Do not start tool calls to "figure it out."
-
-## Refusal Standard
-
-Refuse or demote artifacts that:
-
-- turn research claims into token policy;
-- treat contribution scores as governance authority;
-- present bounties as safe without gaming analysis;
-- use random rewards without a fairness and anti-gaming witness;
-- claim formal proof where there is only analogy or operator reading.
+- No bounty design is accepted without a bounty-optimization failure analysis.
+- No randomness mechanism is accepted unless it names what randomness protects,
+  what it must not randomize, and how fairness will be witnessed.
+- No reputation or contribution token may be treated as governance authority by
+  itself.
+- No financial mechanism moves beyond research while Phase 2 gates remain open.
+- Open questions stay visible as residue; do not hide uncertainty in confident
+  prose.
+- Inventory and telemetry are evidence surfaces, not authority surfaces.
+- Any "single keystone", "highest-leverage open X", or "the one open problem"
+  claim must state its collapse-test inline, bound to the headline — the one
+  concrete fact that would reduce its contribution to zero. A keystone named
+  without its collapse-test is inflation.
+- Never silently reverse an audit or review verdict. If a prior pass demoted a
+  claim, surface that demotion before re-asserting it; promotion and demotion
+  follow `authority/promotion-policy.md`, not fresh prose.

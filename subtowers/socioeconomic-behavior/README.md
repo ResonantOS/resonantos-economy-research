@@ -14,3 +14,12 @@ It should explain how mechanisms shape people, not only how people respond to in
 - What participant mentality does each reward mechanism create?
 - Which incentives crowd out intrinsic motivation or community identity?
 - What rituals, review processes, and stewardship practices keep contribution from collapsing into task extraction?
+
+## Mechanism-Directed Prior Art
+
+For a proposed mechanism, use the shared
+[mechanism-directed prior-art contract](../MECHANISM-PRIOR-ART-CONTRACT.md) and
+ask: **what behavior, motivation, participation distribution, trust, identity,
+or entitlement expectation could this mechanism train?** Require a crowd-out,
+threshold-gaming, unequal-access, status-performance, or compliance-framing
+precedent and keep transfer to a tokenized DAO explicitly unvalidated.

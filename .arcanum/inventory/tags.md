@@ -34,6 +34,7 @@ Owner: ResonantOS economy research owner
 | `observability` | Local usage signals, reflection state, or observer outputs. |
 | `owned-build` | Candidate build-from-owned or reciprocal-return evidence; never authority by itself. |
 | `pool` | Agent-name pool or role-fit list. |
+| `prior-art` | Mechanism-directed, source-bounded precedent research that revises a bet or witness without validating it. |
 | `prizes` | Open research-contract for an economic-mechanism target; closes only on a survived bet with a witness. |
 | `refine` | Arcanum refinement-loop seed/design/non-executed-plan artifact. |
 | `reflection` | Workflow-reflect report, reflection trigger, or iteration recommendation. |

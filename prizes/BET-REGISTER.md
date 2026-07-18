@@ -46,5 +46,89 @@ conjecture — never an economic stake. See [README.md](README.md).
 
 ---
 
-*Open for staking: `PRZ-02` and `PRZ-03` have no bets yet. A good bet names its
-own falsifier and the lane it must survive before it is registered.*
+## BET-PRZ-04-a — Prior-activity receipts improve result attribution
+
+- **Stakes against:** `PRZ-04` (prior-activity evidence that adds recognition
+  value).
+- **Resolution:** open
+- **Conjecture:** Adding versioned prior-activity receipts and explicit
+  result-link claims to review recovers genuine trace-linked and bridge-linked
+  contributions that result-only review misses, while general-capacity,
+  attendance-only, time-only, and unlinked controls remain without result-scoped
+  credit.
+- **Predicted falsifier (collapse-test):** under a preregistered comparative
+  decision rule, the added evidence produces no net improvement in genuine-link
+  recovery, or any gain is erased by false acceptance, receipt farming,
+  entitlement error, or unreasonable review burden.
+- **Attack lane:** Lane 1 authority-separated credit plus ER-D10 credit-gaming,
+  invisible-work, reviewer-capture, and authority-handoff controls
+  ([lanes](../lanes/ATTACK-LANES.md)).
+- **Precedent label:** `build-from-owned components` — operational and formal
+  precedents own receipt or representation fragments, but no admitted source
+  owns or validates the integrated review pipeline.
+- **Position (tension):** the proposer predicts that contemporaneous evidence
+  recovers enabling work that result-only review misses; the skeptic predicts
+  that extra records create hindsight narratives, false credit, and review cost
+  without net information.
+- **Witness status:** no comparative fixture or run exists; the three
+  load-bearing candidate terms must be registered before fixture use.
+
+---
+
+## BET-PRZ-05-a — Result-scoped recognition improves later contribution
+
+- **Stakes against:** `PRZ-05` (result-scoped recognition that helps the
+  community).
+- **Resolution:** open
+- **Conjecture:** Receiving carefully scoped recognition for a witnessed result
+  increases a preregistered later community outcome—such as voluntary useful
+  follow-through, retention, maintenance, mentoring, or trust—without making
+  contribution more performative, status-seeking, exclusionary, or reward-
+  entitled.
+- **Predicted falsifier (collapse-test):** the named community outcome does not
+  improve relative to the control, or any observed gain is erased by motivation
+  crowding, status gaming, access inequality, entitlement, attrition, or review
+  burden.
+- **Attack lane:** Lane 2 reputation capture, with socioeconomic-behavior
+  crowding, visibility, threshold, and access controls
+  ([lanes](../lanes/ATTACK-LANES.md)).
+- **Precedent label:** `novel-attempt / direction borrowed` — behavioral sources
+  supply warnings and experimental questions, not a ResonantOS effect or a safe
+  recognition rule.
+- **Position (tension):** the proposer predicts that recognition sustains
+  otherwise invisible enabling work; the skeptic predicts that formal
+  recognition crowds out intrinsic contribution and creates a status game.
+- **Witness status:** no bounded behavioral pilot exists. PRZ-04's witness is an
+  upstream evidence prerequisite and cannot be reused as behavioral proof.
+
+---
+
+## BET-PRZ-06-a — Bilingual investment language informs without promising
+
+- **Stakes against:** `PRZ-06` (bilingual explanation without entitlement
+  drift).
+- **Resolution:** open
+- **Conjecture:** Presenting `investment → realization → cashing` together with
+  the exact operational mapping improves understanding of deferred contribution
+  without increasing beliefs that activity accumulates guaranteed value, that
+  cashing guarantees recognition or payment, or that recognition creates
+  reputation or authority.
+- **Predicted falsifier (collapse-test):** compared with operational language
+  alone, the bilingual explanation fails to improve the preregistered
+  comprehension outcome or worsens any bounded entitlement/authority error.
+- **Attack lane:** Lane 1 signal/credit/authority separation plus Lane 4
+  bounty/prize/reward-language drift
+  ([lanes](../lanes/ATTACK-LANES.md)).
+- **Precedent label:** `novel-attempt` — the narrative/operational mapping has no
+  admitted comprehension witness; behavioral sources only motivate the risk.
+- **Position (tension):** the proposer predicts that economic metaphor makes the
+  delayed mechanic legible; the skeptic predicts that the metaphor imports a
+  guaranteed-return model that disclaimers cannot undo.
+- **Witness status:** no randomized comprehension comparison exists. A language
+  win would not satisfy PRZ-04 or PRZ-05.
+
+---
+
+*Open for staking: `PRZ-02` and `PRZ-03` still have no bets. The Deferred
+Contribution family has three open bets with separate witnesses; none may
+inherit another bet's resolution.*

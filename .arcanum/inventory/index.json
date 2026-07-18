@@ -1,7 +1,7 @@
 {
   "schema_version": "inventory.index.v0.1",
   "inventory_root": ".arcanum/inventory",
-  "generated_at": "2026-07-13T04:36:33Z",
+  "generated_at": "2026-07-18T00:48:04Z",
   "human_index": "index.md",
   "entries": [
     {
@@ -65,11 +65,15 @@
         "../../../prizes/README.md",
         "../../../prizes/PRIZE-REGISTER.md",
         "../../../prizes/BET-REGISTER.md",
+        "../../../prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md",
+        "../../../prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.validation.md",
+        "../../../prizes/training/README.md",
+        "../../../prizes/DEFERRED-CONTRIBUTION-BETS-PLAIN-LANGUAGE.md",
+        "../../../subtowers/MECHANISM-PRIOR-ART-CONTRACT.md",
         "../../../prizes/SEED.md",
         "../../../sources/local-snapshots/domainspec-lean/PRIZES.md",
         "../../../harvest/cav2-lean/findings.md",
-        "PRZ-01..03",
-        "BET-PRZ-01-a",
+        "PRZ-01..06",
         "SRC-DST-PRIZES",
         "dlean-prize-not-achievement",
         "dlean-bet-register-boundary"
@@ -83,12 +87,17 @@
         "prize-as-open-contract",
         "bet-as-labeled-conjecture",
         "rec-c13-candidate-handoff",
-        "invoke handoff"
+        "invoke handoff",
+        "deferred-contribution-bet-stack",
+        "bets-prizes-newcomer-walkthrough",
+        "bets-prizes-live-training",
+        "mechanism-directed-prior-art",
+        "deferred-contribution-bets-plain-language"
       ],
       "evidence_card_ids": [],
       "evidence_set_ids": [],
       "residue": [
-        "Nothing is awarded — `PRZ-01..03` are open; `BET-PRZ-01-a` cannot reach `survived` until its authority-handoff witness fixture is built."
+        "Nothing is awarded."
       ]
     },
     {
@@ -379,6 +388,130 @@
       "residue": []
     },
     {
+      "id": "contribution-measurement-failure-allocation-guide",
+      "path": "entries/contribution-measurement-failure-allocation-guide.md",
+      "kind": "entry",
+      "type": "synthesis",
+      "title": "Contribution Measurement, Failure, Review, and Allocation Guide",
+      "summary": "This synthesis preserves an anonymized workshop corpus of concrete contribution examples and organizes it into a candidate research guide.",
+      "tags": [
+        "synthesis",
+        "workflow",
+        "prizes",
+        "bets",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../prizes/training/CONTRIBUTION-MEASUREMENT-FAILURE-AND-ALLOCATION.md",
+        "../../../prizes/training/README.md",
+        "../../../prizes/training/VALIDATION.md",
+        "../../../dispatch/deferred-contribution-basis/findings.md",
+        "../../../dispatch/economy-synthesis/findings.md",
+        "../../../authority/AUTHORITY-MODEL.md",
+        "../../../authority/promotion-policy.md",
+        "../../../prizes/BET-REGISTER.md",
+        "../../../validation/contribution-edge-fixtures/TYPED-NEGATIVES.md"
+      ],
+      "updated": "2026-07-18",
+      "status": "candidate",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "workshop-contribution-corpus",
+        "shared inference?",
+        "four-question-separation",
+        "contribution-family-vector",
+        "agile-estimation-boundary",
+        "informative-failure-candidate",
+        "reviewer-conflict-randomness",
+        "history-allocation-boundary",
+        "newcomer-protected-access",
+        "workshop-allocation-experiments"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "No candidate experiment has run."
+      ]
+    },
+    {
+      "id": "contribution-mechanism-tower",
+      "path": "entries/contribution-mechanism-tower.md",
+      "kind": "entry",
+      "type": "strategy-result",
+      "title": "Contribution Mechanism Tower And Dispatch Strategy",
+      "summary": "Contribution Mechanism Tower And Dispatch Strategy",
+      "tags": [
+        "strategy-result",
+        "dispatch",
+        "subagents",
+        "tower",
+        "review",
+        "prior-art",
+        "bets",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../subtowers/contribution-mechanism/README.md",
+        "../../../subtowers/contribution-mechanism/TOWER.md",
+        "../../../subtowers/contribution-mechanism/SOURCE-RECORDS.md",
+        "../../../dispatch/towers/PROPOSED-CONTRIBUTION-MECHANISM-RESEARCH.md",
+        "../../../dispatch/reviews/PROPOSED-CONTRIBUTION-MECHANISM-REVIEW.md",
+        "../../../prizes/training/CONTRIBUTION-MEASUREMENT-FAILURE-AND-ALLOCATION.md",
+        "../../../dispatch/deferred-contribution-basis/findings.md",
+        "../../../subtowers/MECHANISM-PRIOR-ART-CONTRACT.md",
+        "../../../subtowers/contribution-mechanism/returns/research/findings.md",
+        "../../../subtowers/contribution-mechanism/returns/research/research.md",
+        "../../../subtowers/contribution-mechanism/returns/research/robot-talks.md"
+      ],
+      "updated": "2026-07-18",
+      "status": "bounded",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": []
+    },
+    {
+      "id": "current-state-mental-map",
+      "path": "entries/current-state-mental-map.md",
+      "kind": "entry",
+      "type": "synthesis",
+      "title": "Current-State Mental Map",
+      "summary": "A self-contained visual read model now separates the program's source and authority foundation, closed research, candidate handoffs, killed propositions, unrun or unrunnable evidence work, human decisions, and the smallest legitimate next contributions.",
+      "tags": [
+        "synthesis",
+        "workflow",
+        "tower",
+        "definitions",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../maps/current-state/index.html",
+        "../../../maps/current-state/lanes.json",
+        "../../../maps/current-state/README.md",
+        "economy-resilience-program.md",
+        "deferred-contribution-basis.md",
+        "contribution-mechanism-tower.md",
+        "monetary-circulation-tower.md",
+        "bets-and-prizes-device.md"
+      ],
+      "updated": "2026-07-18",
+      "status": "active",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "maps/current-state/index.html",
+        "maps/current-state/lanes.json",
+        "maps/current-state/README.md",
+        "current-state-graph",
+        "next-action-dependency-queue"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "The page is a dated projection and must be refreshed when dispatch, definition, institutional-input, experiment, bet/prize, adjudication, or promotion state changes."
+      ]
+    },
+    {
       "id": "deferred-contribution-basis",
       "path": "entries/deferred-contribution-basis.md",
       "kind": "entry",
@@ -476,6 +609,9 @@
         "../../../subtowers/science-of-science/returns/tower-findings.md",
         "../../../subtowers/socioeconomic-behavior/returns/tower-findings.md",
         "../../../sources/source-records.md",
+        "../../../subtowers/monetary-circulation/README.md",
+        "../../../dispatch/towers/PROPOSED-MONETARY-CIRCULATION-RESEARCH.md",
+        "../../../subtowers/monetary-circulation/returns/research/findings.md",
         "SYN-ECON-PROGRAM-FINDINGS",
         "SYN-ECON-TOWER-*"
       ],
@@ -488,7 +624,8 @@
         "four-decidable-now-fixtures",
         "douceur-identity-cost-gate",
         "tower-research-program-pattern",
-        "two-axis-tension"
+        "two-axis-tension",
+        "monetary-circulation-program-extension"
       ],
       "evidence_card_ids": [],
       "evidence_set_ids": [],
@@ -645,6 +782,83 @@
       "residue": [
         "The first harvest distilled these snapshots into `harvest/cav2-lean/selector-map.md` and `harvest/cav2-lean/findings.md`."
       ]
+    },
+    {
+      "id": "mechanism-directed-prior-art",
+      "path": "entries/mechanism-directed-prior-art.md",
+      "kind": "entry",
+      "type": "workflow",
+      "title": "Mechanism-Directed Prior Art",
+      "summary": "Every proposed mechanism routes a directed and bounded question into each relevant subtower before its witness design is treated as ready.",
+      "tags": [
+        "prior-art",
+        "tower",
+        "bets",
+        "workflow",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../subtowers/MECHANISM-PRIOR-ART-CONTRACT.md",
+        "../../../prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md",
+        "../../../prizes/training/PARTICIPANT-WORKBOOK.md",
+        "deferred-contribution-basis.md",
+        "../../../subtowers/official-whitepaper/returns/deferred-contribution-basis-prior-art.md",
+        "../../../subtowers/failed-dao-crypto/returns/deferred-contribution-basis-prior-art.md",
+        "../../../subtowers/science-of-science/returns/deferred-contribution-basis-prior-art.md",
+        "../../../subtowers/formal-mechanisms/returns/deferred-contribution-basis-prior-art.md",
+        "../../../subtowers/socioeconomic-behavior/returns/deferred-contribution-basis-prior-art.md"
+      ],
+      "updated": "2026-07-18",
+      "status": "active",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [
+        "mechanism-directed-prior-art",
+        "relevant-subtower-gate",
+        "negative-precedent-required",
+        "prior-art-next-falsifier",
+        "prior-art-not-mechanism-validation"
+      ],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": [
+        "- The five deferred-contribution returns are worked examples, not a universal proof that every future mechanism needs those same five subtowers."
+      ]
+    },
+    {
+      "id": "monetary-circulation-tower",
+      "path": "entries/monetary-circulation-tower.md",
+      "kind": "entry",
+      "type": "strategy-result",
+      "title": "Monetary Circulation And Liquidity Resilience Tower",
+      "summary": "Monetary Circulation And Liquidity Resilience Tower",
+      "tags": [
+        "strategy-result",
+        "dispatch",
+        "subagents",
+        "tower",
+        "prior-art",
+        "token-boundary",
+        "synthesis",
+        "resonantos-economy"
+      ],
+      "sources": [
+        "../../../subtowers/monetary-circulation/README.md",
+        "../../../subtowers/monetary-circulation/TOWER.md",
+        "../../../subtowers/monetary-circulation/levels/L0-corpus.md",
+        "../../../subtowers/monetary-circulation/levels/L1-residue-map.md",
+        "../../../subtowers/monetary-circulation/levels/L2-closure-plan.md",
+        "../../../dispatch/towers/PROPOSED-MONETARY-CIRCULATION-RESEARCH.md",
+        "../../../subtowers/monetary-circulation/returns/research/findings.md",
+        "../../../subtowers/monetary-circulation/returns/research/robot-talks.md",
+        "../../../dispatch/economy-synthesis/findings.md"
+      ],
+      "updated": "2026-07-18",
+      "status": "bounded",
+      "authority_posture": "non-authority-read-model",
+      "selectors": [],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": []
     },
     {
       "id": "number-lottery-refinement",
@@ -950,6 +1164,37 @@
       "residue": [
         "The pool is small and should be expanded only when a dispatch or reflection loop needs a new role fit."
       ]
+    },
+    {
+      "id": "time-capsule-live-intake-refine",
+      "path": "entries/time-capsule-live-intake-refine.md",
+      "kind": "entry",
+      "type": "strategy-result",
+      "title": "Time Capsule Live Intake Refine",
+      "summary": "A full Refine run converted the existing Time Capsule candidate design into a non-executed form/database/safety implementation plan.",
+      "tags": [
+        "strategy-result",
+        "dispatch",
+        "subagents",
+        "review",
+        "refine",
+        "implementation-boundary",
+        "time-capsule"
+      ],
+      "sources": [
+        "../../../development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/RESULT.md",
+        "../../../development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/REFINE-DISPATCH.json",
+        "../../../development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/subagents-review/findings.md",
+        "../../../development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md",
+        "../../../telemetry/agents/subagents-dispatch.yaml"
+      ],
+      "updated": "2026-07-18",
+      "status": "candidate-plan",
+      "authority_posture": null,
+      "selectors": [],
+      "evidence_card_ids": [],
+      "evidence_set_ids": [],
+      "residue": []
     }
   ],
   "indexes": {
@@ -963,6 +1208,9 @@
       "cav2-lean-selector-map": "entries/cav2-lean-selector-map.md",
       "contribution-edge-fixture-full-refine-plan": "entries/contribution-edge-fixture-full-refine-plan.md",
       "contribution-edge-fixtures": "entries/contribution-edge-fixtures.md",
+      "contribution-measurement-failure-allocation-guide": "entries/contribution-measurement-failure-allocation-guide.md",
+      "contribution-mechanism-tower": "entries/contribution-mechanism-tower.md",
+      "current-state-mental-map": "entries/current-state-mental-map.md",
       "deferred-contribution-basis": "entries/deferred-contribution-basis.md",
       "domainspec-subagents-reflection-loop": "entries/domainspec-subagents-reflection-loop.md",
       "economy-resilience-program": "entries/economy-resilience-program.md",
@@ -970,6 +1218,8 @@
       "harvest-strategy": "entries/harvest-strategy.md",
       "load-bearing-term-tracking-discipline": "entries/load-bearing-term-tracking-discipline.md",
       "local-source-snapshots": "entries/local-source-snapshots.md",
+      "mechanism-directed-prior-art": "entries/mechanism-directed-prior-art.md",
+      "monetary-circulation-tower": "entries/monetary-circulation-tower.md",
       "number-lottery-refinement": "entries/number-lottery-refinement.md",
       "onboarding-docs-review": "entries/onboarding-docs-review.md",
       "repo-skill-surface": "entries/repo-skill-surface.md",
@@ -978,7 +1228,8 @@
       "strategy-result-cav2-lean-harvest": "entries/strategy-result-cav2-lean-harvest.md",
       "strategy-result-four-surface-reconciliation": "entries/strategy-result-four-surface-reconciliation.md",
       "subagents-dispatch-strategy": "entries/subagents-dispatch-strategy.md",
-      "telemetry-agent-pool": "entries/telemetry-agent-pool.md"
+      "telemetry-agent-pool": "entries/telemetry-agent-pool.md",
+      "time-capsule-live-intake-refine": "entries/time-capsule-live-intake-refine.md"
     },
     "by_type": {
       "development-handoff": [
@@ -1002,14 +1253,19 @@
       ],
       "strategy-result": [
         "authority-definition-lifecycle-clarity",
+        "contribution-mechanism-tower",
         "deferred-contribution-basis",
         "ergonomics-strategy",
-        "number-lottery-refinement"
+        "monetary-circulation-tower",
+        "number-lottery-refinement",
+        "time-capsule-live-intake-refine"
       ],
       "synthesis": [
         "cav2-authority-lifecycle-owned-build-harvest",
         "cav2-lean-findings",
         "cav2-lean-selector-map",
+        "contribution-measurement-failure-allocation-guide",
+        "current-state-mental-map",
         "economy-resilience-program",
         "load-bearing-term-tracking-discipline"
       ],
@@ -1023,6 +1279,7 @@
       "workflow": [
         "bets-and-prizes-device",
         "harvest-strategy",
+        "mechanism-directed-prior-art",
         "repository-working-guide",
         "subagents-dispatch-strategy"
       ]
@@ -1044,7 +1301,10 @@
         "repository-working-guide"
       ],
       "bets": [
-        "bets-and-prizes-device"
+        "bets-and-prizes-device",
+        "contribution-measurement-failure-allocation-guide",
+        "contribution-mechanism-tower",
+        "mechanism-directed-prior-art"
       ],
       "cav2": [
         "cav2-authority-lifecycle-owned-build-harvest",
@@ -1063,6 +1323,7 @@
       "definitions": [
         "authority-definition-lifecycle-clarity",
         "cav2-lean-findings-development-pack",
+        "current-state-mental-map",
         "deferred-contribution-basis",
         "load-bearing-term-tracking-discipline",
         "strategy-result-four-surface-reconciliation"
@@ -1077,15 +1338,18 @@
         "cav2-lean-development-pack-review",
         "cav2-lean-findings",
         "cav2-lean-selector-map",
+        "contribution-mechanism-tower",
         "deferred-contribution-basis",
         "economy-resilience-program",
         "ergonomics-strategy",
         "harvest-strategy",
+        "monetary-circulation-tower",
         "number-lottery-refinement",
         "onboarding-docs-review",
         "strategy-result-cav2-lean-harvest",
         "strategy-result-four-surface-reconciliation",
-        "subagents-dispatch-strategy"
+        "subagents-dispatch-strategy",
+        "time-capsule-live-intake-refine"
       ],
       "dispatch-spec": [
         "contribution-edge-fixture-full-refine-plan"
@@ -1123,7 +1387,8 @@
       "implementation-boundary": [
         "cav2-authority-lifecycle-owned-build-harvest",
         "contribution-edge-fixture-full-refine-plan",
-        "contribution-edge-fixtures"
+        "contribution-edge-fixtures",
+        "time-capsule-live-intake-refine"
       ],
       "load-bearing": [
         "load-bearing-term-tracking-discipline"
@@ -1140,12 +1405,19 @@
       "pool": [
         "telemetry-agent-pool"
       ],
+      "prior-art": [
+        "contribution-mechanism-tower",
+        "mechanism-directed-prior-art",
+        "monetary-circulation-tower"
+      ],
       "prizes": [
-        "bets-and-prizes-device"
+        "bets-and-prizes-device",
+        "contribution-measurement-failure-allocation-guide"
       ],
       "refine": [
         "contribution-edge-fixture-full-refine-plan",
-        "number-lottery-refinement"
+        "number-lottery-refinement",
+        "time-capsule-live-intake-refine"
       ],
       "reflection": [
         "domainspec-subagents-reflection-loop"
@@ -1160,12 +1432,17 @@
         "cav2-lean-selector-map",
         "contribution-edge-fixture-full-refine-plan",
         "contribution-edge-fixtures",
+        "contribution-measurement-failure-allocation-guide",
+        "contribution-mechanism-tower",
+        "current-state-mental-map",
         "deferred-contribution-basis",
         "economy-resilience-program",
         "ergonomics-strategy",
         "harvest-strategy",
         "load-bearing-term-tracking-discipline",
         "local-source-snapshots",
+        "mechanism-directed-prior-art",
+        "monetary-circulation-tower",
         "onboarding-docs-review",
         "repository-working-guide",
         "research-tower-root",
@@ -1174,7 +1451,9 @@
       ],
       "review": [
         "cav2-lean-development-pack-review",
-        "onboarding-docs-review"
+        "contribution-mechanism-tower",
+        "onboarding-docs-review",
+        "time-capsule-live-intake-refine"
       ],
       "sigil-development": [
         "domainspec-subagents-reflection-loop"
@@ -1188,33 +1467,42 @@
       ],
       "strategy-result": [
         "authority-definition-lifecycle-clarity",
+        "contribution-mechanism-tower",
         "deferred-contribution-basis",
         "economy-resilience-program",
         "ergonomics-strategy",
+        "monetary-circulation-tower",
         "number-lottery-refinement",
         "onboarding-docs-review",
         "strategy-result-cav2-lean-harvest",
-        "strategy-result-four-surface-reconciliation"
+        "strategy-result-four-surface-reconciliation",
+        "time-capsule-live-intake-refine"
       ],
       "subagents": [
         "authority-definition-lifecycle-clarity",
         "cav2-lean-development-pack-review",
+        "contribution-mechanism-tower",
         "deferred-contribution-basis",
         "domainspec-subagents-reflection-loop",
         "economy-resilience-program",
         "ergonomics-strategy",
+        "monetary-circulation-tower",
         "number-lottery-refinement",
         "onboarding-docs-review",
         "strategy-result-cav2-lean-harvest",
         "strategy-result-four-surface-reconciliation",
         "subagents-dispatch-strategy",
-        "telemetry-agent-pool"
+        "telemetry-agent-pool",
+        "time-capsule-live-intake-refine"
       ],
       "synthesis": [
+        "contribution-measurement-failure-allocation-guide",
+        "current-state-mental-map",
         "deferred-contribution-basis",
         "economy-resilience-program",
         "ergonomics-strategy",
-        "load-bearing-term-tracking-discipline"
+        "load-bearing-term-tracking-discipline",
+        "monetary-circulation-tower"
       ],
       "task-session": [
         "contribution-edge-fixture-full-refine-plan"
@@ -1224,13 +1512,19 @@
         "telemetry-agent-pool"
       ],
       "time-capsule": [
-        "number-lottery-refinement"
+        "number-lottery-refinement",
+        "time-capsule-live-intake-refine"
       ],
       "token-boundary": [
+        "monetary-circulation-tower",
         "number-lottery-refinement"
       ],
       "tower": [
+        "contribution-mechanism-tower",
+        "current-state-mental-map",
         "deferred-contribution-basis",
+        "mechanism-directed-prior-art",
+        "monetary-circulation-tower",
         "research-tower-root"
       ],
       "validation-scaffold": [
@@ -1242,7 +1536,10 @@
       ],
       "workflow": [
         "bets-and-prizes-device",
+        "contribution-measurement-failure-allocation-guide",
+        "current-state-mental-map",
         "harvest-strategy",
+        "mechanism-directed-prior-art",
         "repository-working-guide"
       ],
       "workflow-reflect": [
@@ -1293,7 +1590,8 @@
         "research-tower-root"
       ],
       "../../../authority/AUTHORITY-MODEL.md": [
-        "authority-definition-lifecycle-clarity"
+        "authority-definition-lifecycle-clarity",
+        "contribution-measurement-failure-allocation-guide"
       ],
       "../../../authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md": [
         "cav2-lean-development-pack-review",
@@ -1301,7 +1599,8 @@
         "load-bearing-term-tracking-discipline"
       ],
       "../../../authority/promotion-policy.md": [
-        "authority-definition-lifecycle-clarity"
+        "authority-definition-lifecycle-clarity",
+        "contribution-measurement-failure-allocation-guide"
       ],
       "../../../definitions/DEFINITION-DRIFT-AUDIT.md": [
         "cav2-lean-findings-development-pack",
@@ -1350,6 +1649,18 @@
       "../../../development/refinement-runs/2026-07-12-number-lottery/stages/research-dispatch/research.md": [
         "number-lottery-refinement"
       ],
+      "../../../development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/REFINE-DISPATCH.json": [
+        "time-capsule-live-intake-refine"
+      ],
+      "../../../development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/RESULT.md": [
+        "time-capsule-live-intake-refine"
+      ],
+      "../../../development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/stages/09-work-pack.md": [
+        "time-capsule-live-intake-refine"
+      ],
+      "../../../development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/subagents-review/findings.md": [
+        "time-capsule-live-intake-refine"
+      ],
       "../../../development/refinement-runs/20260627T041500Z-cav2-fixture-full-refine/REFINE-DISPATCH.json": [
         "contribution-edge-fixture-full-refine-plan"
       ],
@@ -1374,19 +1685,33 @@
         "authority-definition-lifecycle-clarity"
       ],
       "../../../dispatch/deferred-contribution-basis/findings.md": [
+        "contribution-measurement-failure-allocation-guide",
+        "contribution-mechanism-tower",
         "deferred-contribution-basis"
       ],
       "../../../dispatch/deferred-contribution-basis/research.md": [
         "deferred-contribution-basis"
       ],
       "../../../dispatch/economy-synthesis/findings.md": [
-        "economy-resilience-program"
+        "contribution-measurement-failure-allocation-guide",
+        "economy-resilience-program",
+        "monetary-circulation-tower"
       ],
       "../../../dispatch/ergonomics-strategy/findings.md": [
         "ergonomics-strategy"
       ],
       "../../../dispatch/ergonomics-strategy/research.md": [
         "ergonomics-strategy"
+      ],
+      "../../../dispatch/reviews/PROPOSED-CONTRIBUTION-MECHANISM-REVIEW.md": [
+        "contribution-mechanism-tower"
+      ],
+      "../../../dispatch/towers/PROPOSED-CONTRIBUTION-MECHANISM-RESEARCH.md": [
+        "contribution-mechanism-tower"
+      ],
+      "../../../dispatch/towers/PROPOSED-MONETARY-CIRCULATION-RESEARCH.md": [
+        "economy-resilience-program",
+        "monetary-circulation-tower"
       ],
       "../../../formulae/dispatch-spec/development/run-validation-fixtures.sh": [
         "contribution-edge-fixture-full-refine-plan"
@@ -1429,10 +1754,23 @@
         "cav2-lean-findings",
         "cav2-lean-selector-map"
       ],
+      "../../../maps/current-state/README.md": [
+        "current-state-mental-map"
+      ],
+      "../../../maps/current-state/index.html": [
+        "current-state-mental-map"
+      ],
+      "../../../maps/current-state/lanes.json": [
+        "current-state-mental-map"
+      ],
       "../../../ops/subagents-strategy/README.md": [
         "subagents-dispatch-strategy"
       ],
       "../../../prizes/BET-REGISTER.md": [
+        "bets-and-prizes-device",
+        "contribution-measurement-failure-allocation-guide"
+      ],
+      "../../../prizes/DEFERRED-CONTRIBUTION-BETS-PLAIN-LANGUAGE.md": [
         "bets-and-prizes-device"
       ],
       "../../../prizes/PRIZE-REGISTER.md": [
@@ -1441,8 +1779,29 @@
       "../../../prizes/README.md": [
         "bets-and-prizes-device"
       ],
+      "../../../prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md": [
+        "bets-and-prizes-device",
+        "mechanism-directed-prior-art"
+      ],
+      "../../../prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.validation.md": [
+        "bets-and-prizes-device"
+      ],
       "../../../prizes/SEED.md": [
         "bets-and-prizes-device"
+      ],
+      "../../../prizes/training/CONTRIBUTION-MEASUREMENT-FAILURE-AND-ALLOCATION.md": [
+        "contribution-measurement-failure-allocation-guide",
+        "contribution-mechanism-tower"
+      ],
+      "../../../prizes/training/PARTICIPANT-WORKBOOK.md": [
+        "mechanism-directed-prior-art"
+      ],
+      "../../../prizes/training/README.md": [
+        "bets-and-prizes-device",
+        "contribution-measurement-failure-allocation-guide"
+      ],
+      "../../../prizes/training/VALIDATION.md": [
+        "contribution-measurement-failure-allocation-guide"
       ],
       "../../../research/four-surface-reconciliation/findings.md": [
         "load-bearing-term-tracking-discipline",
@@ -1484,29 +1843,80 @@
         "economy-resilience-program",
         "research-tower-root"
       ],
+      "../../../subtowers/MECHANISM-PRIOR-ART-CONTRACT.md": [
+        "bets-and-prizes-device",
+        "contribution-mechanism-tower",
+        "mechanism-directed-prior-art"
+      ],
+      "../../../subtowers/contribution-mechanism/README.md": [
+        "contribution-mechanism-tower"
+      ],
+      "../../../subtowers/contribution-mechanism/SOURCE-RECORDS.md": [
+        "contribution-mechanism-tower"
+      ],
+      "../../../subtowers/contribution-mechanism/TOWER.md": [
+        "contribution-mechanism-tower"
+      ],
+      "../../../subtowers/contribution-mechanism/returns/research/findings.md": [
+        "contribution-mechanism-tower"
+      ],
+      "../../../subtowers/contribution-mechanism/returns/research/research.md": [
+        "contribution-mechanism-tower"
+      ],
+      "../../../subtowers/contribution-mechanism/returns/research/robot-talks.md": [
+        "contribution-mechanism-tower"
+      ],
       "../../../subtowers/failed-dao-crypto/returns/deferred-contribution-basis-prior-art.md": [
-        "deferred-contribution-basis"
+        "deferred-contribution-basis",
+        "mechanism-directed-prior-art"
       ],
       "../../../subtowers/failed-dao-crypto/returns/tower-findings.md": [
         "economy-resilience-program"
       ],
       "../../../subtowers/formal-mechanisms/returns/deferred-contribution-basis-prior-art.md": [
-        "deferred-contribution-basis"
+        "deferred-contribution-basis",
+        "mechanism-directed-prior-art"
       ],
       "../../../subtowers/formal-mechanisms/returns/tower-findings.md": [
         "economy-resilience-program"
       ],
+      "../../../subtowers/monetary-circulation/README.md": [
+        "economy-resilience-program",
+        "monetary-circulation-tower"
+      ],
+      "../../../subtowers/monetary-circulation/TOWER.md": [
+        "monetary-circulation-tower"
+      ],
+      "../../../subtowers/monetary-circulation/levels/L0-corpus.md": [
+        "monetary-circulation-tower"
+      ],
+      "../../../subtowers/monetary-circulation/levels/L1-residue-map.md": [
+        "monetary-circulation-tower"
+      ],
+      "../../../subtowers/monetary-circulation/levels/L2-closure-plan.md": [
+        "monetary-circulation-tower"
+      ],
+      "../../../subtowers/monetary-circulation/returns/research/findings.md": [
+        "economy-resilience-program",
+        "monetary-circulation-tower"
+      ],
+      "../../../subtowers/monetary-circulation/returns/research/robot-talks.md": [
+        "monetary-circulation-tower"
+      ],
       "../../../subtowers/official-whitepaper/returns/deferred-contribution-basis-prior-art.md": [
-        "deferred-contribution-basis"
+        "deferred-contribution-basis",
+        "mechanism-directed-prior-art"
       ],
       "../../../subtowers/science-of-science/returns/deferred-contribution-basis-prior-art.md": [
-        "deferred-contribution-basis"
+        "deferred-contribution-basis",
+        "mechanism-directed-prior-art"
       ],
       "../../../subtowers/science-of-science/returns/tower-findings.md": [
         "economy-resilience-program"
       ],
       "../../../subtowers/socioeconomic-behavior/returns/deferred-contribution-basis-prior-art.md": [
-        "deferred-contribution-basis"
+        "deferred-contribution-basis",
+        "mechanism-directed-prior-art"
       ],
       "../../../subtowers/socioeconomic-behavior/returns/tower-findings.md": [
         "economy-resilience-program"
@@ -1526,7 +1936,8 @@
         "ergonomics-strategy",
         "onboarding-docs-review",
         "strategy-result-four-surface-reconciliation",
-        "subagents-dispatch-strategy"
+        "subagents-dispatch-strategy",
+        "time-capsule-live-intake-refine"
       ],
       "../../../tools/check_load_bearing_terms.py": [
         "load-bearing-term-tracking-discipline"
@@ -1541,7 +1952,8 @@
         "contribution-edge-fixtures"
       ],
       "../../../validation/contribution-edge-fixtures/TYPED-NEGATIVES.md": [
-        "contribution-edge-fixtures"
+        "contribution-edge-fixtures",
+        "contribution-measurement-failure-allocation-guide"
       ],
       "../../observability/README.md": [
         "domainspec-subagents-reflection-loop"
@@ -1564,10 +1976,7 @@
       "2026-06-30-authority-definition-lifecycle-clarity": [
         "authority-definition-lifecycle-clarity"
       ],
-      "BET-PRZ-01-a": [
-        "bets-and-prizes-device"
-      ],
-      "PRZ-01..03": [
+      "PRZ-01..06": [
         "bets-and-prizes-device"
       ],
       "SRC-DST-PRIZES": [
@@ -1579,11 +1988,27 @@
       "SYN-ECON-TOWER-*": [
         "economy-resilience-program"
       ],
+      "bets-and-prizes-device.md": [
+        "current-state-mental-map"
+      ],
+      "contribution-mechanism-tower.md": [
+        "current-state-mental-map"
+      ],
+      "deferred-contribution-basis.md": [
+        "current-state-mental-map",
+        "mechanism-directed-prior-art"
+      ],
       "dlean-bet-register-boundary": [
         "bets-and-prizes-device"
       ],
       "dlean-prize-not-achievement": [
         "bets-and-prizes-device"
+      ],
+      "economy-resilience-program.md": [
+        "current-state-mental-map"
+      ],
+      "monetary-circulation-tower.md": [
+        "current-state-mental-map"
       ]
     },
     "by_status": {
@@ -1596,14 +2021,26 @@
         "cav2-lean-selector-map",
         "contribution-edge-fixture-full-refine-plan",
         "contribution-edge-fixtures",
+        "current-state-mental-map",
         "domainspec-subagents-reflection-loop",
         "load-bearing-term-tracking-discipline",
         "local-source-snapshots",
+        "mechanism-directed-prior-art",
         "repo-skill-surface",
         "repository-working-guide",
         "research-tower-root",
         "subagents-dispatch-strategy",
         "telemetry-agent-pool"
+      ],
+      "bounded": [
+        "contribution-mechanism-tower",
+        "monetary-circulation-tower"
+      ],
+      "candidate": [
+        "contribution-measurement-failure-allocation-guide"
+      ],
+      "candidate-plan": [
+        "time-capsule-live-intake-refine"
       ],
       "closed": [
         "authority-definition-lifecycle-clarity",

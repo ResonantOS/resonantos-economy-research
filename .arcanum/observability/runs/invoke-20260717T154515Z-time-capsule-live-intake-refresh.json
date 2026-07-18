@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-07-17T15:45:15Z",
+  "run_id": "arcanum-hook-019f70bb-8e31-7c31-bc23-b6133b007132",
+  "sigil": "invoke",
+  "spell": "invoke",
+  "tier": "spell",
+  "mode": "refresh",
+  "meaningful_execution": true,
+  "mutation_mode": "proposal-only",
+  "execution": {
+    "status": "completed-with-flag",
+    "source_signal_count": 10,
+    "target_artifact_count": 11,
+    "proposed_count": 8,
+    "applied_count": 0,
+    "outputs": [
+      "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/REFRESH-REPORT.md",
+      "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/refresh-report.json",
+      "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/REFRESH-PATCH-PROPOSAL.md",
+      "development/invoke-runs/2026-07-17-time-capsule-live-intake-refresh/INVOKE-RESULT.md"
+    ],
+    "validation": [
+      "context-builder-strict-9-of-9",
+      "inventory-machine-index-first-pass",
+      "dispatch-technique-trace-pass",
+      "distill-standard-pass-for-refresh",
+      "json-and-source-path-validation-pass"
+    ]
+  },
+  "observer": {
+    "quality_bar_status": "partial",
+    "signals": [
+      "quality-pass",
+      "artifact-drift-detected",
+      "proposal-only-boundary",
+      "route-repair"
+    ],
+    "anti_pattern_hits": [],
+    "workflow_gaps": [
+      "Manual access and consequence-retell evidence remains unrun.",
+      "High-complexity live-intake plan must be revised before Task Session.",
+      "Public-live and close/recovery proofs remain absent."
+    ],
+    "output_contract_drift": false,
+    "reflection_trigger": "human-and-plan-gates-pending",
+    "recommendation": "invoke plan Live Intake Plan V2"
+  },
+  "result": "flag",
+  "next_route": "invoke-plan-live-intake-v2",
+  "dedupe_key": "arcanum-hook-019f70bb-8e31-7c31-bc23-b6133b007132:invoke-refresh:0.2.0",
+  "observer_version": "0.1.0"
+}

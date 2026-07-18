@@ -3,6 +3,20 @@
 Status: active
 Owner: ResonantOS economy research owner
 
+## 2026-07-13 current-state mental map
+
+- Mode: mixed x-ray synthesis.
+- Entry created: [current-state-mental-map](entries/current-state-mental-map.md)
+  (type `synthesis`).
+- Durable outputs: `maps/current-state/index.html`, `lanes.json`, and `README.md`.
+- Result: a dated non-authority read model separates accepted research, open
+  candidates, killed propositions, unrunnable handoffs, human/definition/
+  institutional gates, and the dependency-ordered next contribution queue.
+- Index updated: yes. Machine index rebuilt from entries.
+- Contradictions flagged: 0; dependency ordering is marked inference.
+- Notes: no validation, policy, token, payout, treasury, governance,
+  implementation, launch, or authority state is promoted by the map.
+
 ## 2026-06-30 authority definition lifecycle clarity applied
 
 - Mode: definitions-governance + authority docs sync
@@ -806,3 +820,252 @@ Owner: ResonantOS economy research owner
   E1–E4; E5 requires its own prior-art sweep
 - Promotion posture: no reward, payout, reputation, token, policy, governance,
   implementation, economy-validation, or authority claim
+
+## 2026-07-13 Deferred Contribution three-bet registration
+
+- Mode: falsification-first prize/bet registration; no experiment executed
+- Prize family added: `PRZ-04` recognition utility, `PRZ-05` community utility,
+  `PRZ-06` bilingual communication safety
+- Bets added: `BET-PRZ-04-a`, `BET-PRZ-05-a`, `BET-PRZ-06-a`; all `open`
+- Dependency: PRZ-05 requires PRZ-04's witness before award, but inherits no
+  evidence; PRZ-06 may test language independently and cannot prove mechanism or
+  community utility
+- Family viability: all three prizes must reach `awarded-candidate`; this is a
+  coordination rule, not a score or authority surface
+- Witness state: none instantiated or run; definitions remain blocked before
+  PRZ-04 fixture use
+- Promotion posture: prize/bet records are research conjectures only; no reward,
+  payout, reputation, policy, governance, implementation, or authority effect
+
+## 2026-07-13 Bets and prizes newcomer walkthrough moved into repository
+
+- Mode: documentation relocation and local-authority adaptation; no experiment executed
+- Canonical location: `prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md`
+- Validation companion: `prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.validation.md`
+- Discovery surfaces updated: `prizes/README.md` and
+  `entries/bets-and-prizes-device.md`
+- Source posture: local GUIDE, prize/bet registers, dispatch contracts,
+  research-evidence harness, and repository authority model
+- Witness state: five local Markdown-link checks pass; inventory generator and
+  strict sync check pass at 25 entries; independent newcomer-reader trial
+  remains unrun
+- Promotion posture: teaching artifact only; no mechanism, reward, payout,
+  reputation, policy, governance, implementation, or authority effect
+
+## 2026-07-13 Bets and prizes live training package
+
+- Mode: Whisper live-presentation generation after operator voice approval
+- Fixed premise: calls and similar activities already count as contributions;
+  the open problem is the mechanism that may use those records later
+- Package: `prizes/training/` with approved audition, facilitator guide,
+  participant workbook, 18-moment projected HTML, and validation record
+- Interaction: mechanism generation → frozen meaning of best → mechanism bet →
+  attack exchange → three independent bets → bilingual mapping → witness → mock
+  adjudication
+- Static evidence: local links, HTML structure, JavaScript syntax, surface
+  separation, whitespace, and diff checks pass
+- Open witnesses: real-browser presentation check and first trainee cohort remain
+  unrun
+- Promotion posture: training artifact only; no prize closure, mechanism
+  validation, reward, payout, reputation, policy, governance, implementation, or
+  authority effect
+
+## 2026-07-13 Mechanism-directed subtower prior-art contract
+
+- Mode: research-tower workflow hardening plus inventory ingest; no research
+  dispatch or mechanism experiment executed
+- Shared contract: `subtowers/MECHANISM-PRIOR-ART-CONTRACT.md`
+- Subtower routes: official-whitepaper, failed-DAO/crypto, science-of-science,
+  formal-mechanisms, and socioeconomic-behavior READMEs now state their
+  mechanism-specific bounded question and required negative pressure
+- Relevance gate: select every subtower whose answer can change a bet,
+  collapse-test, or witness; record exclusion reasons instead of mechanically
+  fanning out
+- Required return: declared source bound, negative precedent,
+  supported/unsupported split, bridge risk or disanalogy, bounded finding, and
+  next falsifier
+- Training integration: walkthrough, facilitator guide, participant workbook,
+  and projected deck now demonstrate the route
+- Entry created: `entries/mechanism-directed-prior-art.md`
+- Promotion posture: prior art may revise a bet or witness; it cannot validate a
+  mechanism, adjudicate a bet, close a prize, or create policy or authority
+
+## 2026-07-13 Deferred-contribution bets plain-language page
+
+- Mode: Whisper standalone Markdown composition with Distill proposer/balancer
+  review; no bet adjudication or experiment executed
+- Artifact: `prizes/DEFERRED-CONTRIBUTION-BETS-PLAIN-LANGUAGE.md`
+- Public: people receiving the proposal without repository context
+- Fixed premise: calls, study, mentoring, documentation, and maintenance already
+  count as contributions for this proposal; the open problem is how their
+  records may inform review of a later witnessed result
+- Bets explained: recognition accuracy, later community outcome, and bilingual
+  communication safety; evidence inheritance is prohibited
+- Language boundary: investment, realization, and cashing are immediately paired
+  with non-monetary operational meanings and explicit non-promises
+- Witness state: all three bets remain open; no attribution comparison,
+  community pilot, or comprehension experiment has run
+- Promotion posture: sendable research note only; no reward, payout, token,
+  reputation, governance, policy, implementation, or authority effect
+
+## 2026-07-13 Contribution measurement, failure, and allocation workshop guide
+
+- Mode: workshop-derived documentation synthesis plus inventory ingest; no
+  mechanism experiment or dispatch executed
+- Artifact: `prizes/training/CONTRIBUTION-MEASUREMENT-FAILURE-AND-ALLOCATION.md`
+- Workshop corpus: anonymized examples covering engineering, review, meetings,
+  moderation, teaching, communication, services, and bug work; participant
+  names removed for the repository privacy boundary
+- Research structure: contribution description, planning, result-specific
+  recognition, and opportunity allocation kept separate; complexity decomposed
+  into an unscalarized vector
+- New candidate lanes: informative failure, conflict-filtered reviewer
+  assignment, history-bounded qualified lotteries, protected newcomer access,
+  and allocation-inflation attacks
+- Experiment state: six workshop-derived candidates are documented but not
+  registered in the bet/prize ledgers and not run
+- Entry created: `entries/contribution-measurement-failure-allocation-guide.md`
+- Validation boundary: prior workshop editorial/browser evidence does not
+  transfer to the new guide; documentation checks only
+- Promotion posture: no person score, reward, payout, token, reputation,
+  governance, allocation entitlement, policy, implementation, validation, or
+  authority effect
+
+## 2026-07-13 Contribution mechanism tower and dispatch proposals
+
+- Mode: research-tower scaffold plus DomainSpec research/review strategy; no
+  dispatch registered or run
+- Tower: `subtowers/contribution-mechanism/`
+- Research proposal:
+  `dispatch/towers/PROPOSED-CONTRIBUTION-MECHANISM-RESEARCH.md`
+- Review proposal:
+  `dispatch/reviews/PROPOSED-CONTRIBUTION-MECHANISM-REVIEW.md`
+- Scope: contribution families, decision-specific dimensions,
+  investment/realization language, result evidence, informative failure,
+  reviewer integrity, opportunity allocation, newcomer access, bets,
+  experiments, and Goodhart pressure
+- Prior verdict preserved: investment/cashing remain demoted as already-safe
+  mechanism aliases; the tower may test a two-language bridge but asserts no
+  stored value, conversion, reward, payout, or entitlement
+- Research lanes: failed systems, science-of-science, formal mechanisms, and
+  socioeconomic behavior -> synthesis -> precedent/non-vacuity/definition
+  skeptics -> writer -> auditor
+- Review lanes: fidelity/governance, ownership/reference, mechanics/operability,
+  and abuse/gaming -> writer -> two verifiers -> coverage auditor
+- Gate state: independent checker PASS and independent reviewer PASS for both
+  sheets on 2026-07-13; research is ready for the human confirmation decision;
+  review is still blocked on research close, target refresh, and a separate
+  confirmation
+- Ledger state: both proposals unregistered; no close rows
+- Entry created: `entries/contribution-mechanism-tower.md`
+- Promotion posture: local research planning only; no mechanism validation,
+  allocation rule, reward, payout, token, reputation, governance,
+  implementation, or authority effect
+
+## 2026-07-13 Contribution mechanism research dispatch registered
+
+- Mode: dispatch (research) — registered; run in progress
+- dispatch_id: `2026-07-13-contribution-mechanism-research`
+- Working folder: `subtowers/contribution-mechanism/returns/research/`
+- Frozen sheet:
+  `dispatch/towers/PROPOSED-CONTRIBUTION-MECHANISM-RESEARCH.md`
+- Gate: independent checker PASS + independent reviewer PASS; human confirmed
+  the frozen sheet before registration
+- Dispatch row: appended through the deterministic v0.6.0 appender
+- Close row: pending
+- Source boundary: official whitepaper is the only ResonantDAO primary source;
+  external DAO/crypto, science-of-science, formal, and behavioral sources remain
+  related evidence or formalization precedent until admitted and bridged
+- Promotion posture: local research only; no contribution mechanism validation,
+  allocation rule, reward, payout, token, reputation, governance,
+  implementation, or authority effect
+- 2026-07-13 — Closed `2026-07-13-contribution-mechanism-research` as `resolved` after final auditor ACCEPT; inventoried four bounded source cards, converged findings, robot talks, A-F dispositions, the circular CM-D5 kill/prospective E1-E2 rebuild, independent BET/PRZ identifiers, Goodhart contract, blockers, and the still-unregistered review gate. No mechanism, experiment, reward, reputation, governance, policy, readiness, or authority claim.
+- 2026-07-13 — Refreshed `2026-07-13-contribution-mechanism-review` against the closed research corpus; independent check-tension checker PASS and reviewer PASS with no apontamentos. Review remains unregistered, unrun, and separately confirmation-gated.
+
+## 2026-07-13 Monetary circulation and liquidity program extension
+
+- Mode: research-tower scaffold plus DomainSpec research strategy; no dispatch
+  registered or run
+- Tower: `subtowers/monetary-circulation/`
+- Research proposal:
+  `dispatch/towers/PROPOSED-MONETARY-CIRCULATION-RESEARCH.md`
+- Program posture: fifth source-corpus perspective feeding existing attack Lanes
+  3 and 5; the completed four-tower dispatch remains frozen
+- Scope: supply state, release schedules, distribution, treasury resilience,
+  liquidity and exit capacity, utility and sinks, and feedback/control
+- Candidate handoffs: MC-E1 through MC-E7 are unregistered and unrun
+- Research lanes: issuance/distribution, treasury/tail risk,
+  liquidity/microstructure, and utility/behavior -> synthesis ->
+  precedent/scope, non-vacuity, and definition skeptics -> writer -> auditor
+- Gate state: independent checker PASS and independent reviewer PASS on
+  2026-07-13 with no apontamentos; separate human confirmation required
+- Ledger state: proposal unregistered; no dispatch or close row
+- Entry created: `entries/monetary-circulation-tower.md`
+- Promotion posture: local research planning only; no supply schedule, treasury
+  policy, liquidity deployment, market choice, token policy, payout, launch,
+  governance, implementation, validation, or authority effect
+
+## 2026-07-13 Monetary circulation research dispatch registered
+
+- Mode: dispatch (research) — registered; run in progress
+- dispatch_id: `2026-07-13-monetary-circulation-research`
+- Working folder: `subtowers/monetary-circulation/returns/research/`
+- Frozen sheet:
+  `dispatch/towers/PROPOSED-MONETARY-CIRCULATION-RESEARCH.md`
+- Gate: independent checker PASS + independent reviewer PASS; separate human
+  confirmation received before registration
+- Dispatch row: appended through the deterministic v0.6.0 appender
+- Close row: pending
+- Source boundary: the ResonantDAO whitepaper remains the only official primary
+  source; all external issuance, treasury, liquidity, and behavioral evidence
+  remains related precedent or analogy until admitted and bridged
+- Promotion posture: local research only; no supply schedule, treasury policy,
+  liquidity deployment, market choice, token policy, payout, launch,
+  governance, implementation, validation, or authority effect
+
+## 2026-07-13 Monetary circulation research dispatch closed
+
+- Dispatch `2026-07-13-monetary-circulation-research` closed `resolved`; final
+  auditor Brandenburg ACCEPT after one exact writer repair
+- Corpus: 23 component precedents across supply/distribution, treasury,
+  market execution, and utility/behavior; no local `$RES` witness
+- Deliberation: four explorers, Beer synthesis, Ostrom/Popper/Quine robot talks,
+  one zig-zag revision, Senge findings, Brandenburg audit
+- Main repair: replace the seven-peer MC-V with explicitly incomplete MC-R,
+  typed object reports, typed relation edges, per-object evidence statuses, and
+  no top-level verdict
+- Verdicts: MC-E1 retain/revise; MC-E2/E3/E4/E7 split; MC-E5 method retained but
+  local future-work; generic MC-E6 killed; every surviving local handoff
+  `unrunnable`
+- Typed language: token burn is destruction; operating outflow is expenditure;
+  epoch splits into typed clocks; market feedback is not automatically a
+  Diamond–Dybvig run
+- Ledger: deterministic dispatch and close rows present; 10 sheet roles, one
+  zig-zag loop, one auditor feedback repair
+- Promotion posture: research only; no supply, treasury, liquidity, market,
+  utility, payout, governance, implementation, validation, readiness, launch,
+  or authority effect
+
+## 2026-07-17 Time Capsule live-intake review dispatch registered
+
+- Dispatch: `2026-07-17-time-capsule-live-intake-review`
+- Row: `dispatch`; close row pending
+- Working folder: `development/refinement-runs/2026-07-17-time-capsule-live-intake-readiness/subagents-review/`
+- Purpose: three-lane read-only review of form/accessibility,
+  database/reliability, and privacy/safety before Refine synthesis
+- Source boundary: local candidate design and run evidence only; no real words,
+  credentials, keys, private imported material, or external research
+- Promotion posture: non-authority review evidence; no implementation,
+  security/privacy approval, token policy, launch, or governance effect
+
+## 2026-07-17 Time Capsule live-intake review dispatch closed
+
+- Dispatch: `2026-07-17-time-capsule-live-intake-review`
+- Row: `close`; exit reason `resolved`; three explorers, one loop
+- Outputs: three verified review receipts, `attacks.md`, and parent-approved
+  `findings.md` with 22 deduplicated change requests
+- Refine consequence: non-collecting contract simulator selected first;
+  public-live and sealed-live remain separately unavailable
+- Inventory: `entries/time-capsule-live-intake-refine.md`
+- Promotion posture: candidate non-executed plan only; no real data,
+  implementation, security/privacy approval, token, launch, or authority effect

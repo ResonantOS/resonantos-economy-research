@@ -80,6 +80,8 @@ A source-first spine connects the towers:
 | [science-of-science](subtowers/science-of-science/README.md) | Scientometrics, bibliometrics, and science-of-science tower. | first-pass returns present |
 | [formal-mechanisms](subtowers/formal-mechanisms/README.md) | Mechanism design, scoring, randomization, audits, and invariants tower. | first-pass returns present |
 | [socioeconomic-behavior](subtowers/socioeconomic-behavior/README.md) | Socioeconomic mentalities and behavioral economics tower. | first-pass returns present |
+| [contribution-mechanism](subtowers/contribution-mechanism/README.md) | Cross-cutting tower for contribution types, dimensions, deferred investment/realization language, failure, review integrity, allocation, bets, and Goodhart pressure. | scaffolded; research and review dispatches proposed, unregistered |
+| [monetary-circulation](subtowers/monetary-circulation/README.md) | Program-extension tower for supply/accounting, typed schedules, holdings/access, obligation coverage, exit capacity, service use, and typed relations. | bounded research closed; auditor ACCEPT; surviving local handoffs `unrunnable` |
 
 ## Repository Components
 

@@ -81,3 +81,106 @@ the rules. A closed prize is a candidate invariant only — it promotes nothing.
 - **Allowed / blocked use:** candidate invariant only; randomness never becomes
   reward/payout logic.
 - **Bets:** none yet — open for staking.
+
+---
+
+## Deferred Contribution Model prize family
+
+`PRZ-04..06` preserve three different uncertainties. They are linked, but no
+prize inherits another prize's evidence:
+
+```text
+PRZ-04: can prior-activity evidence improve recognition?
+PRZ-05: does that recognition help the community?
+PRZ-06: can the model be explained without entitlement drift?
+```
+
+The overall model is only a viable research candidate if all three prizes reach
+`awarded-candidate`. This family label is a coordination view, not a fourth
+award, a score, a deployment decision, or an authority surface.
+
+## PRZ-04 — Prior-activity evidence that adds recognition value
+
+- **Status:** contested
+- **Target:** Can prior-activity evidence help reviewers recognize genuine
+  trace-linked or bridge-linked contributions that result-only review misses,
+  without increasing false credit, receipt farming, entitlement, or unreasonable
+  review burden?
+- **Evidence state:** the accepted Deferred Contribution Basis findings specify
+  a no-effect receipt → relevance claim → accepted/rejected/held → result-scoped
+  ER-D7 candidate pipeline and E1–E4 handoffs
+  ([findings](../dispatch/deferred-contribution-basis/findings.md)). The three
+  load-bearing terms remain unregistered and no comparative witness has run.
+- **Required witness:** a preregistered comparison of result-only review against
+  result-plus-prior-activity review using seeded trace-linked, bridge-linked,
+  general-capacity, and unlinked cases. Report genuine-link recovery, false-link
+  acceptance, invisible/enabling-work misses, review time, disagreement, appeal,
+  and entitlement errors under a frozen decision rule.
+- **Award collapse-test:** a candidate wins only if the added evidence produces
+  preregistered net informational value while attendance/time/topic-only controls
+  remain rejected, held cases create no credit, and every reward/payout/
+  reputation/governance/authority effect stays `none`, with the comparative
+  witness present.
+- **Allowed / blocked use:** candidate recognition-review invariant only; never
+  an activity balance, reward rule, payout, reputation score, governance weight,
+  or implementation claim.
+- **Bets:** `BET-PRZ-04-a` (open).
+
+---
+
+## PRZ-05 — Result-scoped recognition that helps the community
+
+- **Status:** contested
+- **Target:** Does result-scoped recognition improve later useful contribution,
+  retention, maintenance, mentoring, or contributor trust without crowding out
+  intrinsic motivation, producing status competition, or privileging time-rich
+  participants?
+- **Evidence state:** the socioeconomic-behavior return supplies direction-only
+  warnings about control, visibility, thresholds, unequal participation
+  resources, and motivation crowding
+  ([source cards](../subtowers/socioeconomic-behavior/returns/deferred-contribution-basis-prior-art.md)).
+  No admitted source or local run shows that result-scoped recognition improves
+  a ResonantOS community outcome.
+- **Required witness:** after PRZ-04 has a survived recognition candidate, a
+  preregistered bounded pilot comparing that recognition condition with an
+  appropriate control. Measure one named primary community outcome plus
+  contribution quality/diversity, voluntary follow-through, maintenance and
+  mentoring, attrition, status/entitlement effects, access distribution, and
+  review burden.
+- **Award collapse-test:** a candidate wins only if the named community outcome
+  improves under the preregistered rule and the improvement is not erased by
+  crowding, gaming, exclusion, status capture, or authority leakage, with the
+  bounded pilot witness present.
+- **Allowed / blocked use:** behavioral candidate evidence only; never proof of
+  universal motivation, reward entitlement, payout policy, reputation finality,
+  governance legitimacy, or deployment readiness.
+- **Dependency:** cannot reach `awarded-candidate` before PRZ-04 supplies its
+  concrete workflow witness. Dependency is evidence order, not inherited proof.
+- **Bets:** `BET-PRZ-05-a` (open).
+
+---
+
+## PRZ-06 — Bilingual explanation without entitlement drift
+
+- **Status:** contested
+- **Target:** Can the narrative language `investment → realization → cashing`
+  improve understanding of deferred contribution while its operational mapping
+  prevents guaranteed-return, automatic-credit, payout, reputation, or authority
+  interpretations?
+- **Evidence state:** the Deferred Contribution Basis dialogue produced a
+  two-language candidate: narrative terms for explanation and operational terms
+  for review. It has no comprehension witness. Behavioral sources warn that
+  monetary and visibility framing can alter norms and expectations
+  ([source cards](../subtowers/socioeconomic-behavior/returns/deferred-contribution-basis-prior-art.md)).
+- **Required witness:** a preregistered comprehension comparison between
+  operational-only language and the bilingual explanation. Test correct
+  classification of accepted/rejected/held cases and beliefs about attendance,
+  accumulation, guaranteed recognition, payment, reputation, and authority.
+- **Award collapse-test:** a candidate wins only if bilingual language improves
+  the named comprehension outcome without worsening any preregistered
+  entitlement/authority error beyond its bound, with the comprehension witness
+  present.
+- **Allowed / blocked use:** communication candidate only; a win does not show
+  that the mechanism works or helps the community. Failure revises or kills the
+  narrative language, not automatically the operational research candidate.
+- **Bets:** `BET-PRZ-06-a` (open).

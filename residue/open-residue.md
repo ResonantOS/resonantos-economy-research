@@ -6,10 +6,10 @@ Promotion scope: local-research-only
 | ID | Residue | Why still open | Next route |
 | --- | --- | --- | --- |
 | OR-1 | Which exact contribution events should count toward `$RCT`? | Needs behavioral and failure-precedent synthesis. | Research fan-out. |
-| OR-2 | Can `$RES` remain useful without creating extraction pressure? | Needs utility, emission, liquidity, and marketplace abuse analysis. | Formal-mechanisms plus failed DAO subtowers. |
+| OR-2 | Can `$RES` remain useful without creating extraction pressure? | Bounded prior art now separates service use, subsidy/appreciation/yield/buyback exposure, displacement, and sinks, but no local service object or identified comparison exists. | Definition/institution owner route, then schema-only monetary evidence handoff. |
 | OR-3 | What randomization is useful and legitimate? | Needs formal and behavioral source-backed constraints. | Formal-mechanisms subtower. |
 | OR-4 | Which bounties, if any, are safe? | Needs a distinction between bounded task work, review work, maintenance, and prize-like exploration. | Socioeconomic-behavior subtower. |
-| OR-5 | What Phase 2 gates are required before financial-token design? | Needs failed algorithmic-token and DAO treasury precedent synthesis. | Failed DAO / crypto subtower. |
+| OR-5 | What Phase 2 gates are required before financial-token design? | Bounded treasury/liquidity/feedback precedent is synthesized, but authoritative positions, obligations, market institutions, calibrated predicates, legal/security review, and legitimate controllers remain absent. | Phase 2 authority/promotion gate plus grounded monetary evidence handoffs; source research alone is insufficient. |
 | OR-6 | How should AI agents earn reputation without human governance rights? | Needs accountability and human trust model. | Official-whitepaper plus formal mechanism subtower. |
 | OR-7 | Which terms should later enter definitions-governance? | Current definitions are local research only. | Decision after synthesis. |
 | OR-8 | Can review attention and maintenance priority avoid becoming de facto authority? | CAv2/Lean harvest flagged attention capture and reviewer bottlenecks but produced no witness. | Socioeconomic-behavior plus authority route. |

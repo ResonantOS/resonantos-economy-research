@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-07-17T16:23:22Z",
+  "run_id": "arcanum-hook-019f70d7-0e66-7190-9aba-69f0695c013d",
+  "dispatch_id": "invoke-live-intake-v2-plan-2026-07-17",
+  "sigil": "invoke",
+  "spell": "invoke",
+  "tier": "spell",
+  "mode": "plan",
+  "meaningful_execution": true,
+  "mutation_mode": "planning-artifacts-only",
+  "execution": {
+    "status": "completed-with-flag",
+    "complexity": "high",
+    "output_mode": "split",
+    "layer_count": 4,
+    "wave_count": 6,
+    "task_count": 9,
+    "swu_count": 36,
+    "selected_swu": "SWU-LIV2-001",
+    "outputs": [
+      "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/WORK-PACK.md",
+      "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/IMPLEMENTATION-LAYERING.md",
+      "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/EXECUTION-PACK.md",
+      "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/DISPATCH.json",
+      "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/DISTILL-VALIDATION.md",
+      "development/invoke-runs/2026-07-17-time-capsule-live-intake-v2-plan/INVOKE-RESULT.md"
+    ],
+    "validation": [
+      "context-builder-strict-12-of-12",
+      "inventory-machine-index-first-pass",
+      "dispatch-spec-deterministic-pass",
+      "distill-validate-pass",
+      "swu-manifest-36-unique-pass",
+      "task-contract-coverage-pass",
+      "internal-links-pass",
+      "json-parse-pass"
+    ]
+  },
+  "observer": {
+    "quality_bar_status": "partial",
+    "signals": [
+      "quality-pass",
+      "two-lane-l0",
+      "one-swu-handoff",
+      "protected-boundary-preserved",
+      "route-repair"
+    ],
+    "anti_pattern_hits": [],
+    "workflow_gaps": [
+      "Manual access and consequence-retell evidence remains unrun.",
+      "Node/SQLite, operations, future-opening, archive, Bitcoin, and full close proofs remain unrun.",
+      "Production close retains a separate irreversible human gate."
+    ],
+    "output_contract_drift": false,
+    "reflection_trigger": "target-proof-gates-pending",
+    "recommendation": "After explicit authorization, run Task Session for SWU-LIV2-001 only."
+  },
+  "result": "flag",
+  "next_route": "task-session:SWU-LIV2-001-after-explicit-authorization",
+  "dedupe_key": "arcanum-hook-019f70d7-0e66-7190-9aba-69f0695c013d:invoke-plan:0.2.0",
+  "observer_version": "0.1.0"
+}

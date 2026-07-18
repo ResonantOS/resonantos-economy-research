@@ -1,6 +1,6 @@
 {
   "schema_version": "arcanum.reflection-state.v0.1",
-  "updated": "2026-07-13T04:36:04Z",
+  "updated": "2026-07-17T12:35:49Z",
   "sigils": {
     "domainspec-subagents-strategy": {
       "last_reflection": "2026-06-27T02:22:14Z",
@@ -25,15 +25,27 @@
       "next_trigger": "output threshold reached; run workflow-reflect when maintenance is authorized"
     },
     "whisper": {
-      "last_reflection": null,
-      "last_report": null,
-      "meaningful_executions_since_reflection": 5,
-      "generated_outputs_since_reflection": 14,
+      "last_reflection": "2026-07-17T12:35:49Z",
+      "last_report": ".arcanum/observability/reflections/2026-07-17-whisper-correction-convergence.md",
+      "meaningful_executions_since_reflection": 1,
+      "generated_outputs_since_reflection": 1,
       "related_workflow_gaps_since_reflection": 0,
       "severe_workflow_gaps_since_reflection": 0,
       "quality_bar_failures_since_reflection": 0,
       "output_contract_drift_since_reflection": 0,
-      "next_trigger": "usage threshold reached; run workflow-reflect when maintenance is authorized"
+      "last_observed_at": "2026-07-17T13:08:20Z",
+      "next_trigger": "reflect after 5 meaningful executions, 40 outputs, 3 related corrections, 2 meaning-core corrections, any output drift, or one severe gate/safety gap"
+    },
+    "task-session": {
+      "last_reflection": null,
+      "last_report": null,
+      "meaningful_executions_since_reflection": 2,
+      "generated_outputs_since_reflection": 17,
+      "related_workflow_gaps_since_reflection": 0,
+      "severe_workflow_gaps_since_reflection": 0,
+      "quality_bar_failures_since_reflection": 0,
+      "output_contract_drift_since_reflection": 0,
+      "next_trigger": "output threshold reached; run workflow-reflect when maintenance is authorized"
     }
   }
 }

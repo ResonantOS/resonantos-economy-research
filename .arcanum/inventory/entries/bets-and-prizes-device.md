@@ -8,8 +8,13 @@ Tags: `prizes`, `bets`, `mechanism-generator`, `workflow`, `resonantos-economy`
 ## Source Refs
 
 - [prizes/README.md](../../../prizes/README.md) — the device, award rule, and its own collapse-test
-- [prizes/PRIZE-REGISTER.md](../../../prizes/PRIZE-REGISTER.md) — open prizes (`PRZ-01..03`)
-- [prizes/BET-REGISTER.md](../../../prizes/BET-REGISTER.md) — bets (`BET-PRZ-01-a`, open)
+- [prizes/PRIZE-REGISTER.md](../../../prizes/PRIZE-REGISTER.md) — open/contested prizes (`PRZ-01..06`)
+- [prizes/BET-REGISTER.md](../../../prizes/BET-REGISTER.md) — four open bets, including the three-bet Deferred Contribution family
+- [prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md](../../../prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md) — newcomer interaction walkthrough and copyable research records
+- [prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.validation.md](../../../prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.validation.md) — source map, boundary checks, and open reader-trial witness
+- [prizes/training/README.md](../../../prizes/training/README.md) — facilitator-led workshop entrypoint with projected, spoken, participant, and validation surfaces
+- [prizes/DEFERRED-CONTRIBUTION-BETS-PLAIN-LANGUAGE.md](../../../prizes/DEFERRED-CONTRIBUTION-BETS-PLAIN-LANGUAGE.md) — standalone public-language explanation of the three open deferred-contribution bets
+- [subtowers/MECHANISM-PRIOR-ART-CONTRACT.md](../../../subtowers/MECHANISM-PRIOR-ART-CONTRACT.md) — reusable relevant-subtower gate and mechanism-specific return contract
 - [prizes/SEED.md](../../../prizes/SEED.md) — imported form + source posture
 - Imported form from: `SRC-DST-PRIZES` ([PRIZES.md](../../../sources/local-snapshots/domainspec-lean/PRIZES.md)); harvest selectors `dlean-prize-not-achievement`, `dlean-bet-register-boundary` ([harvest/cav2-lean/findings.md](../../../harvest/cav2-lean/findings.md))
 
@@ -48,12 +53,28 @@ angles, award collapse-test = skeptic), under the usual human-confirm gate.
 - `award-equals-survives-attack` for the crux: prize closes on survival + witness, never novelty.
 - `prize-as-open-contract` / `bet-as-labeled-conjecture` for the two object shapes.
 - `rec-c13-candidate-handoff` for packaging a survived candidate to the domainspec owner route (runs upstream `invoke handoff`; after closure only).
+- `deferred-contribution-bet-stack` for the three independent conjectures:
+  recognition utility, community utility, and communication safety.
+- `bets-prizes-newcomer-walkthrough` for the interaction sequence, card
+  templates, evidence-layer distinctions, and human correction examples.
+- `bets-prizes-live-training` for the approved 90-minute performed interaction,
+  group roles, participant workbook, and cohort-trial route.
+- `mechanism-directed-prior-art` for the bet-linked question, negative
+  precedent, bridge risk, exclusion residue, and next-falsifier route.
+- `deferred-contribution-bets-plain-language` for a sendable explanation of the
+  three independent open bets and their non-promise boundary.
 
 ## Residue
 
-Nothing is awarded — `PRZ-01..03` are open; `BET-PRZ-01-a` cannot reach `survived`
-until its authority-handoff witness fixture is built. The device is method
-infrastructure, not a result: it has generated no validated mechanism.
+Nothing is awarded. `PRZ-01..06` remain open or contested and all four registered
+bets are unresolved. The Deferred Contribution family deliberately prevents
+recognition accuracy, community benefit, and communication safety from
+inheriting one another's evidence. The device is method infrastructure, not a
+result: it has generated no validated mechanism. The walkthrough's independent
+newcomer-reader trial and the workshop's live cohort have not run, so teaching
+effectiveness remains flagged. Browser navigation and layout have been
+exercised, with a separate favicon console residue recorded in the workshop
+validation.
 
 ## Promotion Boundary
 
