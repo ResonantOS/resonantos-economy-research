@@ -6,31 +6,82 @@ Started: 2026-06-26
 Owner route: standalone research authority (repository-local research-credibility constitution)
 Repository visibility: private/internal until public-export scrub
 
-## What This Is, In Plain Language
+## Start With A Story
 
-This repository is a **governed research harness**: a knowledge base you can
-*interrogate*, not just read. It studies one hard question — how to design an
-economy for ResonantOS / ResonantDAO that rewards real contribution without
-training people (or bots) to farm the reward instead of doing the work.
+A community gathering goes well. Everyone remembers the speaker. Fewer people
+notice who found an accessible venue, checked dietary needs, called members who
+had stopped attending, or repaired the schedule when a volunteer cancelled.
 
-Instead of a pile of documents you have to trust, it is built so a researcher —
-working *through conversation with an agent* — can ask what the evidence
-actually says, ask the agent to **confirm** a claim against recorded sources, or
-ask it to **try to deny** the claim by attacking it. The harness is deliberately
-suspicious of attractive mechanisms: a reward system that looks elegant can still
-train bounty harvesting, clique behavior, status games, metric farming, or
-authority-by-score. The whole point is to make those failures visible *before*
-any mechanism becomes operational.
+Someone proposes: “Let’s recognize the people who do the invisible work.” It
+sounds fair. But what should count as evidence? Could people manufacture the
+right-looking activity? Would recognition help the community, or create a new
+expectation of payment and influence? What result would make us abandon the
+idea?
 
-To work here, **start from the inventory Start Here path**, then these:
+This repository exists for that moment. It is a **research wind tunnel**, not an
+economy factory: candidate mechanisms meet sources, counterexamples, fixtures,
+and explicit ways to lose before anyone treats them as policy.
 
-- [.arcanum/inventory/index.md](.arcanum/inventory/index.md) — the canonical
-  entry point: why the repo works the way it does, and what to do next.
-- [GUIDE.md](GUIDE.md) — the working method: how research is framed, and the
-  confirm / deny loop you use to query the tower.
-- [AGENTS.md](AGENTS.md) — the non-negotiable checks to run before any write.
-- [CONTRIBUTING.md](CONTRIBUTING.md) — the continuation protocol for adding
-  source-backed findings.
+The event story already contains separate questions. Whether evidence improves
+recognition is one **bet**. Whether recognition language creates entitlement is
+another. Evidence for one cannot silently answer the other.
+
+| When the story needs... | The repository calls it... | Plain meaning |
+| --- | --- | --- |
+| A finishable research question | [Prize](prizes/README.md#the-two-objects) | An open target with a required witness—not a bag of money. |
+| A claim that can lose | [Bet](prizes/README.md#the-two-objects) | A prediction card with a comparator, expected observation, and falsifier—not a financial wager. |
+| A test design | [Experiment proposal](.agents/skills/domainspec-experiment-dispatch/SKILL.md#criterion-freeze--topology--immutability-never-a-column) | One hypothesis and its rules, attacked and frozen before results. |
+| Known-answer rehearsal cases | [Fixtures](validation/contribution-edge-fixtures/README.md) | Synthetic records that test whether the evidence machinery accepts, rejects, and calculates as declared. |
+| An observation | Separately approved run | A later probe under the frozen rules; fixture success does not authorize it. |
+| A scoped result | Verdict | What the frozen rule says about this run—not universal truth or permission to deploy. |
+
+A fixture is like a crash-test dummy for the evidence pipeline. It can show that
+a missing assignment is rejected or that a high activity count does not
+silently create credit or authority. It cannot show that a mechanism helps real
+people. That requires a separately approved run.
+
+## What This Repository Can Say Already
+
+- Observed activity is not reviewed contribution credit by itself.
+- An observed signal is not reviewed credit; reviewed credit is neither reward
+  nor governance authority.
+- A fixture pass checks declared record and calculation behavior, not an economy
+  or a community.
+- A survived experiment result remains bounded by its population, duration, and
+  criterion. It is not policy permission.
+- The repository currently knows several failure boundaries more confidently
+  than it knows which mechanisms will work.
+
+Current bets, prizes, killed claims, and next work change over time. Inspect them
+through the [current-state projection](maps/current-state/README.md), the
+[live registers](prizes/README.md#files), and the inventory rather than copying
+their counts into an introduction.
+
+## Choose Your Next Door
+
+1. **Understand the lifecycle through different stories:** read
+   [Experiments By Example](prizes/EXPERIMENT-EXAMPLES.md), then use the
+   [full walkthrough](prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md) for
+   the complete procedure.
+2. **Create a first experiment:** follow the owner-linked assembly in the
+   [example gallery](prizes/EXPERIMENT-EXAMPLES.md#assemble-your-first-experiment),
+   then use [GUIDE.md](GUIDE.md) for the working route.
+3. **Inspect what the repository actually knows:** start from the
+   [inventory Start Here path](.arcanum/inventory/index.md) and query the
+   [current evidence map](maps/current-state/README.md).
+
+The inventory remains the **sole canonical Start Here path**. This front porch
+is candidate teaching material: its mechanics and links are checked, but no
+independent newcomer has yet passed the held-out comprehension witness.
+
+This repository is therefore a governed research harness you can interrogate,
+not just read. Working through conversation with an agent, you can ask what the
+evidence says, ask it to **confirm** a claim against recorded sources, or ask it
+to **try to deny** the claim by finding the collapse-test, counterexample, or
+prior owner.
+
+Before writing, also read [AGENTS.md](AGENTS.md) for the non-negotiable checks
+and [CONTRIBUTING.md](CONTRIBUTING.md) for the continuation protocol.
 
 ## The Idea: Towers Of Evidence
 

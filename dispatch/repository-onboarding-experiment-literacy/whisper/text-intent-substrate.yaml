@@ -1,0 +1,320 @@
+text_intent_substrate:
+  metadata:
+    substrate_version: "0.1"
+    transport_type: repository_onboarding
+    transport_proof_status: unproven
+    artifact_status: candidate
+    intent_state: frozen
+
+  source_context:
+    primary_source:
+      - dispatch/repository-onboarding-experiment-literacy/findings.md
+      - dispatch/repository-onboarding-experiment-literacy/research.md
+    owning_surfaces:
+      - .arcanum/inventory/index.md
+      - prizes/README.md
+      - prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md
+      - .agents/skills/domainspec-experiment-dispatch/SKILL.md
+      - validation/contribution-edge-fixtures/README.md
+      - authority/AUTHORITY-MODEL.md
+    evidence_boundary: >
+      The dispatch findings are auditor-accepted research, but the proposed
+      pedagogy has no completed newcomer witness. Public prose must remain
+      candidate onboarding and may not imply validated usability.
+
+  author_objective:
+    primary_outcome: >
+      Give a newcomer a human-scale entry to the repository, explain how bets
+      and fixtures work, and show how to assemble an experiment through varied
+      examples without duplicating canonical owners.
+    desired_reader_change:
+      - feel the problem before meeting repository vocabulary
+      - retell prize_to_bet_to_criterion_to_fixture_to_run_to_verdict
+      - explain why fixture_success_is_not_live_evidence
+      - recognize that independent promises need independent bets
+      - know where to create a first experiment and inspect current evidence
+    success_signal: >
+      Candidate editorial success is a clear retell chain and hand-runnable
+      fictional cards. Actual newcomer usability remains FLAG until the held-out
+      artifact-transfer witness runs.
+    author_stance: candid_research_partner
+
+  resonance_core:
+    tone:
+      - down_to_earth
+      - curious
+      - radically_candid
+      - proof_honest
+    voice: experienced_research_partner_explaining_to_a_new_contributor
+    style_register: story_first_then_operational
+    emotional_residue:
+      - this_repository_has_a_human_problem_at_its_center
+      - experiments_are_questions_with_ways_to_lose
+      - fixtures_protect_us_from_fooling_ourselves
+      - uncertainty_is_visible_and_useful
+    value_signal:
+      - concrete_scenarios
+      - varied_transfer_examples
+      - clear_owner_routes
+      - explicit_breakpoints
+    forbidden_feels:
+      - academic_throat_clearing
+      - schema_dump_before_motivation
+      - cute_analogy_without_breakpoint
+      - success_only_examples
+      - solved_economy_language
+
+  relevance_core:
+    target_public:
+      - unfamiliar_researcher
+      - new_contributor
+      - junior_developer_or_community_member
+    reader_state: >
+      Interested in the economy problem, but unfamiliar with governed research,
+      bets, fixtures, experiment criteria, and authority separation.
+    domain: ResonantOS_economy_research_onboarding
+    authority_mode: non_authority_candidate_pedagogy
+    assumed_knowledge: no_prior_repository_vocabulary
+    likely_objections:
+      - Why is this repository so elaborate?
+      - Is a prize money and is a bet gambling?
+      - Why do fake fixture records matter?
+      - What do we already know?
+      - How do I turn my own idea into an experiment?
+    reader_reward: >
+      A concrete mental model, several transferable examples, and direct links
+      to the owners needed for a first legitimate experiment.
+
+  trajectory_core:
+    narrative_anchor: >
+      A successful community event whose visible speaker receives attention
+      while the enabling work disappears, creating both a recognition question
+      and a separate entitlement-language question.
+    transport_type: repository_onboarding
+    introduction_strategy:
+      - open_with_the_event_scene
+      - ask_what_evidence_would_change_our_mind
+      - introduce_terms_only_when_the_story_needs_them
+    body_parts:
+      - readme_front_porch
+      - durable_known_and_open_boundary
+      - three_owner_routing_doors
+      - guide_fixture_live_bridge
+      - derived_example_gallery
+      - held_out_comprehension_witness
+    ending_strategy: >
+      End at the smallest honest next action: draft a prize and separate bets,
+      then route one hypothesis to the experiment owner before building fixtures.
+    must_include:
+      - independent_bets
+      - fixture_pass_is_not_behavioral_evidence
+      - valid_rejected_malformed_and_dangerous_success_fixtures
+      - one_falsified_one_survived_and_one_non_adjudicable_case
+      - unresolved_INVALID_owner_conflict
+      - candidate_not_validated_pedagogy
+    must_avoid:
+      - competing_Start_Here
+      - copied_volatile_status_counts
+      - duplicated_definitions_or_registers
+      - promotion_evidence_language
+      - score_or_credit_as_authority
+
+  transport_schema:
+    profile_id: repository_onboarding_candidate_v1
+    status: unproven_transport
+    required_surfaces:
+      README.md: human_scene_durable_boundaries_and_routes
+      GUIDE.md: one_fixture_versus_live_alignment_passage
+      prizes/EXPERIMENT-EXAMPLES.md: derived_fictional_gallery_only
+    opening_contract:
+      validation_rules:
+        first_paragraph_must_include_any:
+          - community
+          - maintainer
+          - newcomer
+        draft_must_include_anywhere:
+          - prediction card
+          - fixture
+          - separately approved run
+          - typed negative
+          - post-freeze non-adjudicable
+        first_paragraph_cannot_match:
+          - '(?i)^this repository is organized'
+          - '(?i)^a governed research harness'
+      external_reference_policy:
+        external_reference_terms:
+          - National Academies
+          - IES practice guide
+          - Gentner
+        allowed_after_paragraph: 2
+    length_words:
+      min: 1600
+      max: 4600
+    max_characters: 36000
+    evidence_policy: >
+      Cite local owners and accepted findings. External pedagogy may explain why
+      a candidate sequence was chosen but cannot validate the sequence.
+    introduction_policy: scene_before_jargon
+    ending_policy: one_bounded_next_action
+
+  scu_candidate_set:
+    tournament_mode: guided_auto
+    candidates:
+      - id: story_then_owner_routes
+        resonance: strongest_human_center
+        relevance: lowest_entry_cost
+        trajectory: scene_to_terms_to_transfer
+        cost: one_new_derived_gallery_plus_two_small_edits
+        risk: story_may_be_mistaken_for_evidence
+      - id: glossary_first_reference
+        resonance: low
+        relevance: precise_but_high_entry_cost
+        trajectory: definitions_before_need
+        cost: low
+        risk: reproduces_the_existing_vocabulary_barrier
+      - id: expand_existing_walkthrough
+        resonance: medium
+        relevance: rich_but_hard_to_discover
+        trajectory: one_long_document
+        cost: low_surface_count_high_reader_cost
+        risk: deepens_duplication_and_single_example_dependence
+    selected: story_then_owner_routes
+    selected_because: >
+      It preserves the human problem, introduces mechanics at the moment of
+      need, and routes procedure back to current owners while allowing transfer
+      through genuinely different example domains.
+
+  composition_plan:
+    source_candidate_set: story_then_owner_routes
+    construction_sequence:
+      - front_porch
+      - routing_doors
+      - fixture_live_bridge
+      - example_gallery
+      - comprehension_witness
+    parts:
+      front_porch:
+        target: README.md
+        job: entry_and_new_meaning
+        content: event_story_two_questions_plain_language_objects
+      routing_doors:
+        target: README.md
+        job: action
+        content: understand_lifecycle_create_experiment_inspect_evidence
+      fixture_live_bridge:
+        target: GUIDE.md
+        job: consequence
+        content: known_answer_rehearsal_does_not_observe_people
+      example_gallery:
+        target: prizes/EXPERIMENT-EXAMPLES.md
+        job: transfer
+        content: open_two_bet_story_three_counterfactual_cards_owner_links
+      comprehension_witness:
+        target: prizes/EXPERIMENT-EXAMPLES.md
+        job: later_limit
+        content: held_out_unaided_artifact_and_retell_contract
+    validation_checklist:
+      - each_audience_block_has_one_job
+      - no_heading_body_paraphrase
+      - no_duplicate_mechanics_explanation
+      - every_analogy_has_a_breakpoint
+      - fictional_results_are_labeled_before_numbers
+      - all_owner_links_resolve
+      - delivery_flow_and_retell_chain_reviewed
+      - final_status_remains_FLAG_without_audience_witness
+
+  surface_map:
+    audience_facing:
+      - README.md
+      - GUIDE.md
+      - prizes/EXPERIMENT-EXAMPLES.md
+    authoring_only:
+      - dispatch/repository-onboarding-experiment-literacy/whisper/text-intent-substrate.yaml
+      - dispatch/repository-onboarding-experiment-literacy/whisper/language-audition.md
+      - dispatch/repository-onboarding-experiment-literacy/findings.md
+      - dispatch/repository-onboarding-experiment-literacy/research.md
+    canonical_owners_link_only:
+      - .arcanum/inventory/index.md
+      - prizes/README.md
+      - prizes/BET-REGISTER.md
+      - prizes/PRIZE-REGISTER.md
+      - .agents/skills/domainspec-experiment-dispatch/SKILL.md
+      - validation/contribution-edge-fixtures/README.md
+      - authority/AUTHORITY-MODEL.md
+
+  draft_artifact:
+    target_paths:
+      - README.md
+      - GUIDE.md
+      - prizes/EXPERIMENT-EXAMPLES.md
+    source_schema: dispatch/repository-onboarding-experiment-literacy/whisper/text-intent-substrate.yaml
+    status: flag
+
+  readability_dynamics:
+    layer_id: repository_onboarding_delivery_flow_v1
+    defaults:
+      severity_default: flag
+    delivery_flow:
+      allowed_block_jobs:
+        - new_meaning
+        - consequence
+        - action
+        - transition
+      reading_sequence:
+        - entry
+        - new_information
+        - consequence
+        - transition
+      detect_exact_duplicate_prose_blocks: true
+      duplicate_block_min_words: 10
+      intent_narration_patterns:
+        - '(?i)\bthis (section|page) (shows|explains|describes)\b'
+        - '(?i)\bthe (goal|purpose) of this (section|page) is\b'
+        - '(?i)\bwe want (you|the reader) to understand\b'
+      human_review_checks:
+        - semantic_repetition
+        - heading_body_paraphrase
+        - reading_sequence
+        - load_bearing_examples_preserved
+        - retell_chain
+    validation_rules:
+      intent_narration_detected: flag
+      duplicate_prose_block: flag
+
+  validation:
+    checks:
+      - whisper_executable_validator_on_example_gallery
+      - local_markdown_links
+      - load_bearing_terms
+      - public_surface_ownership
+      - fictional_result_labels
+      - editorial_delivery_flow
+      - retell_chain
+    review_mode: human_editorial_plus_executable_checks
+    expected_result: >
+      FLAG because the repository_onboarding transport and newcomer witness are
+      unproven even if deterministic checks pass.
+    actual_result: deterministic_pass_editorial_flag
+    report: dispatch/repository-onboarding-experiment-literacy/whisper/VALIDATION.md
+
+  learning_residue:
+    status: captured_candidate
+    capture_after:
+      - public_surface_draft
+      - executable_validation
+      - editorial_review
+    residue_slots:
+      - which_story_terms_needed_explanation
+      - whether_examples_transfer_across_domains
+      - whether_readers_separate_fixture_from_live_evidence
+      - whether_invalid_owner_conflict_confuses_readers
+    observed:
+      - metadata_lines_must_not_displace_the_scene_as_the_transport_opening
+      - progressive_disclosure_can_link_owners_without_reowning_procedure
+      - varied_dispositions_make_success_only_bias_visible_in_the_draft
+    unresolved:
+      - no_unaided_newcomer_artifact_transfer_witness
+      - no_story_first_comparative_run
+      - no_audience_witness_for_analogies
+      - unresolved_pre_freeze_and_post_freeze_invalidity_vocabulary
+

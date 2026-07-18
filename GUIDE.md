@@ -250,6 +250,18 @@ signal, credit, reward, and authority separate under pressure.
 If you want to *do the work* — not just query it — the first concrete action is to
 take the next fixture from the program backlog and run it. A worked pass:
 
+**A fixture run is not a live experiment.** A fixture is a known-answer
+rehearsal for the evidence machinery: a complete synthetic record should be
+handled as declared, a missing assignment should be rejected, and a record that
+tries to turn activity into automatic credit or authority should be blocked.
+Passing those cases shows that the scaffold follows its own contract. It does
+not observe community behavior, adjudicate the bet, or authorize a live probe.
+Any behavioral result needs a frozen criterion and a **separately approved
+run**. See [Experiments By Example](prizes/EXPERIMENT-EXAMPLES.md) for the same
+boundary across several ordinary scenarios, and the
+[full walkthrough](prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md#step-10--validate-the-evidence-pipeline-without-pretending-to-validate-the-bet)
+for the owning procedure.
+
 1. **Pick the next fixture from the backlog, not from intuition.** The ranked
    start path is the
    [economy-resilience-program](.arcanum/inventory/entries/economy-resilience-program.md)
