@@ -1,0 +1,1028 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A facilitator-led workshop for turning DAO contribution mechanisms into falsifiable bets, witnesses, and bounded verdicts."
+    />
+    <meta name="theme-color" content="#071410" />
+    <title>Contribution Mechanisms: Make the Idea Testable</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --ink: #071410;
+        --ink-2: #0d211b;
+        --paper: #f4f1e8;
+        --muted: #b9c7c0;
+        --mint: #7ce0ae;
+        --mint-soft: rgba(124, 224, 174, 0.14);
+        --coral: #ff9b78;
+        --yellow: #f2d06b;
+        --line: rgba(244, 241, 232, 0.18);
+        --shadow: 0 26px 80px rgba(0, 0, 0, 0.44);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        min-width: 320px;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background: var(--ink);
+      }
+
+      body {
+        color: var(--paper);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            circle at 14% 12%,
+            rgba(124, 224, 174, 0.16),
+            transparent 28rem
+          ),
+          radial-gradient(
+            circle at 88% 84%,
+            rgba(255, 155, 120, 0.12),
+            transparent 30rem
+          ),
+          linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px
+          );
+        background-size:
+          auto,
+          auto,
+          54px 54px,
+          54px 54px;
+      }
+
+      button,
+      a {
+        font: inherit;
+      }
+
+      button:focus-visible,
+      a:focus-visible {
+        outline: 3px solid var(--yellow);
+        outline-offset: 4px;
+      }
+      S .deck {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .slide {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: clamp(20px, 3vh, 38px);
+        padding: clamp(28px, 5vw, 76px);
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(24px);
+        transition:
+          opacity 240ms ease,
+          transform 240ms ease,
+          visibility 240ms;
+      }
+
+      .slide.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .slide-head,
+      .slide-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        color: var(--muted);
+        font-size: clamp(0.68rem, 1vw, 0.82rem);
+        font-weight: 750;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .phase {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .phase::before {
+        content: "";
+        width: 10px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: var(--mint);
+        box-shadow: 0 0 18px rgba(124, 224, 174, 0.55);
+      }
+
+      .time {
+        padding: 7px 11px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        letter-spacing: 0.08em;
+      }
+
+      .content {
+        align-self: center;
+        width: min(1180px, 100%);
+        margin: 0 auto;
+      }
+
+      h1,
+      h2,
+      p {
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        letter-spacing: -0.055em;
+        line-height: 0.96;
+      }
+
+      h1 {
+        max-width: 1100px;
+        font-size: clamp(3.2rem, 8.5vw, 8.6rem);
+      }
+
+      h2 {
+        max-width: 1000px;
+        font-size: clamp(2.8rem, 6.8vw, 7rem);
+      }
+
+      .accent {
+        color: var(--mint);
+      }
+
+      .coral {
+        color: var(--coral);
+      }
+
+      .lead {
+        max-width: 900px;
+        margin: clamp(24px, 4vh, 42px) 0 0;
+        color: var(--muted);
+        font-size: clamp(1.2rem, 2.3vw, 2rem);
+        line-height: 1.45;
+      }
+
+      .prompt {
+        max-width: 1000px;
+        padding-left: clamp(20px, 3vw, 42px);
+        border-left: 5px solid var(--coral);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 5.2vw, 5.2rem);
+        line-height: 1.06;
+        letter-spacing: -0.04em;
+      }
+
+      .case-flow {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: clamp(18px, 4vw, 54px);
+        align-items: center;
+        margin-top: 28px;
+      }
+
+      .case-card,
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        background: rgba(255, 255, 255, 0.035);
+        box-shadow: var(--shadow);
+      }
+
+      .case-card {
+        min-height: 230px;
+        display: grid;
+        place-items: center;
+        padding: 32px;
+        text-align: center;
+      }
+
+      .case-card strong {
+        display: block;
+        color: var(--mint);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(3rem, 6vw, 6rem);
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      .case-card span {
+        display: block;
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: clamp(1rem, 1.6vw, 1.35rem);
+      }
+
+      .arrow {
+        color: var(--coral);
+        font-size: clamp(2.2rem, 5vw, 5rem);
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(14px, 2vw, 24px);
+        margin-top: clamp(28px, 5vh, 52px);
+      }
+
+      .cards.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card {
+        min-height: 210px;
+        padding: clamp(22px, 3vw, 38px);
+      }
+
+      .card .number {
+        color: var(--coral);
+        font-size: 0.78rem;
+        font-weight: 850;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .card h3 {
+        margin: 26px 0 12px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.7rem, 3vw, 3.1rem);
+        font-weight: 500;
+        letter-spacing: -0.035em;
+        line-height: 1.03;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+        line-height: 1.45;
+      }
+
+      .criteria {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 42px;
+      }
+
+      .criterion {
+        padding: 13px 18px;
+        border: 1px solid rgba(124, 224, 174, 0.36);
+        border-radius: 999px;
+        color: var(--paper);
+        background: var(--mint-soft);
+        font-size: clamp(0.9rem, 1.4vw, 1.16rem);
+        font-weight: 700;
+      }
+
+      .formula {
+        margin-top: 40px;
+        padding: clamp(24px, 4vw, 48px);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: rgba(0, 0, 0, 0.18);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: clamp(1.05rem, 2.2vw, 2rem);
+        line-height: 1.7;
+      }
+
+      .formula .blank {
+        color: var(--mint);
+        border-bottom: 2px solid var(--mint);
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        gap: clamp(28px, 6vw, 90px);
+        align-items: center;
+      }
+
+      .stack {
+        display: grid;
+        gap: 12px;
+      }
+
+      .stack div {
+        padding: 20px 24px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        color: var(--muted);
+        background: rgba(255, 255, 255, 0.025);
+        font-size: clamp(1rem, 1.6vw, 1.35rem);
+      }
+
+      .stack strong {
+        color: var(--paper);
+      }
+
+      .boundary {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 28px;
+        align-items: stretch;
+        margin-top: 42px;
+      }
+
+      .language {
+        padding: 30px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .language h3 {
+        margin: 0 0 18px;
+        color: var(--mint);
+        font-size: 0.78rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .language p {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.6rem, 3vw, 3.2rem);
+        line-height: 1.1;
+      }
+
+      .equals {
+        align-self: center;
+        color: var(--coral);
+        font-size: 2.8rem;
+      }
+
+      .verdicts {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 46px;
+      }
+
+      .verdict {
+        padding: 26px 18px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        text-align: center;
+        font-size: clamp(1.1rem, 2vw, 1.7rem);
+        font-weight: 800;
+      }
+
+      .verdict:nth-child(1) {
+        color: var(--yellow);
+      }
+      .verdict:nth-child(2) {
+        color: var(--mint);
+      }
+      .verdict:nth-child(3) {
+        color: var(--coral);
+      }
+      .verdict:nth-child(4) {
+        color: var(--muted);
+      }
+
+      .controls {
+        position: fixed;
+        right: 24px;
+        bottom: 20px;
+        z-index: 20;
+        display: flex;
+        gap: 10px;
+      }
+
+      .control {
+        width: 44px;
+        aspect-ratio: 1;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        color: var(--paper);
+        background: rgba(7, 20, 16, 0.86);
+        cursor: pointer;
+        backdrop-filter: blur(12px);
+      }
+
+      .control:hover {
+        border-color: var(--mint);
+        background: var(--ink-2);
+      }
+
+      .progress {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 30;
+        height: 5px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .progress span {
+        display: block;
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, var(--mint), var(--coral));
+        transition: width 220ms ease;
+      }
+
+      @media (max-width: 800px) {
+        .cards,
+        .cards.two,
+        .split,
+        .case-flow,
+        .boundary,
+        .verdicts {
+          grid-template-columns: 1fr;
+        }
+
+        .slide {
+          overflow-y: auto;
+          padding-bottom: 92px;
+        }
+
+        .case-card,
+        .card {
+          min-height: 0;
+        }
+
+        .arrow,
+        .equals {
+          transform: rotate(90deg);
+          justify-self: center;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition: none !important;
+        }
+      }
+
+      @media print {
+        html,
+        body {
+          height: auto;
+          overflow: visible;
+          background: #fff;
+        }
+
+        body::before,
+        .controls,
+        .progress {
+          display: none;
+        }
+
+        .slide {
+          position: relative;
+          visibility: visible;
+          opacity: 1;
+          transform: none;
+          min-height: 100vh;
+          color: #12251e;
+          background: #fff;
+          page-break-after: always;
+        }
+
+        .slide-head,
+        .slide-foot,
+        .lead,
+        .card p {
+          color: #4a5b54;
+        }
+
+        .case-card,
+        .card,
+        .language,
+        .stack div,
+        .formula,
+        .verdict {
+          box-shadow: none;
+          background: #fff;
+          border-color: #b9c7c0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="deck" aria-live="polite">
+      <section
+        class="slide active"
+        data-title="Fixed premise"
+        aria-hidden="false"
+      >
+        <header class="slide-head">
+          <span class="phase">Start</span><span class="time">0–5 min</span>
+        </header>
+        <div class="content">
+          <h1>
+            The contribution already counts.<br /><span class="accent"
+              >What should happen next?</span
+            >
+          </h1>
+        </div>
+        <footer class="slide-foot">
+          <span>Contribution mechanisms workshop</span><span>01</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Workshop posture" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Start</span><span class="time">5–8 min</span>
+        </header>
+        <div class="content">
+          <h2>Let’s try to <span class="coral">break</span> an idea.</h2>
+          <p class="lead">
+            A useful failure teaches us more than an attractive mechanism that
+            cannot be tested.
+          </p>
+        </div>
+        <footer class="slide-foot">
+          <span>What would count as a useful failure?</span><span>02</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Case" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Case</span><span class="time">8–12 min</span>
+        </header>
+        <div class="content">
+          <div class="case-flow">
+            <div class="case-card">
+              <div><strong>20</strong><span>governance calls</span></div>
+            </div>
+            <div class="arrow" aria-hidden="true">→</div>
+            <div class="case-card">
+              <div>
+                <strong>1</strong><span>major governance proposal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span>Both are witnessed</span><span>03</span>
+        </footer>
+      </section>
+
+      <section
+        class="slide"
+        data-title="Generate mechanisms"
+        aria-hidden="true"
+      >
+        <header class="slide-head">
+          <span class="phase">Generate</span><span class="time">12–18 min</span>
+        </header>
+        <div class="content">
+          <p class="prompt">
+            After a contribution is recorded, what could the DAO do with it
+            later?
+          </p>
+        </div>
+        <footer class="slide-foot">
+          <span>At least three mechanisms · include one you dislike</span
+          ><span>04</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Mechanism families" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Compare</span><span class="time">18–22 min</span>
+        </header>
+        <div class="content">
+          <h2>Three useful contrasts</h2>
+          <div class="cards">
+            <article class="card">
+              <span class="number">Candidate A</span>
+              <h3>Accumulate</h3>
+              <p>Contribution value is carried forward over time.</p>
+            </article>
+            <article class="card">
+              <span class="number">Candidate B</span>
+              <h3>Bound by subject</h3>
+              <p>Only contributions related to the later result may connect.</p>
+            </article>
+            <article class="card">
+              <span class="number">Candidate C</span>
+              <h3>Review after a result</h3>
+              <p>
+                A witnessed result creates a reason to review earlier records.
+              </p>
+            </article>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span>Contrasts, not answers</span><span>05</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Define best" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Criteria</span><span class="time">22–25 min</span>
+        </header>
+        <div class="content">
+          <p class="prompt">Best according to what?</p>
+        </div>
+        <footer class="slide-foot">
+          <span>Choose before choosing the mechanism</span><span>06</span>
+        </footer>
+      </section>
+
+      <section
+        class="slide"
+        data-title="Comparison criteria"
+        aria-hidden="true"
+      >
+        <header class="slide-head">
+          <span class="phase">Criteria</span><span class="time">25–28 min</span>
+        </header>
+        <div class="content">
+          <h2>Freeze the comparison</h2>
+          <div class="criteria">
+            <span class="criterion">recognition usefulness</span>
+            <span class="criterion">false credit</span>
+            <span class="criterion">farming resistance</span>
+            <span class="criterion">review burden</span>
+            <span class="criterion">access &amp; inclusion</span>
+            <span class="criterion">entitlement leakage</span>
+            <span class="criterion">authority separation</span>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span>One primary outcome · blocking guardrails</span><span>07</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Core correction" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Bet</span><span class="time">28–31 min</span>
+        </header>
+        <div class="content">
+          <h1>
+            The contribution is known.<br /><span class="accent"
+              >The mechanism is the bet.</span
+            >
+          </h1>
+        </div>
+        <footer class="slide-foot">
+          <span>Turn the feature into a prediction</span><span>08</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Research objects" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Bet</span><span class="time">31–34 min</span>
+        </header>
+        <div class="content">
+          <div class="cards">
+            <article class="card">
+              <span class="number">Target</span>
+              <h3>Prize</h3>
+              <p>What is valuable to resolve?</p>
+            </article>
+            <article class="card">
+              <span class="number">Prediction</span>
+              <h3>Bet</h3>
+              <p>What will the mechanism do?</p>
+            </article>
+            <article class="card">
+              <span class="number">Evidence</span>
+              <h3>Witness</h3>
+              <p>What could adjudicate it?</p>
+            </article>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span>Collapse-test: what zeros the candidate?</span><span>09</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Write the bet" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Build</span><span class="time">34–42 min</span>
+        </header>
+        <div class="content">
+          <h2>Make one mechanism testable</h2>
+          <div class="formula">
+            We predict <span class="blank">our mechanism</span> will outperform
+            <span class="blank">the baseline</span> on
+            <span class="blank">the primary outcome</span> without causing
+            <span class="blank">a blocking failure</span>.
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span>Workbook rounds 3–4</span><span>10</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Attack exchange" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Attack</span><span class="time">42–53 min</span>
+        </header>
+        <div class="content">
+          <h1>Swap. Attack.<br /><span class="coral">Try to kill it.</span></h1>
+          <p class="lead">
+            Find the easiest gaming path, the missing comparison, or the
+            consequence they forgot to measure.
+          </p>
+        </div>
+        <footer class="slide-foot">
+          <span>Restate the attack before defending</span><span>11</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Split promises" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Split</span><span class="time">53–56 min</span>
+        </header>
+        <div class="content">
+          <h1>One mechanism.<br /><span class="accent">Three bets.</span></h1>
+        </div>
+        <footer class="slide-foot">
+          <span>No evidence inheritance</span><span>12</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Three bets" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Split</span><span class="time">56–64 min</span>
+        </header>
+        <div class="content">
+          <div class="cards">
+            <article class="card">
+              <span class="number">Bet A</span>
+              <h3>Recognition</h3>
+              <p>Does the mechanism improve result-linked recognition?</p>
+            </article>
+            <article class="card">
+              <span class="number">Bet B</span>
+              <h3>Community</h3>
+              <p>Does that recognition help contribution and trust?</p>
+            </article>
+            <article class="card">
+              <span class="number">Bet C</span>
+              <h3>Communication</h3>
+              <p>
+                Can people understand it without expecting a guaranteed return?
+              </p>
+            </article>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span>Three conjectures · three witnesses · three verdicts</span
+          ><span>13</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Two languages" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Explain</span><span class="time">64–70 min</span>
+        </header>
+        <div class="content">
+          <h2>
+            Two languages.<br /><span class="accent">One authority.</span>
+          </h2>
+          <div class="boundary">
+            <div class="language">
+              <h3>Narrative</h3>
+              <p>investment<br />realization<br />cashing</p>
+            </div>
+            <div class="equals" aria-hidden="true">↔</div>
+            <div class="language">
+              <h3>Operational</h3>
+              <p>record<br />reviewable link<br />scoped decision</p>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span>The metaphor never writes the rule</span><span>14</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Directed prior art" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Research</span><span class="time">70–76 min</span>
+        </header>
+        <div class="content">
+          <h2>
+            Send the bet into the<br /><span class="accent"
+              >relevant subtowers.</span
+            >
+          </h2>
+          <div class="cards">
+            <article class="card">
+              <span class="number">Question</span>
+              <h3>Bet-linked</h3>
+              <p>
+                One bounded question that can change the bet, collapse-test, or
+                witness.
+              </p>
+            </article>
+            <article class="card">
+              <span class="number">Pressure</span>
+              <h3>Negative required</h3>
+              <p>
+                Seek the strongest failure precedent, not only an enabling
+                analogy.
+              </p>
+            </article>
+            <article class="card">
+              <span class="number">Return</span>
+              <h3>Bridge made visible</h3>
+              <p>
+                Source kind, disanalogy, local risk, and the next falsifier.
+              </p>
+            </article>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span>Relevant only · bounded · no borrowed proof</span
+          ><span>15</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Witness question" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Witness</span><span class="time">76–78 min</span>
+        </header>
+        <div class="content">
+          <p class="prompt">What evidence would change your mind?</p>
+        </div>
+        <footer class="slide-foot">
+          <span>Design for an answer you may not like</span><span>16</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Evidence layers" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Witness</span><span class="time">78–84 min</span>
+        </header>
+        <div class="content split">
+          <h2>
+            Fixtures test the <span class="accent">pipeline.</span
+            ><br />Experiments test the <span class="coral">bet.</span>
+          </h2>
+          <div class="stack">
+            <div>
+              <strong>Fixture:</strong> can records, rules, and calculations
+              behave as declared?
+            </div>
+            <div>
+              <strong>Experiment:</strong> does the predicted outcome occur
+              against its comparator?
+            </div>
+            <div>
+              <strong>Owner review:</strong> should any bounded next state be
+              considered?
+            </div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span>One layer cannot impersonate another</span><span>17</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Verdicts" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Adjudicate</span
+          ><span class="time">84–88 min</span>
+        </header>
+        <div class="content">
+          <h2>A bounded verdict</h2>
+          <div class="verdicts">
+            <div class="verdict">Open</div>
+            <div class="verdict">Survived</div>
+            <div class="verdict">Falsified</div>
+            <div class="verdict">Invalid</div>
+          </div>
+        </div>
+        <footer class="slide-foot">
+          <span>Scope it · preserve the negative · route the owner</span
+          ><span>18</span>
+        </footer>
+      </section>
+
+      <section class="slide" data-title="Close" aria-hidden="true">
+        <header class="slide-head">
+          <span class="phase">Close</span><span class="time">88–90 min</span>
+        </header>
+        <div class="content">
+          <h1>
+            Leave with a better question,<br /><span class="accent"
+              >not a prettier answer.</span
+            >
+          </h1>
+          <p class="lead">
+            The contribution can be real while the mechanism is wrong.
+          </p>
+        </div>
+        <footer class="slide-foot">
+          <span>The next time I see an attractive mechanism, I will ask…</span
+          ><span>19</span>
+        </footer>
+      </section>
+    </main>
+
+    <nav class="controls" aria-label="Presentation controls">
+      <button
+        class="control"
+        id="previous"
+        type="button"
+        aria-label="Previous slide"
+      >
+        ←
+      </button>
+      <button class="control" id="next" type="button" aria-label="Next slide">
+        →
+      </button>
+    </nav>
+    <div class="progress" aria-hidden="true">
+      <span id="progress-bar"></span>
+    </div>
+
+    <script>
+      (() => {
+        const slides = Array.from(document.querySelectorAll(".slide"));
+        const previous = document.getElementById("previous");
+        const next = document.getElementById("next");
+        const progress = document.getElementById("progress-bar");
+        let index = 0;
+
+        const hashIndex = () => {
+          const value = Number(window.location.hash.replace("#", ""));
+          return Number.isInteger(value) && value >= 1 && value <= slides.length
+            ? value - 1
+            : 0;
+        };
+
+        const render = (nextIndex, updateHash = true) => {
+          index = Math.max(0, Math.min(slides.length - 1, nextIndex));
+          slides.forEach((slide, slideIndex) => {
+            const active = slideIndex === index;
+            slide.classList.toggle("active", active);
+            slide.setAttribute("aria-hidden", String(!active));
+          });
+          previous.disabled = index === 0;
+          next.disabled = index === slides.length - 1;
+          progress.style.width = `${((index + 1) / slides.length) * 100}%`;
+          document.title = `${String(index + 1).padStart(2, "0")} · ${slides[index].dataset.title} — Contribution Mechanisms`;
+          if (updateHash) history.replaceState(null, "", `#${index + 1}`);
+        };
+
+        previous.addEventListener("click", () => render(index - 1));
+        next.addEventListener("click", () => render(index + 1));
+        window.addEventListener("hashchange", () => render(hashIndex(), false));
+        window.addEventListener("keydown", (event) => {
+          if (["ArrowRight", "PageDown", " "].includes(event.key)) {
+            event.preventDefault();
+            render(index + 1);
+          }
+          if (["ArrowLeft", "PageUp"].includes(event.key)) {
+            event.preventDefault();
+            render(index - 1);
+          }
+          if (event.key === "Home") render(0);
+          if (event.key === "End") render(slides.length - 1);
+        });
+
+        render(hashIndex(), false);
+      })();
+    </script>
+  </body>
+</html>
