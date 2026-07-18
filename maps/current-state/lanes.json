@@ -1,0 +1,225 @@
+{
+  "xray_version": "0.2.0-seed",
+  "example_id": "resonantos-economy-research-current-state-2026-07-13",
+  "mode": "mixed",
+  "target_boundary": "The governed ResonantOS economy research program: its source and authority foundation, closed research results, candidate handoffs, killed propositions, present blockers, and next legitimate actions as of 2026-07-13.",
+  "renderer_level": "L0",
+  "layer_interaction": [
+    "stacked",
+    "isolate",
+    "trace"
+  ],
+  "reader_contract": {
+    "reader_baseline": "newcomer",
+    "target_public": "A contributor who needs to continue the repository without confusing a closed research dispatch with a validated economy mechanism.",
+    "assumed_knowledge": [
+      "Research can finish without proving that a mechanism works.",
+      "A later action can depend on a definition, witness, or human decision."
+    ],
+    "reader_reward": "The reader can explain what is established, what was killed, what remains unrun or unrunnable, and which next action unlocks which downstream work.",
+    "opening_contract": {
+      "must_start_with": [
+        "what is true now",
+        "what has not been validated",
+        "how the next actions depend on gates"
+      ],
+      "must_not_start_with": [
+        "a maturity score",
+        "a token design",
+        "an overall health verdict"
+      ],
+      "failure_message": "Begin with the evidence boundary and current state before showing candidate mechanisms or future actions."
+    }
+  },
+  "reader_terms": [
+    {
+      "term": "closed research",
+      "plain_meaning": "A bounded research workflow completed its own review and closeout.",
+      "why_it_matters": "It means the investigation finished, not that the investigated mechanism works.",
+      "source_or_lane": "lifecycle",
+      "authority": "source-backed",
+      "misuse_warning": "Never read closed research as validated policy, implementation readiness, or permission to pay."
+    },
+    {
+      "term": "unrunnable",
+      "plain_meaning": "A candidate handoff lacks a required local object, state, comparison, owner input, or witness.",
+      "why_it_matters": "It identifies the exact prerequisite to supply before an evidence run can be proposed honestly.",
+      "source_or_lane": "risk_questions",
+      "authority": "source-backed",
+      "misuse_warning": "Unrunnable does not mean safe, neutral, failed, or zero risk."
+    },
+    {
+      "term": "KILL",
+      "plain_meaning": "A specific proposition or transformation was rejected for a named structural reason.",
+      "why_it_matters": "Keeping killed ideas visible prevents attractive but unsound forms from silently returning.",
+      "source_or_lane": "lifecycle",
+      "authority": "source-backed",
+      "misuse_warning": "A KILL applies to the named proposition, not automatically to its whole research question."
+    },
+    {
+      "term": "human gate",
+      "plain_meaning": "A consequential dispatch cannot start until a person explicitly confirms its frozen proposal.",
+      "why_it_matters": "The contribution-mechanism review is ready for this decision but is not authorized yet.",
+      "source_or_lane": "external_dependencies",
+      "authority": "source-backed",
+      "misuse_warning": "A prior research confirmation does not authorize a separate review run."
+    },
+    {
+      "term": "authority promotion",
+      "plain_meaning": "A separate governed decision about whether research may affect policy or another authority surface.",
+      "why_it_matters": "Even future positive evidence would not automatically become token, payout, governance, or implementation policy.",
+      "source_or_lane": "external_dependencies",
+      "authority": "source-backed",
+      "misuse_warning": "Inventory, telemetry, bets, scores, and witnesses are evidence or signals; none grants authority by itself."
+    }
+  ],
+  "layer_reader_outcomes": [
+    {
+      "layer": "surface",
+      "as_a_reader": "As a newcomer, I want a compact statement of the program's actual state.",
+      "should_understand": "Research infrastructure and several bounded investigations exist, but no represented economy mechanism has been validated.",
+      "because_it_matters_for": "avoiding an inflated first impression."
+    },
+    {
+      "layer": "flow",
+      "as_a_reader": "As a contributor, I want arrows to show which prerequisites unlock later work.",
+      "should_understand": "Definitions, institutional inputs, and explicit human confirmation precede fixture runs, evidence adjudication, and any promotion request.",
+      "because_it_matters_for": "choosing the smallest legitimate next contribution."
+    },
+    {
+      "layer": "internal_dependencies",
+      "as_a_reader": "As a maintainer, I want to see how research results feed candidates without becoming proof.",
+      "should_understand": "Accepted findings constrain the fixture, bet, review, and monetary handoff surfaces while killed propositions remain exclusions.",
+      "because_it_matters_for": "preserving demotions and non-collapse rules."
+    },
+    {
+      "layer": "external_dependencies",
+      "as_a_reader": "As an owner, I want to know which dependencies the repository cannot synthesize from prose.",
+      "should_understand": "Human confirmation, canonical definitions, local institutional state, and authority decisions must come from their owning routes.",
+      "because_it_matters_for": "not fabricating missing inputs or authority."
+    },
+    {
+      "layer": "risk_questions",
+      "as_a_reader": "As a reviewer, I want uncertainty and negative results to remain prominent.",
+      "should_understand": "Experiments are unrun, monetary handoffs are unrunnable, several transformations are killed, and promotion remains separate.",
+      "because_it_matters_for": "resisting Goodhart pressure and attractive fiction."
+    }
+  ],
+  "readability_dynamics": {
+    "max_words_per_paragraph": 105,
+    "max_consecutive_dense_blocks": 1,
+    "require_scan_anchor_every_n_blocks": 3,
+    "allowed_visual_treatments": [
+      "micro_heading",
+      "status_chip",
+      "dependency_arrow",
+      "detail_drawer",
+      "question_line"
+    ]
+  },
+  "lanes": {
+    "surface": {
+      "handle": "surface.summary",
+      "evidence": [
+        "The inventory is the canonical repository orientation surface.",
+        "The original economy-resilience program and the fifth monetary source-research extension are closed.",
+        "No validation harness has emitted evidence yet."
+      ],
+      "inference": [
+        "The most useful page-level summary is therefore state plus dependency order, not a maturity score."
+      ]
+    },
+    "properties": {
+      "handle": "properties.catalog",
+      "evidence": [
+        "Claim must remain no stronger than evidence.",
+        "Research, policy, signal, credit, and authority must remain separate.",
+        "Open questions and prior demotions remain visible residue."
+      ],
+      "inference": [
+        "A five-state visual vocabulary can show accepted, open, killed, unrunnable, and human-gated states without implying one numeric rank."
+      ]
+    },
+    "components": {
+      "handle": "components.map",
+      "evidence": [
+        "Authority and source foundation",
+        "closed research results",
+        "candidate fixture, bet, review, and monetary handoffs",
+        "definition and institutional gates",
+        "future evidence and promotion routes"
+      ],
+      "inference": [
+        "These components form a readable whole-program mental map."
+      ]
+    },
+    "internal_dependencies": {
+      "handle": "dependencies.internal",
+      "evidence": [
+        "Deferred-contribution fixtures require three load-bearing candidate terms to be registered before use.",
+        "PRZ-05 depends on a survived PRZ-04 recognition candidate.",
+        "Monetary schema work depends on authoritative opening state, typed schedules, actors, obligations, market, service-use objects, and predicates."
+      ],
+      "inference": [
+        "The next-work queue should be ordered by prerequisite rather than by perceived importance."
+      ]
+    },
+    "external_dependencies": {
+      "handle": "dependencies.external",
+      "evidence": [
+        "The refreshed contribution-mechanism review awaits separate human confirmation.",
+        "Definition governance owns load-bearing terms.",
+        "Institutional owners must supply local monetary objects and state.",
+        "Authority promotion owns any move from research toward policy."
+      ],
+      "inference": [
+        "These dependencies should be visually outside the evidence-result boundary."
+      ]
+    },
+    "flow": {
+      "handle": "flow.graph",
+      "evidence": [
+        "Source and authority rules constrain research.",
+        "Research findings constrain candidate handoffs.",
+        "Definitions and institutional inputs precede runnable evidence work.",
+        "Evidence adjudication precedes any separate promotion request."
+      ],
+      "inference": [
+        "The smallest legitimate flow is foundation to findings to gates to runnable checks to adjudication, with no automatic promotion edge."
+      ]
+    },
+    "lifecycle": {
+      "handle": "lifecycle.timeline",
+      "evidence": [
+        "Research dispatches can close resolved.",
+        "A separate review proposal can remain proposed-confirmation-required.",
+        "Candidate experiments can remain unrun or unrunnable.",
+        "Specific transformations can be killed."
+      ],
+      "inference": [
+        "A lifecycle strip should teach that completion, runnability, verdict, and authority are independent dimensions."
+      ]
+    },
+    "risk_questions": {
+      "handle": "risk.questions",
+      "evidence": [],
+      "inference": [
+        "Which review findings would change the candidate experiment shapes?",
+        "Who owns each missing monetary object and its completeness witness?",
+        "What thresholds and non-circular live result-link target will be preregistered?",
+        "Which anti-Goodhart observations would trigger demotion before any reward discussion?"
+      ]
+    },
+    "visual_composition": {
+      "handle": "visual.model",
+      "evidence": [
+        "L0 static HTML/SVG is sufficient for a local dependency map.",
+        "The installed x-ray seed lacks the README-referenced YAML visual library."
+      ],
+      "inference": [
+        "Use an accessible custom graph/card pattern with selectable lanes, status filters, traceable nodes, and a detail drawer."
+      ]
+    }
+  }
+}
+

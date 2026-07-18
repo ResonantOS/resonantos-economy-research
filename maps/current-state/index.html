@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAzMiAzMic+PGNpcmNsZSBjeD0nMTYnIGN5PScxNicgcj0nMTEnIGZpbGw9JyNmMGM2NmInLz48L3N2Zz4=">
+  <title>ResonantOS Economy Research — Current-State Mental Map</title>
+  <style>
+    :root {
+      --ink: #f4f1e8;
+      --muted: #aaa9a5;
+      --paper: #0b1014;
+      --panel: #121a20;
+      --panel-2: #18232b;
+      --line: #33434e;
+      --line-hot: #7d96a5;
+      --accepted: #77d4a4;
+      --accepted-bg: #143427;
+      --open: #f0c66b;
+      --open-bg: #3a2e13;
+      --gate: #80b8ff;
+      --gate-bg: #142c48;
+      --blocked: #f39b68;
+      --blocked-bg: #41251a;
+      --killed: #ff7d86;
+      --killed-bg: #431b22;
+      --boundary: #c59cff;
+      --boundary-bg: #2d2041;
+      --focus: #fff1a8;
+      --radius: 18px;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .28);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(79, 131, 154, .18), transparent 29rem),
+        radial-gradient(circle at 85% 15%, rgba(125, 86, 157, .13), transparent 30rem),
+        var(--paper);
+      font: 16px/1.55 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a { color: #a9d6ff; text-underline-offset: 3px; }
+    a:hover { color: #d6ebff; }
+    button, input { font: inherit; }
+    button { color: inherit; }
+
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: -5rem;
+      z-index: 100;
+      background: var(--focus);
+      color: #161616;
+      padding: .7rem 1rem;
+      border-radius: 10px;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .page {
+      width: min(1500px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 80px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      padding: 12px 0 24px;
+      color: var(--muted);
+      font-size: .82rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .mark { display: flex; align-items: center; gap: 10px; }
+    .mark-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--open);
+      box-shadow: 0 0 0 5px rgba(240, 198, 107, .12);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
+      gap: 28px;
+      padding: clamp(28px, 5vw, 66px);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(24, 35, 43, .98), rgba(14, 20, 25, .96));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      right: -100px;
+      bottom: -190px;
+      border: 1px solid rgba(197, 156, 255, .23);
+      border-radius: 50%;
+      box-shadow: 0 0 0 55px rgba(197, 156, 255, .03), 0 0 0 110px rgba(128, 184, 255, .025);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      color: var(--accepted);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .72rem;
+      font-weight: 750;
+    }
+    h1 {
+      margin: 12px 0 18px;
+      max-width: 900px;
+      font: 700 clamp(2.25rem, 5vw, 5.4rem)/.98 ui-serif, Georgia, serif;
+      letter-spacing: -.045em;
+    }
+    .lede {
+      max-width: 850px;
+      margin: 0;
+      color: #d6d5d0;
+      font-size: clamp(1.02rem, 1.5vw, 1.25rem);
+    }
+
+    .truth-card {
+      align-self: stretch;
+      padding: 24px;
+      border: 1px solid #40515c;
+      border-radius: var(--radius);
+      background: rgba(7, 12, 15, .55);
+      position: relative;
+      z-index: 1;
+    }
+    .truth-card h2 { margin: 0 0 16px; font-size: .9rem; text-transform: uppercase; letter-spacing: .1em; }
+    .truth-card p { margin: 0; color: #d0d0cb; }
+    .truth-card p + p { margin-top: 14px; }
+    .truth-card strong { color: var(--ink); }
+
+    .quick-state {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 22px 0 0;
+    }
+    .quick-state article {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(6, 10, 13, .35);
+    }
+    .quick-state b { display: block; font-size: 1.35rem; font-family: ui-serif, Georgia, serif; }
+    .quick-state span { color: var(--muted); font-size: .82rem; }
+
+    .control-deck {
+      position: sticky;
+      top: 10px;
+      z-index: 40;
+      display: grid;
+      grid-template-columns: minmax(260px, .85fr) minmax(390px, 1.15fr);
+      gap: 18px;
+      margin: 24px 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(11, 16, 20, .92);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, .24);
+    }
+    .control-group { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .control-label { margin-right: 6px; color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; }
+    .toggle, .filter, .trace-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 36px;
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #10171c;
+      color: #d1d2cf;
+      cursor: pointer;
+      font-size: .78rem;
+    }
+    .toggle:hover, .filter:hover, .trace-button:hover { border-color: var(--line-hot); }
+    .toggle input { accent-color: var(--gate); }
+    .filter[aria-pressed="true"], .trace-button[aria-pressed="true"] {
+      background: #d8e8f1;
+      color: #0c1216;
+      border-color: #d8e8f1;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin: 0 0 28px;
+      padding: 0 4px;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+    .legend span { display: inline-flex; align-items: center; gap: 7px; }
+    .legend i { width: 9px; height: 9px; border-radius: 50%; }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 20px;
+      margin: 70px 0 22px;
+      align-items: end;
+    }
+    .section-head h2 { margin: 0; font: 650 clamp(1.65rem, 3vw, 2.8rem)/1 ui-serif, Georgia, serif; }
+    .section-head p { margin: 0; color: var(--muted); max-width: 760px; }
+
+    .map-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 330px;
+      gap: 20px;
+      align-items: start;
+    }
+    .graph {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(14, 21, 26, .72);
+      padding: 22px;
+      overflow: hidden;
+    }
+
+    .stage {
+      position: relative;
+      padding: 18px;
+      border: 1px solid #2a3942;
+      border-radius: 17px;
+      background: rgba(5, 10, 13, .26);
+    }
+    .stage + .stage { margin-top: 44px; }
+    .stage + .stage::before {
+      content: "↓";
+      position: absolute;
+      left: 50%;
+      top: -39px;
+      transform: translateX(-50%);
+      color: var(--line-hot);
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+    .stage-label {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 13px;
+      color: #c7c9c6;
+      font-size: .75rem;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    .stage-number {
+      display: inline-grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border: 1px solid var(--line-hot);
+      border-radius: 50%;
+      font-size: .7rem;
+    }
+    .node-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; }
+    .node-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .node-grid.one { grid-template-columns: 1fr; }
+
+    .node {
+      position: relative;
+      min-width: 0;
+      padding: 16px 16px 14px;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--status-color, var(--line-hot));
+      border-radius: 14px;
+      background: linear-gradient(145deg, rgba(27, 39, 47, .98), rgba(17, 25, 31, .98));
+      cursor: pointer;
+      transition: opacity .18s ease, transform .18s ease, border-color .18s ease;
+    }
+    .node:hover, .node:focus-visible { transform: translateY(-2px); border-color: var(--status-color, var(--line-hot)); outline: none; }
+    .node:focus-visible { box-shadow: 0 0 0 3px rgba(255, 241, 168, .3); }
+    .node h3 { margin: 5px 0 7px; font-size: .96rem; line-height: 1.25; }
+    .node p { margin: 0; color: var(--muted); font-size: .79rem; line-height: 1.42; }
+    .node .status { color: var(--status-color); font-size: .63rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .node[data-status="accepted"] { --status-color: var(--accepted); }
+    .node[data-status="open"] { --status-color: var(--open); }
+    .node[data-status="gate"] { --status-color: var(--gate); }
+    .node[data-status="unrunnable"] { --status-color: var(--blocked); }
+    .node[data-status="killed"] { --status-color: var(--killed); }
+    .node[data-status="boundary"] { --status-color: var(--boundary); }
+    .node.is-dimmed { opacity: .13; filter: grayscale(.6); }
+    .node.is-hidden { display: none; }
+    .node.is-selected { box-shadow: 0 0 0 2px var(--status-color), 0 16px 35px rgba(0, 0, 0, .28); }
+
+    .relation-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 13px 0 0;
+      color: #9cb0bb;
+      font-size: .72rem;
+    }
+    .relation-note::before, .relation-note::after { content: ""; height: 1px; flex: 1; background: #2c3d47; }
+
+    .detail-panel {
+      position: sticky;
+      top: 116px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #111a20;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .detail-top { padding: 20px; border-bottom: 1px solid var(--line); background: #17232b; }
+    .detail-top small { color: var(--gate); text-transform: uppercase; letter-spacing: .1em; }
+    .detail-top h3 { margin: 8px 0 0; font: 650 1.35rem/1.15 ui-serif, Georgia, serif; }
+    .detail-body { padding: 20px; }
+    .detail-block + .detail-block { margin-top: 18px; }
+    .detail-block h4 { margin: 0 0 5px; color: var(--muted); font-size: .68rem; letter-spacing: .09em; text-transform: uppercase; }
+    .detail-block p { margin: 0; font-size: .86rem; }
+    .evidence-pill { display: inline-block; margin-bottom: 8px; padding: 4px 8px; border-radius: 999px; background: var(--accepted-bg); color: var(--accepted); font-size: .67rem; font-weight: 750; }
+    .detail-source { display: inline-block; margin-top: 18px; font-size: .8rem; }
+
+    .boundary-band {
+      margin-top: 44px;
+      padding: 20px;
+      border: 1px dashed var(--boundary);
+      border-radius: 18px;
+      background: rgba(45, 32, 65, .28);
+      color: #ded4ee;
+    }
+    .boundary-band strong { color: #eadcff; }
+
+    .trace-deck {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    .overview-flow {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 0 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(14, 21, 26, .72);
+    }
+
+    .next-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+    }
+    .next-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      padding: 22px;
+    }
+    .next-card .order { color: var(--gate); font: 700 2.3rem/1 ui-serif, Georgia, serif; }
+    .next-card h3 { margin: 12px 0 8px; }
+    .next-card p { margin: 0; color: var(--muted); }
+    .next-card ul { margin: 14px 0 0; padding-left: 1.1rem; color: #d4d4cf; }
+    .next-card li + li { margin-top: 8px; }
+    .depends { display: inline-block; margin-top: 15px; color: var(--open); font-size: .74rem; }
+
+    .negative-grid, .terms-grid, .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+    }
+    .negative-card, .term-card, .outcome-card {
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(18, 26, 32, .84);
+      padding: 18px;
+    }
+    .negative-card { border-top: 3px solid var(--killed); }
+    .negative-card h3, .term-card h3, .outcome-card h3 { margin: 0 0 8px; font-size: .95rem; }
+    .negative-card p, .term-card p, .outcome-card p { margin: 0; color: var(--muted); font-size: .82rem; }
+    .term-card strong { color: #f4df9a; }
+    .outcome-card { border-top: 3px solid var(--gate); }
+
+    .evidence-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .evidence-split article { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); }
+    .evidence-split h3 { margin: 0 0 9px; }
+    .evidence-split p { margin: 0; color: var(--muted); }
+    .source-backed { border-top: 3px solid var(--accepted) !important; }
+    .inference { border-top: 3px solid var(--open) !important; }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 70px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    body.hide-surface [data-lane~="surface"] { display: none !important; }
+    body.hide-flow .flow-visual, body.hide-flow .stage + .stage::before, body.hide-flow .relation-note { display: none; }
+    body.hide-deps [data-dependency] { opacity: .25; }
+    body.hide-risk [data-lane~="risk_questions"] { display: none !important; }
+
+    @media (max-width: 1100px) {
+      .hero, .section-head, .map-layout { grid-template-columns: 1fr; }
+      .detail-panel { position: relative; top: 0; }
+      .control-deck { position: relative; top: 0; grid-template-columns: 1fr; }
+      .node-grid.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 20px, 1500px); padding-top: 10px; }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .hero { padding: 25px 20px; border-radius: 20px; }
+      .quick-state, .node-grid, .node-grid.three, .next-grid, .negative-grid, .terms-grid, .outcomes-grid, .evidence-split { grid-template-columns: 1fr; }
+      .graph { padding: 10px; border-radius: 18px; }
+      .stage { padding: 12px; }
+      .section-head { margin-top: 50px; }
+      .footer { flex-direction: column; }
+      .overview-flow { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#mental-map">Skip to the mental map</a>
+  <main class="page">
+    <div class="topbar">
+      <div class="mark"><span class="mark-dot" aria-hidden="true"></span> ResonantOS economy research</div>
+      <div>Current-state projection · 13 July 2026 · research ≠ policy</div>
+    </div>
+
+    <header class="hero" data-lane="surface properties">
+      <div>
+        <div class="eyebrow">What is true now</div>
+        <h1>A map of what we know, what failed, and what unlocks the next contribution.</h1>
+        <p class="lede">The repository has a strong research and governance substrate. Several investigations are closed. That does <strong>not</strong> mean the economy mechanism is validated: the experiment layer is still unrun, the monetary handoffs are unrunnable, and authority remains a separate gate.</p>
+        <div class="quick-state" aria-label="Current state summary">
+          <article><b>Closed</b><span>bounded research, with demotions preserved</span></article>
+          <article><b>Unrun</b><span>fixture and bet witnesses</span></article>
+          <article><b>Separate</b><span>evidence, credit, policy, and authority</span></article>
+        </div>
+      </div>
+      <aside class="truth-card">
+        <h2>The non-inflated reading</h2>
+        <p><strong>Established:</strong> bounded findings, prior-art cohorts, candidate schemas, open bets, killed transformations, and explicit gates.</p>
+        <p><strong>Not established:</strong> a working contribution economy, a monetary health verdict, reward eligibility, payout logic, governance weight, or launch readiness.</p>
+      </aside>
+    </header>
+
+    <section class="control-deck" aria-label="Map controls">
+      <div class="control-group">
+        <span class="control-label">Layers</span>
+        <label class="toggle"><input id="toggle-surface" type="checkbox" checked> Surface</label>
+        <label class="toggle"><input id="toggle-flow" type="checkbox" checked> Flow</label>
+        <label class="toggle"><input id="toggle-deps" type="checkbox" checked> Dependencies</label>
+        <label class="toggle"><input id="toggle-risk" type="checkbox" checked> Risk / KILLs</label>
+      </div>
+      <div class="control-group" aria-label="Status filters">
+        <span class="control-label">Status</span>
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" type="button" data-filter="accepted" aria-pressed="false">Accepted evidence</button>
+        <button class="filter" type="button" data-filter="open" aria-pressed="false">Open / unrun</button>
+        <button class="filter" type="button" data-filter="gate" aria-pressed="false">Human gate</button>
+        <button class="filter" type="button" data-filter="unrunnable" aria-pressed="false">Unrunnable</button>
+        <button class="filter" type="button" data-filter="killed" aria-pressed="false">Killed</button>
+      </div>
+    </section>
+
+    <div class="legend" aria-label="Legend">
+      <span><i style="background:var(--accepted)"></i> source-backed / accepted research</span>
+      <span><i style="background:var(--open)"></i> open or unrun</span>
+      <span><i style="background:var(--gate)"></i> explicit human decision</span>
+      <span><i style="background:var(--blocked)"></i> missing prerequisite</span>
+      <span><i style="background:var(--killed)"></i> named proposition killed</span>
+      <span><i style="background:var(--boundary)"></i> separate authority boundary</span>
+    </div>
+
+    <section id="mental-map" aria-labelledby="map-title">
+      <div class="section-head">
+        <h2 id="map-title">The current-state graph</h2>
+        <p>Read top to bottom. Completion, runnability, verdict, and authority are independent. Select a node to see why it matters, its source, and the mistake to avoid.</p>
+      </div>
+
+      <div class="trace-deck" aria-label="Trace a route">
+        <span class="control-label">Trace</span>
+        <button class="trace-button" type="button" data-trace="all" aria-pressed="true">Whole program</button>
+        <button class="trace-button" type="button" data-trace="review" aria-pressed="false">Review route</button>
+        <button class="trace-button" type="button" data-trace="contribution" aria-pressed="false">Contribution evidence</button>
+        <button class="trace-button" type="button" data-trace="monetary" aria-pressed="false">Monetary evidence</button>
+        <button class="trace-button" type="button" data-trace="promotion" aria-pressed="false">Promotion boundary</button>
+      </div>
+
+      <svg class="overview-flow flow-visual" viewBox="0 0 1200 160" role="img" aria-labelledby="overview-title overview-desc" data-lane="flow internal_dependencies external_dependencies">
+        <title id="overview-title">Zoomed-out dependency path</title>
+        <desc id="overview-desc">Foundation constrains closed research. Research produces candidate handoffs. Missing decisions and inputs must be resolved before bounded evidence runs. Claim adjudication follows evidence. Authority promotion remains a separate, dashed boundary.</desc>
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#7d96a5"></path>
+          </marker>
+        </defs>
+        <g fill="none" stroke="#7d96a5" stroke-width="2" marker-end="url(#arrow)">
+          <path d="M205 80 H265"></path><path d="M445 80 H505"></path><path d="M685 80 H745"></path><path d="M925 80 H985" stroke-dasharray="7 7"></path>
+        </g>
+        <g font-family="ui-sans-serif, system-ui" text-anchor="middle">
+          <g><rect x="25" y="38" width="180" height="84" rx="15" fill="#143427" stroke="#77d4a4"></rect><text x="115" y="73" fill="#77d4a4" font-size="13" font-weight="700">FOUNDATION</text><text x="115" y="97" fill="#d8ddd9" font-size="12">source + authority rules</text></g>
+          <g><rect x="265" y="38" width="180" height="84" rx="15" fill="#143427" stroke="#77d4a4"></rect><text x="355" y="73" fill="#77d4a4" font-size="13" font-weight="700">CLOSED RESEARCH</text><text x="355" y="97" fill="#d8ddd9" font-size="12">findings + demotions</text></g>
+          <g><rect x="505" y="38" width="180" height="84" rx="15" fill="#3a2e13" stroke="#f0c66b"></rect><text x="595" y="73" fill="#f0c66b" font-size="13" font-weight="700">HANDOFFS + GATES</text><text x="595" y="97" fill="#d8ddd9" font-size="12">unrun / unrunnable</text></g>
+          <g><rect x="745" y="38" width="180" height="84" rx="15" fill="#142c48" stroke="#80b8ff"></rect><text x="835" y="73" fill="#80b8ff" font-size="13" font-weight="700">EVIDENCE</text><text x="835" y="97" fill="#d8ddd9" font-size="12">run + adjudicate</text></g>
+          <g><rect x="985" y="38" width="190" height="84" rx="15" fill="#2d2041" stroke="#c59cff" stroke-dasharray="7 6"></rect><text x="1080" y="73" fill="#c59cff" font-size="13" font-weight="700">PROMOTION REQUEST</text><text x="1080" y="97" fill="#d8ddd9" font-size="12">separate authority gate</text></g>
+          <text x="1080" y="141" fill="#a7a8a5" font-size="10">dashed = never automatic</text>
+        </g>
+      </svg>
+
+      <div class="map-layout">
+        <div class="graph" data-lane="flow internal_dependencies external_dependencies">
+          <section class="stage" aria-labelledby="stage-1">
+            <h3 class="stage-label" id="stage-1"><span class="stage-number">1</span> Foundation — what constrains every move</h3>
+            <div class="node-grid three">
+              <article class="node" tabindex="0" role="button" data-id="official-source" data-status="accepted" data-path="review contribution monetary promotion" data-lane="surface external_dependencies" data-title="Official source boundary" data-summary="The official ResonantDAO primary source currently admitted by this repository is the whitepaper." data-why="It prevents imported precedent or local research language from impersonating project authority." data-warning="External DAO and mechanism sources are related evidence only until locally bridged." data-source="../../authority/source-spine.md" data-source-label="Authority source spine">
+                <span class="status">Accepted boundary</span><h3>Official source boundary</h3><p>Whitepaper is primary; external precedent stays related evidence.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="guardrails" data-status="accepted" data-path="review contribution monetary promotion" data-lane="properties external_dependencies" data-title="Research credibility guardrails" data-summary="Claim ≤ evidence, research ≠ policy, score ≠ authority, and public/private boundaries govern the whole repository." data-why="They define what a closed result may and may not mean." data-warning="A polished graph cannot promote a claim or erase residue." data-source="../../authority/constitutions/RESEARCH-CREDIBILITY-CONSTITUTION.md" data-source-label="Research credibility constitution">
+                <span class="status">Accepted method</span><h3>Research credibility guardrails</h3><p>Evidence, policy, signal, credit, and authority stay separate.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="inventory" data-status="accepted" data-path="review contribution monetary promotion" data-lane="components internal_dependencies" data-title="Inventory-first orientation" data-summary="The inventory is the canonical entry point for repository state and reusable findings." data-why="It keeps contributors on the narrowest governed route instead of navigating by file-tree intuition." data-warning="Inventory is a read model and evidence surface, never an authority surface." data-source="../../.arcanum/inventory/index.md" data-source-label="Inventory Start Here">
+                <span class="status">Active read model</span><h3>Inventory-first orientation</h3><p>Start with live state, then route through the owning artifact.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="stage" aria-labelledby="stage-2">
+            <h3 class="stage-label" id="stage-2"><span class="stage-number">2</span> Accepted research — investigations completed, not mechanisms proven</h3>
+            <div class="node-grid">
+              <article class="node" tabindex="0" role="button" data-id="economy-synthesis" data-status="accepted" data-path="contribution monetary promotion" data-lane="components lifecycle" data-title="Economy-resilience synthesis" data-summary="The original four-tower program and cross-corpus synthesis closed resolved; the monetary source-research extension later closed separately." data-why="It supplies the attack lanes, fixture backlog, and authority posture used by later work." data-warning="Closed means the bounded workflow finished; it does not mean an economy invariant was validated." data-source="../../.arcanum/inventory/entries/economy-resilience-program.md" data-source-label="Economy-resilience program entry">
+                <span class="status">Closed research</span><h3>Economy-resilience synthesis</h3><p>Attack lanes and backlog exist; validation evidence does not.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="deferred-research" data-status="accepted" data-path="contribution promotion" data-lane="components lifecycle" data-title="Deferred-contribution research" data-summary="A narrower prior-activity → one later witnessed-result link survives as a fixture-instantiation candidate." data-why="It preserves the user's core uncertainty while rejecting person-level stored-value accounting." data-warning="The surviving candidate has no payout, reputation, governance, time-account, or conversion effect." data-source="../../.arcanum/inventory/entries/deferred-contribution-basis.md" data-source-label="Deferred-contribution result">
+                <span class="status">Accepted · REVISE</span><h3>Deferred-contribution research</h3><p>A bounded result-link candidate survives; economic accounting does not.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="mechanism-research" data-status="accepted" data-path="review contribution promotion" data-lane="components lifecycle" data-title="Contribution-mechanism research" data-summary="The directed prior-art research dispatch is closed and its accepted findings preserve explicit KILLs, revisions, and open bets." data-why="It attacks contribution types, dimensions, review, allocation, failure credit, and Goodhart pressure as one connected research surface." data-warning="No handoff is preregistration-complete and no integrated-effect witness exists." data-source="../../subtowers/contribution-mechanism/returns/research/findings.md" data-source-label="Accepted contribution-mechanism findings">
+                <span class="status">Closed research</span><h3>Contribution-mechanism research</h3><p>Candidate shapes were narrowed; thresholds and live witnesses remain absent.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="monetary-research" data-status="accepted" data-path="monetary promotion" data-lane="components lifecycle" data-title="Monetary-circulation research" data-summary="The fifth-tower source dispatch closed resolved with 23 component precedents and final auditor ACCEPT." data-why="It replaces vague monetary health with typed objects, clocks, relations, and explicitly incomplete reporting." data-warning="Auditor ACCEPT applies to research closeout quality, not to a token model or monetary experiment." data-source="../../subtowers/monetary-circulation/returns/research/findings.md" data-source-label="Accepted monetary findings">
+                <span class="status">Closed research</span><h3>Monetary-circulation research</h3><p>Component methods survived; every local handoff is still unrunnable.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="stage" aria-labelledby="stage-3" data-dependency="internal">
+            <h3 class="stage-label" id="stage-3"><span class="stage-number">3</span> Handoffs — different states that must not be collapsed</h3>
+            <div class="node-grid three">
+              <article class="node" tabindex="0" role="button" data-id="edge-fixtures" data-status="open" data-path="contribution promotion" data-lane="components internal_dependencies" data-title="Contribution-edge fixture scaffold" data-summary="A schema, matrix, typed negatives, checklist, and fixture files are materialized." data-why="This is the local surface that can later instantiate bounded result-link checks." data-warning="Materialized is not run, validated, or authorized; current extension work is definition-blocked." data-source="../../validation/contribution-edge-fixtures/README.md" data-source-label="Contribution-edge fixtures">
+                <span class="status">Materialized · unrun</span><h3>Contribution-edge fixtures</h3><p>A scaffold exists; no harness evidence has been emitted.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="bets" data-status="open" data-path="contribution promotion" data-lane="components internal_dependencies" data-title="Bets and prizes" data-summary="Four registered bets remain unresolved; six prizes remain open or contested, and no prize has closed." data-why="They turn attractive mechanism ideas into falsification contracts before reward design." data-warning="A bet is not a wager that grants payout, and a prize state grants no authority." data-source="../../prizes/BET-REGISTER.md" data-source-label="Bet register">
+                <span class="status">Open · unresolved</span><h3>Bets &amp; prizes</h3><p>PRZ-04 recognition, PRZ-05 community value, and PRZ-06 language safety remain distinct.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="review-proposal" data-status="gate" data-path="review contribution promotion" data-lane="external_dependencies lifecycle" data-title="Contribution review proposal" data-summary="The refreshed red-team review sheet passed its two independent tension checks and awaits separate human confirmation." data-why="It is the only major route currently ready for an explicit go/revise decision without inventing missing evidence." data-warning="The prior research confirmation does not authorize this separate review." data-source="../../dispatch/reviews/PROPOSED-CONTRIBUTION-MECHANISM-REVIEW.md" data-source-label="Proposed review dispatch">
+                <span class="status">Human gate</span><h3>Review proposal</h3><p>PASS/PASS on design; unregistered and not authorized to run.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="monetary-handoffs" data-status="unrunnable" data-path="monetary promotion" data-lane="internal_dependencies risk_questions" data-title="MC-E monetary handoffs" data-summary="MC-E1–E5, typed MC-E6 branches, and MC-E7 survive only as split or revised local handoffs." data-why="They describe the evidence objects a future local monetary analysis would need." data-warning="All are unrunnable until authoritative local state, actors, institutions, schedules, obligations, and predicates exist." data-source="../../subtowers/monetary-circulation/returns/research/findings.md#mc-e-verdict-matrix" data-source-label="MC-E verdict matrix">
+                <span class="status">Unrunnable</span><h3>MC-E1–E5 and MC-E7</h3><p>Sound component questions; missing local objects and inputs.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="killed-contribution" data-status="killed" data-path="contribution" data-lane="risk_questions lifecycle" data-title="Killed contribution transformations" data-summary="Economic aliases as mechanism fields and the current circular CM-D5 transformation are killed; present preventive recognition needs separate future work." data-why="The KILLs stop stored-value language and circular eligibility from returning as if they had survived review." data-warning="The language may still be tested as a communication stimulus; it is not a mechanism field." data-source="../../subtowers/contribution-mechanism/returns/research/findings.md#invalid-transformation-kills" data-source-label="Contribution KILL list">
+                <span class="status">KILL</span><h3>Economic fields + circular CM-D5</h3><p>Named transformations fail; the larger research questions stay open.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="killed-monetary" data-status="killed" data-path="monetary" data-lane="risk_questions lifecycle" data-title="Killed monetary aggregates" data-summary="Generic aggregate MC-E6 and the MC-V overall health verdict are killed; one top-level MC-R status is also rejected." data-why="Different objects, clocks, predicates, and relations cannot be honestly compressed into one health score." data-warning="Typed feedback branches remain future work; killing the aggregate does not kill every branch question." data-source="../../subtowers/monetary-circulation/returns/research/findings.md#skeptic-issued-typed-negatives" data-source-label="Monetary typed-negative list">
+                <span class="status">KILL</span><h3>Generic feedback + health score</h3><p>Use incomplete per-object reports and typed relations, not one verdict.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="stage" aria-labelledby="stage-4" data-dependency="external">
+            <h3 class="stage-label" id="stage-4"><span class="stage-number">4</span> Gates — the missing decisions and inputs</h3>
+            <div class="node-grid three">
+              <article class="node" tabindex="0" role="button" data-id="confirm-review" data-status="gate" data-path="review contribution promotion" data-lane="external_dependencies flow" data-title="Confirm or revise the review" data-summary="A person must separately confirm the frozen contribution-mechanism review proposal or request changes." data-why="This is the nearest ready decision and can produce a red-team change-request set without claiming validation." data-warning="Confirmation authorizes the bounded review only, not implementation or policy." data-source="../../dispatch/reviews/PROPOSED-CONTRIBUTION-MECHANISM-REVIEW.md#next-human-action" data-source-label="Review next human action">
+                <span class="status">Ready decision</span><h3>Confirm / revise review</h3><p>Smallest ready unblocker; explicit human action required.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="register-definitions" data-status="unrunnable" data-path="contribution promotion" data-lane="external_dependencies flow" data-title="Register three candidate terms" data-summary="The relevance claim, review disposition, and result-link evidence class must be registered through definition governance." data-why="Stable terms are required before E1–E4 can be instantiated without semantic drift." data-warning="Registration grounds vocabulary; it does not validate the candidate mechanism." data-source="../../.arcanum/inventory/entries/deferred-contribution-basis.md#next-safe-route" data-source-label="Deferred-contribution next safe route">
+                <span class="status">Definition gate</span><h3>Register candidate terms</h3><p>Relevance, review disposition, and result-link evidence class.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="monetary-owners" data-status="unrunnable" data-path="monetary promotion" data-lane="external_dependencies flow" data-title="Assign monetary owners and inputs" data-summary="Owners must supply the opening state, typed schedules, actors or cohorts, treasury obligations, market institution, service-use objects, and predicates." data-why="Research cannot infer local monetary facts that do not yet have an authoritative owner or completeness witness." data-warning="Choosing an owner is not choosing a treasury, issuance, liquidity, or token policy." data-source="../../.arcanum/inventory/entries/monetary-circulation-tower.md#next-human-action" data-source-label="Monetary next human action">
+                <span class="status">Institutional gate</span><h3>Assign owners + local objects</h3><p>Required before monetary schema-only evidence work can be proposed.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="stage" aria-labelledby="stage-5">
+            <h3 class="stage-label" id="stage-5"><span class="stage-number">5</span> Runnable later — bounded work after the gates</h3>
+            <div class="node-grid">
+              <article class="node" tabindex="0" role="button" data-id="run-review" data-status="open" data-path="review contribution promotion" data-lane="flow lifecycle" data-title="Run the contribution red-team review" data-summary="After confirmation and registration, the review can attack the accepted research artifacts and produce verified change requests." data-why="It tests artifact quality and unresolved attack surfaces before new experiment design is trusted." data-warning="A review verdict is not a mechanism-effect witness." data-source="../../dispatch/reviews/PROPOSED-CONTRIBUTION-MECHANISM-REVIEW.md#review-deliverables" data-source-label="Review deliverables">
+                <span class="status">After confirmation</span><h3>Run red-team review</h3><p>Attack definitions, circularity, Goodhart exposure, conflicts, and handoffs.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="instantiate-e1-e4" data-status="open" data-path="contribution promotion" data-lane="flow internal_dependencies" data-title="Instantiate and check E1–E4" data-summary="After definition registration, extend the common contribution-edge schema, instantiate E1–E4, and run deterministic plus contextual checks." data-why="This is the first bounded path from the surviving prior-activity idea toward actual evidence." data-warning="Keep every effect at none; schema checks cannot create reward, credit, reputation, or authority effects." data-source="../../.arcanum/inventory/entries/deferred-contribution-basis.md#next-safe-route" data-source-label="Deferred-contribution next safe route">
+                <span class="status">After definitions</span><h3>Instantiate E1–E4</h3><p>Schema-only fixtures first, then deterministic and contextual checks.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="monetary-schema" data-status="open" data-path="monetary promotion" data-lane="flow internal_dependencies" data-title="Propose monetary schema-only work" data-summary="After owners and local inputs exist, propose bounded MC-E evidence schemas using typed clocks and per-object reports." data-why="It makes supply, schedules, concentration, treasury, exit capacity, and service use inspectable without a fake aggregate score." data-warning="Do not resurrect generic MC-E6, MC-V, universal epoch, or an overall health status." data-source="../../subtowers/monetary-circulation/returns/research/findings.md#mc-r-explicitly-incomplete-non-compensatory-reporting" data-source-label="MC-R reporting contract">
+                <span class="status">After owner inputs</span><h3>Propose monetary evidence schemas</h3><p>Per-object statuses and typed relation graph; completeness false.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="run-bets" data-status="open" data-path="contribution promotion" data-lane="flow internal_dependencies" data-title="Run bounded bet witnesses" data-summary="Run separate preregistered comparisons for recognition value, later community value, and bilingual comprehension safety." data-why="The three uncertainties answer different questions and must not be bundled into one success claim." data-warning="PRZ-05 depends on a survived PRZ-04 recognition candidate; PRZ-06 cannot substitute for either." data-source="../../prizes/PRIZE-REGISTER.md#deferred-contribution-model-prize-family" data-source-label="Deferred-contribution prize family">
+                <span class="status">Open experiments</span><h3>Run PRZ-04 / 05 / 06 witnesses</h3><p>Recognition → later community outcome; language safety remains independent.</p>
+              </article>
+            </div>
+            <div class="relation-note">No validation harness has emitted evidence yet</div>
+          </section>
+
+          <section class="stage" aria-labelledby="stage-6">
+            <h3 class="stage-label" id="stage-6"><span class="stage-number">6</span> Evidence and authority — a deliberately broken automatic path</h3>
+            <div class="node-grid three">
+              <article class="node" tabindex="0" role="button" data-id="evidence-harness" data-status="open" data-path="contribution monetary promotion" data-lane="flow lifecycle" data-title="Evidence harness run" data-summary="A future bounded fixture or pilot must emit inspectable evidence under a preregistered protocol." data-why="Without a run and a witness, candidate shapes remain non-vacuous only on paper." data-warning="A file scaffold, dispatch close, source cohort, or review cannot substitute for run evidence." data-source="../../.arcanum/inventory/index.md#open-gaps" data-source-label="Inventory open gaps">
+                <span class="status">No evidence yet</span><h3>Evidence harness</h3><p>Run records, declared metrics, negatives, and witness still needed.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="adjudication" data-status="open" data-path="contribution monetary promotion" data-lane="flow lifecycle" data-title="Claim adjudication" data-summary="Evidence must be checked against preregistered claims, falsifiers, scope, and negative controls." data-why="It decides whether a claim is supported, revised, indeterminate, or killed without widening its scope." data-warning="A positive local result does not prove transfer, safety, long-term resilience, or institutional legitimacy." data-source="../../claims/SOURCE-CLAIM-LEDGER.md" data-source-label="Source-claim ledger">
+                <span class="status">Future gate</span><h3>Adjudicate the claim</h3><p>Evidence changes claim state only through the governed claim surface.</p>
+              </article>
+              <article class="node" tabindex="0" role="button" data-id="promotion" data-status="boundary" data-path="promotion" data-lane="external_dependencies risk_questions" data-title="Separate authority promotion" data-summary="Any move toward policy, governance, payout, token, launch, or implementation requires its own promotion request." data-why="This prevents evidence and signals from silently acquiring decision authority." data-warning="There is no automatic edge from positive evidence, reputation, bet, prize, score, or inventory status to authority." data-source="../../authority/promotion-policy.md" data-source-label="Promotion policy">
+                <span class="status">Separate authority</span><h3>Promotion request</h3><p>Never automatic. Research evidence may inform but cannot authorize itself.</p>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <aside class="detail-panel" aria-live="polite" aria-label="Selected node details">
+          <div class="detail-top"><small id="detail-status">How to use the graph</small><h3 id="detail-title">Select any node</h3></div>
+          <div class="detail-body">
+            <div class="detail-block"><span class="evidence-pill">Evidence boundary</span><p id="detail-summary">Each node opens its current meaning, why it matters, controlling source, and misuse warning.</p></div>
+            <div class="detail-block"><h4>Why it matters</h4><p id="detail-why">This keeps the mental map useful for continuation instead of turning it into a decorative overview.</p></div>
+            <div class="detail-block"><h4>Do not infer</h4><p id="detail-warning">A visual connection never creates validation, policy, score, payout, governance, implementation, or authority.</p></div>
+            <a class="detail-source" id="detail-source" href="../../.arcanum/inventory/index.md">Open controlling record →</a>
+          </div>
+        </aside>
+      </div>
+
+      <div class="boundary-band" data-lane="risk_questions external_dependencies">
+        <strong>Hard boundary:</strong> the graph ends at a promotion request, not at policy. Even a future survived bet or positive experiment would still need scope adjudication, adverse-result review, and the separate authority route.
+      </div>
+    </section>
+
+    <section aria-labelledby="next-title">
+      <div class="section-head">
+        <h2 id="next-title">What we need to do next</h2>
+        <p>This is a dependency queue, not a ranking of people, value, complexity, or importance. Parallel work is possible where dependencies do not overlap.</p>
+      </div>
+      <div class="next-grid">
+        <article class="next-card"><div class="order">01</div><h3>Make the ready human decision</h3><p>Confirm the contribution-mechanism review dispatch as written, or request a revision.</p><ul><li>If confirmed: register and run the bounded red-team review.</li><li>If revised: change the proposal, re-check tension, and return to confirmation.</li></ul><span class="depends">Ready now · no evidence claim</span></article>
+        <article class="next-card"><div class="order">02</div><h3>Close definition drift before fixture use</h3><p>Route the relevance claim, review disposition, and result-link evidence class through definitions governance.</p><ul><li>Then extend the common contribution-edge schema.</li><li>Instantiate E1–E4 without changing any effect from <code>none</code>.</li></ul><span class="depends">Depends on definition owners</span></article>
+        <article class="next-card"><div class="order">03</div><h3>Supply real monetary objects</h3><p>Name owners and completeness witnesses for opening state, schedules, cohorts, obligations, market, service use, and predicates.</p><ul><li>Then propose per-object MC-E schemas.</li><li>Keep MC-R explicitly incomplete and non-compensatory.</li></ul><span class="depends">Depends on institutional inputs</span></article>
+        <article class="next-card"><div class="order">04</div><h3>Run separate witnesses</h3><p>After their prerequisites, execute contribution fixtures and the PRZ-04/05/06 comparisons as separate questions.</p><ul><li>Recognition value does not prove community value.</li><li>Communication safety proves neither mechanism effect.</li></ul><span class="depends">Depends on protocols, thresholds, and live targets</span></article>
+        <article class="next-card"><div class="order">05</div><h3>Research the preventive-work branch</h3><p>Dispatch the separate bounded prior-art sweep for E5 rather than forcing absent-result prevention into the later-result schema.</p><ul><li>Define counterfactual and error surfaces.</li><li>Preserve failure and prevention as evidence without inventing output.</li></ul><span class="depends">Independent bounded research route</span></article>
+        <article class="next-card"><div class="order">06</div><h3>Adjudicate before promoting</h3><p>Only after evidence exists: compare results to the preregistered claim, falsifier, negatives, and scope.</p><ul><li>Demote attractive failures visibly.</li><li>Use a separate promotion request for any authority-facing change.</li></ul><span class="depends">No automatic promotion edge</span></article>
+      </div>
+    </section>
+
+    <section data-lane="risk_questions" aria-labelledby="kills-title">
+      <div class="section-head">
+        <h2 id="kills-title">Negative knowledge we must preserve</h2>
+        <p>Killed propositions are not embarrassing leftovers. They are constraints on future design and defenses against repeating an attractive error.</p>
+      </div>
+      <div class="negative-grid">
+        <article class="negative-card"><h3>No stored-value contribution account</h3><p>Investment, realization, and cashing are killed as mechanism fields. They may remain only as stimuli in the bilingual comprehension test.</p></article>
+        <article class="negative-card"><h3>No circular result eligibility</h3><p>The current CM-D5 form cannot use a state to define the evidence that grants that same state.</p></article>
+        <article class="negative-card"><h3>No person-level aggregation</h3><p>No ranking, reputation profile, time account, cap, decay, or conversion rule survived the bounded research.</p></article>
+        <article class="negative-card"><h3>No generic feedback experiment</h3><p>MC-E6 cannot aggregate loops that lack a shared state, institution, intervention, direction, delay, counterfactual, or terminal.</p></article>
+        <article class="negative-card"><h3>No monetary health score</h3><p>MC-V and a top-level MC-R verdict collapse different objects, clocks, predicates, and dependent relations.</p></article>
+        <article class="negative-card"><h3>No score-to-authority shortcut</h3><p>Metrics, credit, reputation, bets, prizes, citations, inventory, and telemetry remain signals or evidence—not governance authority.</p></article>
+      </div>
+    </section>
+
+    <section aria-labelledby="terms-title">
+      <div class="section-head">
+        <h2 id="terms-title">Reader terms</h2>
+        <p>These are plain-language aids for reading this x-ray. They do not create or promote canonical repository definitions.</p>
+      </div>
+      <div class="terms-grid">
+        <article class="term-card"><h3>Closed research</h3><p><strong>Means:</strong> the bounded investigation finished. <strong>Does not mean:</strong> its mechanism works.</p></article>
+        <article class="term-card"><h3>Unrunnable</h3><p><strong>Means:</strong> a required object, state, input, comparison, or witness is absent. It is not neutral evidence.</p></article>
+        <article class="term-card"><h3>KILL</h3><p><strong>Means:</strong> reject the named proposition for its recorded reason. Do not widen it to every adjacent question.</p></article>
+        <article class="term-card"><h3>Human gate</h3><p><strong>Means:</strong> the proposed dispatch needs explicit confirmation. Readiness is not authorization.</p></article>
+        <article class="term-card"><h3>Witness</h3><p><strong>Means:</strong> inspectable evidence from the declared run or workflow. A document existing is not a result witness.</p></article>
+        <article class="term-card"><h3>Promotion</h3><p><strong>Means:</strong> a separate authority decision. Positive evidence may inform it but never performs it automatically.</p></article>
+      </div>
+    </section>
+
+    <section aria-labelledby="outcomes-title">
+      <div class="section-head">
+        <h2 id="outcomes-title">Reader outcomes</h2>
+        <p>After using each layer, the reader should be able to state one concrete boundary—not merely recognize the diagram.</p>
+      </div>
+      <div class="outcomes-grid">
+        <article class="outcome-card"><h3>Surface</h3><p>Explain why substantial research infrastructure can coexist with zero validated mechanisms.</p></article>
+        <article class="outcome-card"><h3>Flow</h3><p>Name which decisions and inputs must exist before a bounded evidence run becomes legitimate.</p></article>
+        <article class="outcome-card"><h3>Dependencies</h3><p>Separate internal artifact prerequisites from human, institutional, definition, and authority owners.</p></article>
+        <article class="outcome-card"><h3>Risk</h3><p>Recall the killed transformations and explain why they must remain visible.</p></article>
+        <article class="outcome-card"><h3>Lifecycle</h3><p>Distinguish closed, open, unrun, unrunnable, killed, adjudicated, and promoted states.</p></article>
+        <article class="outcome-card"><h3>Continuation</h3><p>Choose the smallest next contribution without pretending that it authorizes downstream work.</p></article>
+      </div>
+
+      <div class="evidence-split">
+        <article class="source-backed"><h3>Source-backed</h3><p>Statuses, explicit gates, accepted findings, KILLs, current handoff states, bet/prize state, and promotion boundaries come from the linked live repository records.</p></article>
+        <article class="inference"><h3>Inference</h3><p>The visual grouping and 01–06 dependency queue are an explanatory synthesis. They are not a canonical priority ranking, schedule, authorization, or claim that parallel work is impossible.</p></article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>L0 static HTML/SVG · self-contained · no remote renderer</span>
+      <span><a href="README.md">Refresh rule</a> · <a href="lanes.json">Lane evidence record</a> · <a href="../../.arcanum/inventory/index.md">Canonical inventory</a></span>
+    </footer>
+  </main>
+
+  <script>
+    const nodes = [...document.querySelectorAll('.node')];
+    const filters = [...document.querySelectorAll('.filter')];
+    const traceButtons = [...document.querySelectorAll('.trace-button')];
+    const detail = {
+      status: document.getElementById('detail-status'),
+      title: document.getElementById('detail-title'),
+      summary: document.getElementById('detail-summary'),
+      why: document.getElementById('detail-why'),
+      warning: document.getElementById('detail-warning'),
+      source: document.getElementById('detail-source')
+    };
+
+    function selectNode(node) {
+      nodes.forEach(item => item.classList.toggle('is-selected', item === node));
+      detail.status.textContent = node.querySelector('.status').textContent;
+      detail.title.textContent = node.dataset.title;
+      detail.summary.textContent = node.dataset.summary;
+      detail.why.textContent = node.dataset.why;
+      detail.warning.textContent = node.dataset.warning;
+      detail.source.href = node.dataset.source;
+      detail.source.textContent = `${node.dataset.sourceLabel} →`;
+    }
+
+    nodes.forEach(node => {
+      node.addEventListener('click', () => selectNode(node));
+      node.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          selectNode(node);
+        }
+      });
+    });
+
+    filters.forEach(button => button.addEventListener('click', () => {
+      const wanted = button.dataset.filter;
+      filters.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      nodes.forEach(node => node.classList.toggle('is-hidden', wanted !== 'all' && node.dataset.status !== wanted));
+    }));
+
+    traceButtons.forEach(button => button.addEventListener('click', () => {
+      const path = button.dataset.trace;
+      traceButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      nodes.forEach(node => node.classList.toggle('is-dimmed', path !== 'all' && !node.dataset.path.split(' ').includes(path)));
+    }));
+
+    const layerToggles = {
+      'toggle-surface': 'hide-surface',
+      'toggle-flow': 'hide-flow',
+      'toggle-deps': 'hide-deps',
+      'toggle-risk': 'hide-risk'
+    };
+    Object.entries(layerToggles).forEach(([id, className]) => {
+      document.getElementById(id).addEventListener('change', event => {
+        document.body.classList.toggle(className, !event.target.checked);
+      });
+    });
+  </script>
+</body>
+</html>
