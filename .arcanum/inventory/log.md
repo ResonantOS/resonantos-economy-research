@@ -1127,3 +1127,20 @@ Owner: ResonantOS economy research owner
 - Promotion posture: evidence-grounded candidate pedagogy only; no validated
   usability, mechanism, policy, payout, governance, launch, or implementation
   claim
+
+## 2026-07-17 Repository onboarding plain-language correction
+
+- Trigger: operator rejected the completed onboarding draft as still too
+  jargon-heavy
+- Corrected surfaces: `README.md`, `GUIDE.md`,
+  `prizes/EXPERIMENT-EXAMPLES.md`, and the owning Whisper composition records
+- Removed beginner-leading protocol language including `counterbalanced`,
+  `bounded evidence`, `validity gates`, and `mechanical verdict`
+- New disclosure order: ordinary situation and action first; repository term
+  second; formal label only where a deeper owner route requires it
+- Validation: Whisper draft PASS with no readability findings; substrate YAML
+  PASS; 160 local Markdown paths and anchors PASS; whitespace PASS
+- Final status remains `flag`; neither newcomer usability nor story-first
+  superiority has been witnessed
+- Promotion posture: language correction only; no economy, mechanism, policy,
+  payout, governance, launch, implementation, or authority effect

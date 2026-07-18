@@ -1,7 +1,7 @@
 {
   "schema_version": "inventory.index.v0.1",
   "inventory_root": ".arcanum/inventory",
-  "generated_at": "2026-07-18T01:35:16Z",
+  "generated_at": "2026-07-18T02:22:35Z",
   "human_index": "index.md",
   "entries": [
     {
@@ -998,7 +998,7 @@
         "../../../telemetry/agents/subagents-dispatch.yaml",
         "2026-07-17-repository-onboarding-experiment-literacy"
       ],
-      "updated": "2026-07-18",
+      "updated": "2026-07-17",
       "status": "closed",
       "authority_posture": "non-authority-read-model",
       "selectors": [

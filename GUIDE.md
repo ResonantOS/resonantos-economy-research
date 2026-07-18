@@ -78,9 +78,9 @@ honest. The loop has four moves:
      negative. No witness is a kill.
    - **definitional-soundness** — does it collapse to something already named,
      re-skinned? Tautology is a kill.
-   A claim that survives attack is stronger. A claim that dies is banked as a
-   **typed negative**: what it would have contributed, and the exact fact that
-   zeroed it.
+   A claim that survives attack is stronger. If it dies, keep both the useful
+   thing it promised and the exact fact that made that contribution disappear.
+   The repository calls this record a **typed negative**.
 4. **Residue if neither holds.** If the claim neither confirms nor falsifies
    cleanly, the honest result is residue: record it in
    [levels/L1-residue-map.md](levels/L1-residue-map.md) or
@@ -163,7 +163,7 @@ Two external bodies of work were harvested into local findings and are kept as
 - **Formalization precedent** (invariant style, witness requirements, open-problem
   loop closure, theorem/proof vocabulary that keeps claims below evidence, and the
   **demoted prize/bet vocabulary** — `prize` as a research aim carrying evidence
-  states and witnesses, `bet` as a labeled research conjecture, neither one a
+  states and witnesses, `bet` as a written research prediction, neither one a
   reward payout, economic stake, or authority) — feeding [NOTATION.md](NOTATION.md),
   [levels/L1-residue-map.md](levels/L1-residue-map.md), and
   [levels/L2-closure-plan.md](levels/L2-closure-plan.md). The bet/prize selectors
@@ -250,14 +250,16 @@ signal, credit, reward, and authority separate under pressure.
 If you want to *do the work* — not just query it — the first concrete action is to
 take the next fixture from the program backlog and run it. A worked pass:
 
-**A fixture run is not a live experiment.** A fixture is a known-answer
-rehearsal for the evidence machinery: a complete synthetic record should be
-handled as declared, a missing assignment should be rejected, and a record that
-tries to turn activity into automatic credit or authority should be blocked.
-Passing those cases shows that the scaffold follows its own contract. It does
-not observe community behavior, adjudicate the bet, or authorize a live probe.
-Any behavioral result needs a frozen criterion and a **separately approved
-run**. See [Experiments By Example](prizes/EXPERIMENT-EXAMPLES.md) for the same
+**A fixture run is not a live experiment.** A fixture is a rehearsal using
+made-up records whose answers we already know. A complete record should be
+handled as promised. A record with missing assignment information should be
+rejected. A record that tries to turn activity into automatic credit or
+decision-making power should be blocked. Passing these cases shows only that
+the test machinery follows its written rules. It does not show how a community
+will behave, settle the research question, or authorize a test with real
+people. That later step needs rules agreed before anyone sees the result (the
+formal documents call this a **frozen criterion**) and a **separately approved
+run**. See [Experiments, In Everyday Language](prizes/EXPERIMENT-EXAMPLES.md) for the same
 boundary across several ordinary scenarios, and the
 [full walkthrough](prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md#step-10--validate-the-evidence-pipeline-without-pretending-to-validate-the-bet)
 for the owning procedure.
@@ -269,8 +271,9 @@ for the owning procedure.
    (measurement≠authority) → TF-3 (three-arm). Take **flow-conservation** first.
 2. **Copy the template, don't start blank.** The
    [contribution-edge fixtures package](validation/contribution-edge-fixtures/README.md)
-   is the *shape* to reuse (schema, FAIL-region matrix, typed negatives,
-   checklist) — it is the template, not the same fixture.
+   is the *shape* to reuse: record format, cases that must fail, notes about what
+   each failure teaches, and checklist. It is the template, not the same
+   fixture.
 3. **Write the fixture as decidable evidence.** Produce the fixture files with an
    explicit, decidable pass/fail condition and its FAIL-region. A candidate
    invariant that only "owes a fixture" is not validated — keep the condition

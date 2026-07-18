@@ -1,289 +1,304 @@
-# Experiments By Example
+# Experiments, In Everyday Language
 
 - Status: candidate teaching material
-- Evidence posture: fictional examples derived from
+- Evidence posture: made-up examples derived from
   [auditor-accepted research](../dispatch/repository-onboarding-experiment-literacy/findings.md);
-  not validated by a newcomer trial
+  not yet tested with newcomers
 
-## Begin Before The Vocabulary
+## Start With The Situation
 
-A community event succeeds. The speaker is visible, while Ana's venue search,
-accessibility work, outreach, and schedule repair disappear from the recap.
-Someone proposes recognizing invisible work.
+A community event goes well. The speaker is easy to remember. Ana's work is
+not. She found the venue, checked accessibility, called people who had stopped
+attending, and repaired the schedule when a volunteer cancelled.
 
-Before designing points or rewards, ask two questions:
+Someone says, "We should recognize work like Ana's." Before inventing points or
+rewards, we need to ask two separate questions:
 
-1. What observation would show that bounded evidence improves recognition?
-2. What separate observation would show that the recognition language does not
-   create payout or authority expectations?
+1. Would a short evidence note help people notice this kind of work more
+   accurately?
+2. Could the recognition message accidentally sound like a promise of payment
+   or decision-making power?
 
-Those are two independent bets. The first may survive while the second fails.
-Neither may inherit the other's evidence.
+One answer cannot stand in for the other. The evidence note might improve
+recognition while the message still creates the wrong expectation.
 
-This is an example gallery, not a new rulebook. The
-[prizes README](README.md) owns prize and bet records, the
+The examples below turn ordinary questions like these into small tests that can
+fail. They do not create new repository rules. The
+[prizes README](README.md) owns the official prize and bet records, the
 [full walkthrough](RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md) owns the complete
-lifecycle, the
+process, the
 [experiment-dispatch contract](../.agents/skills/domainspec-experiment-dispatch/SKILL.md)
-owns criterion freeze and experiment verdicts, and the
+owns formal experiment review, and the
 [fixture package](../validation/contribution-edge-fixtures/README.md) owns the
-reusable fixture shape.
+reusable record format.
 
-## Six Objects, With Their Breakpoints
+## The Six Pieces
 
-| Object | Useful analogy | Operational meaning | Where the analogy breaks |
+The repository uses precise names because different steps have different
+owners. Here is the everyday meaning first.
+
+| Everyday meaning | Repository name | What it does | What it does not do |
 | --- | --- | --- | --- |
-| [Prize](README.md#the-two-objects) | Research finish line | A bounded target, witness, and collapse-test. | It is not a bounty and authorizes no payout. |
-| [Bet](README.md#the-two-objects) | Prediction card | A registered conjecture with a comparator, predicted observation, and falsifier. | It transfers no money, status, or authority. |
-| [Frozen criterion](../.agents/skills/domainspec-experiment-dispatch/SKILL.md#the-criterion-artifact--what-criterionmd-must-contain) | Sealed finish line | One hypothesis and its adjudication rule, fixed before results. | Sealing a weak design does not make it informative. |
-| Fixture | Crash-test dummy | A known synthetic input with expected handling. | It observes no real community behavior and proves no general safety. |
-| Separately approved run | Field probe | A later observation under the frozen criterion. | Approval and execution do not guarantee an adjudicable result. |
-| Verdict | Match report | The mechanical result for one declared run and scope. | It is not universal truth, policy, or deployment permission. |
+| A research question worth finishing | [Prize](README.md#the-two-objects) | Names the target, the evidence still needed, and the fact that would make the target collapse. | It is not money and promises no payout. |
+| A written prediction that can lose | [Bet](README.md#the-two-objects) | Says what we compare, what we expect to see, and what would prove the idea wrong. | It is not gambling and transfers no status or power. |
+| Test rules agreed before results | [Frozen criterion](../.agents/skills/domainspec-experiment-dispatch/SKILL.md#the-criterion-artifact--what-criterionmd-must-contain) | Fixes one question and the rule for deciding what its result means. | Agreeing on a weak test does not make it useful. |
+| Made-up cases with known answers | Fixture | Checks whether the test machinery accepts, rejects, and calculates cases as promised. | It tells us nothing yet about real community behavior. |
+| A later test with real observations | Separately approved run | Collects observations using the agreed rules. | It still might break or produce no usable result. |
+| The result for this one test | Verdict | Applies the agreed rule to the recorded observations. | It is not universal truth, policy, or permission to launch. |
 
-A bet can remain `open` without any run. A run can be `FALSIFIED` or narrowly
-`SURVIVED` under the experiment contract. There is also an unresolved vocabulary
-conflict: the experiment contract uses `INVALID` for a design rejected before
-criterion freeze, while the long walkthrough also uses `invalid` for a run that
-cannot be adjudicated. Until those owners reconcile, this gallery says
-**design-invalid before freeze** and **post-freeze non-adjudicable after a broken
-run**. In the second case, the bet stays open.
+A bet can stay open for a long time without any test being run. When a proper
+run finishes, the formal result may say that the prediction lost (`FALSIFIED`)
+or narrowly held up (`SURVIVED`). If the test itself breaks, there is no verdict
+and the bet stays open.
 
-## Why Fixtures Matter
+For readers following the formal documents, there is one unresolved naming
+wrinkle. One owner uses `INVALID` for a bad design rejected before the rules are
+sealed; another also uses `invalid` after a run breaks. This page says **design
+rejected** before results and **test broken, no verdict** afterward. The latter
+is formally called *post-freeze non-adjudicable*.
 
-Imagine testing a smoke alarm. You do not begin by setting the building on fire.
-You press the test button, disconnect a sensor, and feed the system cases whose
+## Why Made-Up Cases Matter
+
+Imagine testing a smoke alarm. You do not start by setting the building on
+fire. You press the test button, disconnect a sensor, and try cases whose
 answers you already know.
 
-Fixtures do the same for an evidence pipeline. They answer questions such as:
+A fixture is that kind of rehearsal for the evidence machinery. It lets us ask:
 
 - Does a complete record pass?
-- Does a missing assignment block calculation?
-- Does an unknown value fail the schema?
-- Does a superficially successful record get rejected if it silently creates a
-  payout, credit, or authority effect?
+- Does a record with missing information stop?
+- Does an impossible value stop the calculation?
+- Does the system reject a result that looks successful but quietly creates a
+  reward or decision-making power?
 
-The last case is a **dangerous success**. It matters because a harness can
-calculate the requested number perfectly while enforcing the wrong consequence.
+That last one is a **dangerous success**: the calculation works, but the system
+does something it was never allowed to do. It is like a smoke alarm that makes
+the correct sound while also unlocking every door in the building.
 
-A useful fixture set therefore includes four kinds:
+A useful rehearsal includes four kinds of made-up case:
 
-| Fixture kind | What it tests |
+| Kind | Simple example |
 | --- | --- |
-| Valid | The declared happy path works and produces only allowed effects. |
-| Rejected | A complete-looking record violates a protocol or safety rule. |
-| Malformed | A required field or valid value is missing. |
-| Dangerous success | The calculation succeeds but attempts a forbidden claim, reward, or authority mutation. |
+| Good case (`valid`) | All required information is present, so the declared calculation runs. |
+| Rule-breaking case (`rejected`) | The record looks complete but violates a safety or test rule, so it stops. |
+| Broken record (`malformed`) | Required information is missing or impossible, so nothing is calculated. |
+| Dangerous success | The calculation could finish, but it would also make a forbidden claim or grant a reward or power. |
 
-A fixture pass is evidence about the scaffold. It is not evidence that people
-will behave as hoped. Only a separately approved run can produce that kind of
-observation.
+Passing this rehearsal shows that the machinery follows its written rules. It
+does not show that people will behave as hoped. Only a separately approved run
+can collect that kind of observation.
 
-## Example 1 — Invisible Event Work (`open`)
+## Example 1 — The Event Work Nobody Saw
 
-**Story.** Ana's enabling work is missing from the event recap.
+**The situation.** Ana's enabling work is missing from the event recap.
 
-**Prize.** Can bounded evidence support accurate, safe recognition of enabling
-work?
+**The research target.** Find out whether a short, consistent evidence note can
+help people recognize enabling work accurately without making recognition sound
+like a promise of payment or power.
 
-### Bet A — recognition accuracy
+### Question A — Does the note improve recognition?
 
-Forty fictional unfamiliar reviewers classify 12 counterbalanced invented event
-cases. Compare a public recap with the same recap plus bounded evidence.
+Imagine 40 people who have never seen these event records before. Everyone
+reads the same 12 made-up event stories. Half see only the public recap; half see
+that recap plus a short evidence note. The stories appear in a mixed order so
+neither group gets an easier set.
 
-The bet predicts at least 15 percentage points more correct classification,
-false acceptance increasing by no more than 5 points, and median review time no
-greater than 8 minutes. Identical cases, blinded reference labels, balanced
-assignment, and no answer-revealing packets are required.
+We predict that the note will produce at least 15 percentage points more correct
+answers. We also set two limits: wrong acceptances may rise by no more than 5
+points, and a typical review may take no more than 8 minutes. The correct
+answers stay hidden, and the note cannot reveal them.
 
-### Bet B — communication safety
+### Question B — Does the message create the wrong expectation?
 
-A separate fictional group of 40 readers interprets a bounded recognition
-notice or award-style language about the same recognized act.
+Now imagine 40 different readers. Half see a plain recognition notice. Half see
+award-style language about the same act. We ask what each message seems to
+promise.
 
-The bet predicts at least 20 points fewer payout or authority errors, with
-comprehension no more than 5 points lower. The population is separate because
-recognition accuracy cannot prove communication safety.
+We predict that the plain notice will cause at least 20 percentage points fewer
+mistakes about payment or decision-making power, while ordinary comprehension
+falls by no more than 5 points. This needs a separate group because recognizing
+the work accurately does not prove that the message is safe.
 
-| Fixture | Known input | Expected handling |
-| --- | --- | --- |
-| Valid | Bet ID, arm, assignment, case, response, and time present. | Accept and calculate only the named bet's measures. |
-| Rejected | Assignment is missing. | Block as non-adjudicable. |
-| Malformed | Arm is unknown or time is impossible. | Schema block; calculate nothing. |
-| Dangerous success | `recognized=true` creates payout, authority, or A-to-B evidence inheritance. | Block the forbidden mutation. |
-
-No run has occurred. Both bets remain `open`, and there is no experiment
-verdict. The fixture table merely states what the evidence machinery must do.
-
-## Example 2 — Software Maintenance (fictional `FALSIFIED` run)
-
-**Story.** A feature author receives attention. A maintainer quietly catches a
-breaking migration, reviews dependency changes, and prevents an incident. A
-commit-count dashboard sees volume more easily than preventive value.
-
-**One hypothesis.** For these fictional repository histories, bounded context
-packets improve correct classification of seeded risk-reducing work by at least
-15 percentage points over commit and merge counts, without breaking any
-guardrail.
-
-| Criterion field | Frozen teaching value |
+| Made-up case | What the machinery should do |
 | --- | --- |
-| Population and assignment | 48 fictional maintainers, randomly assigned 24/24; identical 12-history set in counterbalanced order. |
-| Comparator | Activity-count dashboard versus maintenance context packet. |
-| Exclusions | Fixture and history authors excluded before assignment; incomplete rows rejected rather than imputed. |
-| Validity gates | Balanced assignment, identical histories, hidden frozen labels, unchanged rubric, at least 20 valid rows per arm, no answer reveal. |
-| Mechanical rule | With all validity gates true, `SURVIVED` only if correct classification improves at least 15 points, false positives rise no more than 5 points, and median review time rises no more than 3 minutes; otherwise `FALSIFIED`. |
+| The question, reader group, story, answer, and review time are all present. | Accept the record and calculate only the measures for that question. |
+| The record does not say which message or evidence version the reader saw. | Stop. We cannot compare groups without that information. |
+| The message type is unknown or the review time is impossible. | Stop and calculate nothing. |
+| `recognized=true` automatically creates payment, credit, power, or evidence for the other question. | Block the forbidden effect even though the calculation itself could succeed. |
 
-| Fixture | Known input | Expected handling |
-| --- | --- | --- |
-| Valid | Complete row for a low-volume preventive review. | Pass; retain, with no reward or authority effect. |
-| Rejected | Reviewer can see the seeded label. | Block and record the protocol violation. |
-| Malformed | Arm or classification is missing. | Schema block; calculate nothing. |
-| Dangerous success | High activity automatically becomes credit or merge power. | Block even if the classification is correct. |
+No test has happened. Both predictions remain open. The table only describes
+how the rehearsal cases should be handled.
 
-**Fictional run.** All validity gates pass. Correct classification is 72% versus
-66% (`+6` points), false positives 9% versus 8% (`+1` point), and median time
-8.2 versus 4.0 minutes (`+4.2` minutes).
+## Example 2 — Quiet Software Maintenance
 
-The mechanical verdict is **`FALSIFIED`** because the improvement and time
-requirements both fail. The typed negative is narrow: this packet did not beat
-the dashboard under this criterion. It does not show that all maintenance
-context is useless, and it authorizes no score, reward, merge right, or
-governance power.
+**The situation.** A feature author receives attention. A maintainer quietly
+catches a breaking migration, reviews dependency changes, and prevents an
+incident. A dashboard sees commit volume more easily than preventive value.
 
-## Example 3 — Independent Second Review (fictional `SURVIVED` run)
+**The question.** Does a short maintenance note help reviewers find seeded
+risk-reducing work more accurately than commit and merge counts alone?
 
-**Story.** A small group repeatedly reviews one another's contribution claims.
-Adding a second reviewer might reduce reciprocal approval, but it might also
-create delay without solving capture.
-
-**One hypothesis.** In this fictional claim set, two conflict-checked independent
-reviewers reduce reciprocal-approval errors by at least 25 percentage points
-versus one reviewer without breaking delay, completion, conflict, or authority
-guardrails.
-
-| Criterion field | Frozen teaching value |
+| Part of the test | Agreed setup for this made-up example |
 | --- | --- |
-| Population and assignment | 60 fictional claims, randomly assigned 30/30 after eligibility checks. |
-| Comparator | One reviewer versus two independently assigned reviewers. |
-| Exclusions | Claims without a frozen reference label and reviewers with declared conflicts excluded before assignment; no post-result exclusions. |
-| Validity gates | Balanced assignment, identical claim packets, randomization receipt, blinded labels, frozen rubric, verified reviewer independence. |
-| Mechanical rule | With all gates true, `SURVIVED` only if errors fall at least 25 points, median delay rises no more than 24 hours, completion is at least 90%, conflict contamination is zero, and authority mutations are zero; otherwise `FALSIFIED`. |
+| Who takes part | Imagine 48 maintainers, split at random into two groups of 24. Everyone reviews the same 12 repository histories in a mixed order. |
+| What we compare | One group sees an activity-count dashboard. The other sees a short note explaining the maintenance context. |
+| What we leave out | People who wrote the sample histories do not participate. Incomplete answers are rejected, not guessed. |
+| When the test counts | The groups are balanced, the histories are identical, the correct labels stay hidden, the scoring guide does not change, each group has at least 20 usable answers, and nobody reveals an answer. |
+| How we decide | The prediction holds up only if correct answers improve by at least 15 points, wrong acceptances rise by no more than 5 points, and typical review time rises by no more than 3 minutes. Otherwise it loses. |
 
-| Fixture | Known input | Expected handling |
-| --- | --- | --- |
-| Valid | Two independent, conflict-checked reviews with all outcome fields. | Pass and retain. |
-| Rejected | Reviewers share a declared conflict. | Block before calculation. |
-| Malformed | Second-review field is absent. | Schema block; calculate nothing. |
-| Dangerous success | Agreement automatically grants payout or governance weight. | Block the forbidden mutation. |
+The rehearsal includes a complete preventive-review record, a case where the
+reviewer can see the correct answer, a record missing its group or answer, and a
+dangerous-success case where high activity automatically creates credit or
+merge power. Only the complete record may pass. The other three must stop.
 
-**Fictional run.** All gates pass. Reciprocal-approval error falls from 40% to
-9% (`31` points), median delay rises 10 hours, completion is 93%, conflict
-contamination is zero, and authority mutations are zero.
+**Made-up result.** All the rules above were followed. Correct answers were 72%
+with the context note and 66% with counts alone: an improvement of 6 points.
+Wrong acceptances rose by 1 point. Typical review time rose from 4.0 to 8.2
+minutes: an increase of 4.2 minutes.
 
-The mechanical verdict is narrowly **`SURVIVED`** for this population, rubric,
-and duration. The typed negative remains load-bearing: this does not establish
-general capture resistance, community benefit, payout eligibility, governance
-safety, or implementation readiness.
+The prediction **loses this round (`FALSIFIED`)**. It needed a 15-point accuracy
+gain and no more than 3 extra minutes; it achieved neither. What this teaches is
+narrow: this note did not beat the dashboard in this test. It does not show that
+all maintenance context is useless, and it creates no score, reward, merge
+right, or governance power.
 
-## Example 4 — Testing This Introduction (post-freeze non-adjudicable)
+## Example 3 — A Second Independent Review
 
-**Story.** We want to know whether beginning with an ordinary situation helps a
-newcomer create a structurally correct experiment.
+**The situation.** A small group repeatedly reviews one another's contribution
+claims. A second reviewer might reduce friendly reciprocal approval. It might
+also add delay without solving the problem.
 
-**One hypothesis.** Among fictional newcomers without prior harness experience,
-story-first instructions produce at least 20 percentage points more complete
-experiment artifacts than terminology-first instructions, without increasing
-payout, authority, fixture-as-proof, or evidence-inheritance errors.
+**The question.** Do two conflict-checked independent reviewers reduce
+reciprocal-approval mistakes by at least 25 percentage points compared with one
+reviewer, without causing too much delay or granting automatic power?
 
-| Criterion field | Frozen teaching value |
+| Part of the test | Agreed setup for this made-up example |
 | --- | --- |
-| Population and assignment | 24 fictional newcomers, randomly assigned 12/12 after excluding prior harness experience. |
-| Comparator | Story-first guide versus terminology-first guide for the same held-out prompt. |
-| Validity gates | No mentor intervention, blinded evaluators, frozen rubric, balanced assignment, at least 10 analyzable artifacts per arm. |
-| Mechanical rule | Check validity first. With every gate true, `SURVIVED` only if completeness improves at least 20 points and boundary errors do not increase; otherwise `FALSIFIED`. A broken gate yields no experiment verdict. |
+| What is reviewed | Imagine 60 contribution claims, split at random into two groups of 30 after basic eligibility checks. |
+| What we compare | One reviewer versus two independently assigned reviewers. |
+| What we leave out | Claims without a known reference answer and reviewers with declared conflicts are removed before assignment. Nothing is removed after results are seen. |
+| When the test counts | Both groups receive identical claim packets, assignments are recorded, correct labels stay hidden, the scoring guide does not change, and reviewer independence is checked. |
+| How we decide | The prediction holds up only if mistakes fall by at least 25 points, typical delay rises by no more than 24 hours, at least 90% of reviews finish, no conflict slips through, and no result grants automatic power. |
 
-| Fixture | Known input | Expected handling |
-| --- | --- | --- |
-| Valid | Prize, two bets, comparator, criterion, fixture classes, and blocked uses present. | Pass to rubric scoring. |
-| Rejected | A mentor supplies the missing falsifier. | Block and record a protocol-scope failure. |
-| Malformed | Comparator is absent. | Schema block; calculate nothing. |
-| Dangerous success | Fixture pass changes the claim to “deployable.” | Block the forbidden claim change. |
+The rehearsal includes one complete two-reviewer record, one record with a
+declared conflict, one missing the second review, and one where agreement would
+automatically grant payment or governance weight. Only the complete,
+conflict-free record may pass.
 
-**Fictional run.** Completeness is 75% versus 41.7%, but four story-arm readers
-receive mentor help and evaluators see the assignments. Those were frozen
-validity gates.
+**Made-up result.** All test rules were followed. Reciprocal-approval mistakes
+fell from 40% to 9%, a drop of 31 points. Typical delay rose by 10 hours, 93% of
+reviews finished, no conflict slipped through, and no automatic power was
+created.
 
-The run is therefore **post-freeze non-adjudicable**. Its attractive raw rate
-does not earn `SURVIVED`; no `FALSIFIED` verdict exists either, and the bet stays
-open. The typed negative is that protocol failure neither supports nor falsifies
-story-first teaching.
+The prediction **narrowly holds up (`SURVIVED`)** for these claims, these rules,
+and this time period. That is not proof that the design resists capture in
+general, benefits the community, deserves payment, is safe for governance, or
+is ready to build.
 
-## Assemble Your First Experiment
+## Example 4 — The Numbers Look Good, But The Test Broke
 
-Use this as a route, not a replacement for the owning procedure:
+**The situation.** We want to know whether starting with an ordinary story helps
+a newcomer create a complete experiment plan.
 
-1. **Name the observable change.** Avoid starting from a token, score, payout,
-   or implementation.
-2. **Write the prize** using the [prize owner](README.md#the-two-objects): target,
-   current evidence, required witness, collapse-test, blocked uses, and status.
-3. **Split the story into independent bets.** For each, record the conjecture,
-   comparator, predicted observation, falsifier, attack lane, and `open` state.
-4. **Send one hypothesis to the experiment owner.** The
+**The question.** Does a story-first guide help newcomers complete the required
+parts more often than a terminology-first guide, without creating more mistakes
+about rewards, authority, or what a rehearsal can prove?
+
+| Part of the test | Agreed setup for this made-up example |
+| --- | --- |
+| Who takes part | Imagine 24 newcomers with no prior experience, split at random into two groups of 12. |
+| What we compare | A story-first guide and a terminology-first guide using the same new prompt. |
+| When the test counts | Nobody receives mentor help, scorers cannot see which guide was used, the scoring guide does not change, groups stay balanced, and each group produces at least 10 usable plans. |
+| How we decide | First check whether those test rules were followed. If they were, the prediction holds up only if complete plans improve by at least 20 points without more boundary mistakes. If a test rule breaks, there is no verdict. |
+
+The rehearsal includes a complete plan, a plan completed with mentor help, a
+plan missing what it compares against, and a dangerous-success case where
+passing the rehearsal changes the claim to "ready to deploy." Only the complete,
+unaided plan may reach scoring.
+
+**Made-up result.** The story-first group produced 75% complete plans, compared
+with 41.7% for the terminology-first group. But four people in the story-first
+group received mentor help, and the scorers could see which guide each person
+used. Both actions broke rules agreed before the test.
+
+The attractive numbers therefore earn **no verdict**. The formal label is
+*post-freeze non-adjudicable*: the test broke after its rules were sealed. We
+cannot say that the prediction held up or lost, so the bet stays open. The only
+honest lesson is that this broken run tells us nothing about whether story-first
+teaching is better.
+
+## Build Your First Experiment
+
+Use these steps as a map. Follow the linked owner documents for the official
+record formats and review process.
+
+1. **Start with a change you could observe.** Do not begin with a token, score,
+   payout, or feature.
+2. **Write the research target (the prize).** Say what you want to learn, what
+   evidence is missing, what would count as enough, what would make the target
+   collapse, and what the result must never authorize.
+3. **Split different promises into different predictions (bets).** For each one,
+   say what you compare, what you expect to see, and what would make you drop
+   the idea. Keep every prediction open until its own evidence exists.
+4. **Choose one prediction and agree on the test rules before results.** The
    [experiment-dispatch contract](../.agents/skills/domainspec-experiment-dispatch/SKILL.md#criterion-freeze--topology--immutability-never-a-column)
-   validity-attacks and freezes the criterion before results.
-5. **Build the four fixture kinds** using the
-   [contribution-edge schema](../validation/contribution-edge-fixtures/SCHEMA.md):
-   valid, rejected, malformed, and dangerous success.
-6. **Stop after fixture validation.** Any live observation needs separate
-   approval. Preserve its raw result and apply only the frozen mechanical rule.
-7. **Record the bounded conclusion and typed negative.** Bet-register resolution
-   and any promotion remain separate owner decisions.
+   attacks weak designs and records the final rules.
+5. **Write four known-answer rehearsal cases (fixtures).** Include a good case,
+   a rule-breaking case, a broken record, and a dangerous success. Use the
+   [contribution-edge schema](../validation/contribution-edge-fixtures/SCHEMA.md)
+   for the official shape.
+6. **Stop after the rehearsal.** A test with real observations requires separate
+   approval. If it later runs, keep the raw result and use only the decision rule
+   agreed beforehand.
+7. **Write what the result means and what it does not mean.** Resolving the bet
+   and changing policy are separate decisions owned elsewhere.
 
-For the full record shapes and handoff sequence, follow the
-[complete walkthrough](RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md#step-3--define-the-prize-before-optimizing-the-mechanism).
+The
+[complete walkthrough](RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md#step-3--define-the-prize-before-optimizing-the-mechanism)
+has the full cards and handoff sequence.
 
-## Try A Held-Out Story
+## Try It With A New Story
 
-A mentor records ten hours of newcomer support. The community proposes using
-those hours to recognize the mentor and claims that recognition will improve
-newcomer retention.
+A mentor records ten hours of newcomer support. The community proposes
+recognizing the mentor and says recognition will improve newcomer retention.
 
-Without copying an example above, produce:
+Without copying an example above, write:
 
-- one prize;
-- at least two independent bets—recognition accuracy and later retention are
-  not the same claim;
-- one selected hypothesis with a comparator and falsifier;
-- a frozen validity rule;
-- valid, rejected, malformed, and dangerous-success fixtures;
-- a bounded conclusion template naming what even `SURVIVED` cannot authorize.
+- one research target;
+- at least two separate predictions, because recognizing the mentor accurately
+  and improving later retention are not the same question;
+- one chosen question, what you compare, and what would make you drop the idea;
+- the test rules that must be agreed before results;
+- a good case, a rule-breaking case, a broken record, and a dangerous success;
+- a conclusion template that says what even a good result cannot authorize.
 
-Then retell the chain without looking:
+Then retell the path without looking:
 
 ```text
-story -> prize -> registered bet -> frozen criterion -> fixtures
-      -> separately approved run -> raw result -> scoped verdict
-      -> bounded conclusion -> external owner decision
+story -> research target -> written prediction -> rules agreed before results
+      -> known-answer rehearsal cases -> separately approved run -> raw result
+      -> result for this test -> what the result does not mean -> owner decision
 ```
 
-Treat payout or authority inference, fixture-as-live-proof, and evidence
-inheritance as blocking errors. Preserve the completed artifact and a
-criterion-by-criterion scoring receipt. Passing this exercise would witness
-minimum experiment literacy for one reader; it would not prove that story-first
-onboarding is better.
+Stop the exercise if a rehearsal is treated as evidence about real people, if
+one prediction borrows evidence from another, or if a result silently creates
+payment or decision-making power. Keep the completed plan and the scorer's
+notes. One newcomer completing this exercise unaided would show minimum
+understanding for that reader. It would not prove that story-first teaching is
+better.
 
 ## Where To Go Next
 
-- Full procedure and reusable cards:
+- Full process and reusable cards:
   [Research Harness, Bets & Prizes Walkthrough](RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md)
 - Prize and bet definitions and registers: [prizes README](README.md)
-- Experiment proposal and criterion freeze:
+- Formal experiment review and test-rule freeze:
   [experiment-dispatch contract](../.agents/skills/domainspec-experiment-dispatch/SKILL.md)
-- Reusable fixture shape:
+- Reusable fixture record shape:
   [contribution-edge fixtures](../validation/contribution-edge-fixtures/README.md)
 - Current evidence rather than copied status:
   [inventory](../.arcanum/inventory/index.md) and
   [current-state projection](../maps/current-state/README.md)
 
-These examples are evidence-grounded candidate pedagogy, not validated
-newcomer usability.
+These examples are evidence-grounded candidate teaching material. They have not
+yet been shown to work for newcomers.

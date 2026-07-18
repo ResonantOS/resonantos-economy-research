@@ -10,17 +10,20 @@ Intent state: `frozen`
 
 | Check | Result | Evidence |
 | --- | --- | --- |
-| Whisper draft validator | PASS | `prizes/EXPERIMENT-EXAMPLES.md` is 2,089 validator-counted words, satisfies the opening and required-term contract, stays inside 1,600–4,600 words, and emits no delivery-flow findings. |
+| Whisper draft validator | PASS | `prizes/EXPERIMENT-EXAMPLES.md` is 2,638 validator-counted words, satisfies the revised plain-language contract, stays inside 1,600–4,600 words, and emits no delivery-flow findings. |
 | Substrate YAML | PASS | `text-intent-substrate.yaml` parses with PyYAML. |
-| Local Markdown paths and anchors | PASS | 161 local links across `README.md`, `GUIDE.md`, and `prizes/EXPERIMENT-EXAMPLES.md` resolve with GitHub-style anchors. |
-| Inventory machine view | PASS | 32 disk entries equal 32 machine-index entries; 119 indexed source paths exist; all used tags are registered. |
+| Local Markdown paths and anchors | PASS | 160 local links across `README.md`, `GUIDE.md`, and `prizes/EXPERIMENT-EXAMPLES.md` resolve with GitHub-style anchors. |
+| Inventory machine view | PASS | 32 disk entries equal 32 machine-index entries; all indexed file paths resolve; all used tags are registered. |
 | Whitespace | PASS | `git diff --check` reports no errors. |
 | Load-bearing-term strict sweep | FLAG, pre-existing | The repository-wide first-pass checker reports longstanding untracked candidates across unchanged claim/subtower surfaces. Its configured scan set does not include the three onboarding targets. No definition promotion or unrelated sweep was attempted here. |
 
-The first executable Whisper pass initially blocked because metadata prose became
-the validator's first paragraph. The status/evidence lines were converted to
-list metadata and the human scene restored as the first prose block. The second
-pass returned PASS.
+The operator rejected the first completed draft as still too jargon-heavy. In
+particular, it addressed a beginner with phrases such as `counterbalanced`,
+`bounded evidence`, `validity gates`, and `mechanical verdict`. The revised
+contract requires the ordinary action before the formal label. Those phrases no
+longer lead any beginner-facing explanation. A first revision pass also flagged
+the author-facing phrase `This page shows`; replacing it with the reader-facing
+action removed the finding.
 
 ## Editorial delivery-flow review
 
@@ -30,8 +33,9 @@ pass returned PASS.
 | Semantic repetition | PASS | README gives the compact lifecycle; the gallery adds fixture reasoning and adjudication rather than repeating the same explanation. |
 | Heading/body paraphrase | PASS | Headings name reader tasks or cases; opening sentences advance rather than restate them. |
 | Reading sequence | PASS | Scene precedes jargon, fixture consequence precedes fictional runs, and owner routes follow transfer examples. |
+| Plain action before formal label | PASS | The gallery first explains who sees what, what counts, and how the result is decided. Formal labels such as `FALSIFIED`, `SURVIVED`, and `post-freeze non-adjudicable` appear only after the everyday result. |
 | Load-bearing examples preserved | PASS | Independent bets, dangerous-success fixtures, `FALSIFIED`, narrow `SURVIVED`, and post-freeze non-adjudicability remain explicit. |
-| Retell chain | PASS as draft structure | Story → prize → registered bet → criterion → fixtures → separately approved run → raw result → verdict → bounded conclusion → owner decision is visible and exercised. |
+| Retell chain | PASS as draft structure | Story → research target → written prediction → rules agreed before results → known-answer rehearsal → separately approved run → raw result → result for this test → limit → owner decision is visible and exercised. |
 | Authority boundary | PASS | No fixture, fictional run, score, credit, or verdict becomes policy, payout, governance, launch, or implementation permission. |
 
 ## Why the result remains FLAG
@@ -48,8 +52,8 @@ non-adjudicable` after a broken run without pretending the owners already agree.
 
 ## Next witness
 
-Give one unfamiliar reader the held-out mentorship scenario and blank artifact,
-provide no mentor help, apply the frozen rubric, preserve the artifact and
-scoring receipt, and ask for an unaided lifecycle retell. That witnesses minimum
-experiment literacy only; superiority requires a separate comparative run.
-
+Give one unfamiliar reader the held-out mentorship story and a blank experiment
+plan. Provide no mentor help. Score it using rules agreed beforehand, keep the
+plan and scorer's notes, and ask the reader to retell the path without help.
+That would show minimum understanding for this one reader only. Proving that
+story-first teaching is better requires a separate comparison.

@@ -40,9 +40,15 @@ counterfactual), and a post-freeze non-adjudicable run. They are not live eviden
 Whisper applied the accepted candidate to exactly three reader-facing surfaces:
 README now starts with the invisible-work story and three routes; GUIDE separates
 known-answer fixture rehearsal from a live experiment; and the derived example
-gallery shows open, falsified, survived, and non-adjudicable cases across several
-domains. Executable and editorial checks pass, but the transport remains `flag`
-because the unaided newcomer witness has not run.
+gallery shows open, falsified, survived, and broken-test cases across several
+domains.
+
+The operator rejected the first completed pass because protocol phrases such as
+`counterbalanced`, `bounded evidence`, `validity gates`, and `mechanical verdict`
+still led beginner-facing explanations. The corrected pass explains the ordinary
+action first and keeps a formal label only where the deeper owner route needs it.
+Executable and editorial checks pass, but the transport remains `flag` because
+the unaided newcomer witness has not run.
 
 ## Reusable Selectors
 

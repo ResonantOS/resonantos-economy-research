@@ -19,8 +19,9 @@ expectation of payment and influence? What result would make us abandon the
 idea?
 
 This repository exists for that moment. It is a **research wind tunnel**, not an
-economy factory: candidate mechanisms meet sources, counterexamples, fixtures,
-and explicit ways to lose before anyone treats them as policy.
+economy factory: ideas about recognition and rewards meet source evidence, hard
+examples, rehearsals with known answers, and explicit ways to fail before anyone
+treats them as policy.
 
 The event story already contains separate questions. Whether evidence improves
 recognition is one **bet**. Whether recognition language creates entitlement is
@@ -29,26 +30,27 @@ another. Evidence for one cannot silently answer the other.
 | When the story needs... | The repository calls it... | Plain meaning |
 | --- | --- | --- |
 | A finishable research question | [Prize](prizes/README.md#the-two-objects) | An open target with a required witness—not a bag of money. |
-| A claim that can lose | [Bet](prizes/README.md#the-two-objects) | A prediction card with a comparator, expected observation, and falsifier—not a financial wager. |
-| A test design | [Experiment proposal](.agents/skills/domainspec-experiment-dispatch/SKILL.md#criterion-freeze--topology--immutability-never-a-column) | One hypothesis and its rules, attacked and frozen before results. |
-| Known-answer rehearsal cases | [Fixtures](validation/contribution-edge-fixtures/README.md) | Synthetic records that test whether the evidence machinery accepts, rejects, and calculates as declared. |
-| An observation | Separately approved run | A later probe under the frozen rules; fixture success does not authorize it. |
-| A scoped result | Verdict | What the frozen rule says about this run—not universal truth or permission to deploy. |
+| A claim that can lose | [Bet](prizes/README.md#the-two-objects) | A prediction card: what we compare, what we expect to see, and what would prove the idea wrong—not a financial wager. |
+| A test design | [Experiment proposal](.agents/skills/domainspec-experiment-dispatch/SKILL.md#criterion-freeze--topology--immutability-never-a-column) | One question and the rules for answering it, agreed before anyone sees the result. |
+| Known-answer rehearsal cases | [Fixtures](validation/contribution-edge-fixtures/README.md) | Made-up records whose answers we already know, used to check whether the evidence machinery behaves as promised. |
+| An observation | Separately approved run | A later test with people or real events. Passing the rehearsal does not authorize this step. |
+| A result for this test | Verdict | What the agreed rule says about this one run—not universal truth or permission to deploy. |
 
 A fixture is like a crash-test dummy for the evidence pipeline. It can show that
-a missing assignment is rejected or that a high activity count does not
-silently create credit or authority. It cannot show that a mechanism helps real
-people. That requires a separately approved run.
+a record with missing information is rejected or that a high activity count
+does not silently create credit or decision-making power. It cannot show that
+an idea helps real people. That requires a separately approved run.
 
 ## What This Repository Can Say Already
 
-- Observed activity is not reviewed contribution credit by itself.
-- An observed signal is not reviewed credit; reviewed credit is neither reward
-  nor governance authority.
-- A fixture pass checks declared record and calculation behavior, not an economy
-  or a community.
-- A survived experiment result remains bounded by its population, duration, and
-  criterion. It is not policy permission.
+- Seeing activity does not prove that someone made a useful contribution.
+- Even a reviewed contribution record does not create payment or
+  decision-making power.
+- Passing the made-up rehearsal cases only shows that records and calculations
+  were handled as promised. It says nothing yet about an economy or community.
+- Even when an experiment meets its target, the result applies only to the
+  people, time period, and test rules that were actually used. It is not policy
+  permission.
 - The repository currently knows several failure boundaries more confidently
   than it knows which mechanisms will work.
 
@@ -60,11 +62,11 @@ their counts into an introduction.
 ## Choose Your Next Door
 
 1. **Understand the lifecycle through different stories:** read
-   [Experiments By Example](prizes/EXPERIMENT-EXAMPLES.md), then use the
+   [Experiments, In Everyday Language](prizes/EXPERIMENT-EXAMPLES.md), then use the
    [full walkthrough](prizes/RESEARCH-HARNESS-BETS-PRIZES-WALKTHROUGH.md) for
    the complete procedure.
 2. **Create a first experiment:** follow the owner-linked assembly in the
-   [example gallery](prizes/EXPERIMENT-EXAMPLES.md#assemble-your-first-experiment),
+   [example gallery](prizes/EXPERIMENT-EXAMPLES.md#build-your-first-experiment),
    then use [GUIDE.md](GUIDE.md) for the working route.
 3. **Inspect what the repository actually knows:** start from the
    [inventory Start Here path](.arcanum/inventory/index.md) and query the
@@ -201,9 +203,10 @@ directions:
    strongly the claim is grounded — not just that it sounds right.
 3. **Ask the agent to try to deny it.** It runs the claim's collapse-test, sends
    it through the relevant attack lane and a skeptic gate, and looks for the prior
-   art that already owns it. If the claim survives the attack, it is stronger; if
-   it dies, that death is recorded as a *typed negative* — what the idea would have
-   contributed, and the exact fact that zeroed it.
+   art that already owns it. If the claim survives the attack, it is stronger. If
+   it dies, record both the useful thing it promised and the exact fact that made
+   that contribution disappear. The repository calls this record a *typed
+   negative*.
 4. **If it neither confirms nor denies cleanly, it stays residue.** Unresolved
    questions are kept visible, with a next check, instead of being smoothed into
    confident prose.

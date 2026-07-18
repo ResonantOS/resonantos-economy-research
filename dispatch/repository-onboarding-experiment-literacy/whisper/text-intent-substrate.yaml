@@ -6,6 +6,22 @@ text_intent_substrate:
     artifact_status: candidate
     intent_state: frozen
 
+  correction_events:
+    - date: "2026-07-17"
+      source: operator
+      prior_pass: rejected
+      scope: language_and_disclosure_order
+      correction: >
+        The candidate still led with research-protocol phrases such as
+        counterbalanced, bounded evidence, validity gates, and mechanical
+        verdict. Put the ordinary situation and action first; retain a formal
+        term only after its plain meaning and only when an owner boundary needs
+        it.
+      intent_effect: >
+        The author intent remains frozen because down-to-earth, story-first
+        language was already the stated core. This is a repair for a draft that
+        failed that core, not a new meaning direction.
+
   source_context:
     primary_source:
       - dispatch/repository-onboarding-experiment-literacy/findings.md
@@ -29,7 +45,7 @@ text_intent_substrate:
       examples without duplicating canonical owners.
     desired_reader_change:
       - feel the problem before meeting repository vocabulary
-      - retell prize_to_bet_to_criterion_to_fixture_to_run_to_verdict
+      - retell story_to_target_to_prediction_to_test_rules_to_rehearsal_to_run_to_result
       - explain why fixture_success_is_not_live_evidence
       - recognize that independent promises need independent bets
       - know where to create a first experiment and inspect current evidence
@@ -60,6 +76,8 @@ text_intent_substrate:
     forbidden_feels:
       - academic_throat_clearing
       - schema_dump_before_motivation
+      - research_protocol_prose_in_beginner_copy
+      - unexplained_formal_terms
       - cute_analogy_without_breakpoint
       - success_only_examples
       - solved_economy_language
@@ -94,7 +112,8 @@ text_intent_substrate:
     introduction_strategy:
       - open_with_the_event_scene
       - ask_what_evidence_would_change_our_mind
-      - introduce_terms_only_when_the_story_needs_them
+      - introduce_plain_meaning_before_repository_term
+      - keep_formal_terms_secondary_and_owner_linked
     body_parts:
       - readme_front_porch
       - durable_known_and_open_boundary
@@ -133,11 +152,11 @@ text_intent_substrate:
           - maintainer
           - newcomer
         draft_must_include_anywhere:
-          - prediction card
-          - fixture
+          - written prediction
+          - made-up cases
           - separately approved run
-          - typed negative
-          - post-freeze non-adjudicable
+          - what the result does not mean
+          - no verdict
         first_paragraph_cannot_match:
           - '(?i)^this repository is organized'
           - '(?i)^a governed research harness'
@@ -208,7 +227,7 @@ text_intent_substrate:
       example_gallery:
         target: prizes/EXPERIMENT-EXAMPLES.md
         job: transfer
-        content: open_two_bet_story_three_counterfactual_cards_owner_links
+        content: everyday_situations_plain_first_test_cards_owner_links
       comprehension_witness:
         target: prizes/EXPERIMENT-EXAMPLES.md
         job: later_limit
@@ -218,6 +237,8 @@ text_intent_substrate:
       - no_heading_body_paraphrase
       - no_duplicate_mechanics_explanation
       - every_analogy_has_a_breakpoint
+      - plain_action_precedes_formal_label
+      - no_unexplained_protocol_jargon_in_beginner_copy
       - fictional_results_are_labeled_before_numbers
       - all_owner_links_resolve
       - delivery_flow_and_retell_chain_reviewed
@@ -312,9 +333,10 @@ text_intent_substrate:
       - metadata_lines_must_not_displace_the_scene_as_the_transport_opening
       - progressive_disclosure_can_link_owners_without_reowning_procedure
       - varied_dispositions_make_success_only_bias_visible_in_the_draft
+      - protocol_complete_prose_can_still_fail_the_down_to_earth_reader_contract
+      - plain_action_should_precede_formal_label_in_every_beginner_facing_block
     unresolved:
       - no_unaided_newcomer_artifact_transfer_witness
       - no_story_first_comparative_run
       - no_audience_witness_for_analogies
       - unresolved_pre_freeze_and_post_freeze_invalidity_vocabulary
-

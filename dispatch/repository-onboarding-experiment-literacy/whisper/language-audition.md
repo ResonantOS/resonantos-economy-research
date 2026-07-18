@@ -22,30 +22,33 @@ right-looking activity? What result would make us abandon the idea?
 Audition result: `pass` for concrete entry and one felt tension. It makes no
 claim that story-first instruction is superior.
 
-## Moment 2 — Fixture Reveal
+## Moment 2 — Known-Answer Rehearsal
 
-A fixture is a rehearsal with known answers. If a record is missing its
-assignment, the harness should reject it. If a high activity count silently
-creates credit or authority, the harness should block the forbidden mutation.
+Imagine testing a smoke alarm. You do not start by setting the building on
+fire. You press the test button and try cases whose answers you already know.
 
-That tells us whether the evidence machinery follows its own rules. It tells us
-nothing yet about whether the mechanism helps real people. A live observation
-requires a separately approved run.
+The repository calls these made-up, known-answer cases **fixtures**. A record
+with missing information should stop. A record that quietly turns activity into
+payment or decision-making power should also stop, even if its calculation
+works. Passing the rehearsal tells us only that the machinery follows its own
+rules. A test with real people needs separate approval.
 
 Audition result: `pass` for mechanism and consequence. The crash-test relation
 is present without claiming general safety.
 
 ## Moment 3 — Transfer And Limit
 
-The same structure can test very different ideas: recognizing invisible event
-work, comparing maintenance evidence with commit counts, checking independent
-review, or testing the onboarding text itself. The story changes; the discipline
-does not. Write what should improve, what it must beat, and how the idea could
-lose before seeing a result.
+Imagine 40 people reading the same 12 made-up event stories. Half see only the
+public recap. Half also see a short evidence note. The stories appear in a mixed
+order so neither group gets an easier set. Before looking at answers, write how
+much the note must help, what mistakes must not increase, and what would make us
+drop the idea.
 
-The examples are fictional. One loses, one survives narrowly, and one cannot be
-adjudicated because its protocol was broken. None authorizes a reward, policy,
-or launch.
+The gallery repeats that pattern with software maintenance, independent review,
+and the onboarding text itself. One prediction loses, one narrowly holds up,
+and one gets no verdict because the test rules were broken. None authorizes a
+reward, policy, or launch.
 
-Audition result: `pass` for transfer and boundary. Full draft status remains
-`flag` until an unaided newcomer witness runs.
+Audition result: `pass` after the operator rejected the prior protocol-first
+wording. Full draft status remains `flag` until an unaided newcomer witness
+runs.
